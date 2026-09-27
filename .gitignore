@@ -9,3 +9,4 @@ dist
 .env.production
 .vercel
 .DS_Store
+.env*

@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "new-chapter": "node scripts/new-chapter.mjs"
+    "new-chapter": "node scripts/new-chapter.mjs",
+    "extract-sm": "python3 scripts/extract-sm.py",
+    "assemble": "node scripts/assemble-chapter.mjs",
+    "validate": "node scripts/validate-chapter.mjs"
   },
   "dependencies": {
     "next": "14.2.5",

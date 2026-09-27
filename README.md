@@ -62,6 +62,22 @@ Everything chapter-specific lives in the casebook's `meta` block:
 Provisions with `"hunt": true` are the answer options in Provision Hunt (all provisions if none are flagged).
 See `data/_CASEBOOK_TEMPLATE.json` for the full shape.
 
+## Building a chapter from the study material (Claude Code skill)
+
+Drop the ICAI study-material PDF in `inbox/` and ask Claude Code, for example:
+"add FR chapter 3, SM is inbox/fr-ch3.pdf". The `ca-chapter` skill (`.claude/skills/ca-chapter/`) runs the
+same steps every time: extract every illustration and TYK question, verify the attempt's amendments,
+collect RTP / MTP / past-paper questions from the ICAI BoS portal, rank topics by exam frequency, write
+both data files, validate and build. Its research report lands in `research/<chapter-id>.md`.
+
+The programs it uses can also be run by hand:
+
+```bash
+npm run extract-sm -- inbox/sm.pdf work/fr-ch03/sm   # text + inventory of illustrations / TYK
+npm run assemble -- fr-ch03                          # work/fr-ch03/parts/*.json -> data files
+npm run validate -- fr-ch03                          # schema, links, source labels, coverage
+```
+
 ## Chapter JSON schema
 
 ```jsonc

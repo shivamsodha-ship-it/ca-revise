@@ -1,0 +1,1056 @@
+{
+  "id": "aaa-ch19",
+  "subject": "aaa",
+  "number": 19,
+  "title": "Professional Ethics",
+  "summary": "Code of Ethics · CA Act Schedules · Council Guidelines · 40 illustrations",
+  "weight": 16,
+  "currency": "13th ed. Code of Ethics from 1.4.2026 · Tax Audit 60/partner from 1.4.2026 · NOCLAR India = listed only",
+  "sections": [
+    {
+      "id": "code-of-ethics",
+      "title": "Code of Ethics — Principles, Threats & NOCLAR",
+      "emoji": "🎨",
+      "cards": [
+        {
+          "id": "coe-principles-mnem",
+          "type": "mnemonic",
+          "tags": ["Code of Ethics"],
+          "front": "5 Fundamental Principles — mnemonic and expansion",
+          "back": {
+            "simplified": "I-O-P-C-P: Integrity · Objectivity · Professional Competence & Due Care · Confidentiality · Professional Behaviour",
+            "explanation": "Sub-sections 111–115 of Part 1 of the Code. Every threat is measured against these five."
+          }
+        },
+        {
+          "id": "coe-p1-integrity",
+          "type": "concept",
+          "tags": ["Sub-section 111"],
+          "front": "Integrity — what does it require?",
+          "back": {
+            "simplified": "Be straightforward and honest in all professional and business relationships — implies fair dealing and truthfulness.",
+            "trap": "If associated later with a false/misleading report — must DISASSOCIATE. Silence is not neutrality."
+          }
+        },
+        {
+          "id": "coe-p2-objectivity",
+          "type": "concept",
+          "tags": ["Sub-section 112"],
+          "front": "Objectivity — the rule",
+          "back": {
+            "simplified": "Do not compromise professional/business judgment due to bias, conflict of interest, or undue influence.",
+            "explanation": "Do not undertake activity where circumstances influence judgment unduly."
+          }
+        },
+        {
+          "id": "coe-p3-competence",
+          "type": "concept",
+          "tags": ["Sub-section 113"],
+          "front": "Professional Competence & Due Care — two limbs",
+          "back": {
+            "simplified": "Attain and maintain knowledge & skill (CPD is mandatory) + act diligently per technical and professional standards + supervise those under authority.",
+            "explanation": "Diligence = act carefully, thoroughly, and on time."
+          }
+        },
+        {
+          "id": "coe-p4-confidentiality",
+          "type": "concept",
+          "tags": ["Sub-section 114"],
+          "front": "Confidentiality — when may a member disclose?",
+          "back": {
+            "simplified": "Duty continues even AFTER the relationship ends.",
+            "exception": "Disclosure permitted where: (i) required or permitted by law; (ii) professional duty or right — Peer/Quality Review, regulatory inquiry, legal proceedings, defence against complaint."
+          }
+        },
+        {
+          "id": "coe-p5-behaviour",
+          "type": "concept",
+          "tags": ["Sub-section 115"],
+          "front": "Professional Behaviour",
+          "back": {
+            "simplified": "Comply with laws/regulations and avoid discrediting the profession.",
+            "trap": "NO exaggerated claims, disparaging references, or unsubstantiated comparisons. No advertising violating Ad Guidelines."
+          }
+        },
+        {
+          "id": "coe-threats-mnem",
+          "type": "mnemonic",
+          "tags": ["Threats"],
+          "front": "5 Threats to Independence — mnemonic",
+          "back": {
+            "simplified": "S-S-A-F-I: Self-interest · Self-review · Advocacy · Familiarity · Intimidation",
+            "explanation": "Framework (R120): Identify → Evaluate (reasonable & informed third party test) → Address (eliminate, safeguards, or decline/end)."
+          }
+        },
+        {
+          "id": "coe-noclar-def",
+          "type": "concept",
+          "tags": ["NOCLAR"],
+          "front": "NOCLAR — who is 'MT-COI'?",
+          "back": {
+            "simplified": "Non-compliance (omission/commission) contrary to prevailing laws by: Management, TCWG, Client/employer, Other individuals under client's direction, Individuals charged with governance.",
+            "trap": "In India NOCLAR applies ONLY to audits of listed entities (practice) AND employees of listed entities (service)."
+          }
+        },
+        {
+          "id": "coe-sa250-vs-noclar",
+          "type": "concept",
+          "tags": ["NOCLAR", "SA 250"],
+          "front": "SA 250 vs NOCLAR — key differences (4 rows)",
+          "back": {
+            "simplified": "SA 250 applies to audits only, focuses on laws directly affecting FS + operational, doesn't define stakeholders, no disclosure protocol. NOCLAR applies to practice AND service, focuses on non-compliance causing substantial harm, defines stakeholders, permits disclosure to prevent/mitigate harm."
+          }
+        }
+      ]
+    },
+    {
+      "id": "membership-practice",
+      "title": "Membership, Practice & Discipline",
+      "emoji": "👥",
+      "cards": [
+        {
+          "id": "sec8-disabilities",
+          "type": "mnemonic",
+          "tags": ["Sec 8"],
+          "front": "Sec 8 — 6 Disabilities from membership (mnemonic)",
+          "back": {
+            "simplified": "A-U-U-D-C-R: Age (<21) · Unsound mind · Undischarged insolvent · Discharged insolvent without certificate · Convicted of moral turpitude · Removed for misconduct.",
+            "trap": "Failure to DISCLOSE a disability is itself misconduct."
+          }
+        },
+        {
+          "id": "sec5-fca",
+          "type": "concept",
+          "tags": ["Sec 5"],
+          "front": "FCA — the '5 & 5' rule",
+          "back": {
+            "simplified": "5 years' continuous practice OR 5 years as Associate + prescribed qualifications."
+          }
+        },
+        {
+          "id": "sec24-false",
+          "type": "concept",
+          "tags": ["Sec 24"],
+          "front": "Sec 24 — False representation — who and what penalty?",
+          "back": {
+            "simplified": "Who: Non-member using 'CA' designation · Member without COP practising.",
+            "explanation": "Penalty: ₹1,000 first offence · ₹5,000 OR 6 months imprisonment OR both for subsequent.",
+            "cases": ["Prem Batra (1989) — Sec 24 + IPC 465 → fine + 3 months rigorous imprisonment"]
+          }
+        },
+        {
+          "id": "reg191-deemed",
+          "type": "mnemonic",
+          "tags": ["Reg 191"],
+          "front": "Reg 191 — Deemed in practice (mnemonic)",
+          "back": {
+            "simplified": "L-T-E-A-R-R-A + Secretary: Liquidator · Trustee · Executor · Administrator · Receiver · Arbitrator · Adviser · Secretary (unless salary-cum-full-time).",
+            "trap": "Salary-cum-full-time employment DISQUALIFIES the Reg 191 shelter."
+          }
+        },
+        {
+          "id": "sec25-companies",
+          "type": "concept",
+          "tags": ["Sec 25"],
+          "front": "Sec 25 — Can a company or LLP practice?",
+          "back": {
+            "simplified": "Company (incl. LLP with a company partner) CANNOT practise. LLP without a company partner CAN practise. Sec 141(2) CA 2013: only CA partners may act & sign."
+          }
+        },
+        {
+          "id": "sec27-branches",
+          "type": "concept",
+          "tags": ["Sec 27"],
+          "front": "Sec 27 — Branch office rules",
+          "back": {
+            "simplified": "Each branch needs a separate member in charge. 'In charge' = ≥ 182 days residence/attendance per year.",
+            "exception": "Hill areas: temporary office in plains ≤ 3 months/yr; must be ≥ 50 km from municipal limits.",
+            "trap": "Second office without separate member is OK only if same premises / same city / within 50 km."
+          }
+        },
+        {
+          "id": "discipline-bod-vs-dc",
+          "type": "concept",
+          "tags": ["Sec 21A", "Sec 21B"],
+          "front": "Board of Discipline vs Disciplinary Committee — powers and jurisdiction",
+          "back": {
+            "simplified": "BoD (Sec 21A) handles 1st Schedule only → max ₹1L / removal ≤ 3 months / reprimand. DC (Sec 21B) handles 2nd Schedule or BOTH → max ₹5L / permanent removal / reprimand.",
+            "explanation": "Appeal to Appellate Authority within 90 days (Sec 22A/22G). Powers: confirm/modify/set aside/enhance/remit."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sch1-part1",
+      "title": "First Schedule · Part I · Cl 1–12 (CAs in Practice)",
+      "emoji": "📙",
+      "cards": [
+        {
+          "id": "s1p1c1",
+          "type": "clause",
+          "tags": ["Cl 1"],
+          "front": "First Sch · Part I · Cl 1 — Name-lending",
+          "back": {
+            "bareText": "allows any person to practice in his name as a chartered accountant unless such person is also a chartered accountant in practice and is in partnership with or employed by him.",
+            "simplified": "Cannot allow any person to practise in his name UNLESS that person is (a) also a CA in practice AND (b) his partner or employee. Both limbs must hold.",
+            "trap": "Classic trap — dummy partner. Retired CA on letterhead only = guilty. 'Allows' = passive tolerance.",
+            "cross": ["Sec 26 CA Act", "Cl 12 Part I", "Sec 24"]
+          }
+        },
+        {
+          "id": "s1p1c2",
+          "type": "clause",
+          "tags": ["Cl 2", "Reg 53A"],
+          "front": "First Sch · Part I · Cl 2 — Fee sharing (PAY)",
+          "back": {
+            "bareText": "pays or allows or agrees to pay, directly or indirectly, any share, commission or brokerage in the fees or profits of his professional business, to any person other than a member of the Institute or a partner or a retired partner or the legal representative of a deceased partner, or a member of any other professional body or with such other persons having such qualification as may be prescribed…",
+            "simplified": "Cannot pay/allow/agree to pay directly OR indirectly any share/commission/brokerage in fees or profits to any person.",
+            "exception": "Members / Partner / Retired partner / Legal rep of deceased / Members of prescribed bodies (Reg 53A(1): ICSI, ICMAI, Bar Council, IIA, Actuaries) / Prescribed qualifications (Reg 53A(3): CS, CMA, Actuary, B.E., B.Tech, B.Arch, LL.B, MBA).",
+            "trap": "Fixed retainer → Cl 5 alone. Percentage-linked → Cl 5 + Cl 2 both fire."
+          }
+        },
+        {
+          "id": "s1p1c3",
+          "type": "clause",
+          "tags": ["Cl 3", "Reg 53A"],
+          "front": "First Sch · Part I · Cl 3 — Fee sharing (RECEIVE)",
+          "back": {
+            "bareText": "accepts or agrees to accept any part of the profits of the professional work of a person who is not a member of the Institute.",
+            "simplified": "Cannot accept any part of profits of professional work of a non-member.",
+            "exception": "Members of prescribed bodies / persons with prescribed qualifications (Reg 53A). Referral fees BETWEEN CAs in practice are permitted.",
+            "trap": "Family relationship is NOT an exception."
+          }
+        },
+        {
+          "id": "s1p1c4",
+          "type": "clause",
+          "tags": ["Cl 4", "Reg 53B"],
+          "front": "First Sch · Part I · Cl 4 — Partnership with non-CAs",
+          "back": {
+            "bareText": "enters into partnership, in or outside India, with any person other than Chartered Accountant in practice or such other person who is a member of any other professional body having such qualifications as may be prescribed…",
+            "simplified": "Cannot enter partnership in OR outside India with anyone other than a CA in practice or a member of a body prescribed under Reg 53B.",
+            "exception": "Reg 53B — 6 bodies for PARTNERSHIP: CS (ICSI) · CMA (ICMAI) · Advocate (Bar Council) · Engineer (Institution of Engineers) · Architect (IIA) · Actuary.",
+            "trap": "MBA can share fees under Reg 53A(3) but CANNOT be a partner under Reg 53B. Partnership dissolved after a month with no fee received = STILL guilty."
+          }
+        },
+        {
+          "id": "s1p1c5",
+          "type": "clause",
+          "tags": ["Cl 5"],
+          "front": "First Sch · Part I · Cl 5 — Securing business improperly",
+          "back": {
+            "bareText": "secures either through the services of a person who is not an employee of such Chartered Accountant or who is not his partner or by means which are not open to a Chartered Accountant, any professional business.",
+            "simplified": "Cannot secure business through (a) a person who is not employee/partner OR (b) means not open to a CA.",
+            "cases": ["Jethanand Sharda vs Deepak Mehta (1998) — CA writing to Army Canteens → guilty Cl 5 & 6"]
+          }
+        },
+        {
+          "id": "s1p1c6",
+          "type": "clause",
+          "tags": ["Cl 6"],
+          "front": "First Sch · Part I · Cl 6 — Soliciting clients",
+          "back": {
+            "bareText": "solicits clients or professional work either directly or indirectly by circular, advertisement, personal communication or interview or by any other means.",
+            "simplified": "Cannot solicit clients/professional work directly OR indirectly by circular, advertisement, personal communication, interview or any means.",
+            "exception": "(i) Requesting work from another CA in practice; (ii) Responding to tenders/enquiries.",
+            "trap": "Tender trap — cannot respond for services EXCLUSIVELY reserved for CAs UNLESS minimum fee is prescribed OR the area is open to other professionals."
+          }
+        },
+        {
+          "id": "s1p1c7",
+          "type": "clause",
+          "tags": ["Cl 7"],
+          "front": "First Sch · Part I · Cl 7 — Advertising & designations",
+          "back": {
+            "bareText": "advertises his professional attainments or services, or uses any designation or expressions other than the Chartered Accountant on professional documents, visiting cards, letter heads or sign boards…",
+            "simplified": "Cannot advertise professional attainments OR use any designation other than 'CA'.",
+            "exception": "Write-up permitted per Council guidelines (Ad Guidelines 2008).",
+            "trap": "Firm logos are PROHIBITED. Only the common CA India Logo is allowed. No 'date of setting up' on stationery."
+          }
+        },
+        {
+          "id": "s1p1c8",
+          "type": "clause",
+          "tags": ["Cl 8"],
+          "front": "First Sch · Part I · Cl 8 — Communication with previous auditor",
+          "back": {
+            "bareText": "accepts a position as auditor previously held by another chartered accountant or a certified auditor who has been issued certificate under the Restricted Certificate Rules, 1932 without first communicating with him in writing.",
+            "simplified": "Cannot accept position of auditor previously held by another CA without first communicating in writing.",
+            "exception": "Valid modes: Registered Post A/D · By hand w/ acknowledgement · Registered email w/ ack · UDIN. Certificate of Posting is INSUFFICIENT.",
+            "cases": ["Nov 2024 Q.2(a): Govt Co, conditional acceptance under time constraint → NOT guilty"]
+          }
+        },
+        {
+          "id": "s1p1c9",
+          "type": "clause",
+          "tags": ["Cl 9"],
+          "front": "First Sch · Part I · Cl 9 — Sec 139/140 compliance check",
+          "back": {
+            "bareText": "accepts an appointment as auditor of a company without first ascertaining from it whether the requirements of sections 139 to 141 of the Companies Act, 2013 or any other law for the time being in force… have been duly complied with.",
+            "simplified": "Cannot accept company auditor appointment without first ascertaining Sec 139/140 CA 2013 compliance."
+          }
+        },
+        {
+          "id": "s1p1c10",
+          "type": "clause",
+          "tags": ["Cl 10", "Reg 192"],
+          "front": "First Sch · Part I · Cl 10 — Contingent / % fees",
+          "back": {
+            "bareText": "charges or offers to charge, accepts or offers to accept in respect of any professional employment fees which are based on a percentage of profits or which are contingent upon the findings, or results of such employment, except as permitted under any regulations made under this Act.",
+            "simplified": "Cannot charge fees based on % of profits or contingent on findings.",
+            "exception": "Reg 192 — 'R-L-C-F-V-N': Receiver/Liquidator · Cooperative society · Fund-raising · Valuation/debt recovery/cost optimisation · Non-assurance to NON-audit clients.",
+            "trap": "Golden rule — contingent fee to AUDIT client = guilty; to NON-audit client = allowed."
+          }
+        },
+        {
+          "id": "s1p1c11",
+          "type": "clause",
+          "tags": ["Cl 11", "Reg 190A", "⭐ most tested"],
+          "front": "First Sch · Part I · Cl 11 — Other business or occupation ⭐",
+          "back": {
+            "bareText": "engages in any business or occupation other than the profession of chartered accountant unless permitted by the Council so to engage. Provided that nothing contained herein shall disentitle a chartered accountant from being a director of a company (Not being managing director or a whole time director) unless he or any of his partners is interested in such company as an auditor.",
+            "simplified": "Cannot engage in any business/occupation other than accountancy unless permitted by Council.",
+            "exception": "General (no approval): employee of CA firm, private tutor, authorship, LIC (renewal), exams, MP/MLA, honorary charity, notary/JP, ICAI PT tutor, paper-setting, editor of professional journal, surveyor, recovery consultant, own agriculture. Specific (prior approval): full/PT employment, MD/WTD, family business (no active), full/PT lectureship (non-ICAI), editor of non-professional publication, educational institution interest, stock exchange office.",
+            "trap": "25-hour cap on direct teaching per week to retain attest eligibility.",
+            "cases": [
+              "Nov 2023: Editor of 'Company Audit' journal → NOT GUILTY",
+              "May 2025: Auditor of subsidiary Ring Ltd offered directorship of holding Pearl Ltd → SHOULD NOT ACCEPT"
+            ]
+          }
+        },
+        {
+          "id": "s1p1c12",
+          "type": "clause",
+          "tags": ["Cl 12"],
+          "front": "First Sch · Part I · Cl 12 — Signing by non-member",
+          "back": {
+            "bareText": "allows a person not being a member of the institute in practice or a member not being his partner to sign on his behalf or on behalf of his firm, any balance sheet, profit and loss account, report or financial statements.",
+            "simplified": "Cannot allow non-member OR non-partner member to sign BS/P&L/report/FS on his or firm's behalf.",
+            "cross": ["Sec 26 CA Act", "Sec 141(2) CA 2013"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sch1-part2-4",
+      "title": "First Schedule · Parts II · III · IV",
+      "emoji": "📕",
+      "cards": [
+        {
+          "id": "s1p2c1",
+          "type": "clause",
+          "tags": ["Sch I Part II Cl 1"],
+          "front": "First Sch · Part II · Cl 1 — Employee CA sharing emoluments",
+          "back": {
+            "bareText": "pays or allows or agrees to pay directly or indirectly to any person any share in the emoluments of the employment undertaken by him.",
+            "simplified": "A member in service cannot share his salary/emoluments with any person, directly or indirectly.",
+            "exception": "Does NOT restrict sharing among relatives, dependents, or friends if there is no relationship in procuring/retaining the job."
+          }
+        },
+        {
+          "id": "s1p2c2",
+          "type": "clause",
+          "tags": ["Sch I Part II Cl 2"],
+          "front": "First Sch · Part II · Cl 2 — Fees from lawyer/CA/broker of employer",
+          "back": {
+            "bareText": "accepts or agrees to accept any part of fees, profits or gains from a lawyer, a chartered accountant or broker engaged by such company, firm or person or agent or customer of such company, firm or person by way of commission or gratification.",
+            "simplified": "Employee CA cannot accept commission/kickbacks from lawyers/CAs/brokers/agents dealing with the employer.",
+            "cases": ["Illustration 25 — CA with COP + in employment recommends a lawyer; lawyer pays him referral fee → GUILTY under Cl 2 Part II First Sch"]
+          }
+        },
+        {
+          "id": "s1p3c1",
+          "type": "clause",
+          "tags": ["Sch I Part III Cl 1"],
+          "front": "First Sch · Part III · Cl 1 — Acting as Fellow when not one",
+          "back": {
+            "bareText": "not being a fellow of the Institute, acts as a fellow of the Institute.",
+            "simplified": "An Associate (ACA) cannot represent himself as a Fellow (FCA). Misrepresentation of status = misconduct."
+          }
+        },
+        {
+          "id": "s1p3c2",
+          "type": "clause",
+          "tags": ["Sch I Part III Cl 2"],
+          "front": "First Sch · Part III · Cl 2 — Not supplying info to Institute",
+          "back": {
+            "bareText": "does not supply the information called for, or does not comply with the requirements asked for, by the Institute, Council or any of its Committees, Director (Discipline), Board of Discipline, Disciplinary Committee, Quality Review Board or the Appellate Authority.",
+            "cases": [
+              "Illustration 26 — Mr G left blank the columns on 'other occupation' while applying for COP → GUILTY",
+              "Illustration 27 — Mr X ignored repeated ICAI reminders to confirm date of leaving service → GUILTY"
+            ]
+          }
+        },
+        {
+          "id": "s1p3c3",
+          "type": "clause",
+          "tags": ["Sch I Part III Cl 3"],
+          "front": "First Sch · Part III · Cl 3 — False info while inviting/soliciting work",
+          "back": {
+            "bareText": "while inviting professional work from another chartered accountant or while responding to tenders or enquiries or while advertising through a write up, or anything as provided for in items (6) and (7) of Part I of this Schedule, gives information knowing it to be false.",
+            "simplified": "In the course of procuring professional work through tenders, enquiries, ads, CVs etc., if the member provides information he KNOWS to be false → guilty."
+          }
+        },
+        {
+          "id": "s1p4c1",
+          "type": "clause",
+          "tags": ["Sch I Part IV Cl 1", "Other misconduct"],
+          "front": "First Sch · Part IV · Cl 1 — Court conviction (imprisonment ≤ 6 months)",
+          "back": {
+            "bareText": "is held guilty by any civil or criminal court for an offence which is punishable with imprisonment for a term not exceeding six months.",
+            "trap": "If imprisonment EXCEEDS 6 months → covered under Part III of Second Schedule (goes to DC, higher penalties)."
+          }
+        },
+        {
+          "id": "s1p4c2",
+          "type": "clause",
+          "tags": ["Sch I Part IV Cl 2", "Other misconduct"],
+          "front": "First Sch · Part IV · Cl 2 — Brings disrepute to profession",
+          "back": {
+            "bareText": "in the opinion of the Council, brings disrepute to the profession or the Institute as a result of his action whether or not related to his professional work.",
+            "cases": ["Illustration 28 — YKS & Co (concurrent auditor of bank) used position to obtain loan + failed to repay → GUILTY of OTHER misconduct"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sch2-part1",
+      "title": "Second Schedule · Part I · Cl 1–10 (CAs in Practice)",
+      "emoji": "📗",
+      "cards": [
+        {
+          "id": "s2p1c1",
+          "type": "clause",
+          "tags": ["Sch II Part I Cl 1"],
+          "front": "Second Sch · Part I · Cl 1 — Disclosure without client's consent",
+          "back": {
+            "bareText": "Discloses information acquired in the course of his professional engagement to any person other than his client so engaging him without the consent of his client or otherwise than as required by any law for the time being in force.",
+            "simplified": "Client confidentiality is fundamental. Duty continues even AFTER assignment completion.",
+            "explanation": "Consent — Sole prop → proprietor; Partnership → any partner; Company → BoD resolution or MD if powers delegated. Working papers rule — auditor is NOT required to give client or other auditors access to his working papers.",
+            "trap": "Sec 143(12) CA 2013 exception — if auditor has reason to believe fraud is being committed against the company by officers/employees → must report to Central Government within 60 days (overrides confidentiality).",
+            "cases": ["Illustration 29 — Mr P shared vital client business info at Chamber of Commerce symposium → GUILTY"]
+          }
+        },
+        {
+          "id": "s2p1c2",
+          "type": "clause",
+          "tags": ["Sch II Part I Cl 2"],
+          "front": "Second Sch · Part I · Cl 2 — Certifies FS not examined by him/partner/employee/other CA",
+          "back": {
+            "bareText": "Certifies or submits in his name or in the name of his firm, a report of an examination of financial statements unless the examination of such statements and the related records has been made by him or by a partner or an employee in his firm or by another chartered accountant in practice.",
+            "simplified": "Report must be based on actual examination by him / partner / employee / other CA in practice.",
+            "explanation": "Enables joint audits (SA 299). Each joint auditor responsible only for work allocated; jointly & severally responsible for common decisions."
+          }
+        },
+        {
+          "id": "s2p1c3",
+          "type": "clause",
+          "tags": ["Sch II Part I Cl 3"],
+          "front": "Second Sch · Part I · Cl 3 — Vouching for accuracy of profit forecasts",
+          "back": {
+            "bareText": "Permits his name or the name of his firm to be used in connection with an estimate of earnings contingent upon future transactions in manner which may lead to the belief that he vouches for the accuracy of the forecast.",
+            "exception": "Council Opinion (100th Meeting, July 1982): CA CAN participate in and review profit/financial forecasts provided report clearly indicates (i) sources of info (ii) basis of forecasts (iii) major assumptions, AND he does NOT vouch for accuracy.",
+            "cases": ["A CA issued 97 Projection Statements without verifying documents → bank extended loans → parties had no source for repayment → GUILTY under Cl 3, 7 & 8"]
+          }
+        },
+        {
+          "id": "s2p1c4",
+          "type": "clause",
+          "tags": ["Sch II Part I Cl 4"],
+          "front": "Second Sch · Part I · Cl 4 — Opinion on FS where substantial interest ⭐",
+          "back": {
+            "bareText": "Expresses his opinion on financial statements of any business or enterprise in which he, his firm, or a partner in his firm has a substantial interest.",
+            "explanation": "'Substantial interest' per Appendix 9 CA Regulations 1988 (≥ 20% voting power / ≥ 20% profit share). Tied to Sec 141(3) CA 2013 disqualifications.",
+            "trap": "Council prohibits: certifying relatives (AS-18 definition) · writing books of account for auditee · being stat auditor + internal auditor of same entity · internal + tax auditor · internal + GST auditor · 2-year cooling-off after directorship."
+          }
+        },
+        {
+          "id": "s2p1c5",
+          "type": "clause",
+          "tags": ["Sch II Part I Cl 5"],
+          "front": "Second Sch · Part I · Cl 5 — Fails to disclose material fact",
+          "back": {
+            "bareText": "fails to disclose a material fact known to him which is not disclosed in a financial statement, but disclosure of which is necessary in making such financial statement where he is concerned with that financial statement in a professional capacity.",
+            "explanation": "Materiality per SA 320 — judged in relation to BOTH BS and P&L.",
+            "cases": ["Illustration 30 — Mr J knew of ₹10L loan from EPF not reflected in books; ignored in report → GUILTY"]
+          }
+        },
+        {
+          "id": "s2p1c6",
+          "type": "clause",
+          "tags": ["Sch II Part I Cl 6"],
+          "front": "Second Sch · Part I · Cl 6 — Fails to report material misstatement",
+          "back": {
+            "bareText": "Fails to report a material misstatement known to him to appear in a financial statement with which he is concerned in a professional capacity.",
+            "explanation": "Cl 5 = OMISSION (fact absent); Cl 6 = MISSTATEMENT present in FS. Both require materiality proven (SA 320)."
+          }
+        },
+        {
+          "id": "s2p1c7",
+          "type": "clause",
+          "tags": ["Sch II Part I Cl 7", "⭐ landmark"],
+          "front": "Second Sch · Part I · Cl 7 — Gross negligence / due diligence ⭐",
+          "back": {
+            "bareText": "does not exercise due diligence, or is grossly negligent in the conduct of his professional duties.",
+            "explanation": "Karnataka HC (1977): 'It is the duty of an auditor to bring to bear on the work skill, care, and caution which a reasonably competent, careful, and cautious auditor would use… He is a watchdog but not a bloodhound. If there is anything calculated to excite suspicion he should probe it to the bottom; but in the absence of anything of that kind he is only bound to be reasonably cautious and careful.'",
+            "cases": [
+              "Illustration 32 — CA C certified circulation of 'New Era' from MIS Report without checking books → GUILTY",
+              "Illustration 33 — Mr D delayed audit; failed to submit report in time → GUILTY"
+            ]
+          }
+        },
+        {
+          "id": "s2p1c8",
+          "type": "clause",
+          "tags": ["Sch II Part I Cl 8"],
+          "front": "Second Sch · Part I · Cl 8 — Fails to obtain sufficient information",
+          "back": {
+            "bareText": "Fails to obtain sufficient information which is necessary for expression of an opinion or its exceptions are sufficiently material to negate the expression of an opinion.",
+            "explanation": "Refer SA 705(Revised) Modifications to the Opinion. Where opinion cannot be categorical, express DISCLAIMER.",
+            "cases": [
+              "Registrar of Newspapers v K. Rajinder Singh (1971) — GUILTY for circulation certificate without books check",
+              "IDBI Bank case — 12 certificates for loan approval without limitations → GUILTY under Cl 7 & 8"
+            ]
+          }
+        },
+        {
+          "id": "s2p1c9",
+          "type": "clause",
+          "tags": ["Sch II Part I Cl 9"],
+          "front": "Second Sch · Part I · Cl 9 — Material departure from generally accepted procedure",
+          "back": {
+            "bareText": "Fails to invite attention to any material departure from the generally accepted procedure of audit applicable to the circumstances.",
+            "explanation": "Audit of Listed Companies — must be by auditors who have completed Peer Review (SEBI). FRN + Membership No + UDIN mandatory. Special procedures for circulation certification (ABC) and bank verification."
+          }
+        },
+        {
+          "id": "s2p1c10",
+          "type": "clause",
+          "tags": ["Sch II Part I Cl 10"],
+          "front": "Second Sch · Part I · Cl 10 — Client money in separate account",
+          "back": {
+            "bareText": "fails to keep moneys of his client other than fees or remuneration or money meant to be expended in a separate banking account or to use such moneys for purposes for which they are intended within a reasonable time.",
+            "exception": "(i) Advance against services → NOT covered. (ii) Money for statutory fees/stamp paper to be spent soon → need NOT go into separate a/c. (iii) Money not for immediate spend → separate a/c immediately. (iv) Trustee/liquidator/executor → separate a/c immediately.",
+            "cases": ["Illustration 35 — Charitable inst gave ₹10L to M/s R & Co for investment; kept in own SB a/c for 3 months → GUILTY"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sch2-part2-3",
+      "title": "Second Schedule · Parts II · III",
+      "emoji": "📘",
+      "cards": [
+        {
+          "id": "s2p2c1",
+          "type": "clause",
+          "tags": ["Sch II Part II Cl 1"],
+          "front": "Second Sch · Part II · Cl 1 — Contravenes CA Act / Regulations / Guidelines",
+          "back": {
+            "bareText": "contravenes any of the provisions of this Act or the regulations made there under or any guidelines issued by the Council.",
+            "explanation": "Very important — any violation of Act/Regulations/Guidelines = misconduct. Common Reg contraventions: Reg 43 (articled engagement), 46 (registration), 47 (premium), 48 (stipend), 56 (termination), 65 (article's other occupation), 190A, 191, 192."
+          }
+        },
+        {
+          "id": "s2p2c2",
+          "type": "clause",
+          "tags": ["Sch II Part II Cl 2"],
+          "front": "Second Sch · Part II · Cl 2 — Employee discloses confidential info",
+          "back": {
+            "bareText": "being an employee of any company, firm or person, discloses confidential information acquired in the course of his employment except as and when required by any law for the time being in force or except as permitted by the employer.",
+            "explanation": "Adaptation of law of agency. Applies whether whole-time, part-time, or with COP alongside employment."
+          }
+        },
+        {
+          "id": "s2p2c3",
+          "type": "clause",
+          "tags": ["Sch II Part II Cl 3", "⭐"],
+          "front": "Second Sch · Part II · Cl 3 — False particulars in return to Institute ⭐",
+          "back": {
+            "bareText": "includes in any information, statement, return or form to be submitted to the Institute, Council or any of its Committees, Director (Discipline), Board of Discipline, Disciplinary Committee, Quality Review Board or the Appellate Authority any particulars knowing them to be false.",
+            "cases": [
+              "J.R. Chatrath (1952) — falsely claimed partner status for Fellow application → GUILTY",
+              "K.S. Dugar (1987) — false statement on oath before DC → GUILTY",
+              "Nov 2024 tested — CA H false facts in appeal → GUILTY Part II Cl 3, DC forum, ₹5L max"
+            ]
+          }
+        },
+        {
+          "id": "s2p2c4",
+          "type": "clause",
+          "tags": ["Sch II Part II Cl 4"],
+          "front": "Second Sch · Part II · Cl 4 — Defalcates or embezzles money",
+          "back": {
+            "bareText": "defalcates or embezzles money received in his professional capacity.",
+            "explanation": "Defalcation/embezzlement = FRAUD (covered by SA 240). Direct professional misconduct."
+          }
+        },
+        {
+          "id": "s2p2c5",
+          "type": "clause",
+          "tags": ["Sch II Part II Cl 5"],
+          "front": "Second Sch · Part II · Cl 5 — Auditor in contravention of CA 2013",
+          "back": {
+            "bareText": "acts as an auditor of the company in contravention of the provisions of the Companies Act, 2013.",
+            "explanation": "Breach of Sec 141 disqualifications (relative security holding, indebtedness, related-company auditor, employment of officer, cooling-off, ceiling breach) = misconduct under this clause."
+          }
+        },
+        {
+          "id": "s2p3c1",
+          "type": "clause",
+          "tags": ["Sch II Part III", "Other misconduct"],
+          "front": "Second Sch · Part III — Court conviction (imprisonment > 6 months)",
+          "back": {
+            "bareText": "A member of the Institute, whether in practice or not, shall be deemed to be guilty of other misconduct, if he is held guilty by any civil or criminal court for an offence which is punishable with imprisonment for a term exceeding six months.",
+            "trap": "Compare Part IV First Sch Cl 1 — imprisonment ≤ 6 months goes to BoD; > 6 months goes to DC (this clause, more serious)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "regulations",
+      "title": "Master Regulations Grid (53A · 53B · 190A · 191 · 192)",
+      "emoji": "🎨",
+      "cards": [
+        {
+          "id": "reg53a",
+          "type": "concept",
+          "tags": ["Reg 53A"],
+          "front": "Reg 53A — Fee sharing (Cl 2, 3, 5)",
+          "back": {
+            "simplified": "53A(1) — 5 Bodies (mnemonic S-C-B-A-A): ICSI · ICMAI · Bar Council · IIA · Institute of Actuaries. 53A(3) — 8 Qualified: CS · CMA · Actuary · B.E. · B.Tech · B.Arch · LL.B · MBA."
+          }
+        },
+        {
+          "id": "reg53b",
+          "type": "concept",
+          "tags": ["Reg 53B"],
+          "front": "Reg 53B — Partnership (Cl 4) — 6 bodies",
+          "back": {
+            "simplified": "CS (ICSI) · CMA (ICMAI) · Advocate (Bar Council) · Engineer (Institution of Engineers) · Architect (IIA) · Actuary.",
+            "trap": "Engineer is in 53B but NOT in 53A(1). MBA can share fees (53A(3)) but CANNOT be partner (53B)."
+          }
+        },
+        {
+          "id": "reg192",
+          "type": "concept",
+          "tags": ["Reg 192"],
+          "front": "Reg 192 — When are % / contingent fees permitted?",
+          "back": {
+            "simplified": "R-L-C-F-V-N: Receiver/Liquidator (% realisation) · Cooperative society (% capital/income) · Fund-raising · Valuation for direct taxes / debt recovery / cost optimisation · Insolvency Professional · Non-assurance services to NON-audit clients.",
+            "trap": "Contingent fee to AUDIT client = guilty; to NON-audit client = allowed."
+          }
+        },
+        {
+          "id": "reg190a",
+          "type": "concept",
+          "tags": ["Reg 190A"],
+          "front": "Reg 190A — Other occupation (Cl 11)",
+          "back": {
+            "simplified": "General (no approval): CA-firm employee · private tutor · authorship · LIC renewal · exams · MP/MLA · charity · notary · ICAI PT tutor · paper-setting · editor of professional journal · surveyor · recovery consultant · agriculture.",
+            "trap": "Specific approval needed: full/PT employment in biz · MD/WTD · family business · full/PT lectureship (non-ICAI) · editor of non-prof publication · educational institution interest · stock exchange office."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec5-6-selfreg",
+      "title": "Sec 5, Sec 6 & Section 10 Self-Regulatory Measures",
+      "emoji": "🏛️",
+      "cards": [
+        {
+          "id": "sec5-service",
+          "type": "concept",
+          "tags": ["Sec 5"],
+          "front": "Sec 5 — CAs in Service — which parts of the Schedules bind them?",
+          "back": {
+            "simplified": "Part II First Sch (2) · Part III First Sch (3) · Part IV First Sch (2) · Part II Second Sch (5) · Part III Second Sch (1).",
+            "trap": "'Once a member, always bound.' Cannot escape misconduct rules by claiming he was acting only as an employee."
+          }
+        },
+        {
+          "id": "sec6-otherwise",
+          "type": "concept",
+          "tags": ["Sec 6"],
+          "front": "Sec 6 — CAs Otherwise Occupied — what applies?",
+          "back": {
+            "simplified": "Neither in practice nor formally in service (retired, independent consultant, academic, charity). Bound by Parts III & IV of First Sch + Parts II & III of Second Sch."
+          }
+        },
+        {
+          "id": "sec10-1",
+          "type": "concept",
+          "tags": ["Sec 10.1"],
+          "front": "Sec 10.1 — Branch Audits (self-regulatory)",
+          "back": {
+            "simplified": "Branch audits of a company should NOT be conducted by its statutory auditors with 10 or more members. Should be by local firms with < 10 members.",
+            "exception": "(i) Where branch accounting records are maintained at HO; (ii) Where significant operations happen at the branch."
+          }
+        },
+        {
+          "id": "sec10-2",
+          "type": "concept",
+          "tags": ["Sec 10.2"],
+          "front": "Sec 10.2 — Joint Audit",
+          "back": {
+            "simplified": "For large companies, associating a practising firm with < 5 members as Joint Auditor is encouraged. Senior firm should not object.",
+            "explanation": "Distributes work among smaller firms; enhances audit quality (linked to SA 299)."
+          }
+        },
+        {
+          "id": "sec10-3",
+          "type": "concept",
+          "tags": ["Sec 10.3"],
+          "front": "Sec 10.3 — Ratio between qualified and unqualified staff",
+          "back": {
+            "simplified": "1 qualified member : 5 non-qualified staff (1:5).",
+            "exception": "Exclude articled assistants, audit assistants, typists, peons and other non-professional staff."
+          }
+        },
+        {
+          "id": "sec10-4",
+          "type": "concept",
+          "tags": ["Sec 10.4"],
+          "front": "Sec 10.4 — Disclosure of interest in other firms",
+          "back": {
+            "simplified": "Auditors should disclose payments received for other services through a different firm/firms where the auditor is partner/proprietor.",
+            "explanation": "Guards independence in appearance; prevents concealment of related-party services routed via associate firms."
+          }
+        },
+        {
+          "id": "sec10-5",
+          "type": "concept",
+          "tags": ["Sec 10.5", "PIE"],
+          "front": "Sec 10.5 — Minimum fees + disclosure thresholds",
+          "back": {
+            "simplified": "Disclosure required where for 2 consecutive years gross annual professional fees represent: Non-PIE > 40% of total firm fees · PIE > 20%.",
+            "exception": "Exempt if total firm fees ≤ ₹20 lakhs · Audit of Govt Cos / PSUs / Nationalised Banks / PFIs / Regulators · Auditor appointed by Government.",
+            "trap": "Mnemonic: 40 / 20 / 20 — Non-PIE 40%, PIE 20%, exemption ₹20L or Govt appointments."
+          }
+        }
+      ]
+    },
+    {
+      "id": "council-guidelines",
+      "title": "Council General Guidelines — Ch I to XVII",
+      "emoji": "📚",
+      "cards": [
+        {
+          "id": "cgg-ch5",
+          "type": "concept",
+          "tags": ["CGG Ch V"],
+          "front": "CGG Ch V — Books of Account for members in practice",
+          "back": {
+            "simplified": "Must maintain (i) Cash Book (ii) Ledger — for professional practice.",
+            "cases": ["Illustration 36 — L did not maintain books claiming income < Sec 44AA IT Act limits → GUILTY (Council rule applies independently of IT Act)"]
+          }
+        },
+        {
+          "id": "cgg-ch6-taxaudit",
+          "type": "concept",
+          "tags": ["CGG Ch VI", "🆕 2025 Guidelines"],
+          "front": "Tax Audit ceiling for Nov 2026 attempt — the number and the source ⭐",
+          "back": {
+            "simplified": "60 tax audits per member/partner per FY. From 1.4.2026: CA (Limit on No. of Tax Audits) Guidelines, 2025 supersede CGG Ch VI.",
+            "explanation": "Common partner across firms → aggregate. Signing date determines FY. HO + branches = ONE assignment. Revised TAR not counted separately. 44AD/44ADA/44AE EXCLUDED.",
+            "trap": "UDIN portal will BLOCK the 61st tax audit from 1.4.2026. Sec 141(3)(g) CA 2013: statutory audit ceiling separately = 20 companies/member.",
+            "cases": ["Illustration 37 — Mr G (partner in XYZ & Co, 6 partners) alone signed 290 TARs → NOT GUILTY if firm total ≤ 6 × 60 = 360"]
+          }
+        },
+        {
+          "id": "cgg-ch7-unpaid",
+          "type": "concept",
+          "tags": ["CGG Ch VII"],
+          "front": "CGG Ch VII — Non-payment of undisputed audit fees",
+          "back": {
+            "simplified": "Cannot accept audit of entity where undisputed audit fees of another CA (statutory audit under CA 2013 or other statute) are unpaid.",
+            "exception": "Does NOT apply to SICK UNIT (registered ≥ 5 years, accumulated losses ≥ entire net worth at end of any FY).",
+            "cases": ["Illustration 38 — Mr C accepted audit of PSU Ltd (net worth negative); previous auditor's fees ₹15K unpaid → NOT GUILTY (sick unit)"]
+          }
+        },
+        {
+          "id": "cgg-ch8-30",
+          "type": "concept",
+          "tags": ["CGG Ch VIII"],
+          "front": "CGG Ch VIII — Specified number of company audit assignments",
+          "back": {
+            "simplified": "Individual/proprietary firm: 30 company audits. Firm: 30 per partner. Excludes OPC and Dormant Companies.",
+            "explanation": "HO + branches = 1 audit. Part-time practising partner NOT counted for firm ceiling. Compare Sec 141(3)(g) CA 2013 statutory ceiling of 20."
+          }
+        },
+        {
+          "id": "cgg-ch9-fee-cap",
+          "type": "concept",
+          "tags": ["CGG Ch IX"],
+          "front": "CGG Ch IX — Statutory auditor: other work fee cap",
+          "back": {
+            "simplified": "For PSU / Govt / Listed / other public co with turnover ≥ ₹50 crores — cannot accept other work if remuneration exceeds statutory audit fee.",
+            "exception": "Excludes: (a) audit under any other statute (b) certification work required by statutory auditors (c) representation before an authority.",
+            "trap": "Includes MCS under Sec 2(2)(iv). 'Associate concern' → fees to auditor + associate concerns aggregated.",
+            "cases": ["Illustration 39 — A auditor of Z Ltd (turnover ₹200 cr, audit fee ₹50L); offered ₹1 cr mgmt consultancy → MISCONDUCT if accepted"]
+          }
+        },
+        {
+          "id": "cgg-ch10-indebt",
+          "type": "concept",
+          "tags": ["CGG Ch X"],
+          "front": "CGG Ch X — Auditor indebtedness limit",
+          "back": {
+            "simplified": "Member/partner/firm/relative cannot accept auditor appointment while indebted or having given guarantee/security for a third person exceeding ₹1,00,000 (or limits fixed in statute for that concern).",
+            "cases": ["Illustration 40 — Mr D received tax audit fees ₹2.5L on progressive basis before signing → NOT GUILTY (progressive fee recovery ≠ indebtedness — Research Committee opinion)"]
+          }
+        },
+        {
+          "id": "cgg-ch13-tenders",
+          "type": "concept",
+          "tags": ["CGG Ch XIII"],
+          "front": "CGG Ch XIII — Tenders",
+          "back": {
+            "simplified": "Member in practice shall NOT respond to any tender for services exclusively reserved for CAs (audit and attestation).",
+            "exception": "(i) Minimum fee prescribed in tender document; OR (ii) Areas open to other professionals along with CAs."
+          }
+        },
+        {
+          "id": "cgg-ch14-udin",
+          "type": "concept",
+          "tags": ["CGG Ch XIV", "UDIN"],
+          "front": "CGG Ch XIV — UDIN rollout dates and purpose",
+          "back": {
+            "simplified": "All Certificates: 1 Feb 2019 · GST/Tax Audit: 1 Apr 2019 · All other Audit/Assurance/Attest: 1 Jul 2019.",
+            "explanation": "18-digit unique number per document. Now recognised as valid evidence of communication under Cl 8. Non-generation = disciplinary action."
+          }
+        },
+        {
+          "id": "cgg-ch15-network",
+          "type": "concept",
+          "tags": ["CGG Ch XV"],
+          "front": "CGG Ch XV — Networking — the 6 criteria",
+          "back": {
+            "simplified": "Deemed a NETWORK where larger structure aims at co-operation AND involves ANY of: (1) profit/cost sharing (2) common ownership/control/mgmt (3) common QC policies (4) common business strategy (5) common brand name (6) sharing significant professional resources.",
+            "exception": "NOT a network if aimed only at referrals · one-time RFP joint response · immaterial cost sharing · sharing only methodology/training. Firm can join ONLY ONE network."
+          }
+        },
+        {
+          "id": "cgg-ch16-logo",
+          "type": "concept",
+          "tags": ["CGG Ch XVI", "Logo 2023"],
+          "front": "CGG Ch XVI — CA India Logo (2023)",
+          "back": {
+            "simplified": "Letters 'CA' in BLUE with tri-colour tick mark (upside down) on white background. 'India' epitomises India First approach.",
+            "trap": "No alteration of font/colour/spacing/dimensions/design. No rotation/tilting/shrinking. Firm/individual logos still PROHIBITED — only the common CA India Logo is permitted."
+          }
+        },
+        {
+          "id": "cgg-ch17-corporate",
+          "type": "concept",
+          "tags": ["CGG Ch XVII"],
+          "front": "CGG Ch XVII — Corporate Form of Practice",
+          "back": {
+            "simplified": "Member in practice may hold MD/WTD/Manager of a body corporate PROVIDED it is engaged EXCLUSIVELY in Management Consultancy & Other Services under Sec 2(2)(iv).",
+            "trap": "NO audit practice can be done in corporate form. Only MCS. Member retains full-time COP. Name of MCS Company requires ICAI approval. If firm is stat auditor, MCS Company cannot accept internal audit/book-keeping/prohibited services for same entity."
+          }
+        }
+      ]
+    },
+    {
+      "id": "cross-refs",
+      "title": "Companies Act & Structure",
+      "emoji": "🏗️",
+      "cards": [
+        {
+          "id": "sec144-333",
+          "type": "mnemonic",
+          "tags": ["Sec 144 CA 2013"],
+          "front": "Sec 144 CA 2013 — 9 services prohibited (3-3-3 mnemonic)",
+          "back": {
+            "simplified": "Accounting-3: accounting/bookkeeping · internal audit · design of FIS. Investment-3: investment advisory · investment banking · management services. Rest-3: actuarial · outsourced financial · others prescribed.",
+            "trap": "Applies to company + holding + subsidiary of the auditee."
+          }
+        },
+        {
+          "id": "structure-mnem",
+          "type": "mnemonic",
+          "tags": ["Structure"],
+          "front": "Schedule structure at a glance",
+          "back": {
+            "simplified": "First Sch = 4 Parts / 19 clauses (12+2+3+2). Second Sch = 3 Parts / 16 clauses (10+5+1). BoD → ₹1L/3m/reprimand. DC → ₹5L/permanent/reprimand. Appeal 90 days."
+          }
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "q-cl11-editor",
+      "prompt": "CA Ravi (in practice) becomes the editor of a professional journal titled 'Company Audit' published by a professional body. Comment on his professional ethics.",
+      "clauseRef": "Cl 11 Part I 1st Sch · Reg 190A",
+      "hints": [
+        "Editorship of a PROFESSIONAL journal is on the general-permission list under Reg 190A.",
+        "Contrast with editorship of a non-professional publication which needs specific approval."
+      ],
+      "modelAnswer": "Step 1 — CITE: The matter is governed by Clause (11) of Part I of the First Schedule to the CA Act, 1949, read with Regulation 190A of the CA Regulations, 1988.\n\nStep 2 — RULE: A CA in practice is deemed guilty of professional misconduct if he engages in any business or occupation other than the profession of Chartered Accountants unless permitted by the Council. Under Reg 190A the Council has issued (i) a General Permission list (activities allowed without specific approval) and (ii) a Specific Permission list (activities requiring prior Council permission). 'Editorship of a professional journal' falls squarely within the General Permission list.\n\nStep 3 — APPLY: CA Ravi has taken editorship of a professional journal ('Company Audit'). Since editorship of a professional journal is expressly covered by the General Permission list, no prior Council approval is required.\n\nStep 4 — CONCLUDE: Accordingly, CA Ravi is NOT guilty of professional misconduct under Clause (11) of Part I of the First Schedule to the CA Act, 1949.",
+      "markingPoints": [
+        "Correctly cites Clause (11) of Part I of the First Schedule",
+        "References Regulation 190A (general vs specific permission)",
+        "Identifies 'editorship of a professional journal' as being in the general permission list",
+        "Contrasts with editorship of a non-professional publication (would need specific permission)",
+        "Concludes: NOT guilty"
+      ]
+    },
+    {
+      "id": "q-cl8-govt-time",
+      "prompt": "CA Ms. Karuna receives a phone call on 30 September from a Government Company informing her that she has been appointed as its statutory auditor and the audited financials are needed by 5 October due to a parliamentary tabling deadline. She accepts on the phone and simultaneously sends a communication to the previous auditor by registered post the same day, but signs the audit report on 4 October — before the previous auditor's acknowledgement is received. Comment.",
+      "clauseRef": "Cl 8 Part I 1st Sch",
+      "hints": [
+        "Look at the exact wording of Cl 8 — communication must precede acceptance.",
+        "Consider Council's view on Government appointments with genuine time constraints."
+      ],
+      "modelAnswer": "Step 1 — CITE: The matter is governed by Clause (8) of Part I of the First Schedule to the CA Act, 1949.\n\nStep 2 — RULE: A CA in practice is deemed guilty if he accepts a position as auditor previously held by another CA without first communicating with him in writing. Acceptable modes include Registered Post A/D, delivery by hand with acknowledgement, registered email with acknowledgement, or UDIN generation. Council's view on Government appointments with genuine time constraints permits conditional acceptance, provided (a) communication is dispatched by an acceptable mode on the same day and (b) the outgoing auditor is given reasonable opportunity to respond.\n\nStep 3 — APPLY: CA Karuna dispatched the communication by Registered Post on the same day she accepted the appointment. The acceptance was conditional and driven by a genuine statutory time constraint (parliamentary tabling on 5 October). She has met the substance of Clause 8 through a prescribed mode of communication.\n\nStep 4 — CONCLUDE: In line with Council guidance and past ICAI decisions on similar Government cases, CA Karuna is NOT guilty of professional misconduct under Clause (8) of Part I of the First Schedule.",
+      "markingPoints": [
+        "Cites Clause (8) of Part I of the First Schedule",
+        "States 'communication must precede acceptance' and lists valid modes (registered post AD / hand w ack / registered email / UDIN)",
+        "Explains conditional acceptance rule for Govt appointments with genuine time constraints",
+        "Notes that Certificate of Posting alone would have been insufficient",
+        "Concludes: NOT guilty"
+      ]
+    },
+    {
+      "id": "q-cl2-mba-commission",
+      "prompt": "CA Om, a practising CA, agrees to pay a fixed 2.5% commission on all professional fees earned to Mr. Ravi, an MBA who introduces clients to him. Additionally, Om pays 5% of his firm's profit into a Treasury bond in the name of the firm. Comment.",
+      "clauseRef": "Cl 2 Part I 1st Sch · Reg 53A(3)",
+      "hints": [
+        "Reg 53A(3) lists 8 qualified persons — is MBA one of them?",
+        "Treasury bond in the name of the firm — is that 'paying a share of fees to a person'?"
+      ],
+      "modelAnswer": "Step 1 — CITE: Governed by Clause (2) of Part I of the First Schedule to the CA Act, 1949 read with Regulation 53A(3) of the CA Regulations, 1988.\n\nStep 2 — RULE: A CA in practice cannot pay or allow to pay directly or indirectly any share, commission or brokerage in fees or profits to any person, other than: a member of the Institute; a partner or retired partner; the legal representative of a deceased partner; a member of a prescribed body under Reg 53A(1); or a person with prescribed qualifications under Reg 53A(3). Reg 53A(3) prescribes 8 qualifications — CS, CMA, Actuary, B.E., B.Tech, B.Arch, LL.B and MBA.\n\nStep 3 — APPLY:\n(a) Payment of 2.5% commission to Mr. Ravi (MBA) — MBA IS one of the 8 qualified persons under Reg 53A(3). Therefore paying commission to an MBA is expressly permitted by the exception. CA Om is NOT guilty on this count.\n(b) Payment of 5% of firm's profit into a Treasury bond in the firm's name — This is not a payment to any 'person' at all; it is a deposit/investment in the firm's own name. Clause 2 is not attracted.\n\nStep 4 — CONCLUDE: CA Om is NOT guilty of professional misconduct under Clause (2) of Part I of the First Schedule on either count.",
+      "markingPoints": [
+        "Cites Clause 2 Part I First Schedule + Reg 53A(3)",
+        "Lists MBA within Reg 53A(3) qualified persons",
+        "Distinguishes commission (to a person) vs deposit into firm's own bond (no person paid)",
+        "Concludes: NOT guilty on both counts"
+      ]
+    },
+    {
+      "id": "q-cl10-itat-fee",
+      "prompt": "CA Kumar agrees to represent his client (not an audit client) before the ITAT for the higher of ₹5,00,000 or 10% of the tax relief secured. Discuss whether this arrangement is permissible.",
+      "clauseRef": "Cl 10 Part I 1st Sch · Reg 192",
+      "hints": [
+        "Reg 192 — R-L-C-F-V-N.",
+        "Is the client an audit client or a non-audit client?"
+      ],
+      "modelAnswer": "Step 1 — CITE: Governed by Clause (10) of Part I of the First Schedule to the CA Act, 1949 read with Regulation 192 of the CA Regulations, 1988.\n\nStep 2 — RULE: A CA in practice cannot charge fees based on a percentage of profits or contingent upon the findings or results of the employment, except as permitted by regulations. Reg 192 permits contingent/percentage fees in specified cases (mnemonic 'R-L-C-F-V-N') — including provision of non-assurance services to NON-audit clients.\n\nStep 3 — APPLY: The client is a NON-audit client. Representation before the ITAT is a non-assurance service. Charging the higher of ₹5,00,000 or 10% of tax relief secured is a fee arrangement contingent upon the results of the ITAT proceedings. Reg 192 expressly permits contingent fees for non-assurance services to non-audit clients.\n\nStep 4 — CONCLUDE: CA Kumar is NOT guilty of professional misconduct under Clause (10) of Part I of the First Schedule.",
+      "markingPoints": [
+        "Cites Clause 10 Part I First Sch + Reg 192",
+        "Mentions R-L-C-F-V-N or the non-assurance to non-audit client exception",
+        "Confirms the client is NON-audit — bringing the arrangement within Reg 192",
+        "Concludes: NOT guilty"
+      ]
+    },
+    {
+      "id": "q-cl4-engineer",
+      "prompt": "CA Suresh enters into partnership with Mr. Advait, an Engineer registered with the Institution of Engineers (India), to jointly provide project appraisal and technical due-diligence services. Comment on the ethical position.",
+      "clauseRef": "Cl 4 Part I 1st Sch · Reg 53B",
+      "hints": [
+        "Reg 53B lists 6 bodies for PARTNERSHIP.",
+        "Is Institution of Engineers on Reg 53B?"
+      ],
+      "modelAnswer": "Step 1 — CITE: Governed by Clause (4) of Part I of the First Schedule to the CA Act, 1949 read with Regulation 53B of the CA Regulations, 1988.\n\nStep 2 — RULE: A CA in practice cannot enter into partnership in or outside India with any person other than a CA in practice or a member of a professional body prescribed under Reg 53B. Reg 53B prescribes SIX bodies for partnership purposes: (i) CS (ICSI) (ii) CMA (ICMAI) (iii) Advocate (Bar Council) (iv) Engineer (Institution of Engineers) (v) Architect (IIA) (vi) Actuary.\n\nStep 3 — APPLY: Mr. Advait is a member of the Institution of Engineers (India), which is expressly listed at (iv) of Reg 53B. Therefore CA Suresh may lawfully enter into a partnership with him.\n\nStep 4 — CONCLUDE: CA Suresh is NOT guilty of professional misconduct under Clause (4) of Part I of the First Schedule.",
+      "markingPoints": [
+        "Cites Clause 4 Part I First Sch + Reg 53B",
+        "Lists the 6 prescribed bodies under Reg 53B including Institution of Engineers",
+        "Notes distinction: Engineer is in Reg 53B but NOT in Reg 53A(1)",
+        "Concludes: NOT guilty"
+      ]
+    },
+    {
+      "id": "q-taxaudit-2026",
+      "prompt": "For FY 2026-27, M/s JAZZ & Co (a firm of six partners, all full-time practising CAs) has signed 320 tax audit reports collectively. Compute the tax audit ceiling applicable and comment on whether the firm has complied with Council norms.",
+      "clauseRef": "CA (Limit on No. of Tax Audits) Guidelines, 2025 · CGG Ch VI (superseded 1.4.2026)",
+      "hints": [
+        "New 2025 Guidelines effective 1 April 2026 replace CGG Ch VI.",
+        "Ceiling remains 60 per member/partner.",
+        "44AD/44ADA/44AE are excluded."
+      ],
+      "modelAnswer": "Step 1 — CITE: Governed by the CA (Limit on No. of Tax Audits) Guidelines, 2025 (Notification dated 25 July 2025, effective 1 April 2026), which supersede Chapter VI of the Council General Guidelines, 2008. Contravention would attract Clause (1) of Part II of the Second Schedule (violation of a Council Guideline).\n\nStep 2 — RULE: For FY 2026-27 the specified number of tax audit assignments under Sec 44AB IT Act is SIXTY per member per FY. In case of a firm, the ceiling is 60 per partner. Tax audits under Sec 44AD, 44ADA and 44AE are EXCLUDED from this count. HO + branches of one assessee = ONE assignment. Revised TARs of the same assessee are not counted separately.\n\nStep 3 — APPLY: M/s JAZZ & Co has 6 full-time practising CA partners. Firm-wide ceiling = 6 × 60 = 360 tax audits for FY 2026-27. Actual signed = 320 (assumed to be Sec 44AB assignments only). 320 < 360, therefore the firm is within the aggregate ceiling.\n\nStep 4 — CONCLUDE: The firm is NOT in breach of the CA (Limit on No. of Tax Audits) Guidelines, 2025, and no partner would be guilty of professional misconduct under Clause (1) of Part II of the Second Schedule on this count — provided the 320 audits are Sec 44AB assignments and none are 44AD/44ADA/44AE (which are excluded from the count in any event).",
+      "markingPoints": [
+        "Correctly identifies the 2025 Guidelines as governing (not CGG Ch VI)",
+        "States ceiling: 60 per partner",
+        "Computes firm ceiling: 6 × 60 = 360",
+        "Notes 44AD/44ADA/44AE exclusion",
+        "Concludes within limit, not guilty"
+      ]
+    },
+    {
+      "id": "q-secondsch-cl7-8-9",
+      "prompt": "CA Bina, the statutory auditor of a listed company, issued an unmodified opinion on financial statements for FY 2025-26. Inventory of ₹15 crores (material to the FS) was not physically verified — she was appointed after the balance sheet date and did not attempt alternative procedures. There was also no audit documentation of related-party procedures despite ~90% of sales being to a single party historically identified as related. Discuss.",
+      "clauseRef": "Cl 7, 8, 9 Part I 2nd Sch · SA 501, SA 550, SA 705",
+      "hints": [
+        "SA 501 — alternative procedures when physical verification is impracticable.",
+        "SA 550 — related-party procedures and professional skepticism.",
+        "Cl 7 (gross negligence), Cl 8 (insufficient info), Cl 9 (material departure) travel together in NFRA cases."
+      ],
+      "modelAnswer": "Step 1 — CITE: Governed by Clauses (7), (8) and (9) of Part I of the Second Schedule to the CA Act, 1949, read with SA 501 (Audit Evidence — Specific Considerations for Selected Items), SA 550 (Related Parties) and SA 705(Revised) (Modifications to the Opinion).\n\nStep 2 — RULE: A CA in practice is guilty of professional misconduct if (Cl 7) he does not exercise due diligence or is grossly negligent; (Cl 8) he fails to obtain sufficient information necessary for expression of opinion, or its exceptions are sufficiently material to negate the opinion; (Cl 9) he fails to invite attention to any material departure from the generally accepted procedure of audit. Under SA 501, when inventory is material, the auditor shall attend the physical count OR, if impracticable, perform alternative audit procedures; if neither is possible, modify the opinion. Under SA 550, the auditor must obtain sufficient appropriate evidence about related-party relationships and transactions.\n\nStep 3 — APPLY: Inventory of ₹15 crores (material) was neither physically verified nor covered by alternative procedures, and no documentation supports the auditor's file — a direct SA 501 breach coupled with an unmodified opinion. On related parties, ~90% concentration with a historically related party and no documented procedures shows a failure of professional skepticism under SA 550. Yet an unmodified opinion was issued, so material departures were not brought to the reader's attention.\n\nStep 4 — CONCLUDE: CA Bina is guilty of professional misconduct under Clauses (7), (8) and (9) of Part I of the Second Schedule to the CA Act, 1949. The matter would be referred to the Disciplinary Committee (Sec 21B), with maximum fine ₹5,00,000 and/or permanent removal of name. Appeal lies to the Appellate Authority within 90 days under Sec 22G. If the company falls within NFRA's ambit (Sec 132 CA 2013), NFRA has parallel disciplinary jurisdiction and may debar the auditor from company audits for a specified period.",
+      "markingPoints": [
+        "Cites Cl 7, 8 and 9 of Part I of Second Sch (all three)",
+        "Cross-references SA 501, SA 550 and SA 705(Revised)",
+        "Explains failure of alternative procedures for inventory",
+        "Notes SA 550 related-party skepticism failure",
+        "Mentions DC forum, ₹5L / permanent removal, 90-day appeal",
+        "Notes NFRA parallel jurisdiction for listed companies"
+      ]
+    },
+    {
+      "id": "q-noclar-vs-sa250",
+      "prompt": "Distinguish between SA 250 and NOCLAR (Response to Non-Compliance with Laws and Regulations). Bring out at least four differences.",
+      "clauseRef": "Code of Ethics · SA 250",
+      "hints": [
+        "Applicability of each.",
+        "What each focuses on.",
+        "Treatment of stakeholders.",
+        "Position on disclosure."
+      ],
+      "modelAnswer": "SA 250 and NOCLAR are related but distinct frameworks.\n\n(i) APPLICABILITY: SA 250 applies to AUDIT engagements only. NOCLAR applies to both members in PRACTICE and members in SERVICE (with the Indian carve-out that NOCLAR provisions are effective only for audits of listed entities and for employees of listed entities).\n\n(ii) FOCUS: SA 250 addresses (a) laws having a direct effect on the determination of material amounts and disclosures in FS and (b) other laws having a fundamental effect on operations. NOCLAR focuses on acts of non-compliance (omission or commission) which may cause SUBSTANTIAL HARM to investors, creditors, employees or the general public.\n\n(iii) STAKEHOLDERS: SA 250 does not identify stakeholders as a distinct concept. NOCLAR expressly recognises stakeholders and drives the response by reference to potential harm to them.\n\n(iv) DISCLOSURE: SA 250 does not specifically provide for disclosure of non-compliance beyond communication with TCWG and, in specified cases, regulators. NOCLAR expressly PERMITS disclosure of non-compliance to an appropriate authority when necessary to prevent or mitigate substantial harm, notwithstanding the fundamental principle of confidentiality.\n\nAccordingly, SA 250 and NOCLAR are NOT the same — NOCLAR has a wider ambit and a distinct disclosure carve-out.",
+      "markingPoints": [
+        "States both are distinct frameworks",
+        "Correctly gives applicability difference (audit-only vs practice+service)",
+        "Correctly gives focus difference (FS effect vs substantial harm)",
+        "Notes stakeholder concept in NOCLAR",
+        "Notes disclosure permission carve-out in NOCLAR",
+        "Concludes SA 250 ≠ NOCLAR"
+      ]
+    },
+    {
+      "id": "q-confidential-114",
+      "prompt": "State the circumstances in which a Chartered Accountant is permitted to disclose confidential information about his client. Refer sub-section 114 of the Code of Ethics.",
+      "clauseRef": "Code of Ethics, Sub-section 114",
+      "hints": [
+        "Two broad heads: required/permitted by law, OR professional duty/right.",
+        "Give examples under each head."
+      ],
+      "modelAnswer": "Sub-section 114 of the Code of Ethics recognises confidentiality as a fundamental principle and requires the member to respect the confidentiality of information acquired as a result of professional and business relationships, both DURING the relationship and AFTER it ends. However, disclosure of confidential information IS permitted in the following circumstances:\n\n(A) Where required or permitted by law — for example: (i) production of documents or other provision of evidence in the course of legal proceedings; (ii) disclosure to public authorities of infringements of law that come to light (e.g. fraud reporting under Sec 143(12) CA 2013).\n\n(B) Where there is a professional duty or right to disclose, when not prohibited by law — for example: (i) to comply with quality review of the ICAI or other regulatory bodies; (ii) to respond to an inquiry or investigation by the ICAI or a regulator; (iii) to protect the member's professional interests in legal proceedings (defence against a complaint); (iv) to comply with technical and professional standards, including ethics requirements.\n\nEven where disclosure is permitted, the member must consider (a) whether the interests of any party could be harmed; (b) whether all relevant information is known and substantiated; (c) the type of communication and to whom addressed; and (d) whether the intended recipient is appropriate.",
+      "markingPoints": [
+        "States confidentiality duty continues after the relationship ends",
+        "Groups into two heads: required/permitted by law + professional duty/right",
+        "Gives 2+ examples under each head",
+        "Notes overriding considerations (harm, substantiation, appropriate recipient) before disclosure"
+      ]
+    },
+    {
+      "id": "q-disciplinary-forum",
+      "prompt": "A complaint has been filed against CA X alleging (a) failure to communicate with the previous auditor before accepting a company audit and (b) gross negligence in the conduct of that audit. State which authority within ICAI would hear this matter, the maximum penalty each authority can impose, and the time-limit for appeal.",
+      "clauseRef": "Sec 21A · Sec 21B · Sec 22G",
+      "hints": [
+        "Cl 8 is in First Schedule; gross negligence is Cl 7 Part I of Second Schedule.",
+        "Where both Schedules are involved, which forum takes the matter?"
+      ],
+      "modelAnswer": "The allegations engage both Schedules: (a) failure to communicate with the previous auditor falls under Clause (8) of Part I of the First Schedule, and (b) gross negligence in audit conduct falls under Clause (7) of Part I of the Second Schedule.\n\nJurisdiction: Under Sec 21 the Director (Discipline) forms a prima facie opinion. Where the complaint is only under the First Schedule, the matter is referred to the Board of Discipline (Sec 21A). Where the complaint is under the Second Schedule or under BOTH Schedules, the matter goes to the Disciplinary Committee (Sec 21B). Here, since both Schedules are engaged, the Disciplinary Committee is the appropriate forum.\n\nMaximum penalty by the Disciplinary Committee under Sec 21B(3): (i) reprimand; OR (ii) permanent removal of name from the Register; OR (iii) monetary penalty up to ₹5,00,000; OR any combination.\n\nAppeal: Under Sec 22G, an appeal lies to the Appellate Authority within 90 DAYS from the date of the order. The Appellate Authority may confirm, modify, set aside, remit or enhance the order.\n\nThe Board of Discipline (Sec 21A) is not the forum here; its powers (max ₹1,00,000 / removal up to 3 months / reprimand) apply only to First-Schedule-only matters.",
+      "markingPoints": [
+        "Identifies Cl 8 Part I First Sch and Cl 7 Part I Second Sch",
+        "Concludes DC forum because both Schedules are engaged",
+        "Correctly states DC powers: ₹5L / permanent removal / reprimand",
+        "Correctly states 90-day appeal to Appellate Authority under Sec 22G",
+        "Contrasts with BoD powers to show why BoD is not the forum"
+      ]
+    }
+  ]
+}

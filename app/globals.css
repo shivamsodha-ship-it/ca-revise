@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { background:#eef2f7; }
+body { font-family: 'Kalam', cursive; color:#1a2f5c; -webkit-tap-highlight-color: transparent; }
+
+/* Lined paper */
+.paper {
+  background:#fefdf6;
+  background-image: repeating-linear-gradient(#fefdf6 0px, #fefdf6 30px, #d9e6f0 30px, #d9e6f0 31px);
+  position:relative;
+}
+.paper::before {
+  content:''; position:absolute; left:56px; top:0; bottom:0; width:2px;
+  background:#f5b7b1; opacity:0.4;
+}
+.paper-inner { padding: 20px 20px 20px 22px; }
+
+/* Highlights */
+.hl-y { background: linear-gradient(180deg, transparent 55%, #fff59d 55%); padding: 0 3px; }
+.hl-p { background: linear-gradient(180deg, transparent 55%, #f8bbd0 55%); padding: 0 3px; }
+.hl-g { background: linear-gradient(180deg, transparent 55%, #c8e6c9 55%); padding: 0 3px; }
+.hl-b { background: linear-gradient(180deg, transparent 55%, #bbdefb 55%); padding: 0 3px; }
+
+/* Sticky notes */
+.trap {
+  background:#fdebd0; border-left:5px solid #d68910; padding:6px 10px 6px 32px;
+  border-radius:4px; margin:6px 0; position:relative; font-size:13px; line-height:19px;
+}
+.trap::before { content:'⚠️'; position:absolute; left:6px; top:5px; font-size:14px; }
+.info { background:#eaf2f8; border-left:5px solid #2874a6; padding:6px 10px; border-radius:4px; margin:6px 0; font-size:13px; }
+.rule { background:#fff; padding:8px 12px; border-left:4px solid #34495e; border-radius:4px; margin:6px 0; font-size:13px; line-height:19px; }
+.exc  { background:#eafaf1; padding:6px 10px; border-radius:4px; font-size:13px; line-height:19px; margin:6px 0; }
+.case { background:#e8daef; border-left:4px solid #8e44ad; padding:5px 9px; border-radius:4px; margin:5px 0; font-size:12px; line-height:18px; }
+
+/* Flip card */
+.flip { perspective: 1200px; }
+.flip-inner { position:relative; width:100%; transform-style: preserve-3d; transition: transform 0.55s; }
+.flip.on .flip-inner { transform: rotateY(180deg); }
+.flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-back { position:absolute; inset:0; transform: rotateY(180deg); overflow:auto; }
+
+/* Buttons */
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:10px 14px; border-radius:10px; font-family:'Caveat', cursive; font-weight:700; font-size:17px; border:2px solid transparent; cursor:pointer; transition: transform 0.1s ease, box-shadow 0.15s ease; }
+.btn:active { transform: scale(0.97); }
+.btn-primary { background:#c0392b; color:#fff; }
+.btn-primary:hover { background:#a93226; }
+.btn-ghost { background:#fff; color:#1a2f5c; border-color:#d5d8dc; }
+.btn-ghost:hover { background:#f4f6f7; }
+.btn-good { background:#27ae60; color:#fff; }
+.btn-hard { background:#e67e22; color:#fff; }
+.btn-again { background:#c0392b; color:#fff; }
+.btn-easy { background:#2874a6; color:#fff; }
+
+/* Chip / badge */
+.chip { display:inline-block; padding:2px 8px; border-radius:12px; font-family:'Caveat', cursive; font-weight:700; font-size:12px; }
+
+/* Scrollbar tweaks for iOS */
+.no-scroll-bar::-webkit-scrollbar { display:none; }
+.no-scroll-bar { -ms-overflow-style: none; scrollbar-width: none; }

@@ -35,7 +35,7 @@ export default function FlipView() {
   return (
     <div className="drill">
       <div className="dtop">
-        <div><p className="eyebrow" style={{ margin: 0 }}>Flip Cards</p><h2 style={{ fontSize: '1.4rem' }}>Recall first, then rate yourself</h2></div>
+        <div><p className="eyebrow">Flip cards</p><h1 className="vh">Recall first, then rate yourself</h1></div>
         <div className="score"><span>{Math.min(idx + 1, order.length)} / {order.length}</span></div>
       </div>
       <div className="seg scroll" style={{ marginBottom: 12 }}>
@@ -53,7 +53,7 @@ export default function FlipView() {
           <button className="btn pri" onClick={() => build(filter)}>Go again</button>
         </div>
       ) : <>
-        <div className={'flip' + (flipped ? ' on' : '')} onClick={() => setFlipped(f => !f)}>
+        <div className={'flip' + (flipped ? ' on' : '')} role="button" tabIndex={0} aria-pressed={flipped} aria-label={flipped ? 'Card answer. Press to see the question' : 'Card question. Press to reveal the answer'} onClick={() => setFlipped(f => !f)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFlipped(f => !f); } }}>
           <div className="flip-inner">
             <div className="flip-face flip-front card">
               <div className="chead"><span className="src">{card.type}</span>{card.tags?.slice(0, 3).map(t => <span key={t} className="chip">{t}</span>)}</div>
@@ -75,9 +75,9 @@ export default function FlipView() {
         </div>
         {flipped ? (
           <div className="grades">
-            <button className="vb g" onClick={() => grade(0)}>Again<small>forgot</small></button>
-            <button className="vb p" onClick={() => grade(3)}>Hard<small>shaky</small></button>
-            <button className="vb n" onClick={() => grade(4)}>Good<small>got it</small></button>
+            <button className="vb bad" onClick={() => grade(0)}>Again<small>forgot</small></button>
+            <button className="vb mixed" onClick={() => grade(3)}>Hard<small>shaky</small></button>
+            <button className="vb good" onClick={() => grade(4)}>Good<small>got it</small></button>
             <button className="vb" onClick={() => grade(5)}>Easy<small>instant</small></button>
           </div>
         ) : (

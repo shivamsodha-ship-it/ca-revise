@@ -15,13 +15,11 @@ export default function NotesView() {
 
   return (
     <div className="hand">
-      <div className="sec-h" style={{ marginTop: 0 }}>
-        <div>
-          <p className="eyebrow" style={{ margin: 0, fontFamily: 'var(--sans)' }}>Notes</p>
-          <h2 className="h-head" style={{ fontSize: '2.2rem', color: '#c0392b', fontFamily: 'Caveat, cursive' }}>{ch.title}: my notes</h2>
-        </div>
-        <span className="h-note" style={{ fontSize: 16, opacity: .8 }}>{ch.sections.length} sections · tap to open</span>
-      </div>
+      <header className="vhead">
+        <p className="eyebrow">Notes</p>
+        <h1 className="h-title">{ch.title}: my notes</h1>
+        <p className="h-note">{ch.sections.length} sections · tap one to open it</p>
+      </header>
 
       <div className="notes-list">
         {ch.sections.map(sec => (

@@ -1,25 +1,15 @@
-'use client';
-import Link from 'next/link';
-import { useChapter } from '@/components/ChapterShell';
-import DrillView from '@/components/views/DrillView';
-import HuntView from '@/components/views/HuntView';
-import McqView from '@/components/views/McqView';
-import LibraryView from '@/components/views/LibraryView';
-import CheatView from '@/components/views/CheatView';
-import NotesView from '@/components/views/NotesView';
-import FlipView from '@/components/views/FlipView';
-import PracticeView from '@/components/views/PracticeView';
+import { notFound } from 'next/navigation';
+import { listChapters } from '@/lib/registry';
+import ViewSwitch from '@/components/ViewSwitch';
 
-const CASEBOOK_VIEWS: Record<string, () => JSX.Element | null> = {
-  drill: DrillView, hunt: HuntView, mcq: McqView, library: LibraryView, cheat: CheatView,
-};
-const CORE_VIEWS: Record<string, () => JSX.Element | null> = {
-  notes: NotesView, read: NotesView, flip: FlipView, practice: PracticeView,
-};
+const VIEWS = ['drill', 'hunt', 'mcq', 'library', 'cheat', 'notes', 'read', 'flip', 'practice'];
+
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return listChapters().flatMap(r => VIEWS.map(view => ({ subject: r.subject, chapter: r.id, view })));
+}
 
 export default function ViewPage({ params }: { params: { view: string } }) {
-  const { cb, base } = useChapter();
-  const V = CORE_VIEWS[params.view] ?? (cb ? CASEBOOK_VIEWS[params.view] : undefined);
-  if (!V) return <div className="card empty">This chapter has no “{params.view}” section. <Link href={base}>Back to chapter</Link></div>;
-  return <V />;
+  if (!VIEWS.includes(params.view)) notFound();
+  return <ViewSwitch view={params.view} />;
 }

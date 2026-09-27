@@ -1,14 +1,24 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ChapterList from '@/components/ChapterList';
-import type { Subject } from '@/lib/types';
+import { SUBJECTS, subjectOf } from '@/lib/registry';
+
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return SUBJECTS.map(s => ({ subject: s.id }));
+}
 
 export default function SubjectPage({ params }: { params: { subject: string } }) {
-  if (!['aaa', 'fr', 'afm'].includes(params.subject)) notFound();
+  const s = subjectOf(params.subject);
+  if (!s) notFound();
   return (
     <>
-      <header className="bar"><div className="wrap"><Link href="/" className="crumb">‹ All subjects</Link><Link href="/" className="brand"><span className="seal">CA</span><span>CA Revise</span></Link></div></header>
-      <main className="wrap"><ChapterList only={params.subject as Subject} /></main>
+      <header className="topbar"><div className="topbar-in">
+        <Link href="/" className="brand"><span className="seal">CA</span><span className="brand-t">CA Revise</span></Link>
+        <span className="crumb-sep" aria-hidden="true">/</span>
+        <span className="chapter-name">{s.label}</span>
+      </div></header>
+      <main className="page"><h1 className="sr">{s.label}: {s.long}</h1><ChapterList only={s.id} /></main>
     </>
   );
 }

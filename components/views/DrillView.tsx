@@ -1,13 +1,13 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
-import { KINDS, VKEY, stripTags } from '@/lib/casebook';
+import { cap, toneOf, stripTags } from '@/lib/casebook';
 
 // Filters survive switching tabs, like the artifact's module-level DR.
 const DR = { kind: 'all', status: 'all', clause: null as string | null, list: false, handled: 0 };
 
 export default function DrillView() {
-  const { cb, P, Q, S, record, toast, drillReq } = useChapter();
+  const { cb, meta, P, Q, S, record, toast, drillReq } = useChapter();
   const [kind, setKind] = useState(DR.kind);
   const [status, setStatus] = useState(DR.status);
   const [clause, setClause] = useState<string | null>(DR.clause);
@@ -45,12 +45,14 @@ export default function DrillView() {
     if (focus) { setI(Math.max(0, pool.indexOf(focus))); setFocus(null); }
   }, [focus, pool]);
 
-  if (!cb) return null;
+  if (!cb || !meta) return null;
 
   const setFilter = (fn: () => void) => { fn(); setI(0); setAnswered({}); };
   const q = pool.length ? Q[pool[Math.min(i, pool.length - 1)]] : null;
   const done = q ? answered[q.id] : undefined;
-  const hasV = q ? q.v in VKEY : false;
+  const tone = q ? toneOf(meta, q.v) : null;
+  const noun = meta.caseNoun;
+  const kinds: [string, string][] = [['all', 'All'], ...meta.sources];
 
   const pick = (v: string) => { if (!q) return; const ok = v === q.v; setAnswered(a => ({ ...a, [q.id]: { pick: v, ok } })); record(q.id, ok); };
   const selfMark = (ok: boolean) => { if (!q) return; setAnswered(a => ({ ...a, [q.id]: { ...a[q.id], self: ok } })); record(q.id, ok); };
@@ -58,42 +60,41 @@ export default function DrillView() {
   const t = search.toLowerCase();
   return (
     <div className="drill">
+      <h1 className="sr">{cap(noun)} drill</h1>
       <div className="dtop">
-        <div className="seg">{KINDS.map(([k, l]) => <button key={k} className={kind === k ? 'on' : ''} onClick={() => setFilter(() => { setKind(k); setClause(null); })}>{l}</button>)}</div>
-        <div className="seg">{[['all', 'All'], ['new', 'New'], ['missed', 'Missed']].map(([k, l]) => <button key={k} className={status === k ? 'on' : ''} onClick={() => setFilter(() => setStatus(k))}>{l}</button>)}</div>
+        <div className="seg scroll" role="group" aria-label="Source">{kinds.map(([k, l]) => <button key={k} className={kind === k ? 'on' : ''} aria-pressed={kind === k} onClick={() => setFilter(() => { setKind(k); setClause(null); })}>{l}</button>)}</div>
+        <div className="seg" role="group" aria-label="Status">{[['all', 'All'], ['new', 'New'], ['missed', 'Missed']].map(([k, l]) => <button key={k} className={status === k ? 'on' : ''} aria-pressed={status === k} onClick={() => setFilter(() => setStatus(k))}>{l}</button>)}</div>
       </div>
       {clause && P[clause] && (
-        <p className="muted" style={{ margin: '0 0 10px' }}>Drilling <button className="chip" data-p={clause}>{P[clause].label}</button> · <button className="chip" onClick={() => setFilter(() => setClause(null))}>Show all clauses</button></p>
+        <p className="muted" style={{ margin: '0 0 10px' }}>Drilling <button className="chip" data-p={clause}>{P[clause].label}</button> · <button className="chip" onClick={() => setFilter(() => setClause(null))}>Show all {meta.provisionNoun}s</button></p>
       )}
       <div className="track"><i style={{ width: pool.length ? ((i + 1) / pool.length * 100) + '%' : '0' }} /></div>
 
       {!q ? (
-        <div className="card empty">No cases match this filter. {status === 'missed' ? 'You have no missed cases here.' : ''}</div>
+        <div className="card empty">No {noun}s match this filter.{status === 'missed' ? ` You have no missed ${noun}s here.` : ''}</div>
       ) : (
         <article className="card case">
           <div className="chead"><span className="qid">{q.id}</span><span className={'src ' + q.k}>{q.src}</span><span className="count">{i + 1} / {pool.length}</span></div>
           <div className="facts" dangerouslySetInnerHTML={{ __html: q.q }} />
-          {!done ? (hasV ? <>
+          {!done ? (tone ? <>
             <p className="ask">Your ruling?</p>
-            <div className="vbtns">
-              <button className="vb g" onClick={() => pick('Guilty')}>Guilty<small>misconduct</small></button>
-              <button className="vb n" onClick={() => pick('Not guilty')}>Not guilty<small>no breach</small></button>
-              <button className="vb p" onClick={() => pick('Partly')}>Partly<small>some yes, some no</small></button>
+            <div className="vbtns" style={{ gridTemplateColumns: `repeat(${meta.verdicts.length}, minmax(0, 1fr))` }}>
+              {meta.verdicts.map(v => <button key={v.label} className={'vb ' + v.tone} onClick={() => pick(v.label)}>{v.label}{v.hint && <small>{v.hint}</small>}</button>)}
             </div>
           </> : <>
             <p className="ask">Frame your answer in your head, then check it.</p>
             <button className="btn pri" onClick={() => setAnswered(a => ({ ...a, [q.id]: {} }))}>Reveal model answer</button>
           </>) : <>
-            {hasV && <>
-              <div className={'stamp ' + VKEY[q.v]}>{q.v.toUpperCase()}</div>
-              <div className={'fb ' + (done.ok ? 'right' : 'wrong')}>{done.ok ? 'Correct ruling.' : `You said ${done.pick}. The correct ruling is ${q.v}.`}</div>
+            {tone && <>
+              <div className={'stamp ' + tone} aria-hidden="true">{q.v.toUpperCase()}</div>
+              <div className={'fb ' + (done.ok ? 'right' : 'wrong')} role="status">{done.ok ? 'Correct ruling.' : `You said ${done.pick}. The correct ruling is ${q.v}.`}</div>
             </>}
             <div className="answer">
               <div dangerouslySetInnerHTML={{ __html: q.a ?? '' }} />
               {q.trap && <div className="trap"><b>Examiner&apos;s trap</b><span dangerouslySetInnerHTML={{ __html: q.trap }} /></div>}
             </div>
             <p className="links"><span>Decided by</span>{q.links.map(l => P[l] && <button key={l} className="chip" data-p={l}>{P[l].label}</button>)}</p>
-            {!hasV && done.self === undefined && (
+            {!tone && done.self === undefined && (
               <div className="self"><button className="btn" onClick={() => selfMark(true)}>✓ I had it</button><button className="btn" onClick={() => selfMark(false)}>✗ I missed points</button></div>
             )}
           </>}
@@ -101,13 +102,13 @@ export default function DrillView() {
       )}
 
       <div className="nav">
-        <button className="btn" onClick={() => setI(x => Math.max(0, x - 1))}>← Previous</button>
+        <button className="btn" disabled={i === 0} onClick={() => setI(x => Math.max(0, x - 1))}>← Previous</button>
         <button className="btn" onClick={() => setList(l => !l)}>{list ? 'Hide list' : 'Browse all'}</button>
-        <button className="btn pri" onClick={() => { if (i < pool.length - 1) { setI(i + 1); window.scrollTo(0, 0); } else toast('End of this set. Change the filter for more.'); }}>Next case →</button>
+        <button className="btn pri" onClick={() => { if (i < pool.length - 1) { setI(i + 1); window.scrollTo(0, 0); } else toast(`End of this set. Change the filter for more ${noun}s.`); }}>Next {noun} →</button>
       </div>
 
       {list && <>
-        <input className="search" placeholder="Search facts, names or clauses…" style={{ marginTop: 18 }} value={search} onChange={e => setSearch(e.target.value)} />
+        <input className="search" placeholder={`Search facts, names or ${meta.provisionNoun}s…`} aria-label={`Search ${noun}s`} style={{ marginTop: 18 }} value={search} onChange={e => setSearch(e.target.value)} />
         <div className="list">
           {pool.map((id, ix) => {
             const qq = Q[id]; const txt = stripTags(qq.q);

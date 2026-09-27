@@ -33,7 +33,7 @@ export default function PracticeView() {
   return (
     <div className="drill">
       <div className="dtop">
-        <div><p className="eyebrow" style={{ margin: 0 }}>Practice</p><h2 style={{ fontSize: '1.4rem' }}>Write the full answer. Then mark it.</h2></div>
+        <div><p className="eyebrow">Written practice</p><h1 className="vh">Write the full answer. Then mark it.</h1></div>
         <div className="score"><span>{idx + 1} / {ch.practice.length}</span></div>
       </div>
       <div className="track"><i style={{ width: ((idx + 1) / ch.practice.length * 100) + '%' }} /></div>
@@ -42,7 +42,7 @@ export default function PracticeView() {
         <div className="chead">
           <span className="qid">Q{idx + 1}</span>
           {q.clauseRef && <span className="src">{q.clauseRef}</span>}
-          {last && <span className={'src ' + (last === 'correct' ? 'pyq' : last === 'partial' ? 'mcq' : 'rtp')}>Last time: {last}</span>}
+          {last && <span className={'src tone-' + (last === 'correct' ? 'good' : last === 'partial' ? 'mixed' : 'bad')}>Last time: {last}</span>}
         </div>
         <div className="facts"><p>{q.prompt}</p></div>
         {q.hints && q.hints.length > 0 && <>
@@ -52,7 +52,7 @@ export default function PracticeView() {
       </article>
 
       <div style={{ marginTop: 14 }}>
-        <textarea className="answerbox" value={answer} onChange={e => setAnswer(e.target.value)}
+        <textarea className="answerbox" aria-label="Your answer" value={answer} onChange={e => setAnswer(e.target.value)}
           placeholder="Provision → Rule and regulation → Apply to the facts → Conclude" />
         <p className="muted" style={{ margin: '4px 2px 0', fontSize: 12.5 }}>{words} words</p>
       </div>
@@ -67,9 +67,9 @@ export default function PracticeView() {
           <ul className="mpoints">{q.markingPoints.map((m, i) => <li key={i}><label><input type="checkbox" /> <span>{m}</span></label></li>)}</ul>
         </article>
         <div className="vbtns" style={{ marginTop: 14 }}>
-          <button className="vb g" onClick={() => mark('wrong')}>Wrong</button>
-          <button className="vb p" onClick={() => mark('partial')}>Partial</button>
-          <button className="vb n" onClick={() => mark('correct')}>Correct</button>
+          <button className="vb bad" onClick={() => mark('wrong')}>Wrong</button>
+          <button className="vb mixed" onClick={() => mark('partial')}>Partial</button>
+          <button className="vb good" onClick={() => mark('correct')}>Correct</button>
         </div>
       </>}
 

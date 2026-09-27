@@ -1,28 +1,47 @@
 import Link from 'next/link';
-import { allSubjects, listChapters } from '@/lib/registry';
+import { SUBJECTS, countChapter, listChapters } from '@/lib/registry';
+import { plural } from '@/lib/casebook';
 import type { Subject } from '@/lib/types';
 
-export default function ChapterList({ only }: { only?: Subject }) {
-  const subjects = allSubjects().filter(s => !only || s.id === only);
+// Server component: counts come from each chapter's data files at build time.
+export default async function ChapterList({ only }: { only?: Subject }) {
+  const subjects = SUBJECTS.filter(s => !only || s.id === only);
+  const rows = await Promise.all(subjects.map(async s => {
+    const chapters = listChapters(s.id);
+    return { s, chapters: await Promise.all(chapters.map(async c => ({ c, n: await countChapter(c) }))) };
+  }));
+  // Subjects with chapters first; empty ones collapse to a single line at the end.
+  rows.sort((a, b) => Number(b.chapters.length > 0) - Number(a.chapters.length > 0));
   return (
     <>
-      {subjects.map(s => {
-        const chapters = listChapters(s.id);
-        return (
-          <section key={s.id} className="subj">
-            <h2>{s.label} <span className="muted" style={{ fontFamily: 'var(--sans)', fontWeight: 500, fontSize: 14 }}>{s.long}</span></h2>
-            {chapters.length === 0
-              ? <p className="muted">No chapters yet. Add one under <code>data/{s.id}/</code> and register it in <code>lib/registry.ts</code>.</p>
-              : <div className="tiles" style={{ marginTop: 10 }}>{chapters.map(c => (
-                  <Link key={c.id} href={`/${s.id}/${c.id}`} className="tile">
-                    <span className="code">{s.label} · Ch {c.number}</span>
-                    <span className="t">{c.title}</span>
-                    <span className="meta">{c.summary}</span>
+      {rows.map(({ s, chapters }) => (
+        <section key={s.id} id={s.id} className={'subj' + (chapters.length ? '' : ' empty-subj')}>
+          <div className="subj-h">
+            <h2><Link href={`/${s.id}`}>{s.label}</Link></h2>
+            <span className="subj-long">{s.long}</span>
+            <span className="subj-n">{chapters.length ? plural(chapters.length, 'chapter') : 'No chapters yet'}</span>
+          </div>
+          {chapters.length > 0 && <ol className="chlist">{chapters.map(({ c, n }) => (
+                <li key={c.id}>
+                  <Link href={`/${s.id}/${c.id}`} className="chrow">
+                    <span className="chnum">{String(c.number).padStart(2, '0')}</span>
+                    <span className="chbody">
+                      <span className="chtitle">{c.title}</span>
+                      <span className="chsum">{c.summary}</span>
+                      <span className="chmeta">
+                        {n.cases > 0 && <span>{plural(n.cases, 'case')}</span>}
+                        {n.mcqs > 0 && <span>{n.mcqs} MCQs</span>}
+                        {n.provisions > 0 && <span>{plural(n.provisions, 'provision')}</span>}
+                        <span>{plural(n.cards, 'card')}</span>
+                        {n.written > 0 && <span>{n.written} written</span>}
+                      </span>
+                    </span>
+                    <span className="chgo" aria-hidden="true">→</span>
                   </Link>
-                ))}</div>}
-          </section>
-        );
-      })}
+                </li>
+              ))}</ol>}
+        </section>
+      ))}
     </>
   );
 }

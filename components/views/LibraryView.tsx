@@ -3,12 +3,13 @@ import { useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { stripTags } from '@/lib/casebook';
 
-const GCOL = ['#2446e0', '#0f7a5a', '#b8233f', '#d2531f', '#6b35cf', '#a1339e', '#1a5f8f', '#b56f00', '#5a6680'];
+// Group markers cycle through the theme's accent tokens.
+const GCOL = ['var(--blue)', 'var(--n)', 'var(--g)', 'var(--p)', 'var(--u)', 'var(--sun)', 'var(--muted)'];
 
 export default function LibraryView() {
-  const { cb, provStats } = useChapter();
+  const { cb, meta, provStats } = useChapter();
   const [t, setT] = useState('');
-  if (!cb) return null;
+  if (!cb || !meta) return null;
   const q = t.toLowerCase();
 
   const groups = cb.groups.map(([key, name], gi) => {
@@ -23,7 +24,7 @@ export default function LibraryView() {
             <button key={p.id} className={'tile' + (p.upd ? ' u' : '')} data-p={p.id}>
               <span className="code">{p.label}{p.upd && <> <span className="badge-u">note</span></>}</span>
               <span className="t">{p.short}</span>
-              <span className="meta"><span className="mini"><i className="ok" style={{ width: okw + '%' }} /><i className="no" style={{ width: now + '%' }} /></span>{s.n} Qs</span>
+              <span className="meta"><span className="mini" aria-hidden="true"><i className="ok" style={{ width: okw + '%' }} /><i className="no" style={{ width: now + '%' }} /></span>{s.n} Qs</span>
             </button>
           );
         })}</div>
@@ -33,8 +34,8 @@ export default function LibraryView() {
 
   return (
     <>
-      <div className="sec-h" style={{ marginTop: 0 }}><div><p className="eyebrow" style={{ margin: 0 }}>Law Library</p><h2 style={{ fontSize: '1.6rem' }}>Every provision, one tap away</h2></div></div>
-      <input className="search" placeholder="Search: website, goodwill, 182 days, substantial interest…" value={t} onChange={e => setT(e.target.value)} />
+      <header className="vhead"><p className="eyebrow">Law library</p><h1 className="vh">Every {meta.provisionNoun}, one tap away</h1><p className="muted">{cb.P.length} {meta.provisionNoun}s in {cb.groups.length} groups. The bar under each shows your right and wrong answers.</p></header>
+      <input className="search" type="search" placeholder={`Search ${meta.provisionNoun}s, facts or numbers…`} aria-label="Search the law library" value={t} onChange={e => setT(e.target.value)} />
       {groups.length ? groups : <p className="empty">No provision matches.</p>}
     </>
   );

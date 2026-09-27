@@ -1,15 +1,13 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useChapter } from '@/components/ChapterShell';
-import { VKEY, shuffle, type Casebook } from '@/lib/casebook';
+import { cap, huntPool, shuffle, toneOf, type Casebook } from '@/lib/casebook';
 
 interface Round { q: string; right: string; opts: string[]; pick: string | null }
 
-const CLAUSEY_RE = /^(fs|ss|g-|s2|s6|s7|s8|s27|kyc|web|adv|noclar)/;
-
 function newGame(cb: Casebook): Round[] {
-  const clausey = cb.P.filter(p => CLAUSEY_RE.test(p.id)).map(p => p.id);
+  const clausey = huntPool(cb).map(p => p.id);
   return shuffle(cb.Q.filter(q => q.k !== 'mcq' && clausey.includes(q.links[0]))).slice(0, 10).map(q => {
     const right = q.links[0];
     const wrong = shuffle(clausey.filter(id => !q.links.includes(id))).slice(0, 3);
@@ -18,10 +16,14 @@ function newGame(cb: Casebook): Round[] {
 }
 
 export default function HuntView() {
-  const { cb, P, Q, S, record, setHuntBest, base } = useChapter();
-  const [rounds, setRounds] = useState<Round[]>(() => (cb ? newGame(cb) : []));
+  const { cb, meta, P, Q, S, record, setHuntBest, base } = useChapter();
+  // Shuffled after mount so the server render and the first client render match.
+  const [rounds, setRounds] = useState<Round[] | null>(null);
   const [i, setI] = useState(0);
-  if (!cb) return null;
+  useEffect(() => { if (cb) setRounds(newGame(cb)); }, [cb]);
+  if (!cb || !meta) return null;
+  if (!rounds) return <div className="drill"><div className="card case empty">Shuffling…</div></div>;
+  const pn = meta.provisionNoun;
 
   const score = rounds.filter(r => r.pick && r.pick === r.right).length;
   const r = rounds[i];
@@ -29,7 +31,7 @@ export default function HuntView() {
   const choose = (id: string) => {
     if (!r || r.pick) return;
     const ok = id === r.right;
-    setRounds(rs => rs.map((x, ix) => ix === i ? { ...x, pick: id } : x));
+    setRounds(rs => rs && rs.map((x, ix) => ix === i ? { ...x, pick: id } : x));
     record('hunt-' + r.q, ok, false);
   };
   const next = () => {
@@ -39,15 +41,15 @@ export default function HuntView() {
   };
   const restart = () => { setRounds(newGame(cb)); setI(0); };
 
-  const msg = score >= 9 ? 'Examiner-level instincts.' : score >= 7 ? 'Strong. A few clauses to tighten.' : score >= 5 ? 'Halfway there. Open the misses below.' : 'Worth a revision pass in the Law Library.';
+  const msg = score >= 9 ? 'Examiner-level instincts.' : score >= 7 ? `Strong. A few ${pn}s to tighten.` : score >= 5 ? 'Halfway there. Open the misses below.' : 'Worth a revision pass in the Law Library.';
 
   return (
     <div className="drill">
       <div className="dtop">
-        <div><p className="eyebrow" style={{ margin: 0 }}>Clause Hunt</p><h2 style={{ fontSize: '1.4rem' }}>Which provision do these facts trigger?</h2></div>
+        <div><p className="eyebrow">{cap(pn)} hunt</p><h1 className="vh">{meta.huntQuestion}</h1></div>
         <div className="score">
-          <div className="pips">{rounds.map((x, ix) => <i key={ix} className={x.pick ? (x.pick === x.right ? 'ok' : 'no') : (ix === i ? 'cur' : '')} />)}</div>
-          <span>{score}/{rounds.length}</span>
+          <div className="pips" aria-hidden="true">{rounds.map((x, ix) => <i key={ix} className={x.pick ? (x.pick === x.right ? 'ok' : 'no') : (ix === i ? 'cur' : '')} />)}</div>
+          <span aria-label={`Score ${score} of ${rounds.length}`}>{score}/{rounds.length}</span>
         </div>
       </div>
 
@@ -72,14 +74,14 @@ export default function HuntView() {
             })}
           </div>
           {r.pick && <>
-            <div className={'fb ' + (r.pick === r.right ? 'right' : 'wrong')}>
-              {r.pick === r.right ? 'Spot on.' : `It turns on ${P[r.right].label}.`}{Q[r.q].v in VKEY ? ` Ruling: ${Q[r.q].v}.` : ''}
+            <div className={'fb ' + (r.pick === r.right ? 'right' : 'wrong')} role="status">
+              {r.pick === r.right ? 'Spot on.' : `It turns on ${P[r.right].label}.`}{toneOf(meta, Q[r.q].v) ? ` Ruling: ${Q[r.q].v}.` : ''}
             </div>
-            <div className="nav"><button className="btn" data-p={r.right}>Read the clause</button><button className="btn pri" onClick={next}>{i === rounds.length - 1 ? 'See score' : 'Next round →'}</button></div>
+            <div className="nav"><button className="btn" data-p={r.right}>Read the {pn}</button><button className="btn pri" onClick={next}>{i === rounds.length - 1 ? 'See score' : 'Next round →'}</button></div>
           </>}
         </article>
       )}
-      {rounds.length === 0 && <div className="card empty">No clause questions yet. <Link href={base}>Back</Link></div>}
+      {rounds.length === 0 && <div className="card empty">No {pn} questions yet. <Link href={base}>Back</Link></div>}
     </div>
   );
 }

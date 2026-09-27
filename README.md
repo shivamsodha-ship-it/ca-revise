@@ -8,7 +8,7 @@ Handwritten notes, SM-2 flip cards and typed practice sit alongside.
 ## Stack
 
 - **Next.js 14** (App Router, TypeScript) — deploys to **Vercel**
-- Plain CSS design system (`app/globals.css`) ported from the Ethics Casebook artifact: Bricolage Grotesque, Public Sans, IBM Plex Mono, Special Elite. Light and dark themes.
+- Plain CSS design system (`app/globals.css`) from the Ethics Casebook artifact: Bricolage Grotesque, Public Sans, IBM Plex Mono, Special Elite. Light and dark themes, flat hairline surfaces, 44px tap targets, phone bottom bar.
 - Handwritten fonts (Kalam / Caveat / Shadows Into Light) are used **only** in the Notes view (scoped under `.hand`).
 - **localStorage** for progress (v0.1 — no backend needed)
 - Phase 2: **Railway** (Postgres + FastAPI) for cross-device sync and **Claude API** for grading typed answers
@@ -36,24 +36,31 @@ npm run dev
 4. Click **Deploy**. First deploy takes ~90 seconds.
 5. On your phone: open the deployed URL → **Add to Home Screen** (Safari share menu / Chrome menu). Behaves like a native app.
 
-## Adding a new chapter (30 seconds)
+## Adding a chapter (any subject)
 
-1. Copy `data/aaa/ch19-professional-ethics.json` as a template.
-2. Save it under the correct subject folder:
-   - `data/aaa/<slug>.json`, `data/fr/<slug>.json`, or `data/afm/<slug>.json`.
-3. Update the `id`, `subject`, `number`, `title`, `summary` and content.
-4. Register it in `lib/registry.ts`:
-   ```ts
-   {
-     id: 'aaa-ch18',
-     subject: 'aaa',
-     number: 18,
-     title: 'Audit Reports',
-     summary: 'SA 700/705/706 · CARO 2020 · Sec 143 CA 2013',
-     loader: async () => (await import('../data/aaa/ch18-audit-reports.json')).default as unknown as Chapter,
-   },
-   ```
-5. `npm run dev` → the chapter appears immediately. Commit + push → Vercel redeploys.
+Chapters are data only. No component changes are needed.
+
+```bash
+npm run new-chapter -- fr 3 "Ind AS 115 Revenue" --casebook
+```
+
+This creates `data/fr/ch03-ind-as-115-revenue.json` (notes, flip cards, written practice) and,
+with `--casebook`, `data/fr/ch03-casebook.json` (case drill, provision hunt, MCQs, law library, cheat sheet),
+then registers the chapter in `lib/registry.ts`. Fill in the JSON and it appears on the home page.
+
+Everything chapter-specific lives in the casebook's `meta` block:
+
+| key | what it controls | example |
+|---|---|---|
+| `sources` | drill filter pills, `[kind, label]` | `[["rtp","RTP Nov 2026"]]` |
+| `verdicts` | ruling buttons and stamps; omit for reveal-and-self-mark | `[{"label":"Guilty","tone":"bad","hint":"misconduct"}]` |
+| `caseNoun` / `provisionNoun` | wording across the app | `"case"` / `"clause"`, `"question"` / `"standard"` |
+| `huntQuestion` | Provision Hunt prompt | |
+| `tagline` / `intro` | chapter home headline (`*word*` is highlighted; `{cases}` is the case count) | |
+| `scopeTitle` / `scopeNote` / `methodTitle` | home page section headings | |
+
+Provisions with `"hunt": true` are the answer options in Provision Hunt (all provisions if none are flagged).
+See `data/_CASEBOOK_TEMPLATE.json` for the full shape.
 
 ## Chapter JSON schema
 

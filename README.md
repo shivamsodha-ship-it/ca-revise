@@ -73,7 +73,8 @@ both data files, validate and build. Its research report lands in `research/<cha
 The programs it uses can also be run by hand:
 
 ```bash
-npm run extract-sm -- inbox/sm.pdf work/fr-ch03/sm   # text + inventory of illustrations / TYK
+npm run unlock-pdf                                  # inbox/*.pdf -> inbox/unlocked/ (removes copy restrictions)
+npm run extract-sm -- inbox/unlocked/sm.pdf work/fr-ch03/sm   # text + inventory of illustrations / TYK
 npm run assemble -- fr-ch03                          # work/fr-ch03/parts/*.json -> data files
 npm run validate -- fr-ch03                          # schema, links, source labels, coverage
 ```

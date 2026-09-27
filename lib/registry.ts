@@ -20,6 +20,15 @@ const registry: ChapterIndexRow[] = [
     loader: async () => (await import('../data/aaa/ch19-professional-ethics.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/aaa/ch19-casebook.json')).default as unknown as Casebook,
   },
+  {
+    id: 'aaa-ch15',
+    subject: 'aaa',
+    number: 15,
+    title: 'Overview of Audit of Public Sector Undertakings',
+    summary: 'One-line summary',
+    loader: async () => (await import('../data/aaa/ch15-overview-of-audit-of-public-sector-undertakings.json')).default as unknown as Chapter,
+    casebook: async () => (await import('../data/aaa/ch15-casebook.json')).default as unknown as Casebook,
+  },
   // @chapters-end
 ];
 

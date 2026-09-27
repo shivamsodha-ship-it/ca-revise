@@ -50,45 +50,56 @@ mkdir -p work/<id>/{sm,src,parts}
 The id is `<subject>-chNN` (e.g. `fr-ch03`). For an update, first copy the current data into part files
 (see "Updating a chapter" below).
 
-### 2. Extract and read the study material
+### 2. Unlock the PDFs
+ICAI PDFs are usually copy/print-restricted, which can break text extraction. Unlock every PDF in `inbox/` first:
 ```bash
-npm run extract-sm -- <path/to/sm.pdf> work/<id>/sm
+npm run unlock-pdf                      # all PDFs in inbox/ -> inbox/unlocked/<same name>.pdf
+```
+Use only the copies in `inbox/unlocked/` from here on. Originals are never modified.
+- `LOCKED … needs its open password`: ask the user for it, then
+  `PDF_PASSWORD='…' npm run unlock-pdf -- "inbox/<file>.pdf"`. Never guess or crack a password.
+- Pages reported with little or no text are scanned images: read those pages visually in step 3.
+- **Never delete, move or overwrite anything in `inbox/`.** Those are the user's files and are not in git.
+  Test files go in `work/` or a temp folder, never in `inbox/`.
+
+### 3. Extract and read the study material
+```bash
+npm run extract-sm -- "inbox/unlocked/<sm>.pdf" work/<id>/sm
 ```
 Read `work/<id>/sm/inventory.md`, then read **all** of `work/<id>/sm/sm.txt` in chunks (Read with offset/limit).
 Pages flagged as empty are probably scanned: read those pages of the PDF directly (Read with `pages`).
 Correct the inventory by hand where the regex missed or double-counted, and write
 `work/<id>/sm/checklist.md`: every heading, every Illustration (number, page, one-line gist),
-every TYK question (MCQ n, descriptive n), every case study. This is the coverage checklist for step 6.
+every TYK question (MCQ n, descriptive n), every case study. This is the coverage checklist for step 7.
 
-### 3. Verify currency (target attempt)
+### 4. Verify currency (target attempt)
 From the ICAI BoS portal (references/sources.md): the study material edition applicable to the attempt,
 the "applicable standards / amendments" announcement for the attempt, and the latest RTP's statutory
 update section. Note every change that touches this chapter in `work/<id>/currency.md`, with URLs.
 These become the chapter's `currency` line, `upd` notes on provisions, `upd` questions, and `changes`.
 
-### 4. Collect exam questions for this chapter
-Follow references/sources.md. Minimum sweep:
-- **RTPs**: the target attempt and the previous 3 attempts.
-- **MTPs**: every series for the target attempt and the previous 2 attempts.
-- **Past papers + ICAI suggested answers**: every new-scheme attempt (May 2024 onward), plus old-scheme
-  papers from the last 3 years when the topic is unchanged in the new syllabus.
+### 5. Collect exam questions for this chapter
+Follow references/sources.md. Sweep **every attempt in the last 5 years, and nothing older** (RTPs, all MTP series,
+past papers with suggested answers; old-scheme papers within those 5 years count when the topic is unchanged).
+A paper that can't be fetched goes under "Could not fetch" and you move on. Depth must match the reference build
+(AAA Ch 19); a sweep of only the last few attempts is not enough.
 
 Download each paper to `work/<id>/src/` (curl, or the web-fetch agent for pages). If a paper can't be
 fetched (login wall, blocked), list it under "Could not fetch" and ask the user to drop the PDF in
-`inbox/` — do not guess its contents. Extract text with `npm run extract-sm -- <pdf> work/<id>/src/<name>`.
+`inbox/` — do not guess its contents. Extract text with `npm run extract-sm -- <pdf> work/<id>/src/<name>` (run `npm run unlock-pdf -- <pdf>` first if extraction fails or it is encrypted).
 
 Record every chapter-relevant question in `work/<id>/found.md` as one row:
 `kind | attempt | Q no. | marks | topic/provision | one-line gist | url`.
 Questions can be spread across papers in many sub-parts; capture each sub-part that belongs to this chapter.
 Parallelise when useful: one subagent per paper type (RTP / MTP / PYQ), each returning rows in that format.
 
-### 5. Exam-priority analysis
+### 6. Exam-priority analysis
 Group `found.md` rows by provision/topic. For each: times asked, total marks, last attempt asked,
 and whether it appeared in the latest RTP/MTP. Rank **High / Medium / Low** (rules in references/sources.md).
 Write `research/<id>.md` (committed): sources swept, what couldn't be fetched, the priority table,
-chapter weight (average marks per attempt → `weight` in chapter.json), and the coverage summary from step 9.
+chapter weight (average marks per attempt → `weight` in chapter.json), and the coverage summary from step 10.
 
-### 6. Write the data as part files
+### 7. Write the data as part files
 Write into `work/<id>/parts/` in batches (files named so they sort in order: `questions-01-sm-ill.json`,
 `questions-02-sm-tyk.json`, ...). Shapes and every field: references/schema.md. Wording and answer standards:
 references/writing.md. Subject-specific `meta` (verdicts, nouns, answer style): references/subjects.md.
@@ -96,19 +107,19 @@ references/writing.md. Subject-specific `meta` (verdicts, nouns, answer style): 
 Order of work:
 1. `groups.json` + `provisions-*.json` — the law library, built from the SM headings. One provision per
    testable rule (clause, Ind AS paragraph cluster, SA requirement, formula/model). Mark `hunt: true` on
-   provisions a fact pattern can point to. Add a scope/updates provision if step 3 found changes.
+   provisions a fact pattern can point to. Add a scope/updates provision if step 4 found changes.
 2. `questions-*.json` in this order: `sm-ill` (every illustration), `sm-tyk` (every descriptive TYK),
    `mcq` (every TYK MCQ, then RTP/MTP/PYQ MCQs with their source in `src`), `rtp`, `mtp`, `pyq`,
    `upd` (questions whose answer changed with the law), then `app` only to fill gaps where a
    high-priority provision has fewer than 2 questions.
 3. `extras.json` — `numbers` (every limit, threshold, time period, rate in the chapter), `finder`
-   (fact trigger → provision), `method` (the answer-writing steps for this subject), `changes` (from step 3).
+   (fact trigger → provision), `method` (the answer-writing steps for this subject), `changes` (from step 4).
 4. `meta.json` from references/subjects.md.
 5. `chapter.json`, `sections-*.json` (notes and flip cards; sections mirror SM headings; High-priority
    topics get the most cards), `practice-*.json` (at least 8 written questions, taken from the
    highest-priority PYQ/RTP/MTP questions, with ICAI-style model answers and marking points).
 
-### 7. Assemble and validate
+### 8. Assemble and validate
 ```bash
 npm run assemble -- <id>      # writes data/<subject>/…json; rebuilds every provision's qs from question links
 npm run validate -- <id>      # must end "OK: 0 errors"
@@ -116,7 +127,7 @@ npm run validate -- <id>      # must end "OK: 0 errors"
 Fix every error. Read every warning; fix the ones that are real (untested provisions, unbalanced HTML,
 missing MCQ explanations). Tick off `checklist.md`: every illustration and TYK item must map to a question id.
 
-### 8. Build and look at it
+### 9. Build and look at it
 ```bash
 npm run build
 ```
@@ -124,7 +135,7 @@ Then run the app (`npx next start -p 3100`) and click through the chapter's Home
 questions), Hunt, MCQ, Library (open a provision), Cheat sheet, Notes and Flip at phone width
 (390px) and desktop width. Nothing chapter-specific should need a code change.
 
-### 9. Report and hand over
+### 10. Report and hand over
 Finish `research/<id>.md` with the coverage table:
 
 | | In source | In app |
@@ -144,9 +155,9 @@ In this Codespace, push with the user's gh login:
 
 1. Split the current data into parts so you edit rather than rewrite:
    run the snippet in references/schema.md ("Split existing data into parts").
-2. Redo steps 3–5 for the new attempt only; add the new questions as new part files; update `upd`
+2. Redo steps 4–6 for the new attempt only; add the new questions as new part files; update `upd`
    notes, `numbers`, `changes`, `currency`.
-3. Steps 7–9. In the report, list what changed since the previous version.
+3. Steps 8–10. In the report, list what changed since the previous version.
 
 ## Files
 
@@ -154,6 +165,6 @@ In this Codespace, push with the user's gh login:
 - `references/sources.md` — ICAI BoS URLs, how to find each paper type, labelling rules, priority rules.
 - `references/subjects.md` — per-subject `meta`, answer structure and what counts as a provision.
 - `references/writing.md` — how to write facts, model answers, traps, cards, MCQ explanations.
-- Programs (in the app repo): `scripts/new-chapter.mjs`, `scripts/extract-sm.py`,
-  `scripts/assemble-chapter.mjs`, `scripts/validate-chapter.mjs` (npm scripts: `new-chapter`,
+- Programs (in the app repo): `scripts/new-chapter.mjs`, `scripts/unlock-pdf.py`, `scripts/extract-sm.py`,
+  `scripts/assemble-chapter.mjs`, `scripts/validate-chapter.mjs` (npm scripts: `new-chapter`, `unlock-pdf`,
   `extract-sm`, `assemble`, `validate`).

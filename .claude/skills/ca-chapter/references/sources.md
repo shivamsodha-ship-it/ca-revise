@@ -17,8 +17,16 @@ MTPs are listed on the same portal under "Mock Test Papers" for each attempt; se
 (WebSearch with `allowed_domains: ["icai.org"]`) for "MTP <subject> <attempt>" if the menu URL has moved.
 URLs change between attempts: if one 404s, search `icai.org` rather than guessing a path.
 
-Only ICAI (icai.org, boslive.icai.org, resource.cdn.icai.org) counts as a source for questions and answers.
-Coaching sites may help you *find* where a paper is, never what it says.
+Only ICAI papers count as a source for questions and answers. Coaching sites may help you *find* a paper, never
+supply what it says.
+
+**MTPs, and anything boslive blocks** (boslive.icai.org returns 403 from Codespaces): use the index at
+https://www.vsijaipur.com/ca-final-papers/ (the user's pointer). It links ICAI's own PDFs on resource.cdn.icai.org
+(RTPs, question papers, suggested answers) and has Google Drive copies of ICAI MTPs for recent attempts. To download
+a Drive file: `curl -sL -o f.pdf "https://drive.google.com/uc?export=download&id=<FILE_ID>"`. Use a third-party copy
+only after checking it is ICAI's paper: ICAI format and header ("Mock Test Paper - Series I/II"), the correct paper
+and attempt, and a paper date matching ICAI's BoS MTP schedule. Record both the copy's URL and that check in the
+research report. If a row has no link yet, list it under "Could not fetch".
 
 Fetching: PDFs usually download with `curl -L -o work/<id>/src/<name>.pdf "<url>"`. If you get HTML or a
 login page instead of a PDF (`file` says HTML), record it under "Could not fetch" in `research/<id>.md` and
@@ -40,11 +48,12 @@ ask the user to download it into `inbox/`.
 A question asked in several papers: one entry, `src` names the most recent, and the model answer ends
 with "Also asked: PYQ Nov 2023 Q1(a); MTP Mar 2025 S-II Q2." Count every appearance in the priority analysis.
 
-## Priority rules (per provision/topic)
+## Priority rules (per topic cluster)
 
-Score = (times asked in PYQ over the sweep × 2) + (times in RTP/MTP of the last 2 attempts) + (1 if in the latest RTP).
+Score over the whole 5-year sweep = (PYQs × 2) + (RTP and MTP appearances) + (1 if in the latest RTP).
+Count every appearance, including repeats recorded under "Also asked".
 
-- **High**: score ≥ 5, or asked in 2 of the last 4 exams, or a change for this attempt that the RTP highlights.
+- **High**: score ≥ 5.
 - **Medium**: score 2–4.
 - **Low**: score 0–1.
 

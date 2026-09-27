@@ -1,0 +1,1259 @@
+{
+ "id": "aaa-ch15",
+ "subject": "aaa",
+ "number": 15,
+ "title": "Overview of Audit of Public Sector Undertakings",
+ "summary": "C&AG · COPU/PAC · compliance, performance, comprehensive and propriety audit",
+ "currency": "SM May 2026 edition · no amendments for Nov 2026 · High: performance, comprehensive, propriety audit, committees",
+ "weight": 4,
+ "sections": [
+  {
+   "id": "s1-intro",
+   "title": "Introduction: what a PSU is",
+   "emoji": "🏭",
+   "cards": [
+    {
+     "id": "c-psu-forms",
+     "type": "concept",
+     "tags": [
+      "PSU categories",
+      "Low"
+     ],
+     "front": "What are the three forms in which PSUs are organised? Give an example of each.",
+     "back": {
+      "simplified": "(1) Departmental undertakings, part of government itself: Indian Railways, Postal Services, Security Printing Press, Canteen Stores Dept. (2) Government companies and deemed government companies under the Companies Act, 2013. (3) Statutory corporations under specific Acts: LIC, UTI.",
+      "explanation": "PSUs are owned or controlled by the Central Government, State Government(s), or jointly. They supply basic inputs (coal, steel, oil, fertilizers) and run public utilities (railways, power, telecom).",
+      "trap": "LIC is a statutory corporation, not a government company."
+     }
+    },
+    {
+     "id": "c-govco-def",
+     "type": "clause",
+     "tags": [
+      "Govt co. audit",
+      "Medium"
+     ],
+     "front": "When is a company a 'government company'?",
+     "back": {
+      "bareText": "s.2(45) Companies Act, 2013: a company in which not less than 51% of the paid-up share capital is held by the Central Government, or by any State Government or Governments, or partly by the Central Government and partly by one or more State Governments, and includes a subsidiary of such a government company.",
+      "trap": "Listing on a stock exchange does not change the status (SM TYK 5: BT Ltd, 60% Govt, listed = still a government company).",
+      "cases": [
+       "SM TYK 5: BT Ltd disinvested 40%, FM says C&AG has no role → wrong."
+      ]
+     }
+    },
+    {
+     "id": "c-psu-role",
+     "type": "concept",
+     "tags": [
+      "PSU categories",
+      "Low"
+     ],
+     "front": "What role do PSUs play in the Indian economy?",
+     "back": {
+      "simplified": "Key role in socio-economic development: basic inputs (coal, oil, steel, minerals, cement, chemicals, fertilizers, heavy equipment) and public utilities (railways, postal, telecom, electricity, road transport). Private sector now also allowed in power generation, telecom, etc."
+     }
+    },
+    {
+     "id": "c-govco-multi",
+     "type": "concept",
+     "tags": [
+      "Govt co. audit",
+      "Medium"
+     ],
+     "front": "Does a company need one government to hold 51% to be a government company?",
+     "back": {
+      "simplified": "No. 51%+ may be held by the Central Government, any State Government(s), or partly by the Centre and one or more States together. A subsidiary of a government company is also a government company.",
+      "trap": "Add all government holdings together."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s2-cag",
+   "title": "Framework for government audit: C&AG and the committees",
+   "emoji": "🏛️",
+   "cards": [
+    {
+     "id": "c-cag-arts",
+     "type": "mnemonic",
+     "tags": [
+      "Art. 148–151",
+      "Low"
+     ],
+     "front": "What does each of Articles 148, 149, 150 and 151 say about the C&AG?",
+     "back": {
+      "simplified": "148 Appointment by President; removal only on proven misbehaviour or incapacity; salary set by Parliament. 149 Duties and powers as prescribed by Parliament's law (DPC Act, 1971). 150 President prescribes the form of accounts on C&AG's advice. 151 Reports go to President (Union) / Governor (State) and are laid before Parliament / Legislature.",
+      "trap": "A State department's audit report goes to the Governor, not the Central Government (RTP Jan 2026 MCQ 3)."
+     }
+    },
+    {
+     "id": "c-cag-term",
+     "type": "concept",
+     "tags": [
+      "Art. 148–151",
+      "Low"
+     ],
+     "front": "What is the C&AG's term of office?",
+     "back": {
+      "simplified": "6 years or up to age 65, whichever is earlier (C&AG's Duties, Powers and Conditions of Service Act, 1971). He may resign by a letter to the President."
+     }
+    },
+    {
+     "id": "c-sai",
+     "type": "concept",
+     "tags": [
+      "Elements of PSU audit",
+      "Low"
+     ],
+     "front": "What is the Supreme Audit Institution of India, and who are Accountants General?",
+     "back": {
+      "simplified": "The C&AG together with the Indian Audit and Accounts Department (IAAD) under him forms SAI India. Senior functionaries representing the C&AG in a state are the Accountants General."
+     }
+    },
+    {
+     "id": "c-cag-reach",
+     "type": "concept",
+     "tags": [
+      "C&AG audit reach",
+      "Low"
+     ],
+     "front": "Which four types of organisations does the C&AG audit?",
+     "back": {
+      "simplified": "(1) Union and State Government departments and offices, incl. Railways and Posts & Telecom. (2) Government companies and corporations. (3) Non-commercial autonomous bodies owned or controlled by Union/States. (4) Bodies substantially financed from Union or State revenues.",
+      "explanation": "The DPC Act lists the entities; the scope and extent of audit is decided by the C&AG himself."
+     }
+    },
+    {
+     "id": "c-commercial-audit",
+     "type": "concept",
+     "tags": [
+      "Govt co. audit",
+      "Medium"
+     ],
+     "front": "What special arrangement applies to the audit of government companies?",
+     "back": {
+      "simplified": "Where Government equity is 51% or more, the C&AG appoints the CA firm as auditor, gives it directions on how to audit, can comment on its report, and can conduct a supplementary audit and order a test audit.",
+      "explanation": "Directions are issued under s.143(5): the auditor reports the directions, action taken and impact on the accounts (SM TYU 2: IT processing, loan waivers, scheme grants)."
+     }
+    },
+    {
+     "id": "c-audit-board",
+     "type": "concept",
+     "tags": [
+      "Audit Boards",
+      "Low"
+     ],
+     "front": "What are Audit Boards and what is special about them?",
+     "back": {
+      "simplified": "Boards set up in IAAD for comprehensive appraisals of PSUs. They include subject experts, discuss findings with management and ministries before finalising, and the C&AG puts the results in his reports.",
+      "trap": "They are NOT separate legal entities; they work under the C&AG's supervision and control."
+     }
+    },
+    {
+     "id": "c-pac",
+     "type": "concept",
+     "tags": [
+      "PAC",
+      "High"
+     ],
+     "front": "What must the Public Accounts Committee satisfy itself about?",
+     "back": {
+      "simplified": "(i) Money was disbursed legally for the purpose it was applied to; (ii) expenditure was authorised; (iii) re-appropriation followed the provisions. It also examines accounts of autonomous bodies audited by the C&AG.",
+      "trap": "PAC is for government departments; COPU is the PSU equivalent."
+     }
+    },
+    {
+     "id": "c-estimates",
+     "type": "concept",
+     "tags": [
+      "Estimates Committee",
+      "High"
+     ],
+     "front": "What does the Estimates Committee do?",
+     "back": {
+      "simplified": "Examines estimates to (i) report possible economies, improvements, efficiency or administrative reform; (ii) suggest alternative policies; (iii) check money is well laid out within the limit; (iv) suggest the form of estimates.",
+      "exception": "It does not comment on a policy approved by Parliament, but flags a policy that is failing or wasteful."
+     }
+    },
+    {
+     "id": "c-copu",
+     "type": "concept",
+     "tags": [
+      "COPU",
+      "High"
+     ],
+     "front": "What are the four functions of the Committee on Public Undertakings (COPU)?",
+     "back": {
+      "simplified": "(i) Examine reports and accounts of public undertakings; (ii) examine C&AG reports on them; (iii) examine their autonomy and efficiency and whether they follow sound business principles and prudent commercial practices; (iv) other PAC / Estimates Committee functions allotted by the Speaker.",
+      "explanation": "Its examination is a comprehensive appraisal of the undertaking's policies, programmes and financial working.",
+      "cases": [
+       "SM TYU 1: BNPC Ltd power PSU, committee reviewing performance and pending C&AG findings → COPU."
+      ]
+     }
+    },
+    {
+     "id": "c-cag-guide",
+     "type": "concept",
+     "tags": [
+      "C&AG and committees",
+      "High"
+     ],
+     "front": "Why is the C&AG called the 'friend, philosopher and guide' of the financial committees?",
+     "back": {
+      "simplified": "His reports form the basis of their work; he scrutinises Ministry notes and checks facts in draft reports; committees then get Action Taken Reports; for reports not discussed, written answers are obtained. So audit reports are never taken lightly."
+     }
+    },
+    {
+     "id": "c-cag-independence",
+     "type": "concept",
+     "tags": [
+      "Art. 148–151",
+      "Low"
+     ],
+     "front": "How does the Constitution safeguard the C&AG's independence?",
+     "back": {
+      "simplified": "Independent constitutional authority; appointed by the President; removable only by a special procedure on proven misbehaviour or incapacity; salary and service conditions set by Parliament (Art. 148)."
+     }
+    },
+    {
+     "id": "c-art151",
+     "type": "clause",
+     "tags": [
+      "Art. 148–151",
+      "Low"
+     ],
+     "front": "Article 151: where do C&AG reports go?",
+     "back": {
+      "bareText": "Audit reports of the C&AG relating to the accounts of the Central/State Government shall be submitted to the President/Governor of the State, who shall cause them to be laid before Parliament/State Legislature.",
+      "cases": [
+       "SM TYK 9, RTP Jan 2026 MCQ 3, MTP May 2026 S-I Q4(b): State department report → Governor."
+      ]
+     }
+    },
+    {
+     "id": "c-scope-by-cag",
+     "type": "concept",
+     "tags": [
+      "C&AG audit reach",
+      "Low"
+     ],
+     "front": "Who decides the scope and extent of C&AG audit?",
+     "back": {
+      "simplified": "The DPC Act, 1971 lists the entities under C&AG audit, but the scope and extent of audit is determined by the C&AG himself."
+     }
+    },
+    {
+     "id": "c-supp-audit",
+     "type": "concept",
+     "tags": [
+      "Govt co. audit",
+      "Medium"
+     ],
+     "front": "What powers does the C&AG have over the statutory audit of a government company?",
+     "back": {
+      "simplified": "Appoints the CA firm; issues directions on the manner of audit (s.143(5)); comments upon the audit report; conducts a supplementary audit; may cause a test audit by order.",
+      "cases": [
+       "SM opening case: supplementary audit comment on depreciation → profit overstated ₹20 crore."
+      ]
+     }
+    },
+    {
+     "id": "c-listing",
+     "type": "concept",
+     "tags": [
+      "Govt co. audit",
+      "Medium"
+     ],
+     "front": "After disinvestment and listing, a company is 60% Government-owned. Does the C&AG still appoint its auditor?",
+     "back": {
+      "simplified": "Yes. It is still a government company (≥51%); listing is irrelevant to C&AG's role (SM TYK 5)."
+     }
+    },
+    {
+     "id": "c-committees-why",
+     "type": "concept",
+     "tags": [
+      "PAC",
+      "High"
+     ],
+     "front": "Why do audit reports go to committees rather than the whole Parliament?",
+     "back": {
+      "simplified": "Scrutiny by the whole House would be arduous given the specialised nature of reports and limited time. So PAC, Estimates Committee and COPU are constituted and audit reports and accounts automatically stand referred to them."
+     }
+    },
+    {
+     "id": "c-pac-vs-copu",
+     "type": "mnemonic",
+     "tags": [
+      "COPU",
+      "High"
+     ],
+     "front": "PAC vs COPU vs Estimates Committee: one line each.",
+     "back": {
+      "simplified": "PAC: money spent legally, authorised, re-appropriated properly (government departments). COPU: same financial control over public undertakings; reports, accounts, C&AG reports, autonomy and efficiency. Estimates: economies, alternative policies, money well laid out, form of estimates.",
+      "cases": [
+       "May 2026 MCQ 15: policy leading to waste (unused hospital equipment) → Estimates Committee.",
+       "Nov 2024 MCQ 1: COPU functions = (iii) & (iv)."
+      ]
+     }
+    },
+    {
+     "id": "c-system-defects",
+     "type": "concept",
+     "tags": [
+      "COPU",
+      "High"
+     ],
+     "front": "What is the objective of the financial committees beyond individual irregularities?",
+     "back": {
+      "simplified": "To focus not only on the individual irregularity but also on the defects in the system that led to it, and the need to correct those systems and procedures."
+     }
+    },
+    {
+     "id": "c-govco-sections",
+     "type": "section",
+     "tags": [
+      "s.139 / s.143 (Govt co.)",
+      "Medium"
+     ],
+     "front": "Which Companies Act sections govern the audit of a government company, and what does each do?",
+     "back": {
+      "simplified": "139(5)/(7): C&AG appoints/re-appoints the auditor. 143(5): C&AG directions; report includes directions, action taken, impact. 143(6)(a): supplementary audit within 60 days of receiving the audit report. 143(6)(b): C&AG comments sent to members and placed before the AGM. 143(7): test audit by order; s.19A DPC Act applies.",
+      "cases": [
+       "MTP May 2023 S-I Q6(a), 5 marks."
+      ]
+     }
+    },
+    {
+     "id": "c-casual-vacancy",
+     "type": "concept",
+     "tags": [
+      "s.139 / s.143 (Govt co.)",
+      "Medium"
+     ],
+     "front": "Who fills a casual vacancy in the office of auditor of a government company?",
+     "back": {
+      "simplified": "The C&AG, within 30 days. If the C&AG does not, the Board fills it within the next 30 days.",
+      "trap": "Not the shareholders; and the Board only after the C&AG's 30 days lapse.",
+      "cases": [
+       "MTP Nov 2022 S-II MCQ 10: Board appointed within 30 days → invalid, answer (c)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3-scope",
+   "title": "Objective, scope, elements and principles",
+   "emoji": "🎯",
+   "cards": [
+    {
+     "id": "c-scope-beyond",
+     "type": "concept",
+     "tags": [
+      "Scope of PSU audit",
+      "Low"
+     ],
+     "front": "Why is PSU audit 'not constrained to financial and compliance audit'?",
+     "back": {
+      "simplified": "It extends to performance (economy, efficiency, effectiveness), propriety of management decisions, and comprehensive appraisal of whether objectives, value for money and targets were achieved.",
+      "explanation": "It also checks decisions were taken by the competent authority on all relevant information and alternatives; aims to help Government improve; links financial with physical performance."
+     }
+    },
+    {
+     "id": "c-fiscal-managerial",
+     "type": "concept",
+     "tags": [
+      "Scope of PSU audit",
+      "Low"
+     ],
+     "front": "Fiscal accountability vs managerial accountability: what does each cover?",
+     "back": {
+      "simplified": "Fiscal: provision of funds, sanctions, compliance and propriety. Managerial: efficiency, economy and effectiveness (efficiency-cum-performance audit)."
+     }
+    },
+    {
+     "id": "c-three-parties",
+     "type": "concept",
+     "tags": [
+      "Elements of PSU audit",
+      "Low"
+     ],
+     "front": "Who are the three parties in a PSU audit?",
+     "back": {
+      "simplified": "Auditor (SAI India and its personnel); responsible party (the auditable entity and TCWG, per constitutional/legislative arrangement); intended users (for whom the report is prepared)."
+     }
+    },
+    {
+     "id": "c-sm-criteria",
+     "type": "concept",
+     "tags": [
+      "Elements of PSU audit",
+      "Low"
+     ],
+     "front": "Define subject matter, criteria and subject matter information.",
+     "back": {
+      "simplified": "Subject matter: the information, condition or activity measured. Criteria: the benchmarks used. Subject matter information: the outcome of measuring the subject matter against the criteria."
+     }
+    },
+    {
+     "id": "c-attest-direct",
+     "type": "mnemonic",
+     "tags": [
+      "Attestation vs direct",
+      "Low"
+     ],
+     "front": "Attestation vs direct reporting: who measures, and which audits are which?",
+     "back": {
+      "simplified": "Attestation: the responsible party measures and presents; auditor gives a conclusion on it. Direct reporting: the auditor measures. Financial audits are ALWAYS attestation; performance and compliance audits are GENERALLY direct reporting.",
+      "trap": "'Always' for financial, 'generally' for performance/compliance: keep the words exact."
+     }
+    },
+    {
+     "id": "c-principles",
+     "type": "mnemonic",
+     "tags": [
+      "Principles of PSU audit",
+      "Low"
+     ],
+     "front": "List the 8 general principles and the 3 audit-process principles of PSU audit.",
+     "back": {
+      "simplified": "General: ethics & independence; professional judgement, due care & scepticism; quality control; audit team management & skill; audit risk; materiality; documentation; communication. Process: planning → conducting → reporting & follow-up."
+     }
+    },
+    {
+     "id": "c-scope-help",
+     "type": "concept",
+     "tags": [
+      "Scope of PSU audit",
+      "Low"
+     ],
+     "front": "How does PSU audit help Government, beyond accountability?",
+     "back": {
+      "simplified": "By bringing out financial and operational deficiencies, ineffective systems and shortfalls in performance, and analysing their causes, it helps Government and managements improve efficiency and effectiveness. Financial performance is linked with physical performance."
+     }
+    },
+    {
+     "id": "c-competent",
+     "type": "concept",
+     "tags": [
+      "Scope of PSU audit",
+      "Low"
+     ],
+     "front": "What does the auditor check about a management decision in a PSU?",
+     "back": {
+      "simplified": "That it was taken by the competent authority, after examining all aspects (economic, technological, public interest) on all relevant information available at the time, considering alternatives, and consistent with the enterprise's aims."
+     }
+    },
+    {
+     "id": "c-responsible-party",
+     "type": "concept",
+     "tags": [
+      "Elements of PSU audit",
+      "Low"
+     ],
+     "front": "What can the 'responsible party' be responsible for?",
+     "back": {
+      "simplified": "The subject matter information, managing the subject matter, or addressing the recommendations. Usually the auditable entity and TCWG, as set by constitutional or legislative arrangement."
+     }
+    },
+    {
+     "id": "c-process-principles",
+     "type": "concept",
+     "tags": [
+      "Principles of PSU audit",
+      "Low"
+     ],
+     "front": "What happens under each audit-process principle?",
+     "back": {
+      "simplified": "Planning: establish terms, understand entity, risk assessment/problem analysis, fraud risks, audit plan. Conducting: perform procedures, evaluate evidence, draw conclusions. Reporting & follow-up: report conclusions, follow up reported matters."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4-fin-comp",
+   "title": "Financial audit and compliance audit",
+   "emoji": "📑",
+   "cards": [
+    {
+     "id": "c-fin-audit",
+     "type": "concept",
+     "tags": [
+      "Financial audit",
+      "Low"
+     ],
+     "front": "What is the purpose of financial audit by the C&AG?",
+     "back": {
+      "simplified": "To express an opinion on whether the financial statements are prepared, in all material respects, per the applicable framework (true and fair / presents fairly for fair presentation frameworks), and to enhance intended users' confidence."
+     }
+    },
+    {
+     "id": "c-comp-def",
+     "type": "clause",
+     "tags": [
+      "Compliance audit",
+      "Medium"
+     ],
+     "front": "Define compliance audit and its two concerns.",
+     "back": {
+      "bareText": "Compliance audit is the independent assessment of whether a given subject matter is in compliance with the applicable criteria.",
+      "simplified": "Regularity: adherence to laws, regulations and agreements. Propriety: sound financial management and ethical conduct of public officials.",
+      "cases": [
+       "SM TYK 9 / RTP Jan 2026 MCQ 3: 'flat' wrongly classified, water charges under-collected → compliance audit; report to Governor."
+      ]
+     }
+    },
+    {
+     "id": "c-comp-when",
+     "type": "concept",
+     "tags": [
+      "Compliance audit",
+      "Medium"
+     ],
+     "front": "In which three ways is compliance audit carried out?",
+     "back": {
+      "simplified": "(i) With the audit of financial statements; (ii) separately as individual compliance audits; (iii) combined with performance audit, where non-compliance may be the cause, explanation or consequence of the performance."
+     }
+    },
+    {
+     "id": "c-comp-process",
+     "type": "concept",
+     "tags": [
+      "Compliance audit",
+      "Medium"
+     ],
+     "front": "What are the stages of the compliance audit process?",
+     "back": {
+      "simplified": "General principles and annual compliance audit plan → planning (objective, scope, strategy, criteria, understanding entity and controls, materiality, risk) → performing and gathering evidence → evaluating evidence and forming conclusions → reporting (entity responses, follow-up). Documentation, communication and quality control run throughout."
+     }
+    },
+    {
+     "id": "c-regularity",
+     "type": "concept",
+     "tags": [
+      "Compliance audit",
+      "Medium"
+     ],
+     "front": "Regularity vs propriety in compliance audit.",
+     "back": {
+      "simplified": "Regularity: adherence to formal criteria from laws, regulations, agreements. Propriety: observance of general principles of sound financial management and ethical conduct of public officials. Regularity is emphasised; propriety equally pertinent in the public sector.",
+      "cases": [
+       "PYQ Sep 2025 Q2(c) (LNG Corporation)."
+      ]
+     }
+    },
+    {
+     "id": "c-comp-unlawful",
+     "type": "concept",
+     "tags": [
+      "Compliance audit",
+      "Medium"
+     ],
+     "front": "In the compliance audit process, what special care applies when gathering evidence?",
+     "back": {
+      "simplified": "Continually update planning and risk assessment, and consider non-compliance that may indicate suspected unlawful acts."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s5-perf",
+   "title": "Performance audit",
+   "emoji": "📈",
+   "cards": [
+    {
+     "id": "c-pa-def",
+     "type": "clause",
+     "tags": [
+      "Performance audit — 3Es",
+      "High"
+     ],
+     "front": "Define performance audit.",
+     "back": {
+      "bareText": "An objective and systematic examination of evidence for the purpose of providing an independent assessment of the performance of a government organization, program, activity, or function in order to provide information to improve public accountability and facilitate decision-making by parties with responsibility to oversee or initiate corrective action.",
+      "simplified": "Were decisions efficiently and effectively made and implemented, and did taxpayers get value for money? Done by C&AG through IAAD offices."
+     }
+    },
+    {
+     "id": "c-economy",
+     "type": "concept",
+     "tags": [
+      "Performance audit — 3Es",
+      "High"
+     ],
+     "front": "What is 'economy' in performance audit? Give example audit questions.",
+     "back": {
+      "simplified": "Minimising the cost of resources for appropriate quantity and quality at the best price, acquired in due time.",
+      "cases": [
+       "Best prices for consultancy? Cost of sickness absences? Lowest transport cost for food aid? Waste of resources?"
+      ]
+     }
+    },
+    {
+     "id": "c-efficiency",
+     "type": "concept",
+     "tags": [
+      "Performance audit — 3Es",
+      "High"
+     ],
+     "front": "What is 'efficiency' in performance audit?",
+     "back": {
+      "simplified": "The input-output ratio: maximum output for minimum input. Covers sound procurement, protection of resources, efficient use of staff and money, optimum resources, efficient procedures, objectives met cost-effectively.",
+      "cases": [
+       "Cost per job created vs elsewhere? Could project X be done faster and better? Are schools using their IT equipment fully?"
+      ]
+     }
+    },
+    {
+     "id": "c-effectiveness",
+     "type": "concept",
+     "tags": [
+      "Performance audit — 3Es",
+      "High"
+     ],
+     "front": "What is 'effectiveness' in performance audit?",
+     "back": {
+      "simplified": "The extent to which objectives are achieved; intended vs actual impact.",
+      "explanation": "May assess: objectives and means proper; results achieved; impacts due to the policy or other causes; inhibiting factors; overlap with other programmes; alternatives considered; management control system; compliance with laws; ways to improve.",
+      "trap": "Economy = inputs cheap; efficiency = inputs→outputs; effectiveness = outcomes vs objectives. Don't mix them."
+     }
+    },
+    {
+     "id": "c-pa-cycle",
+     "type": "concept",
+     "tags": [
+      "Performance audit — 3Es",
+      "High"
+     ],
+     "front": "Outline the performance audit cycle.",
+     "back": {
+      "simplified": "Strategic planning → planning individual audits → implementation (preliminary study, field audit, draft report to entity and response) → report approval → performance audit report → follow-up and impact assessment."
+     }
+    },
+    {
+     "id": "c-pa-objectives",
+     "type": "concept",
+     "tags": [
+      "PA objectives",
+      "High"
+     ],
+     "front": "What are the objectives of performance audit, and who is responsible for performance indicators?",
+     "back": {
+      "simplified": "Evaluate economy, efficiency and effectiveness of policy, programmes, organisation and management; promote accountability and transparency; add value where the potential is greatest.",
+      "explanation": "Regulations on Audit and Accounts: measurable objectives, performance indicators and measurement systems are the responsibility of the government departments / heads of entities.",
+      "trap": "An audit that only checks expenses against public interest and accepted customs is propriety audit, so the C&AG rightly rejects it as a 'performance audit' (SM TYK 7, RTP Jan 2026 Q17)."
+     }
+    },
+    {
+     "id": "c-min-wages",
+     "type": "illustration",
+     "tags": [
+      "PA objectives",
+      "High"
+     ],
+     "front": "How would a performance audit of the Minimum Wages Act enforcement mechanism be approached?",
+     "back": {
+      "simplified": "Know the industries and population covered; compare standard of living before and after; check returns prescribed and obtained; evaluate 3Es of the welfare systems and coordination between labour dept, EPF and ESI; point out gaps in the law; compare actual living-cost compensation with the statutory minimum wage and report to Government."
+     }
+    },
+    {
+     "id": "c-pa-steps",
+     "type": "mnemonic",
+     "tags": [
+      "PA planning steps",
+      "High"
+     ],
+     "front": "What are the nine steps for planning a performance audit?",
+     "back": {
+      "simplified": "(A) Understand the entity/programme; (B) define objectives and scope; (C) determine audit criteria; (D) decide audit approach; (E) develop audit questions; (F) assess team skills / outside expertise; (G) prepare the Audit Design Matrix; (H) establish timetable and resources; (I) intimate the audit programme to the entity.",
+      "cases": [
+       "SM TYK 2 (sugar industry), SM TYK 8 (DISCOM)."
+      ]
+     }
+    },
+    {
+     "id": "c-pa-sources",
+     "type": "concept",
+     "tags": [
+      "PA planning steps",
+      "High"
+     ],
+     "front": "Which seven sources help the auditor understand the entity in a performance audit?",
+     "back": {
+      "simplified": "(i) Documents of the entity; (ii) legislative documents (incl. PAC, COPU, Estimates Committee reports); (iii) policy documents; (iv) academic or special research; (v) past audits; (vi) media coverage; (vii) special focus groups (Audit Advisory Committee, World Bank, RBI, NGOs).",
+      "cases": [
+       "RTP Nov 2026 Q18: rural infrastructure programme; team uses records, debates, committee reports, prior audits, research, stakeholders → 'understanding the entity/programme' stage."
+      ]
+     }
+    },
+    {
+     "id": "c-pa-expert",
+     "type": "concept",
+     "tags": [
+      "PA planning steps",
+      "High"
+     ],
+     "front": "If the Accountant General uses an expert in a performance audit, who is responsible for the opinion?",
+     "back": {
+      "simplified": "The Accountant General retains full responsibility for the opinion in the auditor's report.",
+      "explanation": "The team decides at the planning stage where expertise is needed; C&AG standards require auditors to be trained and supported by manuals."
+     }
+    },
+    {
+     "id": "c-pa-criteria",
+     "type": "concept",
+     "tags": [
+      "Audit criteria",
+      "High"
+     ],
+     "front": "What are audit criteria, and where do they come from?",
+     "back": {
+      "simplified": "Reasonable and attainable standards of performance against which the 3Es are assessed. Sources: entity procedure manuals; policies, standards, directives, guidelines; criteria used by same/other entities; expert opinion; scientific knowledge; management literature and research.",
+      "cases": [
+       "SM TYK 6 (AKY Ltd); SM TYK 10 (DBT schemes: circulars, SOPs, scheme guidelines)."
+      ]
+     }
+    },
+    {
+     "id": "c-pa-approach",
+     "type": "concept",
+     "tags": [
+      "PA approach & ADM",
+      "High"
+     ],
+     "front": "Which methods can be used in a performance audit approach?",
+     "back": {
+      "simplified": "Analysis of procedures; case studies; use of existing data; surveys; analysis of results (output-input); quantitative analysis (sampling for large data)."
+     }
+    },
+    {
+     "id": "c-adm",
+     "type": "concept",
+     "tags": [
+      "PA approach & ADM",
+      "High"
+     ],
+     "front": "What is an Audit Design Matrix and what are its columns?",
+     "back": {
+      "simplified": "A structured, focused design for a performance audit study, ideally one per objective. Columns: audit objective · audit questions · audit criteria · evidence · data collection and analysis method."
+     }
+    },
+    {
+     "id": "c-discom",
+     "type": "illustration",
+     "tags": [
+      "PA objectives",
+      "High"
+     ],
+     "front": "SM Illustration: DISCOM audit objectives (cost recovery, tariff orders, billing, controls). What audit is it, and what are the two sample observations?",
+     "back": {
+      "simplified": "Performance audit. (i) Defective meters far above the 1% limit not replaced within 1 month → average billing for months. (ii) Meter rent (₹30 single phase / ₹40 three phase) short-charged by ₹60 lakh from 3 lakh consumers in 5 lakh bills."
+     }
+    },
+    {
+     "id": "c-pa-accountability",
+     "type": "concept",
+     "tags": [
+      "Performance audit — 3Es",
+      "High"
+     ],
+     "front": "What two questions does performance audit answer to promote accountability?",
+     "back": {
+      "simplified": "(a) Were decisions of the legislature or executive efficiently and effectively prepared and implemented? (b) Did taxpayers or citizens receive value for money?"
+     }
+    },
+    {
+     "id": "c-efficiency-7",
+     "type": "mnemonic",
+     "tags": [
+      "Performance audit — 3Es",
+      "High"
+     ],
+     "front": "List the 7 aspects of auditing efficiency.",
+     "back": {
+      "simplified": "(a) Sound procurement; (b) resources protected and maintained; (c) human, financial and other resources efficiently used; (d) optimum resources for timely delivery of right quantity/quality; (e) programmes efficiently managed, regulated, organised, executed; (f) efficient operating procedures; (g) objectives met cost-effectively.",
+      "cases": [
+       "PYQ May 2026 Q6(c) OR: \"Digital Connect\" — 4 marks for these aspects."
+      ]
+     }
+    },
+    {
+     "id": "c-effectiveness-10",
+     "type": "mnemonic",
+     "tags": [
+      "Performance audit — 3Es",
+      "High"
+     ],
+     "front": "List what a performance audit may assess for effectiveness.",
+     "back": {
+      "simplified": "(a) Objectives and means proper/relevant; (b) extent of results; (c) impacts due to policy or other causes; (d) inhibiting factors; (e) overlap/duplication with other programmes; (f) effectiveness of components; (g) alternatives considered; (h) management control system for measuring effectiveness; (i) compliance with laws; (j) ways to work more effectively."
+     }
+    },
+    {
+     "id": "c-pa-transparency",
+     "type": "concept",
+     "tags": [
+      "PA objectives",
+      "High"
+     ],
+     "front": "How does performance audit promote accountability and transparency?",
+     "back": {
+      "simplified": "Accountability: assists TCWG and oversight bodies to improve performance. Transparency: gives taxpayers, targeted groups and other stakeholders insight into the management and outcomes of government activities."
+     }
+    },
+    {
+     "id": "c-pa-b",
+     "type": "concept",
+     "tags": [
+      "PA planning steps",
+      "High"
+     ],
+     "front": "Planning step (B): why must audit objectives be crisp and clear, and what does scope do?",
+     "back": {
+      "simplified": "Objectives shape the nature, conduct and conclusions of the audit, ensure quality and serve as a quality measure. Scope limits the audit to significant issues related to the objectives: its extent, timing and nature."
+     }
+    },
+    {
+     "id": "c-pa-e",
+     "type": "concept",
+     "tags": [
+      "PA planning steps",
+      "High"
+     ],
+     "front": "Planning step (E): developing audit questions.",
+     "back": {
+      "simplified": "After objectives and criteria, the team lists the questions it will answer, framed comprehensively as a detailed hierarchy of questions."
+     }
+    },
+    {
+     "id": "c-pa-h",
+     "type": "concept",
+     "tags": [
+      "PA planning steps",
+      "High"
+     ],
+     "front": "Planning step (H): timetable and resources: key points.",
+     "back": {
+      "simplified": "Selecting the right team is the most vital part; record selection considerations and timelines; monitor progress; the Accountant General is liable for timely completion; variations approved by competent authority; build in time for translation, approvals, delays."
+     }
+    },
+    {
+     "id": "c-pa-i",
+     "type": "concept",
+     "tags": [
+      "PA planning steps",
+      "High"
+     ],
+     "front": "Planning step (I): intimation of audit programme.",
+     "back": {
+      "simplified": "Inform the entity of the planned audit, scope and extent, team and tentative schedule well before commencement; record acknowledgement. Refinements to objectives must be recorded and approved; keep the programme flexible; share significant refinements across teams at different locations.",
+      "cases": [
+       "PYQ Nov 2024 MCQ 11 / MTP May 2026 S-II MCQ 12 scenario."
+      ]
+     }
+    },
+    {
+     "id": "c-pa-order",
+     "type": "mnemonic",
+     "tags": [
+      "PA planning steps",
+      "High"
+     ],
+     "front": "Put the planning steps in ICAI's order (as tested in May 2025 MCQ 8).",
+     "back": {
+      "simplified": "Understand → Objectives & scope → Criteria → Approach → Questions → Skills/expertise → ADM → Timetable & resources → Intimation.",
+      "trap": "Criteria come BEFORE approach and questions; ADM comes BEFORE timetable."
+     }
+    },
+    {
+     "id": "c-criteria-def",
+     "type": "clause",
+     "tags": [
+      "Audit criteria",
+      "High"
+     ],
+     "front": "Define audit criteria.",
+     "back": {
+      "bareText": "Audit criteria are the standards used to determine whether a program meets or exceeds expectations. It provides a context for understanding the results of the audit. Audit criteria are reasonable and attainable standards of performance against which economy, efficiency and effectiveness of programmes and activities can be assessed."
+     }
+    },
+    {
+     "id": "c-quant-sampling",
+     "type": "concept",
+     "tags": [
+      "PA approach & ADM",
+      "High"
+     ],
+     "front": "Which audit approach method may need sampling, and why?",
+     "back": {
+      "simplified": "Quantitative analysis: examining financial data or programme data (e.g. beneficiaries); with high data volume the auditor may not work on complete data, so sampling is used.",
+      "cases": [
+       "PYQ May 2025 MCQ 9: Mr Q's method (ICAI accepted B/C)."
+      ]
+     }
+    },
+    {
+     "id": "c-adm-not",
+     "type": "concept",
+     "tags": [
+      "PA approach & ADM",
+      "High"
+     ],
+     "front": "Is the 'audit programme' a column of the Audit Design Matrix?",
+     "back": {
+      "simplified": "No. ADM columns: objective, questions, criteria, evidence, data collection and analysis method.",
+      "cases": [
+       "PYQ Nov 2024 MCQ 11 and MTP May 2026 S-II MCQ 12: answer 'Audit programme'."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6-comp-prop",
+   "title": "Comprehensive audit and propriety audit",
+   "emoji": "🔍",
+   "cards": [
+    {
+     "id": "c-comprehensive-def",
+     "type": "concept",
+     "tags": [
+      "Comprehensive audit",
+      "High"
+     ],
+     "front": "What is comprehensive audit?",
+     "back": {
+      "simplified": "An efficiency-cum-performance audit by the C&AG beyond what internal and statutory auditors cover; it combines financial, compliance and performance audit for a holistic assessment, locating weakness and extravagance.",
+      "cases": [
+       "RTP May 2026 Q16: power PSU with cost overruns, idle capacity, excess fuel use → comprehensive audit.",
+       "SM TYK 3: Sunlight Ltd ₹5,750 crore solar project, delay and overrun."
+      ]
+     }
+    },
+    {
+     "id": "c-comprehensive-issues",
+     "type": "mnemonic",
+     "tags": [
+      "Comprehensive audit",
+      "High"
+     ],
+     "front": "List the ten issues examined in a comprehensive audit.",
+     "back": {
+      "simplified": "(a) Capital cost vs approved cost, extravagance; (b) planned output achieved, idle capacity; (c) planned rate of return; (d) project formulation and execution, gestation period; (e) cost control, wastage of materials; (f) purchase policies, inventory pile-up; (g) R&D and technology; (h) repairs and maintenance; (i) procedures effective and economical; (j) poor project planning.",
+      "explanation": "Criteria: Bureau of Public Enterprises guidelines, industrial engineering/technical studies, standards of financial propriety. Starting point: an audit programme from the enterprise's setting-up decisions, reports, budgets, board minutes and earlier inspection reports."
+     }
+    },
+    {
+     "id": "c-propriety-def",
+     "type": "clause",
+     "tags": [
+      "Propriety audit",
+      "High"
+     ],
+     "front": "What is propriety audit (Kohler)?",
+     "back": {
+      "bareText": "Propriety is 'that which meets the tests of public interest, commonly accepted customs, and standards of conduct, and particularly as applied to professional performance, requirements of law, Government regulations and professional codes'.",
+      "simplified": "Bring out improper, avoidable or infructuous expenditure even if it followed the rules. Tests reduce to economy, efficiency and faithfulness; looks at substance over vouchers.",
+      "cases": [
+       "Telephone exchange building not used for it = infructuous; school used 5 years after completion = avoidable."
+      ]
+     }
+    },
+    {
+     "id": "c-propriety-principles",
+     "type": "mnemonic",
+     "tags": [
+      "Propriety audit",
+      "High"
+     ],
+     "front": "State the four principles (standards) of financial propriety.",
+     "back": {
+      "simplified": "(i) Expenditure not more than the occasion demands; officials take the care a prudent person takes with his own money. (ii) No authority sanctions expenditure to its own advantage. (iii) Funds not used for a particular person or group. (iv) No indirect benefit to management or employees beyond agreed remuneration."
+     }
+    },
+    {
+     "id": "c-propriety-functions",
+     "type": "concept",
+     "tags": [
+      "Propriety — issues",
+      "High"
+     ],
+     "front": "What are the auditor's functions in propriety audit?",
+     "back": {
+      "simplified": "See that expenditure is properly planned; size and channels are rightful and give maximum results; expenditure is likely to give optimum results; whether a substitute plan would do better; management actions are conducive to public interest and standards of conduct."
+     }
+    },
+    {
+     "id": "c-propriety-subjective",
+     "type": "concept",
+     "tags": [
+      "Propriety — issues",
+      "High"
+     ],
+     "front": "Why is propriety audit subjective, and how is that handled?",
+     "back": {
+      "simplified": "'Propriety' is a moral term, so verifiable propositions are hard. The C&AG has laid down norms of propriety; entities can frame their own norms. Decisions must be judged in the circumstances when taken, not with hindsight.",
+      "trap": "Air travel isn't wasteful unless rail was feasible and would have given the same result."
+     }
+    },
+    {
+     "id": "c-comp-criteria",
+     "type": "concept",
+     "tags": [
+      "Comprehensive audit",
+      "High"
+     ],
+     "front": "What criteria are used in comprehensive appraisal of a public enterprise?",
+     "back": {
+      "simplified": "Bureau of Public Enterprises guidelines (general, financial, materials, production, construction management); industrial engineering and technical studies by internal/external experts; standards of financial propriety."
+     }
+    },
+    {
+     "id": "c-comp-start",
+     "type": "concept",
+     "tags": [
+      "Comprehensive audit",
+      "High"
+     ],
+     "front": "What is the starting point of a comprehensive appraisal?",
+     "back": {
+      "simplified": "An audit programme based on the enterprise's setting-up decisions, objectives, operations, organisation, annual reports and accounts, capital and operational budgets, board deliberations, earlier inspection reports. It identifies areas for detailed analysis, criteria, data and sources, extent of test checks, and instructions to audit parties."
+     }
+    },
+    {
+     "id": "c-infructuous",
+     "type": "concept",
+     "tags": [
+      "Propriety audit",
+      "High"
+     ],
+     "front": "Infructuous vs avoidable expenditure: SM examples.",
+     "back": {
+      "simplified": "Infructuous: a building built for a telephone exchange but not used for it. Avoidable: a school building used only five years after completion. Both can satisfy regularity audit yet be wasteful."
+     }
+    },
+    {
+     "id": "c-propriety-tests",
+     "type": "concept",
+     "tags": [
+      "Propriety audit",
+      "High"
+     ],
+     "front": "What do the propriety tests boil down to?",
+     "back": {
+      "simplified": "Economy, efficiency and faithfulness. Emphasis shifts from vouchers to the substance of transactions: financial prudence, public interest, prevention of waste.",
+      "cases": [
+       "PYQ Jan 2026 Q3(a): ₹2,000 crore R&D, all rules complied with, but wasteful → propriety audit."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s7-report",
+   "title": "Audit report of the C&AG",
+   "emoji": "📤",
+   "cards": [
+    {
+     "id": "c-report-parts",
+     "type": "mnemonic",
+     "tags": [
+      "C&AG report",
+      "Medium"
+     ],
+     "front": "What are the four parts of the C&AG's report on PSUs presented to Parliament?",
+     "back": {
+      "simplified": "(a) General review of working results of govt companies, deemed govt companies and corporations; (b) results of comprehensive appraisals by the Audit Board; (c) resume of company auditors' reports under C&AG directions and comments on accounts; (d) significant results of audit of undertakings not appraised by the Audit Board.",
+      "explanation": "Specified States get a separate commercial report; others a commercial chapter in the main report."
+     }
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "id": "p-rtp-nov26-q18",
+   "prompt": "The C&AG has initiated a performance audit of a large government programme for rural infrastructure development, implemented across multiple ministries for several years and discussed in Parliament and the media over concerns about efficiency and outcomes. The team is using internal records, legislative discussions, committee reports, prior audit findings, independent research and stakeholder inputs before finalising the audit plan. Identify the stage of the performance audit process and discuss how these sources assist the audit team.",
+   "clauseRef": "Performance audit planning · step (A) · RTP Nov 2026 Q18",
+   "hints": [
+    "It is the first of the nine planning steps.",
+    "Seven sources: entity, legislative, policy, research, past audits, media, focus groups."
+   ],
+   "modelAnswer": "Stage: understanding the entity/programme, the initial stage and starting point of planning an individual performance audit.\n\nSources for understanding the entity:\n(i) Documents of the entity: administration and functions, policy files, annual reports, budgets, accounts, minutes, website, internal audit reports, MIS, RTI material.\n(ii) Legislative documents: legislation, parliamentary questions and debates, PAC / COPU / Estimates Committee reports, MPs' letters.\n(iii) Policy documents: Planning Commission, Ministry of Finance, etc.\n(iv) Academic or special research: independent evaluations, research, work of other governments and SAIs.\n(v) Past audits: past financial and performance audits.\n(vi) Media coverage: systematic documentation of print and electronic media.\n(vii) Special focus groups: Audit Advisory Committee, World Bank, RBI, special interest groups, NGOs.",
+   "markingPoints": [
+    "Identifies the stage as understanding the entity/programme",
+    "Says it is the starting point of PA planning",
+    "Lists and explains at least 5 of the 7 sources",
+    "Links sources to the multi-ministry programme facts"
+   ]
+  },
+  {
+   "id": "p-may26-q6c",
+   "prompt": "The Ministry of IT has initiated a large rural connectivity project under its \"Digital Connect\" programme. You are to conduct a performance audit focused on efficiency. What key aspects should you consider to determine whether resources are used efficiently? (4 marks, May 2026)",
+   "clauseRef": "Performance audit · efficiency",
+   "hints": [
+    "Start with the input-output definition.",
+    "Seven aspects from procurement to cost-effectiveness."
+   ],
+   "modelAnswer": "Efficiency is the input-output ratio: output maximised at minimum input, or input minimised for a given quantity and quality of output; focus on the processes that turn inputs into outputs.\n\nAspects: (i) sound procurement practices; (ii) resources properly protected and maintained; (iii) human, financial and other resources efficiently used; (iv) optimum resources used to deliver the right quantity and quality in time; (v) programmes efficiently managed, regulated, organised and executed; (vi) efficient operating procedures; (vii) objectives met cost-effectively.",
+   "markingPoints": [
+    "Defines efficiency as input-output ratio",
+    "Covers procurement and protection of resources",
+    "Covers efficient/optimum use of resources and timeliness",
+    "Covers management, procedures and cost-effectiveness"
+   ]
+  },
+  {
+   "id": "p-jan26-q3a",
+   "prompt": "C&AG appointed VR & Associates to audit Sunshine Ltd., a PSU planning a ₹5,750 crore solar panel project including ₹2,000 crore for R&D. All approvals and statutory requirements were complied with, but the C&AG felt the R&D spend was wasteful and unjustified on the tests of public interest, as established companies already did similar work in the region. Identify the type of audit and explain its principles. (5 marks, Jan 2026)",
+   "clauseRef": "Propriety audit",
+   "hints": [
+    "Compliant but wasteful = ?",
+    "Four principles of financial propriety."
+   ],
+   "modelAnswer": "Type: propriety audit, since the concern is that ₹2,000 crore R&D spend is wasteful and unjustified on the test of public interest although rules were followed. Propriety audit verifies transactions on the tests of public interest, commonly accepted customs and standards of conduct.\n\nPrinciples:\n(i) expenditure not prima facie more than the occasion demands; officials exercise the vigilance of a person of ordinary prudence over his own money;\n(ii) sanctioning authority does not pass an order accruing to its own advantage;\n(iii) funds not used for the benefit of a particular person or group;\n(iv) no indirect benefit to management or employees beyond agreed remuneration.",
+   "markingPoints": [
+    "Identifies propriety audit with reason from the facts",
+    "Defines propriety audit (public interest, customs, conduct)",
+    "States all four principles",
+    "Links compliance with rules ≠ propriety"
+   ]
+  },
+  {
+   "id": "p-nov23-q5a",
+   "prompt": "Sonar Ltd., a PSU producing solar power, commissioned a new project near Mumbai with new technology at ₹4,750 crore; there were delays in commencement and cost overruns. State ANY FIVE matters a Comprehensive Audit by C&AG may cover in reporting on the performance and efficiency of this project. (5 marks, Nov 2023)",
+   "clauseRef": "Comprehensive audit",
+   "hints": [
+    "Capital cost, capacity, return, project execution, cost control…"
+   ],
+   "modelAnswer": "Comprehensive audit combines financial, compliance and performance aspects for a holistic assessment. Matters:\n1. Capital cost vs approved cost; increases; extravagance.\n2. Planned output achieved; under-utilised capacity and its cause.\n3. Planned rate of return achieved.\n4. Soundness of project formulation and execution; effect on gestation period and capital cost.\n5. Cost control; wastage of raw materials.\n6. Purchase policies; inventory pile-up.\n7. R&D and adoption of new technology.\n8. Repairs and maintenance.\n9. Procedures effective and economical.\n10. Poor project planning.",
+   "markingPoints": [
+    "Any five valid matters, 1 mark each",
+    "Ties at least two to delay and cost overrun"
+   ]
+  },
+  {
+   "id": "p-sep25-q2c",
+   "prompt": "LNG Corporation, a government-owned entity, underwent a C&AG compliance audit of whether its financial transactions, procurement and operations complied with laws, regulations and internal guidelines. (i) Explain the concept of compliance audit and its perspective. (ii) What shall be the concern of the auditor when undertaking compliance audit? (4 marks, Sep 2025)",
+   "clauseRef": "Compliance audit",
+   "hints": [
+    "Definition + three ways it is conducted.",
+    "Regularity and propriety."
+   ],
+   "modelAnswer": "(i) Compliance audit is the independent assessment of whether a given subject matter is in compliance with the applicable criteria: whether activities, financial transactions and information comply in all material respects with the rules governing the entity.\nPerspective: part of a combined audit; conducted with the audit of financial statements, separately as individual compliance audits, or in combination with performance audit.\n\n(ii) Concerns: Regularity (adherence to laws, regulations and agreements) and Propriety (sound financial management and ethical conduct of public officials). Regularity is emphasised, but propriety is equally pertinent in the public sector.",
+   "markingPoints": [
+    "Definition of compliance audit",
+    "Three ways it is conducted",
+    "Regularity explained",
+    "Propriety explained"
+   ]
+  },
+  {
+   "id": "p-nov24-q6c",
+   "prompt": "Central Government funds given to States for a rural scheme (hospitals, schools, roads). C&AG appoints you to conduct a propriety audit and report wastefulness and improper, avoidable and infructuous expenditure. What functions will you perform as auditor? (4 marks, Nov 2024)",
+   "clauseRef": "Propriety audit · auditor's functions",
+   "hints": [
+    "Five 'see that…' functions."
+   ],
+   "modelAnswer": "Functions of the auditor in propriety audit:\n• see that all expenditure is properly planned;\n• see that the size and channels of expenditure are rightful and expected to give maximum results;\n• appraise whether the expenditure is likely to give optimum results;\n• see whether a substitute plan could improve current operations and return on capital expenditure;\n• examine management's actions and decisions to see they are conducive to public interest and meet standards of conduct.",
+   "markingPoints": [
+    "Planning of expenditure",
+    "Size and channels rightful / maximum results",
+    "Optimum results and substitute plan",
+    "Public interest and standards of conduct"
+   ]
+  },
+  {
+   "id": "p-rtp-jan26-q17",
+   "prompt": "C&AG appointed Sharma & Associates to conduct a performance audit of NAL Ltd., a PSU. The audit examined whether all expenses were in conformity with public interest and accepted customs. C&AG rejected the report. Is the C&AG's action justified? (RTP Jan 2026; also SM TYK 7)",
+   "clauseRef": "Performance audit vs propriety audit",
+   "hints": [
+    "What did the firm actually test?",
+    "Objectives of performance audit."
+   ],
+   "modelAnswer": "Definition of performance audit: objective and systematic examination of evidence to independently assess the performance of a government organisation, programme, activity or function, to improve accountability and decision-making; conducted by C&AG through IAAD offices.\n\nObjectives: evaluate economy, efficiency and effectiveness of policy, programmes, organisation and management; promote accountability and transparency. Responsibility for measurable objectives and indicators lies with the departments / heads of entities.\n\nThe firm only checked expenses against public interest and publicly accepted customs, which is not performance audit in all aspects.\n\nConclusion: the C&AG's rejection of the report is in order.",
+   "markingPoints": [
+    "Definition of performance audit",
+    "Objectives: 3Es, accountability, transparency",
+    "Identifies the work done as not PA (propriety test)",
+    "Conclusion: rejection justified"
+   ]
+  },
+  {
+   "id": "p-sm-tyk10",
+   "prompt": "The C&AG plans a performance audit, for a block of years in a state, of selected social security pension and scholarship schemes under Direct Benefit Transfer (DBT). What are likely objectives? Explain 'audit criteria' and how they can be determined here. (SM TYK 10)",
+   "clauseRef": "PA objectives · audit criteria",
+   "hints": [
+    "Beneficiary data, delays/pilferage/duplication, infrastructure.",
+    "Criteria = reasonable, attainable standards."
+   ],
+   "modelAnswer": "Likely objectives:\n• whether proper planning and processes captured beneficiary data;\n• whether steps were taken to prevent payment delays, pilferage and duplication;\n• whether DBT infrastructure, organisation and management were adequate and effective.\n\nAudit criteria: standards used to determine whether a programme meets or exceeds expectations; reasonable and attainable standards against which economy, efficiency and effectiveness are assessed.\n\nHere: Government of India and state circulars, instructions, SOP manuals, scheme guidelines on identification and authentication of beneficiaries, and general management and subject literature.",
+   "markingPoints": [
+    "Three objectives",
+    "Definition of audit criteria",
+    "Sources specific to DBT"
+   ]
+  },
+  {
+   "id": "p-sm-tyu1",
+   "prompt": "A financial committee of Parliament decides to examine the physical and financial performance of BNPC Ltd., a power PSU, including C&AG audit findings on which action is pending. Which committee is this? Outline its functions. (SM Test Your Understanding 1)",
+   "clauseRef": "COPU",
+   "hints": [
+    "Not PAC: that is for departments."
+   ],
+   "modelAnswer": "Committee on Public Undertakings (COPU). Functions:\n(i) examine reports and accounts of public undertakings;\n(ii) examine C&AG reports on public undertakings;\n(iii) examine autonomy and efficiency and whether they are managed on sound business principles and prudent commercial practices;\n(iv) other PAC / Estimates Committee functions not covered above, allotted by the Speaker.\nIts examination is a comprehensive appraisal of the undertaking's policies, programmes and financial working.",
+   "markingPoints": [
+    "Names COPU",
+    "Four functions",
+    "Comprehensive appraisal point"
+   ]
+  },
+  {
+   "id": "p-mtp-may23-q6a",
+   "prompt": "\"The C&AG may direct the appointed auditor about the manner in which the accounts of the Government Company are required to be audited and thereupon the auditor so appointed shall submit a copy of the audit report to the C&AG.\" What are the relevant sections of the Companies Act, 2013 and the steps involved in the audit of Government Companies? (5 marks, MTP May 2023 S-I)",
+   "clauseRef": "s.139(5)/(7), 143(5), 143(6), 143(7)",
+   "hints": [
+    "Appointment → directions → supplementary audit → comments → test audit."
+   ],
+   "modelAnswer": "(i) Appointment: s.139(5)/(7) read with s.143(5): C&AG appoints/re-appoints the statutory auditor; remuneration decided by the company within C&AG guidelines.\n(ii) Directions: s.143(5): C&AG directs the manner of audit; auditor submits a copy of the report to C&AG including directions, action taken and impact on accounts; in addition to other s.143 reports.\n(iii) Supplementary audit: s.143(6)(a): within 60 days of receipt of the audit report, by persons authorised; may call for information.\n(iv) Comments: s.143(6)(b): C&AG comments upon/supplementing the audit report are sent to all entitled to the audited FS (s.136(1)) and placed before the AGM with the audit report.\n(v) Test audit: s.143(7): C&AG may order a test audit of companies under s.139(5)/(7); s.19A of the DPC Act, 1971 applies to its report.",
+   "markingPoints": [
+    "Appointment by C&AG u/s 139(5)/(7)",
+    "Directions and report content u/s 143(5)",
+    "Supplementary audit within 60 days u/s 143(6)(a)",
+    "Comments u/s 143(6)(b) sent to members / AGM",
+    "Test audit u/s 143(7)"
+   ]
+  },
+  {
+   "id": "p-mtp-may25-q2b",
+   "prompt": "The C&AG appointed a CA firm to conduct a comprehensive audit of Saras Co. Ltd., a listed government company running a 130 km metropolitan railway project. The internal audit report shows Current liabilities and CWIP of the project understated by ₹75.32 crore. What key aspects should the firm focus on? (5 marks, MTP May 2025 S-II)",
+   "clauseRef": "Comprehensive audit",
+   "hints": [
+    "The ten issues (a)–(j)."
+   ],
+   "modelAnswer": "Aspects: (i) capital cost vs approved cost, extravagance; (ii) planned output achieved, idle capacity; (iii) planned rate of return; (iv) project formulation and execution, gestation period and cost; (v) cost control and wastage; (vi) purchase policies and inventory; (vii) R&D and technology; (viii) repairs and maintenance; (ix) effective and economical procedures; (x) poor project planning.",
+   "markingPoints": [
+    "At least 5 valid issues",
+    "Relates capital cost / execution issues to the railway project"
+   ]
+  },
+  {
+   "id": "p-mtp-may26-q4b",
+   "prompt": "During the audit of a state government department, the C&AG found buildings wrongly classified as \"flats\" because the database had no field for building area, leading to under-collection of water charges. Identify the type and nature of audit and to whom the report is likely submitted. (5 marks, MTP May 2026 S-I; also SM TYK 9)",
+   "clauseRef": "Compliance audit · Art. 151",
+   "hints": [
+    "Conformity with the statutory definition.",
+    "State accounts → ?"
+   ],
+   "modelAnswer": "Compliance audit: independent assessment of whether a subject matter complies with applicable criteria, i.e. whether activities, transactions and information comply in all material respects with the rules governing the entity. Concerns: regularity (laws, regulations, agreements) and propriety (sound financial management, ethical conduct).\nUnder Article 151, C&AG reports on State accounts go to the Governor, who causes them to be laid before the State Legislative Assembly; so this report would go to the Governor.",
+   "markingPoints": [
+    "Identifies compliance audit",
+    "Defines it",
+    "Regularity and propriety",
+    "Article 151: Governor / State Legislature"
+   ]
+  }
+ ]
+}

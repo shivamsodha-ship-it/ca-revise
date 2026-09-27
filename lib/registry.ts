@@ -1,4 +1,5 @@
 import type { Chapter, ChapterIndexRow, Subject } from './types';
+import type { Casebook } from './casebook';
 
 // Registry — add a new chapter by importing its JSON and adding a row.
 const registry: ChapterIndexRow[] = [
@@ -7,8 +8,9 @@ const registry: ChapterIndexRow[] = [
     subject: 'aaa',
     number: 19,
     title: 'Professional Ethics',
-    summary: 'Code of Ethics · CA Act Schedules · Council Guidelines · 40 illustrations',
+    summary: 'Code of Ethics · CA Act Schedules · Council Guidelines · 138 cases & MCQs',
     loader: async () => (await import('../data/aaa/ch19-professional-ethics.json')).default as unknown as Chapter,
+    casebook: async () => (await import('../data/aaa/ch19-casebook.json')).default as unknown as Casebook,
   },
 ];
 

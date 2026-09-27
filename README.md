@@ -2,13 +2,14 @@
 
 Active-recall revision app for CA Final Group 1 (FR · AFM · AAA), Nov 2026 attempt.
 
-The philosophy: reading a chapter three times ≠ knowing it. This app forces **retrieval** (flip cards)
-and **production** (typed answers), scheduled by SM-2 spaced repetition.
+Each chapter is a casebook: rule on real cases, hunt the clause, sprint through MCQs, then read the law.
+Handwritten notes, SM-2 flip cards and typed practice sit alongside.
 
 ## Stack
 
 - **Next.js 14** (App Router, TypeScript) — deploys to **Vercel**
-- **Tailwind CSS** with handwritten fonts (Kalam / Caveat / Shadows Into Light)
+- Plain CSS design system (`app/globals.css`) ported from the Ethics Casebook artifact: Bricolage Grotesque, Public Sans, IBM Plex Mono, Special Elite. Light and dark themes.
+- Handwritten fonts (Kalam / Caveat / Shadows Into Light) are used **only** in the Notes view (scoped under `.hand`).
 - **localStorage** for progress (v0.1 — no backend needed)
 - Phase 2: **Railway** (Postgres + FastAPI) for cross-device sync and **Claude API** for grading typed answers
 
@@ -101,11 +102,22 @@ npm run dev
 }
 ```
 
-## The three modes
+## Modes (per chapter)
 
-- **📖 Read Notes** — section-by-section, tap a card to expand its bare text, plain words, exceptions, traps, cases and cross-refs. Use as a first pass.
-- **🎴 Flip Cards** — active recall. Front = prompt, tap to reveal, then rate **Again / Hard / Good / Easy**. The SM-2 scheduler queues cards on their next-due date. Filter by section or "Due today".
-- **✍️ Practice** — type your answer using the 4-step template (Cite → Rule + Regulation → Apply → Conclude). Reveal the model answer and marking points; tick what you covered; mark **Wrong / Partial / Correct** to log the attempt.
+Casebook modes — available when the chapter registers a `casebook` JSON (see `data/aaa/ch19-casebook.json`, shape in `lib/casebook.ts`):
+
+- **Home** — coverage ring, accuracy, best streak, weak clauses (<60%), RTP scope rail, ICAI 4-step answer method.
+- **Case Drill** — read the facts, rule Guilty / Not guilty / Partly, get stamped, read the model answer and examiner's trap. Filter by source (RTP, SM Illustrations, SM TYK, exam pattern, Code 2026) and New / Missed.
+- **Clause Hunt** — 10 rounds: which provision do the facts trigger?
+- **MCQ Sprint** — shuffled MCQs with instant feedback.
+- **Law Library** — every provision as a tile; tap for the law, notes, updates, memory hook and linked questions.
+- **Cheat Sheet** — numbers table and facts → clause finder.
+
+Core modes — every chapter (from the chapter JSON):
+
+- **Notes** — handwritten, lined-paper notes, section by section.
+- **Flip Cards** — SM-2 spaced repetition (Again / Hard / Good / Easy).
+- **Practice** — type the full answer, reveal the model answer and marking points, self-mark.
 
 ## Roadmap
 

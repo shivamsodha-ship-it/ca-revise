@@ -1,3 +1,5 @@
+import type { Casebook } from './casebook';
+
 export type Subject = 'aaa' | 'fr' | 'afm';
 
 export interface CardFace {
@@ -56,4 +58,6 @@ export interface ChapterIndexRow {
   title: string;
   summary: string;
   loader: () => Promise<Chapter>;
+  // Optional casebook: case drills, clause hunt, MCQs, law library, cheat sheet
+  casebook?: () => Promise<Casebook>;
 }

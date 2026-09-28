@@ -64,7 +64,7 @@ code { font-family: var(--mono); font-size: .9em }
 .empty .btn { margin-top: 12px }
 
 /* ---------- controls ---------- */
-.btn { min-height: var(--tap); border: 1px solid var(--line); background: var(--card); padding: 10px 16px; border-radius: 12px; font-weight: 700; display: inline-flex; gap: 8px; align-items: center; justify-content: center; text-decoration: none; color: var(--ink); transition: border-color .15s, background .15s }
+.btn { min-height: var(--tap); border: 1px solid var(--line); background: var(--card); padding: 10px 16px; border-radius: 12px; font-weight: 700; display: inline-flex; gap: 8px; align-items: center; justify-content: center; text-decoration: none; color: var(--ink) }
 .btn:hover { border-color: var(--blue) }
 .btn.primary, .btn.pri { background: var(--blue); border-color: var(--blue); color: var(--blue-ink) }
 .btn.primary:hover, .btn.pri:hover { filter: brightness(1.08) }
@@ -84,6 +84,16 @@ code { font-family: var(--mono); font-size: .9em }
 .seg button { min-height: 40px; border: 1px solid var(--line); background: var(--card); padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap }
 .seg button:hover { border-color: var(--ink) }
 .seg button.on { background: var(--ink); color: var(--bg); border-color: var(--ink) }
+
+/* Every control answers a press: a short scale-down while held. Transitions name their properties. */
+.btn, .chip, .seg button, .vb, .opt, .row, .fnd, .tile, .mode, .sheet-row, .bitem, .x {
+  transition: border-color var(--t-fast) var(--ease-out), background-color var(--t-fast) var(--ease-out), color var(--t-fast) var(--ease-out), transform var(--t-fast) var(--ease-out), filter var(--t-fast) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active:not(:disabled), .chip:active, .seg button:active, .vb:active, .opt:active:not(:disabled), .row:active, .fnd:active, .x:active { transform: scale(.97) }
+.tile:hover { transform: translateY(-1px) }
+.tile:active, .mode:active { transform: scale(.985) }
+.bitem:active { transform: scale(.92) }
 
 /* Touch screens get full-size filter pills. */
 @media (pointer: coarse) { .seg button { min-height: var(--tap) } }
@@ -223,7 +233,7 @@ code { font-family: var(--mono); font-size: .9em }
 .facts p { margin: 0 0 10px }
 .ask { font-family: var(--disp); font-weight: 700; font-size: 15px; margin: 16px 0 10px }
 .vbtns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px }
-.vb { min-height: 60px; border: 2px solid var(--line); background: var(--card); border-radius: 12px; padding: 12px 10px; font-weight: 800; font-family: var(--disp); font-size: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; transition: border-color .15s, color .15s }
+.vb { min-height: 60px; border: 2px solid var(--line); background: var(--card); border-radius: 12px; padding: 12px 10px; font-weight: 800; font-family: var(--disp); font-size: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px }
 .vb small { font-family: var(--sans); font-weight: 500; font-size: 11.5px; color: var(--muted) }
 .vb.bad:hover { border-color: var(--g); color: var(--g) }
 .vb.good:hover { border-color: var(--n); color: var(--n) }

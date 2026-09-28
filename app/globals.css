@@ -51,6 +51,8 @@ button { cursor: pointer }
 a { color: var(--blue) }
 img { max-width: 100% }
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 6px }
+::selection { background: color-mix(in srgb, var(--blue) 28%, transparent); color: inherit }
+html { accent-color: var(--blue); caret-color: var(--blue); scrollbar-color: color-mix(in srgb, var(--muted) 45%, transparent) transparent }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important } }
 h1, h2, h3 { font-family: var(--disp); letter-spacing: -.015em; text-wrap: balance; margin: 0; line-height: 1.15 }
 p { margin: 0 0 10px }
@@ -380,6 +382,10 @@ tr.c td:nth-child(2) { color: var(--u); font-weight: 700 }
 .h-info { background: #eaf2f8; border-left: 5px solid #2874a6; padding: 6px 10px; border-radius: 4px }
 .h-trap { background: #fdebd0; border-left: 5px solid #d68910; padding: 6px 10px; border-radius: 4px }
 .h-case { background: #e8daef; border-left: 4px solid #8e44ad; padding: 5px 9px; border-radius: 4px; font-size: 13px }
+
+/* Dark theme: the paper stays paper, just dimmed so it doesn't glare. */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.paper, .mode.hand-mode) { filter: brightness(.86) saturate(.9) } }
+:root[data-theme="dark"] :is(.paper, .mode.hand-mode) { filter: brightness(.86) saturate(.9) }
 
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {

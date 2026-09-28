@@ -261,7 +261,7 @@ code { font-family: var(--mono); font-size: .9em }
 .vb.bad:hover { border-color: var(--g); color: var(--g) }
 .vb.good:hover { border-color: var(--n); color: var(--n) }
 .vb.mixed:hover { border-color: var(--p); color: var(--p) }
-.vb:not(.bad):not(.good):not(.mixed):hover { border-color: var(--blue); color: var(--blue) }
+.vb:not(.bad):not(.good):not(.mixed):not(.easy):hover { border-color: var(--blue); color: var(--blue) }
 .stamp { display: inline-block; margin: 16px 0 2px 4px; font-family: var(--stamp); font-size: 26px; letter-spacing: .06em; padding: 6px 14px; border: 4px double currentColor; border-radius: 8px; transform: rotate(-9deg); animation: stamp .35s cubic-bezier(.2, 1.6, .4, 1); opacity: .9; pointer-events: none; background: color-mix(in srgb, var(--card) 70%, transparent) }
 .stamp.bad { color: var(--g) } .stamp.good { color: var(--n) } .stamp.mixed { color: var(--p) }
 @keyframes stamp { from { transform: rotate(-9deg) scale(2.2); opacity: 0 } to { transform: rotate(-9deg) scale(1); opacity: .9 } }
@@ -302,6 +302,9 @@ code { font-family: var(--mono); font-size: .9em }
 .opt.right { border-color: var(--n); background: var(--n-soft) }
 .opt.wrong { border-color: var(--g); background: var(--g-soft) }
 .opt:disabled { cursor: default }
+.opt { position: relative }
+.opt kbd { display: none }
+@media (hover: hover) and (pointer: fine) { .opt kbd { display: block; position: absolute; top: 8px; right: 10px; font-family: var(--mono); font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; line-height: 16px } .opt:disabled kbd { visibility: hidden } }
 .score { display: flex; gap: 10px; align-items: center; font-weight: 700; font-variant-numeric: tabular-nums }
 .pips { display: flex; gap: 4px }
 .pips i { width: 16px; height: 6px; border-radius: 4px; background: var(--line) }
@@ -340,7 +343,7 @@ tr.c td:nth-child(2) { color: var(--u); font-weight: 700 }
 
 /* ---------- flip cards ---------- */
 .flip { perspective: 1200px; cursor: pointer; border-radius: 14px }
-.flip-inner { position: relative; transform-style: preserve-3d; transition: transform .55s; min-height: 360px }
+.flip-inner { position: relative; transform-style: preserve-3d; transition: transform .5s var(--ease-io); min-height: 360px }
 .flip.on .flip-inner { transform: rotateY(180deg) }
 .flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; min-height: 360px; padding: 24px }
 .flip-back { position: absolute; inset: 0; transform: rotateY(180deg); overflow: auto }
@@ -351,6 +354,12 @@ tr.c td:nth-child(2) { color: var(--u); font-weight: 700 }
 .upd { background: var(--u-soft); border-radius: 10px; padding: 10px 14px; margin: 12px 0; font-size: 14px }
 .grades { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 14px }
 .grades .vb { font-size: 15px; padding: 10px 6px }
+/* Grade buttons carry their meaning at rest, not only on hover. */
+.grades .vb.bad { color: var(--g) } .grades .vb.mixed { color: var(--p) } .grades .vb.good { color: var(--n) } .grades .vb.easy { color: var(--blue) }
+.grades .vb.easy:hover { border-color: var(--blue) }
+.grades { animation: rise var(--t-med) var(--ease-out) }
+.key-hint { display: none }
+@media (hover: hover) and (pointer: fine) { .tap-hint { display: none } .key-hint { display: inline } }
 
 /* ---------- provision drawer ---------- */
 .drawer { position: fixed; inset: 0; z-index: 50 }

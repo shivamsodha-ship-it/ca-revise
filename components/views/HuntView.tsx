@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useChapter } from '@/components/ChapterShell';
 import { cap, huntPool, shuffle, toneOf, type Casebook } from '@/lib/casebook';
+import { useKeys } from '@/lib/useKeys';
 
 interface Round { q: string; right: string; opts: string[]; pick: string | null }
 
@@ -21,6 +22,11 @@ export default function HuntView() {
   const [rounds, setRounds] = useState<Round[] | null>(null);
   const [i, setI] = useState(0);
   useEffect(() => { if (cb) setRounds(newGame(cb)); }, [cb]);
+  const cur = rounds?.[i];
+  const keyMap: Record<string, () => void> = {};
+  if (cur && !cur.pick) cur.opts.forEach((id, n) => { keyMap['abcd'[n]] = keyMap[String(n + 1)] = () => choose(id); });
+  if (cur?.pick) keyMap.ArrowRight = keyMap.Enter = () => next();
+  useKeys(keyMap);
   if (!cb || !meta) return null;
   if (!rounds) return <div className="drill"><div className="card case empty">Shuffling…</div></div>;
   const pn = meta.provisionNoun;
@@ -28,17 +34,19 @@ export default function HuntView() {
   const score = rounds.filter(r => r.pick && r.pick === r.right).length;
   const r = rounds[i];
 
-  const choose = (id: string) => {
-    if (!r || r.pick) return;
+  function choose(id: string) {
+    const r = cur;
+    if (!r || r.pick || !rounds) return;
     const ok = id === r.right;
     setRounds(rs => rs && rs.map((x, ix) => ix === i ? { ...x, pick: id } : x));
     record('hunt-' + r.q, ok, false);
-  };
-  const next = () => {
+  }
+  function next() {
+    if (!rounds) return;
     const n = i + 1;
-    if (n >= rounds.length) setHuntBest(score);
+    if (n >= rounds.length) setHuntBest(rounds.filter(x => x.pick && x.pick === x.right).length);
     setI(n);
-  };
+  }
   const restart = () => { setRounds(newGame(cb)); setI(0); };
 
   const msg = score >= 9 ? 'Examiner-level instincts.' : score >= 7 ? `Strong. A few ${pn}s to tighten.` : score >= 5 ? 'Halfway there. Open the misses below.' : 'Worth a revision pass in the Law Library.';
@@ -64,20 +72,20 @@ export default function HuntView() {
           <button className="btn pri" onClick={restart}>Play again</button>
         </div>
       ) : r && (
-        <article className="card case">
+        <article className="card case" key={r.q}>
           <div className="chead"><span className="qid">Round {i + 1}</span><span className={'src ' + Q[r.q].k}>{Q[r.q].src}</span></div>
           <div className="facts" dangerouslySetInnerHTML={{ __html: Q[r.q].q }} />
           <div className="opts">
-            {r.opts.map(id => {
+            {r.opts.map((id, n) => {
               const cls = r.pick ? (id === r.right ? 'right' : id === r.pick ? 'wrong' : '') : '';
-              return <button key={id} className={'opt ' + cls} disabled={!!r.pick} onClick={() => choose(id)}><b>{P[id].label}</b><span>{P[id].short}</span></button>;
+              return <button key={id} className={'opt ' + cls} disabled={!!r.pick} onClick={() => choose(id)}><b>{P[id].label}</b><span>{P[id].short}</span><kbd aria-hidden="true">{'abcd'[n]}</kbd></button>;
             })}
           </div>
           {r.pick && <>
             <div className={'fb ' + (r.pick === r.right ? 'right' : 'wrong')} role="status">
               {r.pick === r.right ? 'Spot on.' : `It turns on ${P[r.right].label}.`}{toneOf(meta, Q[r.q].v) ? ` Ruling: ${Q[r.q].v}.` : ''}
             </div>
-            <div className="nav"><button className="btn" data-p={r.right}>Read the {pn}</button><button className="btn pri" onClick={next}>{i === rounds.length - 1 ? 'See score' : 'Next round →'}</button></div>
+            <div className="nav"><button className="btn" data-p={r.right}>Read the {pn}</button><button className="btn pri" onClick={next} aria-keyshortcuts="ArrowRight">{i === rounds.length - 1 ? 'See score' : 'Next round →'}</button></div>
           </>}
         </article>
       )}

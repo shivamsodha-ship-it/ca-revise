@@ -16,6 +16,10 @@
   --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
   --stamp: "Special Elite", "Courier New", monospace;
   --tap: 44px;
+  /* Motion: enter with ease-out, move with ease-in-out; the stamp keeps its own overshoot. */
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --ease-io: cubic-bezier(.65, 0, .35, 1);
+  --t-fast: .14s; --t-med: .24s;
   --max: 1080px;
   --bottombar: 0px;
 }
@@ -105,8 +109,8 @@ code { font-family: var(--mono); font-size: .9em }
 .dlink:hover { color: var(--ink) }
 .dlink[aria-current="page"] { color: var(--ink); border-bottom-color: var(--blue) }
 
-.page { max-width: var(--max); margin: 0 auto; padding: 24px 20px calc(80px + var(--bottombar)); animation: rise .22s ease }
-@keyframes rise { from { opacity: .4; transform: translateY(6px) } to { opacity: 1; transform: none } }
+.page { max-width: var(--max); margin: 0 auto; padding: 24px 20px calc(80px + var(--bottombar)); animation: rise var(--t-med) var(--ease-out) }
+@keyframes rise { from { opacity: .5; transform: translateY(8px) } to { opacity: 1; transform: none } }
 
 .bottombar { display: none }
 .sheet-wrap { position: fixed; inset: 0; z-index: 40; background: rgba(8, 12, 24, .45); animation: fade .15s }

@@ -161,7 +161,12 @@ code { font-family: var(--mono); font-size: .9em }
 .chtitle { font-family: var(--disp); font-weight: 700; font-size: 19px }
 .chsum { color: var(--muted); font-size: 14px }
 .chmeta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 2px }
-.chgo { font-size: 20px; color: var(--muted); transition: transform .15s }
+.chgo { font-size: 20px; color: var(--muted); transition: transform var(--t-fast) var(--ease-out), color var(--t-fast) var(--ease-out) }
+.chtitle { transition: color var(--t-fast) var(--ease-out) }
+/* Landing: chapter rows settle in one after another. */
+.chlist li { animation: rise .32s var(--ease-out) both }
+.chlist li:nth-child(2) { animation-delay: .04s } .chlist li:nth-child(3) { animation-delay: .08s } .chlist li:nth-child(4) { animation-delay: .12s }
+.chlist li:nth-child(n+5) { animation-delay: .16s }
 
 /* ---------- chapter home ---------- */
 .hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px }
@@ -185,6 +190,7 @@ code { font-family: var(--mono); font-size: .9em }
 .sec { margin-top: 32px }
 .sec-h { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 12px; flex-wrap: wrap }
 .sec-h h2 { font-size: 1.35rem }
+.sec-h .chip { font-family: var(--sans); font-weight: 700; font-size: 13px; border-radius: 10px; padding-inline: 12px }
 
 .modes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px }
 .modes.lite { grid-template-columns: repeat(3, minmax(0, 1fr)) }

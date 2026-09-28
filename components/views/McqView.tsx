@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { shuffle } from '@/lib/casebook';
+import { useKeys } from '@/lib/useKeys';
 
 export default function McqView() {
   const { cb, P, Q, record } = useChapter();
@@ -10,6 +11,12 @@ export default function McqView() {
   useEffect(() => { setList(shuffle((cb?.Q ?? []).filter(q => q.k === 'mcq').map(q => q.id))); }, [cb]);
   const [i, setI] = useState(0);
   const [picks, setPicks] = useState<Record<string, number>>({});
+  const cur = list && i < list.length ? Q[list[i]] : null;
+  const choose = (ix: number) => { if (!cur || picks[cur.id] !== undefined || ix >= (cur.opts?.length ?? 0)) return; setPicks(x => ({ ...x, [cur.id]: ix })); record(cur.id, ix === cur.ans); };
+  const advance = () => { if (cur && picks[cur.id] !== undefined) { setI(i + 1); window.scrollTo(0, 0); } };
+  const keyMap: Record<string, () => void> = { ArrowRight: advance, Enter: advance };
+  [0, 1, 2, 3].forEach(n => { keyMap['abcd'[n]] = keyMap[String(n + 1)] = () => choose(n); });
+  useKeys(keyMap);
   if (!cb) return null;
   if (!list) return <div className="drill"><div className="card case empty">Shuffling…</div></div>;
 
@@ -38,7 +45,7 @@ export default function McqView() {
               const cls = p === undefined ? '' : ix === q.ans ? 'right' : ix === p ? 'wrong' : '';
               return (
                 <button key={ix} className={'opt ' + cls} disabled={p !== undefined}
-                  onClick={() => { setPicks(x => ({ ...x, [q.id]: ix })); record(q.id, ix === q.ans); }}>
+                  onClick={() => choose(ix)}>
                   <b>({'abcd'[ix]})</b><span style={{ color: 'var(--ink)', fontSize: 14 }}>{o}</span>
                 </button>
               );
@@ -49,7 +56,7 @@ export default function McqView() {
               {p === q.ans ? 'Correct. ' : `Answer: (${'abcd'[q.ans ?? 0]}). `}<span dangerouslySetInnerHTML={{ __html: q.why ?? '' }} />
             </div>
             <p className="links"><span>Decided by</span>{q.links.map(l => P[l] && <button key={l} className="chip" data-p={l}>{P[l].label}</button>)}</p>
-            <div className="nav"><span /><button className="btn pri" onClick={() => { setI(i + 1); window.scrollTo(0, 0); }}>{i === list.length - 1 ? 'Finish' : 'Next →'}</button></div>
+            <div className="nav"><span /><button className="btn pri" onClick={advance} aria-keyshortcuts="ArrowRight">{i === list.length - 1 ? 'Finish' : 'Next →'}</button></div>
           </>}
         </article>
       )}

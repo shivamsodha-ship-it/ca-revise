@@ -244,6 +244,13 @@ code { font-family: var(--mono); font-size: .9em }
 .vbtns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px }
 .vb { min-height: 60px; border: 2px solid var(--line); background: var(--card); border-radius: 12px; padding: 12px 10px; font-weight: 800; font-family: var(--disp); font-size: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px }
 .vb small { font-family: var(--sans); font-weight: 500; font-size: 11.5px; color: var(--muted) }
+.vb { position: relative }
+/* Shortcut hints only where there is a keyboard and a mouse. */
+.vb kbd { display: none }
+@media (hover: hover) and (pointer: fine) {
+  .vb kbd { display: block; position: absolute; top: 6px; right: 8px; font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; line-height: 16px }
+}
+.opt.wrong { animation: nudge .36s var(--ease-io) }
 .vb.bad:hover { border-color: var(--g); color: var(--g) }
 .vb.good:hover { border-color: var(--n); color: var(--n) }
 .vb.mixed:hover { border-color: var(--p); color: var(--p) }

@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { cap, toneOf, stripTags } from '@/lib/casebook';
+import { useKeys } from '@/lib/useKeys';
 
 // Filters survive switching tabs, like the artifact's module-level DR.
 const DR = { kind: 'all', status: 'all', clause: null as string | null, list: false, handled: 0 };
@@ -45,6 +46,13 @@ export default function DrillView() {
     if (focus) { setI(Math.max(0, pool.indexOf(focus))); setFocus(null); }
   }, [focus, pool]);
 
+  const cur = pool.length ? Q[pool[Math.min(i, pool.length - 1)]] : null;
+  const next = () => { if (i < pool.length - 1) { setI(i + 1); window.scrollTo(0, 0); } else toast(`End of this set. Change the filter for more ${meta?.caseNoun ?? 'case'}s.`); };
+  const prev = () => setI(x => Math.max(0, x - 1));
+  const keyMap: Record<string, () => void> = { ArrowRight: next, ArrowLeft: prev };
+  if (cur && !answered[cur.id] && meta && toneOf(meta, cur.v)) meta.verdicts.forEach((v, n) => { keyMap[String(n + 1)] = () => pick(v.label); });
+  useKeys(keyMap);
+
   if (!cb || !meta) return null;
 
   const setFilter = (fn: () => void) => { fn(); setI(0); setAnswered({}); };
@@ -54,7 +62,7 @@ export default function DrillView() {
   const noun = meta.caseNoun;
   const kinds: [string, string][] = [['all', 'All'], ...meta.sources];
 
-  const pick = (v: string) => { if (!q) return; const ok = v === q.v; setAnswered(a => ({ ...a, [q.id]: { pick: v, ok } })); record(q.id, ok); };
+  function pick(v: string) { const q = cur; if (!q) return; const ok = v === q.v; setAnswered(a => ({ ...a, [q.id]: { pick: v, ok } })); record(q.id, ok); }
   const selfMark = (ok: boolean) => { if (!q) return; setAnswered(a => ({ ...a, [q.id]: { ...a[q.id], self: ok } })); record(q.id, ok); };
 
   const t = search.toLowerCase();
@@ -79,7 +87,7 @@ export default function DrillView() {
           {!done ? (tone ? <>
             <p className="ask">Your ruling?</p>
             <div className="vbtns" style={{ gridTemplateColumns: `repeat(${meta.verdicts.length}, minmax(0, 1fr))` }}>
-              {meta.verdicts.map(v => <button key={v.label} className={'vb ' + v.tone} onClick={() => pick(v.label)}>{v.label}{v.hint && <small>{v.hint}</small>}</button>)}
+              {meta.verdicts.map((v, n) => <button key={v.label} className={'vb ' + v.tone} onClick={() => pick(v.label)}>{v.label}{v.hint && <small>{v.hint}</small>}<kbd aria-hidden="true">{n + 1}</kbd></button>)}
             </div>
           </> : <>
             <p className="ask">Frame your answer in your head, then check it.</p>
@@ -102,9 +110,9 @@ export default function DrillView() {
       )}
 
       <div className="nav">
-        <button className="btn" disabled={i === 0} onClick={() => setI(x => Math.max(0, x - 1))}>← Previous</button>
+        <button className="btn" disabled={i === 0} onClick={prev} aria-keyshortcuts="ArrowLeft">← Previous</button>
         <button className="btn" onClick={() => setList(l => !l)}>{list ? 'Hide list' : 'Browse all'}</button>
-        <button className="btn pri" onClick={() => { if (i < pool.length - 1) { setI(i + 1); window.scrollTo(0, 0); } else toast(`End of this set. Change the filter for more ${noun}s.`); }}>Next {noun} →</button>
+        <button className="btn pri" onClick={next} aria-keyshortcuts="ArrowRight">Next {noun} →</button>
       </div>
 
       {list && <>

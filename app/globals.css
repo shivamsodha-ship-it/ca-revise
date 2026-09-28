@@ -239,7 +239,8 @@ code { font-family: var(--mono); font-size: .9em }
 .qid { font-family: var(--mono); font-weight: 600; font-size: 13px }
 .src { font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 6px; background: var(--card2); color: var(--muted); border: 1px solid var(--line) }
 .src.rtp { background: var(--g-soft); color: var(--g); border-color: transparent }
-.src.upd { background: var(--u-soft); color: var(--u); border-color: transparent }
+/* Question kinds become class names; `upd` also names the update callout, so pin the badge box here. */
+.src.upd { background: var(--u-soft); color: var(--u); border-color: transparent; padding: 3px 9px; margin: 0; font-size: 11.5px; border-radius: 6px }
 .src.mcq, .src.tone-mixed { background: var(--p-soft); color: var(--p); border-color: transparent }
 .src.tone-good { background: var(--n-soft); color: var(--n); border-color: transparent }
 .src.tone-bad { background: var(--g-soft); color: var(--g); border-color: transparent }

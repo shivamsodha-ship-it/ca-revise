@@ -13,6 +13,7 @@ const E = m => errors.push(m), W = m => warns.push(m);
 const reg = fs.readFileSync(path.join(root, 'lib', 'registry.ts'), 'utf8');
 const block = reg.split(/\n  \{\n/).find(b => b.includes(`id: '${id}'`));
 if (!block) { console.error(`${id} is not registered in lib/registry.ts`); process.exit(1); }
+if (/One-line summary|Chapter Title/.test(block)) E('lib/registry.ts row still has template title/summary text');
 const notesPath = block.match(/loader:.*import\('\.\.\/(data\/[^']+)'\)/)?.[1];
 const cbPath = block.match(/casebook:.*import\('\.\.\/(data\/[^']+)'\)/)?.[1];
 const load = p => { try { return JSON.parse(fs.readFileSync(path.join(root, p), 'utf8')); } catch (e) { E(`${p}: ${e.message}`); return null; } };

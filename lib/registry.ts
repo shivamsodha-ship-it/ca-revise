@@ -25,7 +25,7 @@ const registry: ChapterIndexRow[] = [
     subject: 'aaa',
     number: 15,
     title: 'Overview of Audit of Public Sector Undertakings',
-    summary: 'One-line summary',
+    summary: 'C&AG · COPU/PAC · compliance, performance, comprehensive and propriety audit',
     loader: async () => (await import('../data/aaa/ch15-overview-of-audit-of-public-sector-undertakings.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/aaa/ch15-casebook.json')).default as unknown as Casebook,
   },

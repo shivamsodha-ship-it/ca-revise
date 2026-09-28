@@ -387,17 +387,24 @@ tr.c td:nth-child(2) { color: var(--u); font-weight: 700 }
 .hand .eyebrow { font-family: var(--sans) }
 .hand .h-title { font-family: 'Caveat', cursive; font-weight: 700; font-size: clamp(2rem, 6vw, 2.6rem); color: #c0392b; letter-spacing: 0 }
 .hand .h-head { font-family: 'Caveat', cursive; font-weight: 700 }
-.hand .h-note { font-family: 'Shadows Into Light', cursive; font-size: 16px; color: var(--muted); margin: 0 }
+.hand .h-note { font-family: 'Shadows Into Light', cursive; font-size: 18px; color: #4a5775; margin: 0; letter-spacing: .01em }
+.hand .h-count { font-size: 16px; color: #5a6a8a }
 .notes-list { display: flex; flex-direction: column; gap: 12px }
 .paper { background: #fefdf6; background-image: repeating-linear-gradient(#fefdf6 0px, #fefdf6 30px, #d9e6f0 30px, #d9e6f0 31px); position: relative; border-radius: 14px; border: 1px solid #e6e0c8; overflow: hidden }
 .paper::before { content: ''; position: absolute; left: 44px; top: 0; bottom: 0; width: 2px; background: #f5b7b1; opacity: .45; pointer-events: none }
 .paper-inner { padding: 12px 18px 12px 56px; position: relative }
 .hand .sec-btn { width: 100%; min-height: 56px; border: 0; background: none; text-align: left; display: flex; align-items: center; gap: 10px; color: inherit }
 .hand .sec-btn .h-head { font-size: 26px; color: #c0392b; line-height: 1 }
-.hand .sec-btn .h-note { font-size: 14px; color: #5a6a8a }
+.hand .sec-btn .h-note { font-size: 16px; color: #5a6a8a }
 .hand .pm { font-family: 'Caveat', cursive; font-size: 26px; color: #c0392b }
 .hand .ncard { background: #fff; border-radius: 10px; border: 1px solid #e3e6ee; margin: 8px 0 }
 .hand .ncard > button { width: 100%; min-height: var(--tap); border: 0; background: none; text-align: left; padding: 10px 12px; display: flex; align-items: center; gap: 8px; color: inherit; font-family: 'Kalam', cursive; font-size: 15px }
+/* Opening a section or a point: the new paper slides down into place. */
+.hand .ncard { animation: rise var(--t-med) var(--ease-out) both }
+.hand .ncard:nth-child(3) { animation-delay: .03s } .hand .ncard:nth-child(4) { animation-delay: .06s } .hand .ncard:nth-child(n+5) { animation-delay: .09s }
+.hand .nbody { animation: rise .2s var(--ease-out) }
+.hand .pm { display: inline-block; transition: transform var(--t-med) var(--ease-out) }
+.hand [aria-expanded="true"] > .pm { transform: rotate(180deg) }
 .hand .nbody { padding: 4px 12px 12px; border-top: 1px dashed #d5d8dc; font-size: 14px; line-height: 1.55; display: flex; flex-direction: column; gap: 6px }
 .h-chip { display: inline-block; padding: 1px 9px; border-radius: 12px; font-family: 'Caveat', cursive; font-weight: 700; font-size: 14px; color: #fff; white-space: nowrap }
 .h-rule { background: #fff; padding: 8px 12px; border-left: 4px solid #34495e; border-radius: 4px }

@@ -29,7 +29,7 @@ export default function NotesView() {
                 <span style={{ fontSize: 24 }}>{sec.emoji ?? '📌'}</span>
                 <span style={{ flex: 1 }}>
                   <span className="h-head" style={{ display: 'block' }}>{sec.title}</span>
-                  <span className="h-note" style={{ fontSize: 14, opacity: .7 }}>{sec.cards.length} point{sec.cards.length === 1 ? '' : 's'}</span>
+                  <span className="h-note h-count">{sec.cards.length} point{sec.cards.length === 1 ? '' : 's'}</span>
                 </span>
                 <span className="pm">{openSec === sec.id ? '−' : '+'}</span>
               </button>
@@ -50,7 +50,7 @@ export default function NotesView() {
                       {card.back.trap && <div className="h-trap"><b>⚠ Trap:</b> {card.back.trap}</div>}
                       {card.back.cases?.map((c, i) => <div key={i} className="h-case"><b>Case:</b> {c}</div>)}
                       {card.back.cross && card.back.cross.length > 0 && (
-                        <div className="h-note" style={{ fontSize: 14, opacity: .75 }}>Cross-refs: {card.back.cross.join(' · ')}</div>
+                        <div className="h-note h-count">Cross-refs: {card.back.cross.join(' · ')}</div>
                       )}
                     </div>
                   )}

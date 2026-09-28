@@ -113,7 +113,7 @@ export default function HomeView() {
       {cb.changes.length > 0 && (
         <section className="sec">
           <div className="sec-h"><h2>{meta.scopeTitle}</h2>{meta.scopeNote && cb.P.some(p => p.id === meta.scopeNote) && <button className="chip" data-p={meta.scopeNote}>Open full note</button>}</div>
-          <div className="rail">{cb.changes.map((c, i) => <div key={i} className="chg"><span className="n">No. {i + 1}</span><span dangerouslySetInnerHTML={{ __html: c }} /></div>)}</div>
+          <div className="rail">{cb.changes.map((c, i) => <div key={i} className="chg"><span className="n">No. {i + 1}</span><span dangerouslySetInnerHTML={{ __html: c.replace(/^((?:<[^>]+>)*)\s*\d+\.\s+/, '$1') }} /></div>)}</div>
         </section>
       )}
 

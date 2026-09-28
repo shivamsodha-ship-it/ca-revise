@@ -187,7 +187,7 @@ code { font-family: var(--mono); font-size: .9em }
 .mode.hand-mode h3 { font-family: 'Caveat', cursive; font-size: 30px; font-weight: 700; color: #c0392b; letter-spacing: 0 }
 .mode.hand-mode p { color: #34495e }
 
-.rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 300px); gap: 12px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory }
+.rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 300px); align-items: start; gap: 12px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; scroll-padding-inline: 2px }
 .chg { scroll-snap-align: start; padding: 16px; border-radius: 12px; background: var(--u-soft); border: 1px solid color-mix(in srgb, var(--u) 25%, transparent); font-size: 14px }
 .chg .n { font-family: var(--stamp); color: var(--u); font-size: 13px; display: block; margin-bottom: 4px }
 .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px }

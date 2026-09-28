@@ -81,6 +81,8 @@ code { font-family: var(--mono); font-size: .9em }
 .seg { display: flex; flex-wrap: wrap; gap: 6px }
 .seg.scroll { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; max-width: 100%; padding-bottom: 2px }
 .seg.scroll::-webkit-scrollbar { display: none }
+/* A soft edge tells you the pill row scrolls. */
+.seg.scroll { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); padding-right: 24px }
 .seg button { min-height: 40px; border: 1px solid var(--line); background: var(--card); padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap }
 .seg button:hover { border-color: var(--ink) }
 .seg button.on { background: var(--ink); color: var(--bg); border-color: var(--ink) }
@@ -418,7 +420,8 @@ tr.c td:nth-child(2) { color: var(--u); font-weight: 700 }
   .dpanel { padding-inline: 18px }
   .grades { grid-template-columns: repeat(2, minmax(0, 1fr)) }
   .paper-inner { padding-left: 52px }
-  .nav .btn { flex: 1 }
+  .nav { gap: 8px }
+  .nav .btn { flex: 1; white-space: nowrap; padding-inline: 8px; font-size: 14px }
   .chrow { grid-template-columns: 40px minmax(0, 1fr) auto; gap: 10px }
   .chnum { font-size: 24px }
   .chapter-name { font-size: 15px }

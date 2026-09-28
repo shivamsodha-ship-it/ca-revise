@@ -5,6 +5,7 @@ import { getProgress, updateCard } from '@/lib/storage';
 import { isDue, schedule, type Grade } from '@/lib/spacedRep';
 import { shuffle } from '@/lib/casebook';
 import type { Card } from '@/lib/types';
+import { useKeys } from '@/lib/useKeys';
 
 export default function FlipView() {
   const { ch } = useChapter();
@@ -32,6 +33,13 @@ export default function FlipView() {
   };
 
   const card = order[idx];
+  const GRADES: [Grade, string, string, string][] = [[0, 'Again', 'forgot', 'bad'], [3, 'Hard', 'shaky', 'mixed'], [4, 'Good', 'got it', 'good'], [5, 'Easy', 'instant', 'easy']];
+  const keyMap: Record<string, () => void> = {};
+  if (card) {
+    keyMap[' '] = () => setFlipped(f => !f);
+    if (flipped) GRADES.forEach(([g], n) => { keyMap[String(n + 1)] = () => grade(g); });
+  }
+  useKeys(keyMap);
   return (
     <div className="drill">
       <div className="dtop">
@@ -53,12 +61,12 @@ export default function FlipView() {
           <button className="btn pri" onClick={() => build(filter)}>Go again</button>
         </div>
       ) : <>
-        <div className={'flip' + (flipped ? ' on' : '')} role="button" tabIndex={0} aria-pressed={flipped} aria-label={flipped ? 'Card answer. Press to see the question' : 'Card question. Press to reveal the answer'} onClick={() => setFlipped(f => !f)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFlipped(f => !f); } }}>
+        <div key={card.id} className={'flip' + (flipped ? ' on' : '')} role="button" tabIndex={0} aria-pressed={flipped} aria-label={flipped ? 'Card answer. Press to see the question' : 'Card question. Press to reveal the answer'} onClick={() => setFlipped(f => !f)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFlipped(f => !f); } }}>
           <div className="flip-inner">
             <div className="flip-face flip-front card">
               <div className="chead"><span className="src">{card.type}</span>{card.tags?.slice(0, 3).map(t => <span key={t} className="chip">{t}</span>)}</div>
               <div className="flip-q">{card.front}</div>
-              <p className="muted" style={{ textAlign: 'center', margin: 0, fontSize: 13 }}>Tap to reveal</p>
+              <p className="muted" style={{ textAlign: 'center', margin: 0, fontSize: 13 }}><span className="tap-hint">Tap to reveal</span><span className="key-hint">Space to reveal</span></p>
             </div>
             <div className="flip-face flip-back card">
               <div className="fback">
@@ -75,13 +83,10 @@ export default function FlipView() {
         </div>
         {flipped ? (
           <div className="grades">
-            <button className="vb bad" onClick={() => grade(0)}>Again<small>forgot</small></button>
-            <button className="vb mixed" onClick={() => grade(3)}>Hard<small>shaky</small></button>
-            <button className="vb good" onClick={() => grade(4)}>Good<small>got it</small></button>
-            <button className="vb" onClick={() => grade(5)}>Easy<small>instant</small></button>
+            {GRADES.map(([g, label, hint, tone], n) => <button key={g} className={'vb ' + tone} onClick={() => grade(g)}>{label}<small>{hint}</small><kbd aria-hidden="true">{n + 1}</kbd></button>)}
           </div>
         ) : (
-          <div className="nav" style={{ justifyContent: 'center' }}><button className="btn pri" onClick={() => setFlipped(true)}>Show answer</button></div>
+          <div className="nav" style={{ justifyContent: 'center' }}><button className="btn pri" onClick={() => setFlipped(true)} aria-keyshortcuts="Space">Show answer</button></div>
         )}
       </>}
     </div>

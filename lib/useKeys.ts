@@ -14,8 +14,8 @@ export function useKeys(map: Record<string, () => void>) {
       if (document.querySelector('.drawer, .sheet-wrap')) return;
       const fn = ref.current[e.key.length === 1 ? e.key.toLowerCase() : e.key];
       if (!fn) return;
-      // Enter on a focused button already clicks it; don't fire twice.
-      if (e.key === 'Enter' && t.closest('button, a')) return;
+      // Enter/Space on a focused control already activate it; don't fire twice.
+      if ((e.key === 'Enter' || e.key === ' ') && t.closest('button, a, [role="button"]')) return;
       e.preventDefault();
       fn();
     };

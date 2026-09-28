@@ -73,8 +73,8 @@ export default function HomeView() {
         </div>
         <div className="card hero-r">
           <svg className="ring" viewBox="0 0 150 150" role="img" aria-label={`${pct}% of questions attempted`}>
-            <circle cx="75" cy="75" r="62" fill="none" stroke="var(--card2)" strokeWidth="14" />
-            <circle cx="75" cy="75" r="62" fill="none" stroke="var(--blue)" strokeWidth="14" strokeLinecap="round" strokeDasharray={Cc.toFixed(1)} strokeDashoffset={off.toFixed(1)} transform="rotate(-90 75 75)" />
+            <circle cx="75" cy="75" r="62" fill="none" stroke="var(--line)" strokeWidth="14" />
+            <circle className="arc" cx="75" cy="75" r="62" fill="none" stroke="var(--blue)" strokeWidth="14" strokeLinecap="round" strokeDasharray={Cc.toFixed(1)} strokeDashoffset={off.toFixed(1)} transform="rotate(-90 75 75)" />
             <text x="75" y="78" textAnchor="middle" fontSize="34">{pct}%</text>
             <text x="75" y="100" textAnchor="middle" fontSize="11" className="ring-sub">covered</text>
           </svg>

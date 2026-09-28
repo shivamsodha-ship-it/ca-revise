@@ -158,7 +158,9 @@ code { font-family: var(--mono); font-size: .9em }
 .currency { font-size: 13.5px; background: var(--u-soft); color: var(--ink); border-left: 3px solid var(--u); padding: 8px 12px; border-radius: 0 8px 8px 0 }
 .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px }
 .hero-r { padding: 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center }
-.ring { width: 160px; height: 160px }
+.ring { width: 170px; height: 170px }
+/* Progress loads from localStorage after the first paint, so the arc sweeps from 0 to the saved value. */
+.ring .arc { transition: stroke-dashoffset .9s var(--ease-out) .1s }
 .ring text { font-family: var(--disp); font-weight: 800; fill: var(--ink) }
 .ring .ring-sub { font-family: var(--sans); font-weight: 600; fill: var(--muted) }
 .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100% }

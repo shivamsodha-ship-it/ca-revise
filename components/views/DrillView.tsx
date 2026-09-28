@@ -68,12 +68,12 @@ export default function DrillView() {
       {clause && P[clause] && (
         <p className="muted" style={{ margin: '0 0 10px' }}>Drilling <button className="chip" data-p={clause}>{P[clause].label}</button> · <button className="chip" onClick={() => setFilter(() => setClause(null))}>Show all {meta.provisionNoun}s</button></p>
       )}
-      <div className="track"><i style={{ width: pool.length ? ((i + 1) / pool.length * 100) + '%' : '0' }} /></div>
+      <div className="track"><i style={{ transform: `scaleX(${pool.length ? (i + 1) / pool.length : 0})` }} /></div>
 
       {!q ? (
         <div className="card empty">No {noun}s match this filter.{status === 'missed' ? ` You have no missed ${noun}s here.` : ''}</div>
       ) : (
-        <article className="card case">
+        <article className="card case" key={q.id}>
           <div className="chead"><span className="qid">{q.id}</span><span className={'src ' + q.k}>{q.src}</span><span className="count">{i + 1} / {pool.length}</span></div>
           <div className="facts" dangerouslySetInnerHTML={{ __html: q.q }} />
           {!done ? (tone ? <>

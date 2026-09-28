@@ -43,7 +43,7 @@ export default function FlipView() {
         <button className={filter === 'all' ? 'on' : ''} onClick={() => build('all')}>All cards</button>
         {ch.sections.map(s => <button key={s.id} className={filter === s.id ? 'on' : ''} onClick={() => build(s.id)}>{s.title}</button>)}
       </div>
-      <div className="track"><i style={{ width: order.length ? (idx / order.length * 100) + '%' : '0' }} /></div>
+      <div className="track"><i style={{ transform: `scaleX(${order.length ? idx / order.length : 0})` }} /></div>
 
       {!card ? (
         <div className="card result">

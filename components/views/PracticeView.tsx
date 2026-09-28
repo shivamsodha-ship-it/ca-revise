@@ -36,7 +36,7 @@ export default function PracticeView() {
         <div><p className="eyebrow">Written practice</p><h1 className="vh">Write the full answer. Then mark it.</h1></div>
         <div className="score"><span>{idx + 1} / {ch.practice.length}</span></div>
       </div>
-      <div className="track"><i style={{ width: ((idx + 1) / ch.practice.length * 100) + '%' }} /></div>
+      <div className="track"><i style={{ transform: `scaleX(${(idx + 1) / ch.practice.length})` }} /></div>
 
       <article className="card case">
         <div className="chead">

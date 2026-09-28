@@ -218,8 +218,13 @@ code { font-family: var(--mono); font-size: .9em }
 .dtop { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 12px }
 .dtop > .seg.scroll { flex: 1 1 100% }
 .track { height: 6px; background: var(--card2); border-radius: 9px; overflow: hidden; margin-bottom: 14px; border: 1px solid var(--line) }
-.track i { display: block; height: 100%; background: var(--blue); transition: width .3s }
-.case { padding: 24px; position: relative; overflow: hidden }
+.track i { display: block; height: 100%; background: var(--blue); transform-origin: left; transition: transform .35s var(--ease-io) }
+.case { padding: 24px; position: relative; overflow: hidden; animation: rise var(--t-med) var(--ease-out) }
+/* After a ruling: the stamp lands, then feedback and the model answer rise in just behind it. */
+.fb, .answer, .links, .self { animation: rise .3s var(--ease-out) both }
+.fb { animation-delay: .12s } .answer { animation-delay: .18s } .links, .self { animation-delay: .24s }
+.fb.wrong { animation: rise .3s var(--ease-out) .12s both, nudge .36s var(--ease-io) .3s }
+@keyframes nudge { 20% { transform: translateX(-5px) } 45% { transform: translateX(4px) } 70% { transform: translateX(-2px) } }
 .chead { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px }
 .qid { font-family: var(--mono); font-weight: 600; font-size: 13px }
 .src { font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 6px; background: var(--card2); color: var(--muted); border: 1px solid var(--line) }

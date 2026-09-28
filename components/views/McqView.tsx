@@ -25,7 +25,7 @@ export default function McqView() {
         <div><p className="eyebrow">MCQ sprint</p><h1 className="vh">One mark each. No negative marking.</h1></div>
         <div className="score"><span>{score} / {list.length}</span></div>
       </div>
-      <div className="track"><i style={{ width: (i / Math.max(list.length, 1) * 100) + '%' }} /></div>
+      <div className="track"><i style={{ transform: `scaleX(${i / Math.max(list.length, 1)})` }} /></div>
 
       {!q ? (
         <div className="card result"><p className="eyebrow">{list.length ? 'Sprint complete' : 'No MCQs in this chapter yet'}</p><div className="bigscore">{score}/{list.length}</div><button className="btn pri" onClick={restart}>Shuffle and retry</button></div>

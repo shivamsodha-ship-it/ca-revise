@@ -107,6 +107,24 @@ if (cbPath && cb) {
   for (const f of cb.finder ?? []) if (!pid.has(f[1])) E(`finder row "${f[0]}" -> unknown provision ${f[1]}`);
   if (m.scopeNote && !pid.has(m.scopeNote)) E(`meta.scopeNote ${m.scopeNote} is not a provision`);
 
+  // formula bank
+  const F = (cb.formulas ?? []).flatMap(f => [f.master, ...(f.items ?? [])].map(x => ({ ...x, fam: f.id })));
+  const fid = new Set(F.map(x => x.id));
+  dupes((cb.formulas ?? []).map(f => f.id)).forEach(d => E(`duplicate formula family id ${d}`));
+  dupes(F.map(x => x.id)).forEach(d => E(`duplicate formula id ${d}`));
+  for (const f of cb.formulas ?? []) if (!f.title || !f.idea || !f.master) E(`formula family ${f.id}: title, idea and master are required`);
+  for (const x of F) {
+    for (const k of ['id', 'name', 'expr', 'logic']) if (!x[k]) E(`formula ${x.id}: ${k} missing`);
+    if (x.p && !pid.has(x.p)) E(`formula ${x.id}: p "${x.p}" is not a provision`);
+    for (const r of x.from ?? []) if (!fid.has(r)) E(`formula ${x.id}: from "${r}" is not a formula`);
+    for (const fld of ['expr', 'logic', 'derive', 'example', 'trap']) htmlOk(x[fld], `formula ${x.id}.${fld}`);
+  }
+  if (cb.formulas) {
+    const withF = new Set(F.map(x => x.p).filter(Boolean));
+    const numeric = new Set(Q.filter(q => q.v === 'Numerical').map(q => q.links?.[0]));
+    for (const p of numeric) if (p && !withF.has(p)) W(`provision ${p} has numerical questions but no formula in the formula bank`);
+  } else if (m.provisionNoun === 'concept') W('no formula bank (formulas-*.json) for this chapter');
+
   const hunt = P.filter(p => p.hunt).length ? P.filter(p => p.hunt) : P;
   const huntQs = Q.filter(q => q.k !== 'mcq' && hunt.some(p => p.id === q.links?.[0]));
   if (hunt.length < 4) E(`Provision Hunt needs at least 4 answer options (has ${hunt.length})`);

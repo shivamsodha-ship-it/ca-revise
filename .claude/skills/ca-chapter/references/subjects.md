@@ -36,12 +36,17 @@ Model answer: **Relevant Ind AS paragraph → Analysis / working (table, journal
 |---|---|---|---|
 | problem | concept | omitted | Which model or technique does this problem need? |
 
+**Read references/afm.md** (playbook, reference build Ch 8 Mutual Funds).
+meta: `sources` labels `sm-ill` "SM worked example" when the SM has examples rather than illustrations; `app` "Exam-style (app)";
+`tagline` "Spot the model. *Then* work the numbers."; `intro` "{cases} … problems from the study material, RTPs, MTPs and past papers."
 Provisions: one per model/technique/formula (e.g. "Black–Scholes", "Interest rate parity", "APV").
 `law` holds the formula(s) and when to use it; `notes` the assumptions, variants and common ICAI twists.
 Model answer: **Working notes (tables) → Computation → Decision / advice** with the figure; `v`: "Numerical" or "Theory".
 `numbers`: formulas and standard values (use `<em>` for variables). `finder`: problem cue → model
 ("given forward and spot, asked cover" → forward cover).
-MCQs are the main theory practice; include every TYK/RTP/MTP MCQ.
+MCQs are the main theory practice; include every TYK/RTP/MTP MCQ, and write app MCQs for every theory topic ICAI has not examined.
+**Formula bank required** for every AFM chapter (`formulas-*.json`): master formulas, derivations and the chain between them
+(e.g. β from Sharpe and Treynor, from correlation, R² from β). It feeds `/afm/formulas`, the subject-wide formula bank.
 
 ## All subjects
 

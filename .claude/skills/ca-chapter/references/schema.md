@@ -115,6 +115,29 @@ Only list source kinds that have at least one question. Keys are fixed across th
 }
 ```
 
+### formulas-*.json (formula bank)
+An array of families. HTML fields may use `<em>`, `<sub>`, `<sup>`, `<strong>`, `<p>`, `<table>` and fractions as
+`<span class="frac"><span>top</span><span>bottom</span></span>`.
+```jsonc
+[{
+  "id": "f-risk", "title": "Performance: reward per unit of risk",
+  "idea": "<p>Every ratio is extra return ÷ some risk …</p>",     // the one idea tying the family together
+  "master": { "id": "risk-master", "name": "Reward-to-risk", "expr": "Score = <span class=\"frac\">…</span>",
+              "logic": "<p>Plain-words why (child-level analogy)</p>", "p": "mf-eval-quant" },
+  "items": [{
+    "id": "beta-st", "name": "β from Sharpe and Treynor", "expr": "β = …",
+    "vars": [["σ", "standard deviation of the fund"]],   // symbol (HTML), meaning
+    "logic": "<p>Why it works</p>",
+    "derive": "<p>Sharpe = E ÷ σ → E = Sharpe × σ; β = E ÷ Treynor</p>",
+    "from": ["sharpe", "treynor"],          // parent formula ids (any family)
+    "hook": "Memory hook", "cue": "Words in a question that call for it",
+    "trap": "<p>The usual mistake</p>", "example": "<p>Worked mini-example with the source</p>",
+    "p": "mf-beta-nav",                      // provision id
+    "beyond": false                          // true = not in the SM
+  }]
+}]
+```
+
 ## Split existing data into parts (for updates)
 
 ```bash
@@ -135,6 +158,7 @@ for i, k in enumerate(kinds, 1):
 other = [q for q in cb['Q'] if q['k'] not in kinds]
 if other: dump('questions-99-other.json', other)
 dump('extras.json', {k: cb[k] for k in ('numbers', 'finder', 'method', 'changes')})
+if cb.get('formulas'): dump('formulas-01.json', cb['formulas'])
 print('parts written to', W)
 E
 ```

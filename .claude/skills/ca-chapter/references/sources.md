@@ -28,6 +28,13 @@ only after checking it is ICAI's paper: ICAI format and header ("Mock Test Paper
 and attempt, and a paper date matching ICAI's BoS MTP schedule. Record both the copy's URL and that check in the
 research report. If a row has no link yet, list it under "Could not fetch".
 
+Lessons from the AFM Ch 8 sweep (details in references/afm.md):
+- Suggested-answer PDFs contain the full question paper; use them as the PYQ source.
+- Dead ICAI CDN links: try the Wayback Machine snapshot of the exact ICAI URL and record both.
+- The vsijaipur index has mislabelled links; verify every file's header, series, paper, attempt and date.
+- ICAI publishes only answer keys for MCQ case scenarios; the working is ours and is labelled so.
+- No CA Final exam in Sep 2026 (moved to Nov 2026); check ICAI's exam notices before listing an attempt as missing.
+
 Fetching: PDFs usually download with `curl -L -o work/<id>/src/<name>.pdf "<url>"`. If you get HTML or a
 login page instead of a PDF (`file` says HTML), record it under "Could not fetch" in `research/<id>.md` and
 ask the user to download it into `inbox/`.

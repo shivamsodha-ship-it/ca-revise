@@ -1,12 +1,13 @@
 ---
 name: ca-chapter
-description: Build or update one CA Final chapter in the ca-revise app (FR, AFM or AAA) from the ICAI study material PDF — extracts every illustration and TYK question, researches the chapter's RTP, MTP and past-paper questions on the ICAI BoS portal, ranks topics by exam frequency, and writes the notes, flip cards, written practice, case drill, provision hunt, MCQs, law library and cheat sheet data, then validates and builds. Use whenever the user gives a chapter (and usually a study-material PDF) to add, redo or refresh in the revision app, e.g. "add FR chapter 3, SM is in inbox/", "do AFM ch 5", "update AAA ch 19 for the May 2027 RTP".
+description: Build or update one CA Final chapter in the ca-revise app (FR, AFM or AAA) from the ICAI study material PDF — extracts every illustration and TYK question, researches the chapter's RTP, MTP and past-paper questions on the ICAI BoS portal, ranks topics by exam frequency, and writes the notes, flip cards, written practice, case drill, provision hunt, MCQs, law library, cheat sheet and formula bank data (plus app-written questions so no topic is untested), then validates and builds. Use whenever the user gives a chapter (and usually a study-material PDF) to add, redo or refresh in the revision app, e.g. "add FR chapter 3, SM is in inbox/", "do AFM ch 5", "update AAA ch 19 for the May 2027 RTP".
 ---
 
 # CA chapter builder
 
 Turns one ICAI study-material chapter into the two data files the app renders. Same steps every time, so
 every chapter gets the depth of AAA Chapter 19 (the reference build: `data/aaa/ch19-*.json`).
+**AFM chapters**: read `references/afm.md` first; the AFM reference build is Ch 8 Mutual Funds (`data/afm/ch08-*.json`).
 
 The user only provides: **subject, chapter number, and the study-material PDF**. Everything else is
 this skill's job. Work in `ca-revise/` (the Next.js app). All scratch goes in `work/<id>/` (git-ignored).
@@ -26,6 +27,13 @@ change, stop and tell the user instead: per-chapter differences belong in the ca
    and add the update (see `upd` in references/schema.md) — never silently "correct" ICAI.
 3. **Full coverage of the study material.** Every Illustration and every TYK question (MCQ and descriptive)
    in the chapter becomes a question. The extractor's inventory is the checklist.
+3a. **No topic left untested.** ICAI now sets concept-based and "untouched topic" questions, and the user revises from
+   this app alone. Every provision must be tested by at least one question: where ICAI has never examined a topic, write
+   an app question (kind `app`) and app MCQs for it. Add a "Beyond the SM" group (key `H`) for closely related concepts
+   ICAI could ask (e.g. Jensen/M²/information ratio, SIP maths), each marked as beyond the SM. Never invent regulatory
+   numbers for these: explain the concept and say the figure must be checked.
+3b. **Formula bank for every numerical chapter** (all AFM chapters; FR/AAA chapters with computations). See step 7, item 6.
+3c. **Recompute every number** you copy from a PDF or write yourself: PDF text layers garble fractions and can reverse digits.
 4. **Verify currency against ICAI** for the target attempt (applicable standards / amendments / study
    material edition). Do not rely on memory for amendment dates, limits or thresholds.
 5. **Cite as you go.** Every found paper goes into `work/<id>/sources.md` with its URL; the final research
@@ -91,11 +99,15 @@ fetched (login wall, blocked), list it under "Could not fetch" and ask the user 
 Record every chapter-relevant question in `work/<id>/found.md` as one row:
 `kind | attempt | Q no. | marks | topic/provision | one-line gist | url`.
 Questions can be spread across papers in many sub-parts; capture each sub-part that belongs to this chapter.
-Parallelise when useful: one subagent per paper type (RTP / MTP / PYQ), each returning rows in that format.
+Parallelise: run one background subagent per paper type (RTP / MTP / PYQ + currency), each writing `work/<id>/found-<type>.md`
+in the layout in references/afm.md ("Found-file layout"), with the full question text and ICAI's full answer for every item and an
+"SM repeat" note. Give each agent the chapter's TYK list so it can flag repeats. While they run, do steps 7.1, the SM questions,
+the formula bank and the notes. Convert their files with `scripts/found2html.py`.
 
 ### 6. Exam-priority analysis
-Group `found.md` rows by provision/topic. For each: times asked, total marks, last attempt asked,
-and whether it appeared in the latest RTP/MTP. Rank **High / Medium / Low** (rules in references/sources.md).
+After the questions are written and assembled, run `npm run priority -- <id> --latest "<latest RTP attempt>"`: it scores every
+provision from the questions and their "Also asked" lines (rules in references/sources.md), prints the table with past-paper marks,
+and writes `work/<id>/priority.json` for the flip-card tags.
 Write `research/<id>.md` (committed): sources swept, what couldn't be fetched, the priority table,
 chapter weight (average marks per attempt → `weight` in chapter.json), and the coverage summary from step 10.
 
@@ -110,14 +122,22 @@ Order of work:
    provisions a fact pattern can point to. Add a scope/updates provision if step 4 found changes.
 2. `questions-*.json` in this order: `sm-ill` (every illustration), `sm-tyk` (every descriptive TYK),
    `mcq` (every TYK MCQ, then RTP/MTP/PYQ MCQs with their source in `src`), `rtp`, `mtp`, `pyq`,
-   `upd` (questions whose answer changed with the law), then `app` only to fill gaps where a
-   high-priority provision has fewer than 2 questions.
+   `upd` (questions whose answer changed with the law), then `app`: for every provision with no question (rule 3a),
+   for high-priority provisions with fewer than 2, and for group H. Word-for-word repeats of an SM question are not
+   new questions: add them as "Also asked (ICAI): …" on the SM question (references/afm.md, "Repeats").
 3. `extras.json` — `numbers` (every limit, threshold, time period, rate in the chapter), `finder`
    (fact trigger → provision), `method` (the answer-writing steps for this subject), `changes` (from step 4).
 4. `meta.json` from references/subjects.md.
 5. `chapter.json`, `sections-*.json` (notes and flip cards; sections mirror SM headings; High-priority
-   topics get the most cards), `practice-*.json` (at least 8 written questions, taken from the
+   topics get the most cards; add a "Beyond the study material" section for group H), `practice-*.json` (at least 8 written questions, taken from the
    highest-priority PYQ/RTP/MTP questions, with ICAI-style model answers and marking points).
+6. `formulas-*.json` — the **formula bank** (shape in references/schema.md, standards in references/writing.md).
+   Group formulas into families, each led by one **master formula** that the others are derived from (e.g. NAV → units issued,
+   NAV after dividend; reward-to-risk → Sharpe, Treynor → β = Sharpe × σ ÷ Treynor). Every formula: plain-words logic a child
+   could follow, how it is derived from its parent (`from` + `derive`), exam cue, trap, a worked example from the SM/ICAI
+   paper, and its provision `p`. Cover every formula used in any SM/ICAI answer of the chapter; mark app additions `beyond`.
+   The validator warns when a provision with numerical questions has no formula. The subject-wide bank at `/<subject>/formulas`
+   picks it up automatically.
 
 ### 8. Assemble and validate
 ```bash
@@ -132,8 +152,13 @@ missing MCQ explanations). Tick off `checklist.md`: every illustration and TYK i
 npm run build
 ```
 Then run the app (`npx next start -p 3100`) and click through the chapter's Home, Drill (answer two
-questions), Hunt, MCQ, Library (open a provision), Cheat sheet, Notes and Flip at phone width
+questions), Hunt, MCQ, Library (open a provision), Cheat sheet, Formulas (open a formula; check `/<subject>/formulas`), Notes and Flip at phone width
 (390px) and desktop width. Nothing chapter-specific should need a code change.
+Headless check (no browser in the Codespace): `pip install playwright && python3 -m playwright install chromium`, then a short
+script that loads each view at 390×844 and 1280×900, saves screenshots **to the scratchpad (never the repo root)**, records
+console errors and checks `document.documentElement.scrollWidth` equals the viewport width. Restart `next start` after every
+rebuild (a stale server serves old chunks → 400 errors). Stop the server with `ps … | grep next-server` in its own command,
+never in the same command line as `next start` (the pattern would match and kill your own shell).
 
 ### 10. Report and hand over
 Finish `research/<id>.md` with the coverage table:
@@ -144,10 +169,11 @@ Finish `research/<id>.md` with the coverage table:
 | SM TYK (MCQ / descriptive) | n / n | n / n |
 | RTP / MTP / PYQ questions found | n / n / n | n / n / n |
 | App-written (exam-style) | – | n |
+| Formula bank (families / formulas) | – | n / n |
 
 Tell the user: the counts, the top High-priority topics, anything that couldn't be fetched or verified,
 and any place where ICAI's answer conflicts with the current law. **Ask before committing or deploying.**
-When they say yes: commit (`data/`, `lib/registry.ts`, `research/<id>.md`), push, and Vercel deploys.
+When they say yes: commit (`data/`, `lib/registry.ts`, `research/<id>.md`, and any skill/script changes), push, and Vercel deploys.
 In this Codespace, push with the user's gh login:
 `env -u GITHUB_TOKEN git -c credential.helper= -c credential.helper='!env -u GITHUB_TOKEN gh auth git-credential' push`
 
@@ -164,7 +190,9 @@ In this Codespace, push with the user's gh login:
 - `references/schema.md` — every field of both data files, id conventions, the split snippet.
 - `references/sources.md` — ICAI BoS URLs, how to find each paper type, labelling rules, priority rules.
 - `references/subjects.md` — per-subject `meta`, answer structure and what counts as a provision.
-- `references/writing.md` — how to write facts, model answers, traps, cards, MCQ explanations.
+- `references/writing.md` — how to write facts, model answers, traps, cards, MCQ explanations, formula bank, beyond-SM content.
+- `references/afm.md` — AFM playbook: SM quirks, source lessons, agent found-file layout, repeats, build pattern, formula families per chapter.
 - Programs (in the app repo): `scripts/new-chapter.mjs`, `scripts/unlock-pdf.py`, `scripts/extract-sm.py`,
   `scripts/assemble-chapter.mjs`, `scripts/validate-chapter.mjs` (npm scripts: `new-chapter`, `unlock-pdf`,
-  `extract-sm`, `assemble`, `validate`).
+  `extract-sm`, `assemble`, `validate`), `scripts/found2html.py` (agent found-files → HTML) and `scripts/priority.py`
+  (`npm run priority -- <id> --latest "Nov 2026"`).

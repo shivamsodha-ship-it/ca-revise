@@ -40,6 +40,19 @@ Four options as ICAI set them. `why` explains the right option and knocks out th
 From the highest-priority real questions. `modelAnswer` in plain text with line breaks, in the subject's
 structure; `markingPoints` are what an examiner ticks (4–6 points), matching the marks.
 
+## Formula bank
+- Families, not lists: start each family from the master idea and show how every other formula falls out of it.
+- `logic` is for a child: a concrete picture (pizza slices for NAV, a toll road for loads, runners on a hill for risk-adjusted return),
+  then one sentence linking it back to the symbols.
+- `derive` shows the algebra in one or two steps, naming the parent.
+- `example` uses a real SM/ICAI figure and names its source; `trap` is the mistake ICAI's answers punish.
+- Keep ICAI's conventions (simple annualisation, n − 1 in tracking error, rounding NAV only at the end) and say where ICAI accepts an alternative.
+
+## Beyond the SM
+- Add only concepts that follow from the chapter's ideas and could be asked as concept-based questions.
+- Label them in the provision text ("Beyond the SM…"), with `beyond: true` on formulas, and use kind `app` for their questions.
+- Explain concepts, not current regulatory numbers; where a figure matters, say it must be checked against the latest SEBI/ICAI document.
+
 ## Style
 Plain English, short sentences, Indian number formatting (₹1,00,000; 5 lakh; 2 crore), dates as ICAI writes them
 (1.4.2026). No emojis except section `emoji`.

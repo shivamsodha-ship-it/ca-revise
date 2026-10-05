@@ -11,6 +11,7 @@
 //   provisions-*.json      array of provisions (qs may be omitted: it is rebuilt from question links)
 //   questions-*.json       array of questions
 //   extras.json            { numbers, finder, method, changes }
+//   formulas-*.json        array of formula families (optional; the Formulas view and subject formula bank)
 // Writes the paths registered in lib/registry.ts for that chapter.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -46,6 +47,8 @@ if (fs.existsSync(path.join(dir, 'meta.json'))) {
   const Q = parts('questions');
   const P = parts('provisions').map(p => ({ ...p, qs: Q.filter(q => q.links?.includes(p.id)).map(q => q.id) }));
   const cb = { meta: read('meta.json'), P, Q, groups: read('groups.json'), ...read('extras.json') };
+  const formulas = parts('formulas');
+  if (formulas.length) cb.formulas = formulas;
   fs.writeFileSync(path.join(root, cbPath), JSON.stringify(cb) + '\n');
   wrote.push(`${cbPath} (${P.length} provisions, ${Q.length} questions)`);
 }

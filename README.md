@@ -60,6 +60,10 @@ Everything chapter-specific lives in the casebook's `meta` block:
 | `scopeTitle` / `scopeNote` / `methodTitle` | home page section headings | |
 
 Provisions with `"hunt": true` are the answer options in Provision Hunt (all provisions if none are flagged).
+
+A casebook may also carry `formulas` (a formula bank: families led by a master formula, each formula with its logic,
+derivation, exam cue and trap). It adds a **Formulas** tab to the chapter and feeds the subject-wide bank at `/<subject>/formulas`.
+Every AFM chapter has one.
 See `data/_CASEBOOK_TEMPLATE.json` for the full shape.
 
 ## Building a chapter from the study material (Claude Code skill)

@@ -1,0 +1,1191 @@
+{
+ "id": "afm-ch08",
+ "subject": "afm",
+ "number": 8,
+ "title": "Mutual Funds",
+ "summary": "NAV · returns and effective yield · dividend equalisation · plan-wise yield · Sharpe/Treynor → NAV",
+ "weight": 13,
+ "currency": "SM Nov 2024 ed. (reprint Aug 2025), applicable for May 2026 onwards · no amendments for Nov 2026",
+ "sections": [
+  {
+   "id": "s1-intro",
+   "title": "Introduction",
+   "emoji": "🧺",
+   "cards": [
+    {
+     "id": "c-what-mf",
+     "type": "concept",
+     "tags": [
+      "What is a MF",
+      "Low"
+     ],
+     "front": "What is a mutual fund, and how is the return shared?",
+     "back": {
+      "simplified": "A trust that pools savings of many investors with a common goal by issuing units, and invests in capital and money market instruments. Net income and capital appreciation are shared in proportion to units held.",
+      "explanation": "The investor is a part owner of all the fund's assets and liabilities. The fund house charges fees based on assets managed."
+     }
+    },
+    {
+     "id": "c-stocks-vs-mf",
+     "type": "concept",
+     "tags": [
+      "What is a MF",
+      "Low"
+     ],
+     "front": "Why might a small investor prefer a mutual fund to buying shares directly?",
+     "back": {
+      "simplified": "Diversification needs 15–20 stocks; ₹5,000 can't do that alone but buys a wide basket through a fund. SIPs build discipline. Stock picking needs time, skill and inclination.",
+      "trap": "Choosing shares because their price is under ₹50 or ₹100 — the SM says price should never be the criterion."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s2-establish",
+   "title": "Setting up a mutual fund",
+   "emoji": "🏛️",
+   "cards": [
+    {
+     "id": "c-est-chain",
+     "type": "concept",
+     "tags": [
+      "Establishing a MF",
+      "Low"
+     ],
+     "front": "Name the four constituents needed to establish a mutual fund in India.",
+     "back": {
+      "simplified": "Sponsor → Trust (trustees) → Asset Management Company → Custodian, all under SEBI registration.",
+      "explanation": "Sponsor = promoter (initial capital, appoints trustees). Trust deed registered under the Registration Act, 1908. AMC manages schemes. Custodian holds the securities."
+     }
+    },
+    {
+     "id": "c-est-numbers",
+     "type": "mnemonic",
+     "tags": [
+      "Establishing a MF",
+      "Low"
+     ],
+     "front": "Sponsor track record, sponsor's share of AMC net worth, AMC net worth, independent directors, AMC removal — the numbers?",
+     "back": {
+      "simplified": "Sponsor: 5 years in financial services, at least 40% of AMC net worth. AMC net worth ₹100 crore (SM). Trustees ⅔ independent; AMC 50% independent. AMC removed by majority of trustees or 75% of unit holders.",
+      "trap": "Mixing up ⅔ (trustees) with 50% (AMC board)."
+     }
+    },
+    {
+     "id": "c-custodian",
+     "type": "concept",
+     "tags": [
+      "Establishing a MF",
+      "Low"
+     ],
+     "front": "Who holds the securities of a mutual fund, and what must it be independent of?",
+     "back": {
+      "simplified": "A SEBI-registered custodian — independent of the sponsor and the AMC. For demat securities, a Depository Participant."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3-class",
+   "title": "Classification of mutual funds",
+   "emoji": "🗂️",
+   "cards": [
+    {
+     "id": "c-open-close",
+     "type": "concept",
+     "tags": [
+      "Open/close/interval",
+      "Low"
+     ],
+     "front": "Open-ended vs close-ended: how does an investor enter and exit each?",
+     "back": {
+      "simplified": "Open-ended: buy and redeem any time with the fund; unlimited capital; no maturity. Close-ended: buy in the NFO or on the exchange after listing; exit by selling on the exchange, at maturity, or in a repurchase window."
+     }
+    },
+    {
+     "id": "c-interval",
+     "type": "concept",
+     "tags": [
+      "Open/close/interval",
+      "Low"
+     ],
+     "front": "How do interval funds differ from close-ended funds? (3 points)",
+     "back": {
+      "simplified": "1) Need not be listed — in-built redemption window. 2) Can issue fresh units during the interval at NAV-based prices. 3) No defined maturity."
+     }
+    },
+    {
+     "id": "c-bond-risks",
+     "type": "mnemonic",
+     "tags": [
+      "Equity & debt funds",
+      "Low"
+     ],
+     "front": "What four risks does a bond fund carry?",
+     "back": {
+      "simplified": "I-C-P-R: Interest rate risk, Credit risk, Prepayment risk (callable bonds called when rates fall), Reinvestment risk (maturity proceeds reinvested at lower rates).",
+      "trap": "Reinvestment risk is favourable when rates rise."
+     }
+    },
+    {
+     "id": "c-equity-types",
+     "type": "concept",
+     "tags": [
+      "Equity & debt funds",
+      "Low"
+     ],
+     "front": "Growth, aggressive and income equity funds — who is each for?",
+     "back": {
+      "simplified": "Growth: long-term capital appreciation, long-term investors. Aggressive: start-ups, IPOs, speculative shares, risk takers. Income: high-dividend safe stocks and high-yield money market, current income seekers."
+     }
+    },
+    {
+     "id": "c-intl-offshore",
+     "type": "mnemonic",
+     "tags": [
+      "Special funds",
+      "Medium"
+     ],
+     "front": "International fund vs offshore fund?",
+     "back": {
+      "simplified": "International: raises money in India, invests globally. Offshore: located outside India, raises money globally to invest in India."
+     }
+    },
+    {
+     "id": "c-cpof",
+     "type": "concept",
+     "tags": [
+      "Special funds",
+      "Medium"
+     ],
+     "front": "Where does a capital protection oriented fund get its protection, and what does SEBI require of it?",
+     "back": {
+      "simplified": "From its portfolio structure (mostly high-rated debt, some equity) — not a bank guarantee or insurance. Must be close-ended, listed, and its intended portfolio structure rated by a credit rating agency.",
+      "trap": "It is not a capital guaranteed scheme."
+     }
+    },
+    {
+     "id": "c-quant",
+     "type": "concept",
+     "tags": [
+      "Special funds",
+      "Medium"
+     ],
+     "front": "Quant fund: how does it work, and how is its manager different from an index fund manager?",
+     "back": {
+      "simplified": "Rule-based statistical models decide stock, quantity and timing. The index manager just follows the index; the quant manager designs and monitors the models and modifies them.",
+      "explanation": "Pros: no human bias, consistent strategy, lower expense ratio. Con: models rest on historical data."
+     }
+    },
+    {
+     "id": "c-fof",
+     "type": "concept",
+     "tags": [
+      "Special funds",
+      "Medium"
+     ],
+     "front": "What is a fund of funds?",
+     "back": {
+      "simplified": "A scheme that invests in units of other mutual fund schemes, of the same or other fund houses — e.g. Indian MFs investing in international MF schemes."
+     }
+    },
+    {
+     "id": "c-direct",
+     "type": "concept",
+     "tags": [
+      "Direct plans",
+      "Low"
+     ],
+     "front": "What is a direct plan and why is its NAV higher?",
+     "back": {
+      "simplified": "Introduced by SEBI from 1 January 2013. The AMC charges no distribution expenses, trail fees or transaction charges, so expenses are lower and NAV higher than the regular plan."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4-schemes",
+   "title": "Types of schemes",
+   "emoji": "🧩",
+   "cards": [
+    {
+     "id": "c-flexi-multi",
+     "type": "mnemonic",
+     "tags": [
+      "Types of schemes",
+      "Low"
+     ],
+     "front": "Flexicap vs multicap?",
+     "back": {
+      "simplified": "Flexicap: any proportion across market caps. Multicap: at least 25% each in large, mid and small caps; remaining 25% at discretion."
+     }
+    },
+    {
+     "id": "c-fmp",
+     "type": "concept",
+     "tags": [
+      "Types of schemes",
+      "Low"
+     ],
+     "front": "Which risk does an FMP avoid, and which does it still carry?",
+     "back": {
+      "simplified": "Free from interest rate risk — investments mature with the fund. Still carries credit risk (default or downgrade).",
+      "explanation": "Close-ended, bought in the NFO, listed but thinly traded so illiquid. Many have 3-year tenure for indexation and hold some AA and lower paper for yield."
+     }
+    },
+    {
+     "id": "c-elss",
+     "type": "concept",
+     "tags": [
+      "Types of schemes",
+      "Low"
+     ],
+     "front": "ELSS: tax section, lock-in and why invest via SIP?",
+     "back": {
+      "simplified": "s.80C, 3-year lock-in. SIP avoids a year-end lump sum and averages cost."
+     }
+    },
+    {
+     "id": "c-sector-thematic",
+     "type": "concept",
+     "tags": [
+      "Types of schemes",
+      "Low"
+     ],
+     "front": "Sector fund vs thematic fund?",
+     "back": {
+      "simplified": "Sector: one industry, rides its cycle — risky, only a small part of a portfolio, not for first-timers. Thematic: broader theme (multi-sector, international, commodity), but the market may take long to recognise the theme."
+     }
+    },
+    {
+     "id": "c-arbitrage",
+     "type": "concept",
+     "tags": [
+      "Types of schemes",
+      "Low"
+     ],
+     "front": "What does an arbitrage fund exploit?",
+     "back": {
+      "simplified": "Price differences between the spot and futures markets — low-volatility returns better than typical debt, lower volatility than equity."
+     }
+    },
+    {
+     "id": "c-options",
+     "type": "concept",
+     "tags": [
+      "Growth vs dividend",
+      "Low"
+     ],
+     "front": "Growth option vs dividend payout vs dividend reinvestment?",
+     "back": {
+      "simplified": "Growth: nothing paid out; gain on withdrawal. Payout: dividend paid; NAV falls by it. Reinvestment: dividend reinvested at ex-dividend NAV, giving extra units."
+     }
+    },
+    {
+     "id": "c-etf",
+     "type": "concept",
+     "tags": [
+      "ETFs",
+      "Low"
+     ],
+     "front": "What makes an ETF different from an open-ended index fund?",
+     "back": {
+      "simplified": "It is listed and trades through the day at real-time prices close to NAV; an open-ended fund deals once a day at NAV. Authorised participants act as market makers.",
+      "explanation": "Low cost, tax efficient, no paperwork. Types: index, commodity, bond, currency ETFs."
+     }
+    },
+    {
+     "id": "c-hedge",
+     "type": "concept",
+     "tags": [
+      "Hedge fund & fees",
+      "Medium"
+     ],
+     "front": "Three differences between a hedge fund and a mutual fund.",
+     "back": {
+      "simplified": "Lightly regulated private vehicle for selected clients; discloses little publicly; charges a performance fee (losses borne by investors). Uses leverage, long/short and derivatives to maximise return."
+     }
+    },
+    {
+     "id": "c-hedge-fee",
+     "type": "illustration",
+     "tags": [
+      "Hedge fund & fees",
+      "Medium"
+     ],
+     "front": "ANP Plan: ₹20 crore, 0.10% fixed + 2% above the ₹21 crore high-water mark. Fee at 29%, 4.5%, −1.8%?",
+     "back": {
+      "simplified": "29%: ₹2 lakh + 2% × (25.8 − 21) crore = ₹11.60 lakh. 4.5%: value ₹20.90 crore < 21 → ₹2 lakh only. −1.8%: ₹2 lakh.",
+      "trap": "Charging the incentive on the year's gain instead of the excess over ₹21 crore."
+     }
+    },
+    {
+     "id": "c-direct-drag",
+     "type": "illustration",
+     "tags": [
+      "Direct plans",
+      "Low"
+     ],
+     "front": "₹10 lakh for 10 years, 12% gross; regular TER 1.8% vs direct 1.0%. Ending values?",
+     "back": {
+      "simplified": "1.102^10 → ₹26.41 lakh; 1.11^10 → ₹28.39 lakh. Costs compound."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s5-adv",
+   "title": "Advantages and drawbacks",
+   "emoji": "⚖️",
+   "cards": [
+    {
+     "id": "c-adv",
+     "type": "mnemonic",
+     "tags": [
+      "Advantages",
+      "Low"
+     ],
+     "front": "List the 12 advantages of mutual funds.",
+     "back": {
+      "simplified": "Professional management, diversification, convenient administration, higher returns, low cost (2.5% cap), liquidity, transparency, other benefits (SIP/SWP/switch), highly regulated, economies of scale, flexibility, convenience."
+     }
+    },
+    {
+     "id": "c-drawbacks",
+     "type": "concept",
+     "tags": [
+      "Drawbacks",
+      "Low"
+     ],
+     "front": "Four drawbacks of mutual funds?",
+     "back": {
+      "simplified": "No guarantee of return (underperformance, entry/exit timing, crashes); diversification caps upside; picking the right fund is hard and past performance doesn't predict; costs, and AMC fees are not linked to performance."
+     }
+    },
+    {
+     "id": "c-adv-cost",
+     "type": "concept",
+     "tags": [
+      "Advantages",
+      "Low"
+     ],
+     "front": "Which advantage carries a SEBI number in the SM, and what is it?",
+     "back": {
+      "simplified": "Low cost of management: maximum 2.50% for equity funds; any extra cost borne by the AMC."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6-terms",
+   "title": "Terms: NAV, loads, costs",
+   "emoji": "🧮",
+   "cards": [
+    {
+     "id": "c-nav",
+     "type": "concept",
+     "tags": [
+      "NAV",
+      "High"
+     ],
+     "front": "Write the NAV formula with every item in net assets.",
+     "back": {
+      "simplified": "NAV = net assets ÷ units outstanding. Net assets = market value of investments + receivables + accrued income + other assets − accrued expenses − payables − other liabilities."
+     }
+    },
+    {
+     "id": "c-nav-cheque",
+     "type": "illustration",
+     "tags": [
+      "NAV",
+      "High"
+     ],
+     "front": "An investor sends a cheque and the fund buys shares with part of it. How many units, and what happens to NAV?",
+     "back": {
+      "simplified": "Units issued = cheque ÷ current (unrounded) NAV. NAV is unchanged that day; the unused money sits as cash. Next day revalue all shares (including the new ones) + cash ÷ new units.",
+      "cases": [
+       "SM TYK: ₹30 lakh ÷ 78.8366 → 6,38,053 units; new NAV ₹82.26",
+       "SM TYK: ₹50 lakh ÷ 119.0475 → 8,42,000 units; new NAV ₹122.075"
+      ]
+     }
+    },
+    {
+     "id": "c-nav-valuation",
+     "type": "concept",
+     "tags": [
+      "NAV",
+      "High"
+     ],
+     "front": "How does ICAI value listed shares bought at an old index level, and unlisted bonds with a diminution?",
+     "back": {
+      "simplified": "Shares: cost × present index ÷ index at purchase (₹20 cr × 2,300 ÷ 1,000 = ₹46 cr). Unlisted bonds: cost less the diminution (₹1 cr × 80%).",
+      "trap": "\"175% of face value\" means ₹175 on a ₹100 share — not 175% of the ₹160 cost."
+     }
+    },
+    {
+     "id": "c-load",
+     "type": "concept",
+     "tags": [
+      "Entry & exit load",
+      "Low"
+     ],
+     "front": "Formulae for public offer price and redemption price?",
+     "back": {
+      "simplified": "POP = NAV ÷ (1 − front-end load). Redemption = NAV ÷ (1 + back-end load). Alternative: load = price difference ÷ NAV.",
+      "explanation": "Exit load goes back into the scheme, not to the AMC. No scheme charges entry load now."
+     }
+    },
+    {
+     "id": "c-req-return",
+     "type": "concept",
+     "tags": [
+      "Required MF return",
+      "Low"
+     ],
+     "front": "Formula for the return a scheme must earn to match what the investor earns alone?",
+     "back": {
+      "simplified": "r₂ = r₁ ÷ (1 − initial expenses) + recurring expenses.",
+      "cases": [
+       "SM: 10%, 6%, 2% → 12.64%",
+       "SM TYK: 16%, 5.5%, 1.5% → 18.43%"
+      ]
+     }
+    },
+    {
+     "id": "c-ter",
+     "type": "concept",
+     "tags": [
+      "Expense ratio",
+      "Medium"
+     ],
+     "front": "What does the expense ratio include and exclude?",
+     "back": {
+      "simplified": "Includes management and advisory fees, travel, audit, custodian, registrar, consultancy. Excludes brokerage on portfolio trades. Also called MER or TER."
+     }
+    },
+    {
+     "id": "c-trail",
+     "type": "concept",
+     "tags": [
+      "Trail commission",
+      "Low"
+     ],
+     "front": "What is trail commission and how is it calculated?",
+     "back": {
+      "simplified": "Annual fee to the distributor while money stays invested: 0.30–0.75% of the investment, on daily average AUM, paid monthly. Separate from upfront commission."
+     }
+    },
+    {
+     "id": "c-side-pocket",
+     "type": "concept",
+     "tags": [
+      "Side pocketing",
+      "Low"
+     ],
+     "front": "What is side pocketing and whom does it protect?",
+     "back": {
+      "simplified": "Moving downgraded/illiquid (stressed) assets out of the main portfolio so NAV reflects only liquid assets. Protects continuing long-term holders and avoids distress selling.",
+      "cases": [
+       "IL&FS default — funds wrote off exposure, giving low or negative returns"
+      ]
+     }
+    },
+    {
+     "id": "c-te",
+     "type": "concept",
+     "tags": [
+      "Tracking error",
+      "Medium"
+     ],
+     "front": "Define tracking error, give its formula and four causes.",
+     "back": {
+      "simplified": "Deviation of a fund's return from its benchmark. TE = √[Σ(d − d̄)² ÷ (n − 1)]. Causes: transaction cost, AMC fees, fund expenses, cash holdings, sampling bias.",
+      "trap": "Higher TE means higher risk even if the fund outperforms."
+     }
+    },
+    {
+     "id": "c-div-eq",
+     "type": "concept",
+     "tags": [
+      "Dividend equalisation",
+      "High"
+     ],
+     "front": "What is dividend equalisation and how does it change issue and repurchase prices?",
+     "back": {
+      "simplified": "A new investor pays (and an exiting investor receives) the undistributed income per unit to date. Issue price = NAV + entry load + income per unit; repurchase = NAV − exit load + income per unit.",
+      "cases": [
+       "SM TYK: issue ₹19.2015, repurchase ₹18.564, NAV 30 June ₹20.2670"
+      ]
+     }
+    },
+    {
+     "id": "c-gilt",
+     "type": "concept",
+     "tags": [
+      "Gilt fund & duration",
+      "Medium"
+     ],
+     "front": "A gilt fund expects rates to fall 25 bp. What does the manager do to duration, and how?",
+     "back": {
+      "simplified": "Lengthen average duration: sell the shortest bond, buy the longest (7.85 → 9.75 years in RTP Nov 2026). If rates are to rise, shorten it (→ 6.55 years).",
+      "explanation": "Longer duration = bigger price rise when rates fall."
+     }
+    },
+    {
+     "id": "c-load-back",
+     "type": "illustration",
+     "tags": [
+      "Entry & exit load",
+      "Low"
+     ],
+     "front": "NAV ₹10, POP ₹10.204, redemption ₹9.80. Front-end and back-end load by ICAI's formula?",
+     "back": {
+      "simplified": "10.204 = 10 ÷ (1 − f) → f ≈ 2%. 9.80 = 10 ÷ (1 + b) → b = 2.04%. (Alternative: 2.04% and 2%.)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "s7-returns",
+   "title": "Returns to the investor",
+   "emoji": "📈",
+   "cards": [
+    {
+     "id": "c-hpr",
+     "type": "concept",
+     "tags": [
+      "Holding period return",
+      "High"
+     ],
+     "front": "Return on a fund that pays income and capital-gain distributions?",
+     "back": {
+      "simplified": "r = (NAV₁ − NAV₀ + I + G) ÷ NAV₀. With reinvestment: extra units = distributions ÷ reinvestment NAV; return = (all units × closing NAV − cost) ÷ cost.",
+      "cases": [
+       "SM TYK: 24.49% vs 25.22% reinvested",
+       "SM TYK: payout 23.43% vs reinvest 24.85% → reinvest"
+      ]
+     }
+    },
+    {
+     "id": "c-eff-yield",
+     "type": "concept",
+     "tags": [
+      "Effective yield p.a.",
+      "High"
+     ],
+     "front": "Effective yield p.a. on a scheme held for some days?",
+     "back": {
+      "simplified": "[(units × closing NAV − investment) + dividends] ÷ investment × 365 ÷ days × 100.",
+      "trap": "Using months instead of exact days."
+     }
+    },
+    {
+     "id": "c-reverse-days",
+     "type": "illustration",
+     "tags": [
+      "Effective yield p.a.",
+      "High"
+     ],
+     "front": "You know the effective yield p.a. and the period's actual yield. How do you find the investment date?",
+     "back": {
+      "simplified": "Days = period yield % × 365 ÷ effective yield p.a.; count back from the valuation date.",
+      "cases": [
+       "SM TYK Mr Y: 95, 31, 68 days → 27.12.17, 01.03.18, 23.01.18"
+      ]
+     }
+    },
+    {
+     "id": "c-div-on-fv",
+     "type": "concept",
+     "tags": [
+      "Growth vs dividend",
+      "Low"
+     ],
+     "front": "A plan declares a 20% dividend. 10,487.80 units, NAV ₹25.95. How many new units on reinvestment?",
+     "back": {
+      "simplified": "Dividend = units × ₹10 face value × 20% = ₹20,975.60; new units = 20,975.60 ÷ 25.95 = 808.31.",
+      "trap": "Dividend % is on face value, not on NAV."
+     }
+    },
+    {
+     "id": "c-plans",
+     "type": "concept",
+     "tags": [
+      "Plan-wise yield",
+      "High"
+     ],
+     "front": "How do you compare dividend-reinvestment, bonus and growth plans?",
+     "back": {
+      "simplified": "Build a units table for each plan to redemption; value = units × closing NAV; deduct STT and STCG on short-term units only; annual return = gain ÷ investment × 12 ÷ months (or IRR).",
+      "cases": [
+       "Sun Moon MF: A 67.64%, B 73.33%, C 69.59%",
+       "Plan D 3.90% vs Plan B 13.12%"
+      ]
+     }
+    },
+    {
+     "id": "c-earning",
+     "type": "illustration",
+     "tags": [
+      "Fund-level rate of earning",
+      "High"
+     ],
+     "front": "ABC MF April: how is the investor's 12% annual rate of earning built?",
+     "back": {
+      "simplified": "Closing NAV ₹9.90 from closing cash ₹0.80 lakh + portfolio ₹198 lakh − arrears ₹0.80 lakh over 20 lakh units. Per unit: distributions ₹0.20 − capital loss ₹0.10 = ₹0.10 on ₹10 = 1% a month = 12% a year."
+     }
+    },
+    {
+     "id": "c-hpr-back",
+     "type": "illustration",
+     "tags": [
+      "Holding period return",
+      "High"
+     ],
+     "front": "Annual return 16%, opening NAV ₹78.50, distributions ₹0.40 + ₹0.30. Month-end NAV?",
+     "back": {
+      "simplified": "Monthly 1.33%: 0.0133 = (NAV − 78.50 + 0.70) ÷ 78.50 → NAV ₹78.84 (PYQ May 2024).",
+      "trap": "Using 16% for one month."
+     }
+    },
+    {
+     "id": "c-issue-back",
+     "type": "illustration",
+     "tags": [
+      "Plan-wise yield",
+      "High"
+     ],
+     "front": "How do you find the issue price of a bonus plan from its average yield?",
+     "back": {
+      "simplified": "Value now = investment × (1 + yield × years); units now = value ÷ NAV; undo bonuses latest first (× b/(a+b)); issue price = investment ÷ original units.",
+      "cases": [
+       "Strong AMC: ₹16 lakh, 17.5% × 5 → ₹30 lakh ÷ 100 = 30,000 → 24,000 → 20,000 → ₹80",
+       "Wealth Builders: ₹95.87 (PYQ Jan 2026)"
+      ]
+     }
+    },
+    {
+     "id": "c-closed-prem",
+     "type": "concept",
+     "tags": [
+      "Closed-end premium/discount",
+      "Medium"
+     ],
+     "front": "Why can a closed-ended fund investor earn more (or less) than the NAV growth?",
+     "back": {
+      "simplified": "He buys and sells at market price = NAV × (1 ± premium/discount). If the discount narrows or a premium appears, his return beats NAV growth.",
+      "cases": [
+       "PYQ May 2026: GM return 3.771% vs NAV growth 2.76%"
+      ]
+     }
+    },
+    {
+     "id": "c-deq-steps",
+     "type": "mnemonic",
+     "tags": [
+      "Dividend equalisation",
+      "High"
+     ],
+     "front": "Four steps of a dividend-equalisation sum?",
+     "back": {
+      "simplified": "1) income per unit each month on the units outstanding; 2) add equalisation on issue / deduct on repurchase; 3) dividend = % × available income; 4) closing NAV = all inflows − outflows ÷ closing units."
+     }
+    },
+    {
+     "id": "c-yield-reverse",
+     "type": "illustration",
+     "tags": [
+      "Effective yield p.a.",
+      "High"
+     ],
+     "front": "Effective yields known; find the initial investment (Mr S, PYQ Nov 2023).",
+     "back": {
+      "simplified": "Period yield = yield p.a. × days ÷ 365; total ₹ yield = dividend + NAV change; investment = ₹ yield ÷ period yield → ₹10 lakh, ₹10 lakh, ₹5 lakh."
+     }
+    },
+    {
+     "id": "c-earning-traps",
+     "type": "concept",
+     "tags": [
+      "Fund-level rate of earning",
+      "High"
+     ],
+     "front": "In a \"new fund, one month\" NAV sum, which three items do students get wrong?",
+     "back": {
+      "simplified": "1) Only expenses paid leave cash; arrears are deducted from net assets. 2) Distribute % of realised earnings only (sale gain + dividend). 3) Uncollected dividend is a receivable; an underwriter taking up the whole issue means all units are outstanding."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s8-eval",
+   "title": "Evaluating a mutual fund",
+   "emoji": "🔎",
+   "cards": [
+    {
+     "id": "c-eval-quant",
+     "type": "concept",
+     "tags": [
+      "Quantitative evaluation",
+      "High"
+     ],
+     "front": "Name the five quantitative parameters for evaluating a fund.",
+     "back": {
+      "simplified": "Risk-adjusted returns; benchmark returns (alpha); comparison with peers; returns across economic and market cycles; financial measures — expense ratio, Sharpe, Treynor, Sortino."
+     }
+    },
+    {
+     "id": "c-ratios",
+     "type": "mnemonic",
+     "tags": [
+      "Quantitative evaluation",
+      "High"
+     ],
+     "front": "Sharpe vs Treynor vs Sortino: which risk is in the denominator?",
+     "back": {
+      "simplified": "Sharpe: total risk σ. Treynor: systematic risk β (against the fund's benchmark). Sortino: downside deviation."
+     }
+    },
+    {
+     "id": "c-eval-qual",
+     "type": "concept",
+     "tags": [
+      "Qualitative evaluation",
+      "Low"
+     ],
+     "front": "Three qualitative parameters for evaluating a fund?",
+     "back": {
+      "simplified": "Quality of portfolio (blue chips, diversification, style; for debt credit quality, maturity, modified duration; low turnover); track record and competence of the fund manager; credibility of the fund house team."
+     }
+    },
+    {
+     "id": "c-beta-nav",
+     "type": "illustration",
+     "tags": [
+      "Expected NAV via beta",
+      "High"
+     ],
+     "front": "Sharpe 2, σ 11.25, Treynor 15, NAV ₹70.71 with 99% equity, market falls 5%, costs ₹3 a year. Expected NAV after a month?",
+     "back": {
+      "simplified": "Excess return = 2 × 11.25 = 22.50; β = 22.50 ÷ 15 = 1.5. Equity ₹70 × (1 − 7.5%) = ₹64.75; cash ₹0.71 − ₹0.25 = ₹0.46. NAV ₹65.21.",
+      "trap": "Applying β to the cash part too."
+     }
+    },
+    {
+     "id": "c-beta-corr",
+     "type": "concept",
+     "tags": [
+      "Quantitative evaluation",
+      "High"
+     ],
+     "front": "Given correlation, σ of the fund and the market variance, how do you get β and then Treynor?",
+     "back": {
+      "simplified": "σ_m = √variance; β = ρ × σ_p ÷ σ_m; Treynor = (R_p − R_f) ÷ β.",
+      "trap": "\"Variance 9%\" → σ_m = 3."
+     }
+    },
+    {
+     "id": "c-r2",
+     "type": "concept",
+     "tags": [
+      "Quantitative evaluation",
+      "High"
+     ],
+     "front": "From Sharpe and Treynor, how do you reach the coefficient of determination?",
+     "back": {
+      "simplified": "σ = excess ÷ Sharpe; β = excess ÷ Treynor; ρ = β × σ_m ÷ σ; R² = ρ².",
+      "cases": [
+       "PYQ Nov 2024 Q6(a): 0.2836 / 0.7259 / 0.5041"
+      ]
+     }
+    },
+    {
+     "id": "c-jensen",
+     "type": "concept",
+     "tags": [
+      "Quantitative evaluation",
+      "High"
+     ],
+     "front": "Jensen's alpha and Treynor given for a fund — how do you find β and R_f?",
+     "back": {
+      "simplified": "Expected (CAPM) return = actual − alpha. Write E = R_f + β × premium and Treynor = (actual − R_f) ÷ β; solve the two equations (Smart: β 0.35, R_f 6%)."
+     }
+    },
+    {
+     "id": "c-beta-nav-rise",
+     "type": "illustration",
+     "tags": [
+      "Expected NAV via beta",
+      "High"
+     ],
+     "front": "NAV ₹80 (95% equity), Sharpe 1.5, σ 10, Treynor 12, monthly cost ₹0.50, market +2%. NAV after a month?",
+     "back": {
+      "simplified": "β = 1.5 × 10 ÷ 12 = 1.25; equity 76 × 1.025 = ₹77.90; cash 4 − 0.50 = ₹3.50 → ₹81.40 (PYQ Dec 2021).",
+      "trap": "The paper printed Treynor 1.2; ICAI's answer used 12."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s9-roles",
+   "title": "Fund managers, FIIs and formula plans",
+   "emoji": "🧭",
+   "cards": [
+    {
+     "id": "c-fm-active-passive",
+     "type": "concept",
+     "tags": [
+      "Role of fund manager",
+      "Low"
+     ],
+     "front": "Fund manager's primary job in an active fund vs a passive fund?",
+     "back": {
+      "simplified": "Active: outperform the market and generate positive alpha through research and stock picking. Passive: match the index with minimum tracking error."
+     }
+    },
+    {
+     "id": "c-fm-roles",
+     "type": "mnemonic",
+     "tags": [
+      "Role of fund manager",
+      "Low"
+     ],
+     "front": "Four other roles of a fund manager?",
+     "back": {
+      "simplified": "C-M-W-O: Compliances (SEBI/AMFI, reporting, documents); constant Monitoring of performance; Wealth creation and protection; control over Outsourced work."
+     }
+    },
+    {
+     "id": "c-fii",
+     "type": "concept",
+     "tags": [
+      "Role of FIIs",
+      "Low"
+     ],
+     "front": "How do FIIs buy MF units, and what three benefits do they bring?",
+     "back": {
+      "simplified": "Directly from the issuer or through a registered broker on a recognised exchange, within SEBI limits. Benefits: better corporate governance, more competition, capital inflow (jobs and forex)."
+     }
+    },
+    {
+     "id": "c-crp",
+     "type": "illustration",
+     "tags": [
+      "Constant ratio plan",
+      "High"
+     ],
+     "front": "Constant ratio plan: what do you do when the trigger is hit?",
+     "back": {
+      "simplified": "Total value = bonds + units × NAV; reset both halves to the fixed ratio — buy units after a fall, sell after a rise.",
+      "cases": [
+       "SM TYK Sunidhi: ending ₹2,40,647.55 vs buy-and-hold ₹2,60,000"
+      ],
+      "trap": "ICAI checks each month's NAV against the previous month (32 → 38 = +18.75% triggers a sale)."
+     }
+    },
+    {
+     "id": "c-fm-hedge",
+     "type": "illustration",
+     "tags": [
+      "Role of fund manager",
+      "Low"
+     ],
+     "front": "A fund holds ₹90 cr equity (β 1.1) and ₹10 cr cash. How many index futures (4,300 × 50) to hedge?",
+     "back": {
+      "simplified": "1.1 × 90 crore ÷ (4,300 × 50) = 4,605 contracts. Cash is not hedged (MTP May 2025 S-II)."
+     }
+    },
+    {
+     "id": "c-crp-buyhold",
+     "type": "concept",
+     "tags": [
+      "Constant ratio plan",
+      "High"
+     ],
+     "front": "When does a constant ratio plan beat buy-and-hold, and when does it lose?",
+     "back": {
+      "simplified": "It wins in a choppy market that ends near where it started (it keeps selling high, buying low). It loses in a strong one-way rise, because it keeps selling the winner (SM: ₹2,40,647.55 vs ₹2,60,000)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s10-beyond",
+   "title": "Beyond the study material",
+   "emoji": "🚀",
+   "cards": [
+    {
+     "id": "c-sip",
+     "type": "concept",
+     "tags": [
+      "SIP / STP / SWP",
+      "Low"
+     ],
+     "front": "Why is a SIP investor's average cost per unit lower than the average NAV?",
+     "back": {
+      "simplified": "A fixed amount buys more units when NAV is low, fewer when high — cost = total ₹ ÷ total units = harmonic mean of NAVs ≤ arithmetic mean.",
+      "cases": [
+       "₹10,000 at 20, 16, 25, 20 → 2,025 units → ₹19.75 vs average NAV ₹20.25"
+      ]
+     }
+    },
+    {
+     "id": "c-stp-swp",
+     "type": "concept",
+     "tags": [
+      "SIP / STP / SWP",
+      "Low"
+     ],
+     "front": "SIP vs STP vs SWP?",
+     "back": {
+      "simplified": "SIP: fixed amount in, regularly. SWP: fixed amount out, regularly. STP: fixed amount moved from one scheme (often liquid) to another (often equity)."
+     }
+    },
+    {
+     "id": "c-m2-ir",
+     "type": "mnemonic",
+     "tags": [
+      "Jensen, M², IR",
+      "Low"
+     ],
+     "front": "Jensen's alpha, M² and information ratio — one line each.",
+     "back": {
+      "simplified": "Alpha: return above CAPM for its β. M²: R_f + Sharpe × σ_m, compared with R_m. IR: (R_p − R_benchmark) ÷ tracking error."
+     }
+    },
+    {
+     "id": "c-ops",
+     "type": "concept",
+     "tags": [
+      "MF vocabulary",
+      "Low"
+     ],
+     "front": "NFO, AUM, folio, cut-off time — what is each?",
+     "back": {
+      "simplified": "NFO: first subscription period. AUM: assets managed at market value. Folio: investor account number. Cut-off time: before it you get that day's NAV; after it, the next day's (no buying at a known NAV)."
+     }
+    },
+    {
+     "id": "c-side-math",
+     "type": "illustration",
+     "tags": [
+      "Side pocketing",
+      "Low"
+     ],
+     "front": "₹200 cr fund, 20 cr units, ₹10 cr bond defaults and is side-pocketed. Main NAV? Recovery of 40% is worth?",
+     "back": {
+      "simplified": "Main NAV = 190 ÷ 20 = ₹9.50. Recovery ₹4 cr ÷ 20 cr units = ₹0.20 per segregated unit, paid only to holders on the segregation date."
+     }
+    },
+    {
+     "id": "c-ter-daily",
+     "type": "concept",
+     "tags": [
+      "Expense ratio",
+      "Medium"
+     ],
+     "front": "How is the expense ratio actually charged?",
+     "back": {
+      "simplified": "1/365 of the TER is deducted from net assets every day before NAV is struck: ₹500 cr × 1.5% ÷ 365 = ₹2.05 lakh a day."
+     }
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "id": "p-nov24-q2a",
+   "prompt": "PYQ Nov 2024 · Q2(a) · 6 marks — Mr. X invested ₹1,00,000 at a face value of ₹10 per unit in a dividend reinvestment plan of a mutual fund during its initial public offering on 1st July, 2022. On 31st March, 2023 the fund declared a dividend of 10%, when Mr. X calculated his holding period return to be 115%. On 31st March, 2024 the fund declared a dividend of 20%; Mr. X redeemed all his investment and calculated his holding period return to be 193.134%. Calculate (i) the NAVs as on 31.03.2023 and 31.03.2024; (ii) the total units redeemed.",
+   "clauseRef": "Effective yield / dividend reinvestment",
+   "hints": [
+    "HPR is already for the period — do not scale by months",
+    "NAV on the dividend date is ex-dividend: deduct the dividend from the value first",
+    "Dividend % is on face value ₹10"
+   ],
+   "modelAnswer": "Working notes\nUnits at IPO = 1,00,000 ÷ 10 = 10,000\n\n(i) NAV on 31.03.2023\nValue = 1,00,000 + 1,00,000 × 115% = ₹2,15,000\nDividend = 10,000 × ₹10 × 10% = ₹10,000\nNAV = (2,15,000 − 10,000) ÷ 10,000 = ₹20.50\nReinvested units = 10,000 ÷ 20.50 = 487.80 → units = 10,487.80 (or 2,15,000 ÷ 20.50)\n\nNAV on 31.03.2024\nDividend = 10,487.80 × ₹10 × 20% = ₹20,975.60\nValue = 1,00,000 × (1 + 1.93134) = ₹2,93,134\nNAV = (2,93,134 − 20,975.60) ÷ 10,487.80 = ₹25.95\n\n(ii) Units redeemed\nNew units = 20,975.60 ÷ 25.95 = 808.31\nTotal units redeemed = 10,487.80 + 808.31 = 11,296.11 units",
+   "markingPoints": [
+    "Value on 31.03.2023 ₹2,15,000 and NAV ₹20.50 (ex-dividend)",
+    "Reinvested units 487.80 → 10,487.80",
+    "Dividend on face value ₹20,975.60",
+    "NAV on 31.03.2024 ₹25.95",
+    "Units redeemed 11,296.11"
+   ]
+  },
+  {
+   "id": "p-may25-q5a",
+   "prompt": "PYQ May 2025 · Q5(a) · 7 marks — On 1st April, an open-ended scheme of Progressive Mutual Fund had 800 lakh units outstanding with NAV of ₹44.30 per unit. At the end of April, it issued 16 lakh units at opening NAV plus 2% load, adjusted for dividend equalization. At the end of May, 8 lakh units were repurchased at opening NAV less 2% exit load adjusted for dividend equalization. At the end of June, 60% of its available income was distributed as dividend. April–June quarter (₹ lakh): portfolio value appreciation 965.280; income of April 49.440; May 75.070; June 93.710. Calculate up to 4 decimals: (i) income available after distribution of dividend; (ii) issue price at the end of April; (iii) repurchase price at the end of May; (iv) NAV per unit as on 30th June.",
+   "clauseRef": "Dividend equalisation",
+   "hints": [
+    "Income per unit each month = month's income ÷ units outstanding at that time",
+    "Issue price = NAV + load + income per unit to date",
+    "Closing NAV = opening net assets + appreciation + issue proceeds + income − repurchases − dividend"
+   ],
+   "modelAnswer": "(i) Income available\n                                   Units   Per unit   ₹ lakh\nIncome from April                   800    0.0618    49.4400\nAdd: equalisation on issue           16    0.0618     0.9888\n                                    816    0.0618    50.4288\nAdd: Income from May                       0.0920    75.0700\n                                    816    0.1538   125.4988\nLess: equalisation on repurchase      8    0.1538    (1.2304)\n                                    808    0.1538   124.2684\nAdd: Income from June                      0.1160    93.7100\n                                    808    0.2698   217.9784\nLess: Dividend paid (60%)                  0.1619  (130.7870)\nIncome available                    808    0.1079    87.1914\n\n(ii) Issue price = 44.3000 + 2% load 0.8860 + equalisation 0.0618 = ₹45.2478\n\n(iii) Repurchase price = 44.3000 − 0.8860 + 0.1538 = ₹43.5678\n\n(iv) Closing NAV (₹ lakh)\nOpening net assets (44.30 × 800)      35,440.0000\nPortfolio appreciation                   965.2800\nIssue of units (16 × 45.2478)            723.9648\nIncome received                          218.2200\n                                      37,347.4648\nLess: Repurchase (8 × 43.5678)          (348.5424)\nLess: Dividend                          (130.7870)\nClosing net assets                    36,868.1354\nClosing units                              808 lakh\nNAV on 30 June                         ₹45.6289",
+   "markingPoints": [
+    "Income per unit table with equalisation on issue and repurchase",
+    "Income available ₹87.1914 lakh",
+    "Issue price ₹45.2478",
+    "Repurchase price ₹43.5678",
+    "Closing net assets ₹36,868.1354 lakh",
+    "NAV ₹45.6289"
+   ]
+  },
+  {
+   "id": "p-may23-q5a",
+   "prompt": "PYQ May 2023 · Q5(a) · 8 marks — M/s. Promising, an AMC, on 01.04.2018 floated a Dividend Reinvestment Plan and a Bonus Plan; Mr. X invested in both. Details (₹): 31.12.2019 bonus 1:5, NAV DRP 58 / BP 70; 31.03.2020 dividend 12%, NAV 60 / 72; 31.03.2021 dividend 10%, NAV 68 / 75; 31.03.2022 dividend 15%, NAV 75 / 66; 31.12.2022 bonus 1:3, NAV 70 / 60; 31.03.2023 NAV 80 / 71. Investment: DRP ₹10,80,000, BP ₹10,00,000. Average profit (DRP) ₹1,21,824; average yield (BP) 8.40%. Face value ₹10. Calculate the issue price of both schemes as on 01.04.2018.",
+   "clauseRef": "Plan-wise yield (reverse)",
+   "hints": [
+    "Total gain = average × 5 years",
+    "Undo each reinvestment: N + N × dividend ÷ NAV = units after",
+    "Undo bonuses latest first"
+   ],
+   "modelAnswer": "(i) Dividend Reinvestment Plan\nTotal gain = 1,21,824 × 5 = ₹6,09,120\nValue on 31.03.2023 = 10,80,000 + 6,09,120 = ₹16,89,120\nUnits = 16,89,120 ÷ 80 = 21,114\n\nUndo each dividend: new units = closing units × dividend ÷ (NAV + dividend)\nDate        Units after  Div ₹  NAV  New units  Units before\n31.03.2022  21,114       1.50   75   414        20,700\n31.03.2021  20,700       1.00   68   300        20,400\n31.03.2020  20,400       1.20   60   400        20,000\nIssue price = 10,80,000 ÷ 20,000 = ₹54\n\n(ii) Bonus Plan\nGain = 10,00,000 × 8.40% × 5 = ₹4,20,000; value = ₹14,20,000\nUnits = 14,20,000 ÷ 71 = 20,000\nBefore 1:3 bonus = 20,000 × 3/4 = 15,000\nBefore 1:5 bonus = 15,000 × 5/6 = 12,500\nIssue price = 10,00,000 ÷ 12,500 = ₹80",
+   "markingPoints": [
+    "Total value from average profit / yield over 5 years",
+    "Closing units = value ÷ closing NAV",
+    "Reinvested units removed with NAV ÷ (NAV + dividend)",
+    "Bonus units removed latest first",
+    "Issue prices ₹54 and ₹80"
+   ]
+  },
+  {
+   "id": "p-dec21-q1b",
+   "prompt": "PYQ Dec 2021 · Q1(b) · 8 marks — Closed-ended equity schemes on 31/08/2021: AJ Mutual Fund NAV ₹80 (95% equity, rest cash), Sharpe 1.5, Treynor 12, σ 10; RP Mutual Fund NAV ₹61 (₹60 equity, rest cash), Sharpe 3, Treynor 10, σ 6. No change in portfolios during September. Monthly cost ₹0.50 per unit for each scheme. The share market rose by 2% in September. Calculate the expected NAV per unit on 30/09/2021 for both schemes.",
+   "clauseRef": "Expected NAV via β",
+   "hints": [
+    "β = Sharpe × σ ÷ Treynor",
+    "Only equity moves with the market",
+    "Cash falls by the month's cost"
+   ],
+   "modelAnswer": "Working notes\n(i) Equity and cash        AJ        RP\nNAV                       80.00     61.00\nEquity element            76.00     60.00\nCash element               4.00      1.00\n\n(ii) Beta\nAJ: Sharpe 1.5 = (E(R) − Rf) ÷ 10 → 15; Treynor 12 = 15 ÷ β → β = 1.25\nRP: Sharpe 3 = (E(R) − Rf) ÷ 6 → 18; Treynor 10 = 18 ÷ β → β = 1.80\n\n(iii) Equity rises: AJ 2% × 1.25 = 2.50%; RP 2% × 1.80 = 3.60%\n\n(iv) Cash after a month: AJ 4.00 − 0.50 = 3.50; RP 1.00 − 0.50 = 0.50\n\nExpected NAV on 30.09.2021\nAJ: 76 × 1.025 = 77.90 + 3.50 = ₹81.40\nRP: 60 × 1.036 = 62.16 + 0.50 = ₹62.66\n\n(Note: the question paper printed AJ's Treynor as 1.2; ICAI's answer used 12.)",
+   "markingPoints": [
+    "Split NAV into equity and cash",
+    "Excess return from Sharpe × σ",
+    "β from Treynor (1.25 and 1.80)",
+    "Equity grows by β × 2%",
+    "Cash less monthly cost",
+    "NAVs ₹81.40 and ₹62.66"
+   ]
+  },
+  {
+   "id": "p-sep25-q3b",
+   "prompt": "PYQ Sep 2025 · Q3(b) · 4 marks — Mr. DK has 1,000 units of AM Mutual Fund. NAV is ₹17.50 at the beginning and ₹18.90 at the end of the year. Option I: pay ₹1.50 per unit as dividend and ₹1.20 per unit as capital gain. Option II: reinvest these distributions at an average NAV of ₹17.30 per unit. Compute the holding period return for both options and select the preferable option (2 decimals).",
+   "clauseRef": "Holding period return",
+   "hints": [
+    "Option I: (change in NAV + dividend + CG) ÷ opening NAV",
+    "Option II: extra units = distributions ÷ 17.30"
+   ],
+   "modelAnswer": "Option I (per unit)\nChange in price 18.90 − 17.50 = 1.40\nDividend 1.50; capital gain 1.20\nTotal reward 4.10 ÷ 17.50 = 23.43%\n\nOption II\nDistribution = 1,000 × (1.50 + 1.20) = ₹2,700\nAdditional units = 2,700 ÷ 17.30 = 156.07\nTotal units = 1,156.07 × ₹18.90 = ₹21,849.72\nCost = 1,000 × 17.50 = ₹17,500\nReturn = (21,849.72 − 17,500) ÷ 17,500 = 24.86%\n\nConclusion: reinvestment (Option II) gives the higher holding period return and is preferable.",
+   "markingPoints": [
+    "Option I total reward ₹4.10 per unit",
+    "HPR 23.43%",
+    "Additional units 156.07",
+    "HPR 24.86%",
+    "Recommends Option II"
+   ]
+  },
+  {
+   "id": "p-jan26-q6a",
+   "prompt": "PYQ Jan 2026 · Q6(a) · 6 marks — Stork Capital launched its first NFO on June 1, 2024 at ₹10 per unit and received subscriptions for 180 lakh units. Griffin Securities underwrote the entire issue of 200 lakh units for 2.0% commission. Initial investments ₹1,780 lakh; marketing expenses ₹25 lakh. During FY ended March 31, 2025 it sold securities costing ₹250 lakh for ₹280 lakh and bought securities for ₹265 lakh. Management expenses cannot exceed 0.50% of average funds invested; actual ₹5.50 lakh, of which ₹0.50 lakh outstanding. Dividends earned ₹5.0 lakh, of which ₹0.40 lakh uncollected. It distributes 80% of all realised earnings. Market value of portfolio on March 31, 2025 ₹2,150.50 lakh. Determine the closing NAV per unit (2 decimals).",
+   "clauseRef": "Fund accounts / NAV",
+   "hints": [
+    "Underwriter takes up the whole 200 lakh units",
+    "Chargeable expense = lower of actual and the cap",
+    "Uncollected dividend is a receivable"
+   ],
+   "modelAnswer": "(1) Opening cash (₹ lakh)\nNFO proceeds 200 × 10 = 2,000.00\nLess: initial investments (1,780.00), underwriting 2% (40.00), marketing (25.00)\nOpening cash = 155.00\n\n(2) Management expenses\nAverage funds = (1,780 + 1,795) ÷ 2 = 1,787.50; cap 0.50% = 8.94\nChargeable = lower of 5.50 and 8.94 = 5.50; paid = 5.00\n\n(3) Closing cash\n155.00 + 280.00 (sale) + 4.60 (dividend collected) − 265.00 (purchases) − 5.00 (expenses) − 24.00 (80% of ₹30 lakh gain) − 4.00 (80% of ₹5 lakh dividend) = 141.60\n\nNAV\nCash 141.60 + portfolio 2,150.50 + dividend receivable 0.40 = 2,292.50\nLess: outstanding expenses (0.50) = 2,292.00\nUnits 200 lakh → NAV ₹11.46\n\n(ICAI also accepts distributing 80% of the ₹4.60 lakh collected: NAV still ₹11.46.)",
+   "markingPoints": [
+    "Opening cash ₹155 lakh with underwriting commission on 200 lakh units",
+    "Expense cap compared — ₹5.50 lakh chargeable",
+    "Distribution of 80% of realised earnings",
+    "Closing cash ₹141.60 lakh",
+    "NAV ₹11.46"
+   ]
+  },
+  {
+   "id": "p-nov23-q2b",
+   "prompt": "PYQ Nov 2023 · Q2(b) · 8 marks — Mr. S invested in three schemes. Scheme A: invested 01-06-2022, entry NAV ₹11.00, dividend to 31-03-23 ₹12,500, NAV 31-03-23 ₹11.25, increase in NAV ₹22,727.27, effective yield p.a. 4.2296%. Scheme B: 01-07-2022, ₹10.50, ₹17,000, ₹11.48, ₹93,333.33, 14.6978%. Scheme C: 01-08-2022, ₹12.00, ₹4,000, ₹10.80, (₹50,000), (−)13.8190%. Ignore loads; 365 days; round investment to nearest ₹100. Calculate (i) the amount invested initially in each scheme; (ii) units in each. Advise whether he should continue to hold.",
+   "clauseRef": "Effective yield (reverse)",
+   "hints": [
+    "Count days from the investment date to 31-03-23",
+    "Period yield = yield p.a. × days ÷ 365",
+    "Investment = ₹ yield ÷ period yield"
+   ],
+   "modelAnswer": "                          A            B             C\nDays held                 304          274           243\nYield p.a.                4.2296%      14.6978%      (13.8190%)\nPeriod yield              3.5227%      11.0334%      (9.2000%)\nDividend                  12,500       17,000        4,000\nIncrease in NAV           22,727.27    93,333.33     (50,000)\nTotal yield (₹)           35,227.27    1,10,333.33   (46,000)\nInvestment (₹ yield ÷ %)  10,00,000    10,00,000     5,00,000\nEntry NAV                 11.00        10.50         12.00\nUnits                     90,909.09    95,238.10     41,666.67\n\nAdvice: continue in Scheme B (highest yield); redeem A and C and invest the proceeds in B.",
+   "markingPoints": [
+    "Days 304 / 274 / 243",
+    "Period yields from the annual yields",
+    "Investments ₹10 lakh, ₹10 lakh, ₹5 lakh",
+    "Units 90,909, 95,238, 41,667",
+    "Advice: switch to B"
+   ]
+  },
+  {
+   "id": "p-nov22-q4a",
+   "prompt": "PYQ Nov 2022 · Q4(a) · 8 marks — Returns: MF-A 10%, 8%, 12%; MF-B 5%, 10%, 8%; MF-C 14%, 10%, 18% (2020–2022). Correlation with market: A 0.45, B 0.25, C 0.65. Variance of the market is 9% and the government bond rate is 7%. Rank the mutual funds using Sharpe's ratio and Treynor's ratio.",
+   "clauseRef": "Quantitative evaluation",
+   "hints": [
+    "σ from the three returns (divide by n, as ICAI did)",
+    "σm = √9 = 3",
+    "β = ρ × σ ÷ σm"
+   ],
+   "modelAnswer": "Standard deviation (population)\nA: mean 10; variance 8 ÷ 3 = 2.67; σ 1.63\nB: mean 7.67; variance 12.67 ÷ 3 = 4.22; σ 2.05\nC: mean 14; variance 32 ÷ 3 = 10.67; σ 3.27\n\nBeta = ρ × σi ÷ σm (σm = 3)\nA 0.45 × 1.63 ÷ 3 = 0.244; B 0.25 × 2.05 ÷ 3 = 0.171; C 0.65 × 3.27 ÷ 3 = 0.709\n\n        Rp − Rf   Sharpe   Rank   Treynor   Rank\nA       3.00      1.84     2      12.30     1\nB       0.67      0.33     3       3.92     3\nC       7.00      2.14     1       9.87     2",
+   "markingPoints": [
+    "Mean and σ of each fund",
+    "σm = 3 from variance 9",
+    "Betas 0.244 / 0.171 / 0.709",
+    "Sharpe ranking C, A, B",
+    "Treynor ranking A, C, B"
+   ]
+  },
+  {
+   "id": "p-may23-q6c",
+   "prompt": "PYQ May 2023 · Q6(c) · 4 marks — Index Funds is one of the Special Funds. What are the other funds in the Special Funds category?",
+   "clauseRef": "Special funds",
+   "hints": [
+    "Eight types in SM para 2.2.3 besides index funds"
+   ],
+   "modelAnswer": "(a) International funds — raise money in India, invest globally.\n(b) Offshore funds — raise money globally, invest in India.\n(c) Sector funds — whole fund in one industry (power, IT, pharma).\n(d) Money market funds — debt-oriented; preservation of capital, liquidity and moderate income through CPs, CDs, T-bills, G-secs.\n(e) Fund of funds — invest in units of other MF schemes of the same or other fund houses.\n(f) Capital protection oriented funds — protection from portfolio structure (not a guarantee); close-ended, listed, rated.\n(g) Gold funds — track gold, usually as ETFs listed on the exchange.\n(h) Quant funds — data-driven, rule-based models decide stock, quantity and timing.",
+   "markingPoints": [
+    "International vs offshore distinguished",
+    "Sector and money market funds",
+    "Fund of funds",
+    "Capital protection oriented fund (not guaranteed)",
+    "Gold and quant funds"
+   ]
+  },
+  {
+   "id": "p-mtp-nov24-q2c",
+   "prompt": "MTP Nov 2024 S-I · Q2(c) · 4 marks — Explain the various qualitative factors that need to be taken into account, in addition to quantitative factors, to evaluate the performance of any mutual fund.",
+   "clauseRef": "Qualitative evaluation",
+   "hints": [
+    "Portfolio, fund manager, fund house"
+   ],
+   "modelAnswer": "(1) Quality of portfolio — blue-chip and large companies, diversification, style (growth, value, blend); for debt funds credit quality, average maturity and modified duration; investments must match the objective; a lower portfolio turnover ratio is generally better.\n(2) Track record and competence of the fund manager — knowledge, ability to manage, past performance, conviction.\n(3) Credibility of the fund house team — redemptions, crediting of dividends, adequate information to investors.",
+   "markingPoints": [
+    "Quality of portfolio with equity and debt aspects",
+    "Portfolio turnover point",
+    "Fund manager's track record and competence",
+    "Credibility of the fund house"
+   ]
+  },
+  {
+   "id": "p-rtp-nov26-q10",
+   "prompt": "RTP Nov 2026 · Q10 — A fund holds five Government bonds, face value ₹5 crore each: GOI 2026 (11.68%, price 106.50, duration 3.50), GOI 2030 (7.55%, 105.00, 6.50), GOI 2035 (7.38%, 105.00, 7.50), GOI 2042 (8.35%, 110.00, 8.75), GOI 2052 (7.95%, 101.00, 13.00). (i) Identify the type of fund. (ii) NAV per unit if units are 2.50 crore. (iii) Suggest churning to reduce risk if rates are expected to (A) fall 25 bp, (B) rise 75 bp, and compute the revised duration (simple average).",
+   "clauseRef": "Gilt fund & duration",
+   "hints": [
+    "Only dated Government securities",
+    "Value = ₹5 crore × price ÷ 100",
+    "Rates down → lengthen; rates up → shorten"
+   ],
+   "modelAnswer": "(i) Gilt fund — invested only in dated Government securities.\n\n(ii) Investment (₹ lakh): 532.50 + 525.00 + 525.00 + 550.00 + 505.00 = 2,637.50\nNAV = 2,637.50 ÷ 250 = ₹10.55\n\n(iii) Average duration = 39.25 ÷ 5 = 7.85 years\n(A) Rates fall: sell GOI 2026, buy GOI 2052 → (39.25 − 3.5 + 13) ÷ 5 = 9.75 years\n(B) Rates rise: sell GOI 2052, buy GOI 2030 → (39.25 − 13 + 6.5) ÷ 5 = 6.55 years\n(Buying GOI 2026 is not preferred: its maturity is very short and a 75 bp move is comparatively large.)",
+   "markingPoints": [
+    "Gilt fund identified",
+    "NAV ₹10.55",
+    "Average duration 7.85",
+    "Lengthen to 9.75 for falling rates",
+    "Shorten to 6.55 for rising rates"
+   ]
+  }
+ ]
+}

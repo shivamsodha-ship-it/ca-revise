@@ -115,11 +115,11 @@ code { font-family: var(--mono); font-size: .9em }
 .streak { margin-left: auto; display: flex; align-items: center; gap: 5px; background: var(--sun-soft); color: var(--sun); padding: 6px 11px; border-radius: 999px; font-weight: 700; font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums }
 
 .deskbar { border-top: 1px solid var(--line) }
-.deskbar-in { max-width: var(--max); margin: 0 auto; padding: 0 20px; display: flex; align-items: stretch; gap: 22px; overflow-x: auto; scrollbar-width: none }
+.deskbar-in { max-width: var(--max); margin: 0 auto; padding: 0 20px; display: flex; align-items: stretch; gap: 10px; overflow-x: auto; scrollbar-width: none }
 .deskbar-in::-webkit-scrollbar { display: none }
-.dgroup { display: flex; align-items: center; gap: 2px; padding-left: 22px; border-left: 1px solid var(--line) }
+.dgroup { display: flex; align-items: center; gap: 2px; padding-left: 10px; border-left: 1px solid var(--line) }
 .dgroup-l { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-right: 8px; white-space: nowrap }
-.dlink { display: flex; align-items: center; min-height: var(--tap); padding: 0 10px; font-weight: 600; font-size: 14px; color: var(--muted); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px }
+.dlink { display: flex; align-items: center; min-height: var(--tap); padding: 0 7px; font-weight: 600; font-size: 14px; color: var(--muted); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px }
 .dlink:hover { color: var(--ink) }
 .dlink[aria-current="page"] { color: var(--ink); border-bottom-color: var(--blue) }
 
@@ -479,3 +479,39 @@ td .chip:hover { border-color: var(--blue) }
   .tbl td:nth-child(3):not(:empty) { margin-top: 8px }
   .tile { min-height: 0 }
 }
+
+/* Formula bank */
+.fjump { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0 4px }
+.fbank { display: grid; gap: 28px; margin-top: 16px }
+.fchap { margin-top: 32px }
+.ffam-h { font-size: 1.25rem; margin: 0 0 4px }
+.ffam-idea { color: var(--muted); font-size: 14px; margin-bottom: 10px }
+.ffam-idea p { margin: 0 0 4px }
+.fkids { list-style: none; margin: 8px 0 0 14px; padding: 0 0 0 14px; border-left: 2px solid var(--line); display: grid; gap: 8px }
+.fcard { background: var(--card); border: 1px solid var(--line); border-radius: 12px }
+.fcard.master { border-color: var(--blue); box-shadow: inset 4px 0 0 var(--blue) }
+.fcard > summary { list-style: none; cursor: pointer; min-height: var(--tap); padding: 10px 14px; display: grid; gap: 4px }
+.fcard > summary::-webkit-details-marker { display: none }
+.fcard > summary:hover .fname { color: var(--blue) }
+.fname { font-weight: 700; font-size: 14px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap }
+.ftag { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); background: var(--blue-soft); border-radius: 5px; padding: 1px 6px }
+.ftag.beyond { color: var(--sun); background: var(--sun-soft) }
+.fexpr { font-family: var(--mono); font-size: 14.5px; line-height: 1.9; overflow-x: auto }
+.fexpr sub, .fexpr sup, .fvars sub, .fvars sup { font-size: .72em }
+.frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 2px }
+.frac > span:first-child { border-bottom: 1px solid currentColor; padding: 0 3px }
+.frac > span:last-child { padding: 0 3px }
+.fbody { padding: 0 14px 12px; border-top: 1px solid var(--line); font-size: 14px }
+.fbody p { margin: 8px 0 }
+.ffrom { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; color: var(--muted) }
+.fvars { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; margin: 10px 0; font-size: 13.5px }
+.fvars > div { display: contents }
+.fvars dt { font-family: var(--mono); font-weight: 600 }
+.fvars dd { margin: 0; color: var(--muted) }
+.fsec { margin: 10px 0 }
+.fsec > b { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px }
+.fsec table { border-collapse: collapse; font-size: 13px; margin: 6px 0 } .fsec td, .fsec th { border: 1px solid var(--line); padding: 3px 8px; text-align: left }
+.callout.trapc { background: var(--g-soft) } .callout.trapc > b { color: var(--g) }
+.fp { margin: 6px 0 0 }
+@media (max-width: 560px) { .fkids { margin-left: 4px; padding-left: 10px } .fvars { grid-template-columns: 1fr } .fvars dd { margin-bottom: 6px } }
+.fjump .chip { font-family: var(--sans); font-weight: 600 }

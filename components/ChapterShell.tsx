@@ -50,8 +50,9 @@ export function viewsFor(cb: Casebook | null): ViewDef[] {
     { id: 'notes', label: 'Notes', group: 'revise', blurb: 'Handwritten chapter notes' },
     { id: 'library', label: 'Law library', group: 'revise', blurb: 'Every provision in full', casebook: true },
     { id: 'cheat', label: 'Cheat sheet', group: 'revise', blurb: 'Numbers and fact triggers', casebook: true },
+    { id: 'formulas', label: 'Formulas', group: 'revise', blurb: 'Master formulas, how each is derived, and why', casebook: true },
   ];
-  return all.filter(v => cb || !v.casebook);
+  return all.filter(v => (cb || !v.casebook) && (v.id !== 'formulas' || (cb?.formulas?.length ?? 0) > 0));
 }
 
 const FIRE = (

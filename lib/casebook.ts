@@ -47,6 +47,31 @@ export interface CasebookMeta {
   methodTitle?: string;             // heading for `method`
 }
 
+// Formula bank: families of formulas, each led by a master formula that the others come from.
+// HTML fields may use <em>, <sub>, <sup>, <strong> and <span class="frac"><span>top</span><span>bottom</span></span>.
+export interface Formula {
+  id: string;                 // unique in the chapter, kebab-case
+  name: string;
+  expr: string;               // HTML: the formula itself
+  vars?: [string, string][];  // [symbol (HTML), meaning]
+  logic: string;              // HTML: why it works, in plain words a child could follow
+  derive?: string;            // HTML: how it comes from the master / parent formula
+  from?: string[];            // ids of the formulas this one is derived from
+  hook?: string;              // memory hook
+  cue?: string;               // exam cue: the words in a question that call for it
+  trap?: string;              // HTML: the usual mistake
+  example?: string;           // HTML: a small worked example
+  p?: string;                 // provision id it belongs to
+  beyond?: boolean;           // not in the study material (app-added for concept questions)
+}
+export interface FormulaFamily {
+  id: string;
+  title: string;
+  idea: string;               // HTML: the one idea that ties the family together
+  master: Formula;
+  items: Formula[];
+}
+
 export interface Casebook {
   meta: CasebookMeta;
   P: Provision[];
@@ -56,6 +81,7 @@ export interface Casebook {
   finder: [string, string][];                    // facts, provision id
   method: [string, string][];                    // step title, HTML body
   changes: string[];                             // HTML
+  formulas?: FormulaFamily[];                    // formula bank (Formulas view + subject formula bank)
 }
 
 export function metaOf(cb: Casebook) {

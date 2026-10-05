@@ -6,11 +6,12 @@ import HuntView from '@/components/views/HuntView';
 import McqView from '@/components/views/McqView';
 import LibraryView from '@/components/views/LibraryView';
 import CheatView from '@/components/views/CheatView';
+import FormulaView from '@/components/views/FormulaView';
 import NotesView from '@/components/views/NotesView';
 import FlipView from '@/components/views/FlipView';
 import PracticeView from '@/components/views/PracticeView';
 
-const CASEBOOK: Record<string, () => JSX.Element | null> = { drill: DrillView, hunt: HuntView, mcq: McqView, library: LibraryView, cheat: CheatView };
+const CASEBOOK: Record<string, () => JSX.Element | null> = { drill: DrillView, hunt: HuntView, mcq: McqView, library: LibraryView, cheat: CheatView, formulas: FormulaView };
 const CORE: Record<string, () => JSX.Element | null> = { notes: NotesView, read: NotesView, flip: FlipView, practice: PracticeView };
 
 export default function ViewSwitch({ view }: { view: string }) {

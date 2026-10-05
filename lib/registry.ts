@@ -29,6 +29,15 @@ const registry: ChapterIndexRow[] = [
     loader: async () => (await import('../data/aaa/ch15-overview-of-audit-of-public-sector-undertakings.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/aaa/ch15-casebook.json')).default as unknown as Casebook,
   },
+  {
+    id: 'afm-ch08',
+    subject: 'afm',
+    number: 8,
+    title: 'Mutual Funds',
+    summary: 'NAV · returns and effective yield · dividend equalisation · plan-wise yield · Sharpe/Treynor → NAV',
+    loader: async () => (await import('../data/afm/ch08-mutual-funds.json')).default as unknown as Chapter,
+    casebook: async () => (await import('../data/afm/ch08-casebook.json')).default as unknown as Casebook,
+  },
   // @chapters-end
 ];
 

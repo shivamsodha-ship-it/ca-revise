@@ -1,5 +1,6 @@
 'use client';
 import type { CardProgress } from './spacedRep';
+import { notifyChanged } from './sync';
 
 const NS = 'ca-revise:v1';
 
@@ -13,6 +14,7 @@ function safeGet<T>(key: string, fallback: T): T {
 function safeSet(key: string, val: unknown) {
   if (typeof window === 'undefined') return;
   try { window.localStorage.setItem(key, JSON.stringify(val)); } catch {}
+  if (key.startsWith(NS + ':')) notifyChanged();
 }
 
 const progKey = (chapterId: string) => `${NS}:prog:${chapterId}`;

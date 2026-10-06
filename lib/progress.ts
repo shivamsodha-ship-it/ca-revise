@@ -1,4 +1,5 @@
 'use client';
+import { notifyChanged } from './sync';
 // Casebook progress (cases, MCQs, hunt best, streak), stored per chapter in localStorage.
 
 export interface CaseState {
@@ -7,6 +8,8 @@ export interface CaseState {
   streak: number;
   huntBest: number;
   last?: { view: string; id?: string }; // where to resume
+  rt?: Record<string, number>;         // when each result was recorded (ms), for sync merges
+  u?: number;                          // when this state was last saved (ms)
 }
 export const EMPTY_STATE: CaseState = { r: {}, best: 0, streak: 0, huntBest: 0 };
 
@@ -20,5 +23,7 @@ export function loadCaseState(chapterId: string): CaseState {
 }
 
 export function saveCaseState(chapterId: string, s: CaseState) {
-  try { localStorage.setItem(key(chapterId), JSON.stringify(s)); } catch {}
+  const stamped = { ...s, u: Date.now() };
+  try { localStorage.setItem(key(chapterId), JSON.stringify(stamped)); } catch {}
+  notifyChanged();
 }

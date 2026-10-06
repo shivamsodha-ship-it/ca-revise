@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { loadCaseState, type CaseState } from '@/lib/progress';
+import { notifyChanged } from '@/lib/sync';
 import { PENDING_DRILL, rankConcepts, type SlimProvision } from '@/lib/weak';
 
 export interface PlanChapter {
@@ -34,7 +35,7 @@ const fmt = (m: number) => (m >= 60 ? `${Math.floor(m / 60)} h ${m % 60 ? m % 60
 export default function LastDayPlan({ subject, subjectLabel, chapters }: { subject: string; subjectLabel: string; chapters: PlanChapter[] }) {
   const [days, setDays] = useState(1.5);
   const [hours, setHours] = useState(8);
-  const [done, setDone] = useState<Record<string, true>>({});
+  const [done, setDone] = useState<Record<string, number>>({});  // key -> time ticked (0 = unticked)
   const [states, setStates] = useState<Record<string, CaseState> | null>(null);
 
   // Settings and ticks are per-browser conveniences, so they are read after mount and never required.
@@ -46,10 +47,11 @@ export default function LastDayPlan({ subject, subjectLabel, chapters }: { subje
     setStates(Object.fromEntries(chapters.map(c => [c.id, loadCaseState(c.id)])));
   }, [subject, chapters]);
 
-  const save = (next: { days: number; hours: number; done: Record<string, true> }) => {
-    try { localStorage.setItem(SETTINGS(subject), JSON.stringify(next)); } catch {}
+  const save = (next: { days: number; hours: number; done: Record<string, number> }) => {
+    try { localStorage.setItem(SETTINGS(subject), JSON.stringify({ ...next, u: Date.now() })); } catch {}
+    notifyChanged();
   };
-  const update = (patch: Partial<{ days: number; hours: number; done: Record<string, true> }>) => {
+  const update = (patch: Partial<{ days: number; hours: number; done: Record<string, number> }>) => {
     const next = { days, hours, done, ...patch };
     setDays(next.days); setHours(next.hours); setDone(next.done); save(next);
   };
@@ -72,7 +74,7 @@ export default function LastDayPlan({ subject, subjectLabel, chapters }: { subje
     [chapters, states, subject]);
 
   const doneMins = plan.reduce((n, p) => n + p.blocks.reduce((m, b) => m + (done[p.c.id + ':' + b.key] ? b.mins : 0), 0), 0);
-  const toggle = (k: string) => { const d = { ...done }; if (d[k]) delete d[k]; else d[k] = true; update({ done: d }); };
+  const toggle = (k: string) => { const d = { ...done }; d[k] = d[k] ? 0 : Date.now(); update({ done: d }); };
 
   if (!chapters.length) return <p className="muted">No chapters in {subjectLabel} yet.</p>;
 

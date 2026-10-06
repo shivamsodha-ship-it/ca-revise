@@ -6,6 +6,7 @@ import { cap, metaOf, type Casebook, type Provision, type Question } from '@/lib
 import { EMPTY_STATE, loadCaseState, saveCaseState, type CaseState } from '@/lib/progress';
 import type { Chapter, Subject } from '@/lib/types';
 import { PENDING_DRILL } from '@/lib/weak';
+import { SYNCED_EVENT } from '@/lib/sync';
 
 export interface DrillOpts { clause?: string | null; focus?: string; missed?: boolean }
 
@@ -89,6 +90,12 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => { setS(loadCaseState(chapterId)); }, [chapterId]);
+  // A sync that brings in another device's answers reloads this chapter's progress.
+  useEffect(() => {
+    const reload = () => setS(loadCaseState(chapterId));
+    window.addEventListener(SYNCED_EVENT, reload);
+    return () => window.removeEventListener(SYNCED_EVENT, reload);
+  }, [chapterId]);
   useEffect(() => {
     try {
       const raw = sessionStorage.getItem(PENDING_DRILL);
@@ -113,7 +120,7 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
   const record = useCallback((id: string, ok: boolean, keep = true) => {
     update(prev => {
       const next: CaseState = { ...prev, r: { ...prev.r } };
-      if (keep) next.r[id] = ok ? 1 : 0;
+      if (keep) { next.r[id] = ok ? 1 : 0; next.rt = { ...prev.rt, [id]: Date.now() }; }
       next.streak = ok ? prev.streak + 1 : 0;
       next.best = Math.max(prev.best, next.streak);
       return next;

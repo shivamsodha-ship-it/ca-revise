@@ -1,52 +1,27 @@
-// Postgres for accounts, sessions and synced progress. Connects with DATABASE_URL (Railway sets it when you
-// add the Postgres plugin). The schema is created on first use; every statement is idempotent.
-import { Pool } from 'pg';
+// MongoDB for accounts, sessions, connector keys and synced progress. Connects with MONGODB_URI (a free
+// MongoDB Atlas M0 cluster works). Indexes are created once per server process.
+import { MongoClient, type Db } from 'mongodb';
 
-let pool: Pool | null = null;
-let ready: Promise<void> | null = null;
+let dbPromise: Promise<Db> | null = null;
 
-export function db(): Pool {
-  if (!pool) {
-    const url = process.env.DATABASE_URL;
-    if (!url) throw new Error('DATABASE_URL is not set');
-    pool = new Pool({
-      connectionString: url,
-      max: 10,
-      ssl: process.env.DATABASE_SSL === 'false' || /localhost|127\.0\.0\.1/.test(url) ? false : { rejectUnauthorized: false },
-    });
+export function database(): Promise<Db> {
+  if (!dbPromise) {
+    const uri = process.env.MONGODB_URI;
+    if (!uri) throw new Error('MONGODB_URI is not set');
+    const client = new MongoClient(uri, { maxPoolSize: 10 });
+    dbPromise = client.connect().then(async c => {
+      const db = c.db(process.env.MONGODB_DB || 'carevise');
+      await Promise.all([
+        db.collection('users').createIndex({ username: 1 }, { unique: true }),
+        db.collection('sessions').createIndex({ tokenHash: 1 }, { unique: true }),
+        db.collection('sessions').createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }),
+        db.collection('docs').createIndex({ userId: 1, key: 1 }, { unique: true }),
+        db.collection('connectorKeys').createIndex({ keyHash: 1 }, { unique: true }),
+        db.collection('loginAttempts').createIndex({ bucket: 1 }, { unique: true }),
+        db.collection('loginAttempts').createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }),
+      ]);
+      return db;
+    }).catch(e => { dbPromise = null; throw e; });
   }
-  return pool;
-}
-
-const SCHEMA = `
-  CREATE TABLE IF NOT EXISTS users (
-    id uuid PRIMARY KEY,
-    email text UNIQUE NOT NULL,
-    password_hash text NOT NULL,
-    created_at timestamptz NOT NULL DEFAULT now()
-  );
-  CREATE TABLE IF NOT EXISTS sessions (
-    token_hash text PRIMARY KEY,
-    user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    expires_at timestamptz NOT NULL
-  );
-  CREATE INDEX IF NOT EXISTS sessions_user ON sessions(user_id);
-  CREATE TABLE IF NOT EXISTS docs (
-    user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    key text NOT NULL,
-    value jsonb NOT NULL,
-    updated_at timestamptz NOT NULL DEFAULT now(),
-    PRIMARY KEY (user_id, key)
-  );
-  CREATE TABLE IF NOT EXISTS login_attempts (
-    bucket text PRIMARY KEY,
-    count integer NOT NULL,
-    window_start timestamptz NOT NULL
-  );
-`;
-
-// Called before any query. Runs the schema once per process.
-export function ensureSchema(): Promise<void> {
-  if (!ready) ready = db().query(SCHEMA).then(() => undefined).catch(e => { ready = null; throw e; });
-  return ready;
+  return dbPromise;
 }

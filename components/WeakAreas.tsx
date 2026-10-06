@@ -24,6 +24,17 @@ export default function WeakAreas({ chapters }: { chapters: SlimChapter[] }) {
   const subjects = chapters.filter((c, i, a) => a.findIndex(x => x.subject === c.subject) === i);
   const totalMisses = shownRows.reduce((n, r) => n + r.misses, 0);
 
+  // Plain text for pasting into any chatbot (ChatGPT, Gemini), when no connector is available.
+  const summary = () => {
+    const top = shownRows.slice(0, 15);
+    const lines = top.map((r, i) => `${i + 1}. ${r.label} · ${r.title} (${r.subject.toUpperCase()} Ch ${r.chNumber} ${r.chTitle}): ${r.misses ? `missed ${r.misses} of ${r.attempts}` : 'not tried yet'}, exam priority ${PRIORITY(r.exam)}`);
+    return ['My CA Final weak concepts from CA Revise, ranked:', ...lines, '', 'Quiz me on these one at a time. Ask me the question first, check my answer against the ICAI rule, and point out the examiner trap.'].join('\n');
+  };
+  const [copied, setCopied] = useState(false);
+  const copySummary = async () => {
+    try { await navigator.clipboard.writeText(summary()); setCopied(true); setTimeout(() => setCopied(false), 1500); } catch {}
+  };
+
   const drill = (r: ConceptRow) => {
     try { sessionStorage.setItem(PENDING_DRILL, JSON.stringify({ clause: r.pid, missed: r.misses > 0 })); } catch {}
   };
@@ -42,7 +53,10 @@ export default function WeakAreas({ chapters }: { chapters: SlimChapter[] }) {
         <button className={subj === 'all' ? 'on' : ''} onClick={() => setSubj('all')}>All subjects</button>
         {subjects.map(s => <button key={s.subject} className={subj === s.subject ? 'on' : ''} onClick={() => setSubj(s.subject)}>{s.subjectLabel}</button>)}
       </div>
-      <p className="muted" style={{ margin: '0 0 12px' }}>{shownRows.length} concept{shownRows.length === 1 ? '' : 's'} · {totalMisses} missed question{totalMisses === 1 ? '' : 's'}</p>
+      <p className="muted" style={{ margin: '0 0 12px', display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+        <span>{shownRows.length} concept{shownRows.length === 1 ? '' : 's'} · {totalMisses} missed question{totalMisses === 1 ? '' : 's'}</span>
+        {shownRows.length > 0 && <button className="btn" onClick={copySummary}>{copied ? 'Copied' : 'Copy for ChatGPT or Gemini'}</button>}
+      </p>
       {shownRows.length === 0 ? <p className="muted">No weak concepts in this subject.</p> : (
         <ol className="chlist">
           {(all ? shownRows : shownRows.slice(0, SHOW)).map((r, i) => {

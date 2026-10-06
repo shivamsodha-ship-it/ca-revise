@@ -4,7 +4,7 @@ import { isJsonWrite, readJson } from '@/lib/http';
 import { loadDocs, mergeDocs } from '@/lib/syncDb';
 import { isSyncKey, mergeValue, validValue } from '@/lib/syncMerge';
 
-// Each signed-in user reads and writes only their own rows; the user comes from the session cookie.
+// Each signed-in user reads and writes only their own documents; the user comes from the session cookie.
 export const dynamic = 'force-dynamic';
 
 const MAX_BODY = 2_000_000;   // characters

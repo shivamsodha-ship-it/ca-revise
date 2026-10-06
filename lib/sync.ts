@@ -10,7 +10,7 @@ export interface SyncStatus { at: number; ok: boolean; message: string }
 
 // null = not checked yet, false = signed out, true = signed in.
 let signedIn: boolean | null = null;
-let accountEmail: string | null = null;
+let accountName: string | null = null;
 
 const readLocal = (key: string): unknown => {
   try { const raw = localStorage.getItem(key); return raw === null ? undefined : JSON.parse(raw); } catch { return undefined; }
@@ -24,12 +24,12 @@ export function getStatus(): SyncStatus | null {
 function setStatus(s: SyncStatus) {
   try { localStorage.setItem(STATUS_KEY, JSON.stringify(s)); } catch {}
 }
-export function account(): { signedIn: boolean | null; email: string | null } {
-  return { signedIn, email: accountEmail };
+export function account(): { signedIn: boolean | null; name: string | null } {
+  return { signedIn, name: accountName };
 }
-export function setAccount(email: string | null) {
-  accountEmail = email;
-  signedIn = !!email;
+export function setAccount(name: string | null) {
+  accountName = name;
+  signedIn = !!name;
 }
 
 // Called after any local write. Waits a moment so a burst of answers goes up as one request.
@@ -65,7 +65,7 @@ async function doSync(): Promise<SyncStatus> {
       body: JSON.stringify({ docs }),
     });
     if (res.status === 401) {
-      signedIn = false; accountEmail = null;
+      signedIn = false; accountName = null;
       const s = { at: Date.now(), ok: false, message: 'Sign in to sync this device.' };
       setStatus(s); return s;
     }
@@ -111,8 +111,8 @@ export function startSync() {
   void (async () => {
     try {
       const r = await fetch('/api/auth/me', { credentials: 'same-origin' });
-      const j = r.ok ? await r.json() : { email: null };
-      if (j.email) { setAccount(j.email); await syncNow(); } else { signedIn = false; }
+      const j = r.ok ? await r.json() : { username: null };
+      if (j.username) { setAccount(j.username); await syncNow(); } else { signedIn = false; }
     } catch { signedIn = false; }
   })();
 }

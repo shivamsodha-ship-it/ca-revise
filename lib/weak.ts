@@ -45,7 +45,8 @@ export function rankConcepts(chapters: { id: string; subject: string; number: nu
       rows.push({
         chapterId: ch.id, subject: ch.subject, chNumber: ch.number, chTitle: ch.title,
         pid: p.id, label: p.label, title: p.title, attempts, misses, exam,
-        score: misses * 3 + exam,
+        // Concepts with misses always rank above untried ones; among them, misses count most, then exam priority.
+        score: misses > 0 ? 100 + misses * 3 + exam : exam,
       });
     }
   }

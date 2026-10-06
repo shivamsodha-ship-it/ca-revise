@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
 import { SESSION_COOKIE, endSession } from '@/lib/auth';
 import { isJsonWrite } from '@/lib/http';
-import { cookies } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
 

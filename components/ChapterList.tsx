@@ -27,7 +27,7 @@ export default async function ChapterList({ only }: { only?: Subject }) {
                     <span className="chnum">{String(c.number).padStart(2, '0')}</span>
                     <span className="chbody">
                       <span className="chtitle">{c.title}</span>
-                      <span className="chsum">{c.summary}</span>
+                      <span className="chsum">{c.summary.replace(/ · /g, ', ')}</span>
                       <span className="chmeta">
                         {n.cases > 0 && <span>{plural(n.cases, 'case')}</span>}
                         {n.mcqs > 0 && <span>{n.mcqs} MCQs</span>}

@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 
 // App fonts: Bricolage Grotesque / Public Sans / IBM Plex Mono / Special Elite.
 // Handwriting fonts (Kalam / Caveat / Shadows Into Light) are used by the Notes view only.
-const FONTS = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&family=Special+Elite&family=Caveat:wght@400;700&family=Kalam:wght@400;700&family=Shadows+Into+Light&display=swap';
+const FONTS = 'https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Special+Elite&family=Caveat:wght@400;700&family=Kalam:wght@400;700&family=Shadows+Into+Light&display=swap';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

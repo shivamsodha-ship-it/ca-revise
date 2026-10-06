@@ -65,8 +65,8 @@ export default function WeakAreas({ chapters }: { chapters: SlimChapter[] }) {
               <li key={r.pid + r.chapterId} className="chrow weak-row">
                 <span className="chnum">{String(i + 1).padStart(2, '0')}</span>
                 <span className="chbody">
-                  <span className="chtitle">{r.label} · {r.title}</span>
-                  <span className="chsum">Ch {r.chNumber} {r.chTitle} · {ch?.subjectLabel}</span>
+                  <span className="chtitle">{r.label}: {r.title}</span>
+                  <span className="chsum">Ch {r.chNumber} {r.chTitle}, {ch?.subjectLabel}</span>
                   <span className="weak-meta">
                     <span className={'chip ' + (r.misses ? 'no' : '')}>{r.misses ? `${r.misses} missed` : 'not tried'}</span>
                     {r.attempts > 0 && <span className="chip">{r.attempts - r.misses}/{r.attempts} right</span>}

@@ -96,6 +96,7 @@ if (cbPath && cb) {
     if (q.k === 'sm-ill' && !/\d|case (study|scenario)/i.test(q.src)) E(`${where}: SM illustration source must carry its number (or say Case Study / Case Scenario)`);
     if (verdicts.length && q.k !== 'mcq' && !verdicts.includes(q.v)) W(`${where}: v "${q.v}" is not a verdict, so it is shown as reveal-and-self-mark`);
     for (const f of ['q', 'a', 'trap', 'why']) htmlOk(q[f], `${where}.${f}`);
+    for (const n of q.nums ?? []) if (!Array.isArray(n) || typeof n[0] !== 'string' || typeof n[1] !== 'number' || !Number.isFinite(n[1])) E(`${where}: nums entries must be [label, number, unit, tol?]`);
     const pl = P.filter(p => (p.qs ?? []).includes(q.id)).map(p => p.id);
     for (const l of q.links ?? []) if (pid.has(l) && !pl.includes(l)) W(`${where} links ${l}, but ${l}.qs does not list it (npm run assemble rebuilds qs)`);
   }
@@ -107,8 +108,14 @@ if (cbPath && cb) {
   for (const f of cb.finder ?? []) if (!pid.has(f[1])) E(`finder row "${f[0]}" -> unknown provision ${f[1]}`);
   if (m.scopeNote && !pid.has(m.scopeNote)) E(`meta.scopeNote ${m.scopeNote} is not a provision`);
 
+  // auto-checked numericals
+  // Every numerical must carry its final figures, so the drill can check typed answers.
+  const noNums = Q.filter(q => q.v === 'Numerical' && !q.nums?.length).map(q => q.id);
+  if (noNums.length) E(`${noNums.length} numerical questions have no nums in nums.json (final figures for the drill): ${noNums.slice(0, 12).join(', ')}`);
+
   // formula bank
   const F = (cb.formulas ?? []).flatMap(f => [f.master, ...(f.items ?? [])].map(x => ({ ...x, fam: f.id })));
+  for (const x of F) if (!x.cue) W(`formula ${x.id}: no exam cue (its flip card uses the variables instead)`);
   const fid = new Set(F.map(x => x.id));
   dupes((cb.formulas ?? []).map(f => f.id)).forEach(d => E(`duplicate formula family id ${d}`));
   dupes(F.map(x => x.id)).forEach(d => E(`duplicate formula id ${d}`));

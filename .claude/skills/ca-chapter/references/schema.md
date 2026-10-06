@@ -138,6 +138,14 @@ An array of families. HTML fields may use `<em>`, `<sub>`, `<sup>`, `<strong>`, 
 }]
 ```
 
+### nums.json (final figures for numerical questions)
+An object keyed by question id. Each value lists the figures the question asks for, in the order the answer gives them.
+```jsonc
+{ "<question id>": [["<label as the answer names it>", <final value>, "<unit>"], ["<next figure>", <value>, "%", <tolerance?>] ] }
+```
+`[label, value, unit, tolerance?]`. `assemble-chapter` merges it into the question's `nums`; `validate-chapter` errors when a
+`Numerical` question has none.
+
 ## Split existing data into parts (for updates)
 
 ```bash

@@ -1,10 +1,11 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { cap, plural } from '@/lib/casebook';
 import { getProgress } from '@/lib/storage';
 import { isDue } from '@/lib/spacedRep';
+import { chapterCards } from '@/lib/formulaCards';
 
 // "Rule on the case. *Then* read the law." → the starred word is set in the accent colour.
 function Tagline({ text }: { text: string }) {
@@ -13,13 +14,13 @@ function Tagline({ text }: { text: string }) {
 
 export default function HomeView() {
   const { cb, meta, ch, base, S, subjectLabel, provStats } = useChapter();
-  const cards = ch.sections.flatMap(s => s.cards);
+  const cards = useMemo(() => chapterCards(ch, cb), [ch, cb]);
   const [due, setDue] = useState<number | null>(null);
   useEffect(() => {
     const prog = getProgress(ch.id);
     setDue(cards.filter(c => isDue(prog[c.id])).length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ch.id]);
+  }, [ch.id, cards]);
 
   const eyebrow = `CA Final · ${subjectLabel} · Chapter ${ch.number}`;
   const revise = (

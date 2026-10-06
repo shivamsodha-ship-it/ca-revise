@@ -515,3 +515,18 @@ td .chip:hover { border-color: var(--blue) }
 .fp { margin: 6px 0 0 }
 @media (max-width: 560px) { .fkids { margin-left: 4px; padding-left: 10px } .fvars { grid-template-columns: 1fr } .fvars dd { margin-bottom: 6px } }
 .fjump .chip { font-family: var(--sans); font-weight: 600 }
+
+/* Auto-checked numericals */
+.numform { display: grid; gap: 8px; margin-top: 8px }
+.numrow { display: grid; grid-template-columns: 1fr minmax(120px, 180px); gap: 10px; align-items: center; font-size: 14px }
+.numrow input { min-height: var(--tap); padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); font-family: var(--mono) }
+.numres { margin: 6px 0 0; padding-left: 18px; font-size: 14px }
+@media (max-width: 560px) { .numrow { grid-template-columns: 1fr } }
+
+/* Formula flip cards */
+.flip-name { font-family: var(--disp); font-weight: 700; font-size: 1.35rem; line-height: 1.2; margin-bottom: 8px }
+.fexpr-b { font-family: var(--mono); font-size: 14px; line-height: 1.5; margin-bottom: 10px }
+
+/* Weak areas dashboard */
+.weak-row .btn { white-space: nowrap; min-height: 40px }
+.weak-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px }

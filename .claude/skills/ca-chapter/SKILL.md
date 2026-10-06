@@ -34,6 +34,14 @@ change, stop and tell the user instead: per-chapter differences belong in the ca
    numbers for these: explain the concept and say the figure must be checked.
 3b. **Formula bank for every numerical chapter** (all AFM chapters; FR/AAA chapters with computations). See step 7, item 6.
 3c. **Recompute every number** you copy from a PDF or write yourself: PDF text layers garble fractions and can reverse digits.
+3d. **Final figures for every numerical.** Every question marked `Numerical` ships with `nums` in `work/<id>/parts/nums.json`
+   (`{ questionId: [[label, final value, unit, tolerance?]] }`): one entry per figure the answer asks for, using the
+   final figure ICAI's answer reaches (rounded as ICAI rounds, NAV rounded only at the end). The drill checks typed
+   figures against these, so a wrong or missing value is a bug in the chapter, not a cosmetic gap. The validator errors
+   on any numerical without `nums`. Check each value against the model answer's text before assembling.
+3e. **Exam cue for every formula.** Each formula's `cue` says which words in a question call for it. The formula's flip
+   card uses the cue as its prompt, so a formula without one falls back to its variables; the validator warns on it and
+   the skill's build is not done until it has no warnings of this kind.
 4. **Verify currency against ICAI** for the target attempt (applicable standards / amendments / study
    material edition). Do not rely on memory for amendment dates, limits or thresholds.
 5. **Cite as you go.** Every found paper goes into `work/<id>/sources.md` with its URL; the final research
@@ -138,13 +146,17 @@ Order of work:
    paper, and its provision `p`. Cover every formula used in any SM/ICAI answer of the chapter; mark app additions `beyond`.
    The validator warns when a provision with numerical questions has no formula. The subject-wide bank at `/<subject>/formulas`
    picks it up automatically.
+7. `nums.json` — **final figures for every numerical question** (rule 3d). Shape:
+   `{ "<question id>": [["Label shown in the drill", 12.64, "%"], ["Tax", 2300, "₹", 1]] }`. Units: `₹`, `%`, `units`,
+   `days`, `years`, or `""`. The default tolerance is 0.25% (at least 0.006); give an explicit fourth value only when ICAI's
+   answer is itself rounded more loosely. Every numerical question in the chapter needs an entry.
 
 ### 8. Assemble and validate
 ```bash
 npm run assemble -- <id>      # writes data/<subject>/…json; rebuilds every provision's qs from question links
 npm run validate -- <id>      # must end "OK: 0 errors"
 ```
-Fix every error. Read every warning; fix the ones that are real (untested provisions, unbalanced HTML,
+Fix every error (missing `nums` on a numerical is an error). Read every warning; fix the ones that are real (untested provisions, unbalanced HTML,
 missing MCQ explanations). Tick off `checklist.md`: every illustration and TYK item must map to a question id.
 
 ### 9. Build and look at it
@@ -170,6 +182,8 @@ Finish `research/<id>.md` with the coverage table:
 | RTP / MTP / PYQ questions found | n / n / n | n / n / n |
 | App-written (exam-style) | – | n |
 | Formula bank (families / formulas) | – | n / n |
+| Numericals with final figures (`nums`) | – | n / n |
+| Formulas with an exam cue | – | n / n |
 
 Tell the user: the counts, the top High-priority topics, anything that couldn't be fetched or verified,
 and any place where ICAI's answer conflicts with the current law. **Ask before committing or deploying.**

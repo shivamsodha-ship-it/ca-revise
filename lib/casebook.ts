@@ -28,7 +28,11 @@ export interface Question {
   opts?: string[];  // MCQ options
   ans?: number;     // MCQ answer index
   why?: string;     // MCQ explanation (HTML)
+  nums?: NumAnswer[]; // auto-checked final figures for numerical questions
 }
+
+// [label, expected value, unit ('₹' | '%' | 'units' | 'days' | 'years' | '' …), optional absolute tolerance]
+export type NumAnswer = [string, number, string, number?];
 
 export type Tone = 'bad' | 'good' | 'mixed';
 export interface Verdict { label: string; tone: Tone; hint?: string }

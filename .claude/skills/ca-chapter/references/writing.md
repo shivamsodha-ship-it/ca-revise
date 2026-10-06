@@ -42,6 +42,7 @@ structure; `markingPoints` are what an examiner ticks (4–6 points), matching t
 
 ## Formula bank
 - Families, not lists: start each family from the master idea and show how every other formula falls out of it.
+- Every formula has an exam `cue`: the words a question uses that call for it (e.g. "NAV after a dividend", "Sharpe ratio"). Its flip card asks for the formula name from that cue.
 - `logic` is for a child: a concrete picture (pizza slices for NAV, a toll road for loads, runners on a hill for risk-adjusted return),
   then one sentence linking it back to the symbols.
 - `derive` shows the algebra in one or two steps, naming the parent.

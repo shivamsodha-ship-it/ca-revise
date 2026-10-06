@@ -11,6 +11,7 @@
 //   provisions-*.json      array of provisions (qs may be omitted: it is rebuilt from question links)
 //   questions-*.json       array of questions
 //   extras.json            { numbers, finder, method, changes }
+//   nums.json              { questionId: [[label, value, unit, tol?]] } (optional; auto-checked numericals)
 //   formulas-*.json        array of formula families (optional; the Formulas view and subject formula bank)
 // Writes the paths registered in lib/registry.ts for that chapter.
 import fs from 'node:fs';
@@ -45,6 +46,13 @@ if (fs.existsSync(path.join(dir, 'chapter.json'))) {
 if (fs.existsSync(path.join(dir, 'meta.json'))) {
   if (!cbPath) { console.error(`${id} has no casebook registered (re-run new-chapter with --casebook, or add the casebook line).`); process.exit(1); }
   const Q = parts('questions');
+  // nums.json: { questionId: [[label, value, unit, tol?], …] } — final figures for auto-checked numericals.
+  if (fs.existsSync(path.join(dir, 'nums.json'))) {
+    const nums = read('nums.json');
+    for (const q of Q) if (nums[q.id]) q.nums = nums[q.id];
+    const unknown = Object.keys(nums).filter(k => !Q.some(q => q.id === k));
+    if (unknown.length) console.warn('nums.json has unknown question ids: ' + unknown.join(', '));
+  }
   const P = parts('provisions').map(p => ({ ...p, qs: Q.filter(q => q.links?.includes(p.id)).map(q => q.id) }));
   const cb = { meta: read('meta.json'), P, Q, groups: read('groups.json'), ...read('extras.json') };
   const formulas = parts('formulas');

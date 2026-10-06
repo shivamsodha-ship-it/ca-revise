@@ -1,5 +1,6 @@
 import type { Chapter, ChapterIndexRow, Subject } from './types';
 import type { Casebook } from './casebook';
+import { formulaCards } from './formulaCards';
 
 // Subjects shown on the home page, in this order.
 export const SUBJECTS: { id: Subject; label: string; long: string }[] = [
@@ -62,7 +63,7 @@ export async function countChapter(row: ChapterIndexRow): Promise<ChapterCounts>
     cases: cb ? cb.Q.length - mcqs : 0,
     mcqs,
     provisions: cb ? cb.P.length : 0,
-    cards: ch.sections.reduce((n, s) => n + s.cards.length, 0),
+    cards: ch.sections.reduce((n, s) => n + s.cards.length, 0) + formulaCards(cb).length,
     written: ch.practice.length,
     sections: ch.sections.length,
   };

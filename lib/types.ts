@@ -12,7 +12,7 @@ export interface CardFace {
   cross?: string[];
 }
 
-export type CardType = 'clause' | 'concept' | 'illustration' | 'mnemonic' | 'section' | 'case';
+export type CardType = 'clause' | 'concept' | 'illustration' | 'mnemonic' | 'section' | 'case' | 'formula';
 
 export interface Card {
   id: string;
@@ -20,6 +20,18 @@ export interface Card {
   tags?: string[];
   front: string;   // prompt shown first
   back: CardFace;  // reveal
+  formula?: FormulaRecall; // formula-bank cards: the name is the answer, the rest is shown on reveal
+}
+
+// Built from the formula bank by lib/formulaCards.ts. HTML fields come straight from the casebook.
+export interface FormulaRecall {
+  name: string;
+  expr: string;          // HTML
+  derive?: string;       // HTML: how it comes from its parent formula(s)
+  from: string[];        // parent formula names, for "Derived from"
+  logic: string;         // HTML
+  trap?: string;         // HTML
+  hook?: string;
 }
 
 export interface Section {

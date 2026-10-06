@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { cap, toneOf, stripTags } from '@/lib/casebook';
 import { useKeys } from '@/lib/useKeys';
+import { checkNum, fmtNum } from '@/lib/numcheck';
 
 // Filters survive switching tabs, like the artifact's module-level DR.
 const DR = { kind: 'all', status: 'all', clause: null as string | null, list: false, handled: 0 };
@@ -13,7 +14,8 @@ export default function DrillView() {
   const [status, setStatus] = useState(DR.status);
   const [clause, setClause] = useState<string | null>(DR.clause);
   const [i, setI] = useState(0);
-  const [answered, setAnswered] = useState<Record<string, { pick?: string; ok?: boolean; self?: boolean }>>({});
+  const [answered, setAnswered] = useState<Record<string, { pick?: string; ok?: boolean; self?: boolean; nums?: (boolean | null)[] }>>({});
+  const [typed, setTyped] = useState<Record<string, string[]>>({});
   const [list, setList] = useState(DR.list);
   const [search, setSearch] = useState('');
   const [focus, setFocus] = useState<string | null>(null);
@@ -25,7 +27,7 @@ export default function DrillView() {
     const o = drillReq.opts;
     if (!o) return;
     if (o.focus) { setClause(null); setKind('all'); setStatus('all'); setFocus(o.focus); }
-    else if (o.clause !== undefined) { setClause(o.clause); setKind('all'); setStatus('all'); setI(0); }
+    else if (o.clause !== undefined) { setClause(o.clause); setKind('all'); setStatus(o.missed ? 'missed' : 'all'); setI(0); }
   }, [drillReq]);
 
   useEffect(() => { Object.assign(DR, { kind, status, clause, list }); }, [kind, status, clause, list]);
@@ -63,6 +65,14 @@ export default function DrillView() {
   const kinds: [string, string][] = [['all', 'All'], ...meta.sources];
 
   function pick(v: string) { const q = cur; if (!q) return; const ok = v === q.v; setAnswered(a => ({ ...a, [q.id]: { pick: v, ok } })); record(q.id, ok); }
+  const checkNums = () => {
+    if (!q?.nums) return;
+    const vals = typed[q.id] ?? [];
+    const res = q.nums.map((n, k) => checkNum(vals[k] ?? '', n));
+    const ok = res.every(r => r === true);
+    setAnswered(a => ({ ...a, [q.id]: { nums: res, ok, self: ok } }));
+    record(q.id, ok);
+  };
   const selfMark = (ok: boolean) => { if (!q) return; setAnswered(a => ({ ...a, [q.id]: { ...a[q.id], self: ok } })); record(q.id, ok); };
 
   const t = search.toLowerCase();
@@ -90,13 +100,25 @@ export default function DrillView() {
               {meta.verdicts.map((v, n) => <button key={v.label} className={'vb ' + v.tone} onClick={() => pick(v.label)}>{v.label}{v.hint && <small>{v.hint}</small>}<kbd aria-hidden="true">{n + 1}</kbd></button>)}
             </div>
           </> : <>
+            {q.nums?.length ? <form className="numform" onSubmit={e => { e.preventDefault(); checkNums(); }}>
+              <p className="ask">Work it out, then type your final figures.</p>
+              {q.nums.map((n, k) => (
+                <label key={k} className="numrow"><span>{n[0]}{n[2] ? ` (${n[2]})` : ''}</span>
+                  <input inputMode="decimal" autoComplete="off" value={typed[q.id]?.[k] ?? ''} onChange={e => setTyped(t => { const v = [...(t[q.id] ?? [])]; v[k] = e.target.value; return { ...t, [q.id]: v }; })} /></label>
+              ))}
+              <div className="self"><button type="submit" className="btn pri">Check my answers</button><button type="button" className="btn" onClick={() => setAnswered(a => ({ ...a, [q.id]: {} }))}>Just show the answer</button></div>
+            </form> : <>
             <p className="ask">Frame your answer in your head, then check it.</p>
-            <button className="btn pri" onClick={() => setAnswered(a => ({ ...a, [q.id]: {} }))}>Reveal model answer</button>
+            <button className="btn pri" onClick={() => setAnswered(a => ({ ...a, [q.id]: {} }))}>Reveal model answer</button></>}
           </>) : <>
             {tone && <>
               <div className={'stamp ' + tone} aria-hidden="true">{q.v.toUpperCase()}</div>
               <div className={'fb ' + (done.ok ? 'right' : 'wrong')} role="status">{done.ok ? 'Correct ruling.' : `You said ${done.pick}. The correct ruling is ${q.v}.`}</div>
             </>}
+            {done.nums && q.nums && <div className={'fb ' + (done.ok ? 'right' : 'wrong')} role="status">
+              {done.ok ? 'All figures correct.' : 'Not quite. Check the working below.'}
+              <ul className="numres">{q.nums.map((n, k) => <li key={k}>{done.nums![k] ? '✓' : '✗'} {n[0]}: {fmtNum(n)}{!done.nums![k] && typed[q.id]?.[k] ? ` (you: ${typed[q.id]![k]})` : ''}</li>)}</ul>
+            </div>}
             <div className="answer">
               <div dangerouslySetInnerHTML={{ __html: q.a ?? '' }} />
               {q.trap && <div className="trap"><b>Examiner&apos;s trap</b><span dangerouslySetInnerHTML={{ __html: q.trap }} /></div>}

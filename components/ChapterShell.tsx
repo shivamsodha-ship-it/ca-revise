@@ -5,8 +5,9 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { cap, metaOf, type Casebook, type Provision, type Question } from '@/lib/casebook';
 import { EMPTY_STATE, loadCaseState, saveCaseState, type CaseState } from '@/lib/progress';
 import type { Chapter, Subject } from '@/lib/types';
+import { PENDING_DRILL } from '@/lib/weak';
 
-export interface DrillOpts { clause?: string | null; focus?: string }
+export interface DrillOpts { clause?: string | null; focus?: string; missed?: boolean }
 
 interface Ctx {
   subject: Subject;
@@ -88,6 +89,14 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => { setS(loadCaseState(chapterId)); }, [chapterId]);
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem(PENDING_DRILL);
+      if (!raw) return;
+      sessionStorage.removeItem(PENDING_DRILL);
+      setDrillReq({ n: Date.now(), opts: JSON.parse(raw) });
+    } catch {}
+  }, []);
   useEffect(() => { setMoreOpen(false); }, [pathname]);
 
   const update = useCallback((fn: (s: CaseState) => CaseState) => {

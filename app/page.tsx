@@ -10,6 +10,7 @@ export default function Home() {
           <p className="eyebrow">CA Final · Group 1 · Nov 2026</p>
           <h1>Rule on the case. <em>Then</em> read the law.</h1>
           <p>Case drills, provision hunts, MCQ sprints and a law library for each chapter, with handwritten notes and flip cards alongside.</p>
+          <p><Link className="btn" href="/weak">Weak areas →</Link></p>
         </section>
         <ChapterList />
       </main>

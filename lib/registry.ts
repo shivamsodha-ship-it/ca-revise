@@ -39,6 +39,15 @@ const registry: ChapterIndexRow[] = [
     loader: async () => (await import('../data/afm/ch08-mutual-funds.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/afm/ch08-casebook.json')).default as unknown as Casebook,
   },
+  {
+    id: 'aaa-ch14',
+    subject: 'aaa',
+    number: 14,
+    title: 'Special Features of Audit of Banks & Non-Banking Financial Companies',
+    summary: 'Bank audit · CRR/SLR/DTL · NPA & provisioning · CRAR · LFAR · concurrent audit · NBFC layers, prudential norms & CARO',
+    loader: async () => (await import('../data/aaa/ch14-special-features-of-audit-of-banks-and-non-banking-financial-companies.json')).default as unknown as Chapter,
+    casebook: async () => (await import('../data/aaa/ch14-casebook.json')).default as unknown as Casebook,
+  },
   // @chapters-end
 ];
 

@@ -1,0 +1,1221 @@
+{
+ "id": "aaa-ch14",
+ "subject": "aaa",
+ "number": 14,
+ "title": "Special Features of Audit of Banks & Non-Banking Financial Companies",
+ "summary": "Bank audit · CRR/SLR/DTL · NPA & provisioning · CRAR · LFAR · concurrent audit · NBFC layers, prudential norms & CARO",
+ "currency": "SM applicable for Nov 2026 · NBFC-MFI 60% asset test (Jun 2025) · gold-loan NBFC Tier 1 → Gold Lending Directions 2025 · NBFC NPA glide path to 90 days now complete",
+ "weight": 7,
+ "sections": [
+  {
+   "id": "s1-legal-appt",
+   "title": "Legal framework & appointment of bank auditors",
+   "emoji": "⚖️",
+   "cards": [
+    {
+     "id": "c-bank-chars",
+     "type": "concept",
+     "tags": [
+      "Special audit considerations",
+      "Low"
+     ],
+     "front": "Why do banks need special audit consideration, beyond the usual company audit?",
+     "back": {
+      "simplified": "Custody of large cash/negotiable instruments; huge volume/variety of IT-heavy transactions; dispersed branches with decentralised authority; off-balance-sheet commitments that may carry no entry; transactions initiated at one place, recorded at another, managed at a third; customer-only transactions (ATM/mobile) with no bank employee involved.",
+      "explanation": "These eight characteristics are why special audit considerations exist: risk nature, scale, IT-dependence, regulation, and fast-evolving products.",
+      "trap": "Giving only 2–3 points when ICAI's own list runs to eight."
+     }
+    },
+    {
+     "id": "c-legal-fw-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Legal framework",
+      "Low"
+     ],
+     "front": "Which Acts govern banks in India, besides the Banking Regulation Act?",
+     "back": {
+      "simplified": "RBI Act 1934 (directions power), SBI Act 1955, BC(ATU) Acts 1970/1980, RRB Act 1976, Companies Act 2013, IT Act 2000, PMLA 2002, SARFAESI 2002, CICRA 2005, PSS Act 2007, Co-operative Societies Act 1912.",
+      "explanation": "The RBI Act is the one to remember as the source of RBI's general directions power over ALL banks, not just banking companies."
+     }
+    },
+    {
+     "id": "c-fs-form",
+     "type": "clause",
+     "tags": [
+      "Form A/B",
+      "Low"
+     ],
+     "front": "Which Schedule and Forms govern a bank's balance sheet and P&L, and what's the branch-audit rule?",
+     "back": {
+      "bareText": "Third Schedule, Banking Regulation Act, 1949 — Form A (Balance Sheet), Form B (P&L).",
+      "simplified": "Public-sector/nationalised banks: mandatory branch audit, consolidated at HO. Private banks: centralised accounting, no mandatory branch-audit concept.",
+      "trap": "Assuming every bank needs branch audits — it's specifically a PSU/nationalised-bank feature."
+     }
+    },
+    {
+     "id": "c-scb-appt",
+     "type": "concept",
+     "tags": [
+      "SCA appointment",
+      "Low"
+     ],
+     "front": "Who appoints a nationalised bank's auditor, and whose approval is always needed?",
+     "back": {
+      "simplified": "Board of Directors appoints (banking company: shareholders' AGM) — but RBI approval is required before appointment either way.",
+      "explanation": "4+ firms jointly as SCAs for nationalised/PSU banks; a single firm for branch audit (SBA). Declaration of indebtedness + s.141 disqualification declaration both needed before appointment; firm can't hold internal assignments in the same bank the same year.",
+      "trap": "Forgetting RBI approval is universal — applies whether the appointing body is the AGM or the Board."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s2-conducting",
+   "title": "Conducting the bank audit",
+   "emoji": "🔍",
+   "cards": [
+    {
+     "id": "c-audit-stages",
+     "type": "mnemonic",
+     "tags": [
+      "5 stages",
+      "Low"
+     ],
+     "front": "What are the 5 stages of a bank audit, in order?",
+     "back": {
+      "simplified": "I. Initial considerations → II. Understanding → III. Risk assessment → IV. Execution → V. Reporting.",
+      "cross": [
+       "SA 210",
+       "SA 315",
+       "SA 240",
+       "SA 330",
+       "SA 300"
+      ]
+     }
+    },
+    {
+     "id": "c-initial-bar",
+     "type": "clause",
+     "tags": [
+      "Declaration of indebtedness",
+      "Low"
+     ],
+     "front": "What two things must a firm confirm before accepting a bank SCA/SBA appointment?",
+     "back": {
+      "simplified": "(1) Declaration of indebtedness — not a wilful defaulter of any bank/FI. (2) s.141 Companies Act disqualification declaration. Plus: the firm must not currently hold internal assignments in the same bank for the same year.",
+      "trap": "Treating the internal-assignments bar as waivable by Board approval — it isn't."
+     }
+    },
+    {
+     "id": "c-it-controls",
+     "type": "concept",
+     "tags": [
+      "IT environment",
+      "Low"
+     ],
+     "front": "Name five key IT security controls an auditor checks in a CBS-era bank.",
+     "back": {
+      "simplified": "Authorised/complete data for processing; restart without distortion after failure; no unauthorised program changes; access rights match job responsibilities (segregated); exceptional-transaction reports authorised/verified daily.",
+      "explanation": "Overall IT policy review is an HO-level (SCA) responsibility; branch auditors test at branch level using SCA guidance."
+     }
+    },
+    {
+     "id": "c-rbia",
+     "type": "concept",
+     "tags": [
+      "RBIA",
+      "Low"
+     ],
+     "front": "What does Risk-Based Internal Audit (RBIA) actually assess, branch by branch?",
+     "back": {
+      "simplified": "Inherent business risk (by activity) against control effectiveness (mitigating it) → a risk matrix deciding overall business/control risk per branch, which drives audit frequency/depth.",
+      "cross": [
+       "beyond-rbia-pillars"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s3-internal-controls",
+   "title": "Internal controls in selected areas",
+   "emoji": "🛡️",
+   "cards": [
+    {
+     "id": "c-ic-general",
+     "type": "concept",
+     "tags": [
+      "General controls",
+      "Low"
+     ],
+     "front": "Name three general internal controls every bank branch should have.",
+     "back": {
+      "simplified": "Frequent, unannounced staff rotation; one person's work always checked by another; bank forms (cheque books, DD books etc.) held by one officer, verified by another.",
+      "trap": "Accepting 'small branch, short-staffed' as an excuse to skip these — it isn't a valid defence."
+     }
+    },
+    {
+     "id": "c-ic-cash",
+     "type": "clause",
+     "tags": [
+      "Cash custody",
+      "Low"
+     ],
+     "front": "Who should NOT have access to the customer ledger and day book in a bank branch?",
+     "back": {
+      "simplified": "The cashier — cash must be in joint custody of two officers, and the cashier having ledger/day-book access is a classic control failure (tempting since cashiers have shorter hours)."
+     }
+    },
+    {
+     "id": "c-ic-clearing",
+     "type": "concept",
+     "tags": [
+      "CTS clearing",
+      "Low"
+     ],
+     "front": "Under CTS, at what inward-clearing amount must the branch call/email the customer?",
+     "back": {
+      "simplified": "₹5 lakh and above — the auditor verifies this compliance on a test-check basis."
+     }
+    },
+    {
+     "id": "c-ic-advances",
+     "type": "concept",
+     "tags": [
+      "Advances IC",
+      "Low"
+     ],
+     "front": "An advances account exceeds both sanctioned limit and drawing power, unreported to HO. What control is broken, and what's the fix for a genuine temporary need?",
+     "back": {
+      "simplified": "Broken: 'excesses reported to Management/HO regularly'. Fix for genuine need: additional temporary limit, max 20% of existing limit, max 90 days tenure — anything beyond that needs a fresh, proper sanction.",
+      "cases": [
+       "RTP Sep 2025 Q16: XS Bank"
+      ]
+     }
+    },
+    {
+     "id": "c-ic-creditcard",
+     "type": "concept",
+     "tags": [
+      "Credit card IC",
+      "Low"
+     ],
+     "front": "Before a merchant accepts a large credit-card settlement, what should they do?",
+     "back": {
+      "simplified": "Confirm the cardholder's unutilised limit from the bank, if the settlement exceeds a specified % of the total card limit — plus: screening at issue, strict storage/issue control, prompt merchant reporting, periodic account review."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s4-crr-slr-dtl",
+   "title": "CRR, SLR & DTL compliance",
+   "emoji": "💧",
+   "cards": [
+    {
+     "id": "c-crr-slr-basics",
+     "type": "clause",
+     "tags": [
+      "CRR/SLR",
+      "Low"
+     ],
+     "front": "On how many dates, and avoiding which day of the week, must SLR compliance be verified?",
+     "back": {
+      "bareText": "12 odd dates in different months of the fiscal year, none a Friday.",
+      "simplified": "CRR = reserve held in cash/RBI deposit; SLR = liquid assets (gold/cash/G-secs) held before extending credit."
+     }
+    },
+    {
+     "id": "c-dtl-exclude",
+     "type": "clause",
+     "tags": [
+      "DTL exclusions",
+      "Medium"
+     ],
+     "front": "Name four items excluded from DTL even though they sit on the bank's books.",
+     "back": {
+      "simplified": "Paid-up capital, reserves, P&L credit balance; RBI loan and EXIM/NHB/NABARD/SIDBI refinance; part-recoveries from bad/doubtful debts; margins held in sundry deposits for funded facilities.",
+      "cases": [
+       "PYQ Nov 2024 MCQ 10: Maha Bank"
+      ]
+     }
+    },
+    {
+     "id": "c-dtl-include",
+     "type": "clause",
+     "tags": [
+      "DTL inclusions",
+      "Medium"
+     ],
+     "front": "Name two items that must be INCLUDED in DTL even if not yet booked.",
+     "back": {
+      "simplified": "Net credit balance in branch adjustment accounts; interest accrued on deposits each reporting fortnight, whether or not yet accounted for in the books.",
+      "trap": "Assuming 'not yet in the books' means 'not yet a liability' — RBI's rule is explicit that it counts anyway."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s5-verification-assets",
+   "title": "Verification of assets",
+   "emoji": "🧾",
+   "cards": [
+    {
+     "id": "c-va-cash",
+     "type": "concept",
+     "tags": [
+      "Cash & balances",
+      "Low"
+     ],
+     "front": "Can a bank net off money lent at call against money borrowed at call?",
+     "back": {
+      "simplified": "No — call loans made cannot be netted against call loans received; both are shown gross."
+     }
+    },
+    {
+     "id": "c-va-invest-class",
+     "type": "clause",
+     "tags": [
+      "HTM/HFT/AFS",
+      "Low"
+     ],
+     "front": "Who decides an investment's HTM/HFT/AFS category, and when can it shift from AFS to HTM?",
+     "back": {
+      "simplified": "Board/ALCO/Investment Committee decision at acquisition fixes the category. Shifting AFS → HTM needs Board approval.",
+      "cross": [
+       "bank-va-invest"
+      ]
+     }
+    },
+    {
+     "id": "c-npi",
+     "type": "clause",
+     "tags": [
+      "NPI",
+      "Low"
+     ],
+     "front": "An investment's interest has been unpaid for 95 days. What is it, and what's the double effect?",
+     "back": {
+      "bareText": ">90 days unpaid = Non-Performing Investment (NPI).",
+      "simplified": "No income recognition, and a provision for depreciation in value is required — a double hit, not just a label."
+     }
+    },
+    {
+     "id": "c-va-advances-objective",
+     "type": "concept",
+     "tags": [
+      "Advances audit",
+      "Medium"
+     ],
+     "front": "What seven things is the auditor of advances really trying to prove?",
+     "back": {
+      "simplified": "Outstanding at balance-sheet date; genuinely due to the bank with documents; no unrecorded advances; valuation reflects recoverability; correct disclosure/classification; adequate provisioning per RBI/AS/GAAP."
+     }
+    },
+    {
+     "id": "c-dp-formula",
+     "type": "illustration",
+     "tags": [
+      "Drawing Power",
+      "Medium"
+     ],
+     "front": "Kiran Ltd: stock ₹900L (₹60L damaged), creditors for stock ₹140L, margin 25%; debtors ₹800L (₹100L >90 days), margin 40%. What's the DP?",
+     "back": {
+      "simplified": "[(900−60−140)×75%] + [(800−100)×60%] = 525 + 420 = ₹945 lakh.",
+      "cases": [
+       "PYQ May 2025 · MCQ 11"
+      ],
+      "trap": "Forgetting to net stock against the creditors for that very stock."
+     }
+    },
+    {
+     "id": "c-va-fixed-s9",
+     "type": "clause",
+     "tags": [
+      "s.9 BR Act",
+      "Low"
+     ],
+     "front": "How long can a bank hold immovable property acquired in debt satisfaction, before Section 9, BR Act applies?",
+     "back": {
+      "bareText": "7 years from acquisition, except property required for the bank's own use."
+     }
+    },
+    {
+     "id": "c-va-other-nba",
+     "type": "clause",
+     "tags": [
+      "NBA valuation",
+      "Low"
+     ],
+     "front": "At what value is a non-banking asset (NBA) acquired in satisfaction of a claim recorded?",
+     "back": {
+      "bareText": "Lower of the net book value of the advance or the net realisable value of the asset acquired."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s6-npa-provisioning",
+   "title": "NPA classification, income recognition & provisioning (banks)",
+   "emoji": "📉",
+   "cards": [
+    {
+     "id": "c-npa-borrower-wise",
+     "type": "clause",
+     "tags": [
+      "Borrower-wise",
+      "High"
+     ],
+     "front": "One facility to a borrower turns NPA. What happens to the borrower's other facilities at the bank?",
+     "back": {
+      "bareText": "Asset classification is borrower-wise, not facility-wise.",
+      "simplified": "All facilities to that borrower become NPA — not just the one that actually went bad."
+     }
+    },
+    {
+     "id": "c-npa-temp-deficiency",
+     "type": "clause",
+     "tags": [
+      "Temporary deficiencies",
+      "High"
+     ],
+     "front": "An account is briefly over-limit, its stock statement is slightly stale, and its renewal is pending. Is it automatically NPA?",
+     "back": {
+      "simplified": "No — not automatically, provided the stock statement is under 3 months old and the account hasn't been out of order for more than 90 days. These are 'temporary deficiencies', not NPA triggers by themselves.",
+      "cases": [
+       "RTP May 2026 · Q15: Fair Bank / Bright Traders"
+      ]
+     }
+    },
+    {
+     "id": "c-npa-govt-guarantee",
+     "type": "clause",
+     "tags": [
+      "Govt guarantee",
+      "High"
+     ],
+     "front": "A Central-Govt-guaranteed advance is overdue 120 days, guarantee not invoked. NPA for classification? For income?",
+     "back": {
+      "simplified": "Classification: NOT NPA yet — only becomes NPA once the Central Govt guarantee is invoked AND repudiated. Income: interest is NOT taken to income unless realised, regardless.",
+      "trap": "Extending this carve-out to a State-Government guarantee — it doesn't apply there; State-guaranteed advances follow the ordinary >90-day rule for classification too."
+     }
+    },
+    {
+     "id": "c-npa-restructure",
+     "type": "clause",
+     "tags": [
+      "Restructuring",
+      "High"
+     ],
+     "front": "A Standard account is restructured for the borrower's financial difficulty. What happens to its classification?",
+     "back": {
+      "bareText": "Downgraded from Standard to Sub-standard; an already-NPA account stays in its existing NPA category.",
+      "cases": [
+       "PYQ Sep 2025 · Q4(a)"
+      ]
+     }
+    },
+    {
+     "id": "c-npa-sale-profit",
+     "type": "clause",
+     "tags": [
+      "NPA sale",
+      "Low"
+     ],
+     "front": "A bank sells an NPA above its net book value. Can it book the excess as profit, or reverse the excess provision?",
+     "back": {
+      "bareText": "No to both — the excess is not recognised as profit, and the excess provision is retained to meet shortfall/loss on sale of other NPAs.",
+      "trap": "This is the chapter's single most-repeated trap across SM, RTP and PYQ."
+     }
+    },
+    {
+     "id": "c-npa-sale-2yr",
+     "type": "clause",
+     "tags": [
+      "NPA sale eligibility",
+      "Low"
+     ],
+     "front": "What's the minimum holding period before a bank can sell an NPA, and on what payment basis?",
+     "back": {
+      "bareText": "At least 2 years as NPA in the selling bank's books; sold without recourse, cash basis only, entire consideration upfront."
+     }
+    },
+    {
+     "id": "c-npa-std-provision",
+     "type": "concept",
+     "tags": [
+      "Standard provisioning",
+      "Low"
+     ],
+     "front": "Does a Standard asset need any provision at all?",
+     "back": {
+      "simplified": "Yes — a prudential provision at variable rates by sector, as a matter of prudence, even though it's 'Standard'."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s7-capital-liabilities",
+   "title": "Verification of capital & liabilities",
+   "emoji": "🏦",
+   "cards": [
+    {
+     "id": "c-crar-formula",
+     "type": "illustration",
+     "tags": [
+      "CRAR",
+      "Low"
+     ],
+     "front": "Tier I ₹850cr, Tier II ₹300cr, RWA ₹9,000cr, risk-adjusted off-balance-sheet ₹1,000cr. CRAR, and is it compliant?",
+     "back": {
+      "simplified": "(850+300)/(9,000+1,000)×100 = 1,150/10,000×100 = 11.5% — above the 9% bank minimum, so compliant.",
+      "cross": [
+       "f-crar"
+      ]
+     }
+    },
+    {
+     "id": "c-tier-quality",
+     "type": "concept",
+     "tags": [
+      "Tier I vs II",
+      "Low"
+     ],
+     "front": "What's the core quality difference between Tier I and Tier II capital?",
+     "back": {
+      "simplified": "Tier I (share capital + disclosed reserves) fully absorbs losses. Tier II (certain reserves + subordinated debt) has weaker loss-absorption capacity."
+     }
+    },
+    {
+     "id": "c-nre-nro",
+     "type": "concept",
+     "tags": [
+      "NRE/NRO",
+      "Low"
+     ],
+     "front": "Which NRI account is repatriable, and which isn't (except current income)?",
+     "back": {
+      "simplified": "NRE: repatriable. NRO: not repatriable, except current income subject to conditions."
+     }
+    },
+    {
+     "id": "c-inoperative",
+     "type": "clause",
+     "tags": [
+      "Inoperative accounts",
+      "Low"
+     ],
+     "front": "After how long with no transactions does a savings/current account become 'inoperative'?",
+     "back": {
+      "bareText": "Over 2 years — revival needs proper authority; watch for a significant balance-reduction vs. the prior year."
+     }
+    },
+    {
+     "id": "c-rediscount-refinance",
+     "type": "clause",
+     "tags": [
+      "Rediscount vs refinance",
+      "Low"
+     ],
+     "front": "Does 'rediscount' or 'refinance' appear under the Borrowings head?",
+     "back": {
+      "bareText": "Refinance does; rediscount does not — the auditor checks this distinction is correctly made."
+     }
+    },
+    {
+     "id": "c-contingent-itemwise",
+     "type": "clause",
+     "tags": [
+      "Contingent liabilities",
+      "Low"
+     ],
+     "front": "Can a bank disclose contingent liabilities as one lump sum?",
+     "back": {
+      "simplified": "No — each category (claims not acknowledged as debts, forward/derivative contracts, guarantees, acceptances/endorsements, other items) must be disclosed separately, plus bills for collection.",
+      "cases": [
+       "SM TYK 8: FAIR Bank"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s8-auditreport-lfar",
+   "title": "Auditor's report & LFAR",
+   "emoji": "📄",
+   "cards": [
+    {
+     "id": "c-caro-no",
+     "type": "clause",
+     "tags": [
+      "CARO exemption",
+      "Low"
+     ],
+     "front": "Does CARO 2020 apply to a banking company's audit?",
+     "back": {
+      "bareText": "No — s.5(c), Banking Regulation Act, 1949 definition excludes banking companies from CARO 2020 entirely."
+     }
+    },
+    {
+     "id": "c-rule11-matters",
+     "type": "clause",
+     "tags": [
+      "Rule 11 CAAR",
+      "Low"
+     ],
+     "front": "Even though CARO doesn't apply to banks, which Rule still requires the auditor's views on pending litigation, foreseeable losses, IEPF delay, and the audit-trail feature?",
+     "back": {
+      "bareText": "Rule 11, Companies (Audit and Auditors) Rules, 2014 — applies regardless of CARO's inapplicability."
+     }
+    },
+    {
+     "id": "c-lfar-60days",
+     "type": "clause",
+     "tags": [
+      "LFAR to RBI",
+      "Low"
+     ],
+     "front": "Within how many days of the auditor's LFAR submission must a copy (with ACB views) reach RBI?",
+     "back": {
+      "bareText": "60 days."
+     }
+    },
+    {
+     "id": "c-fraud-systemwide",
+     "type": "concept",
+     "tags": [
+      "Fraud reporting",
+      "Low"
+     ],
+     "front": "Must the auditor examine every transaction to satisfy the s.143(12) fraud-reporting duty?",
+     "back": {
+      "simplified": "No — evaluate the system as a whole; a fraud instance coming to notice in the ordinary course is reported to RBI and the bank's Chairman/MD/CEO."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s9-concurrent-committee",
+   "title": "Concurrent audit & audit committee",
+   "emoji": "🔁",
+   "cards": [
+    {
+     "id": "c-ca-coverage",
+     "type": "mnemonic",
+     "tags": [
+      "Concurrent audit scope",
+      "Low"
+     ],
+     "front": "What 6 areas does concurrent audit broadly cover?",
+     "back": {
+      "simplified": "Cash, Deposits, Advances, Investments, Foreign Exchange, Housekeeping."
+     }
+    },
+    {
+     "id": "c-ca-tenure",
+     "type": "clause",
+     "tags": [
+      "Tenure limits",
+      "Low"
+     ],
+     "front": "Max continuous tenure for an external concurrent auditor — with the bank overall, and with one branch?",
+     "back": {
+      "bareText": "5 years with the bank overall; 3 years with any one branch/business unit."
+     }
+    },
+    {
+     "id": "c-ca-forex",
+     "type": "concept",
+     "tags": [
+      "Forex concurrent audit",
+      "Low"
+     ],
+     "front": "Name three concurrent-audit checks on a bank branch's foreign exchange operations.",
+     "back": {
+      "simplified": "Nostro balances within prescribed limits; net position per currency squared/covered; forward-contract extension/cancellation duly authorised with charges recovered.",
+      "cases": [
+       "SM TYK 7 / PYQ Dec 2021 Q3(b): forex concurrent audit"
+      ]
+     }
+    },
+    {
+     "id": "c-acb-role",
+     "type": "concept",
+     "tags": [
+      "ACB",
+      "Low"
+     ],
+     "front": "What does the Audit Committee of the Board (ACB) actually do?",
+     "back": {
+      "simplified": "Directs/oversees the bank's total audit function; reviews internal-audit quality/follow-up; reviews concurrent-auditor appointment, remuneration and quality."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s10-nbfc-definition",
+   "title": "NBFC — definition, registration & scale-based layers",
+   "emoji": "🏷️",
+   "cards": [
+    {
+     "id": "c-nbfc-test",
+     "type": "clause",
+     "tags": [
+      "Principal-business test",
+      "Medium"
+     ],
+     "front": "What TWO conditions, both required, make a company an NBFC?",
+     "back": {
+      "bareText": "Financial assets > 50% of total assets (net of intangibles) AND income from financial assets > 50% of gross income.",
+      "trap": "Satisfying only one limb — Satyam Pvt Ltd (SM TYK) clears the asset test but fails the income test, so it is NOT an NBFC.",
+      "cross": [
+       "f-nbfc-test"
+      ]
+     }
+    },
+    {
+     "id": "c-nof-glide",
+     "type": "clause",
+     "tags": [
+      "NOF glide path",
+      "Medium"
+     ],
+     "front": "By when must most existing NBFC categories reach the ₹10 crore minimum NOF?",
+     "back": {
+      "bareText": "31 March 2027 (via ₹5cr by 31.3.2025); NBFC-P2P/AA/no-public-funds stay at ₹2cr; NBFC-IFC/IDF-NBFC need ₹300cr."
+     }
+    },
+    {
+     "id": "c-registration-exempt",
+     "type": "concept",
+     "tags": [
+      "Registration exemptions",
+      "Medium"
+     ],
+     "front": "Name three categories of companies exempt from NBFC registration with RBI.",
+     "back": {
+      "simplified": "Housing Finance Institutions (NHB), Merchant Banking/Stock-broking/Venture Capital companies and Stock Exchanges (SEBI), Insurance companies (IRDA), Nidhi Companies (MCA), Chit Companies."
+     }
+    },
+    {
+     "id": "c-layers-4",
+     "type": "mnemonic",
+     "tags": [
+      "4 layers",
+      "Medium"
+     ],
+     "front": "What are the four NBFC scale-based regulation layers?",
+     "back": {
+      "simplified": "Base Layer, Middle Layer, Upper Layer, Top Layer (usually empty)."
+     }
+    },
+    {
+     "id": "c-layers-deposit",
+     "type": "clause",
+     "tags": [
+      "Deposit-taking → Middle",
+      "Medium"
+     ],
+     "front": "An NBFC accepts public deposits but has only ₹200 crore in assets. Which layer?",
+     "back": {
+      "bareText": "Middle Layer — all deposit-taking NBFCs (NBFC-D) sit in the Middle Layer irrespective of asset size.",
+      "trap": "Applying the ₹1,000cr Base/Middle size test — that test is only for non-deposit, non-activity-specific NBFCs.",
+      "cases": [
+       "PYQ Nov 2024 MCQ 8: APP Ltd"
+      ]
+     }
+    },
+    {
+     "id": "c-layers-hfc",
+     "type": "clause",
+     "tags": [
+      "HFC/IFC → Middle/Upper",
+      "Medium"
+     ],
+     "front": "A Housing Finance Company has ₹800 crore assets, not RBI-identified for the Upper Layer. Which layer?",
+     "back": {
+      "bareText": "Middle Layer — HFCs sit in Middle or Upper Layer by activity, never Base, regardless of asset size.",
+      "cases": [
+       "SM TYU u2-2: Sugam Housing Finance"
+      ]
+     }
+    },
+    {
+     "id": "c-nbfc-vs-bank",
+     "type": "mnemonic",
+     "tags": [
+      "NBFC vs bank",
+      "Low"
+     ],
+     "front": "Name all four textbook differences between an NBFC and a bank.",
+     "back": {
+      "simplified": "No demand deposits; not part of the payment & settlement system; no DICGC cover; no priority-sector lending floor."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s11-nbfc-prudential",
+   "title": "NBFC prudential norms",
+   "emoji": "📐",
+   "cards": [
+    {
+     "id": "c-nbfc-crar",
+     "type": "clause",
+     "tags": [
+      "NBFC CRAR",
+      "Medium"
+     ],
+     "front": "What's the NBFC minimum total capital ratio, and the Tier I floor (general vs gold-loan)?",
+     "back": {
+      "bareText": "15% total (Tier I + Tier II); Tier I ≥10% generally, ≥12% for NBFCs with gold loans ≥50% of financial assets."
+     }
+    },
+    {
+     "id": "c-nbfc-bl-perpetual",
+     "type": "clause",
+     "tags": [
+      "Perpetual debt, NBFC-BL",
+      "Medium"
+     ],
+     "front": "Can an NBFC-BL include perpetual debt instruments in Tier I or Tier II capital?",
+     "back": {
+      "bareText": "No — NBFC-BL cannot include perpetual debt instruments in either Tier I or Tier II at all."
+     }
+    },
+    {
+     "id": "c-nbfc-npa-90",
+     "type": "clause",
+     "tags": [
+      "NBFC NPA norm",
+      "Medium"
+     ],
+     "front": "What is the settled NPA overdue-period norm for NBFCs, for Nov 2026?",
+     "back": {
+      "bareText": ">90 days overdue.",
+      "simplified": "The glide path (>150 days → >120 days → >90 days by 31.3.2026) is now complete — treat 90 days as settled, not transitional.",
+      "upd": true
+     }
+    },
+    {
+     "id": "c-nbfc-ml-12month",
+     "type": "clause",
+     "tags": [
+      "Sub-standard cut, ML+",
+      "Medium"
+     ],
+     "front": "For NBFC-ML and above, after how many months as NPA does Sub-standard become Doubtful?",
+     "back": {
+      "bareText": "12 months (vs 18 months for NBFC-BL).",
+      "cases": [
+       "PYQ Jan 2026 MCQ 8: SH Finance/RR Traders"
+      ]
+     }
+    },
+    {
+     "id": "c-nbfc-provision-tiers",
+     "type": "illustration",
+     "tags": [
+      "Provisioning tiers",
+      "Low"
+     ],
+     "front": "RR Traders: ₹3.8cr outstanding, ₹2.2cr realisable security, Doubtful under a year. Total provision?",
+     "back": {
+      "simplified": "Unsecured ₹1.6cr × 100% = ₹1.6cr. Secured ₹2.2cr × 20% (under 1 yr doubtful) = ₹0.44cr. Total = ₹2.04 crore.",
+      "cross": [
+       "f-nbfc-provisioning"
+      ]
+     }
+    },
+    {
+     "id": "c-nbfc-loss-std",
+     "type": "mnemonic",
+     "tags": [
+      "Loss & Standard %",
+      "Low"
+     ],
+     "front": "Provisioning % for Loss assets, and for Standard assets (NBFC-BL vs not-UL)?",
+     "back": {
+      "simplified": "Loss: 100%. Standard: 0.25% (NBFC-BL) or 0.40% (not NBFC-UL)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s12-nbfc-audit-fraud",
+   "title": "NBFC audit procedures, checklist & frauds",
+   "emoji": "🔎",
+   "cards": [
+    {
+     "id": "c-nbfc-ascertain",
+     "type": "concept",
+     "tags": [
+      "Principal business first",
+      "Medium"
+     ],
+     "front": "What's the very first step in auditing an NBFC, before anything else?",
+     "back": {
+      "simplified": "Scan the MOA/AOA and Board minutes, corroborated against actual business done, to pin down the principal business activity — it drives both classification and the public-deposit limits that follow."
+     }
+    },
+    {
+     "id": "c-nbfc-dividend-cash",
+     "type": "clause",
+     "tags": [
+      "Dividend income",
+      "Low"
+     ],
+     "front": "On what basis does an NBFC recognise dividend income by default, and when can it switch to accrual?",
+     "back": {
+      "bareText": "Cash basis by default; accrual only once declared at the AGM, with the right to receive established."
+     }
+    },
+    {
+     "id": "c-fraud-thresholds",
+     "type": "clause",
+     "tags": [
+      "Cash shortage reporting",
+      "Low"
+     ],
+     "front": "At what cash-shortage amounts must a shortage be reported as fraud, even with no proven intent?",
+     "back": {
+      "bareText": ">₹10,000 in any case; >₹5,000 if first detected by management/auditor/inspecting officer rather than self-reported by the handler on occurrence.",
+      "trap": "Assuming all shortages need proven intent to be 'fraud' — these two thresholds are the exceptions."
+     }
+    },
+    {
+     "id": "c-fraud-7cats",
+     "type": "mnemonic",
+     "tags": [
+      "7 fraud categories",
+      "Low"
+     ],
+     "front": "Name the 7 NBFC fraud categories (IPC-based).",
+     "back": {
+      "simplified": "Misappropriation/breach of trust; fraudulent encashment; unauthorised credit for reward; negligence/cash shortages; cheating/forgery; forex irregularities; other."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s13-nbfc-auditor-duty",
+   "title": "NBFC auditor's duty — report to Board & CARO",
+   "emoji": "📋",
+   "cards": [
+    {
+     "id": "c-report-board-ABCD",
+     "type": "mnemonic",
+     "tags": [
+      "Report to Board structure",
+      "Low"
+     ],
+     "front": "The NBFC auditor's report to the Board has 4 matter-groups (A–D). What are they?",
+     "back": {
+      "simplified": "A: all NBFCs (CoR, principal-business criteria, NOF). B: deposit-accepting NBFCs (deposit limits, rating, CRAR, defaults). C: non-deposit-accepting NBFCs (Board resolution, CRAR via NBS-7). D: CoR-exempt NBFCs (specific advised conditions)."
+     }
+    },
+    {
+     "id": "c-exception-report-dnbs",
+     "type": "clause",
+     "tags": [
+      "Exception report",
+      "Low"
+     ],
+     "front": "Where does an auditor's exception report on an NBFC go, and what must it NOT contain?",
+     "back": {
+      "bareText": "To the concerned Regional Office of DNBS, RBI, having jurisdiction.",
+      "simplified": "Must report contraventions only — must not contain any statement about compliance."
+     }
+    },
+    {
+     "id": "c-sac-timing",
+     "type": "clause",
+     "tags": [
+      "SAC timing",
+      "Low"
+     ],
+     "front": "Within how many days of signing the audit report must the Statutory Auditor's Certificate (SAC) on CoR eligibility reach RBI, and what's the outer deadline?",
+     "back": {
+      "bareText": "5 working days of signing; not later than 31 December of the same year, in any case."
+     }
+    },
+    {
+     "id": "c-nbfc-caro-clauses",
+     "type": "clause",
+     "tags": [
+      "CARO clauses",
+      "Low"
+     ],
+     "front": "Which two CARO 2020 clauses specifically target NBFCs?",
+     "back": {
+      "bareText": "Clause 3(iii) — loans/guarantees/investments; Clause 3(xvi) — s.45-IA registration, CoR, and Core Investment Company criteria."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s14-nbfc-indas",
+   "title": "NBFC financial statements under Ind AS",
+   "emoji": "📊",
+   "cards": [
+    {
+     "id": "c-divIII-date",
+     "type": "clause",
+     "tags": [
+      "Division III origin",
+      "Low"
+     ],
+     "front": "Which MCA notification introduced Division III of Schedule III for Ind-AS NBFCs, and when?",
+     "back": {
+      "bareText": "MCA notification, 11 October 2018."
+     }
+    },
+    {
+     "id": "c-div-1pct",
+     "type": "illustration",
+     "tags": [
+      "1% disclosure test",
+      "Low"
+     ],
+     "front": "An NBFC's 'other expenditure' is ₹99.50cr against total income ₹10,000cr. Does it need separate disclosure under Division III?",
+     "back": {
+      "simplified": "1% of total income = ₹100cr; ₹99.50cr < ₹100cr → no separate disclosure required.",
+      "trap": "Testing against 1% of revenue from operations (the Division II test) instead of 1% of total income (the Division III test).",
+      "cases": [
+       "SM TYU u2-3"
+      ]
+     }
+    },
+    {
+     "id": "c-divII-vs-III",
+     "type": "mnemonic",
+     "tags": [
+      "Division II vs III",
+      "Low"
+     ],
+     "front": "Name three ways Division III (NBFCs) differs from Division II.",
+     "back": {
+      "simplified": "Balance sheet may be presented in order of liquidity; 1% of total income disclosure threshold (not 1% of revenue-from-ops/₹10 lakh); revenue from operations and OCI shown on the face of the P&L, not just notes."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s15-beyond",
+   "title": "Beyond the study material",
+   "emoji": "🧭",
+   "cards": [
+    {
+     "id": "c-scope-2026-summary",
+     "type": "section",
+     "tags": [
+      "Exam scope 2026",
+      "Low"
+     ],
+     "front": "What three Chapter 14 updates does ICAI's own RTP May 2026 academic update flag that the printed SM doesn't say?",
+     "back": {
+      "simplified": "NBFC-MFI 60% microfinance-asset test (4-quarter remediation trigger); gold-loan NBFC Tier 1 now tied to the RBI Gold Lending Directions, 2025 (deadline 1.4.2026, now passed); ROU assets added to the risk-weight table's 'Others' line.",
+      "upd": true
+     }
+    },
+    {
+     "id": "c-mfi-60pct",
+     "type": "concept",
+     "tags": [
+      "NBFC-MFI 60% test",
+      "Low"
+     ],
+     "front": "What must an NBFC-MFI do if its microfinance-loan book stays under 60% of total assets for 4 straight quarters?",
+     "back": {
+      "simplified": "Approach RBI with a remediation plan — it isn't automatic deregistration, but it is a mandatory regulatory engagement."
+     }
+    },
+    {
+     "id": "c-sarfaesi-concept",
+     "type": "concept",
+     "tags": [
+      "SARFAESI",
+      "Low"
+     ],
+     "front": "What does SARFAESI let a bank do that a civil suit doesn't, and does it change NPA provisioning?",
+     "back": {
+      "simplified": "Take possession of and sell secured assets after a 60-day demand notice to a defaulting (already-NPA) borrower, without first getting a civil-court decree. It does NOT change the account's existing NPA classification or provisioning — recovery and classification run on separate tracks."
+     }
+    },
+    {
+     "id": "c-priority-sector-role",
+     "type": "concept",
+     "tags": [
+      "Priority sector",
+      "Low"
+     ],
+     "front": "What exactly is the auditor verifying when checking a bank's priority-sector classification?",
+     "back": {
+      "simplified": "That each advance is correctly tagged to the sectoral category its actual purpose/borrower profile supports, and that the PSL-achievement certificate is consistent with it — not independently computing the regulatory target %, which is a live figure to check, not memorise."
+     }
+    },
+    {
+     "id": "c-coop-dual-reg",
+     "type": "concept",
+     "tags": [
+      "Co-operative banks",
+      "Low"
+     ],
+     "front": "A co-operative bank's auditor answers to how many regulators, and who typically appoints the auditor?",
+     "back": {
+      "simplified": "Two — the Registrar of Co-operative Societies (incorporation/governance) and RBI (banking prudential norms). Appointment follows the co-operative statute/Registrar's process, not s.139–140 Companies Act machinery."
+     }
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "id": "p-rtp-may26-q15",
+   "prompt": "During the statutory audit of Fair Bank, you are examining the Cash Credit account of M/s Bright Traders as at 31 March 2025:\n- Sanctioned Limit: ₹4 crore\n- Outstanding: ₹4.10 crore (excess ₹10 lakh for 15 days)\n- Latest stock statement: dated 31 January 2025\n- Renewal of limit was due 28 February 2025 and is under process\n- Interest is regularly serviced, nothing overdue beyond 90 days\n- Drawing Power is properly calculated based on the stock statement (under 3 months old)\nThe Branch Manager has treated the account as a Standard Asset. Examine whether the account requires classification as NPA.",
+   "clauseRef": "Accounts with temporary deficiencies · RTP May 2026 Q15",
+   "hints": [
+    "This is the SM's named exception for temporary deficiencies, not a general NPA test.",
+    "Check both conditions: stock statement age AND days out of order."
+   ],
+   "modelAnswer": "Rule: banks should not classify an advance as NPA merely due to temporary deficiencies such as non-availability of drawing power based on the latest stock statement, the balance temporarily exceeding the limit, or non-renewal of limits by the due date — provided the stock statement relied on for drawing power is not older than 3 months, and the account has not been out of order for more than 90 days.\n\nApplication to facts:\n- The ₹10 lakh excess has lasted only 15 days (temporary).\n- The stock statement (31 January 2025) is within 3 months of the balance sheet date (31 March 2025).\n- The renewal, though due, is genuinely under process.\n- Interest is serviced regularly; nothing is overdue beyond 90 days.\n\nConclusion: every deficiency here is purely temporary, and both protective conditions (stock statement under 3 months, not out of order beyond 90 days) are satisfied. The account should NOT be classified as NPA — the Branch Manager's treatment as a Standard Asset is correct per RBI IRAC norms.",
+   "markingPoints": [
+    "States the temporary-deficiency exception correctly",
+    "Identifies the 3-month stock-statement condition",
+    "Identifies the 90-day out-of-order condition",
+    "Applies both conditions to the facts given",
+    "Concludes Standard Asset, not NPA, with reasoning"
+   ]
+  },
+  {
+   "id": "p-rtp-may25-q16",
+   "prompt": "Nutan & Co, statutory auditor of JOE Bank Ltd (private sector bank), noted these audit queries:\n1. An NPA was sold for a value higher than net book value — profit was not recognised, but the excess provision WAS reversed.\n2. Interest on a State-Government-guaranteed advance has been taken to income even though overdue beyond 90 days.\n3. An account's ad hoc limit has not been reviewed for 180 days from the ad hoc sanction date, and is treated as performing.\n4. The forex 'net position' for one currency was not squared and was uncovered by a substantial amount.\n5. One account was sanctioned an additional temporary limit of 25% of the existing limit for 120 days.\nGive the reason for each query and the action that should be taken.",
+   "clauseRef": "NPA sale · Govt guarantee · Ad hoc limits · Forex position · Temporary limits · RTP May 2025 Q16",
+   "hints": [
+    "Each item maps to one named SM rule — write them as a 5-row table.",
+    "Item 1 is the chapter's most-repeated trap."
+   ],
+   "modelAnswer": "1. Reason: where an NPA is sold above net book value, the excess must not be recognised as profit, and the excess provision must NOT be reversed — it is retained to meet shortfall/loss on sale of other NPAs.\n   Action: cancel the reversal entry; retain the excess provision for future NPA shortfalls.\n\n2. Reason: a State-Government-guaranteed advance must be treated as NPA once overdue beyond 90 days — the Central-Government invoke-and-repudiate carve-out does not extend to State guarantees.\n   Action: reverse the interest income recognised; take it to income only on actual realisation.\n\n3. Reason: an account whose ad hoc limit is not reviewed within 180 days of sanction must be treated as NPA.\n   Action: change the treatment from performing to non-performing, from the date the change was required.\n\n4. Reason: the net position in each foreign currency should generally be squared, not left substantially uncovered.\n   Action: square off the branch's net position in that currency, covering it by a substantial amount.\n\n5. Reason: additional temporary limits may be sanctioned only up to 20% of the existing limit and for a maximum 90-day tenure — 25% and 120 days both breach this.\n   Action: revise the terms to 20% of the existing limit and 90 days' maximum tenure.",
+   "markingPoints": [
+    "Correctly states the no-profit/no-reversal rule for item 1",
+    "Distinguishes State vs Central guarantee treatment for item 2",
+    "States the 180-day ad hoc review rule for item 3",
+    "States the forex net-position squaring requirement for item 4",
+    "States the 20%/90-day temporary-limit cap for item 5"
+   ]
+  },
+  {
+   "id": "p-rtp-sep25-q16",
+   "prompt": "Auditing the branch operations of XS Bank for FY 2024-25, you observe: advances sanctioned without proper credit appraisal in some cases; loans sanctioned without adequate documentation (DPNs, hypothecation letters) and weak post-disbursement monitoring in others; securities held by a single officer instead of joint custody at several branches; and a few accounts that exceeded sanctioned limit/drawing power without intimation to Head Office. The branch manager says the bank relies on its internal control framework to mitigate such risks. Explain the internal controls the bank is expected to implement in the area of loans and advances.",
+   "clauseRef": "Internal control — loans & advances · RTP Sep 2025 Q16",
+   "hints": [
+    "Map each of the 4 observed lapses to a named control point.",
+    "Don't accept 'we have a framework' as an answer by itself — name the specific missing control."
+   ],
+   "modelAnswer": "Expected internal controls over loans and advances:\n- Advances only after satisfying creditworthiness and obtaining proper sanction from the bank's authorities.\n- All necessary documents (agreements, demand promissory notes, letters of hypothecation etc.) executed BEFORE disbursal.\n- Sufficient margin kept against securities, determined by proper authority, to cover any decline in value and comply with RBI directives.\n- Securities received/returned by a responsible officer and held in joint custody of two officers.\n- Registrable securities registered in the bank's name (or adequately documented otherwise).\n- Accounts kept within both the drawing power AND the sanctioned limit — additional temporary limits capped at 20% of the existing limit and 90 days' tenure.\n- Accounts exceeding the sanctioned limit, drawing power, or against unapproved securities, or otherwise irregular, reported to Management/Head Office regularly.\n- Each advance account's operation reviewed at least once a year.\n\nConclusion: the four observed lapses map directly onto missing controls — credit appraisal, pre-disbursal documentation, joint custody of securities, and prompt reporting of limit/DP breaches. A generic 'internal control framework' claim does not excuse the absence of these specific, named controls.",
+   "markingPoints": [
+    "States the credit-appraisal/proper-sanction requirement",
+    "States pre-disbursal documentation requirement",
+    "States joint-custody-of-securities requirement",
+    "States the drawing-power/sanctioned-limit and reporting requirement",
+    "Links each named control back to one of the four observed lapses"
+   ]
+  },
+  {
+   "id": "p-pyq-sep25-q4a",
+   "prompt": "M/s TZ and Associates, statutory branch auditors of the Delhi Branch of ABC Bank Limited for FY 2024-25, are verifying advances. CA T selects Mr. X's housing loan account (₹1 crore, from 2021-22), operating positively till 2023-24, often overdue since April 2024. On 1.10.2024, Mr. X requested (due to a medical emergency) an increased repayment period and reduced interest rate; the Branch accepted this on 1.11.2024. The Branch classified the account as a Standard Asset as at 31.3.2025. CA T insists it should be Sub-standard and drafts a Memorandum of Changes (MOC). The Board-prescribed provision rate for the secured portion of a Sub-standard Asset is 20%, while the IRAC-norms requirement is 15%. (i) Justify CA T's classification. (ii) Guide CA T on the rate to apply in the MOC.",
+   "clauseRef": "Restructuring · Provisioning rate · PYQ Sep 2025 Q4(a)",
+   "hints": [
+    "Restructuring for financial difficulty has a fixed classification consequence.",
+    "RBI norms are a floor, not a ceiling — read the Board rate against that floor."
+   ],
+   "modelAnswer": "(i) Classification: restructuring (modifying terms — here, repayment period and interest rate — for a borrower's financial difficulty) downgrades a Standard account to Sub-standard under RBI prudential norms (an already-NPA account instead stays in its existing NPA category). Mr. X's account was restructured on 1.11.2024 due to financial difficulty, so CA T's insistence on Sub-standard classification as at 31.3.2025 is correct; the Branch's Standard-Asset treatment is wrong.\n\n(ii) Provisioning rate: RBI's prescribed provisioning norms are MINIMUM requirements — a bank may always apply a higher rate where warranted. Since IRAC's 15% is a floor, and ABC Bank Ltd's Board has prescribed a higher 20% for the secured portion, the higher 20% rate should be applied in the MOC.",
+   "markingPoints": [
+    "Identifies restructuring-for-financial-difficulty as the trigger",
+    "States Standard → Sub-standard downgrade on restructuring",
+    "States RBI norms are a floor, not a ceiling",
+    "Concludes the Board's higher 20% rate applies, not the 15% IRAC minimum"
+   ]
+  },
+  {
+   "id": "p-pyq-may25-q4a",
+   "prompt": "Instant Finance Ltd, an NBFC-BL primarily lending to small businesses and individuals, reports for the year ending 31 March 2025: aggregate risk-weighted asset base ₹1,000 crore; reported Tier 1 capital ₹130 crore (includes ₹15 crore of perpetual debt instruments); investments in shares/bonds of other NBFCs totalling ₹10 crore (12% of its owned fund); primary business is lending against gold jewellery, comprising 60% of its financial assets. As statutory auditor assessing compliance with the RBI Scale Based Regulation Directions, 2023: (i) evaluate whether minimum Tier I capital requirements are met; (ii) discuss the treatment of perpetual debt instruments for gold-loan NBFCs; (iii) analyse the Tier 1 adjustment needed for its investments in other NBFCs.",
+   "clauseRef": "NBFC Tier 1 capital · PYQ May 2025 Q4(a)",
+   "hints": [
+    "Gold loans at 60% of financial assets cross the 50% threshold — which Tier I floor applies?",
+    "NBFC-BL has a flat bar on one category of instrument in Tier I."
+   ],
+   "modelAnswer": "(i) Minimum requirement: since gold loans are 60% of financial assets (≥50%), Instant Finance Ltd must maintain Tier 1 capital of at least 12% of aggregate risk-weighted assets = 12% × ₹1,000 crore = ₹120 crore.\n\n(ii) Perpetual debt treatment: NBFC-BL are NOT eligible to include perpetual debt instruments in Tier I capital at all — so the reported ₹130 crore (which includes ₹15 crore perpetual debt) must be reduced: ₹130cr − ₹15cr = ₹115 crore Tier 1.\n\n(iii) Inter-NBFC investment adjustment (alternative working): Tier I (non-BL NBFCs) is owned fund reduced by investments in other NBFCs exceeding 10% of owned fund. Owned fund = ₹10cr ÷ 12% = ₹83.33cr; 10% threshold = ₹8.33cr; excess over threshold = ₹10cr − ₹8.33cr = ₹1.667cr additional deduction: ₹130cr − ₹15cr − ₹1.667cr = ₹113.33 crore.\n\nConclusion: whichever working is used (₹115cr or ₹113.33cr), Tier 1 capital is below the required ₹120 crore — Instant Finance Ltd has NOT complied with the minimum Tier 1 capital requirement.",
+   "markingPoints": [
+    "Identifies the 12% gold-loan Tier I floor (not the general 10%)",
+    "Computes required Tier I = ₹120 crore",
+    "Excludes perpetual debt entirely for NBFC-BL, giving ₹115 crore",
+    "States the non-compliance conclusion clearly"
+   ]
+  },
+  {
+   "id": "p-sm-tyk-npasale",
+   "prompt": "During the audit of Skip Bank Ltd, you find the bank sold certain of its non-performing assets. Draft the audit-check points relevant to this area.",
+   "clauseRef": "Sale of NPAs · SM TYK 10",
+   "hints": [
+    "There are two kinds of checks: eligibility-to-sell checks, and accounting-treatment checks.",
+    "The above-NBV / below-NBV treatment is the trap examiners love."
+   ],
+   "modelAnswer": "Audit-check points on NPA sale:\n- Board policy on procedure, valuation and delegation of powers for such sales is followed.\n- Only an NPA that has remained NPA in the bank's books for at least 2 years is sold.\n- The asset is sold without recourse (entire credit risk transfers to the buyer).\n- The bank assumes no residual legal/operational risk after sale.\n- The sale is on a cash basis only, never at a contingent price, with the entire consideration received upfront.\n- The bank has not bought back an NPA it originally sold.\n- On sale, the asset is removed from the selling bank's books.\n- If sold below net book value, the shortfall is debited to that year's P&L.\n- If sold above net book value, the excess is NOT recognised as profit, and the excess provision is NOT reversed — it is retained to meet shortfall/loss on sale of other NPAs.",
+   "markingPoints": [
+    "States the 2-year minimum holding period",
+    "States the without-recourse, cash-basis-only, upfront-consideration conditions",
+    "States below-NBV treatment (shortfall to P&L)",
+    "States above-NBV treatment (no profit, no provision reversal) — the key trap"
+   ]
+  },
+  {
+   "id": "p-sm-tyk-nrfbank",
+   "prompt": "NRF Bank Ltd, suffering from a high NPA count, decides in April 2024 (for the first time) to sell NPAs. The proposed accounts: Fin Pvt. Ltd. (NPA since FY 2020-21, ₹36.55 lakh); Dairy Works (NPA since FY 2022-23, ₹55.24 lakh); Book Store (NPA since FY 2019-20, ₹29.85 lakh); Fancy Corp. (NPA since FY 2018-19, ₹61.42 lakh); RSM and Associates (NPA since FY 2021-22, ₹19.25 lakh). As internal auditor, scrutinize the proposal and advise which accounts can be sold.",
+   "clauseRef": "NPA sale eligibility · SM TYK 14",
+   "hints": [
+    "Apply the 2-year test to each account's NPA financial year, measured to April 2024.",
+    "Only one account fails the test."
+   ],
+   "modelAnswer": "Rule: only an NPA that has remained NPA in the bank's books for at least 2 years may be sold.\n\nApplication: by April 2024, an NPA from FY 2021-22 or earlier has been NPA for at least 2 years.\n- Fin Pvt. Ltd. (2020-21): qualifies.\n- Dairy Works (2022-23): does NOT qualify — under 2 years as NPA.\n- Book Store (2019-20): qualifies.\n- Fancy Corp. (2018-19): qualifies.\n- RSM and Associates (2021-22): qualifies.\n\nConclusion: NRF Bank can sell all five NPAs EXCEPT Dairy Works (₹55.24 lakh), which does not yet meet the 2-year holding test. Total amount sellable = ₹36.55 + ₹29.85 + ₹61.42 + ₹19.25 = ₹147.07 lakh.",
+   "markingPoints": [
+    "States the 2-year holding-period rule correctly",
+    "Correctly identifies Dairy Works as the only exclusion",
+    "Computes the total sellable amount",
+    "Does not mistakenly exclude RSM and Associates (2021-22, which does qualify)"
+   ]
+  },
+  {
+   "id": "p-sm-tyk-singhltd",
+   "prompt": "Singh Ltd, registered under the Companies Act, 2013, is engaged in loans and advances and acquisition of shares/stocks/bonds/debentures/securities issued by government or local authorities. For the year ended 31 March 2024: Paid-up share capital ₹50 crore; Non-current assets — loans & advances ₹61.75 crore; Current assets — loans & advances ₹312.25 crore; Total assets ₹620 crore; Intangible assets ₹12 crore; Profit for the year ₹7.25 crore; Income from interest & dividends ₹68 crore; Gross income ₹118.75 crore. The directors intend to apply for NBFC registration under s.45-IA, RBI Act, 1934. Advise.",
+   "clauseRef": "NBFC principal-business test · SM TYK 12",
+   "hints": [
+    "Don't forget to net off intangible assets from total assets before computing the asset-side %.",
+    "Both the asset test and the income test must independently clear 50%."
+   ],
+   "modelAnswer": "Computation:\nFinancial assets = ₹61.75cr + ₹312.25cr = ₹374 crore\nTotal assets net of intangibles = ₹620cr − ₹12cr = ₹608 crore\nFinancial assets / Total assets (net) = 374/608 = 61.5% (>50%)\n\nIncome from financial assets = ₹68 crore\nGross income = ₹118.75 crore\nIncome ratio = 68/118.75 = 57.3% (>50%)\n\nConclusion: both limbs of the principal-business test are satisfied, so Singh Ltd qualifies as an NBFC and can apply for registration under s.45-IA, RBI Act, 1934, in the prescribed form with the necessary documents.",
+   "markingPoints": [
+    "Nets off intangible assets before computing the asset-side ratio",
+    "Correctly computes the asset-side % (>50%)",
+    "Correctly computes the income-side % (>50%)",
+    "States the conclusion that both tests must independently pass"
+   ]
+  },
+  {
+   "id": "p-sm-tyk-goodsamaritan",
+   "prompt": "During the audit of Good Samaritan Bank as at 31 March 2024, you observe: (a) an account with no recovery for 18 months, where the bank has not applied NPA/income-recognition norms because the advance is guaranteed by the Central Government (guarantee not invoked) — respond, and state whether your answer would differ if guaranteed by a State Government instead. (b) the advance portfolio includes significant loans against Life Insurance Policies — write a suitable audit programme to verify these.",
+   "clauseRef": "Government-guaranteed advances · LIP-backed advances · SM TYK 4",
+   "hints": [
+    "Classification and income recognition follow DIFFERENT rules for a government-guaranteed advance.",
+    "The Central-vs-State distinction only matters for classification, not income."
+   ],
+   "modelAnswer": "(a) Government-guaranteed advance: if a government-guaranteed advance becomes NPA, interest should not be taken to income unless realised, regardless of the guarantee. But for asset CLASSIFICATION, a Central-Government-guaranteed credit facility is treated as NPA only once the guarantee is invoked AND repudiated. Since the bank hasn't invoked the guarantee, it is correct not to apply NPA norms for provisioning purposes — but this carve-out doesn't extend to income recognition, so unrecovered income must be reversed.\n\nIf instead State-Government guaranteed: this exception does not apply — the advance must be treated as NPA once overdue for more than 90 days, guarantee or not.\n\n(b) Audit programme for LIP-backed advances:\n- Inspect the policies for assignment to the bank, registered with the insurer.\n- Verify premiums are paid and policies in force.\n- Examine the insurer's surrender-value certificate.\n- Where surrender value is subject to a premium payment, confirm the premium has been deducted from the surrender value.",
+   "markingPoints": [
+    "Correctly separates classification treatment from income-recognition treatment",
+    "States the Central-Government invoke-and-repudiate test",
+    "States the State-Government carve-out does NOT apply",
+    "Lists at least 3 of the 4 LIP audit-programme points"
+   ]
+  }
+ ]
+}

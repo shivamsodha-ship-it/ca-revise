@@ -9,7 +9,7 @@ export const compare = {
     { d: 'Tier II limit', a: 'Not in the SM.', b: 'Tier II never exceeds Tier I; NBFC-BL cannot count perpetual debt.', p: 'nbfc-capital' },
     { d: 'NPA trigger', a: 'Overdue <strong>more than 90 days</strong>.', b: 'Overdue <strong>more than 90 days</strong> (glide path complete).', same: true, p: 'nbfc-classification' },
     { d: 'Four categories', a: 'Standard, Sub-standard, Doubtful, Loss.', b: 'Standard, Sub-standard, Doubtful, Loss (NBFC-MFIs follow their own norms).', same: true, p: 'bank-npa-class' },
-    { d: 'Sub-standard to doubtful clock', a: '12 months (RBI IRAC norms; check, not printed in the SM).', b: '<strong>12 months</strong> Middle and Upper; <strong>18 months</strong> Base.', p: 'nbfc-classification' },
+    { d: 'Sub-standard to doubtful clock', a: '12 months (RBI IRAC norms; confirmed in secondary sources, not printed in the SM).', b: '<strong>12 months</strong> Middle and Upper; <strong>18 months</strong> Base.', p: 'nbfc-classification' },
     { d: 'Income on NPAs', a: 'On realisation; unrealised income reversed.', b: 'On realisation; unrealised income reversed.', same: true, p: 'nbfc-income' },
     { d: 'Standard-asset provision', a: 'Required, sector-wise rates (not in SM).', b: '0.25% (BL) / 0.40% (not UL), shown separately.', p: 'nbfc-provisioning' },
     { d: 'Liquidity rules', a: '<strong>CRR and SLR</strong> on DTL.', b: 'No CRR/SLR; liquid-assets compliance checked for deposit-accepting NBFCs.', p: 'bank-crr-slr' },

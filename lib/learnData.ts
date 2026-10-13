@@ -48,7 +48,26 @@ export interface Solve {
   variants: SolveVariant[];             // base case first, then twisted versions
 }
 
-export interface LearnData { levels: Level[]; compare?: Compare; games?: Game[]; solves?: Solve[] }
+// Stage 1 of the study journey: the chapter on one page before any detail.
+export interface Vision {
+  oneLine: string;                       // what the chapter is, in one sentence
+  why: string;                           // HTML: why it matters for the exam and for the profession
+  style: 'numerical' | 'theory' | 'mixed';  // how ICAI mostly asks it; steers the journey's "Master" stage
+  marks?: string;                        // e.g. "about 7 marks an attempt"
+  map: { h: string; items: string[]; p?: string[] }[];   // the chapter map: branches with their key items (+ provision ids)
+  sixty: string[];                       // the chapter in 60 seconds, as short lines
+  askedAs: { kind: string; how: string }[];              // how questions arrive: MCQ, case, numerical, short note...
+  pitfalls: string[];                    // the mistakes examiners punish most
+}
+// Stage 4: memory aids. `for` is what the learner must recall; `m` is the hook; `stands` unpacks it.
+export interface Mnemonic { id: string; for: string; m: string; stands: string; story?: string; p?: string }
+export interface Memory { mnemonics: Mnemonic[]; hooks?: { id: string; h: string; story: string }[] }
+// Stage 5: how ideas relate. kind: contrast (⇄), same (=), leads (→), cross (other chapter or subject).
+export type LinkKind = 'contrast' | 'same' | 'leads' | 'cross';
+export interface ConnectLink { a: string; b: string; kind: LinkKind; how: string; p?: string }
+export interface Connect { links: ConnectLink[] }
+
+export interface LearnData { levels: Level[]; compare?: Compare; games?: Game[]; solves?: Solve[]; vision?: Vision; memory?: Memory; connect?: Connect }
 
 // ---------- progress (localStorage, synced like the rest) ----------
 export interface LearnState {

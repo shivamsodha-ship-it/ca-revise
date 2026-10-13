@@ -9,6 +9,7 @@ import { PENDING_DRILL } from '@/lib/weak';
 import { SYNCED_EVENT } from '@/lib/sync';
 import type { LearnData } from '@/lib/learnData';
 import Jotter from '@/components/Jotter';
+import { autoGames } from '@/lib/autoGames';
 
 export interface DrillOpts { clause?: string | null; focus?: string; missed?: boolean }
 
@@ -47,10 +48,13 @@ export interface ViewDef { id: string; label: string; group: 'learn' | 'test' | 
 export function viewsFor(cb: Casebook | null, learn: LearnData | null = null): ViewDef[] {
   const m = cb ? metaOf(cb) : null;
   const all: (ViewDef & { casebook?: boolean })[] = [
+    { id: 'vision', label: 'Vision', group: 'learn', blurb: 'The whole chapter on one page' },
     { id: 'path', label: 'Mastery path', group: 'learn', blurb: 'Learn it level by level, then prove it' },
     { id: 'compare', label: learn?.compare?.title ?? 'Compare', group: 'learn', blurb: 'Side by side, so nothing gets mixed up' },
+    { id: 'connect', label: 'Connections', group: 'learn', blurb: 'How the ideas link up' },
+    { id: 'memory', label: 'Memory', group: 'learn', blurb: 'Mnemonics and number cards', casebook: true },
     { id: 'solve', label: 'Step solver', group: 'test', blurb: 'Numericals in small steps, no calculator' },
-    { id: 'games', label: 'Games', group: 'test', blurb: 'Match, sort and order to lock it in' },
+    { id: 'games', label: 'Games', group: 'test', blurb: 'Match, sort and order to lock it in', casebook: true },
     { id: 'drill', label: cap(m?.caseNoun ?? 'case') + 's', group: 'test', blurb: m?.verdicts.length ? 'Read the facts and give your ruling' : 'Answer, then check the model answer', casebook: true },
     { id: 'hunt', label: cap(m?.provisionNoun ?? 'provision') + ' hunt', group: 'test', blurb: '10 rounds: spot the provision', casebook: true },
     { id: 'mcq', label: 'MCQs', group: 'test', blurb: 'Quick objective questions', casebook: true },
@@ -62,7 +66,8 @@ export function viewsFor(cb: Casebook | null, learn: LearnData | null = null): V
     { id: 'formulas', label: 'Formulas', group: 'revise', blurb: 'Master formulas, how each is derived, and why', casebook: true },
   ];
   const has: Record<string, boolean> = {
-    path: !!learn?.levels?.length, compare: !!learn?.compare, solve: !!learn?.solves?.length, games: !!learn?.games?.length,
+    path: !!learn?.levels?.length, compare: !!learn?.compare, solve: !!learn?.solves?.length, games: (learn?.games?.length ?? 0) + autoGames(cb).length > 0,
+    vision: !!learn?.vision, connect: !!learn?.connect?.links?.length, memory: !!learn?.memory?.mnemonics?.length || (cb?.numbers.length ?? 0) > 0,
     formulas: (cb?.formulas?.length ?? 0) > 0,
   };
   return all.filter(v => (cb || !v.casebook) && (v.id in has ? has[v.id] : true));
@@ -227,7 +232,7 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
             <Link href={base} className="dlink" {...aria('home')}>Overview</Link>
             {(['learn', 'test', 'revise'] as const).map(g => views.some(v => v.group === g) && (
               <div key={g} className="dgroup">
-                <span className="dgroup-l">{g === 'learn' ? 'Master it' : g === 'test' ? 'Test yourself' : 'Revise'}</span>
+                <span className="dgroup-l">{g === 'learn' ? 'Understand' : g === 'test' ? 'Test yourself' : 'Revise'}</span>
                 {views.filter(v => v.group === g).map(v => <Link key={v.id} href={href(v.id)} className="dlink" {...aria(v.id)}>{v.label}</Link>)}
               </div>
             ))}

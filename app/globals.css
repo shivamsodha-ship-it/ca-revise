@@ -726,3 +726,48 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -.01em }
 @media (max-width: 760px) { .jot-fab { width: 44px; padding: 0; justify-content: center; opacity: .92 } .jot-fab span { display: none } }
 .lm-q-d { margin: 14px 0 }
 .lm-q-d summary { min-height: var(--tap); display: flex; align-items: center; cursor: pointer; font-weight: 700; color: var(--blue) }
+
+/* ---------- study journey, vision, memory, connect ---------- */
+.jy { margin-top: 28px }
+.jy-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px }
+.jy-st a { display: grid; grid-template-columns: 34px minmax(0, 1fr); grid-template-areas: "n t" "p p" "s s"; gap: 6px 10px; align-items: center; height: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink); text-decoration: none }
+.jy-st a:hover { border-color: var(--blue) }
+.jy-st.next a { border-color: var(--blue); background: var(--blue-soft) }
+.jy-n { grid-area: n; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--line); font-family: var(--mono); font-weight: 600; background: var(--card) }
+.jy-st.done .jy-n { background: var(--n); border-color: var(--n); color: var(--bg) }
+.jy-st.next .jy-n { border-color: var(--blue); color: var(--blue) }
+.jy-t { grid-area: t; display: flex; flex-direction: column; min-width: 0 }
+.jy-t b { font-family: var(--disp); font-size: 1.05rem; font-weight: 600 }
+.jy-t small { color: var(--muted); font-size: 12.5px; line-height: 1.3 }
+.jy-p { grid-area: p; height: 5px; background: var(--card2); border-radius: 9px; overflow: hidden }
+.jy-p i { display: block; height: 100%; background: var(--blue); transform-origin: left }
+.jy-s { grid-area: s; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums }
+.jy-st.next .jy-s { color: var(--blue); font-weight: 700 }
+@media (max-width: 560px) { .jy-list { grid-template-columns: 1fr } .jy-st a { grid-template-columns: 34px minmax(0, 1fr) 70px; grid-template-areas: "n t s" "p p p" } .jy-s { text-align: right } }
+
+.vz-map { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px }
+.vz-branch { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: var(--card); display: flex; flex-direction: column; gap: 8px }
+.vz-branch h3 { font-size: 1.05rem; font-weight: 600; color: var(--blue) }
+.vz-branch ul { margin: 0; padding-left: 18px; font-size: 14.5px } .vz-branch li { margin-bottom: 3px }
+.vz-sixty { margin: 0; padding-left: 24px; display: grid; gap: 6px; font-size: 16px }
+.vz-asked { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px }
+.vz-asked li { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14.5px }
+.vz-asked b { font-family: var(--disp) }
+@media (max-width: 560px) { .vz-asked li { grid-template-columns: 1fr; gap: 2px } }
+
+.mm-hook { font-family: var(--mono); font-size: 1.5rem; font-weight: 600; color: var(--blue); margin: 6px 0 4px; word-break: break-word }
+.mm-back { margin: 12px 0 0; padding: 12px 14px; background: var(--law); border-radius: 10px }
+.mm-back p { margin: 4px 0 0 }
+.mm-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 }
+.mm-list li { display: grid; grid-template-columns: minmax(90px, 140px) minmax(0, 1fr); gap: 2px 14px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px }
+.mm-list b { font-family: var(--mono); color: var(--blue); grid-row: span 2 }
+.mm-list small { color: var(--muted); font-size: 13px }
+.mm-stories { display: grid; gap: 12px }
+.mm-stories h3 { font-size: 1.1rem; margin-bottom: 6px }
+
+.cn-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px }
+.cn-row { border: 1px solid var(--line); border-left-width: 4px; border-radius: 10px; padding: 12px 14px; background: var(--card) }
+.cn-row.contrast { border-left-color: var(--g) } .cn-row.same { border-left-color: var(--n) } .cn-row.leads { border-left-color: var(--blue) } .cn-row.cross { border-left-color: var(--u) }
+.cn-pair { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; font-size: 15px }
+.cn-sym { font-family: var(--mono); font-size: 1.1rem; color: var(--muted) }
+.cn-row p { margin: 6px 0 8px; font-size: 14.5px }

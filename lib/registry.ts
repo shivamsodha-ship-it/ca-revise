@@ -21,6 +21,7 @@ const registry: ChapterIndexRow[] = [
     summary: 'Code of Ethics · CA Act Schedules · Council Guidelines',
     loader: async () => (await import('../data/aaa/ch19-professional-ethics.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/aaa/ch19-casebook.json')).default as unknown as Casebook,
+    learn: async () => (await import('../data/aaa/ch19-learn.json')).default as unknown as LearnData,
   },
   {
     id: 'aaa-ch15',
@@ -30,6 +31,7 @@ const registry: ChapterIndexRow[] = [
     summary: 'C&AG · COPU/PAC · compliance, performance, comprehensive and propriety audit',
     loader: async () => (await import('../data/aaa/ch15-overview-of-audit-of-public-sector-undertakings.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/aaa/ch15-casebook.json')).default as unknown as Casebook,
+    learn: async () => (await import('../data/aaa/ch15-learn.json')).default as unknown as LearnData,
   },
   {
     id: 'afm-ch08',
@@ -39,6 +41,7 @@ const registry: ChapterIndexRow[] = [
     summary: 'NAV · returns and effective yield · dividend equalisation · plan-wise yield · Sharpe/Treynor → NAV',
     loader: async () => (await import('../data/afm/ch08-mutual-funds.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/afm/ch08-casebook.json')).default as unknown as Casebook,
+    learn: async () => (await import('../data/afm/ch08-learn.json')).default as unknown as LearnData,
   },
   {
     id: 'aaa-ch14',

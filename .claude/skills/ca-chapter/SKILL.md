@@ -42,6 +42,7 @@ change, stop and tell the user instead: per-chapter differences belong in the ca
 3e. **Exam cue for every formula.** Each formula's `cue` says which words in a question call for it. The formula's flip
    card uses the cue as its prompt, so a formula without one falls back to its variables; the validator warns on it and
    the skill's build is not done until it has no warnings of this kind.
+3f. **Accuracy gate before hand-over.** `npm run validate`, `node scripts/audit-accuracy.mjs <id>` (0 errors) and, for the mastery layer, `node scripts/build-learn.mjs <id>` (recomputes every solver figure). Every "VERIFY" line is checked by hand against ICAI's text and recorded in `research/accuracy-report.md`. Never write a figure into the mastery layer that the casebook does not state, unless it is labelled "Beyond the SM".
 4. **Verify currency against ICAI** for the target attempt (applicable standards / amendments / study
    material edition). Do not rely on memory for amendment dates, limits or thresholds.
 5. **Cite as you go.** Every found paper goes into `work/<id>/sources.md` with its URL; the final research
@@ -150,6 +151,14 @@ Order of work:
    `{ "<question id>": [["Label shown in the drill", 12.64, "%"], ["Tax", 2300, "₹", 1]] }`. Units: `₹`, `%`, `units`,
    `days`, `years`, or `""`. The default tolerance is 0.25% (at least 0.006); give an explicit fourth value only when ICAI's
    answer is itself rounded more loosely. Every numerical question in the chapter needs an entry.
+
+### 7b. Mastery layer (study journey)
+After the casebook is assembled, write `scripts/learn-src/<id>.mjs` (see `data/aaa/ch14-learn.json` and `scripts/learn-src/aaa-ch19*.mjs` as the reference builds; shapes in `lib/learnData.ts`; method in `research/study-method.md`).
+It holds: `vision` (stage 1), `levels` (sequential lessons with recall check and twist), `compare` (two look-alike regimes plus a sorter), `connect` (contrast / same / leads / cross links), `memory` (mnemonics, pictures), `games` (match, sort, order; number and cue games are auto-generated), `solves` (step solvers with twisted versions; numerical chapters especially). Build rules:
+- Facts only from the casebook; label extras "Beyond the SM"; every solver figure recomputed in the module's `check()`.
+- Register `learn: async () => (await import('../data/<subject>/chNN-learn.json')).default as unknown as LearnData` in `lib/registry.ts`.
+- `node scripts/build-learn.mjs <id>` then `node scripts/audit-accuracy.mjs <id>`.
+- Match emphasis to the subject: AAA sorters, compare tables and counting solvers; AFM and FR step solvers with twists and formula chains.
 
 ### 8. Assemble and validate
 ```bash

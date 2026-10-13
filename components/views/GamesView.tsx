@@ -3,16 +3,18 @@ import { useEffect, useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { shuffle } from '@/lib/casebook';
 import { useLearnState, type Game } from '@/lib/learn';
+import { autoGames } from '@/lib/autoGames';
 
 const H = ({ html }: { html: string }) => <span dangerouslySetInnerHTML={{ __html: html }} />;
 type Report = (pct: number) => void;
 
 export default function GamesView() {
-  const { learn, chapterId } = useChapter();
+  const { learn, cb, chapterId } = useChapter();
   const { L, bump } = useLearnState(chapterId);
   const [openId, setOpenId] = useState<string | null>(null);
-  if (!learn?.games) return null;
-  const g = learn.games.find(x => x.id === openId);
+  const games: Game[] = [...(learn?.games ?? []), ...autoGames(cb)];
+  if (!games.length) return null;
+  const g = games.find(x => x.id === openId);
 
   if (g) return (
     <div className="lm">
@@ -28,7 +30,7 @@ export default function GamesView() {
     <div className="lm">
       <header className="lm-head"><p className="eyebrow">Games</p><h1>Lock it in</h1><p className="lede">Two minutes each. Play on the bus, in a queue, anywhere. Scores keep your best.</p></header>
       <ul className="rows">
-        {learn.games.map(x => (
+        {games.map(x => (
           <li key={x.id}><button className="row" style={{ width: '100%', textAlign: 'left', background: 'none', border: 0, borderBottom: 0 }} onClick={() => { setOpenId(x.id); window.scrollTo(0, 0); }}>
             <span className="row-t">{x.title}</span><span className="row-d">{x.intro}</span>
             <span className="row-n">{L.gm[x.id] ? `Best ${L.gm[x.id].best}%` : x.type === 'match' ? 'Match-up' : x.type === 'sort' ? 'Sorter' : 'Sequence'}</span></button></li>

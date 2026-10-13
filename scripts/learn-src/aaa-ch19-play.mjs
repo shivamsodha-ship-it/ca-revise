@@ -1,0 +1,120 @@
+export const compare = {
+  title: 'First vs Second Schedule',
+  cols: ['First Schedule', 'Second Schedule'],
+  rows: [
+    { d: 'Heard by', a: '<strong>Board of Discipline</strong>', b: '<strong>Disciplinary Committee</strong> (also when both Schedules are involved)', p: 's21' },
+    { d: 'Removal from the Register', a: 'Up to <strong>3 months</strong>', b: 'Permanently or for any period it thinks fit', p: 's21' },
+    { d: 'Maximum fine', a: '<strong>₹1,00,000</strong>', b: '<strong>₹5,00,000</strong>', p: 's21' },
+    { d: 'Reprimand', a: 'Yes', b: 'Yes', same: true, p: 's21' },
+    { d: 'Parts and clauses', a: 'Part I (12), II (2), III (3), IV (2)', b: 'Part I (10), II (5), III (1)', p: 's22' },
+    { d: 'Professional misconduct', a: 'Parts I, II and III', b: 'Parts I and II', p: 's22' },
+    { d: 'Other misconduct', a: 'Part IV (conviction up to 6 months; disrepute)', b: 'Part III (conviction over 6 months)', p: 's22' },
+    { d: 'Typical subject', a: 'Conduct of practice: fees, soliciting, advertising, other business, signing, previous auditor', b: 'Duty of care: confidentiality, due diligence, independence, disclosure, client money', p: 'fs1-6' },
+    { d: 'Where Council guidelines come in', a: 'Not directly', b: 'SS Part II Clause (1): breach of Act, Regulations or guidelines', p: 'ss2-1' },
+    { d: 'Appeal', a: 'Appellate Authority within 90 days', b: 'Appellate Authority within 90 days', same: true, p: 's21' },
+  ],
+  sorter: [
+    { s: 'Soliciting clients by circular or advertisement.', ans: 0, why: 'FS Part I Clause (6).' },
+    { s: 'Disclosing client information without consent.', ans: 1, why: 'SS Part I Clause (1).' },
+    { s: 'Gross negligence in professional duties.', ans: 1, why: 'SS Part I Clause (7).' },
+    { s: 'Not communicating with the previous auditor before accepting.', ans: 0, why: 'FS Part I Clause (8).' },
+    { s: 'Not supplying information called for by the Institute.', ans: 0, why: 'FS Part III Clause (2).' },
+    { s: 'Giving false particulars to the Institute.', ans: 1, why: 'SS Part II Clause (3).' },
+    { s: 'Conviction for an offence punishable with up to 6 months.', ans: 0, why: 'FS Part IV Clause (1).' },
+    { s: 'Conviction for an offence punishable with more than 6 months.', ans: 1, why: 'SS Part III Clause (1).' },
+    { s: 'Heard by the Board of Discipline, penalty up to ₹1 lakh.', ans: 0, why: 'First Schedule matters.' },
+    { s: 'Heard by the Disciplinary Committee, fine up to ₹5 lakh.', ans: 1, why: 'Second Schedule or both.' },
+    { s: 'An appeal lies to the Appellate Authority within 90 days.', ans: 2, why: 'Applies to both.' },
+    { s: 'Opinion on the financial statements of a concern where his partner has a substantial interest.', ans: 1, why: 'SS Part I Clause (4).' },
+    { s: 'Accepting a part of the profits of a non-member\'s work.', ans: 0, why: 'FS Part I Clause (3).' },
+    { s: 'The Companies Act, 1956 governs the penalties for either Schedule.', ans: 3, why: 'Neither: penalties come from the CA Act, 1949 (s.21 and related sections).' },
+  ],
+};
+
+export const games = [
+  {
+    id: 'g-numbers', type: 'match', title: 'Limits and thresholds', intro: 'Six random pairs each round.',
+    pairs: [
+      ['Tax audits per member per year', '60'], ['Company audits per partner (SM)', '30'], ['Non-audit fee ceiling turnover trigger', '₹50 crore'],
+      ['Indebtedness (guideline)', 'above ₹1,00,000'], ['s.141 indebtedness (company)', 'above ₹5 lakh'], ['s.141 guarantee (company)', 'above ₹1 lakh'],
+      ['Teaching hours (SM)', '25 hours a week'], ['Substantial interest', '20%'], ['Board of Discipline: removal', 'up to 3 months'],
+      ['Board of Discipline: fine', 'up to ₹1 lakh'], ['Disciplinary Committee: fine', 'up to ₹5 lakh'], ['Appeal period', '90 days'],
+      ['Branch office distance', '50 km'], ['Active association with a branch', '182 days'], ['Minimum age for the Register', '21 years'],
+      ['NOCLAR (practice) net worth', '₹250 crore'], ['Network firms\' non-audit fee', '3 times the audit fee'], ['Staff ratio', '1 member : 5 staff'],
+    ],
+  },
+  {
+    id: 'g-threat', type: 'sort', title: 'Which threat?', intro: 'SSAFI: place each situation under its threat.',
+    buckets: ['Self-interest', 'Self-review', 'Advocacy', 'Familiarity', 'Intimidation'].slice(0, 4),
+    items: [
+      { t: 'Financial interest in the client', b: 0 }, { t: 'Fee quoted so low that work cannot be done to standard', b: 0 },
+      { t: 'Assurance report on a system the firm implemented', b: 1 }, { t: 'Preparing the data that is the subject of the report', b: 1 },
+      { t: 'Promoting the client\'s shares', b: 2 }, { t: 'Acting as advocate for the client in litigation', b: 2 },
+      { t: 'A close family member is a director of the client', b: 3 }, { t: 'The ex-engagement partner is now a director of the client', b: 3 },
+      { t: 'Long association with the client', b: 3 }, { t: 'Lobbying on behalf of the client', b: 2 },
+    ],
+  },
+  {
+    id: 'g-designation', type: 'sort', title: 'Designation: allowed or not?', intro: 'Section 7 and clause (7): what may a member show on professional documents?',
+    buckets: ['Allowed', 'Not allowed'],
+    items: [
+      { t: 'The prefix "CA"', b: 0 }, { t: 'ACMA or FCMA letters', b: 0, why: 'Letters are fine; "Cost Accountant" as a description is not.' },
+      { t: 'Insolvency Professional on a visiting card', b: 0 }, { t: 'Registered Valuer on a letterhead', b: 0 },
+      { t: 'Membership of a foreign institute recognised through an MoU/MRA', b: 0 }, { t: 'A university degree', b: 0 },
+      { t: 'Income-tax Consultant', b: 1 }, { t: 'Cost Accountant as a description', b: 1 }, { t: 'Company Secretary alongside Chartered Accountant', b: 1 },
+      { t: 'Management Consultant', b: 1 }, { t: 'CPA', b: 1 }, { t: 'Member of Parliament', b: 1 }, { t: 'Date of setting up practice on the letterhead', b: 1, why: 'Not on letterheads; allowed in a write-up and on a website.' },
+    ],
+  },
+  {
+    id: 'g-permission', type: 'sort', title: 'Other occupation: which permission?', intro: 'Regulations 190A and 191: general permission or specific prior permission?',
+    buckets: ['General permission', 'Specific prior permission'],
+    items: [
+      { t: 'Employment under a CA in practice', b: 0 }, { t: 'Authorship of books and articles', b: 0 }, { t: 'Private tutorship', b: 0 },
+      { t: 'Public elective office such as MP or MLA', b: 0 }, { t: 'Honorary office in a charitable body', b: 0 }, { t: 'Editorship of professional journals', b: 0 },
+      { t: 'Surveyor and loss assessor under the Insurance Act', b: 0 },
+      { t: 'Employment in a business concern where he has no substantial interest', b: 1 }, { t: 'Managing director of a body corporate without substantial interest', b: 1 },
+      { t: 'Interest in an educational institution', b: 1 }, { t: 'Lectureship for courses other than ICAI\'s', b: 1 }, { t: 'Editorship of a non-professional journal', b: 1 },
+    ],
+  },
+  {
+    id: 'g-sign', type: 'sort', title: 'Delegate or sign yourself?', intro: 'FS Part I Clause (12): what may be delegated to a non-member?',
+    buckets: ['May be delegated', 'Must be signed by a partner'],
+    items: [
+      { t: 'Audit queries', b: 0 }, { t: 'Requesting information through a questionnaire', b: 0 }, { t: 'Letters forwarding draft observations or statements', b: 0 },
+      { t: 'Initialling and stamping vouchers', b: 0 }, { t: 'Routine correspondence', b: 0 }, { t: 'A memorandum of cash verification', b: 0 }, { t: 'Acknowledgements and money receipts', b: 0 },
+      { t: 'The audit report', b: 1 }, { t: 'A balance sheet', b: 1 }, { t: 'A stock certificate', b: 1, why: 'Certificates expressing an opinion count as reports.' }, { t: 'A GST certificate', b: 1 }, { t: 'A report signed under a power of attorney to an employee CA', b: 1 },
+    ],
+  },
+  {
+    id: 'g-forum', type: 'sort', title: 'Which body hears it?', intro: 'First Schedule matters go to the Board of Discipline; Second Schedule or both go to the Committee.',
+    buckets: ['Board of Discipline', 'Disciplinary Committee'],
+    items: [
+      { t: 'Soliciting work through a circular', b: 0 }, { t: 'Disrepute to the profession', b: 0 }, { t: 'Conviction for an offence punishable with up to 6 months', b: 0 },
+      { t: 'Letting a non-member sign the audit report', b: 0 }, { t: 'Gross negligence', b: 1 }, { t: 'Embezzling client money', b: 1 }, { t: 'Conviction for an offence punishable with more than 6 months', b: 1 },
+      { t: 'A complaint that alleges both soliciting and gross negligence', b: 1, why: 'Both Schedules: Disciplinary Committee.' }, { t: 'Breach of a Council guideline', b: 1, why: 'SS Part II Clause (1).' },
+    ],
+  },
+  {
+    id: 'g-twist', type: 'sort', title: 'As written, or twisted?', intro: 'Each statement is either as the study material says or has one fact changed.',
+    buckets: ['As written', 'Twisted'],
+    items: [
+      { t: 'The Board of Discipline can remove a member for up to 3 months.', b: 0 }, { t: 'The Board of Discipline can impose a fine up to ₹5 lakh.', b: 1, why: 'Twisted: ₹1 lakh. The ₹5 lakh is the Disciplinary Committee.' },
+      { t: 'A 4-partner firm\'s partners may pool their tax audit limit.', b: 1, why: 'Twisted: no pooling; 60 per member.' }, { t: 'The tax audit limit does not count revised reports.', b: 0 },
+      { t: 'Company audits: 30 per partner (SM figure).', b: 0 }, { t: 'OPCs count towards the company audit limit.', b: 1, why: 'Twisted: OPCs and dormant companies are excluded.' },
+      { t: 'The non-audit fee ceiling applies to public companies of turnover ₹50 crore or more.', b: 0 }, { t: 'A certificate of posting is enough proof of communication to the previous auditor.', b: 1, why: 'Twisted: positive evidence of delivery is needed.' },
+      { t: 'A CA may pay a share of fees to a non-member relative who finds clients.', b: 1, why: 'Twisted: barred by FS I(2) and (5).' }, { t: 'Websites of CA firms work on a pull model.', b: 0 },
+      { t: 'Permission for other business must be taken before engaging.', b: 0 }, { t: 'A fee dispute is a professional reason to refuse an audit.', b: 1, why: 'Twisted: only non-payment of undisputed fee.' },
+      { t: 'A sick unit is registered for at least 5 years with accumulated losses at or above net worth.', b: 0 },
+    ],
+  },
+  {
+    id: 'g-order', type: 'order', title: 'Put it in order', intro: 'Processes the examiner asks you to list.',
+    rounds: [
+      { q: 'Disciplinary process, from complaint to penalty', items: ['Complaint or information received', 'Director (Discipline) forms a prima facie opinion', 'Referred to Board of Discipline (First Schedule) or Disciplinary Committee (Second Schedule or both)', 'Penalty imposed', 'Appeal to the Appellate Authority within 90 days'] },
+      { q: 'The conceptual framework', items: ['Identify threats', 'Evaluate threats', 'Address threats'] },
+      { q: 'NOCLAR response steps', items: ['Obtain an understanding', 'Address the matter with management or TCWG', 'Seek advice', 'Determine whether further action is needed', 'Determine whether to disclose to an appropriate authority', 'Document'] },
+      { q: 'Taking over an audit', items: ['Check ss.139 to 141 compliance', 'Write to the previous auditor', 'Wait for reply and assess professional reasons', 'Accept only if no valid reason exists', 'Generate UDIN on the report'] },
+      { q: 'An ICAI ethics answer', items: ['Provision: clause and its words', 'Facts and analysis, ingredient by ingredient', 'Conclusion naming the clause'] },
+    ],
+  },
+];

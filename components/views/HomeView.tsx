@@ -6,6 +6,7 @@ import { plural } from '@/lib/casebook';
 import { getProgress } from '@/lib/storage';
 import { isDue } from '@/lib/spacedRep';
 import { chapterCards } from '@/lib/formulaCards';
+import Journey from '@/components/Journey';
 
 // Chapter taglines are written with *emphasis* markers for the old design; the page now sets them plain.
 const plain = (t: string) => t.replace(/\*/g, '');
@@ -62,7 +63,6 @@ export default function HomeView() {
         <h1>{plain(meta.tagline)}</h1>
         <p className="lede">{intro}</p>
         {ch.currency && <p className="currency">{ch.currency}</p>}
-        {learn?.levels?.length ? <Link href={`${base}/path`} className="home-path"><b>Start the mastery path</b><span>{learn.levels.length} levels in order, from the big picture to the twisted exam case. Then play the games and the step solver.</span></Link> : null}
         <div className="cta">
           <Link className="btn primary" href={`${base}/drill`}>Start {cn} drill</Link>
           <Link className="btn" href={`${base}/hunt`}>Play {pn} hunt</Link>
@@ -74,6 +74,8 @@ export default function HomeView() {
           <div><dt>Covered</dt><dd>{pct}%</dd></div>
         </dl>
       </section>
+
+      <Journey />
 
       <section className="sec">
         <h2 className="sec-title">Test yourself</h2>

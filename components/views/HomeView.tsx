@@ -22,7 +22,7 @@ export default function HomeView() {
 
   const eyebrow = `${subjectLabel} · Chapter ${ch.number}`;
   const revise = (
-    <ul className="rows">
+    <ul className="rows cards">
       <li><Link href={`${base}/notes`} className="row"><span className="row-t">Notes</span><span className="row-d">Section by section. Tap a point to open it.</span><span className="row-n">{plural(ch.sections.length, 'section')}</span></Link></li>
       <li><Link href={`${base}/flip`} className="row"><span className="row-t">Flip cards</span><span className="row-d">Recall first, then rate yourself. Spaced repetition.</span><span className="row-n">{due ?? '–'} due of {cards.length}</span></Link></li>
       <li><Link href={`${base}/practice`} className="row"><span className="row-t">Written practice</span><span className="row-d">Write a full answer, then mark it against the model.</span><span className="row-n">{plural(ch.practice.length, 'question')}</span></Link></li>
@@ -63,6 +63,11 @@ export default function HomeView() {
         <h1>{plain(meta.tagline)}</h1>
         <p className="lede">{intro}</p>
         {ch.currency && <p className="currency">{ch.currency}</p>}
+      </section>
+
+      <Journey />
+
+      <section className="sec quick">
         <div className="cta">
           <Link className="btn primary" href={`${base}/drill`}>Start {cn} drill</Link>
           <Link className="btn" href={`${base}/hunt`}>Play {pn} hunt</Link>
@@ -75,11 +80,10 @@ export default function HomeView() {
         </dl>
       </section>
 
-      <Journey />
 
       <section className="sec">
         <h2 className="sec-title">Test yourself</h2>
-        <ul className="rows">
+        <ul className="rows cards">
           <li><Link className="row" href={`${base}/drill`}><span className="row-t">{cap(cn)} drill</span><span className="row-d">{meta.verdicts.length ? `Read the facts, call ${meta.verdicts.map(v => v.label).slice(0, 2).join(' or ')}, then compare.` : 'Read the question, frame your answer, then check the model answer.'}</span><span className="row-n">{plural(nCase, cn)}</span></Link></li>
           <li><Link className="row" href={`${base}/hunt`}><span className="row-t">{cap(pn)} hunt</span><span className="row-d">Ten rounds. Spot which {pn} the facts trigger.</span><span className="row-n">Best {S.huntBest} of 10</span></Link></li>
           <li><Link className="row" href={`${base}/mcq`}><span className="row-t">MCQ sprint</span><span className="row-d">Quick objective questions with instant feedback.</span><span className="row-n">{nMcq} questions</span></Link></li>

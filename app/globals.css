@@ -771,3 +771,100 @@ h1, h2, h3 { font-weight: 500; letter-spacing: -.01em }
 .cn-pair { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; font-size: 15px }
 .cn-sym { font-family: var(--mono); font-size: 1.1rem; color: var(--muted) }
 .cn-row p { margin: 6px 0 8px; font-size: 14.5px }
+
+/* =====================================================================
+   v2 polish: subject colour, card layouts, a route that leads the page
+   ===================================================================== */
+/* Each subject recolours the accent, so AAA, AFM and FR feel different at a glance. */
+[data-subj="afm"] { --blue: #3a47a8; --blue-ink: #ffffff; --blue-soft: #e5e8f8 }
+[data-subj="fr"] { --blue: #96520c; --blue-ink: #ffffff; --blue-soft: #f7e9d4 }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-subj="afm"] { --blue: #a3b2ff; --blue-ink: #0f1213; --blue-soft: #1f2442 }
+  :root:not([data-theme="light"]) [data-subj="fr"] { --blue: #eaa762; --blue-ink: #0f1213; --blue-soft: #35260f }
+}
+:root[data-theme="dark"] [data-subj="afm"] { --blue: #a3b2ff; --blue-ink: #0f1213; --blue-soft: #1f2442 }
+:root[data-theme="dark"] [data-subj="fr"] { --blue: #eaa762; --blue-ink: #0f1213; --blue-soft: #35260f }
+.subj-wrap { min-height: 100vh }
+
+body { background: radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, var(--blue) 7%, transparent), transparent 70%), var(--bg) }
+.card, .opt, .lm-opt, .lm-tile { box-shadow: 0 1px 0 rgba(22, 24, 27, .03), 0 6px 18px -10px rgba(22, 24, 27, .22) }
+.btn { border-radius: 12px; font-weight: 700; letter-spacing: -.005em }
+.btn.primary, .btn.pri { box-shadow: 0 8px 18px -10px var(--blue) }
+.page { padding-top: 28px }
+
+/* ---- landing ---- */
+.intro { max-width: 820px; padding-top: 20px }
+.intro h1 { font-weight: 700; letter-spacing: -.025em }
+.subj { margin-top: 44px }
+.subj-h { border-bottom: 0; padding-bottom: 14px; align-items: center }
+.subj-h h2 { font-size: 1.1rem; font-family: var(--mono); font-weight: 600; letter-spacing: .04em; color: var(--blue); background: var(--blue-soft); padding: 4px 12px; border-radius: 999px }
+.subj-h h2 a { color: inherit; min-height: 32px }
+.subj-long { font-size: 15px; font-weight: 600; color: var(--ink) }
+.chlist { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)) }
+.chrow { grid-template-columns: 1fr; gap: 10px; padding: 20px 20px 18px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; border-bottom: 1px solid var(--line); box-shadow: 0 1px 0 rgba(22, 24, 27, .03), 0 12px 28px -18px rgba(22, 24, 27, .35); position: relative; transition: transform var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out), box-shadow var(--t-fast) var(--ease-out); height: 100% }
+.chrow::before { content: ''; position: absolute; left: 0; top: 18px; bottom: 18px; width: 4px; border-radius: 0 4px 4px 0; background: var(--blue) }
+.chrow:hover { transform: translateY(-2px); border-color: var(--blue) }
+.chnum { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--blue); display: flex; align-items: baseline; gap: 6px; letter-spacing: .06em }
+.chnum small { font-size: 11px; text-transform: uppercase; color: var(--muted); font-weight: 600 }
+.chtitle { font-size: 1.2rem; line-height: 1.25; display: block }
+.chgo { position: absolute; right: 18px; top: 18px }
+.newtag { display: inline-block; vertical-align: middle; margin-left: 10px; font-family: var(--sans); font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); background: var(--blue-soft); padding: 3px 8px; border-radius: 999px }
+.chmeta { padding-top: 6px }
+.cp { display: grid; gap: 5px; margin-top: 6px }
+.cp-bar { height: 6px; border-radius: 9px; background: var(--card2); overflow: hidden }
+.cp-bar i { display: block; height: 100%; background: var(--blue); transform-origin: left; transition: transform .6s var(--ease-out) }
+.cp-t { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; min-height: 1.2em }
+
+/* ---- chapter home ---- */
+.chapter-head { padding: 22px 0 6px; max-width: 820px }
+.chapter-head h1 { font-weight: 600; letter-spacing: -.025em }
+.eyebrow { display: inline-block; background: var(--blue-soft); color: var(--blue); padding: 4px 10px; border-radius: 999px; letter-spacing: .08em }
+.quick { margin-top: 26px }
+.stats { display: flex; flex-wrap: wrap; gap: 8px; border-top: 0; margin: 16px 0 0 }
+.stats > div { padding: 8px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; display: flex; align-items: baseline; gap: 8px }
+.stats dt { font-size: 12.5px } .stats dd { margin: 0; font-size: 17px; font-family: var(--sans); font-weight: 700 }
+
+.jy { margin-top: 22px }
+.jy-next { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "k k" "b go" "w go"; gap: 2px 16px; align-items: center; text-decoration: none; color: var(--blue-ink); background: var(--blue); border-radius: 18px; padding: 20px 22px; margin-bottom: 22px; box-shadow: 0 18px 34px -20px var(--blue); position: relative; overflow: hidden }
+.jy-next::after { content: ''; position: absolute; right: -40px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: color-mix(in srgb, var(--blue-ink) 12%, transparent) }
+.jy-next-k { grid-area: k; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .8 }
+.jy-next b { grid-area: b; font-family: var(--disp); font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 600; line-height: 1.1 }
+.jy-next > span:nth-of-type(2) { grid-area: w; font-size: 15px; opacity: .9 }
+.jy-next-go { grid-area: go; position: relative; z-index: 1; background: var(--blue-ink); color: var(--blue); font-weight: 800; padding: 12px 20px; border-radius: 999px; display: inline-flex; gap: 8px; align-items: center }
+.jy-next:hover .jy-next-go i { transform: translateX(3px) }
+.jy-next-go i { font-style: normal; transition: transform var(--t-fast) var(--ease-out) }
+.jy-st a { border-radius: 14px; padding: 14px; gap: 8px 12px; box-shadow: 0 8px 20px -16px rgba(22, 24, 27, .4) }
+.jy-st.next a { background: var(--card); border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-soft) }
+.jy-st.done .jy-p i { background: var(--n) }
+.jy-p { height: 6px }
+@media (max-width: 560px) { .jy-next { grid-template-columns: 1fr; grid-template-areas: "k" "b" "w" "go" } .jy-next-go { justify-self: start; margin-top: 10px } }
+
+.rows.cards { border-top: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 12px }
+.rows.cards li { border: 0 }
+.rows.cards .row { height: 100%; padding: 16px 16px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; grid-template-columns: 1fr; grid-template-areas: "t" "d" "n"; row-gap: 6px; box-shadow: 0 8px 20px -16px rgba(22, 24, 27, .4); align-content: start }
+.rows.cards .row:hover { border-color: var(--blue); transform: translateY(-2px) }
+.rows.cards .row-t { font-size: 1.1rem }
+.rows.cards .row:hover .row-t { text-decoration: none; color: var(--blue) }
+.rows.cards .row-n { color: var(--blue); font-weight: 700; font-size: 13px }
+.sec-title { font-weight: 600 }
+
+/* ---- top bar and nav ---- */
+.topbar { box-shadow: 0 1px 0 var(--line), 0 10px 24px -22px rgba(22, 24, 27, .5) }
+.dlink[aria-current="page"] { color: var(--blue); border-bottom-width: 3px }
+.dgroup-l { color: var(--blue) }
+.bitem[aria-current="page"] { color: var(--blue) }
+.seal { border-color: var(--blue); color: var(--blue); background: var(--blue-soft) }
+
+/* ---- mastery screens ---- */
+.lm-head h1 { font-weight: 600; letter-spacing: -.02em }
+.lm-lv.next .lm-n { background: var(--blue); color: var(--blue-ink); border-color: var(--blue) }
+.lm-opt:hover:not(:disabled), .lm-tile:hover:not(:disabled) { transform: translateY(-1px) }
+.lm-big { color: var(--blue) }
+.seg button.on { background: var(--blue); border-color: var(--blue); color: var(--blue-ink) }
+.vz-branch { box-shadow: 0 8px 20px -16px rgba(22, 24, 27, .4) }
+.vz-branch h3 { display: flex; align-items: center; gap: 8px }
+@media (max-width: 560px) {
+  .jy-st a { grid-template-columns: 34px minmax(0, 1fr); grid-template-areas: "n t" "p p" "s s" }
+  .jy-s { text-align: left }
+}
+.chlist li { border: 0 }

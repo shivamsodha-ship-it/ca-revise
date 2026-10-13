@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { listChapters } from '@/lib/registry';
 import ViewSwitch from '@/components/ViewSwitch';
 
-const VIEWS = ['drill', 'hunt', 'mcq', 'library', 'cheat', 'formulas', 'notes', 'read', 'flip', 'practice'];
+const VIEWS = ['vision', 'path', 'compare', 'connect', 'memory', 'solve', 'games', 'drill', 'hunt', 'mcq', 'library', 'cheat', 'formulas', 'notes', 'read', 'flip', 'practice'];
 
 export const dynamicParams = false;
 export function generateStaticParams() {

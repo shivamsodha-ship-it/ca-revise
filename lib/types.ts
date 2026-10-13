@@ -1,4 +1,5 @@
 import type { Casebook } from './casebook';
+import type { LearnData } from './learnData';
 
 export type Subject = 'aaa' | 'fr' | 'afm';
 
@@ -72,4 +73,6 @@ export interface ChapterIndexRow {
   loader: () => Promise<Chapter>;
   // Optional casebook: case drills, clause hunt, MCQs, law library, cheat sheet
   casebook?: () => Promise<Casebook>;
+  // Optional mastery layer: learning path, comparison, games and step solvers
+  learn?: () => Promise<LearnData>;
 }

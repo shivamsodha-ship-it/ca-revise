@@ -10,13 +10,20 @@ import FormulaView from '@/components/views/FormulaView';
 import NotesView from '@/components/views/NotesView';
 import FlipView from '@/components/views/FlipView';
 import PracticeView from '@/components/views/PracticeView';
+import PathView from '@/components/views/PathView';
+import CompareView from '@/components/views/CompareView';
+import GamesView from '@/components/views/GamesView';
+import SolveView from '@/components/views/SolveView';
+import VisionView from '@/components/views/VisionView';
+import MemoryView from '@/components/views/MemoryView';
+import ConnectView from '@/components/views/ConnectView';
 
-const CASEBOOK: Record<string, () => JSX.Element | null> = { drill: DrillView, hunt: HuntView, mcq: McqView, library: LibraryView, cheat: CheatView, formulas: FormulaView };
-const CORE: Record<string, () => JSX.Element | null> = { notes: NotesView, read: NotesView, flip: FlipView, practice: PracticeView };
+const CASEBOOK: Record<string, () => JSX.Element | null> = { games: GamesView, memory: MemoryView, drill: DrillView, hunt: HuntView, mcq: McqView, library: LibraryView, cheat: CheatView, formulas: FormulaView };
+const CORE: Record<string, () => JSX.Element | null> = { path: PathView, compare: CompareView, vision: VisionView, connect: ConnectView, solve: SolveView, notes: NotesView, read: NotesView, flip: FlipView, practice: PracticeView };
 
 export default function ViewSwitch({ view }: { view: string }) {
-  const { cb, base } = useChapter();
-  const V = CORE[view] ?? (cb ? CASEBOOK[view] : undefined);
+  const { cb, base, learn } = useChapter();
+  const V = ['path', 'compare', 'solve', 'vision', 'connect'].includes(view) && !learn ? undefined : CORE[view] ?? (cb ? CASEBOOK[view] : undefined);
   if (!V) return (
     <div className="empty">
       <h1>Not in this chapter yet</h1>

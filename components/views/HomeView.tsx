@@ -6,12 +6,13 @@ import { plural } from '@/lib/casebook';
 import { getProgress } from '@/lib/storage';
 import { isDue } from '@/lib/spacedRep';
 import { chapterCards } from '@/lib/formulaCards';
+import Journey from '@/components/Journey';
 
 // Chapter taglines are written with *emphasis* markers for the old design; the page now sets them plain.
 const plain = (t: string) => t.replace(/\*/g, '');
 
 export default function HomeView() {
-  const { cb, meta, ch, base, S, subjectLabel, provStats } = useChapter();
+  const { cb, meta, ch, base, S, subjectLabel, provStats, learn } = useChapter();
   const cards = useMemo(() => chapterCards(ch, cb), [ch, cb]);
   const [due, setDue] = useState<number | null>(null);
   useEffect(() => {
@@ -73,6 +74,8 @@ export default function HomeView() {
           <div><dt>Covered</dt><dd>{pct}%</dd></div>
         </dl>
       </section>
+
+      <Journey />
 
       <section className="sec">
         <h2 className="sec-title">Test yourself</h2>

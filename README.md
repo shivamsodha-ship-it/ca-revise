@@ -157,3 +157,18 @@ Core modes — every chapter (from the chapter JSON):
 ## Attribution
 
 Built for personal revision — Ss (shivam.sodha@gmail.com). Not for redistribution.
+
+## Mastery layer (path, compare, games, step solver)
+
+Optional per chapter: `data/<subject>/chNN-learn.json`, registered with a `learn:` loader in `lib/registry.ts`.
+Shapes are in `lib/learnData.ts`; views are `components/views/{Path,Compare,Games,Solve}View.tsx`.
+Adds four menu items (Mastery path, a side-by-side compare, Games, Step solver) and a floating scratch pad (Jotter).
+Progress is stored per chapter (`ca-revise:v1:learn:<id>`) and synced like everything else.
+
+- **Levels**: sequential lessons (teach blocks, a picture table, how it connects, recall check, "twist").
+- **Compare**: rows plus a "which is which" sorter.
+- **Games**: `match`, `sort` and `order` types, all data-driven.
+- **Step solver**: each numerical is cut into small steps with round numbers, plus twisted versions.
+
+Ch 14 is generated from `scripts/learn-src/ch14-*.mjs`: `node scripts/build-learn.mjs aaa-ch14` (recomputes every solver
+figure before writing) and `node scripts/merge-ch14-additions.mjs` (CFA-style and one-line questions, with a figure check).

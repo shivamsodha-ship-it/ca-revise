@@ -878,7 +878,7 @@
      "back": {
       "simplified": "Total value = bonds + units × NAV; reset both halves to the fixed ratio — buy units after a fall, sell after a rise.",
       "cases": [
-       "SM TYK Sunidhi: ending ₹2,40,647.55 vs buy-and-hold ₹2,60,000"
+       "SM TYK Sunidhi: ending ₹2,40,647.55 vs buy-and-hold ₹2,30,000 by the formula ₹1,00,000 + 2,500 × ₹52 (the source as transcribed prints ₹2,60,000: unresolved, check the SM)"
       ],
       "trap": "ICAI checks each month's NAV against the previous month (32 → 38 = +18.75% triggers a sale)."
      }
@@ -904,7 +904,7 @@
      ],
      "front": "When does a constant ratio plan beat buy-and-hold, and when does it lose?",
      "back": {
-      "simplified": "It wins in a choppy market that ends near where it started (it keeps selling high, buying low). It loses in a strong one-way rise, because it keeps selling the winner (SM: ₹2,40,647.55 vs ₹2,60,000)."
+      "simplified": "It wins in a choppy market that ends near where it started (it keeps selling high, buying low). It loses in a strong one-way rise, because it keeps selling the winner. For the SM's Sunidhi sequence compare the two end values yourself: ₹2,40,647.55 against ₹1,00,000 + 2,500 × ₹52 = ₹2,30,000 (the source as transcribed prints ₹2,60,000: unresolved)."
      }
     }
    ]

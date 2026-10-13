@@ -114,3 +114,13 @@ this pass before sign-off:
    `label`s (the short chip/tile code) running well past the 24-character limit the schema sets —
    fixed by shortening every offending label chapter-wide (35 provisions affected, not just the new
    "Beyond the SM" group).
+
+## Mastery build (added)
+
+- **Mastery path**: 15 sequential levels (bank side 1 to 10, NBFC side 11 to 14, bank vs NBFC and Nov 2026 updates in 15), 75 recall checks.
+- **Bank vs NBFC**: 19-row comparison and a 19-statement "which is which" sorter.
+- **Games**: 8 (three match-ups, layer sorter, asset-category sorter, report sorter, as-written-or-twisted, ordering puzzles).
+- **Step solvers**: 10 problems, 32 versions (base case plus twists), all figures recomputed by `scripts/build-learn.mjs`.
+- **New questions**: 8 CFA-style (kind `cfa`) and 12 built from single SM lines (kind `line`), all app-written and labelled so.
+  CFA-style items are original questions in that style, not CFA Institute material.
+- Beyond-SM content (SMA bands, bank 12-month doubtful clock, CET1/AT1/leverage, LCR, ECL vs IRAC and the Impairment Reserve) is labelled "Beyond the SM" in the text; check current RBI wording before quoting.

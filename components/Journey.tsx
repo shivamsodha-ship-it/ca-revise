@@ -47,6 +47,12 @@ export default function Journey() {
   const next = stages.find(s => s.pct < (s.id === 'learn' ? 100 : 80)) ?? stages[stages.length - 1];
   return (
     <section className="jy" aria-label="Study journey">
+      <Link href={next.href} className="jy-next">
+        <span className="jy-next-k">Next up · Step {next.n} of {stages.length}</span>
+        <b>{next.name}</b>
+        <span>{next.what}</span>
+        <span className="jy-next-go">Go <i aria-hidden="true">→</i></span>
+      </Link>
       <div className="sec-h"><h2 className="sec-title">Your route through this chapter</h2><span className="muted">Vision first, mastery last</span></div>
       <ol className="jy-list">
         {stages.map(s => (

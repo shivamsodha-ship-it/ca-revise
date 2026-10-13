@@ -219,6 +219,7 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
 
   return (
     <C.Provider value={ctx}>
+      <div data-subj={subject} className="subj-wrap">
       <header className="topbar">
         <div className="topbar-in">
           <Link href="/" className="brand" aria-label="CA Revise home"><span className="seal">CA</span></Link>
@@ -264,6 +265,7 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
       <Jotter chapterId={chapterId} />
       {drawerId && P[drawerId] && drawer(P[drawerId])}
       {toastMsg && <div className="toast" role="status">{toastMsg}</div>}
+      </div>
     </C.Provider>
   );
 

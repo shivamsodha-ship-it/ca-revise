@@ -7,6 +7,8 @@ import { EMPTY_STATE, loadCaseState, saveCaseState, type CaseState } from '@/lib
 import type { Chapter, Subject } from '@/lib/types';
 import { PENDING_DRILL } from '@/lib/weak';
 import { SYNCED_EVENT } from '@/lib/sync';
+import type { LearnData } from '@/lib/learnData';
+import Jotter from '@/components/Jotter';
 
 export interface DrillOpts { clause?: string | null; focus?: string; missed?: boolean }
 
@@ -17,6 +19,7 @@ interface Ctx {
   base: string;
   ch: Chapter;
   cb: Casebook | null;
+  learn: LearnData | null;
   meta: ReturnType<typeof metaOf> | null;
   P: Record<string, Provision>;
   Q: Record<string, Question>;
@@ -38,12 +41,16 @@ export function useChapter() {
   return c;
 }
 
-export interface ViewDef { id: string; label: string; group: 'test' | 'revise'; blurb: string }
+export interface ViewDef { id: string; label: string; group: 'learn' | 'test' | 'revise'; blurb: string }
 
 // Every mode a chapter can have. Casebook modes appear only when the chapter has a casebook.
-export function viewsFor(cb: Casebook | null): ViewDef[] {
+export function viewsFor(cb: Casebook | null, learn: LearnData | null = null): ViewDef[] {
   const m = cb ? metaOf(cb) : null;
   const all: (ViewDef & { casebook?: boolean })[] = [
+    { id: 'path', label: 'Mastery path', group: 'learn', blurb: 'Learn it level by level, then prove it' },
+    { id: 'compare', label: learn?.compare?.title ?? 'Compare', group: 'learn', blurb: 'Side by side, so nothing gets mixed up' },
+    { id: 'solve', label: 'Step solver', group: 'test', blurb: 'Numericals in small steps, no calculator' },
+    { id: 'games', label: 'Games', group: 'test', blurb: 'Match, sort and order to lock it in' },
     { id: 'drill', label: cap(m?.caseNoun ?? 'case') + 's', group: 'test', blurb: m?.verdicts.length ? 'Read the facts and give your ruling' : 'Answer, then check the model answer', casebook: true },
     { id: 'hunt', label: cap(m?.provisionNoun ?? 'provision') + ' hunt', group: 'test', blurb: '10 rounds: spot the provision', casebook: true },
     { id: 'mcq', label: 'MCQs', group: 'test', blurb: 'Quick objective questions', casebook: true },
@@ -54,13 +61,19 @@ export function viewsFor(cb: Casebook | null): ViewDef[] {
     { id: 'cheat', label: 'Cheat sheet', group: 'revise', blurb: 'Numbers and fact triggers', casebook: true },
     { id: 'formulas', label: 'Formulas', group: 'revise', blurb: 'Master formulas, how each is derived, and why', casebook: true },
   ];
-  return all.filter(v => (cb || !v.casebook) && (v.id !== 'formulas' || (cb?.formulas?.length ?? 0) > 0));
+  const has: Record<string, boolean> = {
+    path: !!learn?.levels?.length, compare: !!learn?.compare, solve: !!learn?.solves?.length, games: !!learn?.games?.length,
+    formulas: (cb?.formulas?.length ?? 0) > 0,
+  };
+  return all.filter(v => (cb || !v.casebook) && (v.id in has ? has[v.id] : true));
 }
 
 const FIRE = (
   <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2c1 3.5-1.5 5-1.5 7.5 0 1.4 1 2.5 2.3 2.5 1.6 0 2.7-1.4 2.2-3.6C17.7 10 19 12.6 19 15a7 7 0 1 1-14 0c0-4.6 4.4-7.1 7-13z" /></svg>
 );
 const ICON: Record<string, JSX.Element> = {
+  path: <path d="M5 19c0-4 4-3 7-6s0-6 3-8M5 19h.01M17 5h.01" />,
+  games: <path d="M4 9h16v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM8 12v4M6 14h4M15 13h.01M18 15h.01M9 9l1-4h4l1 4" />,
   home: <path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z" />,
   drill: <path d="M5 4h10l4 4v12H5zM14 4v5h5M8 13h8M8 17h6" />,
   notes: <path d="M6 3h9l3 3v15H6zM9 9h6M9 13h6M9 17h4" />,
@@ -73,8 +86,8 @@ const Icon = ({ name }: { name: string }) => (
   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth={name === 'more' ? 3.2 : 1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{ICON[name]}</svg>
 );
 
-export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb, children }: {
-  subject: Subject; subjectLabel: string; chapterId: string; ch: Chapter; cb: Casebook | null; children: React.ReactNode;
+export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb, learn, children }: {
+  subject: Subject; subjectLabel: string; chapterId: string; ch: Chapter; cb: Casebook | null; learn: LearnData | null; children: React.ReactNode;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -134,7 +147,7 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
   const P = useMemo(() => Object.fromEntries((cb?.P ?? []).map(p => [p.id, p])), [cb]);
   const Q = useMemo(() => Object.fromEntries((cb?.Q ?? []).map(q => [q.id, q])), [cb]);
   const meta = useMemo(() => (cb ? metaOf(cb) : null), [cb]);
-  const views = useMemo(() => viewsFor(cb), [cb]);
+  const views = useMemo(() => viewsFor(cb, learn), [cb, learn]);
 
   const provStats = useCallback((pid: string) => {
     const qs = P[pid]?.qs ?? [];
@@ -192,12 +205,12 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
   const aria = (v: string) => (current === v ? { 'aria-current': 'page' as const } : {});
 
   // Phone bottom bar: four direct destinations + More.
-  const primary = cb ? ['home', 'drill', 'notes', 'library'] : ['home', 'notes', 'flip', 'practice'];
+  const primary = learn?.levels?.length ? ['home', 'path', 'drill', 'games'] : cb ? ['home', 'drill', 'notes', 'library'] : ['home', 'notes', 'flip', 'practice'];
   const labelOf = (v: string) => (v === 'home' ? 'Home' : views.find(x => x.id === v)?.label ?? v);
   const moreViews = views.filter(v => !primary.includes(v.id));
   const moreActive = moreViews.some(v => v.id === current);
 
-  const ctx: Ctx = { subject, subjectLabel, chapterId, base, ch, cb, meta, P, Q, S, record, setHuntBest, setLast, provStats, toast, openP, go, drillReq, views };
+  const ctx: Ctx = { subject, subjectLabel, chapterId, base, ch, cb, learn, meta, P, Q, S, record, setHuntBest, setLast, provStats, toast, openP, go, drillReq, views };
 
   return (
     <C.Provider value={ctx}>
@@ -212,9 +225,9 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
         <nav className="deskbar" aria-label="Chapter sections">
           <div className="deskbar-in">
             <Link href={base} className="dlink" {...aria('home')}>Overview</Link>
-            {(['test', 'revise'] as const).map(g => (
+            {(['learn', 'test', 'revise'] as const).map(g => views.some(v => v.group === g) && (
               <div key={g} className="dgroup">
-                <span className="dgroup-l">{g === 'test' ? 'Test yourself' : 'Revise'}</span>
+                <span className="dgroup-l">{g === 'learn' ? 'Master it' : g === 'test' ? 'Test yourself' : 'Revise'}</span>
                 {views.filter(v => v.group === g).map(v => <Link key={v.id} href={href(v.id)} className="dlink" {...aria(v.id)}>{v.label}</Link>)}
               </div>
             ))}
@@ -243,6 +256,7 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
         </div>
       )}
 
+      <Jotter chapterId={chapterId} />
       {drawerId && P[drawerId] && drawer(P[drawerId])}
       {toastMsg && <div className="toast" role="status">{toastMsg}</div>}
     </C.Provider>

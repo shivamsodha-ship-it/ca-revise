@@ -4,6 +4,7 @@
 // using timestamps stored inside the values, so an offline phone and the laptop never overwrite each other.
 import type { CaseState } from './progress';
 import type { CardProgress } from './spacedRep';
+import { mergeLearn, type LearnState } from './learnData';
 
 export const KEY_PREFIX = 'ca-revise:v1:';
 
@@ -17,7 +18,7 @@ export function isSyncKey(key: string): boolean {
   if (rest === 'streak') return true;
   const [kind, id] = rest.split(/:(.+)/);
   if (!id) return false;
-  if (kind === 'case' || kind === 'prog' || kind === 'prac') return CHAPTER.test(id);
+  if (kind === 'case' || kind === 'prog' || kind === 'prac' || kind === 'learn') return CHAPTER.test(id);
   if (kind === 'lastday') return SUBJECTS.includes(id);
   return false;
 }
@@ -90,6 +91,7 @@ export function mergeValue(key: string, a: unknown, b: unknown): unknown {
     if (kind === 'case') return mergeCase(a as CaseState, b as CaseState);
     if (kind === 'prog') return mergeProg(a as Record<string, CardProgress>, b as Record<string, CardProgress>);
     if (kind === 'prac') return mergePrac(a as PracticeAttempt[], b as PracticeAttempt[]);
+    if (kind === 'learn') return mergeLearn(a as LearnState, b as LearnState);
     if (kind === 'lastday') return mergeLastDay(a as LastDayState, b as LastDayState);
   } catch {}
   return b;

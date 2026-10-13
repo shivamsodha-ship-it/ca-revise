@@ -1,6 +1,7 @@
 import type { Chapter, ChapterIndexRow, Subject } from './types';
 import type { Casebook } from './casebook';
 import { formulaCards } from './formulaCards';
+import type { LearnData } from './learnData';
 
 // Subjects shown on the home page, in this order.
 export const SUBJECTS: { id: Subject; label: string; long: string }[] = [
@@ -47,6 +48,7 @@ const registry: ChapterIndexRow[] = [
     summary: 'Bank audit · CRR/SLR/DTL · NPA & provisioning · CRAR · LFAR · concurrent audit · NBFC layers, prudential norms & CARO',
     loader: async () => (await import('../data/aaa/ch14-special-features-of-audit-of-banks-and-non-banking-financial-companies.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/aaa/ch14-casebook.json')).default as unknown as Casebook,
+    learn: async () => (await import('../data/aaa/ch14-learn.json')).default as unknown as LearnData,
   },
   // @chapters-end
 ];

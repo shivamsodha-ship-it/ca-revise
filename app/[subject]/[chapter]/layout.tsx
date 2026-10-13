@@ -12,8 +12,8 @@ export default async function ChapterLayout({ params, children }: { params: { su
   const row = findChapter(params.chapter);
   const subj = subjectOf(params.subject);
   if (!row || !subj || row.subject !== subj.id) notFound();
-  const [ch, cb] = await Promise.all([row.loader(), row.casebook ? row.casebook() : null]);
-  return <ChapterShell subject={subj.id} subjectLabel={subj.label} chapterId={row.id} ch={ch} cb={cb}>{children}</ChapterShell>;
+  const [ch, cb, learn] = await Promise.all([row.loader(), row.casebook ? row.casebook() : null, row.learn ? row.learn() : null]);
+  return <ChapterShell subject={subj.id} subjectLabel={subj.label} chapterId={row.id} ch={ch} cb={cb} learn={learn}>{children}</ChapterShell>;
 }
 
 export async function generateMetadata({ params }: { params: { chapter: string } }) {

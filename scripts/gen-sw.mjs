@@ -9,7 +9,7 @@ const root = path.dirname(path.dirname(new URL(import.meta.url).pathname));
 const reg = fs.readFileSync(path.join(root, 'lib', 'registry.ts'), 'utf8');
 const chapters = [...reg.matchAll(/id: '([a-z]+)-ch(\d+)'/g)].map(m => ({ subject: m[1], id: `${m[1]}-ch${m[2]}` }));
 const subjects = [...new Set(chapters.map(c => c.subject))];
-const VIEWS = ['', 'drill', 'hunt', 'mcq', 'flip', 'practice', 'notes', 'library', 'cheat', 'formulas'];
+const VIEWS = ['', 'path', 'compare', 'solve', 'games', 'drill', 'hunt', 'mcq', 'flip', 'practice', 'notes', 'library', 'cheat', 'formulas'];
 
 const urls = ['/', '/weak', '/account', ...subjects.flatMap(s => [`/${s}`, `/${s}/formulas`, `/${s}/last-day`]),
   ...chapters.flatMap(c => VIEWS.map(v => `/${c.subject}/${c.id}${v ? '/' + v : ''}`))];

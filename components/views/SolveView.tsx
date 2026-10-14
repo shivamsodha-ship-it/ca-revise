@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { checkNum, fmtNum } from '@/lib/numcheck';
 import { useLearnState, type Solve } from '@/lib/learn';
+import { HBlock as H, RunHead } from '@/components/learn/ui';
 
-const H = ({ html, className }: { html: string; className?: string }) => <div className={className} dangerouslySetInnerHTML={{ __html: html }} />;
 
 export default function SolveView() {
   const { learn, chapterId, P } = useChapter();
@@ -82,8 +82,7 @@ function Solver({ s, onBack, bump, L, P }: { s: Solve; onBack: () => void; bump:
 
       {cur ? (
         <div className="card lm-card">
-          <div className="lm-prog"><span>Step {step + 1} of {total}</span><span>{right} right</span></div>
-          <div className="track"><i style={{ transform: `scaleX(${step / total})` }} /></div>
+          <RunHead left={`Step ${step + 1} of ${total}`} right={`${right} right`} frac={step / total} />
           <p className="lm-q"><H html={cur.ask} className="inl" /></p>
           {cur.kind === 'num' && res === null && (
             <form className="lm-num" onSubmit={e => { e.preventDefault(); submit(); }}>

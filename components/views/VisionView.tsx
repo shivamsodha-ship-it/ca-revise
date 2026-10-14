@@ -1,8 +1,8 @@
 'use client';
 import { useChapter } from '@/components/ChapterShell';
 import { useLearnState } from '@/lib/learn';
+import { HBlock as H } from '@/components/learn/ui';
 
-const H = ({ html, className }: { html: string; className?: string }) => <div className={className} dangerouslySetInnerHTML={{ __html: html }} />;
 const STYLE = { numerical: 'Mostly numerical', theory: 'Mostly theory and cases', mixed: 'Numerical and theory' } as const;
 
 export default function VisionView() {

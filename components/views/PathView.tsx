@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { RecallRun } from '@/components/learn/Recall';
 import { LEVEL_PASS, useLearnState } from '@/lib/learn';
+import { HBlock as H } from '@/components/learn/ui';
 
-const H = ({ html, className }: { html: string; className?: string }) => <div className={className} dangerouslySetInnerHTML={{ __html: html }} />;
 
 export default function PathView() {
   const { learn, chapterId, P, ch } = useChapter();

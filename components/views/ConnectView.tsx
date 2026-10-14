@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { shuffle } from '@/lib/casebook';
 import { useLearnState, type ConnectLink, type LinkKind } from '@/lib/learn';
+import { H, RunHead } from '@/components/learn/ui';
 
 const KIND: Record<LinkKind, { sym: string; label: string; verb: string }> = {
   contrast: { sym: '⇄', label: 'Contrast', verb: 'is the opposite or counterpart of' },
@@ -10,7 +11,6 @@ const KIND: Record<LinkKind, { sym: string; label: string; verb: string }> = {
   leads: { sym: '→', label: 'Leads to', verb: 'leads on to' },
   cross: { sym: '⟷', label: 'Across chapters', verb: 'connects with' },
 };
-const H = ({ html }: { html: string }) => <span dangerouslySetInnerHTML={{ __html: html }} />;
 
 export default function ConnectView() {
   const { learn, chapterId, P } = useChapter();
@@ -63,8 +63,7 @@ export default function ConnectView() {
       {mode === 'quiz' && (
         <div className="card lm-card">
           {cur ? <>
-            <div className="lm-prog"><span>Link {i + 1} of {qs.length}</span><span>{score} right</span></div>
-            <div className="track"><i style={{ transform: `scaleX(${i / qs.length})` }} /></div>
+            <RunHead left={`Link ${i + 1} of ${qs.length}`} right={`${score} right`} frac={i / qs.length} />
             <p className="lm-q"><b>{cur.l.a}</b> <span className="muted">{KIND[cur.l.kind].verb}</span> …?</p>
             <div className="lm-opts">{cur.opts.map((o, k) => {
               const cls = pick === null ? '' : o === cur.l.b ? 'right' : o === pick ? 'wrong' : '';

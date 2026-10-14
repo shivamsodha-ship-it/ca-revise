@@ -1,57 +1,909 @@
 {
-  "id": "fr-ch13",
-  "subject": "fr",
-  "number": 13,
-  "title": "Consolidated and Separate Financial Statements",
-  "summary": "One-line summary",
-  "currency": "Optional Nov 2026 flag — e.g. 'Revised SA XXX from 1.4.2026'",
-  "sections": [
+ "id": "fr-ch13",
+ "subject": "fr",
+ "number": 13,
+ "title": "Consolidated and Separate Financial Statements",
+ "summary": "Control (Ind AS 110) · consolidation procedure, NCI, intra-group, ownership changes, loss of control · joint arrangements (Ind AS 111) · equity method (Ind AS 28) · separate FS (Ind AS 27) · Ind AS 112",
+ "weight": 12,
+ "currency": "SM May 2026 onwards (Nov 2024 ed., Aug 2025 reprint) · questions swept May 2022 – Nov 2026 RTP/MTP",
+ "sections": [
+  {
+   "id": "s-a",
+   "title": "Scope and exemption",
+   "emoji": "📖",
+   "cards": [
     {
-      "id": "sec1",
-      "title": "Section Title",
-      "emoji": "📖",
-      "cards": [
-        {
-          "id": "c1",
-          "type": "concept",
-          "tags": [
-            "Tag1",
-            "Tag2"
-          ],
-          "front": "Front of the card (the prompt)",
-          "back": {
-            "bareText": "Optional — exact statutory / SA text (for clauses)",
-            "simplified": "Plain words explanation",
-            "exception": "Optional — exceptions carved out by the rule",
-            "explanation": "Optional — extended explanation, cross-refs to other sections/standards",
-            "trap": "Optional — common exam trap / student mistake",
-            "cases": [
-              "Optional — case law or past-paper reference"
-            ],
-            "cross": [
-              "Optional cross-refs — e.g. 'Sec 141(3) CA 2013', 'SA 705'"
-            ]
-          }
-        }
+     "id": "c-cfs-scope",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.4",
+      "Low"
+     ],
+     "front": "Who must consolidate, the exemption and exceptions: what is the rule?",
+     "back": {
+      "simplified": "A parent presents consolidated financial statements. Exemption (para 4(a)) — all of: (i) it is a wholly or partly owned subsidiary and all owners are informed and do not object; (ii) its debt or equity is not traded in a public market; (iii) it has not filed, and is not filing, financial statements with a regulator to issue instruments in a public market; (iv) its ultimate or intermediate parent produces Ind AS consolidated statements available for public use. Exceptions : post-employment and long-term employee benefit plans (Ind AS 19) are not consolidated; an investment entity measuring all subsidiaries at FVTPL need not consolidate.",
+      "explanation": "Indian GAAP exclusions for temporary control and severe long-term restrictions do not exist under Ind AS 110. Gratuity trust: accounted under Ind AS 19, not consolidated (SM Example 1).",
+      "cases": [
+       "Gratuity trust: accounted under Ind AS 19, not consolidated (SM Example 1)."
       ]
-    }
-  ],
-  "practice": [
+     }
+    },
     {
-      "id": "q1",
-      "prompt": "The scenario / question as posed by ICAI",
-      "clauseRef": "e.g. Cl 11 Part I 1st Sch · Reg 190A",
-      "hints": [
-        "Hint 1 — pointer without the answer",
-        "Hint 2"
-      ],
-      "modelAnswer": "Step 1 — CITE: ...\nStep 2 — RULE: ...\nStep 3 — APPLY: ...\nStep 4 — CONCLUDE: ...",
-      "markingPoints": [
-        "Cites the correct clause with full name",
-        "Names the applicable Regulation",
-        "Applies to the specific facts",
-        "Reaches the correct conclusion (guilty / not guilty)"
-      ]
+     "id": "c-cfs-scope-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 110.4",
+      "Low"
+     ],
+     "front": "Memory hook: Scope, exemption from consolidation?",
+     "back": {
+      "simplified": "Exempt only if all four: owners don't object, not listed, not filing, parent publishes Ind AS consolidated FS."
+     }
     }
-  ]
+   ]
+  },
+  {
+   "id": "s-b",
+   "title": "Control",
+   "emoji": "🤝",
+   "cards": [
+    {
+     "id": "c-cfs-control",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.7, B2",
+      "High"
+     ],
+     "front": "Control: the three elements: what is the rule?",
+     "back": {
+      "simplified": "An investor controls an investee if and only if it has all three: (a) power over the investee; (b) exposure, or rights, to variable returns from its involvement; and (c) the ability to use its power to affect the amount of its returns . Reassess when facts indicate a change in any element. Only one investor can control an investee; if control is shared or absent, apply Ind AS 111, 28 or 109.",
+      "explanation": "Control under Ind AS 110 is principle-based; AS 21 used quantitative tests (more than half the votes or control of the board) and could give two parents. Five parties each 20% with decisions needing any four of five → power shared, no one controls, not joint control either (SM Example 2).",
+      "cases": [
+       "Five parties each 20% with decisions needing any four of five → power shared, no one controls, not joint control either (SM Example 2)."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-control-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 110.7, B2",
+      "High"
+     ],
+     "front": "Memory hook: Control = power + returns + link?",
+     "back": {
+      "simplified": "Control = P-R-L: Power, Returns, Link."
+     }
+    },
+    {
+     "id": "c-cfs-power",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.10–14, B11–B13",
+      "Low"
+     ],
+     "front": "Power: existing rights, current ability, relevant activities: what is the rule?",
+     "back": {
+      "simplified": "Power = existing rights that give the current ability to direct the relevant activities (activities that significantly affect the investee's returns — selling and buying, managing financial assets, acquiring/disposing assets, R&D, funding, budgets, appointing key management). When different investors direct different relevant activities, the one directing the activities that most significantly affect returns has power. Current ability exists even if not exercised, and where decisions arise only on particular events.",
+      "explanation": "Rights giving power: voting/potential voting rights; rights to appoint or remove key management or the entity that directs; rights to direct or veto transactions; management contracts. SM Illustrations 3–5 (different investors directing different activities).",
+      "cases": [
+       "SM Illustrations 3–5 (different investors directing different activities)."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-rights",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.B22–B28",
+      "Low"
+     ],
+     "front": "Substantive vs protective rights: what is the rule?",
+     "back": {
+      "simplified": "Only substantive rights count: the holder must have the practical ability to exercise them (no barriers such as penalties, high exercise price, narrow timing, no mechanism, no information, operational or legal barriers; a mechanism for collective exercise; the holder benefits from exercise). Usually currently exercisable, but a right exercisable before decisions must be taken can be substantive (option to go from 30% to 70% exercisable in 25 days when the meeting is in 30 days). Protective rights protect the holder's interest without giving power — fundamental changes or exceptional circumstances (lender's rights on default, minority approval of extraordinary capex or new issues, approval of",
+      "explanation": "Investor substantive + others protective → investor has power; investor protective + others substantive → others have power; both substantive → evaluate further. A lender's nominee director is protective only if it does not give board majority.",
+      "cases": [
+       "SM Illustrations 6–9."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-rights-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 110.B22–B28",
+      "Low"
+     ],
+     "front": "Memory hook: Substantive vs protective rights?",
+     "back": {
+      "simplified": "Substantive = can and would exercise in time. Protective = only guards, never directs."
+     }
+    },
+    {
+     "id": "c-cfs-voting",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.B34–B50",
+      "Medium"
+     ],
+     "front": "Power through voting rights, de facto control and potential voting rights: what is the rule?",
+     "back": {
+      "simplified": "A majority of voting rights gives power where relevant activities are directed by majority vote or a majority appoints the governing body (unless rights are not substantive or another party has the right to direct). Power without a majority : contractual arrangement with other vote holders; rights from other contracts; the investor's own holding being sufficient ( de facto control — size relative to the size and dispersion of other holdings, number of parties needed to outvote); potential voting rights if substantive; or a combination. If still unclear, consider voting patterns at previous meetings; if still unclear, no control.",
+      "explanation": "Economic dependence alone (supplier on its main customer) does not give power. SM Illustrations 10–13 (45% with widely dispersed holders; voting patterns).",
+      "cases": [
+       "SM Illustrations 10–13 (45% with widely dispersed holders; voting patterns)."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-returns-agent",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.15–18, B55–B72",
+      "Low"
+     ],
+     "front": "Variable returns, principal vs agent, de facto agents: what is the rule?",
+     "back": {
+      "simplified": "Variable returns can be positive, negative or both, judged on substance (fixed bond interest and fixed fees are variable for this purpose because of credit/performance risk). A decision maker that is an agent does not control. Factors: scope of decision-making authority; rights held by others (a single party able to remove without cause → agent); remuneration (commensurate and at arm's length suggests agent); exposure from other interests (greater variability → principal). Treat rights of de facto agents (related parties, parties funded by or restricted by the investor, common boards, close business relations) as the investor's own.",
+      "explanation": "Investor 30% + fellow subsidiary 30% it can direct → 60% → control; with only 10% more → no control (SM Example 5). Reputational risk alone is not a basis for consolidation.",
+      "cases": [
+       "Investor 30% + fellow subsidiary 30% it can direct → 60% → control; with only 10% more → no control (SM Example 5).",
+       "SM Illustrations 17–20 (fund managers)."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-silo",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.B76–B79, B80–B85",
+      "Low"
+     ],
+     "front": "Silos and continuous assessment: what is the rule?",
+     "back": {
+      "simplified": "A portion of an investee is a deemed separate entity (silo) if specified assets are the only source of payment for specified liabilities or interests, and no other party has rights to those assets or their residual cash flows (ring-fenced). The investor controlling the silo consolidates it; others exclude it. Reassess control when facts change in any of the three elements (lapse of rights, termination of a fee contract, change in agent/principal status) — but not merely because market conditions change.",
+      "explanation": "Sub-funds of a mutual fund may be silos.",
+      "cases": []
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-c",
+   "title": "Investment entities",
+   "emoji": "📦",
+   "cards": [
+    {
+     "id": "c-cfs-invent",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.27–33, B85A–B85W",
+      "Low"
+     ],
+     "front": "Investment entities: what is the rule?",
+     "back": {
+      "simplified": "An investment entity (i) obtains funds from investors to provide investment management services, (ii) commits that its business purpose is to invest solely for capital appreciation and/or investment income, and (iii) measures and evaluates substantially all investments on a fair value basis. Typical characteristics: more than one investment, more than one investor, unrelated investors, equity-type ownership interests. It must have exit strategies ; it must not obtain other benefits from investees. It does not consolidate subsidiaries (measures them at FVTPL), except subsidiaries that are not investment entities and provide investment-related services. Its non-investment-entity parent consoli",
+      "explanation": "Change of status is prospective: ceasing → deemed acquisition at fair value (Ind AS 103); becoming → apply loss-of-control accounting to subsidiaries it stops consolidating. SM Unit 3 Illustrations 21–24; Unit 4 Illustrations 35–36.",
+      "cases": []
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-d",
+   "title": "Consolidation procedure",
+   "emoji": "💰",
+   "cards": [
+    {
+     "id": "c-cfs-gw-nci",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110 · Ind AS 103.32",
+      "High"
+     ],
+     "front": "Goodwill / capital reserve and NCI at the date control is obtained: what is the rule?",
+     "back": {
+      "simplified": "Consolidate from the date control is obtained until it is lost. Goodwill = consideration (fair value) + NCI + fair value of previously held interest − net identifiable assets at fair value. A bargain excess goes to OCI → capital reserve where the reason is clear (otherwise directly to capital reserve), attributed to the parent. NCI (present ownership interests) at fair value or proportionate share of net identifiable assets . NCI is presented within equity , separately from owners of the parent.",
+      "explanation": "Income and expenses of the subsidiary are based on acquisition-date fair values — depreciation on the ₹100 lakh fair value, not the ₹80 lakh book value (SM Example 4). Step acquisition: remeasure the earlier stake (see step acquisitions ).",
+      "cases": [
+       "Income and expenses of the subsidiary are based on acquisition-date fair values — depreciation on the ₹100 lakh fair value, not the ₹80 lakh book value (SM Example 4)."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-gw-nci-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 110 · Ind AS 103.32",
+      "High"
+     ],
+     "front": "Worked example: Goodwill, capital reserve, NCI on acquisition — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "SM Unit 4 Illustrations 1–4.",
+      "explanation": ""
+     }
+    },
+    {
+     "id": "c-cfs-step",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.42 · 110",
+      "Medium"
+     ],
+     "front": "Step acquisition and control without consideration in consolidation: what is the rule?",
+     "back": {
+      "simplified": "On obtaining control in stages, remeasure the previously held interest at acquisition-date fair value; gain or loss to profit or loss (FVOCI amounts are never recycled — they may be transferred within equity to retained earnings on deemed disposal). Without consideration, use the acquisition-date fair value of the acquirer's interest in place of consideration; by contract alone, 100% of the acquiree's net assets may be NCI.",
+      "explanation": "25% held + 40% bought → control at 65% on 1 April 20X1 (SM Example 1). SM Unit 4 Illustration 5.",
+      "cases": [
+       "25% held + 40% bought → control at 65% on 1 April 20X1 (SM Example 1)."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-policies-dates",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.19, B86–B93",
+      "Low"
+     ],
+     "front": "Uniform policies, reporting dates, potential voting rights in allocation: what is the rule?",
+     "back": {
+      "simplified": "Use uniform accounting policies for like transactions (adjust a member's statements, e.g. US GAAP to Ind AS). Use the same reporting date; if impracticable, use the subsidiary's most recent statements adjusted for significant transactions, with a difference of no more than three months , consistent from period to period. Allocate profit and equity on existing ownership interests , ignoring potential voting rights — unless they currently give access to the returns, in which case they are reflected and Ind AS 109 does not apply to them.",
+      "explanation": "AS 21 allowed six months and non-uniform policies if impracticable. SM Unit 4 Illustrations 6–9.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-cfs-intragroup",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.B86(c)",
+      "High"
+     ],
+     "front": "Intra-group balances, transactions and unrealised profits: what is the rule?",
+     "back": {
+      "simplified": "Eliminate intra-group balances, transactions, income and expenses in full . Unrealised profits in inventory, PPE, intangibles and investment property are eliminated in full — even for subsidiaries less than 100% owned; unrealised losses are eliminated unless cost cannot be recovered. Ind AS 12 applies to temporary differences from eliminations.",
+      "explanation": "Upstream (subsidiary → parent) unrealised profit reduces the subsidiary's profit and is shared with NCI; downstream (parent → subsidiary) is borne by the parent (SM Illustrations 14–18). Goods sold on to third parties: only sales and cost of sales are eliminated.",
+      "cases": [
+       "Upstream (subsidiary → parent) unrealised profit reduces the subsidiary's profit and is shared with NCI; downstream (parent → subsidiary) is borne by the parent (SM Illustrations 14–18).",
+       "Dividend received from a subsidiary is eliminated against the dividend paid; NCI's share reduces NCI (SM Illustrations 10–13)."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-intragroup-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 110.B86(c)",
+      "High"
+     ],
+     "front": "Memory hook: Intra-group eliminations?",
+     "back": {
+      "simplified": "Eliminate 100% always; who bears it depends on who sold (upstream → share with NCI)."
+     }
+    },
+    {
+     "id": "c-cfs-intragroup-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 110.B86(c)",
+      "High"
+     ],
+     "front": "Worked example: Intra-group eliminations — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "Dividend received from a subsidiary is eliminated against the dividend paid; NCI's share reduces NCI (SM Illustrations 10–13).",
+      "explanation": ""
+     }
+    },
+    {
+     "id": "c-cfs-nci-alloc",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.B94–B95",
+      "Medium"
+     ],
+     "front": "Attributing profit, OCI and losses to NCI: what is the rule?",
+     "back": {
+      "simplified": "Attribute profit or loss and each component of OCI to owners of the parent and NCI; total comprehensive income is attributed to NCI even if this results in a deficit balance . If a subsidiary has cumulative preference shares classified as equity and held by NCI, compute the parent's share after deducting those dividends whether or not declared.",
+      "explanation": "SM Example 5: profit ₹5,00,000 − 10% on ₹10,00,000 preference shares ₹1,00,000 = ₹4,00,000 × 80% = ₹3,20,000 to the parent. SM Unit 4 Illustrations 19–20.",
+      "cases": [
+       "SM Example 5: profit ₹5,00,000 − 10% on ₹10,00,000 preference shares ₹1,00,000 = ₹4,00,000 × 80% = ₹3,20,000 to the parent."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-ownership-change",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.23, B96",
+      "Low"
+     ],
+     "front": "Changes in ownership without loss of control: what is the rule?",
+     "back": {
+      "simplified": "Changes in a parent's ownership interest that do not result in loss of control are equity transactions . Adjust the carrying amounts of controlling and non-controlling interests; recognise directly in equity (attributed to the parent) any difference between the NCI adjustment and the fair value of consideration paid or received. No gain or loss in profit or loss; goodwill is not remeasured ; assets and liabilities are unchanged.",
+      "explanation": "SM Illustration 23: buy 10% of a 70% subsidiary for ₹2,600 thousand; NCI ₹6,600 ÷ 30 × 10 = ₹2,200 thousand; Dr NCI 2,200, Dr other equity 400 / Cr cash 2,600; goodwill unchanged. SM Illustrations 21–27 (sale of 20% of a wholly owned subsidiary, reductions in interest).",
+      "cases": [
+       "SM Illustration 23: buy 10% of a 70% subsidiary for ₹2,600 thousand; NCI ₹6,600 ÷ 30 × 10 = ₹2,200 thousand; Dr NCI 2,200, Dr other equity 400 / Cr cash 2,600; goodwill unchanged.",
+       "SM Illustrations 21–27 (sale of 20% of a wholly owned subsidiary, reductions in interest)."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-ownership-change-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 110.23, B96",
+      "Low"
+     ],
+     "front": "Memory hook: Buying/selling stakes without losing control?",
+     "back": {
+      "simplified": "Still in control? It's an equity deal — no P&L, no goodwill change."
+     }
+    },
+    {
+     "id": "c-cfs-chain",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110 · chain holding",
+      "Medium"
+     ],
+     "front": "Chain holding and sub-subsidiaries: what is the rule?",
+     "back": {
+      "simplified": "A sub-subsidiary controlled through a subsidiary is consolidated even if the group's effective interest is below 50%. Effective interest = product of holdings down the chain plus any direct holding; the balance is NCI (direct + indirect). The sub-subsidiary comes under control on the later of the date the parent acquired the subsidiary (if it already held the sub-subsidiary) and the date the subsidiary acquired it — this fixes the pre-acquisition reserves.",
+      "explanation": "P 80% → S1 60% → S2: group 48%, NCI in S1's share 12%, direct NCI 40% (SM Situation 1). P 80% of S1, S1 75% of S2, P 10% direct of S2: group 60% + 10% = 70%, NCI 30% (15% direct + 15% indirect) (Situation 2).",
+      "cases": []
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-e",
+   "title": "Loss of control",
+   "emoji": "⚖️",
+   "cards": [
+    {
+     "id": "c-cfs-loss",
+     "type": "concept",
+     "tags": [
+      "Ind AS 110.25, B97–B99",
+      "High"
+     ],
+     "front": "Loss of control: what is the rule?",
+     "back": {
+      "simplified": "On losing control (sale, partial sale, deemed disposal by dilution): derecognise the subsidiary's assets (including goodwill) and liabilities and the carrying amount of NCI; recognise the fair value of consideration received, any distribution of shares to owners, and any retained interest at fair value (its initial Ind AS 109 fair value or the cost of an associate/JV); reclassify OCI amounts as if the assets/liabilities were disposed of directly (foreign currency reserve to profit or loss; revaluation surplus to retained earnings); recognise the resulting gain or loss in profit or loss attributable to the parent.",
+      "explanation": "Multiple arrangements are treated as one transaction if entered at the same time or in contemplation of each other, form a single transaction, one depends on another, or one is uneconomic alone (SM Illustration 34). Sell 25% then 55% of an 80% stake: the first is an equity transaction, the second triggers P&L — a reason for the single-transaction test (SM Example 9).",
+      "cases": [
+       "Multiple arrangements are treated as one transaction if entered at the same time or in contemplation of each other, form a single transaction, one depends on another, or one is uneconomic alone (SM Illustration 34).",
+       "Sell 25% then 55% of an 80% stake: the first is an equity transaction, the second triggers P&L — a reason for the single-transaction test (SM Example 9).",
+       "SM Illustrations 30–33."
+      ]
+     }
+    },
+    {
+     "id": "c-cfs-loss-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 110.25, B97–B99",
+      "High"
+     ],
+     "front": "Memory hook: Loss of control?",
+     "back": {
+      "simplified": "Lose control = sell everything at fair value and buy back what you keep at fair value."
+     }
+    },
+    {
+     "id": "c-cfs-loss-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 110.25, B97–B99",
+      "High"
+     ],
+     "front": "Worked example: Loss of control — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "SM Illustrations 30–33.",
+      "explanation": ""
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-f",
+   "title": "Joint arrangements (Ind AS 111)",
+   "emoji": "✅",
+   "cards": [
+    {
+     "id": "c-ja-control",
+     "type": "concept",
+     "tags": [
+      "Ind AS 111.4–13, B5–B11",
+      "Low"
+     ],
+     "front": "Joint arrangements and joint control: what is the rule?",
+     "back": {
+      "simplified": "A joint arrangement : parties bound by a contractual arrangement that gives two or more of them joint control — contractually agreed sharing of control where decisions about relevant activities require unanimous consent of the parties sharing control. First assess whether all parties or a group collectively control (Ind AS 110), then whether unanimity among them is required. Where a minimum vote can be reached by more than one combination, there is no joint control unless the contract specifies which parties must agree.",
+      "explanation": "Not every party needs joint control: some may merely participate. Unanimity only over protective rights → no joint control (SM Illustration 12). Dispute-resolution clauses do not prevent joint control (Illustration 13).",
+      "cases": [
+       "Unanimity only over protective rights → no joint control (SM Illustration 12). Dispute-resolution clauses do not prevent joint control (Illustration 13)."
+      ]
+     }
+    },
+    {
+     "id": "c-ja-type",
+     "type": "concept",
+     "tags": [
+      "Ind AS 111.14–19, B12–B33",
+      "High"
+     ],
+     "front": "Joint operation vs joint venture: what is the rule?",
+     "back": {
+      "simplified": "Joint operation : parties have rights to the assets and obligations for the liabilities . Joint venture : parties have rights to the net assets . Not structured through a separate vehicle → joint operation. Through a separate vehicle → consider (1) the legal form (no separation between parties and vehicle → joint operation); (2) the contractual terms (rights to assets/obligations for liabilities → joint operation); (3) other facts — if the activities primarily provide the parties with output and the parties are substantially the only source of cash flows → joint operation; otherwise joint venture. Guarantees alone do not decide.",
+      "explanation": "Different arrangements under one framework agreement can be of different types (SM Illustration 20). AS 27's jointly controlled operations and assets become joint operations; a jointly controlled entity becomes either type.",
+      "cases": [
+       "Different arrangements under one framework agreement can be of different types (SM Illustration 20)."
+      ]
+     }
+    },
+    {
+     "id": "c-ja-type-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 111.14–19, B12–B33",
+      "High"
+     ],
+     "front": "Memory hook: Joint operation or joint venture??",
+     "back": {
+      "simplified": "Assets & liabilities → operation (line by line). Net assets → venture (equity method)."
+     }
+    },
+    {
+     "id": "c-ja-type-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 111.14–19, B12–B33",
+      "High"
+     ],
+     "front": "Worked example: Joint operation or joint venture? — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "SM Unit 5 Illustrations 14–19.",
+      "explanation": ""
+     }
+    },
+    {
+     "id": "c-ja-jo-acct",
+     "type": "concept",
+     "tags": [
+      "Ind AS 111.20–23, B34–B37",
+      "High"
+     ],
+     "front": "Accounting for joint operations: what is the rule?",
+     "back": {
+      "simplified": "A joint operator recognises, in separate and consolidated statements, its assets (incl. share of joint assets), liabilities (incl. share of joint liabilities), revenue from its share of output, its share of revenue from sale of output by the operation, and its expenses (incl. share of joint expenses). Sales/contributions to the operation: gain or loss only to the extent of other parties' interests (losses showing NRV decline or impairment in full). Purchases from it: do not recognise its share of gain/loss until resold (its share of NRV/impairment losses recognised). Acquiring an interest in a joint operation that is a business: apply Ind AS 103 to its share (fair values, acquisition costs e",
+      "explanation": "A party without joint control but with rights to assets and obligations for liabilities accounts like a joint operator; otherwise per the applicable Ind AS. Joint venture: equity method in consolidated statements (Ind AS 28), Ind AS 27 in separate statements; a party without joint control but with significant influence uses Ind AS 28, otherwise Ind AS 109.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-ja-jo-acct-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 111.20–23, B34–B37",
+      "High"
+     ],
+     "front": "Worked example: Joint operator's accounting — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "SM Unit 5 Illustrations 21–24.",
+      "explanation": ""
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-g",
+   "title": "Associates and the equity method (Ind AS 28)",
+   "emoji": "🧾",
+   "cards": [
+    {
+     "id": "c-assoc-si",
+     "type": "concept",
+     "tags": [
+      "Ind AS 28.5–9",
+      "High"
+     ],
+     "front": "Significant influence: what is the rule?",
+     "back": {
+      "simplified": "Significant influence is the power to participate in financial and operating policy decisions, but not control or joint control. Holding 20% or more of voting power (directly or through subsidiaries) presumes significant influence unless clearly demonstrated otherwise; below 20% presumes none unless clearly demonstrated. Evidence: board representation; participation in policy-making (including dividends); material transactions; interchange of managerial personnel; provision of essential technical information. Currently exercisable potential voting rights are considered (ignoring management intention and financial ability). Influence is lost when the power to participate is lost (e.g. investe",
+      "explanation": "A majority held by another investor does not necessarily preclude significant influence. SM Unit 6 Illustrations 1–7.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-assoc-si-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 28.5–9",
+      "High"
+     ],
+     "front": "Memory hook: Significant influence (20% presumption)?",
+     "back": {
+      "simplified": "20% presumes influence; Board, Policy, Transactions, People, Technology prove it."
+     }
+    },
+    {
+     "id": "c-assoc-equity",
+     "type": "concept",
+     "tags": [
+      "Ind AS 28.10–15, 26–39",
+      "High"
+     ],
+     "front": "The equity method and its procedure: what is the rule?",
+     "back": {
+      "simplified": "Initially at cost ; then adjusted for the investor's share of post-acquisition profit or loss (in P&L) and OCI (in OCI); distributions reduce the carrying amount. On acquisition identify goodwill (included in the carrying amount, not amortised) or capital reserve. Adjust the share of profit for depreciation on fair values and impairments. Group share = holdings of the parent and subsidiaries (ignore holdings of other associates/JVs); use the associate's consolidated figures. Upstream and downstream gains/losses recognised only to the extent of unrelated investors' interests (downstream impairment/NRV losses in full; upstream — investor's share). Same reporting date (difference ≤ 3 months); u",
+      "explanation": "Potential voting rights generally ignored in applying the equity method unless they give present access to returns. Non-monetary contribution for equity: as downstream; without commercial substance the gain is unrealised and eliminated against the investment.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-assoc-equity-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 28.10–15, 26–39",
+      "High"
+     ],
+     "front": "Memory hook: Equity method procedure?",
+     "back": {
+      "simplified": "Cost + share of profit + share of OCI − dividends."
+     }
+    },
+    {
+     "id": "c-assoc-equity-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 28.10–15, 26–39",
+      "High"
+     ],
+     "front": "Worked example: Equity method procedure — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "SM Unit 6 Illustrations 8–14 (entries, cumulative preference shares, upstream/downstream).",
+      "explanation": ""
+     }
+    },
+    {
+     "id": "c-assoc-exempt",
+     "type": "concept",
+     "tags": [
+      "Ind AS 28.17–19",
+      "Low"
+     ],
+     "front": "Exemptions from the equity method: what is the rule?",
+     "back": {
+      "simplified": "Need not apply the equity method if (1) the entity is a parent exempt under Ind AS 110.4(a), or all of: owners informed and not objecting, not publicly traded, not filing, parent publishes Ind AS consolidated statements; (2) the investment is held by or through a venture capital organisation, mutual fund, unit trust or similar (incl. investment-linked insurance funds) — may elect FVTPL per investment at initial recognition; (3) a portion held through such an entity may be measured at FVTPL, with the equity method for the rest.",
+      "explanation": "Mutual fund holding over 20% may measure at FVTPL (SM Example 1). SM Unit 6 Illustration 9.",
+      "cases": [
+       "Mutual fund holding over 20% may measure at FVTPL (SM Example 1). SM Unit 6 Illustration 9."
+      ]
+     }
+    },
+    {
+     "id": "c-assoc-losses",
+     "type": "concept",
+     "tags": [
+      "Ind AS 28.38–43",
+      "High"
+     ],
+     "front": "Losses, long-term interests and impairment: what is the rule?",
+     "back": {
+      "simplified": "Stop recognising losses when the share of losses equals the interest — the equity-method carrying amount plus long-term interests that are in substance part of the net investment (preference shares, long-term loans whose settlement is not planned; not trade receivables or secured loans). Apply excess losses to those interests in reverse order of seniority ; Ind AS 109 applies to them first. After zero, provide only for legal or constructive obligations or payments made. Resume profits only after they equal unrecognised losses. Test the whole net investment for impairment (Ind AS 36) on objective evidence; impairment is not allocated to goodwill; reversals allowed.",
+      "explanation": "Disappearance of an active market because shares are no longer traded, or a credit downgrade alone, is not evidence of impairment. Value in use: share of the associate's cash flows plus disposal proceeds, or dividends plus disposal proceeds (same result).",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-assoc-losses-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 28.38–43",
+      "High"
+     ],
+     "front": "Worked example: Losses beyond the investment; impairment — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "SM Unit 6 Illustration 15.",
+      "explanation": ""
+     }
+    },
+    {
+     "id": "c-assoc-discontinue",
+     "type": "concept",
+     "tags": [
+      "Ind AS 28.20–25",
+      "Medium"
+     ],
+     "front": "Discontinuing the equity method; held for sale: what is the rule?",
+     "back": {
+      "simplified": "Stop the equity method when the investment ceases to be an associate or JV: becomes a subsidiary → Ind AS 103/110 (remeasure previous interest to fair value, gain/loss in P&L); retained interest is a financial asset → fair value, with P&L gain/loss = (fair value of retained interest + proceeds) − carrying amount; reclassify the investor's share of OCI as if the investee disposed of the items (proportionately on a partial reduction that keeps significant influence). Associate ↔ joint venture : continue the equity method, no remeasurement . A portion classified as held for sale follows Ind AS 105; the rest stays equity-accounted until disposal; if it no longer qualifies, apply the equity metho",
+      "explanation": "Share of foreign currency reserve ₹10,000 reclassified to profit or loss on sale (SM Example 5). SM Unit 6 Illustrations 16–17.",
+      "cases": [
+       "Share of foreign currency reserve ₹10,000 reclassified to profit or loss on sale (SM Example 5)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-k",
+   "title": "Separate financial statements (Ind AS 27)",
+   "emoji": "📘",
+   "cards": [
+    {
+     "id": "c-sfs-acct",
+     "type": "concept",
+     "tags": [
+      "Ind AS 27.10–12",
+      "Medium"
+     ],
+     "front": "Separate financial statements: what is the rule?",
+     "back": {
+      "simplified": "In separate financial statements account for investments in subsidiaries, associates and joint ventures either at cost or in accordance with Ind AS 109 (FVTPL/FVOCI), applying the same accounting for each category. Cost-measured investments held for sale follow Ind AS 105; Ind AS 109-measured ones do not change. Investment entities and entities that elected FVTPL under Ind AS 28 use FVTPL here too. Dividends are recognised in profit or loss when the right to receive is established (generally shareholder approval).",
+      "explanation": "Ind AS 27 applies when an entity elects or is required by law to present separate statements; in India the Companies Act requires every company's own financial statements. Change in investment-entity status: ceasing → cost (fair value as deemed cost) or Ind AS 109; becoming → FVTPL with the difference to profit or loss and FVOCI amounts reclassified (SM Examples 2–3).",
+      "cases": [
+       "Change in investment-entity status: ceasing → cost (fair value as deemed cost) or Ind AS 109; becoming → FVTPL with the difference to profit or loss and FVOCI amounts reclassified (SM Examples 2–3)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-p",
+   "title": "Disclosures (Ind AS 112)",
+   "emoji": "📊",
+   "cards": [
+    {
+     "id": "c-ifrs112-disclose",
+     "type": "concept",
+     "tags": [
+      "Ind AS 112",
+      "Low"
+     ],
+     "front": "Disclosure of interests in other entities: what is the rule?",
+     "back": {
+      "simplified": "Disclose information to evaluate the nature of, and risks associated with, interests in subsidiaries, joint arrangements, associates and unconsolidated structured entities, and their effects on financial position, performance and cash flows: significant judgements and assumptions (control, joint control, significant influence, type of arrangement); the interest NCI have in the group's activities and cash flows (summarised financial information for subsidiaries with material NCI); restrictions and risks; consequences of changes in ownership without loss of control and of losing control; nature, extent and financial effects of joint arrangements and associates (summarised financial information",
+      "explanation": "Aggregation is allowed for similar entities; not required for post-employment plans or separate-statement interests already disclosed under Ind AS 27.",
+      "cases": []
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-h",
+   "title": "Beyond the study material",
+   "emoji": "🔭",
+   "cards": [
+    {
+     "id": "c-h-cfs-tax",
+     "type": "concept",
+     "tags": [
+      "Beyond SM · Ind AS 12",
+      "Low"
+     ],
+     "front": "Beyond the SM: deferred tax on consolidation adjustments: what is the rule?",
+     "back": {
+      "simplified": "Beyond the study material (Ind AS 12 applied to consolidation). Eliminating unrealised intra-group profit creates a temporary difference between the group carrying amount of the asset and its tax base (which stays with the buyer's tax position); deferred tax is recognised at the buyer's tax rate. The SM's Ind AS 110 vs AS 21 table notes that Ind AS requires deferred taxes on such eliminations while AS 21 did not.",
+      "explanation": "Check the question for a tax rate before computing; ICAI consolidation answers often ignore tax unless asked.",
+      "cases": []
+     }
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "id": "p-p1",
+   "prompt": "GEM Ltd., an Indian company acquired 75% of the share capital of VEW Ltd. on 30th September, 2020, an entity registered as company in USA. The functional currency of GEM Ltd. is Rupees and its financial year end on 31st March, 2021. The functional currency of VEW Ltd. is USD.\n (i) On 30th September, 2020, the fair value of the Net Assets of VEW Ltd. was USD 10 million and the purchase consideration paid was USD 7.8 million. The exchange rate as at 30th September, 2020 was ₹ 71.5 per USD and at 31st March, 2021 was ₹ 73.5 per USD.\n (ii) VEW Ltd. sold goods costing USD 1.9 million to GEM Ltd. for USD 3.1 million during the year ended 31st March, 2021. The exchange rate on the date of purchase by GEM Ltd. was ₹ 70.5 per USD and on 31st March, 2021 was ₹ 73.5 per USD. 50% of the goods purchased by GEM Ltd. from VEW Ltd. were unsold as at 31st March, 2021.\n For (i) determine the value at which the Goodwill should be recognized in the financial statements of GEM Ltd. as at 31st March, 2021.\n For (ii) determine the unrealized profit to be eliminated in the preparation of consolidated financial statements of GEM Ltd. for the year ending on 31st March, 2021. (6 Marks)",
+   "clauseRef": "PYQ May 2022 · Q3(c) · 6 marks",
+   "hints": [
+    "Start from the deciding requirement: Intra-group balances, transactions and unrealised profits."
+   ],
+   "modelAnswer": "(c) (i) Para 47 of Ind AS 21 requires that goodwill arose on business combination shall be expressed in the functional currency of the foreign operation and shall be translated at the closing rate in accordance with paragraphs 39 and 42.\n When NCI is measured at proportionate share of net assets, the amount of goodwill will be as follows:\n   Dr. Cr.  Net identifiable asset Dr. USD 10 million   Goodwill (bal. fig.) Dr. USD 0.30 million   To Bank (Purchase consideration)  USD 7.80 million  To NCI (10 x 25%)  USD 2.50 million  Thus, goodwill on reporting date in the books of GEM Ltd. would be = USD 0.30 million x ₹ 73.50 = ₹ 22.05 million\n Alternatively, when NCI is measured at fair value, the amount of goodwill will be as follows:\n   Dr. Cr.  Net identifiable asset Dr. USD 10 million   Goodwill (bal. fig.) Dr. USD 0.40 million   To Bank (Purchase consideration)  USD 7.80 million  To NCI (7.8/75*25)  USD 2.60 million  Thus, goodwill on reporting date in the books of GEM Ltd. would be = USD 0.40 million x ₹ 73.50 = ₹ 29.40 million\n (ii) Calculation of unrealised profit\n  Particulars USD in million  Sale price of inventory 3.10  Cost of inventory 1.90  Profit earned by VEW Ltd. 1.20  Unrealised profit (1.20 x 50%) [a] 0.60  Exchange rate as on date of purchase of inventory [b] ₹ 70.50 / USD  Unrealized profit to be eliminated [a x b] = USD 0.60 million x ₹ 70.50 = ₹ 42.30 million\n As per para 39 of Ind AS 21, income and expenses for each statement of profit and loss presented (ie including comparatives) shall be translated at exchange rates at the dates of the transactions. In the given case, purchase of inventory is an expense item shown in the statement profit and loss. Hence, the exchange rate on the date of purchase of inventory is taken for calculation of unrealized profit which is to be eliminated while preparation of consolidated financial statements.",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p2",
+   "prompt": "Given below are the balance sheets of a group of companies comprising X Ltd., Y Ltd. and Z Ltd. as on 31st March, 2022: (₹ in Lakhs)\n   X Ltd. Y Ltd. Z Ltd.   Assets      Non-current Assets     Property, plant and equipment 1,120 1,260 1,050  Investment: 112 lakh shares in Y Ltd. 1,190    84 lakh shares in Z Ltd.  980   Current assets     Inventories 770 245 175  Financial assets: Trade receivables 910 350 770  Bills receivables 252 - 105  Cash in hand and at bank 798 140 140   5,040 2,975 2,240   Equity and Liabilities      Shareholder's equity     Share capital (₹ 10 per share) 2,100 1,400 1,120  Other equity: Reserves 630 350 280  Retained earnings 560 175 210  Current liabilities     Financial liabilities: Trade payables 1,645 805 630  Bills payable: X Ltd. - 245 -  Y Ltd. 105 - -   5,040 2,975 2,240  The following additional information is available:\n (i) X Ltd. holds 80% shares in Y Ltd. and Y Ltd. holds 75% shares in Z Ltd. Their holdings were acquired on 30th September, 2021.\n (ii) The business activities of all the companies are not seasonal in nature and therefore, it can be assumed that profits are earned evenly throughout the year.\n (iii) On 1st April 2021, the following balances stood in the books of Y Ltd. and Z Ltd. (₹ in lakhs)\n   Y Limited Z Limited  Reserve 280 210  Retained earnings 70 105  (iv) ₹ 35 lakhs included in the inventory figure of Y Ltd. is inventory which has been purchased from Z Ltd. at cost plus 25%.\n (v) The parent company has adopted an accounting policy to measure non-controlling interest at fair value (quoted market price) applying Ind AS 103. Assume that market price of the shares of Y Ltd. and Z Ltd. are the same as their respective face values.\n (vi) Y Ltd. purchased goods from Z Ltd. after acquiring the shares of Z Ltd.\n You are required to prepare consolidated balance sheet, as at 31st March 2022, of the group of companies X Limited, Y Limited and Z Limited. (15 Marks)",
+   "clauseRef": "PYQ Nov 2022 · Q1(a) · 15 marks",
+   "hints": [
+    "Start from the deciding requirement: Chain holding and sub-subsidiaries."
+   ],
+   "modelAnswer": "(a) Consolidated Balance Sheet of the Group as on 31st March, 2022\n  Particulars Note No. ₹ in lakh   ASSETS     Non-current assets    (a) Property, Plant and Equipment 1 3,430.00  Current Assets    (a) Inventories 2 1,183.00  (b) Financial assets (i) Trade receivables 3 2,142.00  (ii) Cash and Cash equivalents 4 1,078.00  Total assets  7,833.00   EQUITY & LIABILITIES     Equity attributable to owners of parent    (a) Share Capital  2,100.00  (b) Other Equity 5 1,966.30  Non-controlling interests (W.N.4)  581.70  Total equity  4,648.00  LIABILITIES    Non-current liabilities  Nil  Current liabilities    (a) Financial Liabilities (i) Trade payables 6 3,185.00  Total liabilities  3,185.00  Total Equity and Liabilities  7,833.00  Notes to Accounts (₹ in lakh)\n      1. Property, Plant & Equipment     X Ltd. 1,120.00   Y Ltd. 1,260.00   Z Ltd. 1,050.00 3,430.00   2. Inventories     X Ltd. 770.00   Y Ltd. (245 – 7) 238.00   Z Ltd. 175.00 1,183.00   3. Trade Receivables     X Ltd. 910.00   Y Ltd. 350.00   Z Ltd. 770.00   (A) 2,030.00   Bills Receivables: X Ltd. (252 – 245) 7.00   Z Ltd. 105.00   (B) 112.00   Total Trade Receivables (A+B)  2,142.00   4. Cash & Cash equivalents     X Ltd. 798.00   Y Ltd. 140.00   Z Ltd. 140.00 1,078.00   5. Other Equity     Reserve (W.N.5) 679.00   Retained Earnings (W.N.5) 629.30   Capital Reserve (W.N.3) 658.00 1,966.30   6. Trade Payables     X Ltd. 1,645.00   Y Ltd. 805.00   Z Ltd. 630.00   (A) 3,080.00   Bills payable: X Ltd. 105.00   Y Ltd. (245 - 245) -   (B) 105.00   Total Trade Payables (A+B)  3,185.00  *Note: Bills Payable of X Ltd. is not reflecting as Bills Receivable of Y Ltd. This may happen since Y Ltd. may have discounted/endorsed the same to the bank/third party.\n Working Notes:\n 1. Analysis of Reserves and Surplus (₹ in lakh)\n   Y Ltd. Z Ltd.  Reserves as on 31.3.2021 280.00 210.00  Increase during the year 2021-2022 70.00 70.00  Increase for the half year till 30.9.2021 35.00 35.00  Balance as on 30.9.2021 (A) 315.00 245.00  Total balance as on 31.3.2022 350.00 280.00  Post-acquisition balance of Reserves 35.00 35.00  Retained Earnings as on 31.3.2021 70.00 105.00  Increase during the year 2021-2022 105.00 105.00  Increase for the half year till 30.9.2021 52.50 52.50  Balance as on 30.09.2021 (B) 122.50 157.50  Total balance as on 31.3.2022 175.00 210.00  Post-acquisition balance of RE 52.50 52.50  Less: Unrealised Gain on inventories [(35 ÷ 125) x 25] - (7.00)  Post-acquisition balance of RE for CFS 52.50 45.50  Total balance on the acquisition date ie. 30.9.2021 (A+B) 437.50 402.50  2. Calculation of Effective Interest of X Ltd. in Z Ltd.\n Acquisition by X Ltd. in Y Ltd. = 80%\n Non-controlling Interest of Y Ltd. = 20%\n Acquisition by Y Ltd. in Z Ltd. = 75%\n Acquisition by Group in Z Ltd. (80% x 75) = 60%\n Non-controlling Interest of Z Ltd = 40%\n 3. Calculation of Goodwill / Capital Reserve on acquisition of subsidiaries (₹ in lakhs)\n   Y Ltd. Z Ltd.  Investment or consideration 1,190.00 (980 x 80%) 784.00  Add: NCI at Fair value (1,400 x 20%) 280.00   (1,120 x 40%) - 448.00   1,470.00 1,232.00  Less: Identifiable net assets (Share Capital + Increase in the Reserves and Surplus till acquisition date) (1,400+437.50) (1,837.50) (1,120+402.50) (1,522.50)  Capital Reserve 367.50 290.50  Total Capital Reserve (367.50 + 290.50)  658.00  4. Calculation of Non-controlling Interest (₹ in lakhs)\n   Y Ltd. Z Ltd.  At Fair Value (See Note 3) 280.00 448.00  Add: Post Acquisition Reserves (See Note 1) (35 x 20%) 7.00 (35 x 40%) 14.00  Add: Post-acquisition retained earnings (See Note 1) (52.50 x 20%) 10.50 (45.50 x 40%) 18.20  Less: NCI share of investment in Z Ltd. (980 x 20%) (196.00)* -   101.50 480.20  Total (101.50 + 480.20)  581.70  *Note: The non-controlling interest in Y Ltd. will take its proportion in Z Ltd. So, they have to bear their proportion in the investment by Y Ltd. (in Z Ltd.) also.\n 5. Calculation of Consolidated Other Equity (₹ in lakhs)\n   Reserves Retained Earnings  X Ltd. 630.00 560.00  Add: Share in Y Ltd. (35 x 80%) 28.00 (52.50 x 80%) 42.00  Add: Share in Z Ltd. (35 x 60%) 21.00 (45.50 x 60%) 27.30   679.00 629.30  In the above solution, it is assumed that profits of Z Ltd. has been earned evenly throughout the year irrespective of post-acquisition sale of goods to Y Ltd.\n Alternatively, profit on sale of goods to Y Ltd. is deducted from total profit of Z Ltd. before distribution of total profit of Z Ltd. into pre-acquisition and post-acquisition. In such a case, the solution will be as follows:\n Consolidated Balance Sheet of the Group as on 31st March, 2022\n  Particulars Note No. ₹ in lakh   ASSETS     Non-current assets: (a) Property, plant and equipment 1 3,430.00  Current assets: (c) Inventory 2 1,183.00  (d) Financial assets (i) Trade receivable 3 2,142.00  (ii) Cash and cash equivalents 4 1,078.00  Total assets  7,833.00   EQUITY & LIABILITIES     Equity attributable to owners of parent: Share Capital  2,100.00  Other Equity 5 1,964.90  Non-controlling interests (W.N.4)  583.10  Total equity  4,648.00  LIABILITIES: Non-current liabilities  Nil  Current liabilities: (b) Financial Liabilities (i) Trade payables 6 3,185.00  Total liabilities  3,185.00  Total equity and liabilities  7,833.00  Notes to Accounts (₹ in lakh)\n      1. Property, plant & equipment     X Ltd. 1,120.00   Y Ltd. 1,260.00   Z Ltd. 1,050.00 3,430.00   2. Inventories     X Ltd. 770.00   Y Ltd. (245 – 7) 238.00   Z Ltd. 175.00 1,183.00   3. Trade receivable     X Ltd. 910.00   Y Ltd. 350.00   Z Ltd. 770.00   (A) 2,030.00   Bills receivable: X Ltd. (252 – 245) 7.00   Z Ltd. 105.00   (B) 112.00   Total Trade Receivables (A+B)  2,142.00   4. Cash & cash equivalents     X Ltd. 798.00   Y Ltd. 140.00   Z Ltd. 140.00 1,078.00   5. Other equity     Reserve (W.N.5) 679.00   Retained Earnings (W.N.5) 631.40   Capital Reserve (W.N.3) 654.50 1,964.90   6. Trade payable     X Ltd. 1,645.00   Y Ltd. 805.00   Z Ltd. 630.00   (A) 3,080.00   Bills payable: X Ltd. 105.00   Y Ltd. (245 - 245) -   (B) 105.00   Total of Trade payable (A+B)  3,185.00  *Note: Bills Payable of X Ltd. is not reflecting as Bills Receivable of Y Ltd. This may happen since Y Ltd. may have discounted / endorsed the same to the bank/third party.\n Working Notes:\n 1. Analysis of Reserves and Surplus (₹ in lakh)\n   Y Ltd. Z Ltd.  Reserves as on 31.3.2021 280.00 210.00  Increase during the year 2021-2022 70.00 70.00  Increase for the half year till 30.9.2021 35.00 35.00  Balance as on 30.9.2021 (A) 315.00 245.00  Total balance as on 31.3.2022 350.00 280  Post-acquisition balance of Reserves 35.00 35.00  Retained Earnings as on 31.3.2021 70.00 105.00  Increase during the year 2021-2022 for Y Ltd. 105.00   Increase during the year 2021-22 for Z Ltd.  105.00  Less: Unrealised gain [(35/125)x25]  (7.00)  Profit of the year earned evenly for Z Ltd. 98.00 98  Increase for the half year till 30.9.2021 52.50 49.00  Balance as on 30.9.2021 (B) 122.50 154.00  Total balance as on 31.3.2022 (175.00) (210.00)  Post-acquisition balance 52.50 56.00  Less: Unrealised gain on inventories [(35/125)x25] - (7.00)  Post-acquisition balance for CFS 52.50 49.00  Total balance on the acquisition date ie. 30.9.2021 (A+B) 437.50 399.00  (The row \"Profit of the year earned evenly for Z Ltd. 98.00 98\" is printed this way by ICAI.)\n 2. Calculation of Effective Interest of X Ltd. in Z Ltd.: Acquisition by X Ltd. in Y Ltd. = 80%; Non-controlling Interest of Y Ltd. = 20%; Acquisition by Y Ltd. in Z Ltd. = 75%; Acquisition by Group in Z Ltd. (80% x 75%) = 60%; Non-controlling Interest of Z Ltd = 40%\n 3. Calculation of Goodwill / Capital Reserve on the acquisition (₹ in lakhs)\n   Y Ltd. Z Ltd.  Investment or consideration 1,190 (980 x 80%) 784  Add: NCI at Fair value (1,400 x 20%) 280   (1,120 x 40%) - 448   1,470 1,232  Less: Identifiable net assets (Share Capital + Increase in the Reserves and Surplus till acquisition date) (1,400+437.50) (1,837.50) (1,120+399) (1,519.00)  Capital Reserve 367.50 287.00  Total Capital Reserve (367.50 + 287.00)  654.50  4. Calculation of Non-controlling Interest (₹ in lakhs)\n   Y Ltd. Z Ltd.  At Fair Value (See Note 3) 280.00 448.00  Add: Post-acquisition Reserves (See Note 1) (35 x 20%) 7.00 (35 x 40%) 14.00  Add: Post-acquisition Retained Earnings (See Note 1) (52.50 x 20%) 10.50 (49.00 x 40%) 19.60  Less: NCI share of investment in Z Ltd. (980 x 20%) (196.00)* -   101.50 481.60  Total (101.50 + 481.60)  583.10  *Note: The non-controlling interest in Y Ltd. will take its proportion in Z Ltd. So, they have to bear their proportion in the investment by Y Ltd. (in Z Ltd.) also.\n 5. Calculation of Consolidated Other Equity (₹ in lakhs)\n   Reserves Retained Earnings  X Ltd. 630.00 560.00  Add: Share in Y Ltd. (35 x 80%) 28.00 (52.50 x 80%) 42.00  Add: Share in Z Ltd. (35 x 60%) 21.00 (49.00 x 60%) 29.40   679.00 631.40   Study-material link: variant of SM Illustration 29 (Ch 13 unit 4, \"Chain holding\", P/S/SS Ltd.; the Nov 2022 figures are the SM figures x 3.5)",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p3",
+   "prompt": "On 1st April 2021, Honey Limited acquired 40% interest in another entity, Smart Limited. Honey Limited determines that it is able to exercise significant influence over Smart Ltd. Honey Limited has paid total consideration of ₹ 95,00,000 for acquiring the interest in Smart Ltd. On the date of acquisition, the book value of Smart Ltd.'s net assets was ₹ 1,80,00,000 and their fair value was ₹ 2,20,00,000. Honey Ltd. has determined that the difference of ₹ 40,00,000 pertains to an item of property, plant and equipment which has remaining useful life of 10 years.\n During the year 2021-2022, Smart Ltd. made a profit of ₹ 16,00,000. Smart Limited paid a dividend of ₹ 24,00,000 on 31st March, 2022. Smart Limited also holds a long-term investment in equity securities. Under Ind AS, investment is classified as at FVTOCI in accordance with Ind AS 109 and Smart Ltd. recognized an increase in value of investment by ₹ 4,00,000 in OCI during the year. Ignore deferred tax implications, if any.\n You are required to ascertain the closing balance of Honey Limited's investments in Smart Limited as at 31st March, 2022 as per the relevant Ind AS. (Use equity method) (5 Marks)",
+   "clauseRef": "PYQ Nov 2022 · Q6(d) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Significant influence."
+   ],
+   "modelAnswer": "(d) Calculation of Honey Ltd.'s investment in Smart Ltd. under equity method:\n   ₹ ₹  Cost of investment    Share in book value of net assets of Smart Limited (40% x 1,80,00,000) 72,00,000   Share in fair valuation of net assets of Smart Limited (40% of (2,20,00,000 - 1,80,00,000) 16,00,000   Goodwill on Investment in Smart Limited (95,00,000 - 72,00,000 - 16,00,000) (Balancing Figure) 7,00,000 95,00,000  Profit during the year    Share in the profit reported by Smart Ltd. (40% of ₹ 16,00,000) 6,40,000   Adjustment to reflect effect of fair valuation [40% of (₹ 40,00,000/10 years)] (1,60,000)   Share of profit in Smart Ltd. recognised in income by Honey Ltd.  4,80,000  Long term equity investment    FVTOCI gain recognised in OCI (40% of ₹ 4,00,000)  1,60,000  Dividend received by Honey Ltd. during the year [40% of ₹ 24,00,000]  (9,60,000)  Closing balance of Honey Ltd.'s investment in Smart Ltd.  91,80,000   Study-material link: variant of SM Illustration 10 (Ch 13 unit 6, Blue Ltd. / Green Ltd., acquisition of interest in an associate)",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p4",
+   "prompt": "On 1st April 2021, P Limited acquired 100% interest in S Limited for ₹ 75.00 lakhs when the fair value of the net assets of S Limited was ₹ 60.00 lakhs. Goodwill of ₹ 15.00 lakhs arose on consolidation. On 31st March, 2023, P Limited disposed off 80% interest in S Limited for ₹ 114.00 lakhs. As on the date of disposal, the carrying value of the net assets of S Limited excluding goodwill was ₹ 1,20,00,000. The fair value of the remaining interest is ₹ 28,50,000.\n You are required to:\n i. Calculate the gain or loss on sale of disposal, and\n ii. Pass necessary journal entries on disposal of 80% interest in S Limited in P Limited's separate and consolidated financial statements as on 31st March, 2023. (5 Marks)",
+   "clauseRef": "PYQ May 2023 · Q6(d) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Loss of control."
+   ],
+   "modelAnswer": "(d) (a) In P Ltd.'s Separate Financial Statements\n (i) Calculation of Gain or Loss on disposal in P Ltd.'s separate financial statements\n   ₹ in lakhs  Sales proceeds 114.0  Less: Cost of investment in subsidiary (75 x 80%) (60.0)  Gain on sale in parent's account 54.00  (ii) Journal Entry in P Limited's separate financial statements (₹ in lakhs)\n  Date Particulars Dr. Cr.  31.3.2023 Bank A/c Dr. 114.00    Investment in Associates Dr. 15.00    To Investment in subsidiary A/c  75.00   To Gain on sale of subsidiary A/c  54.00  31.3.2023 Gain on sale of subsidiary A/c Dr. 54    To Statement of Profit and Loss  54  Note: In case of partial disposal of investment leading to significant influence because of loss of control, the above solution has been provided by applying proportionate approach. However, cost of retained investment on the date of loss of control has not been defined in Ind AS 27 'Separate Financial Statements'. Therefore, paragraphs 10 and 11(a) of Ind AS 8 (i.e. in the absence of accounting policy that specifically applies to a transaction, management shall refer to, and consider the applicability of the requirements in Ind AS dealing with similar and related issues) have been applied. Further, para 25(b) of Ind AS 110 inter alia states that recognition of investment retained in the former subsidiary to be the fair value which shall be regarded as the fair value on initial recognition of a financial asset in accordance with Ind AS 109 or, when appropriate, the cost on initial recognition of an investment in an associate or joint venture.\n Accordingly, following ALTERNATE solution may also be considered:\n (i) Calculation of Gain or Loss on disposal in P Ltd.'s separate financial statements:\n   ₹ in lakhs  Sales proceeds 114.0  Fair value of 20% interest retained 28.50   142.50  Less: Cost of investment in subsidiary (75.0)  Gain on sale in parent's account 67.5  (ii) Journal Entry in P Limited's separate financial statements (₹ in lakhs)\n  Date Particulars Dr. Cr.  31.3.2023 Bank A/c Dr. 114.00    Investment in Associate at cost (as per para 25 Ind AS 110) Dr. 28.50    To Investment in subsidiary A/c  75.00   To Gain on sale of subsidiary A/c  67.50  31.3.2023 Gain on sale of subsidiary A/c Dr. 67.50    To Statement of Profit and Loss  67.50  (b) In P Ltd.'s Consolidated Financial Statements\n (i) Calculation of Gain or Loss on disposal in P Ltd.'s consolidated financial statements\n   ₹ in lakhs  Sales proceeds 114.00  Fair value of 20% interest retained 28.50   142.50  Less: Net assets disposed, including goodwill (1,20,00,000 + 15,00,000) (135.00)  Gain on sale in the group's financial statements 7.50  (ii) Journal Entry in P Limited's consolidated financial statements (₹ in lakhs)\n  Date Particulars Dr. Cr.  31.3.2023 Bank A/c Dr. 114.00    Fair value of Net identifiable assets Dr. 28.50    To Net asset of subsidiary A/c  120.00   To Goodwill  15.00   To Gain on sale of subsidiary A/c  7.50  31.3.2023 Gain on sale of subsidiary A/c 7.50    To Statement of Profit or Loss  7.50  Note: The above solution has been drawn on the assumption that the retained investment had led to significant influence. Accordingly, investment in an associate has been accounted for on partial disposal of investment by P Ltd.\n However, it may alternatively be assumed that the retained investment, after loss of control due to partial disposal of investment, does not lead to significant influence on S Ltd. In such a situation, retained interest will be measured at fair value in P Ltd.'s Separate Financial Statements as given in the alternate solution and main solution will not be applicable in such a case.\n Study-material link: variant of SM Illustration 32 (Ch 13 unit 4, AT Ltd. / BT Ltd., partial disposal when subsidiary becomes an associate)",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p5",
+   "prompt": "The Accountant Mr. Ramesh Kanna of 'H' Limited submitted to you the following Standalone Balance Sheet extracts as at 31st March 2024: Amount in ₹\n   H Ltd. S Ltd. A Ltd.   Assets      Non-current assets     (a) Property, Plant and Equipment 5,50,000 4,80,000 2,50,000  (b) Financial Assets - Investments: 14,000 shares in S Ltd. 5,60,000    4,000 shares in A Ltd. 1,00,000    Total non-current assets 12,10,000 4,80,000 2,50,000  Current assets     (a) Inventory 4,85,000 3,82,500 2,45,500  (b) Financial Assets - Cash and cash equivalents 89,000 98,000 1,77,000  Trade receivables 3,95,000 3,05,000 1,78,500  Total current assets 9,69,000 7,85,500 6,01,000  Total Assets 21,79,000 12,65,500 8,51,000   Equity & Liabilities      Shareholder's Equity     (a) Equity Share Capital (₹ 10 per share) 5,00,000 2,00,000 1,00,000  (b) Other Equity - Retained earnings 9,00,000 7,50,000 4,24,000  Total equity 14,00,000 9,50,000 5,24,000  Non-current liabilities     (a) Financial Liabilities - Borrowing – Term Loans 4,00,000 1,50,000 1,00,000  Current liabilities     (a) Financial Liabilities - Trade payables 3,79,000 1,65,500 2,27,000  Total Equity and Liabilities 21,79,000 12,65,500 8,51,000  (The subtotal rows 12,10,000 / 9,69,000 / 7,85,500 / 6,01,000 / 14,00,000 / 9,50,000 / 5,24,000 are printed as side totals in the ICAI layout.)\n The following additional information is made available in respect of these companies:\n (i) H Limited purchased the shares in S Limited on 31st October 2023 when retrained earnings of S Limited was ₹ 500,000 and the shares in A Limited were acquired on 30th June 2023 when its retained earnings stood at ₹ 1,75,000.\n (ii) Inventory of A Limited as on 31st March, 2024 include inventory valued at ₹ 60,000 which had been purchased from H Limited, on 1st January, 2024 at cost plus 20%.\n (iii) Trade payable of H Limited includes ₹ 25,000 payable to A Limited, the amount receivable being recorded in the receivables of A Limited.\n (iv) Goodwill in respect of the acquisition of S Limited has been fully impaired. The recoverable amount of the investment in A Limited exceeds its' carrying value at 31st March 2024. Non-controlling interest is valued at the proportionate share of the identifiable net assets.\n (v) 10% dividends we declared by both H Limited and S Limited whereas A Limited declared 15% dividend for the year 2023-24.\n (vi) On 31st March, 2024, S Limited made a bonus issue of one equity share for every two shares held by the shareholders of S Limited.\n (vii) Dividends were declared but were not accounted for by all these companies in the books before the year end. Similarly, the bonus issued by S Limited was not reflected in the balance sheet as on 31st March, 2024.\n You are required to take note of the above available information and draw the consolidated Balance Sheet of H Limited as at 31st March 2024. Notes to accounts are not required. (14 Marks)",
+   "clauseRef": "PYQ May 2024 · Q1 · 14 marks",
+   "hints": [
+    "Start from the deciding requirement: The equity method and its procedure."
+   ],
+   "modelAnswer": "Note: Since adjustments (v) and (vii) of the question state that dividend has been declared by all the entities but no information is provided whether it has been paid or due. In this regard, it may be noted that since dividend is paid for the entire year 2023-2024, it is assumed as final dividend which is approved in the Annual General Meeting conducted at later point time from the reporting date.\n Accordingly, following assumptions are possible based on which alternative solutions have been provided:\n A. Ignored the adjustment for dividend completely as dividend has to be approved in the Annual General Meeting.\n B. Considered dividend as declared but not paid.\n C. Considered dividend as declared and paid.\n Alternative A: Ignored the adjustment for dividend completely as it has to be approved in the AGM. \n Consolidated Balance Sheet of H Ltd. and its subsidiary S Ltd. and Associate A Ltd. as at 31st March, 2024\n   ₹   Assets    Non-current assets   Property, plant and equipment (₹ 5,50,000 + ₹ 4,80,000) 10,30,000  Goodwill (₹ 70,000 - Impaired ₹ 70,000) Nil  Financial assets - Investment in A Ltd. (W.N.1 (iii)) 2,05,600  Current assets   Inventory (₹ 4,85,000 + ₹ 3,82,500) 8,67,500  Financial assets - Cash and cash equivalents (₹ 89,000 + ₹ 98,000) 1,87,000  Trade receivables (₹ 3,95,000 + ₹ 3,05,000) 7,00,000  Total 29,90,100   Equity and Liabilities    Equity   Share capital - Equity shares of ₹ 10 each 5,00,000  Other equity (W.N.4 + W.N.1(i)) 11,10,600  Non-controlling interest (W.N.3) 2,85,000  Non-current liabilities - Financial liabilities - Borrowings - term loans (₹ 4,00,000 + ₹ 1,50,000) 5,50,000  Current Liabilities - Financial liabilities - Trade payables (₹ 3,79,000 + ₹ 1,65,500) 5,44,500  Total 29,90,100  Working Notes:\n 1. Computation of Investment in Associate A Ltd. as per Equity method\n (i) Capital reserve on the date of acquisition\n The cost of the investment is lower than the net fair value of the investee's identifiable assets and liabilities. Hence there is capital reserve calculated as follows:\n   ₹  Cost of acquisition of investment 1,00,000  H Ltd.'s share in fair value of net assets of A Ltd. on the date of acquisition [(1,00,000 + 1,75,000) x 40%] (1,10,000)  Capital Reserve 10,000  Capital reserve is recorded directly in equity.\n (ii) Share in profit of A Ltd.\n   ₹  Share in post-acquisition profit of A Ltd. [(4,24,000 - 1,75,000) x 40%] 99,600  (iii) Closing balance of investment of Associate A Ltd. at the end of the year\n   ₹  Cost of acquisition of investment 1,00,000  Add: Capital reserve 10,000  Share in post-acquisition profit 99,600  Less: Unrealised gain on inventory [(60,000 x 20/120) x 40%] (4,000)  Closing balance of investment 2,05,600  2. Analysis of Retained Earnings of S Ltd.\n (i) Retained Earnings (RE) of S Ltd.\n   ₹  Closing balance as on 31st March, 2024 7,50,000  Less: Pre-acquisition as on 31st October, 2023 (5,00,000)  Post-acquisition Profit 2,50,000  (ii) Computation of net worth (net identifiable assets) as on 31st October, 2023\n   ₹  Share Capital of S Ltd. 2,00,000  Pre-acquisition Retained Earnings 5,00,000  Net Identifiable assets 7,00,000  (iii) Computation of Goodwill on acquisition date of S Ltd.\n   ₹ ₹  Purchase consideration 5,60,000   NCI as per proportionate share method (7,00,000 x 30%) 2,10,000 7,70,000  Less: Net worth or Net Identifiable Assets  (7,00,000)  Goodwill  70,000  3. Non-Controlling Interest as on 31st March, 2024\n   ₹  NCI (by proportionate share method) as on 31st October, 2023 2,10,000  Post-acquisition Retained Earnings (W.N.4) 75,000  NCI as on 31st March, 2024 2,85,000  4. Consolidated Retained Earnings\n  Particulars H Ltd ₹ S Ltd. ₹  Opening Balance of Retained Earnings 9,00,000   Post-acquisition Retained Earnings (W.N.2(i))  2,50,000  Less: Unrealised gain on downstream transaction with Associate A Ltd. (4,000)   Less: Impairment of Goodwill on acquisition of S Ltd. (70,000)   Add: Share of profit and loss in Associate A Ltd. 99,600   Less: Share of NCI in post-acquisition Retained Earnings [2,50,000 x 30%]  (75,000)   9,25,600 1,75,000  Total Consolidated Retained Earnings  11,00,600  Note: Bonus issue by a subsidiary is a transaction with owner in their capacity as owner. Therefore, bonus issue is only a transfer from one component of equity to the other thereby not changing the equity. Accordingly, though bonus issue shall be accounted in the individual financial statements of subsidiary, the same shall not have any effect in consolidated financial statements of the Group.\n Alternative B: Considered dividend as declared but not paid \n Consolidated Balance Sheet of H Ltd. and its subsidiary S Ltd. and Associate A Ltd. as at 31st March, 2024\n   ₹   Assets    Non-current assets   Property, plant and equipment (₹ 5,50,000 + ₹ 4,80,000) 10,30,000  Goodwill (₹ 70,000 - Impaired ₹ 70,000) Nil  Financial assets - Investment in A Ltd. (Refer W.N.1 (iii)) 1,99,600  Current assets   Inventory (₹ 4,85,000 + ₹ 3,82,500) 8,67,500  Financial assets - Cash and cash equivalents (₹ 89,000 + ₹ 98,000) 1,87,000  Trade receivables (₹ 3,95,000 + ₹ 3,05,000) 7,00,000  Other Receivables (Dividend receivable from A Ltd. (₹ 15,000 x 40%) 6,000  Total 29,90,100   Equity and Liabilities    Equity   Share capital - Equity shares of ₹ 10 each 5,00,000  Other equity (W.N.4 + W.N.1(i)) 10,60,600  Non-controlling interest (W.N.3) 2,79,000  Non-current liabilities - Financial liabilities - Borrowings - term loans (₹ 4,00,000 + ₹ 1,50,000) 5,50,000  Current Liabilities - Financial liabilities - Trade payables (₹ 3,79,000 + ₹ 1,65,500) 5,44,500  Other payables [Dividend payable to NCI by S Ltd. (₹ 20,000 x 30%) ₹ 6,000 + Dividend payable by H Ltd. to its shareholders ₹ 50,000) 56,000  Total 29,90,100  Working Notes:\n 1. Computation of Investment in Associate A Ltd. as per Equity method\n (i) Capital reserve on the date of acquisition\n The cost of the investment is lower than the net fair value of the investee's identifiable assets and liabilities. Hence there is capital reserve calculated as follows:\n   ₹  Cost of acquisition of investment 1,00,000  Less: H Ltd.'s share in fair value of net assets of A Ltd. on the date of acquisition [(1,00,000 + 1,75,000) x 40%] (1,10,000)  Capital Reserve 10,000  Capital reserve is recorded directly in equity.\n (ii) Share in profit of A Ltd.\n   ₹  Share in post-acquisition profit of A Ltd. [(4,24,000 - 1,75,000) x 40%] 99,600  Less: Dividend (1,00,000 x 15% x 40%) (6,000)  Share in profit of A Ltd. 93,600  (iii) Closing balance of investment of Associate A Ltd. at the end of the year\n   ₹  Cost of acquisition of investment 1,00,000  Add: Capital reserve 10,000  Share in post-acquisition profit 93,600  Less: Unrealised gain on inventory [(60,000 x 20/120) x 40%] (4,000)  Closing balance of investment 1,99,600  2. Analysis of Retained Earnings of S Ltd.\n (i) Retained Earnings (RE) of S Ltd.\n   ₹  Closing balance as on 31st March, 2024 7,50,000  Less: Pre-acquisition as on 31st October, 2023 (5,00,000)  Post-acquisition Profit 2,50,000  (ii) Computation of net worth (net identifiable assets) as on 31st October, 2023\n   ₹  Share Capital of S Ltd. 2,00,000  Add: Pre-acquisition Retained Earnings 5,00,000  Net Identifiable assets 7,00,000  (iii) Computation of Goodwill on acquisition date of S Ltd.\n   ₹ ₹  Purchase consideration 5,60,000   NCI as per proportionate share method (7,00,000 x 30%) 2,10,000 7,70,000  Less: Net worth or Net Identifiable Assets  (7,00,000)  Goodwill  70,000  3. Non-Controlling Interest as on 31st March, 2024\n   ₹  NCI (by proportionate share method) as on 31st October, 2023 2,10,000  Post-acquisition Retained Earnings (W.N.4) 69,000  NCI as on 31st March, 2024 2,79,000  4. Consolidated Retained Earnings\n  Particulars H Ltd. ₹ S Ltd. ₹  Opening Balance of Retained Earnings 9,00,000   Post-acquisition Retained Earnings (W.N.2(i))  2,50,000  Less: Unrealised gain on downstream transaction with Associate A Ltd. (4,000)   Less: Impairment of Goodwill on acquisition of S Ltd. (70,000)   Add: Share of profit and loss in Associate A Ltd. 93,600   Less: Dividend payable by H Ltd. (50,000) (20,000)  Add: Dividend Income receivable from S Ltd. 14,000   Add: Dividend income receivable from A Ltd. 6,000   Less: Share of NCI in post-acquisition Retained Earnings [(2,50,000 - 20,000) x 30%]  (69,000)   8,89,600 1,61,000  Total Consolidated Retained Earnings  10,50,600  Note: Bonus issue by a subsidiary is a transaction with owner in their capacity as owner. Therefore, bonus issue is only a transfer from one component of equity to the other thereby not changing the equity. Accordingly, though bonus issue shall be accounted in the individual financial statements of subsidiary, the same shall not have any effect in consolidated financial statements of the Group.\n Alternative C: Considered dividend as declared and paid \n Consolidated Balance Sheet of H Ltd. and its subsidiary S Ltd. and Associate A Ltd. as at 31st March, 2024\n   ₹   Assets    Non-current assets   Property, plant and equipment (₹ 5,50,000 + ₹ 4,80,000) 10,30,000  Goodwill (₹ 70,000 - Impaired ₹ 70,000) Nil  Financial assets - Investment in A Ltd. (Refer W.N.1 (iii)) 1,99,600  Current assets   Inventory (₹ 4,85,000 + ₹ 3,82,500) 8,67,500  Financial assets - Cash and cash equivalents [(₹ 89,000 - ₹ 50,000 + ₹ 14,000 + ₹ 6,000) + (₹ 98,000 - ₹ 20,000)] 1,37,000  Trade receivables (₹ 3,95,000 + ₹ 3,05,000) 7,00,000  Total 29,34,100   Equity and Liabilities    Equity   Share capital - Equity shares of ₹ 10 each 5,00,000  Other equity (W.N.4 + W.N.1(i)) 10,60,600  Non-controlling interest (W.N.3) 2,79,000  Non-current liabilities - Financial liabilities - Borrowings - term loans (₹ 4,00,000 + ₹ 1,50,000) 5,50,000  Current Liabilities - Financial liabilities - Trade payables (₹ 3,79,000 + ₹ 1,65,500) 5,44,500  Total 29,34,100  Working Notes:\n 1. Computation of Investment in Associate A Ltd. as per Equity method\n (i) Capital reserve on the date of acquisition\n The cost of the investment is lower than the net fair value of the investee's identifiable assets and liabilities. Hence there is capital reserve calculated as follows:\n   ₹  Cost of acquisition of investment 1,00,000  Less: H Ltd.'s share in fair value of net assets of A Ltd. on the date of acquisition [(1,00,000 + 1,75,000) x 40%] (1,10,000)  Capital Reserve 10,000  Capital reserve is recorded directly in equity.\n (ii) Share in profit of A Ltd.\n   ₹  Share in post-acquisition profit of A Ltd. [(4,24,000 - 1,75,000) x 40%] 99,600  Less: Dividend (1,00,000 x 15% x 40%) (6,000)  Share in profit of A Ltd. 93,600  (iii) Closing balance of investment of Associate A Ltd. at the end of the year\n   ₹  Cost of acquisition of investment 1,00,000  Add: Capital reserve 10,000  Share in post-acquisition profit 93,600  Less: Unrealised gain on inventory [(60,000 x 20/120) x 40%] (4,000)  Closing balance of investment 1,99,600  2. Analysis of Retained Earnings of S Ltd.\n (i) Retained Earnings (RE) of S Ltd.\n   ₹  Closing balance as on 31st March, 2024 7,50,000  Less: Pre-acquisition as on 31st October, 2023 (5,00,000)  Post-acquisition Profit 2,50,000  (ii) Computation of net worth (net identifiable assets) as on 31st October, 2023\n   ₹  Share Capital of S Ltd. 2,00,000  Pre-acquisition Retained Earnings 5,00,000  Net Identifiable assets 7,00,000  (iii) Computation of Goodwill on acquisition date of S Ltd.\n   ₹ ₹  Purchase consideration 5,60,000   NCI as per proportionate share method (7,00,000 x 30%) 2,10,000 7,70,000  Less: Net worth or Net Identifiable Assets  (7,00,000)  Goodwill  70,000  3. Non-Controlling Interest as on 31st March, 2024\n   ₹  NCI (by proportionate share method) as on 31st October, 2023 2,10,000  Post-acquisition Retained Earnings (W.N.4) 69,000  NCI as on 31st March, 2024 2,79,000  4. Consolidated Retained Earnings\n  Particulars H Ltd. ₹ S Ltd. ₹  Opening Balance of Retained Earnings 9,00,000   Post-acquisition Retained Earnings (W.N.2(i))  2,50,000  Less: Unrealised gain on downstream transaction with Associate A Ltd. (4,000)   Less: Impairment of Goodwill on acquisition of S Ltd. (70,000)   Add: Share of profit and loss in Associate A Ltd. 93,600   Less: Dividend paid (50,000) (20,000)  Add: Dividend Income received from S Ltd. 14,000   Add: Dividend income received from A Ltd. 6,000   Less: Share of NCI in post-acquisition Retained Earnings [(2,50,000 - 20,000) x 30%]  (69,000)   8,89,600 1,61,000  Total Consolidated Retained Earnings  10,50,600  Note: Bonus issue by a subsidiary is a transaction with owner in their capacity as owner. Therefore, bonus issue is only a transfer from one component of equity to the other thereby not changing the equity. Accordingly, though bonus issue shall be accounted in the individual financial statements of subsidiary, the same shall not have any effect in consolidated financial statements of the Group.",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p6",
+   "prompt": "The balance sheets of H Ltd. and S Ltd. as on 31st March, 2024 were as follows:\n  Particulars H Ltd. (₹ in Lakhs) S Ltd. (₹ in Lakhs)   Assets:     Non-Current Assets    Property, plant and equipment 14,800 6,000  Financial Assets: Investment    Investment in S Ltd. 5,800   1,000 Debentures in S Ltd. 1,500   Current Assets    Inventories 2,600 2,000  Financial Assets: Trade receivables (due from S Ltd. ₹ 160 lakh) 4,000 3,000  Dividend receivable 320 -  Cash and cash equivalent 500 2,000  Total 29,520 13,000   Equity and Liabilities     Equity: Equity Share Capital (₹ 10 per share) 10,000 4,000  Other Equity (Retained Earnings) 16,320 5,000  Non-current Liabilities: 13% Debentures of ₹ 100 each  3,000  Current Liabilities - Financial Liabilities: Trade Payables (due to H Ltd. ₹ 120 lakh) 1,700 600  Dividend Payable  400  Other Liabilities 1,500   Total 29,520 13,000  Additional Information:\n (i) On 1st April, 2023, S Ltd. had 400 lakh shares of ₹ 10 each and ₹ 3,000 lakh in its Retained Earnings in Other Equity. H Ltd. acquired 80% share of S Ltd. on 1st April, 2023 at a consideration of ₹ 5,800 lakh in cash.\n (ii) The following changes in book value of identifiable net assets of S Ltd. as on 1st April, 2023 are to be considered for arriving the fair value of identifiable net assets and to record the changes in their fair value on the said date. These changes in fair values are to be considered while drawing consolidated Financial Statement of the Group.\n  Assets Book value Fair value  PPE ₹ 2,500 lakhs ₹ 2,800 lakhs  Inventory ₹ 500 lakhs ₹ 200 lakhs  The rate of depreciation on PPE is 10% p.a.\n (iii) NCI was to be measured at fair value based on purchase consideration.\n (iv) Goodwill was impaired by ₹ 100 lakh.\n (v) H Ltd. sold goods worth ₹ 200 lakh to S Ltd. on credit at a profit of 20% on sales. 50% of the goods were still lying unsold.\n (vi) S Ltd. issued a cheque of ₹ 40 lakh in favour of H Ltd. as a part payment of the goods purchased from it in March, 2024. The cheque is yet to be received by H Ltd.\n (vii) Dividend payable represents the dividend declared out of pre-acquisition profit. H Ltd. credited its share of dividend from S Ltd. to its profits.\n Prepare the Consolidated Balance Sheet of the Group as at 31st March, 2024. (14 Marks)",
+   "clauseRef": "PYQ Nov 2024 · Q1 · 14 marks",
+   "hints": [
+    "Start from the deciding requirement: Goodwill / capital reserve and NCI at the date control is obtained."
+   ],
+   "modelAnswer": "Consolidated Balance Sheet of H Ltd. and its subsidiary S Ltd. as at 31st March, 2024\n   Notes No. ₹ in lakhs   Assets     Non-current assets    Property, plant and equipment 1 21,070  Goodwill 2 150  Current assets    Inventory 3 4,275  Financial assets - Cash and cash equivalents 4 2,540  Trade receivables 5 6,840  Dividend receivable 6 Nil  Total  34,875   Equity and Liabilities     Equity    Share capital - Equity shares of ₹ 10 each  10,000  Other equity 7 16,292  Non-controlling interest (W.N.4)  1,824  Non-current liabilities - Financial liabilities - Borrowings - 13% Debentures 8 2,999  Current Liabilities - Financial liabilities - Trade payables 9 2,180  Dividend payable 10 80  Other liabilities  1,500  Total  34,875  Notes to Accounts (₹ in lakhs)\n  Particulars ₹ ₹   1. Property, Plant and Equipment     H Ltd.  14,800  S Ltd. 6,000; Add: Fair value gain 300; Less: Additional depreciation due to fair value gain (30)  6,270    21,070   2. Goodwill     Goodwill on acquisition of S Ltd. (Refer W.N.3) 250   Less: Impairment (100) 150   3. Inventory     H Ltd.  2,600  S Ltd. 2,000; Less: Fair value loss (300); Less: Unrealised gain (200/80% x 20% x 50%) (25) 1,675     4,275   4. Cash and cash equivalent     H Ltd. 500; Add: Cheque in Transit 40 540   S Ltd.  2,000    2,540   5. Trade Receivable     H Ltd. 4,000; Less: Mutual transaction (160) 3,840   S Ltd. 3,000 6,840   6. Dividend Receivable     H Ltd. 320   Less: Mutual transaction (320) Nil   7. Other Equity (Retained Earnings)     H Ltd. 16,320   Less: Share of pre-acquisition dividend (400 x 80%) (320) 16,000  Post acquisition RE of S Ltd. (W.N.1) 2,370   Less: Share of NCI in post-acquisition RE of S Ltd. (2,370 x 20%) (474) 1,896  Less: Impairment of goodwill (100 x 80%)  (80)  Less: Loss on cancellation of debentures (mutual holding) (W.N.5)  (1,499)  Less: Unrealised gain (W.N.6)  (25)    16,292   8. Borrowings (13% Debentures)     S Ltd. 3,000   Less: Mutual holding by H Ltd. (1,000 Debentures x ₹ 100) (1) 2,999   9. Trade Payables     H Ltd.  1,700  S Ltd. 600; Less: Mutual transaction (120) 480 2,180   10. Dividend Payables     S Ltd. 400   Less: Mutual transaction (320) 80  Working Notes:\n 1. Analysis of Retained Earnings of S Ltd. (₹ in lakhs)\n     Closing balance as on 31st March, 2024 5,000  Less: Pre-acquisition Retained Earnings as on 1st April, 2023 (3,000 – 400) (2,600)   2,400  Less: Additional depreciation (30)  Post-acquisition Retained Earnings 2,370  2. Computation of net worth (net identifiable assets) as on 1st April, 2023 (₹ in lakhs)\n     Share Capital of S Ltd. 4,000  Pre-acquisition Retained Earnings 3,000  Fair value gain on PPE (2,800 – 2,500) 300  Fair value loss on inventory (500 - 200) (300)  Net Worth or Net Identifiable Assets 7,000  3. Computation of Goodwill on acquisition date of S Ltd. (₹ in lakhs)\n     Purchase consideration 5,800  NCI (by fair value method) as on 1st April, 2023 [(5,800/80%) x 20%] 1,450   7,250  Less: Net worth or Net Identifiable Assets (W.N.2) (7,000)  Goodwill as on 1st April, 2023 250  4. Non-Controlling Interest as on 31st March, 2024 (₹ in lakhs)\n     NCI (by fair value method) as on 1st April, 2023 1,450  Less: Share of pre-acquisition dividend (400 x 20%) (80)  Post-acquisition Retained Earnings (2,370 x 20%) 474  Less: Share of impairment of Goodwill (100 x 20%) (20)  NCI as on 31st March, 2024 1,824  5. Loss on settlement of Debentures held by H Ltd. (₹ in lakhs)\n     Investment in Debentures by H Ltd. 1,500  Less: Nominal value of debentures held by H Ltd. (1,000 x ₹ 100) (1)  Loss on settlement of investment in Debentures 1,499  6. Computation of unrealised gain by H Ltd. on sale of goods to S Ltd. (₹ in lakhs)\n     Cost price of the goods sold 200  Sales price of the goods sold (200/80%) 250  Profit on sale of such goods 50  Unrealized gain on 50% unsold goods (50 x 50%) 25  Note: In the above solution, it is assumed that in additional information (v), ₹ 200 lakh is the cost price of the goods for H Ltd. which is sold to S Ltd. at ₹ 250 lakhs i.e. after 20% profit on sales. However, alternatively it may be assumed that ₹ 200 lakhs is the sales price of the goods for H Ltd. profit will be ₹ 200 lakhs x 20% i.e. ₹ 40 lakhs. In such a situation, the answer will be as follows:\n Consolidated Balance Sheet of H Ltd. and its subsidiary S Ltd. as at 31st March, 2024\n   Notes No. ₹ in lakhs   Assets     Non-current assets    Property, plant and equipment 1 21,070  Goodwill 2 150  Current assets    Inventory 3 4,280  Financial assets - Cash and cash equivalents 4 2,540  Trade receivables 5 6,840  Dividend receivable 6 Nil  Total  34,880   Equity and Liabilities     Equity    Share capital - Equity shares of ₹ 10 each  10,000  Other equity 7 16,297  Non-controlling interest (W.N.4)  1,824  Non-current liabilities - Financial liabilities - Borrowings - 13% Debentures 8 2,999  Current Liabilities - Financial liabilities - Trade payables 9 2,180  Dividend payable 10 80  Other liabilities  1,500  Total  34,880  Notes to Accounts (₹ in lakhs)\n  Particulars ₹ ₹   1. Property, Plant and Equipment     H Ltd.  14,800  S Ltd. 6,000; Add: Fair value gain 300; Less: Additional depreciation due to fair value gain (30)  6,270    21,070   2. Goodwill     Goodwill on acquisition of S Ltd. (Refer W.N.3) 250   Less: Impairment (100) 150   3. Inventory     H Ltd.  2,600  S Ltd. 2,000; Less: Fair value loss (300); Less: Unrealised gain (W.N.6) (20) 1,680     4,280   4. Cash and cash equivalent     H Ltd. 500; Add: Cheque in Transit 40 540   S Ltd.  2,000    2,540   5. Trade Receivables     H Ltd. 4,000; Less: Mutual transaction (160) 3,840   S Ltd. 3,000 6,840   6. Dividend Receivables     H Ltd. 320   Less: Mutual transaction (320) Nil   7. Other Equity (Retained Earnings)     H Ltd. 16,320   Less: Share of pre-acquisition dividend (400 x 80%) (320) 16,000  Post acquisition RE of S Ltd. (W.N.1) 2,370   Less: Share of NCI in post-acquisition RE of S Ltd. (2,370 x 20%) (474) 1,896  Less: Impairment of goodwill (100 x 80%)  (80)  Less: Loss on cancellation of debentures (mutual holding) (W.N.5)  (1,499)  Less: Unrealised gain (W.N.6)  (20)    16,297   8. Borrowings (13% Debentures)     S Ltd. 3,000   Less: Mutual holding by H Ltd. (1,000 Debentures x ₹ 100) (1) 2,999   9. Trade Payables     H Ltd.  1,700  S Ltd. 600; Less: Mutual transaction (120) 480 2,180   10. Dividend Payables     S Ltd. 400   Less: Mutual transaction (320) 80  Working Notes:\n 1. Analysis of Retained Earnings of S Ltd. (₹ in lakhs)\n     Closing balance as on 31st March, 2024 5,000  Less: Pre-acquisition Retained Earnings as on 1st April, 2023 (3,000 – 400) (2,600)   2,400  Less: Additional depreciation (30)  Post-acquisition Retained Earnings 2,370  2. Computation of net worth (net identifiable assets) as on 1st April, 2023 (₹ in lakhs)\n     Share capital of S Ltd. 4,000  Pre-acquisition Retained Earnings 3,000  Fair value gain on PPE (2,800 – 2,500) 300  Fair value loss on inventory (500 - 200) (300)  Net Worth or Net Identifiable Assets 7,000  3. Computation of Goodwill on acquisition date of S Ltd. (₹ in lakhs)\n     Purchase consideration 5,800  NCI (by fair value method) as on 1st April, 2023 [(5,800 / 80%) x 20%] 1,450   7,250  Less: Net worth or Net Identifiable Assets (W.N.2) (7,000)  Goodwill as on 1st April, 2023 250  4. Non-controlling Interest as on 31st March, 2024 (₹ in lakhs)\n     NCI (by fair value method) as on 1st April, 2023 1,450  Less: Share of pre-acquisition dividend (400 x 20%) (80)  Post-acquisition Retained Earnings (2,370 x 20%) 474  Less: Share of impairment of Goodwill (100 x 20%) (20)  NCI as on 31st March, 2024 1,824  5. Loss on settlement of Debentures held by H Ltd. (₹ in lakhs)\n     Investment in Debentures by H Ltd. 1,500  Less: Nominal value of debentures held by H Ltd. (1,000 x ₹ 100) (1)  Loss on settlement of investment in Debentures 1,499  6. Computation of unrealised gain by H Ltd. on sale of goods to S Ltd. (₹ in lakhs)\n     Sales price of the goods sold 200  Profit on sale of such goods (200 x 20%) 40  Unrealized gain on 50% unsold goods (40 x 50%) 20",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p7",
+   "prompt": "Tiger Gems Ltd. and Mammoth Minerals Ltd. are engaged in extraction of coal and minerals from coal-fields, which they own and operate independently of each other.\n In May 2024, Tiger Gems Ltd. and Mammoth Minerals Ltd. jointly acquired an underground 'Luminuos' Coal mine in the ratio of 55:45. Both the companies agreed to share services and costs. Decisions relating to 'Luminuos' Coal mine requires unanimous agreement of both the parties. No separate entity is incorporated.\n The extraction of coal and minerals from Coal mine is done through huge machines. These machines can extract only upto 95%. The remaining coal is irrecoverable and remains in the Coal mine until the mine is decommissioned. As per the laws in force, the Coal mine should be decommissioned at the end of its useful life.\n (i) Discuss whether the joint arrangement between Tiger Gems Ltd. and Mammoth Minerals Ltd. is a Joint Operation or Joint Venture.\n (ii) Discuss the accounting for the unextracted coal and mineral as per Ind AS 16 and Ind AS 37 with respect to aforesaid 'Luminuous' Coal mine. (5 Marks)",
+   "clauseRef": "PYQ May 2025 · Q5(b) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Accounting for joint operations."
+   ],
+   "modelAnswer": "(b) (i) Determination of Joint Arrangement\n As per Ind AS 111 'Joint Arrangements', a joint arrangement is an arrangement of which two or more parties have joint control. Joint control is the contractually agreed sharing of control of an arrangement, which exists only when decisions about the relevant activities require the unanimous consent of the parties sharing control.\n The structure and form of the arrangement determines the nature of the relationship.\n Joint Operation: A joint arrangement which is NOT structured through a separate vehicle is a joint operation. In such a case, the contractual arrangement establishes the parties' rights and obligations.\n Joint Venture: A Joint arrangement whereby the parties that have joint control of the arrangement have rights to the net assets of the arrangement.\n A joint operator accounts for the assets, liabilities, revenues and expenses relating to its involvement in a joint operation in accordance with the relevant Ind AS.\n The arrangement between Tiger Gems Ltd. and Mammoth Minerals Ltd. is a joint operation as no separate vehicle is formed and the companies have agreed to share services and costs with decisions regarding the underground 'Luminous' coal mine requiring unanimous agreement of both the parties.\n Both the companies should recognize their share of the asset as Property, Plant and Equipment.\n (ii) Accounting for the unextracted coal and mineral\n As per para 16 of Ind AS 16 'Property, Plant and Equipment', the cost of an item of property, plant and equipment comprises the initial estimate of the costs of dismantling and removing the item and restoring the site on which it is located.\n Further, para 45 of Ind AS 37 'Provisions, Contingent Liabilities and Contingent Assets', provides that where the effect of the time value of money is material, the amount of a provision shall be the present value of the expenditures expected to be required to settle the obligation.\n Thus, costs incurred by an entity in respect of obligations for dismantling, removing and restoring the site on which an item of property, plant and equipment is situated are recognized and measured in accordance with Ind AS 16 and Ind AS 37.\n Each of the entities in the joint arrangement should recognize their respective share of the cost of decommissioning of the underground storage facility.\n However, as per para 29 of Ind AS 37 where an entity is jointly and severally liable for an obligation, the part of the obligation that is expected to be met by other parties is treated as a contingent liability.\n Accordingly, each of the entities in the joint arrangement should also disclose the share of the cost of decommissioning of the underground facility, to be borne by another joint arrangement entity, as a contingent liability.\n As per Ind AS 16, Property, Plant and Equipment are tangible items that:\n (a) are held for use in the production or supply of goods or services, for rental to others, or for administrative purposes; and\n (b) are expected to be used during more than one period.)\n Thus, both the entities should classify and account for their share of irrecoverable coal and minerals as property, plant and equipment, as the irrecoverable coal and minerals is necessary for the storage facility to perform its function. Therefore, the irrecoverable coal and minerals, being a part of the storage facility, should be capitalized as a component of the storage facility asset, and should be depreciated to its residual value over the life of the storage facility.",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p8",
+   "prompt": "15. Zebra Ltd. holds 80% stake of issued equity share capital of Camel Ltd. and 25% of issued irredeemable preference shares. This acquisition was made on 1st October, 2024. Issued equity and preference share capital of Camel Ltd. as on 31st March, 2025 is ₹ 30 crores and ₹ 9 crores respectively; and closing balance of retained earnings as at 31st March, 2025 is ₹ 60 crores. All the book values of assets and liabilities were same as their fair values except for an asset having a life of 6 years as on the date of acquisition of control. The carrying amount of the asset was ₹ 6 crores on date of acquisition and its fair value was ₹ 9 crores. The asset is depreciated on SLM basis.\n Based on aforesaid information, compute non-controlling interest in Camel Ltd. in the consolidated financial statement of Zebra Ltd. You need to undertake adjustment of depreciation on the asset arising due to its fair valuation.",
+   "clauseRef": "PYQ Sep 2025 · MCQ 15 · 2 marks",
+   "hints": [
+    "Start from the deciding requirement: Attributing profit, OCI and losses to NCI."
+   ],
+   "modelAnswer": "(A) ₹ 12.75 Crores\n (B) ₹ 24.70 Crores\n (C) ₹ 24.75 Crores\n (D) ₹ 12.70 Crores\n Answer key: No Correct Option",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p9",
+   "prompt": "R Limited is a subsidiary of Z Limited. Their respective balance sheet as at 31st March, 2025 is as under:\n   Note No. Z Ltd. (₹ in lakhs) R Ltd. (₹ in lakhs)   I. Assets      Non-current assets     (i) Property, plant and equipment 4 450 248  (ii) Intangible assets 5 75 45  (iii) Investments  375 68  Current assets     (i) Inventories  75 75  (ii) Financial assets: a. Trade receivables 6 110 120  b. Cash and cash equivalents  85 135  Total Assets  1,170 691   II. Equity and Liabilities      Equity     (i) Share Capital 1 720 360  (ii) Other Equity 2 315 225  Liabilities     Current Liabilities     (i) Financial liabilities: a. Bank overdraft  45 30  b. Trade payables 3 90 76  Total Equity and Liabilities  1,170 691  Notes to the Balance Sheet:\n  Note No.  Z Ltd. (₹ in Lakhs) R Ltd. (₹ in Lakhs)  1. Share capital: (i) Equity shares of ₹ 10 each 600 300   (ii) 10% Preference shares of ₹ 10 each 120 60    720 360  2. Other equity: (i) General reserve 120 75   (ii) Retained earnings 195 150    315 225  3. Trade payables: (i) Sundry creditors 90 69   (ii) Bills payable Nil 7    90 76  4. Property, plant and equipment: (i) Machinery 210 135   (ii) Furniture and fixture 240 113    450 248  5. Intangible asset: Goodwill 75 45  6. Trade receivables: (i) Sundry debtors 106 120   (ii) Bills receivable 4 Nil    110 120  Additional Information\n (a) Z Ltd. acquired 12,00,000 equity shares of R Ltd. on 1st April, 2024 and further acquired 13,50,000 equity shares of R Ltd. on 1st January, 2025 at a cost of ₹ 1,44,00,000 and ₹ 1,55,25,000 respectively.\n (b) The Preference share capital of R Ltd. includes nominal value of ₹ 22,50,000 held by Z Ltd. acquired on 1st April, 2024 at a cost of ₹ 54,00,000.\n (c) The retained earnings of R Ltd. had a credit balance of ₹ 45,00,000 as on 1st April, 2024 and that of General Reserve on that date was ₹ 30,00,000.\n (d) R Ltd. had paid dividend @ 12% on its paid-up equity share capital out of its retained earnings' balance on 1st April, 2024 for the year 2023-2024. The entire dividend received by Z Ltd. in August 2024 has been credited to its retained earnings.\n (e) On 1st October, 2024, machinery of R Ltd. was overvalued by ₹ 15,00,000 for which necessary adjustments are to be made. The Company charges depreciation @ 10% on W.D.V. basis.\n (f) Bills receivables of Z Ltd. were drawn upon R Ltd. out of which bills amounting to ₹ 3,00,000 have been discounted with bank.\n You are required to prepare consolidated balance sheet (In ₹ without rounding off) of Z Ltd. and its subsidiary R Ltd. as on 31st March, 2025 with the assumption that the group has adopted fair value method to measures NCI and the fair value of each equity share of R Ltd. is ₹ 14 per share as on the date of acquisition of control by Z Ltd. and also on 31st March 2025. Ignore taxation and adjustment, if any, of preference dividend. (14 Marks)",
+   "clauseRef": "PYQ Sep 2025 · Q1 · 14 marks",
+   "hints": [
+    "Start from the deciding requirement: Step acquisition and control without consideration in consolidation."
+   ],
+   "modelAnswer": "Consolidated Balance Sheet of Z Ltd. as at 31st March 2025\n   Notes No. ₹   Assets     Non-current assets    (i) Property, plant and equipment 1 6,83,75,000  (ii) Intangible assets 1 75,00,000  (iii) Financial assets: a. Investments 1 89,75,000  Current assets    (i) Inventories 1 1,50,00,000  (ii) Financial assets: a. Trade receivables 1 2,26,00,000  b. Cash and cash equivalents 1 2,20,00,000  Total  14,44,50,000   Equity and Liabilities     Equity    (i) Share capital 2 7,20,00,000  (ii) Other equity 3 3,79,96,875  (iii) Non-controlling interest (W.N.3)  1,07,53,125  Current Liabilities    (i) Financial liabilities: a. Bank overdraft 1 75,00,000  b. Trade payables 1 1,62,00,000  Total  14,44,50,000  Notes to Accounts\n Note 1: Assets and Liabilities\n  Particulars Z Ltd. R Ltd. Adjustments ₹  Property, Plant and Equipment 4,50,00,000 2,48,00,000 -15,00,000 + 75,000 6,83,75,000  Intangible Assets 75,00,000 45,00,000 -45,00,000 75,00,000  Investments 3,75,00,000 68,00,000 -1,44,00,000 -1,55,25,000 -54,00,000 89,75,000  Inventories 75,00,000 75,00,000  1,50,00,000  Trade Receivables 1,10,00,000 1,20,00,000 -4,00,000 2,26,00,000  Cash and Cash Equivalents 85,00,000 1,35,00,000  2,20,00,000  Bank Overdraft 45,00,000 30,00,000  75,00,000  Trade Payables 90,00,000 76,00,000 -4,00,000 1,62,00,000  Note 2: Share Capital\n   ₹  60 lakhs Equity shares of ₹ 10 each, fully paid 6,00,00,000  10%, 12 lakhs Preference Share of ₹ 10 each fully paid 1,20,00,000   7,20,00,000  Note 3: Consolidated Other Equity\n    ₹  General Reserve W.N.1 1,29,56,250  Retained Earnings W.N.1 2,17,78,125  Capital Reserve W.N.2 32,62,500    3,79,96,875  Working Notes:\n 1. Consolidated Other Equity (₹)\n  Particulars General Reserve Retained Earnings  Standalone - Z Ltd. 1,20,00,000 1,95,00,000  Add: Fair Value gain of existing stake [(12 lakh x 14) – 144 lakhs]  24,00,000  Less: Loss on cancellation of preference shares (54 lakhs - 22.5 lakhs)  (31,50,000)  Add: Share in post-acquisition Profits (W.N.4(i)) / (W.N.4(ii)) 9,56,250 30,28,125   1,29,56,250 2,17,78,125  2. Computation of bargain purchase i.e. capital reserve\n (i) Computation of net worth (net identifiable assets) as on 1st January 2025\n   ₹  Share Capital 3,00,00,000  Pre-acquisition Retained Earnings (after adjusting downward revaluation of machinery) 1,00,12,500  Pre-acquisition General Reserve 63,75,000  Adjustment for Goodwill since it has no fair value (45,00,000)  Net worth or Net Identifiable assets 4,18,87,500  (ii) Computation of bargain purchase i.e. capital reserve\n   ₹ ₹  Net worth or Net identifiable assets  4,18,87,500  Purchase consideration (155.25 lakhs + 168 lakhs) 3,23,25,000   NCI [30 lakhs shares x 15% x ₹ 14] 63,00,000 (3,86,25,000)  Bargain purchase (capital reserve)  32,62,500  3. Non-Controlling Interest A/c (at Fair Value)\n   ₹  NCI at fair value as on 1st January 2025 63,00,000  Post-acquisition General Reserve (W.N.4(i)) 1,68,750  Post-acquisition Retained Earnings (W.N.4(ii)) 5,34,375  Preference share capital (60 lakh – 22.50 lakh) 37,50,000  NCI at fair value as on 31st March 2025 1,07,53,125  4. Analysis of Other Equity\n (i) General Reserve\n    ₹  Closing balance as on 31st March 2025  75,00,000  Less: Opening Balance (45.00 - 36.00) pre (30,00,000)  Net Profit transferred during the year  45,00,000  For 9 months till 31st December 2024 pre 33,75,000  For 3 months from 1st Jan. 2025 to 31st Mar. 2025 post 11,25,000  Total pre-acquisition reserve (30.00 lakh + 33.75 lakh) pre 63,75,000  Share of Z Ltd. in post-acquisition reserve (85%) post 9,56,250  Share of NCI in post-acquisition reserve (15%) post 1,68,750  (ii) Retained Earnings (RE)\n    ₹ ₹  Closing balance as on 31st March, 2025   1,50,00,000  Less: Opening balance  45,00,000   Less: Dividend @12% (300 lakh x 12%)  (36,00,000)    Pre  (9,00,000)  During the year   1,41,00,000  For 9 months till 31st December, 2024 Pre  1,05,75,000  For 3 months from 1st Jan. 2025 to 31st Mar. 2025 Post  35,25,000  Add: Saving in Depreciation for 3 months (from 1st January 2025 to March 2025)   37,500  Net post-acquisition RE Post  35,62,500  Total pre-acquisition RE (9.00 + 105.75) Pre  1,14,75,000  Less: Downward revaluation of machinery   (15,00,000)  Add: Saving in depreciation for 3 months (from 1st October 2024 to 31st December 2024)   37,500   Pre  1,00,12,500  Share of Z Ltd. in post-acquisition RE (85%) Post  30,28,125  Share of NCI in post-acquisition RE (15%) Post  5,34,375  Note:\n 1. At page 4 of the Question Paper under additional information (a) the second acquisition of 13,50,000 equity shares on 1st January 2025 has been done at ₹ 1,55,25,000. This implies that fair value per share is ₹ 11.50 (1,55,25,000/13,50,000). However, in the last para of the question at the same page, the fair value of R Ltd.'s share is mentioned as ₹ 14 per share on the date of acquisition.\n The above solution has been drawn considering fair value of R Ltd.'s share as ₹ 14 per share for the purpose of computation of gain or loss on existing stake and bargain purchase.\n However, alternatively one can draw a solution considering fair value of R Ltd.'s share as ₹ 11.5 per share for the purpose of computation of gain or loss on existing stake and bargain purchase only. In such a case, the amount of consolidated retained earnings and bargain purchase i.e. capital reserve will be ₹ 1,87,78,125 and ₹ 62,62,500 respectively.\n 2. Furthermore, the above solution has been drawn considering goodwill being residuary in nature, has no fair value. However, one may draw a solution considering goodwill as an identifiable asset.",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p10",
+   "prompt": "On 1st April 2024, A Limited acquired 80% of the equity share capital of S Limited. On the said date, the share capital and other equity (represented entirely by retained earnings) of S Limited were ₹ 10.00 lakhs and ₹ 2.50 lakhs respectively.\n To the selling shareholders, A Limited:\n • paid initial cash consideration of ₹ 20.00 lakhs;\n • issued fresh 4,00,000 equity shares of a nominal value of ₹ 1 per share at current market price of ₹ 2 per share;\n • agreed to pay a further ₹ 6.00 lakhs after 3 years i.e. on 31st March 2027.\n A Limited's cost of capital is 10% per annum. The appropriate discount factor for ₹ 1 @ 10% per annum receivable at the end of:\n • 1st year is 0.91;\n • 2nd year is 0.83;\n • 3rd year is 0.75.\n Both A Limited and S Limited prepare their financial statements as per the Companies (Indian Accounting Standards) Rules, 2015.\n The Balance Sheet of A Limited and S Limited as at 31st March 2025 is as under: (All amounts in ₹ in lakhs)\n  Particulars A Limited S Limited   ASSETS     Non-current assets    - Property, plant and equipment 60.00 30.00  - Financial assets: Investment (in S Limited at cost) 20.00 -  Current assets    - Inventories 7.00 12.00  - Financial assets: Trade receivables 4.50 10.00  Cash and cash equivalents 2.00 4.00  Total Assets 93.50 56.00   EQUITY AND LIABILITIES     EQUITY    Equity share capital (₹ 1 per share) 40.00 10.00  Other equity - Retained earning 15.00 6.00  LIABILITIES    Non-current liabilities - Financial liabilities: Borrowings 25.00 25.00  Current liabilities - Financial liabilities: Trade payables 13.50 15.00  Total Equity and Liabilities 93.50 56.00  The following additional information is provided:\n • Since its incorporation, S Limited has been selling some of its products under the brand name 'BLISS'. At the acquisition date, A Limited valued this brand at ₹ 8.00 lakhs with a remaining life of 10 years with NIL residual value. A Limited amortizes its intangible assets on straight line method. The brand is not recognized in S Limited's Balance Sheet;\n • As at 31st March 2025, goodwill recognized on consolidation is to be impaired by 25%;\n • A Limited Group measures the non-controlling interest at fair value;\n • Equity shares of S Limited were quoted at ₹ 4 per share on the date of acquisition;\n • Immediately after acquisition i.e. on 1st April 2024, A Limited (which also sells capital equipment) sold a capital equipment costing ₹ 4.00 lakhs to S Limited at ₹ 5.00 lakhs. This capital equipment is recorded as Property, Plant and Equipment by S Limited. The useful life of the equipment on the date of transfer was 10 years with NIL residual value. The equipment is depreciated on straight line method.\n • A Limited is yet to record issuance of shares and deferred consideration in its books of account.\n You are required to prepare Consolidated Balance Sheet of A Limited as at 31st March 2025. Workings should form part of your answer. (14 Marks)",
+   "clauseRef": "PYQ Jan 2026 · Q1 · 14 marks",
+   "hints": [
+    "Start from the deciding requirement: Goodwill / capital reserve and NCI at the date control is obtained."
+   ],
+   "modelAnswer": "Consolidated Balance Sheet of A Ltd. and its subsidiary, S Ltd. as at 31st March 2025\n  Particulars Note No. ₹ in lakhs   I. Assets     (1) Non-Current Assets    (i) Property Plant & Equipment 1 89.10  (ii) Goodwill (W.N.3)  15.00  (ii) Intangible Asset - Brand 1 7.20  (2) Current Assets    (i) Inventories 1 19.00  (ii) Financial Assets (a) Trade Receivables 1 14.50  (b) Cash & Cash Equivalents 1 6.00  Total Assets  150.80   II. Equity and Liabilities     (1) Equity    (i) Equity Share Capital 2 44.00  (ii) Other Equity 3 15.79  (2) Non-Controlling Interest (W.N.5)  7.56  (3) Non-Current Liabilities    (i) Financial Liabilities (a) Borrowings 1 50.00  (b) Other – Contingent Consideration 1 4.95  (4) Current Liabilities    (i) Financial Liabilities (a) Trade Payables 1 28.50  Total Equity & Liabilities  150.80  Note: It is assumed that depreciation on capital equipment has already been accounted for by S Ltd. for the year 2024-2025 based on its purchase price.\n Notes to Accounts\n 1. Assets and Liabilities (₹ in lakhs)\n  Particulars A Ltd. S Ltd. Adjustments Total  Property, Plant and Equipment 60.00 30.00 -1.00+0.10 89.10  Intangible Assets (Brand) - - +8.00-0.80 7.20  Investments 20.00 - - 20.00 -  Inventories 7.00 12.00  19.00  Trade Receivables 4.50 10.00  14.50  Cash and Cash Equivalents 2.00 4.00  6.00  Borrowings 25.00 25.00  50.00  Other Non-current financial liability (Deferred consideration) (W.N.7) 4.95 -  4.95  Trade Payables 13.50 15.00  28.50  2. Equity Share Capital (₹ in lakhs)\n     44 lakhs equity shares of ₹ 1 each, fully paid – (Out of which 4 lakh equity shares of ₹ 1 each, fully paid issued for consideration other than cash) 44.00   44.00  3. Consolidated Other Equity (₹ in lakhs)\n     Retained Earnings (W.N.6) 11.79  Securities Premium (4,00,000 shares x ₹ 1) 4.00   15.79  Working Notes:\n 1. Calculation of purchase consideration at the acquisition date i.e. 1st April 2024 (₹ in lakhs)\n  Payment made by A Ltd. to S Ltd.   Cash 20.00  Equity shares (4,00,000 shares x ₹ 2.00) 8.00  Present value of deferred consideration (₹ 6,00,000 x 0.75) 4.50  Total consideration 32.50  2. Calculation of net assets i.e. net worth at the acquisition date i.e. 1st April, 2024 (₹ in lakhs)\n     Share capital of S Ltd. 10.00  Retained Earnings of S Ltd. 2.50  Fair value increase due to identifiable asset - Brand 8.00  Net worth on acquisition date 20.50  3. Calculation of Goodwill at the acquisition date (1st April 2024) and 31st March 2025 (₹ in lakhs)\n     Purchase consideration (W.N.1) 32.50  Non-controlling interest at fair value (10,00,000 x 20% x 4) 8.00   40.50  Less: Net worth (W.N.2) (20.50)  Goodwill as on 1st April 2024 20.00  Less: Impairment @ 25% (5.00)  Goodwill as on 31st March 2025 15.00  4. Calculation of Property, Plant and Equipment as on 31st March 2025 (₹ in lakhs)\n      A Ltd.  60.00  S Ltd. 30.00   Less: Elimination of gain on mutual transaction (5.00 – 4.00) (1.00)    29.00   Add: Excess depreciation on gain on mutual transaction [(5.00 – 4.00)/10 years] 0.10 29.10    89.10  5. Calculation of post-acquisition gain (after adjustment of impairment on goodwill) and value of NCI as on 31st March 2025 (₹ in lakhs)\n    NCI (20%) A Ltd. (80%)  Acquisition date balance (10,00,000 shares x 20% x ₹ 4)  8.00   Closing balance of Retained Earnings 6.00    Less: Pre-acquisition balance (2.50)    Post-acquisition Retained Earnings before adjustments 3.50    Less: Amortisation of Brand (8/10 years) (0.80)    Add: Excess depreciation on PPE (1.00 x 1/10) (W.N.4) 0.10    Post-acq. Retained Earnings after adjustments 2.80 0.56 2.24  Less: Impairment on Goodwill (20 x 25%) in 20:80  (1.00) (4.00)    7.56 (1.76)  6. Consolidated Retained Earnings as on 31st March 2025 (₹ in lakhs)\n     A Ltd. 15.00  Less: A Ltd.'s share of post-acquisition loss in S Ltd. (W.N.5) (1.76)  Less: Finance cost on deferred consideration (W.N.7) (0.45)  Less: Gain on sale of capital equipment (5.00 – 4.00) (1.00)  Retained Earnings as on 31st March 2025 11.79  7. Calculation of value of deferred consideration as on 31st March 2025 (₹ in lakhs)\n     Value of deferred consideration as on 1st April 2024 (W.N.1) 4.50  Add: Finance cost for the year 2024-2025 (4.50 x 10%) 0.45  Deferred consideration as on 31st March 2025 4.95",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p11",
+   "prompt": "Zebra Limited is considering to grant an interest free loan of ₹ 25,00,000 to its wholly owned Indian subsidiary company, Camel Limited. No transaction cost is attached with this loan. With respect to other terms and conditions, the following alternate options are being considered:\n • Option 1: The loan is interest free and is repayable on demand;\n • Option 2: The loan is interest free and is repayable in a single bullet payment after 4 years from the date of granting of such loan. The current market rate of interest for similar loan is 12% per annum.\n • Option 3: The said loan is interest free and will be repaid as and when Camel Limited has funds to repay the loan amount.\n You are required to suggest as per applicable Ind AS, under each of the options, the accounting treatment of the above loan:\n • in the standalone financial statements of Zebra Limited and Camel Limited; and\n • in the consolidated financial statements of Zebra Limited.\n Also give journal entries under option 2.\n Also suggest the accounting treatment as per applicable Ind AS, if in future periods, Camel Limited grants an interest free loan to Zebra Limited. (10 Marks)",
+   "clauseRef": "PYQ Jan 2026 · Q2(a) · 10 marks",
+   "hints": [
+    "Start from the deciding requirement: Separate financial statements."
+   ],
+   "modelAnswer": "(a) Ind AS 109 requires that a financial assets and liabilities are recognized on initial recognition at its fair value, as adjusted for the transaction cost. In accordance with Ind AS 113, the fair value of a financial liability with a demand feature (e.g., a demand deposit) is not less than the amount payable on demand, discounted from the first date that the amount could be required to be paid.\n Using the guidance, the interest-free loan will be accounted for as below in various scenarios:\n Option 1: Since the loan is repayable on demand, it has fair value equal to cash consideration given i.e. ₹ 25,00,000. The parent and subsidiary recognize financial asset and liability, respectively, at the amount of loan given. Going forward, no interest is accrued on the loan. Upon repayment, both the parent and the subsidiary reverse the entries made at origination.\n Option 2: The loan is repayable in single bullet payment after 4 years. Both parent and subsidiary recognize financial asset and liability, respectively, at fair value on initial recognition. The difference between the loan amount and its fair value is treated as an equity contribution to the subsidiary. This represents a further investment by the parent in the subsidiary.\n Accounting in the books of Zebra Ltd. (Parent)\n  Particulars Dr. (₹) Cr. (₹)   On the date of loan     Loan to Camel Ltd. (Subsidiary) (25,00,000 x 0.636) Dr. 15,90,000   Deemed Investment (Capital Contribution) in Camel Ltd. Dr. 9,10,000   To Bank  25,00,000  (Being the loan given to Camel Ltd. and recognised at fair value)     Accrual of Interest income     Loan to Camel Ltd. Dr. 1,90,800   To Interest income (Profit and Loss Account)  1,90,800  (Being interest income accrued) – Year 1    Loan to Camel Ltd. Dr. 2,13,696   To Interest income (Profit and Loss Account)  2,13,696  (Being interest income accrued) – Year 2    Loan to Camel Ltd. Dr. 2,39,340   To Interest income (Profit and Loss Account)  2,39,340  (Being interest income accrued) – Year 3    Loan to Camel Ltd. Dr. 2,66,164   To Interest income (Profit and Loss Account)  2,66,164  (Being interest income accrued) – Year 4     On repayment of loan     Bank Dr. 25,00,000   To Loan to Camel Ltd. (Subsidiary)  25,00,000  Accounting in the books of Camel Ltd. (Subsidiary)\n  Particulars Amount Amount   On the date of loan     Bank Dr. 25,00,000   To Loan from Zebra Ltd. (Parent)  15,90,000  To Equity (Deemed Capital Contribution from Zebra Ltd.)  9,10,000  (Being the loan given to Camel Ltd. and recognised at fair value)     Accrual of Interest     Interest expense (Profit and Loss Account) Dr. 1,90,800   To Loan from Zebra Ltd.  1,90,800  (Being interest expense recognised) – Year 1    Interest expense (Profit and Loss Account) Dr. 2,13,696   To Loan from Zebra Ltd.  2,13,696  (Being interest expense recognised) – Year 2    Interest expense (Profit and Loss Account) Dr. 2,39,340   To Loan from Zebra Ltd.  2,39,340  (Being interest expense recognised) – Year 3    Interest expense (Profit and Loss Account) Dr. 2,66,164   To Loan from Zebra Ltd.  2,66,164  (Being interest expense recognised) – Year 4     On repayment of loan     Loan from Zebra Ltd. (Payable) Dr. 25,00,000   To Bank  25,00,000  Working Notes:\n  1. Computation of Present value of loan   Rate 12%  Amount of Loan 25,00,000  Year of Loan 4  Present Value (25,00,000 x 0.636) 15,90,000   2. Computation of interest for Year 1    Present Value at the beginning of the year 15,90,000  Rate 12%  Interest for 1st year 1,90,800  Closing value at the end of year 1 17,80,800   3. Computation of interest for Year 2    Present Value at the beginning of the year 17,80,800  Rate 12%  Interest for 2nd year 2,13,696  Closing value at the end of year 2 19,94,496   4. Computation of interest for Year 3    Present Value at the beginning of the year 19,94,496  Rate 12%  Interest for 3rd year 2,39,340  Closing value at the end of year 3 22,33,836   5. Computation of interest for Year 4    Present Value at the beginning of the year 22,33,836  Rate 12%  Interest for 4th year 2,66,164*  Closing value at the end of year 4 25,00,000  *Difference of ₹ 1,896 (i.e. 2,68,060 - 2,66,164) is due to approximation.\n Option 3: The loan will be repaid as and when Camel Ltd. has funds to repay the loan amount.\n Generally, a loan, which is repayable when funds are available, can't be stated to be repayable on demand. Rather, the entities need to estimate repayment date and determine its measurement accordingly. If the loan is expected to be repaid in four years, its measurement will be the same as in option 2.\n In the Consolidated Financial Statements (CFS), the loan and interest income/expense will get knocked-off as intra-group transaction in all three scenarios. Hence the above accounting will not have any impact in the CFS.\n In case, Camel Limited grants interest free loan to Zebra Limited, i.e. the loan is given by the subsidiary to the parent company, the difference between fair value of the loan on initial recognition and its nominal value will be treated as dividend distribution by subsidiary and dividend income by the parent.",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p12",
+   "prompt": "Case Scenario-I (extract): Aakash Ltd. is a manufacturing company and engaged in the manufacturing of home and industrial appliance products. The company has made considerable growth during last few years as demand of its products has increased substantially. Aakash Ltd. is a diversified group having manufacturing units in different cities of India and other countries.\n Following information is available in respect of Aakash Ltd. for the year ended on 31st March, 2026: [facts (1), (2), (4), (5) on CGU impairment, land, loan refinancing and convertible preference shares feed MCQs 1, 2, 4, 5]\n (3) Aakash Ltd. acquired 90% stake in subsidiary Oil Ltd. a few years ago. Aakash Ltd. now sells its entire investment in Oil Ltd. for ₹ 2,000 lakhs. The net assets of Oil Ltd. are ₹ 1,500 lakhs and the NCI in Oil Ltd. is ₹ 200 lakhs. The cumulative exchange difference that has arisen during Aakash Ltd.'s ownership are gains of ₹ 300 lakhs, resulting in Aakash Ltd.'s foreign currency translation reserve in respect of Oil Ltd. having a credit balance of ₹ 270 lakhs, while the cumulative amount of exchange differences that have been attributable to NCI is ₹ 30 lakhs.\n On the basis of information provided in the above case scenario, you are required to choose most appropriate answer to the below mentioned questions from 1 to 5.\n 3. What is the amount of Aakash Ltd.'s gain on disposal of its investment in Oil Limited ?\n (A) ₹ 970 lakhs\n (B) ₹ 1770 lakhs\n (C) ₹ 500 lakhs\n (D) ₹ 770 lakhs",
+   "clauseRef": "PYQ May 2026 · MCQ 3 · 2 marks",
+   "hints": [
+    "Start from the deciding requirement: Loss of control."
+   ],
+   "modelAnswer": "ICAI has not yet published the answer (question paper only).",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p13",
+   "prompt": "Case Scenario-II: Zest Ltd. is engaged in the manufacturing of Automobiles with its registered office in Pune and is listed on BSE Limited. It also owns a chain of retail stores across 20 different locations in the cities of Pune and Kolhapur. Following are the brief facts about the transactions entered into by Zest Ltd. for which accounting advice is sought by the CFO from you :\n Zest Ltd. has recently made various acquisitions and details of each of them are as follows :\n (1) Zest Ltd. acquired 45% stake in Sun Ltd. on 1st April, 2025 for ₹ 50,00,000. This leads to Zest Ltd. having significant influence on Sun Ltd. Since the date of acquisition till 31st March, 2026, Sun Ltd. has earned a profit of ₹ 16,00,000. Also, on 31st March, 2025, Sun Ltd. had revalued one of its property resulting in increase in the value of property by ₹ 8,00,000 and accounted for it in the revaluation reserve in the same financial year. Zest Ltd. has a policy to value its investment in joint ventures and associates based on equity method.\n (2) Zest Ltd. acquired 40% shares in Large Ltd. on 1st April, 2025 for a consideration of ₹ 65,50,000 and balance of retained earnings on the same date was ₹ 52,40,000. It is the group's policy to re-measure its non-controlling interests at fair value and provide for impairment loss, if any, in the value of investment every year end. The retained earnings and issued share capital of Large Ltd. on 31st March, 2026 are ₹ 76,00,000 and ₹ 40,00,000 respectively.\n Large Ltd. have not issued any share capital since the acquisition of shareholding by Zest Ltd. The fair value of the net assets of Large Ltd. was the same as their carrying amounts at the date of acquisition. The recoverable amount of net assets of Large Ltd. has been deemed to be ₹ 1,15,00,000 as on 31st March, 2026.\n On 1st January, 2026, Zest Ltd. sold inventory costing ₹ 5,00,000 to Large Ltd. for ₹ 15,00,000. The inventory was still unsold by Large Ltd. at 31st March, 2026. This inventory was sold by Large Ltd. to third party on 8th April, 2026.\n (3) On 1st April 2025, Zest Ltd. agreed with shareholder of Sour Ltd. to acquire 100% stake in Sour Ltd. for total consideration of ₹ 200 lakhs which includes the following :\n (i) Zest Ltd. will reimburse shareholders of Sour Ltd. for the transaction cost of ₹ 4 lakhs.\n (ii) Two of the shareholders of Sour Ltd. will work as the general managers, even after Sour Ltd. is acquired by Zest Ltd. This arrangement will work for a period of 2 years and for which quarterly salary of ₹ 40,000 is provided to each of these individuals.\n (iii) Further Sour Ltd. had filed a legal case against Zest Ltd. in the past, which was not settled till the date of acquisition. Zest Ltd. agreed to settle the same for ₹ 2,00,000.\n On the basis of information provided in the above case scenario, you are required to choose most appropriate answer to the below mentioned questions from 6 to 8.\n 6. What is the carrying value of Zest Ltd.'s investment in Sun Ltd. (associate) in its books of accounts as on 31st March, 2026 ?\n (A) ₹ 10,80,000\n (B) ₹ 23,75,000\n (C) ₹ 57,20,000\n (D) ₹ 60,80,000",
+   "clauseRef": "PYQ May 2026 · MCQ 6 · 2 marks",
+   "hints": [
+    "Start from the deciding requirement: Significant influence."
+   ],
+   "modelAnswer": "ICAI has not yet published the answer (question paper only).",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p14",
+   "prompt": "(Case Scenario-II facts (1)-(3) as in MCQ 6 above.)\n 7. What will be the impairment loss from investment of Zest Ltd. in associate Large Ltd. for the year ending 31st March, 2026 ?\n (A) ₹ 46,00,000\n (B) ₹ 24,94,000\n (C) ₹ 28,94,000\n (D) ₹ 49,90,000",
+   "clauseRef": "PYQ May 2026 · MCQ 7 · 2 marks",
+   "hints": [
+    "Start from the deciding requirement: Losses, long-term interests and impairment."
+   ],
+   "modelAnswer": "ICAI has not yet published the answer (question paper only).",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  }
+ ]
 }

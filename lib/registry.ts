@@ -72,6 +72,7 @@ const registry: ChapterIndexRow[] = [
     summary: 'Business vs asset · acquirer & reverse acquisition · consideration & contingent consideration · goodwill/bargain · measurement period · common control',
     loader: async () => (await import('../data/fr/ch12-ind-as-103-business-combinations.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/fr/ch12-casebook.json')).default as unknown as Casebook,
+    learn: async () => (await import('../data/fr/ch12-learn.json')).default as unknown as LearnData,
   },
   {
     id: 'fr-ch13',
@@ -81,6 +82,7 @@ const registry: ChapterIndexRow[] = [
     summary: 'Control · consolidation, NCI, intra-group, loss of control · joint arrangements · equity method · separate FS · Ind AS 112',
     loader: async () => (await import('../data/fr/ch13-consolidated-and-separate-financial-statements.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/fr/ch13-casebook.json')).default as unknown as Casebook,
+    learn: async () => (await import('../data/fr/ch13-learn.json')).default as unknown as LearnData,
   },
   // @chapters-end
 ];

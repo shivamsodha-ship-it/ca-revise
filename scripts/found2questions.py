@@ -27,6 +27,8 @@ def mcq_parse(q, a):
     stem, o = parts[0], {}
     for i in range(1, len(parts) - 1, 2):
         if parts[i].upper() not in o: o[parts[i].upper()] = parts[i + 1].strip()
+    if len(o) < 4:  # some files list the options under the ICAI answer heading, one per line
+        o = dict(re.findall(r'(?m)^\(([A-D])\)\s*(.+)$', a))
     if len(o) < 4: return None
     m = re.search(r'(?i)(?:option|answer[^:()]*:|key[^:()]*:)\s*\(?\s*([a-d])\s*\)', a)
     if not m: return None
@@ -40,7 +42,7 @@ for fn in C['found']:
         if not blk.startswith('### '): continue
         head = blk.split('\n')[0][4:].strip()
         if C.get('tag') and C['tag'] not in head: continue
-        m = re.match(r'(RTP|MTP|PYQ) ([A-Za-z]+\.? \d{4})(?: (S-I{1,2}))?:\s*(.+?)\s*\(([^)]*?)Marks?\)\.?\s*(.*)', head)
+        m = re.match(r'(RTP|MTP|PYQ) ([A-Za-z]+\.? \d{4})(?: (S-I{1,2}))?:\s*(.+?)\s*\(([^)]*?)(?:Marks?|not stated[^)]*)\)\.?\s*(.*)', head)
         if not m: flags.append('HEAD ' + head); continue
         typ, att, ser, qno, marks, topic = m.groups()
         marks = re.sub(r'\D', '', marks or '')
@@ -53,16 +55,19 @@ for fn in C['found']:
         qtext, atext = qm.group(1).strip(), am.group(1).strip()
         checks = re.findall(r'CHECK:[^\n]*', atext + '\n' + qtext)
         atext = re.sub(r'\n?CHECK:[^\n]*', '', atext); qtext = re.sub(r'\n?CHECK:[^\n]*', '', qtext)
+        atext = re.sub(r'\s*\((?:[^()]|\([^()]*\))*?(?:App[- ]|[Aa]pp-written|[Rr]ecompute)(?:[^()]|\([^()]*\))*\)', '', atext).strip()  # agents' own recomputes are not ICAI text
+        pending = re.match(r'(?i)not available', atext)
+        if pending: atext = 'ICAI has not yet published the answer (question paper only).'
         label = f"{typ} {att}" + (f" {ser}" if ser else '') + f" · {qno.strip()}" + (f" · {marks} marks" if typ == 'PYQ' and marks else '')
         label = re.sub(r'· Q(\d+) \(MCQ\)', r'· MCQ \1', label)
         lk = links_for(topic + ' ' + qtext[:800])
         note = ''
-        if checks: note = '<p><strong>Note (app):</strong> ' + ' '.join(c.replace('CHECK:', '').strip() for c in checks) + " ICAI's text is kept as published.</p>"
+        # CHECK remarks from research agents are not shown: apparent ICAI slips are usually PDF-extraction artefacts.
         if rep and re.match(r'(?i)(yes|variant|near)', rep): note += f'<p><em>Study-material link: {rep}</em></p>'
-        if 'MCQ' in qno or 'MCQ' in head.split('.')[0]:
-            p = mcq_parse(qtext, atext)
-            if not p: flags.append('MCQ ' + head); continue
+        p = None if pending or 'MCQ' not in qno + head.split('.')[0] else mcq_parse(qtext, atext)
+        if p:  # an MCQ without a single ICAI key (e.g. "No Correct Option") is kept as a written question
             stem, opts, ans = p
+            atext = re.sub(r'(?m)^\([A-D]\)[^\n]*\n?', '', atext).strip()
             cnt['M'] += 1; qid = f"M{cnt['M']}"
             qs.append({'id': qid, 'src': label, 'k': 'mcq', 'links': C.get('overrides', {}).get(qid, lk), 'v': 'MCQ', 'q': md(stem), 'opts': opts, 'ans': ans,
                        'why': re.sub(r'\s+', ' ', re.sub(r'\*\*|\|', '', atext))[:700], 'a': f"<p><strong>Answer: ({'abcd'[ans]})</strong> {opts[ans]}</p>" + md(atext) + note, 'trap': ''})

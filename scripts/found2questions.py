@@ -64,7 +64,7 @@ for fn in C['found']:
         note = ''
         # CHECK remarks from research agents are not shown: apparent ICAI slips are usually PDF-extraction artefacts.
         if rep and re.match(r'(?i)(yes|variant|near)', rep): note += f'<p><em>Study-material link: {rep}</em></p>'
-        p = None if pending or 'MCQ' not in qno + head.split('.')[0] else mcq_parse(qtext, atext)
+        p = None if pending or not ('MCQ' in qno + head.split('.')[0] or re.search(r'\(D\)', qtext + atext)) else mcq_parse(qtext, atext)
         if p:  # an MCQ without a single ICAI key (e.g. "No Correct Option") is kept as a written question
             stem, opts, ans = p
             atext = re.sub(r'(?m)^\([A-D]\)[^\n]*\n?', '', atext).strip()

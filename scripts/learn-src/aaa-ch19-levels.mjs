@@ -59,7 +59,7 @@ export default [
       { k: 'tf', q: 'A CA in practice may print "Cost Accountant" on his letterhead.', ans: false, why: 'Not allowed; ACMA/FCMA letters are allowed.' },
       { k: 'mc', q: 'COP annual fee unpaid by which date leads to cancellation?', opts: ['1 April', '30 June', '30 September', '31 December'], ans: 2, why: 'Payable by 1 April; cancelled if not paid by 30 September.' },
     ],
-    twist: { q: '<p>A CA with one office in Pune opens a second office 70 km from the Pune municipal limits and puts a colleague in charge of both. Allowed?</p>', a: '<p>No. One member may be in charge of two offices only if the second is in the <strong>same premises, same city or within 50 km</strong>. 70 km exceeds that, so each office needs its own member in charge (section 27).</p>' },
+    twist: { q: '<p>A CA with one office in Pune opens a second office 70 km from the Pune municipal limits and puts a colleague in charge of both. Allowed?</p>', a: '<p>No — on these facts. Section 27 requires <strong>each office to be in the separate charge of a member</strong>; with a separate member in charge of each office there is <strong>no distance limit</strong>. The same premises / same city / <strong>within 50 km</strong> condition is only an <strong>exemption that lets one member be in charge of two offices</strong>. Here one colleague is put in charge of both and the second office is 70 km away, so the exemption is not available: a separate member must be put in charge of the second office.</p>' },
   },
   {
     id: 'l04-discipline', title: 'The disciplinary mechanism and what is misconduct', mins: 7,

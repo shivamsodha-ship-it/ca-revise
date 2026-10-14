@@ -62,6 +62,7 @@ const registry: ChapterIndexRow[] = [
     summary: '5-step model · variable consideration · material rights & loyalty points · financing · modifications · licences · bill-and-hold · SCA',
     loader: async () => (await import('../data/fr/ch09-ind-as-115-revenue-from-contracts-with-customers.json')).default as unknown as Chapter,
     casebook: async () => (await import('../data/fr/ch09-casebook.json')).default as unknown as Casebook,
+    learn: async () => (await import('../data/fr/ch09-learn.json')).default as unknown as LearnData,
   },
   // @chapters-end
 ];

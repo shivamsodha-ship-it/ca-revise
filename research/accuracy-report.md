@@ -62,3 +62,8 @@ One development to know about: search results report that RBI issued consolidate
 - PYQ May 2026 MCQ 12: key not published in the paper swept → app working (A) ₹(2,000), labelled on the question.
 - ICAI arithmetic/wording issues kept as published with an app note: see research/fr-ch09.md.
 - SM Example 8 (commission table states ₹1 crore as acquisition cost for a 1% commission on a ₹1 crore contract) noted in the provision as needing a check; not used in any question.
+
+## fr-ch09 completion pass (14 Oct 2026)
+- 70 numericals given `nums`; every figure recomputed in Python (helper agent for ICAI papers, main session for SM). All ICAI figures within 0.25% except those listed in research/fr-ch09.md with corrected workings.
+- Mastery layer: every solver and numeric recall figure recomputed in scripts/learn-src/fr-ch09.mjs check() — 0 mismatches.
+- Level l09 figures rewritten to the SM's own units (₹1 million / ₹10,00,000) after audit VERIFY.

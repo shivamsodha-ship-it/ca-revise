@@ -48,14 +48,8 @@ https://resource.cdn.icai.org/87859bos-290825-final-ch9.pdf, plus Module 4 Pract
 
 Ind AS 115 marks in past papers: May 2022 14 · Nov 2022 20 · May 2023 12 · May 2024 5 · Nov 2024 12 · May 2025 7 · Sep 2025 7 · Jan 2026 7+ · May 2026 7 → weight ≈ 9.
 
-## ICAI answers flagged (kept as published; corrected working added on the question)
-- PYQ Jan 2026 Q5(a): ₹50,800 appears where the arithmetic gives ₹50,840.
-- PYQ Nov 2022 Q2(a): narration "2,25,319" vs working 2,25,219.
-- PYQ Nov 2022 Q2(b) (SCA): uses whole-project figures though ₹100 crore was incurred to date.
-- MTP Nov 2026 S-II Q5(a): journal entry swaps revenue ₹1,35,000 and refund liability ₹43,65,000 against ICAI's own narrative.
-- MTP 'model pi' question: 5% × 3,09,523 = 15,476.15; ICAI prints ₹15,477.
-- RTP Jan 2026 Case II: stem ₹6,60,000 vs item (ii) ₹7,50,000. RTP Nov 2024 MCQ 1: present value described over two years though 21 months remain.
-- PYQ May 2026 MCQ 12: no ICAI key in the paper swept; app working gives (A) ₹(2,000) by the method of SM Illustration 9.
+## ICAI answers
+ICAI's answers and figures are reproduced as published. Earlier 'corrected working' notes were removed: the apparent slips most likely came from PDF text extraction (split digits, reordered table columns), not from ICAI. Any doubt is checked against the PDF page itself before a note is added.
 
 ## Notes
 - Tables in the numerical SM illustrations (9, 23, 30, 32, 35, 54, 55, 65) are rebuilt as HTML tables; other illustrations keep ICAI's text.

@@ -1,0 +1,1460 @@
+{
+ "id": "fr-ch09",
+ "subject": "fr",
+ "number": 9,
+ "title": "Ind AS 115 Revenue from Contracts with Customers",
+ "summary": "5-step model · variable consideration · material rights & loyalty points · financing component · modifications · licences · bill-and-hold · SCA",
+ "weight": 9,
+ "currency": "SM May 2026 onwards (Nov 2024 ed., Aug 2025 reprint) · questions swept May 2022 – Nov 2026 RTP/MTP",
+ "sections": [
+  {
+   "id": "s-a",
+   "title": "Scope, core principle and transition",
+   "emoji": "📖",
+   "cards": [
+    {
+     "id": "c-r115-core",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115 · core",
+      "Low"
+     ],
+     "front": "Core principle, definitions and the five-step model: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "An entity shall recognise revenue to depict the transfer of promised goods or services to customers in an amount that reflects the consideration to which the entity expects to be entitled in exchange. Five steps: (1) identify the contract; (2) identify the performance obligations; (3) determine the transaction price; (4) allocate the transaction price to the performance obligations; (5) recognise revenue when (or as) each performance obligation is satisfied.\n As a practical expedient the Standard may be applied to a portfolio of contracts (or performance obligations) with similar characteristics if the effect would not differ materially from applying it contract by contract.",
+      "explanation": "Contract : an agreement between two or more parties that creates enforceable rights and obligations. Contract asset : right to consideration for goods/services already transferred when that right is conditioned on something other than the passage of time (e.g. the entity's future performance). Contract liability : obligation to transfer goods/services for which consideration has been received (or is due).",
+      "cases": [
+       "Portfolio approach in use: SM Illustration 34 (1,000 sales with a 30-day return right treated as one portfolio)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-core-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115 · core",
+      "Low"
+     ],
+     "front": "Memory hook: Core principle and the 5 steps?",
+     "back": {
+      "simplified": "C-P-T-A-S: Contract → Performance obligations → Transaction price → Allocate → Satisfy."
+     }
+    },
+    {
+     "id": "c-r115-scope",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.5–8",
+      "Medium"
+     ],
+     "front": "Scope: what is inside and what is excluded: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Apply to all contracts with customers except: (a) leases (Ind AS 116); (b) insurance contracts (Ind AS 117), though fixed-fee service-type insurance contracts may be brought in; (c) financial instruments and other rights or obligations within Ind AS 109, 110, 111, 27 and 28; (d) non-monetary exchanges between entities in the same line of business to facilitate sales to customers or potential customers (e.g. two oil companies swapping oil to meet demand in different locations).\n A customer is a party that has contracted to obtain goods or services that are an output of the entity's ordinary activities in exchange for consideration.",
+      "explanation": "A counterparty that shares the risks and benefits of an activity (a collaboration , e.g. jointly developing an asset) is not a customer. Partly in scope : if the other Ind AS says how to separate/measure a portion, apply it first and exclude that amount from the transaction price; otherwise use Ind AS 115 (relative stand-alone selling prices) to separate.",
+      "cases": [
+       "Barter of dissimilar goods/services (print vs TV advertising; talk time vs power) is in scope : measure the non-cash consideration at fair value (SM TYK 1 and 2)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-scope-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.5–8",
+      "Medium"
+     ],
+     "front": "Memory hook: Scope and exclusions?",
+     "back": {
+      "simplified": "Exclusions LIFE: Leases, Insurance, Financial instruments, Exchanges in the same line of business."
+     }
+    },
+    {
+     "id": "c-r115-transition",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115 · C3",
+      "Low"
+     ],
+     "front": "Transition: full retrospective or modified retrospective: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "On first application an entity uses either (a) the full retrospective approach : restate each prior period presented under Ind AS 8 (subject to practical expedients), so comparatives look as if Ind AS 115 always applied; or (b) the modified retrospective approach : no restatement of prior periods; the cumulative effect of initial application is recognised in opening retained earnings of the year of first application.",
+      "explanation": "The SM states Ind AS 115 is effective for annual periods beginning on or after 1 April 20X2 (SM dates are stylised; Ind AS 115 was notified by MCA in March 2018). Choice matters for comparatives: full retrospective restates them; modified retrospective leaves them on the old basis.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-r115-vs-as",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115 vs AS 7/9",
+      "Low"
+     ],
+     "front": "Significant differences between Ind AS 115 and AS 7 / AS 9: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Ind AS 115 gives a single control-based five-step framework with a core principle; AS 9 uses transfer of significant risks and rewards and AS 7 uses stage of completion for construction contracts. Ind AS 115 adds guidance AS 7/9 lack: multiple-element arrangements, combining contracts, variable and contingent consideration, time value of money (significant financing), capitalisation of contract costs, service concession arrangements and detailed disclosures.",
+      "explanation": "Measurement: Ind AS 115 uses the transaction price (consideration expected to be entitled, excluding third-party collections); AS 9 uses gross inflow of cash, receivables or other consideration. Coverage: AS 7 = construction contracts only; AS 9 = sale of goods, services, interest, royalties and dividends; Ind AS 115 excludes interest and dividends.",
+      "cases": [
+       "Financing: AS 9 recognises the full ₹1,21,000 as revenue; Ind AS 115 splits ₹1,00,000 revenue and ₹21,000 interest (SM Illustration 38).",
+       "Warranties: AS 9 makes a general provision (e.g. 5% of revenue); Ind AS 115 separates assurance-type (Ind AS 37) and service-type (contract liability) (SM Illustration 35).",
+       "Contract acquisition cost: AS 9 expenses a ₹1 crore commission at once; Ind AS 115 capitalises and amortises it (SM Example 8)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-b",
+   "title": "Step 1 · Identify the contract",
+   "emoji": "🤝",
+   "cards": [
+    {
+     "id": "c-r115-contract",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.9–16",
+      "Low"
+     ],
+     "front": "Step 1: the five criteria for a contract, and consideration received before they are met: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Account for a contract only when all are met: (a) the parties have approved it (in writing, orally or by customary business practice) and are committed to perform; (b) each party's rights can be identified; (c) the payment terms can be identified; (d) the contract has commercial substance ; (e) it is probable the entity will collect the consideration to which it will be entitled (considering only the customer's ability and intention to pay when due).\n If the criteria are not met, consideration received is recognised as revenue only when (a) the entity has no remaining obligations and all, or substantially all, consideration is received and non-refundable, or (b) the contract is terminated an",
+      "explanation": "Step 1 is a gateway : Steps 2–5 are not applied until the criteria are met; once met, reassess only on a significant change in facts (e.g. the customer's ability to pay deteriorates sharply). Reassessment is prospective: receivables and revenue already recognised are not reversed. 'Probable' means more likely than not . Credit risk decides whether a contract exists; it does not change measurement or presentation of revenue.",
+      "cases": [
+       "Collectability is tested on the amount the entity expects to be entitled to, which may be lower than the contract price if a price concession is expected (SM TYK 5: ₹1.75 million, not ₹2 million).",
+       "SM TYK 4: non-recourse finance to a customer with no other income → collection not probable → the ₹1,00,000 deposit is a deposit liability."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-contract-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.9–16",
+      "Low"
+     ],
+     "front": "Memory hook: Five contract criteria and collectability?",
+     "back": {
+      "simplified": "A-R-P-C-C: Approved, Rights, Payment terms, Commercial substance, Collectable."
+     }
+    },
+    {
+     "id": "c-r115-term",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.11–12",
+      "Low"
+     ],
+     "front": "Contract term and termination rights: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Apply the Standard to the duration in which the parties have present enforceable rights and obligations . A contract does not exist if each party has the unilateral enforceable right to terminate a wholly unperformed contract without compensating the other (wholly unperformed = nothing transferred and nothing receivable).",
+      "explanation": "If only the customer can cancel without penalty, the accounting term may be shorter than the stated term (gym: 12 months stated, cancellable without penalty after 3 → term is 3 months, SM Illustration 2). No termination penalty after 10 units → contract for 10 units plus an option for 90 (SM Illustration 3).",
+      "cases": [
+       "If only the customer can cancel without penalty, the accounting term may be shorter than the stated term (gym: 12 months stated, cancellable without penalty after 3 → term is 3 months, SM Illustration 2).",
+       "No termination penalty after 10 units → contract for 10 units plus an option for 90 (SM Illustration 3)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-combine",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.17",
+      "Low"
+     ],
+     "front": "Combining contracts: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Combine two or more contracts entered into at or near the same time with the same customer (or its related parties) if any one is met: (a) negotiated as a package with a single commercial objective ; (b) the consideration in one depends on the price or performance of the other; or (c) the goods or services promised are a single performance obligation .",
+      "explanation": "Assessed at contract inception; there is no bright line for 'near the same time' — judgement. Separate commercial objectives → not combined (fighter planes and spare parts, SM Illustration 4).",
+      "cases": [
+       "Separate commercial objectives → not combined (fighter planes and spare parts, SM Illustration 4).",
+       "Licence plus customisation three days later that the customer cannot use without → combined (SM Illustration 5).",
+       "Two government entities controlled by the same government, deep discount only if both buy → combined (related parties, single package, dependent consideration; SM Illustration 6)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-combine-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.17",
+      "Low"
+     ],
+     "front": "Memory hook: Combining contracts?",
+     "back": {
+      "simplified": "Combine if same customer + same time + one of: Package, Price-dependent, Performance obligation is single."
+     }
+    },
+    {
+     "id": "c-r115-mod",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.18–21",
+      "High"
+     ],
+     "front": "Contract modifications: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "A modification is a change in scope or price (or both) approved by the parties and enforceable . It is a separate contract if (1) scope increases by distinct goods or services and (2) price increases by their stand-alone selling price (adjusted for, e.g., lower selling costs for a repeat customer). Otherwise: (a) remaining goods/services distinct → treat as termination of the old contract and creation of a new one (prospective); (b) remaining goods/services not distinct (part of a partly satisfied single performance obligation) → cumulative catch-up adjustment to revenue at the modification date; (c) mix of both → combine the two methods.",
+      "explanation": "Common forms: partial termination, extension of term, adding goods/services, reducing price without changing scope. Separate contract: 30 extra products at ₹950 = their stand-alone price → new contract; original 120 at ₹1,000 unaffected (SM Illustration 7).",
+      "cases": [
+       "Separate contract: 30 extra products at ₹950 = their stand-alone price → new contract; original 120 at ₹1,000 unaffected (SM Illustration 7).",
+       "Prospective: maintenance reduced from ₹55,000 to ₹45,000 a month after six months → remaining consideration ₹2,70,000 allocated to the remaining services (SM Illustration 8).",
+       "Cumulative catch-up: 200 hours × ₹150 plus 50 hours × ₹100 → ₹35,000 ÷ 250 = ₹140 an hour; 100 hours done → revenue to date ₹14,000 vs ₹15,000 booked → reduce revenue by ₹1,000 (SM Illustration 9)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-mod-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.18–21",
+      "High"
+     ],
+     "front": "Memory hook: Contract modifications?",
+     "back": {
+      "simplified": "Distinct + SSP → separate contract. Distinct only → fresh start. Not distinct → catch-up."
+     }
+    },
+    {
+     "id": "c-r115-mod-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 115.18–21",
+      "High"
+     ],
+     "front": "Worked example: Contract modifications — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "Prospective: maintenance reduced from ₹55,000 to ₹45,000 a month after six months → remaining consideration ₹2,70,000 allocated to the remaining services (SM Illustration 8).",
+      "explanation": "Cumulative catch-up: 200 hours × ₹150 plus 50 hours × ₹100 → ₹35,000 ÷ 250 = ₹140 an hour; 100 hours done → revenue to date ₹14,000 vs ₹15,000 booked → reduce revenue by ₹1,000 (SM Illustration 9)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-c",
+   "title": "Step 2 · Identify the performance obligations",
+   "emoji": "📦",
+   "cards": [
+    {
+     "id": "c-r115-distinct",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.22–30",
+      "High"
+     ],
+     "front": "Step 2: promises and distinct goods or services: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "At inception assess the goods or services promised and identify each promise to transfer a distinct good or service (or bundle) as a performance obligation. A good or service is distinct if both : (a) capable of being distinct — the customer can benefit from it on its own or with other readily available resources ; and (b) distinct in the context of the contract — the promise is separately identifiable from other promises.\n Not separately identifiable if: (i) the entity provides a significant integration service (inputs to a combined output); (ii) one item significantly modifies or customises another; or (iii) the items are highly interdependent or highly interrelated (a two-way dependency).",
+      "explanation": "Promises can be implicit : customary business practices, published policies or specific statements that create a valid expectation (free telephone support to reseller's customers, SM Illustration 20; carmaker's two-year free maintenance in advertisements, SM Illustration 21). Set-up/administrative activities that transfer nothing to the customer are not performance obligations (activation of a data connection, SM Illustration 28).",
+      "cases": [
+       "Promises can be implicit : customary business practices, published policies or specific statements that create a valid expectation (free telephone support to reseller's customers, SM Illustration 20; carmaker's two-year free maintenance in advertisements, SM Illustration 21).",
+       "Set-up/administrative activities that transfer nothing to the customer are not performance obligations (activation of a data connection, SM Illustration 28).",
+       "Single performance obligation: water purification plant and power plant with integration (SM Illustrations 10, 12); design-and-build shopping centre (Illustration 14); licence + significant customisation (Illustration 16); anti-virus licence + critical updates (Illustration 18)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-distinct-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.22–30",
+      "High"
+     ],
+     "front": "Memory hook: Distinct performance obligations?",
+     "back": {
+      "simplified": "Distinct = Capable (can benefit) AND Separately identifiable (no Integration, no Modification, no Interdependence) — 'C and S, not I-M-I'."
+     }
+    },
+    {
+     "id": "c-r115-distinct-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 115.22–30",
+      "High"
+     ],
+     "front": "Worked example: Distinct performance obligations — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "Benefit = use, consume, sell for more than scrap value , or hold to generate economic benefits. Regularly selling an item separately indicates it is capable of being distinct.",
+      "explanation": "Single performance obligation: water purification plant and power plant with integration (SM Illustrations 10, 12); design-and-build shopping centre (Illustration 14); licence + significant customisation (Illustration 16); anti-virus licence + critical updates (Illustration 18)."
+     }
+    },
+    {
+     "id": "c-r115-series",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.22(b), 23",
+      "Low"
+     ],
+     "front": "Series of distinct goods or services and long-term arrangements: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "A series of distinct goods or services that are substantially the same and have the same pattern of transfer is a single performance obligation when (a) each distinct item would be a performance obligation satisfied over time , and (b) the same method would measure progress for each. Applying the series requirement is not optional .",
+      "explanation": "Examples: cleaning, transaction processing, delivering electricity, hotel management (day-to-day activities vary but each time increment of 'hotel management' is substantially the same, SM Illustration 13). Stand-ready processing contract: each day of access (or each transaction) can be the distinct item (SM Example 2).",
+      "cases": [
+       "Examples: cleaning, transaction processing, delivering electricity, hotel management (day-to-day activities vary but each time increment of 'hotel management' is substantially the same, SM Illustration 13).",
+       "Stand-ready processing contract: each day of access (or each transaction) can be the distinct item (SM Example 2).",
+       "Long-term arrangements: a contract renewable or cancellable by either party at discrete points may be accounted for period by period; with fixed consideration the result is usually the same (cable TV for 3 years = one performance obligation satisfied over time, SM Illustration 24)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-options",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.B39–B43",
+      "High"
+     ],
+     "front": "Customer options: material rights, loyalty points and renewal options: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "An option to acquire additional goods or services is a separate performance obligation only if it gives a material right — a discount the customer would not receive without entering into the contract (e.g. beyond the range typically given to that class of customer). The customer in effect pays in advance; revenue is recognised when the future goods/services transfer or the option expires . If the option price equals stand-alone selling price it is a marketing offer , accounted for only when exercised.\n If not directly observable, estimate the option's stand-alone selling price from the discount on exercise, adjusted for (a) any discount available without the option and (b) the likelihood of ",
+      "explanation": "Discount voucher: 40% voucher but 10% available to all → only the incremental 30% is a material right; SSP = ₹500 × 30% × 80% = ₹120; allocate ₹1,000 as ₹890 product / ₹110 voucher (SM Illustration 23). Renewal at a discount: 100 members at ₹7,500, renewals at ₹6,000, 50% attrition → 175 expected memberships, ₹12,00,000 total → ₹6,857 per membership; ₹643 per first-year member is a contract liability (SM Illustration 22).",
+      "cases": [
+       "Discount voucher: 40% voucher but 10% available to all → only the incremental 30% is a material right; SSP = ₹500 × 30% × 80% = ₹120; allocate ₹1,000 as ₹890 product / ₹110 voucher (SM Illustration 23).",
+       "Renewal at a discount: 100 members at ₹7,500, renewals at ₹6,000, 50% attrition → 175 expected memberships, ₹12,00,000 total → ₹6,857 per membership; ₹643 per first-year member is a contract liability (SM Illustration 22).",
+       "Loyalty points that are a material right: allocate part of the sale price to the points on relative stand-alone selling prices (considering expected redemption) and recognise it as points are redeemed or lapse (SM Practice Questions 5 and 9)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-options-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.B39–B43",
+      "High"
+     ],
+     "front": "Memory hook: Material rights and loyalty points?",
+     "back": {
+      "simplified": "Material right = a discount you get only because you signed. Price it: discount × chance of use, net of what everyone gets anyway."
+     }
+    },
+    {
+     "id": "c-r115-options-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 115.B39–B43",
+      "High"
+     ],
+     "front": "Worked example: Material rights and loyalty points — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "Loyalty points that are a material right: allocate part of the sale price to the points on relative stand-alone selling prices (considering expected redemption) and recognise it as points are redeemed or lapse (SM Practice Questions 5 and 9).",
+      "explanation": "Points redeemable with another party: consider whether the entity is a principal or agent for the points."
+     }
+    },
+    {
+     "id": "c-r115-consign",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.B77–B78",
+      "Low"
+     ],
+     "front": "Consignment arrangements: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Indicators of consignment: (a) the entity controls the product until a specified event (sale to the dealer's customer) or period expires; (b) the entity can require return or transfer to a third party (another dealer); (c) the dealer has no unconditional obligation to pay (though a deposit may be required). Revenue is not recognised on delivery to the consignee; it is recognised when control transfers (sale to the end customer or expiry of the agreed period).",
+      "explanation": "Consignment differs from a sale with a right of return : in a right-of-return sale the customer has control and decides whether to return. 60-day consignment of 1,000 dresses, retailer pays ₹20 per dress only when sold; manufacturer can require return or transfer → revenue as dresses are sold to end customers (SM Illustration 25).",
+      "cases": [
+       "60-day consignment of 1,000 dresses, retailer pays ₹20 per dress only when sold; manufacturer can require return or transfer → revenue as dresses are sold to end customers (SM Illustration 25)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-pa",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.B34–B38",
+      "Low"
+     ],
+     "front": "Principal versus agent: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "When another party is involved, determine whether the entity's promise is to provide the specified good or service itself ( principal → revenue at the gross amount) or to arrange for another party to provide it ( agent → revenue at the net fee or commission). The test is whether the entity controls the specified good or service before transfer.\n Indicators of principal: (a) primarily responsible for fulfilling the contract (acceptability); (b) inventory risk before transfer or after (e.g. right of return); (c) discretion in establishing prices .",
+      "explanation": "Momentary legal title just before transfer does not by itself make an entity a principal. Travel entity buying airline tickets in advance, bearing unsold-ticket risk and setting prices → principal for the ticket (right to fly), gross revenue (SM Illustration 26).",
+      "cases": [
+       "Travel entity buying airline tickets in advance, bearing unsold-ticket risk and setting prices → principal for the ticket (right to fly), gross revenue (SM Illustration 26).",
+       "Advertiser D using F Ltd. to place ads: D directs F, works with customers and is responsible for meeting needs → principal even without inventory risk or pricing discretion (SM Illustration 27). The indicators support, not replace, the control assessment."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-pa-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.B34–B38",
+      "Low"
+     ],
+     "front": "Memory hook: Principal vs agent?",
+     "back": {
+      "simplified": "Principal = R-I-P: Responsible, Inventory risk, Pricing discretion — but control decides."
+     }
+    },
+    {
+     "id": "c-r115-upfront",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.B48–B51",
+      "Low"
+     ],
+     "front": "Non-refundable upfront fees: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Assess whether the fee relates to transfer of a promised good or service. If the related activity at or near inception does not transfer a good or service (e.g. joining, activation or set-up fees), the fee is an advance payment for future goods or services and is recognised as revenue when those are provided (possibly over future contract periods, including expected renewals where the fee gives a material right).",
+      "explanation": "If the fee does relate to a good or service, evaluate whether that is a separate performance obligation. Set-up activities that are not performance obligations are ignored when measuring progress (their costs do not depict transfer).",
+      "cases": [
+       "Data-connection activation fee: activation is not a service to the customer → not a separate performance obligation; the obligation is to provide data services (SM Illustration 28)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-d",
+   "title": "Step 3 · Determine the transaction price",
+   "emoji": "💰",
+   "cards": [
+    {
+     "id": "c-r115-tp",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.47–49",
+      "Low"
+     ],
+     "front": "Step 3: what the transaction price is: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "The transaction price is the amount of consideration to which the entity expects to be entitled for transferring the promised goods or services, excluding amounts collected on behalf of third parties (e.g. some sales taxes). It may be fixed, variable or both. Assume the goods/services transfer as promised and the contract will not be cancelled, renewed or modified . Consider: variable consideration and the constraint, a significant financing component , non-cash consideration and consideration payable to a customer .",
+      "explanation": "Revenue recognised = transaction price allocated to a satisfied performance obligation, excluding constrained variable consideration. The customer's credit risk does not reduce the transaction price (it is a collectability or Ind AS 109 matter).",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-r115-tp-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.47–49",
+      "Low"
+     ],
+     "front": "Memory hook: Transaction price basics?",
+     "back": {
+      "simplified": "Four things move the price: Variable, Financing, Non-cash, Payable to customer (V-F-N-P)."
+     }
+    },
+    {
+     "id": "c-r115-var",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.50–54",
+      "High"
+     ],
+     "front": "Variable consideration and how to estimate it: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Consideration is variable because of discounts, rebates, refunds, credits, price concessions , incentives, performance bonuses, penalties, or entitlement contingent on a future event (e.g. a right of return or a milestone bonus). It is also variable if the customer has a valid expectation of a concession from customary practice or the entity intends one. Estimate it by the method that better predicts the amount: (a) expected value (sum of probability-weighted amounts; suits many similar contracts); or (b) most likely amount (suits two possible outcomes). Apply one method consistently for an uncertainty; different uncertainties in one contract may use different methods.",
+      "explanation": "Penalties: account per substance. If inherent in the price (₹1,00,000 if delivered within 30 days, else ₹95,000) the ₹5,000 is variable consideration; otherwise the price is fixed at ₹95,000 (SM Example 3). Early-completion bonus with a range → expected value: 15% × ₹25 crore × 25% + 10% × 40% + 5% × 15% = ₹2.125 crore; quality bonus (two outcomes) → most likely ₹2 crore; transaction price ₹29.125 crore (SM Illustration 30).",
+      "cases": [
+       "Penalties: account per substance. If inherent in the price (₹1,00,000 if delivered within 30 days, else ₹95,000) the ₹5,000 is variable consideration; otherwise the price is fixed at ₹95,000 (SM Example 3).",
+       "Early-completion bonus with a range → expected value: 15% × ₹25 crore × 25% + 10% × 40% + 5% × 15% = ₹2.125 crore; quality bonus (two outcomes) → most likely ₹2 crore; transaction price ₹29.125 crore (SM Illustration 30).",
+       "Daily penalty/incentive → expected value; ₹15 lakh rating bonus → most likely amount (SM Illustration 29)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-var-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.50–54",
+      "High"
+     ],
+     "front": "Memory hook: Variable consideration (EV / most likely)?",
+     "back": {
+      "simplified": "Many outcomes → Expected value. Two outcomes → Most likely."
+     }
+    },
+    {
+     "id": "c-r115-var-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 115.50–54",
+      "High"
+     ],
+     "front": "Worked example: Variable consideration (EV / most likely) — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "Daily penalty/incentive → expected value; ₹15 lakh rating bonus → most likely amount (SM Illustration 29).",
+      "explanation": "Price protection: expected reimbursement ₹50 → transaction price ₹950 (SM Practice Question 1); expected-value TV price protection (PQ 2); two-outcome completion bonus → most likely ₹1,30,000 (PQ 3)."
+     }
+    },
+    {
+     "id": "c-r115-constraint",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.56–59",
+      "Low"
+     ],
+     "front": "Constraint on variable consideration and reassessment: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Include variable consideration only to the extent it is highly probable that a significant reversal in cumulative revenue recognised will not occur when the uncertainty is resolved — considering both likelihood and magnitude . Factors increasing reversal risk: (a) amount highly susceptible to factors outside the entity's influence (market volatility, third parties' judgement, weather, obsolescence); (b) uncertainty not resolved for a long time; (c) limited or non-predictive experience; (d) a practice of broad price concessions or changing payment terms; (e) a large number and broad range of possible amounts.\n At each reporting date update the estimate (and the constraint) and account for cha",
+      "explanation": "Asset-management fees based on market value and a 5-year performance fee → constrained at inception; each quarter's management fee is included once known (₹2 crore on ₹100 crore AUM); the incentive fee stays constrained (SM Illustration 33). Volume discount not expected in Q1 → ₹10,000 at ₹1,000; after the customer's acquisition, Q2 revenue = 50 × ₹900 − 10 × ₹100 = ₹44,000 (SM Illustration 31).",
+      "cases": [
+       "Asset-management fees based on market value and a 5-year performance fee → constrained at inception; each quarter's management fee is included once known (₹2 crore on ₹100 crore AUM); the incentive fee stays constrained (SM Illustration 33).",
+       "Volume discount not expected in Q1 → ₹10,000 at ₹1,000; after the customer's acquisition, Q2 revenue = 50 × ₹900 − 10 × ₹100 = ₹44,000 (SM Illustration 31).",
+       "Weight incentive: 10% included (95% confidence); revised to 25% in year 4 with a cumulative catch-up of ₹98,683 (SM Illustration 32)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-constraint-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.56–59",
+      "Low"
+     ],
+     "front": "Memory hook: The constraint ('highly probable')?",
+     "back": {
+      "simplified": "Include only what you would not have to give back: likelihood × size of reversal."
+     }
+    },
+    {
+     "id": "c-r115-return",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.55, B20–B27",
+      "Medium"
+     ],
+     "front": "Refund liabilities and sale with a right of return: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Recognise a refund liability for consideration received (or receivable) that the entity does not expect to be entitled to; update it each reporting date. For a sale with a right of return recognise: (a) revenue only for products not expected to be returned; (b) a refund liability ; and (c) an asset (with a matching adjustment to cost of sales) for the right to recover products, measured at the former carrying amount less expected recovery costs (including any fall in value). Present the asset separately from the refund liability. The promise to stand ready to accept returns is not a separate performance obligation.",
+      "explanation": "1,000 products at ₹50, cost ₹30, 970 expected to be kept → revenue ₹48,500, refund liability ₹1,500, asset ₹900 (SM Illustration 34). Restocking fee: include in the transaction price at inception. 10 units at ₹100, 10% returns, 3% fee → revenue ₹903, refund liability ₹97 (SM Example 4).",
+      "cases": [
+       "1,000 products at ₹50, cost ₹30, 970 expected to be kept → revenue ₹48,500, refund liability ₹1,500, asset ₹900 (SM Illustration 34).",
+       "Restocking fee: include in the transaction price at inception. 10 units at ₹100, 10% returns, 3% fee → revenue ₹903, refund liability ₹97 (SM Example 4).",
+       "No experience of returns → the constraint may stop revenue until the return period ends (SM Illustration 38)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-return-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.55, B20–B27",
+      "Medium"
+     ],
+     "front": "Memory hook: Right of return and refund liability?",
+     "back": {
+      "simplified": "Return = 3 entries: revenue for keepers, refund liability for returners, asset for goods coming back."
+     }
+    },
+    {
+     "id": "c-r115-warranty",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.B28–B33",
+      "Low"
+     ],
+     "front": "Warranties: assurance-type vs service-type: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "If the customer can purchase the warranty separately , it is a distinct service: a performance obligation to which part of the transaction price is allocated. If not, it is a performance obligation only if it gives a service in addition to assurance that the product meets agreed specifications; pure assurance-type warranties are provisions under Ind AS 37 . Factors: (a) required by law (suggests assurance); (b) length of cover (longer suggests service); (c) nature of tasks (tasks needed to give assurance, e.g. return shipping of defective items, are not a service). If both types exist and cannot be separated, treat them together as one performance obligation.",
+      "explanation": "Laws imposing compensation for harm caused by products, and indemnities for IP-infringement claims, are not performance obligations (Ind AS 37). Computer ₹36,000 (SSP ₹32,000 + extended warranty ₹4,000), 90-day assurance cost ₹2,000, inventory ₹14,400: Dr Cash 36,000, Dr Warranty expense 2,000 / Cr Accrued warranty 2,000, Cr Contract liability 4,000, Cr Revenue 32,000; Dr COGS / Cr Inventory 14,400 (SM Illustration 35).",
+      "cases": [
+       "Computer ₹36,000 (SSP ₹32,000 + extended warranty ₹4,000), 90-day assurance cost ₹2,000, inventory ₹14,400: Dr Cash 36,000, Dr Warranty expense 2,000 / Cr Accrued warranty 2,000, Cr Contract liability 4,000, Cr Revenue 32,000; Dr COGS / Cr Inventory 14,400 (SM Illustration 35).",
+       "Five-year battery guarantee where one year is normal: ₹1,70,000 to batteries, ₹30,000 contract liability for years 2–5, plus ₹10,000 assurance provision (100 × ₹100) (SM Illustration 36)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-warranty-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.B28–B33",
+      "Low"
+     ],
+     "front": "Memory hook: Assurance vs service warranty?",
+     "back": {
+      "simplified": "Can buy it separately or covers more than defects → service-type (defer revenue). Just 'it works' → assurance (Ind AS 37 provision)."
+     }
+    },
+    {
+     "id": "c-r115-royalty",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.B63–B63B",
+      "Low"
+     ],
+     "front": "Sales-based and usage-based royalties on licences of IP: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Notwithstanding the constraint, revenue from a sales- or usage-based royalty for a licence of intellectual property is recognised only when (or as) the later of: (a) the subsequent sale or usage occurs; and (b) the performance obligation to which the royalty is allocated is satisfied (or partly satisfied). This applies when the royalty relates only to a licence, or a licence is the predominant item; then it applies wholly. Otherwise the general variable-consideration rules apply.",
+      "explanation": "Licence B paid by 3% royalty: no revenue on transfer; recognise as the customer's sales occur (SM Illustration 56 Case A). Royalty allocated partly to an untransferred licence → contract liability for that part even though sales occurred (₹1,77,778 in SM Illustration 56 Case B).",
+      "cases": [
+       "Licence B paid by 3% royalty: no revenue on transfer; recognise as the customer's sales occur (SM Illustration 56 Case A).",
+       "Royalty allocated partly to an untransferred licence → contract liability for that part even though sales occurred (₹1,77,778 in SM Illustration 56 Case B).",
+       "A licence paid solely by a sales-based royalty has no significant financing component (SM Illustration 44)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-royalty-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.B63–B63B",
+      "Low"
+     ],
+     "front": "Memory hook: Sales/usage-based royalty exception?",
+     "back": {
+      "simplified": "Royalty: wait for the LATER of the sale and the licence transfer."
+     }
+    },
+    {
+     "id": "c-r115-financing",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.60–65",
+      "High"
+     ],
+     "front": "Significant financing component: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Adjust the promised consideration for the time value of money if the payment timing gives the customer or the entity a significant benefit of financing (explicit or implied). Objective: revenue at the cash selling price . Consider (a) the difference between promised consideration and cash selling price, and (b) the combined effect of the time between transfer and payment and prevailing interest rates. Use the rate of a separate financing transaction at inception (reflecting the credit of the party financed); do not update it later. Assess significance at the contract level, not portfolio. Present interest income/expense separately from revenue, only to the extent a contract asset, receivable",
+      "explanation": "No significant financing (para 62) if: (a) customer paid in advance and the timing of transfer is at the customer's discretion (prepaid cards); (b) a substantial amount is variable on events outside both parties' control (sales-based royalty); (c) the difference arises for reasons other than finance and is proportional (retention money protecting the customer). Practical expedient (para 63): ignore if the gap between transfer and payment is expected to be one year or less (SM Illustration 47).",
+      "cases": [
+       "Practical expedient (para 63): ignore if the gap between transfer and payment is expected to be one year or less (SM Illustration 47).",
+       "₹1,21,000 payable in 24 months, cash price ₹1,00,000 → revenue ₹1,00,000; ₹21,000 interest over two years under Ind AS 109 (SM Illustration 38).",
+       "Contract rate 10% below the customer's 14% rate → transaction price = 60 × ₹2,12,470 discounted at 14% = ₹91,31,346 (SM Illustration 39 Case B)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-financing-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.60–65",
+      "High"
+     ],
+     "front": "Memory hook: Significant financing component?",
+     "back": {
+      "simplified": "Separate the sale (cash price) from the loan (interest). Under a year? Ignore."
+     }
+    },
+    {
+     "id": "c-r115-financing-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 115.60–65",
+      "High"
+     ],
+     "front": "Worked example: Significant financing component — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "₹1,21,000 payable in 24 months, cash price ₹1,00,000 → revenue ₹1,00,000; ₹21,000 interest over two years under Ind AS 109 (SM Illustration 38).",
+      "explanation": "Contract rate 10% below the customer's 14% rate → transaction price = 60 × ₹2,12,470 discounted at 14% = ₹91,31,346 (SM Illustration 39 Case B)."
+     }
+    },
+    {
+     "id": "c-r115-noncash",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.66–69",
+      "High"
+     ],
+     "front": "Non-cash consideration and customer-provided goods: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Measure non-cash consideration (shares, advertising, equipment) at fair value ; if fair value cannot be reasonably estimated, measure it indirectly by the stand-alone selling price of the goods or services promised in exchange. Changes in fair value after inception due to the form of the consideration (e.g. share price) do not adjust the transaction price; changes for other reasons (e.g. the entity's performance) are variable consideration subject to the constraint. Goods or services contributed by the customer that the entity controls are non-cash consideration.",
+      "explanation": "100 shares per week of service: measure fair value of the shares received each week; ignore later price changes (SM Illustration 48). Bonus of 10 lakh shares at ₹100 at inception: revenue ₹350 crore + ₹10 crore = ₹360 crore if earned; number of shares earned is variable, the price per share is fixed at inception (SM Illustration 49).",
+      "cases": [
+       "100 shares per week of service: measure fair value of the shares received each week; ignore later price changes (SM Illustration 48).",
+       "Bonus of 10 lakh shares at ₹100 at inception: revenue ₹350 crore + ₹10 crore = ₹360 crore if earned; number of shares earned is variable, the price per share is fixed at inception (SM Illustration 49).",
+       "TV show for ₹1,000 + 100 ad slots (fair value ₹600) → ₹1,600; if fair value unknown → ₹1,500 SSP (SM Illustration 50)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-noncash-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 115.66–69",
+      "High"
+     ],
+     "front": "Worked example: Non-cash consideration — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "TV show for ₹1,000 + 100 ad slots (fair value ₹600) → ₹1,600; if fair value unknown → ₹1,500 SSP (SM Illustration 50).",
+      "explanation": "Tooling contributed by the customer worth ₹2 crore and controlled by the supplier → transaction price ₹27 crore (SM Illustration 51)."
+     }
+    },
+    {
+     "id": "c-r115-payable",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.70–72",
+      "High"
+     ],
+     "front": "Consideration payable to a customer: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Cash, credits, coupons or vouchers paid (or payable) to a customer, or to parties buying from the customer, reduce the transaction price unless paid for a distinct good or service from the customer. If for a distinct good/service, account for it as a purchase from a supplier, but any excess over fair value reduces the transaction price; if fair value cannot be estimated, the whole payment reduces the price. A reduction is recognised at the later of when the related revenue is recognised and when the entity pays or promises to pay.",
+      "explanation": "Slotting fees for shelf placement → reduce price (SM Example 5). Co-operative advertising at fair value from a third-party benchmark → purchase of advertising (Example 6). Price protection → reduce price. ₹1.5 crore shelving payment against a ₹15 crore commitment → reduce each sale by 10%; first month ₹1.25 crore invoiced → revenue ₹1.125 crore (SM Illustration 52).",
+      "cases": [
+       "Slotting fees for shelf placement → reduce price (SM Example 5). Co-operative advertising at fair value from a third-party benchmark → purchase of advertising (Example 6). Price protection → reduce price.",
+       "₹1.5 crore shelving payment against a ₹15 crore commitment → reduce each sale by 10%; first month ₹1.25 crore invoiced → revenue ₹1.125 crore (SM Illustration 52).",
+       "Port-in credit ₹2,000 on a ₹800 × 24 month plan → transaction price ₹17,200, recognised over the service period (SM Illustration 53)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-payable-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.70–72",
+      "High"
+     ],
+     "front": "Memory hook: Consideration payable to a customer?",
+     "back": {
+      "simplified": "Paying your customer? Revenue goes down — unless you bought something real at fair value."
+     }
+    },
+    {
+     "id": "c-r115-payable-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 115.70–72",
+      "High"
+     ],
+     "front": "Worked example: Consideration payable to a customer — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "Port-in credit ₹2,000 on a ₹800 × 24 month plan → transaction price ₹17,200, recognised over the service period (SM Illustration 53).",
+      "explanation": "Variable amounts payable (e.g. rebates to end consumers) are estimated using the variable-consideration rules (SM TYK 7)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-e",
+   "title": "Step 4 · Allocate the transaction price",
+   "emoji": "⚖️",
+   "cards": [
+    {
+     "id": "c-r115-ssp",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.73–80",
+      "Medium"
+     ],
+     "front": "Step 4: allocate on relative stand-alone selling prices: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Allocate the transaction price to each performance obligation on a relative stand-alone selling price basis (except for discounts and variable consideration meeting the exceptions). Best evidence is the observable price when sold separately; a list or contract price may be, but is not presumed to be, the SSP. Determine SSPs at inception and do not update for later changes. If not observable, estimate maximising observable inputs: (a) adjusted market assessment ; (b) expected cost plus a margin ; (c) residual approach — only if the price is highly variable or uncertain (not yet established/never sold separately).",
+      "explanation": "A combination of methods may be used (e.g. residual for the aggregate of uncertain items, then another method to split it). Products A (₹5,000 observable), B (₹2,500 adjusted market), C (₹7,500 cost plus margin) for ₹10,000 → allocate ₹3,300 / ₹1,700 / ₹5,000 (SM Illustration 54).",
+      "cases": [
+       "Products A (₹5,000 observable), B (₹2,500 adjusted market), C (₹7,500 cost plus margin) for ₹10,000 → allocate ₹3,300 / ₹1,700 / ₹5,000 (SM Illustration 54).",
+       "Residual check: a residual of ₹5,000 for Product Alpha whose prices range ₹15,000–₹45,000 is not faithful → use another method (SM Illustration 55 Case C)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-ssp-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.73–80",
+      "Medium"
+     ],
+     "front": "Memory hook: SSP and estimation methods?",
+     "back": {
+      "simplified": "Observable first; else Market, Cost-plus, Residual (residual only if variable or uncertain)."
+     }
+    },
+    {
+     "id": "c-r115-discount",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.81–83",
+      "Low"
+     ],
+     "front": "Allocating a discount: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "A discount exists if the sum of stand-alone selling prices exceeds the promised consideration. Allocate it proportionately to all performance obligations unless all are met (para 82): (a) the entity regularly sells each distinct good/service on a stand-alone basis; (b) it regularly sells a bundle of some of them at a discount; and (c) that bundle's discount is substantially the same as the contract's, giving observable evidence of where the discount belongs — then allocate it entirely to those obligations. Allocate such a discount before using the residual approach.",
+      "explanation": "X ₹50,000, Y ₹25,000, Z ₹45,000; Y+Z regularly sold for ₹50,000 → the whole ₹20,000 discount goes to Y and Z; split ₹17,857 / ₹32,143 if delivered at different times (SM Illustration 55 Case A). With Product Alpha and ₹1,30,000 total, residual = ₹30,000 (within ₹15,000–₹45,000) (Case B).",
+      "cases": [
+       "X ₹50,000, Y ₹25,000, Z ₹45,000; Y+Z regularly sold for ₹50,000 → the whole ₹20,000 discount goes to Y and Z; split ₹17,857 / ₹32,143 if delivered at different times (SM Illustration 55 Case A).",
+       "Software S, Hardware H and Accessory A: apply the para 82 tests to decide whether the discount goes only to the regularly discounted bundle (SM Practice Question 7)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-discount-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.81–83",
+      "Low"
+     ],
+     "front": "Memory hook: Allocating a discount?",
+     "back": {
+      "simplified": "Discount spreads to all — unless a regularly sold bundle proves where it belongs."
+     }
+    },
+    {
+     "id": "c-r115-var-alloc",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.84–86",
+      "Low"
+     ],
+     "front": "Allocating variable consideration: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Allocate a variable amount (and later changes) entirely to one performance obligation, or to one distinct good/service within a series, if both : (a) the variable payment terms relate specifically to the entity's efforts to satisfy that obligation (or a specific outcome from it); and (b) allocating it entirely there is consistent with the allocation objective considering all obligations and payment terms. Otherwise use the general relative SSP allocation.",
+      "explanation": "Royalty ₹20,00,000 ≈ SSP of Licence B and fixed ₹16,00,000 ≈ SSP of Licence A → royalty entirely to B (SM Illustration 56 Case A). Fixed ₹6,00,000 + royalty ₹30,00,000 would not reflect SSPs of ₹16 lakh and ₹20 lakh → allocate both fixed and royalty in the ratio 16:20; revenue ₹3,33,333 on B, ₹2,66,667 on A; first royalty ₹4,00,000 → ₹2,22,222 revenue (B) and ₹1,77,778 contract liability (A) (Case B).",
+      "cases": [
+       "Royalty ₹20,00,000 ≈ SSP of Licence B and fixed ₹16,00,000 ≈ SSP of Licence A → royalty entirely to B (SM Illustration 56 Case A)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-tp-change",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.87–90",
+      "Low"
+     ],
+     "front": "Changes in the transaction price: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Allocate later changes in the transaction price on the same basis as at inception ; do not reallocate for changes in stand-alone selling prices. Amounts allocated to a satisfied performance obligation are recognised as revenue (or a reduction) in the period the price changes. Continue to allocate variable amounts entirely to one obligation if the para 85 criteria still hold. A change caused by a modification follows the modification guidance; after a modification, a change attributable to variable consideration promised before it is allocated to the pre-modification obligations if the modification was a termination-and-new-contract; other changes go to the obligations unsatisfied immediately",
+      "explanation": "₹20 lakh early bonus becomes includable on 1 July: allocate it wholly to software implementation (₹1 crore → ₹1.2 crore); cumulative revenue for that obligation = 60% × ₹1.2 crore = ₹72 lakh (SM Illustration 57). A discretionary retention credit of ₹50 in month 14 (not expected by customers) is a change in price accounted for as a modification over the remaining term (SM Illustration 58).",
+      "cases": [
+       "₹20 lakh early bonus becomes includable on 1 July: allocate it wholly to software implementation (₹1 crore → ₹1.2 crore); cumulative revenue for that obligation = 60% × ₹1.2 crore = ₹72 lakh (SM Illustration 57).",
+       "A discretionary retention credit of ₹50 in month 14 (not expected by customers) is a change in price accounted for as a modification over the remaining term (SM Illustration 58)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-f",
+   "title": "Step 5 · Recognise revenue when control transfers",
+   "emoji": "✅",
+   "cards": [
+    {
+     "id": "c-r115-control",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.31–34",
+      "Low"
+     ],
+     "front": "Step 5: transfer of control: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Recognise revenue when (or as) a performance obligation is satisfied by transferring a promised good or service (an asset); an asset is transferred when (or as) the customer obtains control — the ability to direct the use of , and obtain substantially all of the remaining benefits from, the asset, including the ability to prevent others from doing so. Decide at inception whether control transfers over time ; if not, at a point in time .",
+      "explanation": "Benefits = potential cash inflows or savings: use, enhance other assets, settle liabilities, sell/exchange, pledge, hold. Control replaces AS 9's 'significant risks and rewards'; risks and rewards survive only as one indicator.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-r115-overtime",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.35–37",
+      "Medium"
+     ],
+     "front": "Performance obligations satisfied over time: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Control transfers over time if any one is met: (a) the customer simultaneously receives and consumes the benefits as the entity performs; (b) the entity's performance creates or enhances an asset the customer controls as it is created (e.g. building on the customer's land); (c) the performance does not create an asset with an alternative use to the entity and the entity has an enforceable right to payment for performance completed to date . Otherwise revenue is recognised at a point in time.",
+      "explanation": "(a) test: another entity would not need to substantially re-perform work done to date (ignore contractual/practical limits on transfer and assume no benefit of WIP). Payroll processing (SM Illustration 59) and a 20-day sea voyage (Illustration 60) meet (a). No alternative use: assessed at inception on substantive contractual restrictions or practical limitations (significant economic loss to redirect). Interchangeable assets are not restricted.",
+      "cases": [
+       "(a) test: another entity would not need to substantially re-perform work done to date (ignore contractual/practical limits on transfer and assume no benefit of WIP). Payroll processing (SM Illustration 59) and a 20-day sea voyage (Illustration 60) meet (a).",
+       "Audit opinion firm entitled to cost + 15% on termination → (c) met, over time (SM Illustration 61); customised satellite with payment right → over time (Illustration 62).",
+       "Equipment where the entity only keeps payments already made on termination (no right to cost + margin) → (c) not met, point in time (SM Illustration 63)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-overtime-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.35–37",
+      "Medium"
+     ],
+     "front": "Memory hook: Over-time criteria (35a/b/c)?",
+     "back": {
+      "simplified": "Over time if: Consumed as you go, Customer controls the WIP, or No alternative use + Paid for work to date."
+     }
+    },
+    {
+     "id": "c-r115-progress",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.39–45, B14–B19",
+      "High"
+     ],
+     "front": "Measuring progress: output and input methods: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Use a single method per over-time performance obligation, applied consistently, to depict transfer of control. Output methods : surveys of performance, appraisals of results, milestones, time elapsed, units produced/delivered. Input methods : resources consumed, labour hours, costs incurred , time elapsed, machine hours. Remeasure progress each reporting date; changes are changes in accounting estimate (Ind AS 8).\n Under a cost-based input method exclude costs that do not depict progress (wasted materials, inefficiencies). For goods not distinct, controlled by the customer well before the related services, significant to total cost and procured from a third party without significant design/m",
+      "explanation": "Practical expedient (B16): if the right to consideration corresponds directly with the value of performance to date (e.g. a fixed amount per hour), recognise revenue at the amount the entity has a right to invoice. Units-delivered output methods may misstate progress if WIP controlled by the customer is excluded.",
+      "cases": [
+       "Health club access → time-based straight line (SM Illustration 64). Stand-ready obligations → time-based if benefit is even or unpredictable.",
+       "Elevators ₹15,00,000 delivered early: progress = ₹5,00,000 ÷ ₹25,00,000 = 20%; revenue = 20% × ₹35,00,000 + ₹15,00,000 = ₹22,00,000 (SM Illustration 65).",
+       "Air conditioners ₹10,00,000 of ₹40,00,000 cost: 20% × ₹40,00,000 + ₹10,00,000 = ₹18,00,000 revenue, COGS ₹16,00,000, profit ₹2,00,000 (SM TYK 3)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-progress-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.39–45, B14–B19",
+      "High"
+     ],
+     "front": "Memory hook: Input/output methods and uninstalled materials?",
+     "back": {
+      "simplified": "Uninstalled materials: take them out of the percentage, book them at cost."
+     }
+    },
+    {
+     "id": "c-r115-progress-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 115.39–45, B14–B19",
+      "High"
+     ],
+     "front": "Worked example: Input/output methods and uninstalled materials — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "Health club access → time-based straight line (SM Illustration 64). Stand-ready obligations → time-based if benefit is even or unpredictable.",
+      "explanation": "Elevators ₹15,00,000 delivered early: progress = ₹5,00,000 ÷ ₹25,00,000 = 20%; revenue = 20% × ₹35,00,000 + ₹15,00,000 = ₹22,00,000 (SM Illustration 65)."
+     }
+    },
+    {
+     "id": "c-r115-pit",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.38",
+      "High"
+     ],
+     "front": "Performance obligations satisfied at a point in time: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "If no over-time criterion is met, recognise revenue when the customer obtains control, considering indicators including: (a) the entity has a present right to payment ; (b) the customer has legal title ; (c) the entity has transferred physical possession ; (d) the customer has the significant risks and rewards of ownership; (e) the customer has accepted the asset.",
+      "explanation": "Title kept only as protection against non-payment does not stop control passing. Physical possession may not mean control: repurchase agreements and consignment.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-r115-pit-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.38",
+      "High"
+     ],
+     "front": "Memory hook: Point-in-time indicators?",
+     "back": {
+      "simplified": "Point-in-time indicators: P-L-P-R-A — Payment right, Legal title, Possession, Risks & rewards, Acceptance."
+     }
+    },
+    {
+     "id": "c-r115-pit-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 115.38",
+      "High"
+     ],
+     "front": "Worked example: Point-in-time indicators — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "Exclude risks that create a separate performance obligation (e.g. maintenance) when weighing risks and rewards.",
+      "explanation": "Customer acceptance is a formality if the entity can objectively determine the product meets agreed specifications; otherwise control passes only on acceptance."
+     }
+    },
+    {
+     "id": "c-r115-repurchase",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.B64–B76",
+      "Low"
+     ],
+     "front": "Repurchase agreements: forward, call and put options: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Forward or call option (entity's obligation or right to repurchase): the customer does not obtain control. Repurchase price < original selling price → lease (Ind AS 116) unless part of a sale and leaseback; price ≥ original selling price → financing arrangement : keep the asset, recognise a financial liability, and recognise the difference as interest (and holding costs). Compare prices considering the time value of money.\n Put option (customer can require repurchase): if price < original price and the customer has a significant economic incentive to exercise → lease; if price ≥ original price and > expected market value → financing; if price ≥ original price but ≤ expected market value with",
+      "explanation": "Sale and leaseback cases: keep the asset and recognise a financial liability under Ind AS 109. Significant economic incentive: compare repurchase price with expected market value at repurchase and the time until expiry.",
+      "cases": [
+       "Sale ₹10 lakh with call at ₹11 lakh → financing: liability ₹10 lakh, ₹1 lakh finance cost over the term (SM Illustration 66).",
+       "Sale ₹10,00,000 with put at ₹9,00,000, market ₹7,50,000 → significant incentive → lease; ₹1,00,000 lease income over the period; if unexercised, revenue ₹9,00,000 at expiry (SM Illustration 67)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-repurchase-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.B64–B76",
+      "Low"
+     ],
+     "front": "Memory hook: Repurchase agreements?",
+     "back": {
+      "simplified": "Entity can buy back: below price = lease, at/above = finance. Customer can sell back: incentive decides."
+     }
+    },
+    {
+     "id": "c-r115-billhold",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.B79–B82",
+      "High"
+     ],
+     "front": "Bill-and-hold arrangements: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "The entity bills the customer but keeps physical possession. Besides the general control indicators, all must be met for the customer to have control: (a) the reason is substantive (e.g. requested by the customer); (b) the product is identified separately as the customer's; (c) it is ready for physical transfer ; and (d) the entity cannot use it or direct it to another customer. Consider whether custodial services are a separate performance obligation.",
+      "explanation": "Machine taken, spare parts stored at the customer's request, title passed, segregated and ready → revenue for machine and spares on 31 March 20X3; custodial service for 2–4 years recognised over time; transaction price split across three performance obligations (SM Illustration 68).",
+      "cases": [
+       "Machine taken, spare parts stored at the customer's request, title passed, segregated and ready → revenue for machine and spares on 31 March 20X3; custodial service for 2–4 years recognised over time; transaction price split across three performance obligations (SM Illustration 68)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-billhold-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.B79–B82",
+      "High"
+     ],
+     "front": "Memory hook: Bill-and-hold?",
+     "back": {
+      "simplified": "Bill-and-hold: Substantive reason, Separately identified, Ready to ship, entity can't Redirect."
+     }
+    },
+    {
+     "id": "c-r115-licence",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.B52–B62",
+      "Medium"
+     ],
+     "front": "Licences of intellectual property: right to access vs right to use: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "A licence gives either a right to access the IP as it exists throughout the licence period (revenue over time ) or a right to use the IP as it exists when granted (revenue at a point in time , when the customer can use and benefit from it). Right to access requires all three : (1) the contract requires, or the customer reasonably expects, the entity to undertake activities that significantly affect the IP ; (2) the licence exposes the customer to the effects of those activities; (3) those activities do not transfer a good or service (are not a separate performance obligation).",
+      "explanation": "Licences include software, films, music, franchises, patents, trademarks and copyrights. Character licence where the owner keeps producing and promoting the show → access, over time (SM Example 7). Team name and logo while the team keeps playing → access (SM Illustration 72(i)); dormant brand held by a brand collector → use (72(ii)).",
+      "cases": [
+       "Character licence where the owner keeps producing and promoting the show → access, over time (SM Example 7). Team name and logo while the team keeps playing → access (SM Illustration 72(i)); dormant brand held by a brand collector → use (72(ii)).",
+       "1975 symphony recording, no obligation to change it, significant stand-alone functionality → right to use, point in time, even though paid monthly (SM Illustration 69).",
+       "Software with when-and-if-available upgrades: upgrades are distinct, so ignored in judging the licence → right to use (SM Illustration 70). Completed film with marketing that does not change it → right to use (Illustration 71)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-licence-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.B52–B62",
+      "Medium"
+     ],
+     "front": "Memory hook: Licence: access (over time) vs use (point)?",
+     "back": {
+      "simplified": "Access = the IP keeps changing because of you (over time). Use = the IP is static (point in time)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-g",
+   "title": "Contract costs",
+   "emoji": "🧾",
+   "cards": [
+    {
+     "id": "c-r115-cost-obtain",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.91–94",
+      "Low"
+     ],
+     "front": "Incremental costs of obtaining a contract: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Recognise as an asset the incremental costs of obtaining a contract (costs that would not have been incurred had the contract not been obtained, e.g. a sales commission ) if the entity expects to recover them. Costs incurred regardless of whether the contract is obtained are expensed unless explicitly chargeable to the customer. Practical expedient : expense if the amortisation period would be one year or less .",
+      "explanation": "Test: would the cost arise if the parties walked away just before signing? Capitalise: commission paid only on signing; bonus based solely on sales; sales manager's commission on contracts won by local staff (function or title of the employee does not matter).",
+      "cases": [
+       "1% commission on a ₹1 crore three-year contract: Ind AS 115 amortises over the three years; AS 9 expenses at once (SM Example 8 — the SM table states the amounts as ₹1 crore/₹33.33 lakh; check against the 1% commission before relying on the figures)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-cost-obtain-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.91–94",
+      "Low"
+     ],
+     "front": "Memory hook: Costs to obtain a contract?",
+     "back": {
+      "simplified": "Walk-away test: would you pay it if the deal died at the last minute? No → capitalise."
+     }
+    },
+    {
+     "id": "c-r115-cost-fulfil",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.95–98",
+      "Low"
+     ],
+     "front": "Costs to fulfil a contract: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "If fulfilment costs are within another Standard (Ind AS 2, 16, 38), apply it. Otherwise recognise an asset only if all : (a) costs relate directly to a contract or a specifically identifiable anticipated contract (direct labour, direct materials, directly related allocations such as supervision and depreciation of tools/right-of-use assets, costs chargeable to the customer, subcontractor payments); (b) they generate or enhance resources used to satisfy future performance obligations; (c) they are expected to be recovered .",
+      "explanation": "Expense as incurred: general and administrative costs not chargeable to the customer; wasted materials/labour not reflected in the price; costs of satisfied obligations; costs that cannot be distinguished between satisfied and remaining obligations. Data-centre outsourcing: design ₹50,000 and migration/testing ₹1,10,000 under Ind AS 115 (amortise over 7 years including expected renewals); hardware ₹1,40,000 under Ind AS 16; software ₹1,00,000 under Ind AS 38 (SM Illustration 73).",
+      "cases": [
+       "Data-centre outsourcing: design ₹50,000 and migration/testing ₹1,10,000 under Ind AS 115 (amortise over 7 years including expected renewals); hardware ₹1,40,000 under Ind AS 16; software ₹1,00,000 under Ind AS 38 (SM Illustration 73)."
+      ]
+     }
+    },
+    {
+     "id": "c-r115-cost-amort",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.99–104",
+      "Low"
+     ],
+     "front": "Amortisation and impairment of contract cost assets: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Amortise on a systematic basis consistent with the pattern of transfer of the related goods or services (including anticipated renewals ); update for significant changes as a change in estimate (Ind AS 8). Recognise an impairment loss to the extent the carrying amount exceeds the remaining consideration expected (ignoring the variable-consideration constraint, adjusting for credit risk) less costs still to be recognised . First impair assets under other Standards (Ind AS 2, 16, 38). Reversals are allowed, capped at the amortised amount without impairment.",
+      "explanation": "Five-year contract renewable yearly up to 10, average customer stays 7 → amortise over 7 years (SM Illustration 74).",
+      "cases": [
+       "Five-year contract renewable yearly up to 10, average customer stays 7 → amortise over 7 years (SM Illustration 74)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-p",
+   "title": "Presentation and disclosure",
+   "emoji": "📊",
+   "cards": [
+    {
+     "id": "c-r115-present",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.105–109",
+      "Low"
+     ],
+     "front": "Presentation: contract asset, contract liability, receivable: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Present a contract as a contract liability if the customer has paid (or payment is due) before the entity performs; as a contract asset if the entity has performed and its right to consideration is conditional on something other than the passage of time ; and as a receivable if the right is unconditional (only time must pass). Receivables follow Ind AS 109; any difference on initial recognition between the receivable and revenue is presented as an expense. Excise duty included in revenue is presented separately (Indian addition).",
+      "explanation": "Interest from a significant financing component is shown separately from revenue. Refund liabilities and right-to-recover assets are presented gross, not netted.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-r115-present-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 115.105–109",
+      "Low"
+     ],
+     "front": "Memory hook: Contract asset vs liability vs receivable?",
+     "back": {
+      "simplified": "Paid first → liability. Performed first: still conditional → contract asset; only time left → receivable."
+     }
+    },
+    {
+     "id": "c-r115-disclose",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115.110–129",
+      "Low"
+     ],
+     "front": "Disclosures: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Disclose: revenue from contracts with customers separately from other revenue and impairment losses on receivables/contract assets; disaggregation of revenue by nature, amount, timing and uncertainty (linked to Ind AS 108 segments); contract balances (opening/closing contract assets, liabilities, receivables; revenue from opening contract liabilities; significant changes); performance obligations (timing, payment terms, nature, returns/refunds, warranties); transaction price allocated to remaining performance obligations ; significant judgements (timing, methods, estimating variable consideration and the constraint, allocation); a reconciliation of revenue with the contracted price; assets f",
+      "explanation": "The SM's listed-company extract (Hindustan Unilever, 2021–22) shows the accounting policy wording for revenue.",
+      "cases": []
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-s",
+   "title": "Service concession arrangements (Appendix D)",
+   "emoji": "🛣️",
+   "cards": [
+    {
+     "id": "c-sca-scope",
+     "type": "concept",
+     "tags": [
+      "Ind AS 115 App. D",
+      "Low"
+     ],
+     "front": "Service concession arrangements: features and the operator's rights: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "A private operator constructs or upgrades public-service infrastructure (roads, bridges, hospitals, airports, water, energy, telecom) and operates and maintains it for a specified period (build-operate-transfer etc.). Features: the grantor is a public-sector body (or a private body to which the responsibility is devolved); the operator manages the infrastructure and is not merely an agent; the contract sets initial prices and regulates revisions; the infrastructure is handed back at the end for little or no consideration. The infrastructure is not the operator's property, plant and equipment : the operator has access to operate it, not control of its use.",
+      "explanation": "The operator is a service provider: revenue for construction/upgrade services and for operation services under Ind AS 115; where both are in one contract, allocate by relative fair values. Consideration for construction is recognised at fair value as a financial asset or an intangible asset .",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-sca-fa-ia",
+     "type": "concept",
+     "tags": [
+      "App. D · FA vs IA",
+      "Medium"
+     ],
+     "front": "Financial asset model vs intangible asset model: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Financial asset to the extent the operator has an unconditional contractual right to receive cash from (or at the direction of) the grantor — including where the grantor guarantees specified amounts or the shortfall between user receipts and specified amounts, even if contingent on quality/efficiency requirements. Measured under Ind AS 32/107/109 (amortised cost, FVOCI or FVTPL; interest by the effective interest method). Intangible asset to the extent it receives a right (licence) to charge users — not an unconditional right to cash because receipts depend on public usage; measured under Ind AS 38. If paid partly by each, account for each component separately at fair value.",
+      "explanation": "Borrowing costs : expensed as incurred unless the operator has a right to an intangible asset, in which case they are capitalised during construction. Restoration/maintenance obligations (other than upgrades) are provisions under Ind AS 37 at the best estimate.",
+      "cases": [
+       "Toll road with ₹200 crore guaranteed by government → financial asset: Dr Financial asset 110 / Cr Construction revenue 110; construction cost 100 expensed; finance revenue 15; operation revenue 75 [(200 − 110) − 15]; cash 200 (₹ crore; SM Illustration 75(I)).",
+       "Expressway with toll collection from users → intangible asset: cost 110 expensed; Dr Intangible asset 200 / Cr Revenue 200; amortisation 200 over the operation period (SM Illustration 75(II))."
+      ]
+     }
+    },
+    {
+     "id": "c-sca-fa-ia-mem",
+     "type": "mnemonic",
+     "tags": [
+      "App. D · FA vs IA",
+      "Medium"
+     ],
+     "front": "Memory hook: SCA: financial vs intangible asset?",
+     "back": {
+      "simplified": "Government guarantees cash → financial asset. You must collect tolls from the public → intangible asset."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-h",
+   "title": "Beyond the study material",
+   "emoji": "🔭",
+   "cards": [
+    {
+     "id": "c-h-breakage",
+     "type": "concept",
+     "tags": [
+      "Beyond SM · B44–B47",
+      "Low"
+     ],
+     "front": "Beyond the SM: customers' unexercised rights (breakage): what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Beyond the study material (Ind AS 115 Appendix B, paras B44–B47). A prepayment for future goods or services is a contract liability. If the entity expects to be entitled to a breakage amount (rights customers will not exercise), it recognises that amount as revenue in proportion to the pattern of rights exercised ; if not, when the likelihood of exercise becomes remote. Amounts that must be remitted to another party (e.g. unclaimed property law) are a liability, not revenue.",
+      "explanation": "This is the mechanism behind 'only 80% of points will be redeemed' in the SM loyalty questions: unredeemed expected points are not deferred indefinitely; they are released as other points are redeemed. Check the current standard text before quoting paragraph numbers in an answer; the SM itself does not discuss breakage separately.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-h-onerous",
+     "type": "concept",
+     "tags": [
+      "Beyond SM · Ind AS 37",
+      "Low"
+     ],
+     "front": "Beyond the SM: loss-making (onerous) customer contracts: what does Ind AS 115 require?",
+     "back": {
+      "simplified": "Beyond the study material. Ind AS 115 has no onerous-contract test of its own: a customer contract whose unavoidable costs exceed the economic benefits expected is assessed under Ind AS 37 (provision for the onerous contract), separately from the impairment test for contract cost assets under Ind AS 115.",
+      "explanation": "Fusion question risk: an Ind AS 115 contract plus an Ind AS 37 onerous provision in the same case scenario. Contrast AS 7, which required expected construction losses to be expensed immediately.",
+      "cases": []
+     }
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "id": "p-p1",
+   "prompt": "ANANDAM Ltd. enters into a contract with a customer on 1st April, 2019 for sale of a machine and spare parts. The manufacturing lead time for the machine and spare parts is 3 years.\n On completion of manufacturing, ANANDAM Ltd. demonstrates that the machine and spare parts meet the agreed-upon specifications in the contract. The promises to transfer the machine and spare parts are distinct and result in two performance obligations each of which will be satisfied at a point in time.\n On 31st March, 2022, the customer pays for the machine and spare parts, but only takes the physical possession of the machine. Although the customer inspects and accepts the spare parts, the customer requests that the spare parts be stored at ANANDAM Ltd.'s warehouse because of its close proximity to the customer's factory.\n The customer has legal title to the spare parts and the parts can be identified as belonging to the customer. ANANDAM Ltd. stores the spare parts in a separate section of its warehouse and the parts are ready for immediate shipment at the customer's request. ANANDAM Ltd. expects to hold the spare parts for one to three years and does not have the authority to use the spare parts or direct them to another customer.\n Determine how the revenue will be recognized by ANANDAM Ltd. for the different performance obligations as per Ind AS 115? (6 Marks)",
+   "clauseRef": "PYQ May 2022 · Q2(b) · 6 marks",
+   "hints": [
+    "Start from the deciding requirement: Bill-and-hold arrangements."
+   ],
+   "modelAnswer": "INDENTIFIACTION OF OBLIGATIONS:\n ANANDAM Ltd. has made sale of two goods – machine and space parts, whose control is transferred at a point in time. Additionally, company agrees to hold the spare parts for the customer for a period of 1-3 years, which is a separate performance obligation. Therefore, total transaction price shall be allocated amongst 3 performance obligations viz\n (i) Sale of machinery\n (ii) Sale of spare parts\n (iii) Custodial services for storing spare parts.\n RECOGNITION OF REVENUE:\n Recognition of revenue for each of the three performance obligations shall occur as follows:\n (i) Sale of machinery: Machine has been sold to the customer and physical possession as well as legal title passed to the customer on 31st March, 2022. Accordingly, revenue for sale of machinery shall be recognised on 31st March, 2022.\n (ii) Sale of spare parts: The customer has made payment for the spare parts and legal title has been passed to specifically identified goods, but such spares continue to be physically held by the entity. In this regard, the company shall evaluate if revenue can be recognized on bill-and-hold basis if all below criteria are met:\n  Criterion Facts  (a) The reason for the bill-and-hold arrangement must be substantive (for example, the customer has requested the arrangement); The customer has specifically requested the entity to store goods in their warehouse, owing to proximity to customer's factory.  (b) The product must be identified separately as belonging to the customer; The spare parts have been specifically identified and inspected by the customer.  (c) The product currently must be ready for physical transfer to the customer; and The spares are identified and segregated, therefore, ready for delivery any time.  (d) The entity cannot have the ability to use the product or to direct it to another customer Spares have been segregated and cannot be redirected to any other customer.  Therefore, all the above conditions of bill-and-hold are met and hence, company can recognize revenue for sale of spare parts on 31st March, 2022.\n (iii) Custodial services: Such services shall be given for a period of 1 to 3 years from 31st March, 2022. Where services are given uniformly and customer receives & consumes benefits simultaneously, revenue for such service shall be recognized on a straight-line basis over a period of time.\n Study-material link: variant of SM Illustration 68 (same facts; entity named ANANDAM Ltd., lead time 3 years instead of 2, holding period 1–3 years instead of 2–4). Repeated as PYQ May 2026 Q5(a).",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p2",
+   "prompt": "Card Ltd. is engaged in the business of manufacturing of car locks and nut bolts.\n Car Locks: Typically, a contract is entered into for sale of car locks and consideration is received in the event of delivery of goods to the customer place. The cost of each car lock is ₹ 1,500 and the selling price is ₹ 1,800. The terms of the contract entitles the customer to return any unused car locks within 30 days and receive a full refund. The Company estimates that the costs of recovering the car lock will be immaterial and expects that the returned car locks can be resold at a profit. The Company has sold a total of 20,000 car locks during the month ended 31st March, 2022. From past experience, Card Ltd. expects that 4% of the car locks will be returned in the financial year 2022 - 2023.\n Nut Bolts: On 1st April, 2021, Card Ltd. enters into a one year contract with a customer to deliver nut bolts. The contract stipulates that the price per piece will be adjusted retrospectively once the customer reaches certain sales volume, defined, as follows:\n  Price per piece Cumulative sales volume  ₹ 200 1 – 50,000  ₹ 190 50,001 – 1,00,000  ₹ 180 1,00,001 & above  Volume is determined based on sales during the financial year. There are no minimum purchase requirements. Card Ltd. estimates that the total sales volume for the year will be 90,000 based on its experience with similar contracts and forecasted sales to the customer.\n Card Ltd. sells 24,000 pieces to the customer during the first quarter of the financial year 2021-2022 for a contract price of ₹ 200 per piece.\n You are required to:\n (i) Analyze the terms of the revenue contracts with customers for sale of car locks as per Ind AS 115. Determine the amount of revenue, refund liability and the asset to be recognized by Card Ltd. for the said contracts of car locks.\n (ii) Determine the transaction price, revenue and liability, if any, for nut bolts as per Ind AS 115 at the end of first quarter of the financial year 2021-2022. (8 Marks)",
+   "clauseRef": "PYQ May 2022 · Q2(c) · 8 marks",
+   "hints": [
+    "Start from the deciding requirement: Refund liabilities and sale with a right of return."
+   ],
+   "modelAnswer": "Analysis:\n (i) (a) Nature of consideration received:\n Card Ltd. applies the requirements in Ind AS 115 to the portfolio of 20,000 car locks because it reasonably expects that the effects on the financial statements from applying the requirements to the portfolio would not differ materially from applying the requirements to the individual contracts within the portfolio. Since the contract allows a customer to return the products, the consideration received from the customer is variable.\n (b) Probability of significant reversal of cumulative revenue:\n Card Ltd. considers on constraining estimates of variable consideration to determine whether the estimated amount of variable consideration of ₹ 3,45,60,000 (₹ 1,800 x 19,200 car locks not expected to be returned) can be included in the transaction price. Card Ltd. determines that although the returns are outside the entity's influence, it has significant experience in estimating returns for this product and customer class. In addition, the uncertainty will be resolved within a short time frame ie the 30-day return period. Thus, Card Ltd. concludes that it is highly probable that a significant reversal in the cumulative amount of revenue recognised (i.e. ₹ 3,45,60,000) will not occur as the uncertainty will be resolved (i.e. over the return period).\n Card Ltd. estimates that the costs of recovering the products will be immaterial and expects that the returned products can be resold at a profit.\n Upon transfer of control of the 20,000 car locks, Card Ltd. does not recognise revenue for 800 car locks that it expects to be returned. Consequently, it recognises the following:\n (a) revenue of ₹ 3,45,60,000 (₹ 1,800 x 19,200 products not expected to be returned);\n (b) a refund liability of ₹ 14,40,000 (₹ 1,800 refund x 800 products expected to be returned); and\n (c) an asset of ₹ 12,00,000 (₹ 1,500 x 800 products for its right to recover products from customers on settling the refund liability).\n (ii) (a) Transaction Price: The transaction price will be based on Card Ltd.'s estimate of total sales volume for the year. Since Card Ltd. estimates cumulative sales volume of 90,000 nut bolts during the year, transaction price per nut bolt will be ₹ 190. Card Ltd. will update its estimate of the total sales volume at each reporting date until the uncertainty is resolved.\n (b) Determination of Revenue: Card Ltd. concludes that based on a transaction price of ₹ 190 per nut bolt, it is highly probable that a significant reversal in the amount of cumulative revenue recognised will not occur when the uncertainty is resolved. Revenue is therefore recognised at a selling price of ₹ 190 per nut bolt as each nut bolt is sold. Accordingly, for the first quarter of the financial year 2021-2022, Card Ltd. recognizes revenue of ₹ 45,60,000 (24,000 nut bolts x ₹ 190).\n (c) Determination of Liability: Card Ltd. will recognise a liability for cash received in excess of the transaction price for the first 50,000 nut bolts sold at ₹ 200 per nut bolt (that is, ₹ 10 per nut bolt) until the cumulative sales volume is reached for the next pricing tier and the price is retroactively reduced. Accordingly, for the first quarter of the financial year 2021-2022, Card Ltd. recognizes liability of ₹ 2,40,000 (24,000 nut bolts x (₹ 200 – ₹ 190).",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p3",
+   "prompt": "On 1st April, 2021, Mohan Ltd. has sold goods to Hari Ltd. at a consideration of ₹ 7,50,000. The receipt of this is receivable in three equal instalments of ₹ 2,50,000 each over a two-year period (receipts on 1st April, 2021; 31st March 2022 and 31st March 2023).\n The company is offering a discount of 5% (i.e. ₹ 37,500), if payment is made in full at the time of sale. The sale agreement reflects an implicit interest rate of 5.358% p.a.\n The total consideration to be received from such sale is at ₹ 7,50,000 and hence, the management has recognized the revenue from sale of goods for ₹ 7,50,000.\n You are required to analyse whether the above accounting treatment made by the accountant is in compliance of Ind AS. If not, advise the correct treatment alongwith journal entries and extracts of Statement of Profit & Loss and Balance Sheet. (6 Marks)",
+   "clauseRef": "PYQ Nov 2022 · Q2(a) · 6 marks",
+   "hints": [
+    "Start from the deciding requirement: Significant financing component."
+   ],
+   "modelAnswer": "The revenue from sale of goods shall be recognised at the fair value of the consideration received or receivable. The fair value of the consideration is determined by discounting all future receipts using an imputed rate of interest where the receipt is deferred beyond normal credit terms. The difference between the fair value and the nominal amount of the consideration is recognised as interest revenue. Hence, the accounting treatment of recognizing revenue of ₹ 7,50,000 by the accountant is not correct.\n The fair value of consideration (cash price equivalent) of the sale of goods to be recognised on the date of sale should be calculated as follows:\n  Period Consideration (Installment) ₹ Present value factor Present value of consideration ₹  Time of sale 2,50,000 - 2,50,000  End of 1st year 2,50,000 0.949 2,37,250  End of 2nd year 2,50,000 0.901 2,25,250   7,50,000  7,12,500  Mohan Ltd. will recognise the revenue from sale of goods and finance income as follows:\n  Particulars  ₹ ₹   Initial recognition of sale of goods      Cash / Bank A/c Dr. 2,50,000   Trade Receivable A/c Dr. 4,62,500   To Sale A/c   7,12,500   Recognition of interest expense and receipt of second installment      Cash / Bank A/c Dr. 2,50,000   To Interest Income A/c (4,62,500 x 5.358%)   24,781  To Trade Receivable A/c   2,25,219   Recognition of interest expense and payment of final installment      Cash / Bank A/c Dr. 2,50,000   To Interest Income A/c (Balancing figure)   12,719  To Trade Receivable A/c (4,62,500 – 2,25,319)   2,37,281  Statement of Profit and Loss (Extracts) for the year ended 31st March, 2022 and 31st March, 2023\n   As at 31st March, 2022 ₹ As at 31st March, 2023 ₹  Income    Sale of Goods 7,12,500 -  Other Income (Finance income) 24,781 12,719  Balance Sheet (extracts) as at 31st March, 2022 and 31st March, 2023\n   As at 31st March, 2022 ₹ As at 31st March, 2023 ₹  Assets    Current Assets    Financial Assets    Trade Receivables 2,37,281 XXX",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p4",
+   "prompt": "A Ltd. is in the business of infrastructure and has two divisions. The brief details of its business and underlying project details are as follows:\n Project 1: Ludhiana - Chandigarh Expressway Toll Project\n The Company has commenced the construction of the project in the current year. The brief details of the Concession Agreement are given below:\n • Total expenses incurred ₹ 100 crore as on 31st March, 2022.\n • Under IGAAP, the company has recorded such expenses as intangible assets in the books of account. Total expenses estimated to be incurred on the project are ₹ 200 crore;\n • Fair value of the construction service is ₹ 220 crore;\n • Total cash flow guaranteed by the government under the concession agreement is ₹ 350 crore;\n • Finance revenue over the period of operation phase is ₹ 30 crore;\n • Other income relates to the services provided during the operation phase.\n Project 2: Bengaluru - Chennai Expressway Toll Project\n The Company has also entered into another Concession Agreement with Government of Karnataka in the current year. The said concession agreement is Toll Based Project and the Company needs to collect the toll from the users of the expressway. The construction cost for the said project will be ₹ 150 crore. The fair value of such construction cost is approximately ₹ 200 crore. Under IGAAP, the company has recorded the expenses incurred on the said project as an intangible asset.\n You are required to answer the following:\n (i) What would be the classification of Ludhiana - Chandigarh Expressway Toll Project as per applicable Ind AS? Give brief reasoning.\n (ii) What would be the classification of Bengaluru – Chennai Expressway Toll Project as per applicable Ind AS? Give brief reasoning.\n (iii) What should be the accounting entries for the preparation of financial statements as per relevant Ind AS for the above 2 projects? (10 Marks)",
+   "clauseRef": "PYQ Nov 2022 · Q2(b) · 10 marks",
+   "hints": [
+    "Start from the deciding requirement: Financial asset model vs intangible asset model."
+   ],
+   "modelAnswer": "(i) Project 1: Ludhiana - Chandigarh Expressway Toll Project\n Here the operator has a contractual right to receive cash from the grantor. The grantor has little, if any, discretion to avoid payment, usually because the agreement is enforceable by law. The operator has an unconditional right to receive cash if the grantor contractually guarantees to pay the operator. Hence, the operator recognizes a financial asset to the extent it has a contractual right to receive cash.\n (ii) Project 2: Bengaluru - Chennai Expressway Toll Project\n Here the operator has a contractual right to charge users of the public services. A right to charge users of the public service is not an unconditional right to receive cash because the amounts are contingent on the extent that the public uses the service. Therefore, the operator shall recognise an intangible asset to the extent it receives a right (a license) to charge users of the public service.\n (iii) Accounting Entries for preparation of financial statements\n Ludhiana-Chandigarh Expressway Toll Project — Journal Entries\n   Particulars Dr. (₹ in crore) Cr. (₹ in crore)    During construction:     1 Financial asset A/c Dr. 220    To Construction revenue  220   (To recognise revenue relating to construction services, to be settled in cash)    2 Cost of construction (profit or loss) Dr. 200    To Bank A/c (As and when incurred)  200   (To recognise costs relating to construction services)      During the operation phase:     3 Financial asset Dr. 30    To Finance revenue (As and when received or due to receive)  30   (To recognise interest income under the financial asset model)    4 Financial asset Dr. 100    To Revenue [(350-220) – 30]  100   (To recognise revenue relating to the operation phase)    5 Bank A/c Dr. 350    To Financial asset  350   (To recognise cash received from the grantor)    Bengaluru-Chennai Expressway Toll Project — Journal Entries\n   Particulars Dr. (₹ in crore) Cr. (₹ in crore)    During construction:     1 Cost of construction (profit or loss) Dr. 150    To Bank A/c (As and when incurred)  150   (To recognise costs relating to construction services)    2 Intangible asset Dr. 200    To Revenue  200   (To recognise revenue relating to construction services provided for non-cash consideration)      During the operation phase:     3 Amortisation expense Dr. 200    To Intangible asset (accumulated amortisation)  200   (To recognise amortisation expense relating to the operation phase over the period of operation)    4 Bank A/c Dr. ?    To Revenue  ?   (To recognise revenue relating to the operation phase)    Note: Amount in entry 4 is kept blank as no information in this regard is given in the question.",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p5",
+   "prompt": "An entity enters into a contract for the sale of Product A for ₹ 10,000. As part of the contract, the entity gives the customer a 40% discount voucher for any future purchases upto ₹ 8,000 in the next 30 days. The entity intends to offer a 10% discount on all sales during the next 30 days as a part of seasonal promotion. The 10% discount cannot be used in addition to the 40% discount voucher.\n The entity believes that there is 75% likelihood that a customer will redeem the voucher and, on an average, a customer will purchase ₹ 5,000 of additional products.\n You are required to determine how many performance obligations does the entity have with their stand-alone selling price and allocated transaction price? (4 Marks)",
+   "clauseRef": "PYQ Nov 2022 · Q2(c) · 4 marks",
+   "hints": [
+    "Start from the deciding requirement: Customer options: material rights, loyalty points and renewal options."
+   ],
+   "modelAnswer": "Since all customers will receive a 10% discount on purchases during the next 30 days, the only additional discount that provides the customer with a material right is the incremental discount of 30% on the products purchased. The entity accounts for the promise to provide the incremental discount as a separate performance obligation in the contract for the sale of Product A.\n The entity believes there is 75% likelihood that a customer will redeem the voucher and on an average a customer will purchase ₹ 5,000 of additional products. Consequently, the entity's estimated stand-alone selling price of the discount voucher is ₹ 1,125 (₹ 5,000 average purchase price of additional products x 30% incremental discount x 75% likelihood of exercising the option). The stand-alone selling prices of Product A and the discount voucher and the resulting allocation of ₹ 10,000 transaction price are as follows:\n  Performance obligations Stand-alone selling price  Product A ₹ 10,000  Discount voucher ₹ 1,125  Total ₹ 11,125   Performance obligations  Allocated transaction price (to nearest ₹)  Product A [(₹ 10,000 ÷ ₹ 11,125) × ₹ 10,000] ₹ 8,989  Discount voucher [(₹ 1,125 ÷ ₹ 11,125) × ₹ 10,000] ₹ 1,011  Total  ₹ 10,000  The entity allocates ₹ 8,989 to Product A and recognises revenue for Product A when control is transferred. The entity allocates ₹ 1,011 to the discount voucher and recognises revenue for the voucher when the customer redeems it for goods or services or when it expires.\n Study-material link: variant of SM Illustration 23 (SM: Product A ₹1,000, voucher up to ₹1,000, 80% likelihood, ₹500 average purchase).",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p6",
+   "prompt": "On 1st April, 2021, Z Limited enters into a contract to construct a manufacturing facility for Mint Limited at a fixed consideration of ₹ 30.00 lakhs. Z Limited can earn an incentive of ₹ 3.75 lakhs if the construction is completed within 24 months. Z Limited expects the costs to be ₹ 16.50 lakhs. At the inception of the contract, Z Limited determines that the contract contains single performance obligation satisfied over time. Z Limited also concludes that it is highly probable that a significant reversal in the amount of cumulative revenue recognized will occur as the completion of the manufacturing facility is highly susceptible to factors outside of the Company's influence, due to exceptionally high rainfall in the region.\n At 31st March, 2022, Z Limited has satisfied 65% of its performance obligation on the basis of costs incurred to date and concludes that the variable consideration is still constrained due to uncertain weather conditions.\n However, on 15th April, 2022, the contract is modified. The fixed consideration is enhanced by ₹ 2.25 lakhs and the expected costs increases by ₹ 1.20 lakhs. The contract period is also extended by 6 months. Z Limited now concludes that it is highly probable that the incentive award will be achieved. The contract remains a single performance obligation.\n Compute, as per applicable Ind AS: (i) For financial year 2022-2023, revenue from the contract, contract costs & resultant profit, (ii) Additional revenue (catch up adjustment) as on the date of modification of the contract i.e. 15th April, 2022. (6 Marks)\n PS (printed by ICAI): Read financial year '2022-2023' as '2021-2022'.",
+   "clauseRef": "PYQ May 2023 · Q2(b) · 6 marks",
+   "hints": [
+    "Start from the deciding requirement: Contract modifications."
+   ],
+   "modelAnswer": "Year 1 i.e. financial year 2021-2022\n In the given case, at contract inception, Z Ltd. will exclude the performance bonus of ₹ 3,75,000 from the transaction price because it is concluded that there is high probability that a significant reversal in the amount of cumulative revenue recognised will occur as the completion of the manufacturing facility is highly susceptible to factors outside the entity's influence i.e. exceptionally high rainfall in the region.\n Therefore, at the inception of the contract, for Z Ltd:\n   ₹  Transaction Price 30,00,000  Expected costs (16,50,000)  Expected profit (45%) 13,50,000  As at the year end, 31st March, 2022, Z Ltd. reassessed the variable consideration (i.e. performance bonus) and has concluded that the amount is still uncertain in accordance with paragraphs 56–58 of Ind AS 115. Therefore, the cumulative revenue and costs recognised for the year ended March, 2022 will be as follows:\n   ₹  Revenue from the contract (65%) 19,50,000  Contract costs (10,72,500)  Resultant profit 8,77,500  Year 2 i.e. financial year 2022-2023\n On 15th April, 2022, Z Ltd. and Mint Ltd. agreed to modified the contract. As a result, the fixed consideration and expected costs increased by ₹ 2,25,000 and ₹ 1,20,000 respectively.\n At the date of the modification, since Z Ltd. concluded that it is highly probable that incentive amount will be achieved, it has to include incentive amount of ₹ 3,75,000 in the transaction price. Therefore, the total potential consideration after the modification is ₹ 36,00,000 (₹ 32,25,000 fixed consideration + ₹ 3,75,000 performance bonus) and total estimated cost is ₹ 17,70,000 (₹ 16,50,000 + ₹ 1,20,000).\n Further, since the modified contract remains a single performance obligation, Z Ltd. will account for the contract modification, as if it were part of the original contract in accordance with paragraph 21(b) of Ind AS 115.\n Z Ltd. will update its measure of progress and estimates at the date of the modification as a cumulative catch-up adjustment as follows:\n  Calculation of cumulative catch-up adjustment:  ₹  Total potential consideration after the modification A 36,00,000  Actual costs incurred B 10,72,500  Total expected costs to complete C 17,70,000  Percent completion of performance obligation (rounded off) D = B/C 60.6%  Revenue recognised till date E 19,50,000  Additional revenue to recognised F = (A x D) - E 2,31,600   Study-material link: variant of SM PQ 8 (S Limited / Corp Limited; same structure with ₹20 lakh + ₹2.5 lakh bonus, 65%, modification +₹1.5 lakh / +₹0.8 lakh).",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p7",
+   "prompt": "On 1st January, 2023, Z Limited enters into an agreement with a college for renovation of building including installation of new air conditioners at a transaction price of ₹ 40.00 lakhs. The expected cost of air conditioners is ₹ 12.00 lakhs. The other expected cost is ₹ 20.00 lakhs. Z Limited purchases the air conditioners and they are delivered to the site before 31st March, 2023. Z Limited uses an input method based on cost to measure progress towards completion of the contract.\n Z Limited has incurred actual other costs (excluding the air conditioners) of ₹ 4.00 lakhs by 31st March, 2023.\n Determine the revenue to be recognized as per applicable Ind AS for the year ended 31st March, 2023, if performance obligation is met over a period of time. (6 Marks)",
+   "clauseRef": "PYQ May 2023 · Q2(c) · 6 marks",
+   "hints": [
+    "Start from the deciding requirement: Measuring progress: output and input methods."
+   ],
+   "modelAnswer": "Costs to be incurred comprise two major components – air conditioners and cost of construction service.\n (a) The air conditioners are part of the overall construction project and are not a distinct performance obligation.\n (b) The cost of air conditioners is substantial to the overall project and are incurred well in advance.\n (c) Upon delivery at site, customer acquires control of such air conditioners.\n (d) And there is no modification done to the air conditioners, which the company only procures and delivers at site. Nevertheless, as part of materials used in overall construction project, the company is a principal in the transaction with the customer for such air conditioners also.\n Therefore, applying the guidance on Input method –\n - The measure of progress should be made based on the percentage of costs incurred relative to the total budgeted costs.\n - The cost of air conditioners should be excluded when measuring such progress and revenue for such air conditioners should be recognized to the extent of costs incurred.\n The revenue to be recognized is measured as follows:\n  Particulars Amount (₹)  Transaction price 40,00,000  Costs incurred:   (a) Cost of air conditioners 12,00,000  (b) Other costs 4,00,000  Measure of progress: 4,00,000 / 20,00,000 = 20%  Revenue to be recognised:   (a) For costs incurred (other than air conditioners) Total attributable revenue = 28,00,000; % of work completed = 20%; Revenue to be recognised = 5,60,000  (b) Revenue for air conditioners 12,00,000 (equal to costs incurred)  Total revenue to be recognised 12,00,000 + 5,60,000 = 17,60,000  Therefore, for the year ended 31st March, 2023, the Company shall recognize revenue of ₹ 17,60,000 on the project.\n Study-material link: variant of SM Illustration 65 (uninstalled elevators; SM figures ₹50 lakh / ₹15 lakh / ₹25 lakh / ₹5 lakh).",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p8",
+   "prompt": "Q Limited offers a new product X for sale to its customers at a price of ₹ 1,500. As a part of the Scheme, Q Limited gives the customers a discount voucher which entitles them a 30% discount on any future purchases up to ₹ 1,500 in the next 30 days. Q Limited intends to offer a 5% discount on all sales during the next 30 days as a part of the seasonal promotion. The 5% discount cannot be used in addition to the 30% discount voucher. Q Limited believes that there is 80% likelihood that a customer will redeem the voucher and on an average, a customer will purchase ₹ 1,000 of additional products.\n Find out is there any performance obligation on the part of Q Limited and if so calculate the stand alone and allocated transaction price. (5 Marks)",
+   "clauseRef": "PYQ May 2024 · Q5(a) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Customer options: material rights, loyalty points and renewal options."
+   ],
+   "modelAnswer": "Since all customers will receive a 5% discount on purchases during the next 30 days, the only additional discount that provides the customer with a material right is the incremental discount of 25% on the products purchased. The entity accounts for the promise to provide the incremental discount as a separate performance obligation in the contract for the sale of Product X.\n The entity believes there is 80% likelihood that a customer will redeem the voucher and, on an average, a customer will purchase ₹ 1,000 worth of additional products. Consequently, the entity's estimated stand-alone selling price of the discount voucher is ₹ 200 (₹ 1,000 average purchase price of additional products x 25% incremental discount x 80% likelihood of exercising the option). The stand-alone selling prices of Product X and the discount voucher and the resulting allocation of the ₹ 1,500 transaction price are as follows:\n  Performance obligations Stand-alone selling price ₹  Product X 1,500  Discount voucher 200  Total 1,700   Performance obligations ₹ Allocated transaction price ₹  Product X (1,500 ÷ 1,700 × 1,500) 1,324  Discount voucher (200 ÷ 1,700 × 1,500) 176  Total  1,500  The entity allocates ₹ 1,324 to Product X and recognizes revenue for Product X when control transfers.\n The entity allocates ₹ 176 to the discount voucher and recognizes revenue for the voucher when the customer redeems it for goods or services or when it expires.\n Study-material link: variant of SM Illustration 23.",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p9",
+   "prompt": "Big Deal Ltd. is a marketing company having its departmental stores in 'A' class city of India. The company sells diversified products. For the purpose of increasing sales and attract customers, the company during the financial year 2023-2024, has adopted the following policy:\n (i) For every purchase of ₹ 400 the customer is awarded with 6 points.\n (ii) Each point is redeemable on any future purchases of company's same departmental store situated in any of 'A' class city within 3 years i.e. up to 31st March, 2026\n (iii) Value of each award point is ₹ 0.60\n During the financial year 2023-2024, the Big Deal Ltd:\n (i) Assessed that the sales of the company during the year 2023-2024 is ₹ 150 lakhs.\n (ii) Awarded 2,25,000 points to various customers during the year.\n (iii) Estimated that out of the awarded points, 54,000 points will remain unredeemed as at 31st March, 2024 which shall be eligible for redemption till 31st March, 2026 and;\n (iv) Expects only 75% points will be redeemed in the future.\n As an accountant of the company, you are required to suggest accounting treatment (Consolidated Journal Entries) in the following case:\n How should the sales and redemption transactions be recognized and recorded as independent transactions in the FY 2023-2024 as per Ind AS 115? (5 Marks)",
+   "clauseRef": "PYQ Nov 2024 · Q5(a) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Customer options: material rights, loyalty points and renewal options."
+   ],
+   "modelAnswer": "Points earned on ₹ 1,50,00,000 @ 6 points on every ₹ 400\n = [(1,50,00,000/400) x 6] = 2,25,000 points.\n Out of 2,25,000 points, it is estimated that 54,000 points will remain unredeemed in the current year. Further, it is expected that 75% of the unredeemed points will be redeemed in the future.\n Accordingly, value of points will be computed as follows:\n Value of points redeemed in the current year\n = (2,25,000 - 54,000) points x ₹ 0.6 each point = ₹ 1,02,600\n Value of points estimated to be redeemed in future\n = 54,000 points x 75% x ₹ 0.6 each point = ₹ 24,300\n Total value of loyalty points = ₹ 1,02,600 + ₹ 24,300 = ₹ 1,26,900\n Revenue recognized for sale of goods\n = ₹ 1,48,74,165 [1,50,00,000 x (1,50,00,000 / 1,51,26,900)]\n Revenue for points = ₹ 1,25,835 [1,26,900 x (1,50,00,000 / 1,51,26,900)]\n Journal Entry for the year 2023-2024\n    ₹ ₹  Bank A/c Dr. 1,50,00,000   To Sales A/c   1,48,74,165  To Liability under Customer Loyalty programme   1,25,835  (On sale of Goods)     Liability under Customer Loyalty programme Dr. 1,01,739   To Sales A/c   1,01,739  (On redemption of (2,25,000 – 54,000) points)     Revenue for points to be recognized\n Undiscounted points estimated to be recognized next year\n = 54,000 x 75% = 40,500 points\n Total points to be redeemed within 3 years\n = [(2,25,000 – 54,000) + 40,500] = 2,11,500 points\n Revenue to be recognised with respect to discounted points\n = ₹ 1,25,835 x (1,71,000/2,11,500) = ₹ 1,01,739\n Note:\n The above answer is based on the consideration that 75% likelihood of redemption of award points in future. Alternatively, the 75% likelihood of redemption of award points in future might not be considered. In such a case, the answer would be as follows:\n Points earned on ₹ 1,50,00,000 @ 6 points on every ₹ 400.\n = [(1,50,00,000/400) x 6] = 2,25,000 points.\n Out of 2,25,000 points, it is estimated that 54,000 points will remain unredeemed in the current year.\n Accordingly, value of points redeemed in the current year\n = 2,25,000 points x ₹ 0.6 each point = ₹ 1,35,000\n Revenue recognized for sale of goods\n = ₹ 1,48,66,204 [1,50,00,000 x (1,50,00,000 / 1,51,35,000)]\n Revenue for points = ₹ 1,33,796 [1,35,000 x (1,50,00,000 / 1,51,35,000)]\n Journal Entry for the year 2023-2024\n    ₹ ₹  Bank A/c Dr. 1,50,00,000   To Sales A/c   1,48,66,204  To Liability under Customer Loyalty programme   1,33,796  (On sale of Goods)     Liability under Customer Loyalty programme Dr. 1,08,175   To Sales A/c   1,08,175  (On redemption of (2,25,000 – 54,000) points)     Revenue for points to be recognized\n Undiscounted points estimated to be recognized next year\n = 54,000 x 75% = 40,500 points\n Total points to be redeemed within 3 years\n = [(2,25,000 – 54,000) + 40,500] = 2,11,500 points\n Revenue to be recognised with respect to discounted points\n = ₹ 1,33,796 x (1,71,000 / 2,11,500) = ₹ 1,08,175",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p10",
+   "prompt": "An entity provides broadband services to its customers along with voice call service. Customer buys modem from the entity. However, customer can also get the connection from the entity and modem from any other vendor. The installation activity requires Ltd. effort and the cost involved is almost insignificant. It has various plans where it provides either broadband services or voice call services or both.\n Comment on how to identify whether the performance obligations under the contract are distinct by using an automated process? (5 Marks)",
+   "clauseRef": "PYQ Nov 2024 · Q6(a) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Step 2: promises and distinct goods or services."
+   ],
+   "modelAnswer": "To identify the performance obligations under the contract and determine if they are distinct, an automated process can be implemented using technology. The following steps can be taken:\n a. Analyze the clauses in the contract related to the services provided (broadband services, voice call services, modem sales).\n b. Each clause should be codified using appropriate parameters or tags to capture the relevant information.\n c. Assign Boolean values (0 or 1) to each parameter or tag in the codified clauses.\n d. Use \"0\" to represent \"No\" and \"1\" to represent \"Yes\" for each parameter.\n e. Define the criteria for evaluating the performance obligations based on the parameters and their Boolean values.\n f. Consider factors such as the type of service involved, benefits derived by the customer, and promises made in the contract regarding the transfer of goods or services.\n g. Develop an automated algorithm or script that evaluates the Boolean values of the parameters according to the defined criteria.\n h. Calculate scores or weights for each parameter based on their significance in determining performance obligations.\n i. Utilize the scores or weights assigned to the parameters to determine if the performance obligations are distinct.\n j. If the total score exceeds a certain threshold, consider it a separate performance obligation.\n The automated process should flag and identify these distinct performance obligations based on the evaluation results.\n Considering the above facts, the following conclusion arises:\n There are three separate obligations\n • Broadband Service\n • Voice Call Services\n • Modem",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p11",
+   "prompt": "HaSo Ltd. deals in manufacture of computer hardware and development of software applications. Discuss the revenue recognition of HaSo Ltd. as per Ind AS 115 in the following cases:\n (i) Mr. Grahak purchases a software application license from HaSo Ltd. for ₹ 2,00,000. Under the agreement, HaSo Ltd. will provide updates or upgrades on a when-and-if-available basis. Mr. Grahak can choose whether to install them or not. HaSo Ltd. will undertake no other activities that will change the functionality of the software application license.\n (ii) HaSo Ltd. licenses the right to operate its exclusive store in Madurai to Franchisee Ltd. The store will bear HaSo Ltd. trade name and brand logo. Franchisee Ltd. will have the right to sell HaSo Ltd.'s products for next 5 years from the date of agreement. Franchisee Ltd. pays an all-inclusive up-front fixed fee on signing of the agreement. The franchise agreement requires HaSo Ltd. to maintain the brand through product improvements, marketing campaigns etc. (5 Marks)",
+   "clauseRef": "PYQ May 2025 · Q5(a) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Licences of intellectual property: right to access vs right to use."
+   ],
+   "modelAnswer": "(i) Although the updates and upgrades will change the functionality of the software, they are not considered in determining the nature of the entity's promise in granting the license. The activities of HaSo Ltd. to provide updates or upgrades are not considered because they transfer a promised goods or service to Mr. Grahak i.e. updates or upgrades are distinct from the licence. Therefore, the software application license ₹ 2,00,000 provides a right to use the IP that is satisfied at a point in time.\n Hence, ₹ 2,00,000 will be recognised immediately in the income statement by HaSo Ltd., on purchase of the software application license by Mr Grahak.\n (ii) The licence provides Franchisee Ltd. access to the IP as it exists at any point in time in the licence period. This is because:\n – HaSo Ltd. is required to maintain the brand, which will significantly affect the IP by affecting Franchisee Ltd.'s ability to obtain benefit from the brand;\n – Any action by HaSo Ltd. may have a direct positive or negative effect on Franchisee Ltd.; and\n – These activities do not transfer goods or service to Franchisee Ltd.\n Therefore, HaSo Ltd. recognizes the up-front fee over the 5-year franchise period.",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p12",
+   "prompt": "On 1st April, 2023, Shivank Limited entered into a contract with Amey Limited to build an asset for consideration of ₹ 1,20,00,000 with a bonus of ₹ 35,00,000 if the asset is completed within 30 months. At the inception of the contract, Shivank Limited correctly accounted for the promised bundle of goods and services as a single performance obligation in accordance with Ind AS 115 and expected the costs to be ₹ 71,00,000. At the same time, it was concluded that it is highly probable that a significant reversal in the amount of cumulative revenue recognised will occur. Completion of the asset was highly susceptible to factors outside of the Company's influence, mainly due to difficulties with the supply of components.\n At 31st March, 2024, Shivank Limited had satisfied 60% of its performance obligation on the basis of costs incurred to date and concluded that the variable consideration was still constrained in accordance with Ind AS 115. However, on 30th April, 2024, the contract was modified with the result that the fixed consideration and expected costs increased by ₹ 15,50,000 and ₹ 7,60,000 respectively. The time allowable for achieving the bonus was extended by four months with the result that Shivank Limited concluded that it is highly probable that the bonus will be achieved and that the contract remained a single performance obligation.\n You are required to give your opinion on the accounting treatment of contract for the years 2023-2024 and 2024-2025 with reference to the provisions of Ind AS 115. (5 Marks)",
+   "clauseRef": "PYQ Sep 2025 · Q5(a) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Contract modifications."
+   ],
+   "modelAnswer": "For the year 2023-2024\n Shivank Limited accounts for the promised bundle of goods and services as a single performance obligation satisfied over time in accordance with Ind AS 115. At the inception of the contract, Shivank Limited expects the following:\n     Transaction price ₹ 1,20,00,000  Expected costs (₹ 71,00,000)  Expected profit (40.83%) ₹ 49,00,000  At contract inception, Shivank Limited excludes ₹ 35,00,000 bonus from the transaction price because it has been concluded that it is highly probable that a significant reversal in the amount of cumulative revenue recognised will occur. Completion of the construction of asset is highly susceptible to factors outside the entity's influence.\n By the end of the first year, the entity has satisfied 60% of its performance obligation on the basis of costs incurred to date. Costs incurred to date are therefore ₹ 42,60,000 and Shivank Limited reassesses the variable consideration and concludes that the amount is still constrained. Therefore at 31st March 2024, the following would be recognised:\n      Revenue (A) ₹ 72,00,000 (₹ 1,20,00,000 x 60%)  Costs (B) (₹ 42,60,000) (₹ 71,00,000 x 60%)  Gross profit (C) i.e. (A-B) ₹ 29,40,000  For the year 2024-2025\n On 30th April 2024, the contract was modified. As a result, the fixed consideration and expected costs increase by ₹ 15,50,000 and ₹ 7,60,000, respectively.\n The total potential consideration after the modification is ₹ 1,70,50,000 [which is ₹ 1,35,50,000 (i.e. 1,20,00,000 + 15,50,000) fixed consideration + ₹ 35,00,000 completion bonus]. In addition, the allowable time for achieving the bonus is extended by four months with the result that Shivank Limited concludes that it is highly probable that including the bonus in the transaction price will not result in a significant reversal in the amount of cumulative revenue recognised in accordance with Ind AS 115. Therefore, the bonus of ₹ 35,00,000 can be included in the transaction price.\n Shivank Limited also concludes that the contract remains a single performance obligation. Thus, Shivank Limited accounts for the contract modification as if it were part of the original contract. Therefore, Shivank Limited updates its estimates of costs and revenue as follows:\n Shivank Limited has satisfied 54.20% of its performance obligation (₹ 42,60,000 actual costs incurred compared to ₹ 78,60,000 total expected costs). The entity recognises additional revenue of ₹ 20,41,100 [(54.20% of ₹ 1,70,50,000) – ₹ 72,00,000 revenue recognised to date] at the date of modification i.e. on 30th April 2024 as a cumulative catch-up adjustment.\n Study-material link: variant of SM PQ 8 (same wording; figures changed). Also a near-twin of PYQ May 2023 Q2(b).",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p13",
+   "prompt": "Grant Limited enters into a contract with a customer to sell a machinery. The machinery is transferred to the customer when the contract is signed. The price as per the contract is ₹ 10.00 lakhs plus contractual rate of interest at 8% per annum, payable in 5 annual equal instalments of ₹ 2,50,438 each. No down payment is envisaged for the sale.\n Grant Limited avails loan @ 10% per annum from its banker for similar back-to-back transactions. Statutory Auditors of the Company had advised Grant Limited to recognize the transaction price of the machinery after discounting instalment payments @ 10% per annum and observes that the 8% contractual rate of interest is significantly lower than the 10% interest rate at which company avails loan from its bankers to fund such transactions.\n (i) Determine the transaction price of the machinery if the company accepts the suggestion of the Statutory Auditors of the Company.\n (ii) Should Grant Limited accept the offer of the customer where the customer wants to cancel the contract for payment in instalments and offers a cash price of ₹ 9.65 lakhs.\n (Present value of inflow of equated amount stream of annual instalments for 5 years discounted at 10% rate of interest is 3.79 times of the yearly equated instalment amount) (Your response should be as per applicable Ind AS). (5 Marks)",
+   "clauseRef": "PYQ Jan 2026 · Q5(a) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Significant financing component."
+   ],
+   "modelAnswer": "(i) Determination of transaction price of the machinery\n Although the contract price is stated as ₹ 10,00,000, the payment is deferred over 5 years with no down payment and carries contractual interest rate of 8%. Hence, the contract contains a significant financing component.\n However, the contractual interest rate of 8% is significantly lower than the market rate of 10% at which Grant Limited borrows for similar transactions. As per para 61 of Ind AS 115, the transaction price must be adjusted for the time value of money using the market rate of interest that is 10%.\n Accordingly, the transaction price would be = ₹ 2,50,438 x 3.79\n = ₹ 9,49,160.\n This amount will be recognised as revenue at contract inception and the difference of the sale proceeds of ₹ 10,00,000 and the transaction price of ₹ 9,49,160 i.e. ₹ 50,800 will be recognised as interest income over the five-year period.\n (ii) Analysis of the customer's offer of cash price of ₹ 9,65,000 instead of payment machinery in five annual instalments.\n Although the present value of the instalment payments is ₹ 9,49,160, the customer has offered a higher cash price of ₹ 9,65,000. Acceptance of the cash price is commercially beneficial as it not only exceeds the discounted transaction price but also avoids the complexities of a significant financing component, reduces credit and collection risks and strengthens cash flows and liquidity.\n Therefore, Grant Limited should accept the customer's offer of the cash price of ₹ 9,65,000 which is higher than the discounted transaction price of ₹ 9,49,160. It is consistent with Ind AS 115 and is also financially and commercially advantageous.",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p14",
+   "prompt": "You, a Chartered Accountant, have recently been appointed as the new Chief Financial Officer (CFO) at Digitization Solutions Limited, a listed company in the hardware distribution sector. While reviewing the financial statements for the financial year 2024-2025, before submitting the same for audit, you identify the following issues:\n Issue 1: Channel Stuffing and Premature Revenue Recognition\n • Products worth ₹ 18 crores were shipped to distributors on 30th March, 2025, but there were no confirmed purchase orders.\n • These transactions have been recorded as revenue for Quarter 4.\n • Distributors were offered extended credit terms of 180 days and a \"right of return\" for unsold goods within 60 days.\n Issue 2: Deferred Recognition of Marketing Expense\n • A ₹ 4.5 crore marketing campaign conducted during Quarter 4 was capitalised as \"deferred revenue expenditure\" instead of being expensed, with the intent of inflating profits.\n Issue 3: Understatement of Warranty Provisions\n • Historically, the company incurs warranty claims equal to 4% of sales, but for financial year 2024-2025, management has only provisioned 1.5%, citing the need to \"smooth earnings\".\n The management of the company is under pressure to meet quarterly earnings targets due to the risk of a credit rating downgrade and to meet the expectations of institutional investors.\n Discuss and analyze the implications of accepting these treatments, with reference to the ICAI Code of Ethics. (5 Marks)",
+   "clauseRef": "PYQ Jan 2026 · Q6(a) Issue 1 · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Performance obligations satisfied at a point in time."
+   ],
+   "modelAnswer": "(Ind AS 115 part, Issue 1, verbatim. Issue 2 is answered under Ind AS 38, Issue 3 under Ind AS 37, and the rest under the ICAI Code of Ethics. Those parts are summarised only.)\n Issue 1: Channel Stuffing and Premature Revenue Recognition\n In the given case, the entity has stuffed its goods with the distributors without confirm purchase orders. This implies that the control of the goods might have not transferred to the distributors. Further, since the entity has offered the distributors with extended credit terms of 180 days and a right of return for unsold goods within 60 days, the recognition of revenue shall be deferred or not be recognized for the products expected to be returned.\n [Ethics part, as it touches Issue 1, verbatim:] \"The integrity of CFO would be compromised in case he accounts for the transaction as sale and not as an asset in case of issue 1 and inflating of profits in case of issues 2 and 3. This effectively amounts to 'window dressing', which is not honest as it does not present the actual performance and position of Digital Solutions Ltd.\" (The answer goes on to cover objectivity, conflict of interest and professional misconduct under Clause 1 of Part II of the Second Schedule to the CA Act, 1949.)",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  },
+  {
+   "id": "p-p15",
+   "prompt": "PQR Ltd. enters into a contract with a customer on 01st April, 2023 for the sale of a machine and spare parts. The manufacturing lead time for the machine and spare parts is 3 years.\n On completion of manufacturing, PQR Ltd. demonstrates that the machine and spare parts meet the specifications agreed in the contract. The promises to transfer the machine and spare parts to the buyer are distinct and result in two performance obligations each of which will be satisfied at a point in time.\n On 31st March 2026, the customer pays for the machine and spare parts, but only takes the physical possession of the machine. Although the customer inspects and accepts the spare parts, the customer requests that the spare parts be stored at PQR Ltd's warehouse because of its close proximity to the customer's factory.\n The customer has legal title to the spare parts and the parts can be identified as belonging to the customer. PQR Ltd. stores the spare parts in a separate section of its warehouse and the parts are ready for immediate shipment at the customer's request. PQR Ltd. expects to hold the spare parts for one to three years and does not have the authority to use the spare parts or direct them to another customer.\n Determine how the revenue will be recognized by PQR Ltd. for the different performance obligations as per Ind AS 115? (5 Marks)",
+   "clauseRef": "PYQ May 2026 · Q5(a) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Bill-and-hold arrangements."
+   ],
+   "modelAnswer": "ICAI answer: not yet published in the file swept. The source is the question paper only. The same facts were answered by ICAI in PYQ May 2022 Q2(b) above.\n Study-material link: variant of SM Illustration 68. Also a repeat of PYQ May 2022 Q2(b) (same facts and wording; entity name and dates changed).",
+   "markingPoints": [
+    "Names the governing Ind AS 115 requirement and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion on when and how much revenue to recognise"
+   ]
+  }
+ ]
+}

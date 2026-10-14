@@ -53,6 +53,15 @@ const registry: ChapterIndexRow[] = [
     casebook: async () => (await import('../data/aaa/ch14-casebook.json')).default as unknown as Casebook,
     learn: async () => (await import('../data/aaa/ch14-learn.json')).default as unknown as LearnData,
   },
+  {
+    id: 'fr-ch09',
+    subject: 'fr',
+    number: 9,
+    title: 'Ind AS 115 Revenue from Contracts with Customers',
+    summary: '5-step model · variable consideration · material rights & loyalty points · financing · modifications · licences · bill-and-hold · SCA',
+    loader: async () => (await import('../data/fr/ch09-ind-as-115-revenue-from-contracts-with-customers.json')).default as unknown as Chapter,
+    casebook: async () => (await import('../data/fr/ch09-casebook.json')).default as unknown as Casebook,
+  },
   // @chapters-end
 ];
 

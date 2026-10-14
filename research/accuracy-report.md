@@ -55,3 +55,10 @@ One development to know about: search results report that RBI issued consolidate
 4. **AAA Ch 19, cheat-sheet row "Fee dependence disclosure to ICAI" (2 consecutive years, 40%/20%, ₹20 lakh)**: the provision it points to does not state these figures, and the provision's own update note puts the topic beyond the Nov 2026 syllabus. Treat as outside the exam until confirmed.
 5. **AAA Ch 19**: SM figures to write (company audits 30, teaching 25 hours, goodwill 1 year, websites pull-only) rest on the RTP Nov 2026 listing exactly three amendments; confirm that list against the RTP.
 6. **All chapters**: where the RBI's 2025 consolidated Directions renumber or reword a provision, ICAI's answer still governs; the app follows ICAI.
+
+## fr-ch09 (14 Oct 2026)
+- VERIFY "Significant financing: practical expedient" → **verified**: SM 9 p.76, Ind AS 115.63 "one year or less".
+- 32 ICAI MCQ keys parsed from the found files were each matched against ICAI's answer text (all match); four recomputed (Bazar voucher ₹1,762/₹238; gym ₹6,857/₹643; elevators ₹15,00,000; barter ₹50,000).
+- PYQ May 2026 MCQ 12: key not published in the paper swept → app working (A) ₹(2,000), labelled on the question.
+- ICAI arithmetic/wording issues kept as published with an app note: see research/fr-ch09.md.
+- SM Example 8 (commission table states ₹1 crore as acquisition cost for a 1% commission on a ₹1 crore contract) noted in the provision as needing a check; not used in any question.

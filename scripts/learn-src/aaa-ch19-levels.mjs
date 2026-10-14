@@ -36,7 +36,7 @@ export default [
       { k: 'mc', q: 'The CA issues an assurance report on a system his own firm implemented. Which threat?', opts: ['Self-interest', 'Self-review', 'Advocacy', 'Intimidation'], ans: 1, why: 'Self-review.' },
       { k: 'tf', q: 'Confidentiality ends when the engagement ends.', ans: false, why: 'The duty continues after the relationship ends.' },
       { k: 'num', q: 'NOCLAR in practice (SM): net worth threshold of listed entity in ₹ crore?', ans: 250, unit: '₹ crore', why: 'Audit engagements of listed entities with net worth of ₹250 crore or more.' },
-      { k: 'tf', q: 'Under NOCLAR the accountant must investigate the non-compliance.', ans: false, why: 'The PA is not required to investigate or ensure compliance; whether an act is non-compliance is for a court.' },
+      { k: 'tf', q: 'Under NOCLAR the accountant must investigate the non-compliance.', ans: false, why: 'The CA is not required to investigate or ensure compliance; whether an act is non-compliance is for a court.' },
     ],
     twist: { q: '<p>A partner threatens to withhold your promotion unless you agree to an accounting treatment. Which threat, and what is the first step?</p>', a: '<p><strong>Intimidation</strong>. Follow the framework: identify it, evaluate whether it is at an acceptable level for a reasonable and informed third party, then address it. Here that means refusing to be pressured, escalating, and if necessary ending the activity.</p>' },
   },

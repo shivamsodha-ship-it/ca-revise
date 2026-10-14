@@ -1,0 +1,57 @@
+{
+  "id": "fr-ch12",
+  "subject": "fr",
+  "number": 12,
+  "title": "Ind AS 103 Business Combinations",
+  "summary": "One-line summary",
+  "currency": "Optional Nov 2026 flag — e.g. 'Revised SA XXX from 1.4.2026'",
+  "sections": [
+    {
+      "id": "sec1",
+      "title": "Section Title",
+      "emoji": "📖",
+      "cards": [
+        {
+          "id": "c1",
+          "type": "concept",
+          "tags": [
+            "Tag1",
+            "Tag2"
+          ],
+          "front": "Front of the card (the prompt)",
+          "back": {
+            "bareText": "Optional — exact statutory / SA text (for clauses)",
+            "simplified": "Plain words explanation",
+            "exception": "Optional — exceptions carved out by the rule",
+            "explanation": "Optional — extended explanation, cross-refs to other sections/standards",
+            "trap": "Optional — common exam trap / student mistake",
+            "cases": [
+              "Optional — case law or past-paper reference"
+            ],
+            "cross": [
+              "Optional cross-refs — e.g. 'Sec 141(3) CA 2013', 'SA 705'"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "q1",
+      "prompt": "The scenario / question as posed by ICAI",
+      "clauseRef": "e.g. Cl 11 Part I 1st Sch · Reg 190A",
+      "hints": [
+        "Hint 1 — pointer without the answer",
+        "Hint 2"
+      ],
+      "modelAnswer": "Step 1 — CITE: ...\nStep 2 — RULE: ...\nStep 3 — APPLY: ...\nStep 4 — CONCLUDE: ...",
+      "markingPoints": [
+        "Cites the correct clause with full name",
+        "Names the applicable Regulation",
+        "Applies to the specific facts",
+        "Reaches the correct conclusion (guilty / not guilty)"
+      ]
+    }
+  ]
+}

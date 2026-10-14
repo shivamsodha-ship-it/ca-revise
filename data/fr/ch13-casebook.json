@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "Chapter Casebook",
+    "sources": [
+      [
+        "sm-ill",
+        "SM Illustrations"
+      ],
+      [
+        "sm-tyk",
+        "SM TYK"
+      ],
+      [
+        "rtp",
+        "RTP"
+      ],
+      [
+        "pyq",
+        "Past papers"
+      ]
+    ],
+    "verdicts": [
+      {
+        "label": "Correct",
+        "tone": "good",
+        "hint": "treatment is right"
+      },
+      {
+        "label": "Incorrect",
+        "tone": "bad",
+        "hint": "treatment is wrong"
+      },
+      {
+        "label": "Partly",
+        "tone": "mixed",
+        "hint": "some parts wrong"
+      }
+    ],
+    "caseNoun": "case",
+    "provisionNoun": "provision",
+    "huntQuestion": "Which provision do these facts turn on?",
+    "tagline": "Decide the treatment. *Then* read the standard.",
+    "intro": "{cases} cases from the study material, RTPs and past papers.",
+    "scopeTitle": "Exam scope",
+    "methodTitle": "How to write the answer"
+  },
+  "groups": [
+    [
+      "A",
+      "Group name shown in the Law Library"
+    ]
+  ],
+  "P": [
+    {
+      "id": "p1",
+      "g": "A",
+      "label": "Short code",
+      "title": "Full title",
+      "short": "One-line summary",
+      "law": "<p>Operative text (HTML)</p>",
+      "notes": [
+        "Point (HTML)"
+      ],
+      "upd": "",
+      "mem": "",
+      "qs": [
+        "Q1"
+      ],
+      "hunt": true
+    }
+  ],
+  "Q": [
+    {
+      "id": "Q1",
+      "src": "SM Illustration 1",
+      "k": "sm-ill",
+      "links": [
+        "p1"
+      ],
+      "v": "Correct",
+      "q": "<p>Facts (HTML)</p>",
+      "a": "<p>Model answer (HTML)</p>",
+      "trap": ""
+    },
+    {
+      "id": "M1",
+      "src": "MCQ",
+      "k": "mcq",
+      "links": [
+        "p1"
+      ],
+      "v": "MCQ",
+      "q": "<p>Question</p>",
+      "opts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "ans": 0,
+      "why": "Why (a) is right"
+    }
+  ],
+  "numbers": [
+    [
+      "Item",
+      "Figure",
+      "p1",
+      false
+    ]
+  ],
+  "finder": [
+    [
+      "Fact pattern",
+      "p1"
+    ]
+  ],
+  "method": [
+    [
+      "Step 1 — Provision",
+      "..."
+    ],
+    [
+      "Step 2 — Analysis",
+      "..."
+    ],
+    [
+      "Step 3 — Conclusion",
+      "..."
+    ]
+  ],
+  "changes": []
+}

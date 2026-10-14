@@ -80,7 +80,6 @@ export default function HomeView() {
         </dl>
       </section>
 
-
       <section className="sec">
         <h2 className="sec-title">Test yourself</h2>
         <ul className="rows cards">

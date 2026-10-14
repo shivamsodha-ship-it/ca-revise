@@ -4,14 +4,12 @@ import { checkNum, fmtNum } from '@/lib/numcheck';
 import type { Recall } from '@/lib/learnData';
 import { H, OrderBoard, RunHead } from '@/components/learn/ui';
 
-
 // One recall question. Calls onDone(ok) when the learner presses Continue.
 export function RecallCard({ r, onDone, last }: { r: Recall; onDone: (ok: boolean) => void; last?: boolean }) {
   const [pick, setPick] = useState<number | null>(null);
   const [typed, setTyped] = useState('');
   const [res, setRes] = useState<boolean | null>(null);
   const done = res !== null;
-  const finish = (ok: boolean) => setRes(ok);
 
   return (
     <div className="lm-rc">
@@ -19,22 +17,22 @@ export function RecallCard({ r, onDone, last }: { r: Recall; onDone: (ok: boolea
 
       {r.k === 'mc' && <div className="lm-opts">{r.opts.map((o, i) => {
         const cls = !done ? '' : i === r.ans ? 'right' : i === pick ? 'wrong' : '';
-        return <button key={i} className={'lm-opt ' + cls} disabled={done} onClick={() => { setPick(i); finish(i === r.ans); }}><b>{'abcd'[i]}</b><span>{o}</span></button>;
+        return <button key={i} className={'lm-opt ' + cls} disabled={done} onClick={() => { setPick(i); setRes(i === r.ans); }}><b>{'abcd'[i]}</b><span>{o}</span></button>;
       })}</div>}
 
       {r.k === 'tf' && <div className="lm-tf">{[true, false].map(v => {
         const cls = !done ? '' : v === r.ans ? 'right' : (pick === (v ? 1 : 0)) ? 'wrong' : '';
-        return <button key={String(v)} className={'lm-opt ' + cls} disabled={done} onClick={() => { setPick(v ? 1 : 0); finish(v === r.ans); }}><span style={{ fontWeight: 700 }}>{v ? 'True' : 'False'}</span></button>;
+        return <button key={String(v)} className={'lm-opt ' + cls} disabled={done} onClick={() => { setPick(v ? 1 : 0); setRes(v === r.ans); }}><span style={{ fontWeight: 700 }}>{v ? 'True' : 'False'}</span></button>;
       })}</div>}
 
       {r.k === 'num' && !done && (
-        <form className="lm-num" onSubmit={e => { e.preventDefault(); const c = checkNum(typed, ['', r.ans, r.unit ?? '', r.tol]); if (c !== null) finish(c); }}>
+        <form className="lm-num" onSubmit={e => { e.preventDefault(); const c = checkNum(typed, ['', r.ans, r.unit ?? '', r.tol]); if (c !== null) setRes(c); }}>
           <input id="lm-num-in" aria-label="Your answer" inputMode="decimal" autoComplete="off" value={typed} onChange={e => setTyped(e.target.value)} placeholder={r.unit ? `Answer in ${r.unit}` : 'Your answer'} />
           <button className="btn pri" type="submit" disabled={!typed.trim()}>Check</button>
         </form>
       )}
 
-      {r.k === 'order' && <OrderBoard items={r.items} result={res} onCheck={finish} />}
+      {r.k === 'order' && <OrderBoard items={r.items} result={res} onCheck={setRes} />}
 
       {done && <>
         <div className={'fb ' + (res ? 'right' : 'wrong')} role="status">

@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import ChapterList from '@/components/ChapterList';
+import AccountChip from '@/components/AccountChip';
 
 export default function Home() {
   return (
     <>
-      <header className="topbar"><div className="topbar-in"><Link href="/" className="brand"><span className="seal">CA</span><span>CA Revise</span></Link></div></header>
+      <header className="topbar"><div className="topbar-in"><Link href="/" className="brand"><span className="seal">CA</span><span>CA Revise</span></Link><AccountChip /></div></header>
       <main className="page">
         <section className="intro">
           <p className="eyebrow">CA Final, Group 1 · November 2026</p>

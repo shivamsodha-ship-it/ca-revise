@@ -6,7 +6,7 @@ import { HBlock as H } from '@/components/learn/ui';
 const STYLE = { numerical: 'Mostly numerical', theory: 'Mostly theory and cases', mixed: 'Numerical and theory' } as const;
 
 export default function VisionView() {
-  const { learn, ch, P, chapterId, base, go } = useChapter();
+  const { learn, ch, P, chapterId, go } = useChapter();
   const { L, bump } = useLearnState(chapterId);
   const v = learn?.vision;
   if (!v) return null;
@@ -54,7 +54,6 @@ export default function VisionView() {
         <button className="btn" disabled={seen} onClick={() => bump('lv', 'vision', 100)}>{seen ? 'Marked as read' : 'I have read this'}</button>
         <button className="btn pri" onClick={() => { bump('lv', 'vision', 100); go('path'); }}>Start the path →</button>
       </div>
-      <span className="sr">{base}</span>
     </div>
   );
 }

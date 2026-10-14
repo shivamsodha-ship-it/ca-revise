@@ -2,9 +2,8 @@
 import { useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { checkNum, fmtNum } from '@/lib/numcheck';
-import { useLearnState, type Solve } from '@/lib/learn';
+import { useLearnState, type LearnState, type Solve } from '@/lib/learn';
 import { HBlock as H, RunHead } from '@/components/learn/ui';
-
 
 export default function SolveView() {
   const { learn, chapterId, P } = useChapter();
@@ -35,7 +34,7 @@ export default function SolveView() {
   );
 }
 
-function Solver({ s, onBack, bump, L, P }: { s: Solve; onBack: () => void; bump: (b: 'lv' | 'gm' | 'sv', id: string, pct: number) => void; L: ReturnType<typeof useLearnState>['L']; P: Record<string, { label: string }> }) {
+function Solver({ s, onBack, bump, L, P }: { s: Solve; onBack: () => void; bump: ReturnType<typeof useLearnState>['bump']; L: LearnState; P: Record<string, { label: string }> }) {
   const [v, setV] = useState(0);
   const [step, setStep] = useState(0);
   const [typed, setTyped] = useState('');
@@ -51,7 +50,7 @@ function Solver({ s, onBack, bump, L, P }: { s: Solve; onBack: () => void; bump:
   const advance = () => {
     if (!cur) return;
     setLog(l => [...l, { note: cur.note ?? cur.ask, ok: !!res }]);
-    if (step === total - 1) bump('sv', `${s.id}|${v}`, Math.round((right) / total * 100));
+    if (step === total - 1) bump('sv', `${s.id}|${v}`, Math.round(right / total * 100));
     setStep(step + 1); setTyped(''); setRes(null);
   };
   const submit = () => { if (!cur || cur.kind !== 'num' || cur.ans === undefined) return; const c = checkNum(typed, ['', cur.ans, cur.unit ?? '', cur.tol]); if (c !== null) verdict(c); };
@@ -118,7 +117,6 @@ function Solver({ s, onBack, bump, L, P }: { s: Solve; onBack: () => void; bump:
         {log.length === 0 && <p className="muted">Each step you finish is written here, so you never need paper.</p>}
         <ol>{log.map((l, i) => <li key={i} className={l.ok ? 'ok' : 'no'}><span>{l.ok ? '✓' : '✗'}</span> <H html={l.note} className="inl" /></li>)}</ol>
       </div>
-
     </div>
   );
 }

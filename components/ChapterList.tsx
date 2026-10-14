@@ -23,25 +23,25 @@ export default async function ChapterList({ only }: { only?: Subject }) {
             <span className="subj-n">{chapters.length ? plural(chapters.length, 'chapter') : 'No chapters yet'}</span>
           </div>
           {chapters.length > 0 && <ol className="chlist">{chapters.map(({ c, n, lv }) => (
-                <li key={c.id}>
-                  <Link href={`/${s.id}/${c.id}`} className="chrow">
-                    <span className="chnum"><small>Ch</small>{String(c.number).padStart(2, '0')}</span>
-                    <span className="chbody">
-                      <span className="chtitle">{c.title}{lv > 0 && <em className="newtag">Mastery path</em>}</span>
-                      <span className="chsum">{c.summary.replace(/ · /g, ', ')}</span>
-                      <span className="chmeta">
-                        {n.cases > 0 && <span>{plural(n.cases, 'case')}</span>}
-                        {n.mcqs > 0 && <span>{n.mcqs} MCQs</span>}
-                        {n.provisions > 0 && <span>{plural(n.provisions, 'provision')}</span>}
-                        <span>{plural(n.cards, 'card')}</span>
-                        {n.written > 0 && <span>{n.written} written</span>}
-                      </span>
-                      <ChapterProgress id={c.id} total={n.cases + n.mcqs} levels={lv} />
-                    </span>
-                    <span className="chgo" aria-hidden="true">→</span>
-                  </Link>
-                </li>
-              ))}</ol>}
+            <li key={c.id}>
+              <Link href={`/${s.id}/${c.id}`} className="chrow">
+                <span className="chnum"><small>Ch</small>{String(c.number).padStart(2, '0')}</span>
+                <span className="chbody">
+                  <span className="chtitle">{c.title}{lv > 0 && <em className="newtag">Mastery path</em>}</span>
+                  <span className="chsum">{c.summary.replace(/ · /g, ', ')}</span>
+                  <span className="chmeta">
+                    {n.cases > 0 && <span>{plural(n.cases, 'case')}</span>}
+                    {n.mcqs > 0 && <span>{n.mcqs} MCQs</span>}
+                    {n.provisions > 0 && <span>{plural(n.provisions, 'provision')}</span>}
+                    <span>{plural(n.cards, 'card')}</span>
+                    {n.written > 0 && <span>{n.written} written</span>}
+                  </span>
+                  <ChapterProgress id={c.id} total={n.cases + n.mcqs} levels={lv} />
+                </span>
+                <span className="chgo" aria-hidden="true">→</span>
+              </Link>
+            </li>
+          ))}</ol>}
         </section>
       ))}
     </>

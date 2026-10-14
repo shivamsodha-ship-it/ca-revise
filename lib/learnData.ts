@@ -78,15 +78,21 @@ export interface LearnState {
   u?: number;
 }
 export const EMPTY_LEARN: LearnState = { lv: {}, gm: {}, sv: {} };
-const key = (id: string) => `ca-revise:v1:learn:${id}`;
+
+type Score = LearnState['lv'][string];
+
+// The higher score wins; on a tie, the more recent one.
+function better(p: Score | undefined, q: Score | undefined) {
+  if (!p) return q;
+  if (!q) return p;
+  if (p.best !== q.best) return p.best > q.best ? p : q;
+  return p.at >= q.at ? p : q;
+}
 
 export function mergeLearn(a: LearnState, b: LearnState): LearnState {
   const m = (x: LearnState['lv'] = {}, y: LearnState['lv'] = {}) => {
     const out: LearnState['lv'] = {};
-    for (const k of new Set([...Object.keys(x), ...Object.keys(y)])) {
-      const p = x[k], q = y[k];
-      out[k] = !p ? q : !q ? p : p.best !== q.best ? (p.best > q.best ? p : q) : (p.at >= q.at ? p : q);
-    }
+    for (const k of new Set([...Object.keys(x), ...Object.keys(y)])) out[k] = better(x[k], y[k])!;
     return out;
   };
   return { lv: m(a.lv, b.lv), gm: m(a.gm, b.gm), sv: m(a.sv, b.sv), u: Math.max(a.u ?? 0, b.u ?? 0) };

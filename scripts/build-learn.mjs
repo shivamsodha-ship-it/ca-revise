@@ -22,11 +22,10 @@ const pid = new Set((cb?.P ?? []).map(p => p.id));
 const prov = (where, x) => { if (x && cb && !pid.has(x)) E.push(`${where}: unknown provision ${x}`); };
 
 for (const l of learn.levels ?? []) {
-  prov(l.id, 0);
   (l.links ?? []).forEach(x => prov(l.id, x));
   if (!l.recall?.length) E.push(`${l.id}: no recall`);
   for (const r of l.recall) {
-    if (r.k === 'mc' && (!(r.ans >= 0 && r.ans < r.opts.length))) E.push(`${l.id}: mc ans out of range`);
+    if (r.k === 'mc' && !(r.ans >= 0 && r.ans < r.opts.length)) E.push(`${l.id}: mc ans out of range`);
     if (r.k === 'order' && r.items.length < 2) E.push(`${l.id}: order needs 2+ items`);
     if (r.k === 'num' && typeof r.ans !== 'number') E.push(`${l.id}: num recall without ans`);
   }

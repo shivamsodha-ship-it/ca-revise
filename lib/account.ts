@@ -66,3 +66,8 @@ export async function createConnectorKey(pin: string): Promise<{ ok: boolean; ke
 export async function revokeConnectorKey(): Promise<void> {
   await call('/api/auth/connector', {}, 'DELETE');
 }
+
+export async function newRecoveryCode(pin: string): Promise<{ ok: boolean; code?: string; error?: string }> {
+  const r = await call('/api/auth/recovery-code', { pin });
+  return r.ok ? { ok: true, code: r.json.recoveryCode } : { ok: false, error: r.json.error ?? 'Could not create a new recovery code.' };
+}

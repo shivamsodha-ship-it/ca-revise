@@ -868,3 +868,8 @@ body { background: radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, 
   .jy-s { text-align: left }
 }
 .chlist li { border: 0 }
+
+/* Who is signed in, in the top bar. */
+.acct-chip { margin-left: auto; max-width: 9.5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-soft); padding: 6px 12px; border-radius: 999px; text-decoration: none; min-height: 32px; display: inline-flex; align-items: center }
+.acct-chip:hover { filter: brightness(.96) }
+.acct-chip + .streak { margin-left: 8px }

@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { connectorStatus, createConnectorKey, deleteAccount, recover, revokeConnectorKey, signIn, signOut, signUp } from '@/lib/account';
+import { connectorStatus, createConnectorKey, deleteAccount, newRecoveryCode, recover, revokeConnectorKey, signIn, signOut, signUp } from '@/lib/account';
 import { getStatus, setAccount, syncNow, type SyncStatus } from '@/lib/sync';
 
 type Mode = 'signin' | 'signup' | 'recover';
@@ -24,6 +24,7 @@ export default function AccountPanel() {
   const [key, setKey] = useState<string | null>(null);
   const [connPin, setConnPin] = useState('');
   const [copied, setCopied] = useState('');
+  const [codePin, setCodePin] = useState('');
 
   useEffect(() => {
     let alive = true;
@@ -68,6 +69,13 @@ export default function AccountPanel() {
     setBusy(false);
     if (r.ok && r.key) { setKey(r.key); setConnPin(''); setConnected(await connectorStatus()); }
     else setError(r.error ?? 'Could not create the key.');
+  };
+  const makeCode = async () => {
+    setError(null); setBusy(true);
+    const r = await newRecoveryCode(codePin);
+    setBusy(false);
+    if (r.ok && r.code) { setNewCode(r.code); setSaved(false); setCodePin(''); }
+    else setError(r.error ?? 'Could not create a new recovery code.');
   };
   const revoke = async () => { setBusy(true); await revokeConnectorKey(); setKey(null); setConnected(await connectorStatus()); setBusy(false); };
   const copy = async (label: string, text: string) => {
@@ -137,6 +145,16 @@ export default function AccountPanel() {
             <input {...PIN_INPUT} type="password" value={connPin} onChange={e => setConnPin(e.target.value.replace(/\D/g, ''))} /></label>
           <button className="btn" disabled={busy || connPin.length !== 6}>{connected?.connected ? 'Replace key' : 'Create key'}</button>
           {connected?.connected && <button type="button" className="btn" disabled={busy} onClick={revoke}>Revoke key</button>}
+        </form>
+      </section>
+
+      <section style={{ borderTop: '1px solid var(--line)', paddingTop: 14, display: 'grid', gap: 10 }}>
+        <h2 style={{ margin: 0 }}>Recovery code</h2>
+        <p className="muted" style={{ margin: 0 }}>Lost your recovery code? Make a new one here. The old code stops working. It is shown once, so save it.</p>
+        <form onSubmit={e => { e.preventDefault(); makeCode(); }} style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'end' }}>
+          <label className="numrow" style={{ gridTemplateColumns: '1fr', flex: '1 1 160px' }}><span>PIN</span>
+            <input {...PIN_INPUT} type="password" value={codePin} onChange={e => setCodePin(e.target.value.replace(/\D/g, ''))} /></label>
+          <button className="btn" disabled={busy || codePin.length !== 6}>Make a new recovery code</button>
         </form>
       </section>
 

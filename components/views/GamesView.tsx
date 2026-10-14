@@ -8,6 +8,8 @@ import { H, OrderBoard, RunHead } from '@/components/learn/ui';
 
 type Report = (pct: number) => void;
 
+const TYPE_LABEL: Record<Game['type'], string> = { match: 'Match-up', sort: 'Sorter', order: 'Sequence' };
+
 export default function GamesView() {
   const { learn, cb, chapterId } = useChapter();
   const { L, bump } = useLearnState(chapterId);
@@ -16,15 +18,18 @@ export default function GamesView() {
   if (!games.length) return null;
   const g = games.find(x => x.id === openId);
 
-  if (g) return (
-    <div className="lm">
-      <button className="lm-back" onClick={() => setOpenId(null)}>← All games</button>
-      <header className="lm-head"><p className="eyebrow">{g.type === 'match' ? 'Match-up' : g.type === 'sort' ? 'Sorter' : 'Sequence'}</p><h1>{g.title}</h1><p className="lede">{g.intro}</p></header>
-      {g.type === 'match' && <Match g={g} report={p => bump('gm', g.id, p)} />}
-      {g.type === 'sort' && <Sort g={g} report={p => bump('gm', g.id, p)} />}
-      {g.type === 'order' && <Order g={g} report={p => bump('gm', g.id, p)} />}
-    </div>
-  );
+  if (g) {
+    const report: Report = p => bump('gm', g.id, p);
+    return (
+      <div className="lm">
+        <button className="lm-back" onClick={() => setOpenId(null)}>← All games</button>
+        <header className="lm-head"><p className="eyebrow">{TYPE_LABEL[g.type]}</p><h1>{g.title}</h1><p className="lede">{g.intro}</p></header>
+        {g.type === 'match' && <Match g={g} report={report} />}
+        {g.type === 'sort' && <Sort g={g} report={report} />}
+        {g.type === 'order' && <Order g={g} report={report} />}
+      </div>
+    );
+  }
 
   return (
     <div className="lm">
@@ -33,7 +38,7 @@ export default function GamesView() {
         {games.map(x => (
           <li key={x.id}><button className="row" style={{ width: '100%', textAlign: 'left', background: 'none', border: 0, borderBottom: 0 }} onClick={() => { setOpenId(x.id); window.scrollTo(0, 0); }}>
             <span className="row-t">{x.title}</span><span className="row-d">{x.intro}</span>
-            <span className="row-n">{L.gm[x.id] ? `Best ${L.gm[x.id].best}%` : x.type === 'match' ? 'Match-up' : x.type === 'sort' ? 'Sorter' : 'Sequence'}</span></button></li>
+            <span className="row-n">{L.gm[x.id] ? `Best ${L.gm[x.id].best}%` : TYPE_LABEL[x.type]}</span></button></li>
         ))}
       </ul>
     </div>
@@ -63,6 +68,7 @@ function Match({ g, report }: { g: Extract<Game, { type: 'match' }>; report: Rep
     } else { setMiss(m => m + 1); setBad(r); setTimeout(() => setBad(null), 450); }
   };
   const finished = pairs.length > 0 && done.length === pairs.length;
+  const score = Math.round(pairs.length / (pairs.length + miss) * 100);
   return (
     <div className="card lm-card">
       <RunHead left={`${done.length} of ${pairs.length} matched`} right={`${miss} slips`} frac={pairs.length ? done.length / pairs.length : 0} />
@@ -74,7 +80,7 @@ function Match({ g, report }: { g: Extract<Game, { type: 'match' }>; report: Rep
         })}</div>
       </div>
       {!sel && !finished && <p className="muted lm-hint">Tap a tile on the left, then its partner on the right.</p>}
-      {finished && <div className="lm-done"><div className="lm-big">{Math.round(pairs.length / (pairs.length + miss) * 100)}<small>%</small></div><p>{miss === 0 ? 'No slips.' : `${miss} slip${miss > 1 ? 's' : ''}. Again for a clean run.`}</p><button className="btn pri" onClick={deal}>New round</button></div>}
+      {finished && <div className="lm-done"><div className="lm-big">{score}<small>%</small></div><p>{miss === 0 ? 'No slips.' : `${miss} slip${miss > 1 ? 's' : ''}. Again for a clean run.`}</p><button className="btn pri" onClick={deal}>New round</button></div>}
     </div>
   );
 }

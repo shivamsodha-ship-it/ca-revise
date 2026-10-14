@@ -24,6 +24,10 @@ const strip = s => String(s ?? '').replace(/<[^>]*>/g, ' ').replace(/&amp;/g, '&
 // every number in a text, with Indian commas removed; '1,50,000' -> 150000; '12.5%' -> 12.5
 const nums = s => [...strip(s).replace(/(\d),(?=\d)/g, '$1').matchAll(/\d+(?:\.\d+)?/g)].map(m => parseFloat(m[0]));
 const near = (a, list, rel = 0.006) => list.some(b => Math.abs(a - b) <= Math.max(Math.abs(b) * rel, 0.006));
+// "figure + unit" claims in a text, e.g. '15 days', '2.5 per cent' -> { v: 2.5, u: '%' }
+const UNIT = u => { u = (u || '').toLowerCase(); return u === 'per cent' ? '%' : u.replace(/s$/, ''); };
+const unitClaims = text => [...text.matchAll(/(\d+(?:\.\d+)?)\s*(%|per cent|crore|lakh|working days?|days?|months?|years?)/gi)].map(m => ({ v: parseFloat(m[1]), u: UNIT(m[2]), raw: m[0].trim() }));
+const statedIn = (have, c) => have.some(h => h.u === c.u && Math.abs(h.v - c.v) <= Math.max(h.v * 0.001, 0.0006));
 
 const report = [];
 for (const r of rows.filter(r => want === 'all' || r.id === want)) {
@@ -81,22 +85,16 @@ for (const r of rows.filter(r => want === 'all' || r.id === want)) {
     // 5 learn content vs casebook: every "figure + unit" claim must be stated, with the same unit, somewhere in the casebook
     if (lr) {
       const WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, twelve: 12, fifteen: 15, eighteen: 18 };
-      const UNIT = u => { u = (u || '').toLowerCase(); return u === 'per cent' ? '%' : u.replace(/s$/, ''); };
-      const claims = html => {
-        const t = strip(html).replace(/(\d),(?=\d)/g, '$1').replace(/\b(one|two|three|four|five|six|seven|eight|nine|ten|twelve|fifteen|eighteen)\b(?=\s+(?:working days?|days?|months?|years?|crore|lakh))/gi, w => WORDS[w.toLowerCase()]);
-        return [...t.matchAll(/(\d+(?:\.\d+)?)\s*(%|per cent|crore|lakh|working days?|days?|months?|years?)/gi)].map(m => ({ v: parseFloat(m[1]), u: UNIT(m[2]), raw: m[0].trim() }));
-      };
+      const claims = html => unitClaims(strip(html).replace(/(\d),(?=\d)/g, '$1').replace(/\b(one|two|three|four|five|six|seven|eight|nine|ten|twelve|fifteen|eighteen)\b(?=\s+(?:working days?|days?|months?|years?|crore|lakh))/gi, w => WORDS[w.toLowerCase()]));
       const have = claims(JSON.stringify(cb));
-      const ok = c => have.some(h => h.u === c.u && Math.abs(h.v - c.v) <= Math.max(h.v * 0.001, 0.0006));
-      let flagged;
       const seen = new Set();
-      const scan = (where, html) => { for (const c of claims(html)) { const k = where + c.raw; if (ok(c) || seen.has(k)) continue; seen.add(k); V(`${where}: "${c.raw}" is not stated in the casebook with that unit`); } };
+      const scan = (where, html) => { for (const c of claims(html)) { const k = where + c.raw; if (statedIn(have, c) || seen.has(k)) continue; seen.add(k); V(`${where}: "${c.raw}" is not stated in the casebook with that unit`); } };
       for (const l of lr.levels ?? []) { l.teach.forEach(b => scan(`level ${l.id}`, b.html)); scan(`level ${l.id}`, l.picture ?? ''); scan(`level ${l.id}`, l.correlate ?? ''); }
       for (const row of lr.compare?.rows ?? []) { scan('compare', row.a); scan('compare', row.b); }
       for (const g of lr.games ?? []) if (g.type === 'match') g.pairs.forEach(p => scan(`game ${g.id}`, p[0] + ' ' + p[1]));
       for (const l of lr.levels ?? []) for (const x of l.links ?? []) if (!pid.has(x)) E(`level ${l.id}: unknown provision ${x}`);
       // anything the author labelled as outside the study material is a claim to confirm against the source
-      flagged = (where, html) => { for (const m of strip(html).matchAll(/[^.]*\b(Beyond the SM|not in the SM|not printed in the SM|check the latest|must be checked|verify the latest|illustrative)\b[^.]*\./gi)) V(`${where}: BEYOND-SM claim -> "${m[0].trim().slice(0, 170)}"`); };
+      const flagged = (where, html) => { for (const m of strip(html).matchAll(/[^.]*\b(Beyond the SM|not in the SM|not printed in the SM|check the latest|must be checked|verify the latest|illustrative)\b[^.]*\./gi)) V(`${where}: BEYOND-SM claim -> "${m[0].trim().slice(0, 170)}"`); };
       for (const l of lr.levels ?? []) { l.teach.forEach(b => flagged(`level ${l.id}`, b.h + '. ' + b.html)); flagged(`level ${l.id}`, (l.picture ?? '') + ' ' + (l.correlate ?? '')); }
       for (const row of lr.compare?.rows ?? []) flagged('compare', row.a + ' ' + row.b);
       for (const m of lr.memory?.mnemonics ?? []) scan('memory ' + m.id, m.stands + ' ' + (m.story ?? ''));
@@ -107,12 +105,11 @@ for (const r of rows.filter(r => want === 'all' || r.id === want)) {
   }
   // flip cards: every "figure + unit" on a card must also be stated in the casebook (cards and casebook are written separately)
   if (ch && cb) {
-    const UNIT = u => { u = (u || '').toLowerCase(); return u === 'per cent' ? '%' : u.replace(/s$/, ''); };
-    const claims = html => [...strip(html).replace(/(\d),(?=\d)/g, '$1').matchAll(/(\d+(?:\.\d+)?)\s*(%|per cent|crore|lakh|working days?|days?|months?|years?)/gi)].map(m => ({ v: parseFloat(m[1]), u: UNIT(m[2]), raw: m[0].trim() }));
+    const claims = html => unitClaims(strip(html).replace(/(\d),(?=\d)/g, '$1'));
     const have = claims(JSON.stringify(cb));
     for (const sec of ch.sections) for (const c of sec.cards) {
       const text = [c.front, ...Object.values(c.back ?? {}).flat()].join(' ');
-      for (const cl of claims(text)) if (!have.some(h => h.u === cl.u && Math.abs(h.v - cl.v) <= Math.max(h.v * 0.001, 0.0006))) V(`card ${c.id}: "${cl.raw}" is not stated in the casebook`);
+      for (const cl of claims(text)) if (!statedIn(have, cl)) V(`card ${c.id}: "${cl.raw}" is not stated in the casebook`);
     }
   }
   if (ch) {

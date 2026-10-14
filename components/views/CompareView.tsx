@@ -5,7 +5,6 @@ import { shuffle } from '@/lib/casebook';
 import { useLearnState } from '@/lib/learn';
 import { H, RunHead } from '@/components/learn/ui';
 
-
 export default function CompareView() {
   const { learn, chapterId, P } = useChapter();
   const { L, bump } = useLearnState(chapterId);
@@ -24,10 +23,7 @@ export default function CompareView() {
   const cur = order && i < order.length ? cmp.sorter[order[i]] : null;
   const total = cmp.sorter.length;
   const answer = (n: number) => { if (pick !== null || !cur) return; setPick(n); if (n === cur.ans) setScore(s => s + 1); };
-  const next = () => {
-    if (i === total - 1) { bump('lv', 'cmp', Math.round((score) / total * 100)); }
-    setI(i + 1); setPick(null);
-  };
+  const next = () => { if (i === total - 1) bump('lv', 'cmp', Math.round(score / total * 100)); setI(i + 1); setPick(null); };
   const restart = () => { setOrder(shuffle(cmp.sorter.map((_, n) => n))); setI(0); setPick(null); setScore(0); };
 
   return (

@@ -1,0 +1,743 @@
+{
+ "id": "fr-ch12",
+ "subject": "fr",
+ "number": 12,
+ "title": "Ind AS 103 Business Combinations",
+ "summary": "Business vs asset · acquirer & reverse acquisition · consideration & contingent consideration · PPA exceptions · goodwill/bargain · measurement period · common control (pooling)",
+ "weight": 8,
+ "currency": "SM May 2026 onwards (Nov 2024 ed., Aug 2025 reprint) · questions swept May 2022 – Nov 2026 RTP/MTP",
+ "sections": [
+  {
+   "id": "s-a",
+   "title": "Scope and what is a business",
+   "emoji": "📖",
+   "cards": [
+    {
+     "id": "c-bc-scope",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.2–3",
+      "Low"
+     ],
+     "front": "Scope and what a business combination is: what is the rule?",
+     "back": {
+      "simplified": "A business combination is a transaction or other event in which an acquirer obtains control (as defined in Ind AS 110) of one or more businesses . Two elements: control is obtained, and the acquiree is a business. Ind AS 103 does not apply to (a) the formation of a joint arrangement, (b) the acquisition of an asset or group of assets that is not a business (asset acquisition), and (c) business combinations of entities under common control (dealt with by Appendix C).",
+      "explanation": "Control may be obtained by transferring cash or other assets, incurring liabilities, issuing equity, a mix, or without consideration — by contract alone (then NCI may be 100%). Structures: subsidiaries, legal merger of net assets, transfer to a newly formed entity (roll-up), or former owners of one entity obtaining control of the combined entity.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-bc-scope-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.2–3",
+      "Low"
+     ],
+     "front": "Memory hook: Scope and definition of business combination?",
+     "back": {
+      "simplified": "BC = Control + Business."
+     }
+    },
+    {
+     "id": "c-bc-business",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.B7–B12",
+      "Medium"
+     ],
+     "front": "Definition of a business, substantive process and the concentration test: what is the rule?",
+     "back": {
+      "simplified": "A business is an integrated set of activities and assets capable of being conducted and managed to provide goods or services to customers, generate investment income or other income from ordinary activities. Elements: input , process , output . At a minimum it must include an input and a substantive process that together significantly contribute to the ability to create output; outputs are not required.\n Substantive process — without outputs: critical to developing/converting inputs into outputs and an organised workforce plus other inputs it could develop; with outputs: critical to continue producing outputs with an organised workforce, or significantly contributes and is unique/scarce or c",
+      "explanation": "Gross assets for the test exclude cash and cash equivalents, deferred tax assets and goodwill from DTL; include consideration (plus NCI and previously held interest at fair value) in excess of net identifiable assets. Practical computation: consideration incl. NCI and previous interest + liabilities assumed (excl. DTL) − cash/DTA. Land and building attached together = one asset. Not similar: tangible vs intangible, different classes, financial vs non-financial, same class with very different risks.",
+      "cases": [
+       "SM Example 1: 300 + 120 + 80 + 800 − 200 = ₹1,100 crore gross assets; building ₹1,000 crore = 91% → asset acquisition (judgement on 'substantially all').",
+       "Investment property with ancillary outsourced services → usually asset acquisition (SM Example 4); multi-tenant property with employees managing leases → business (Example 5). Shell company → not a business, no goodwill (Example 7)."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-business-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.B7–B12",
+      "Medium"
+     ],
+     "front": "Memory hook: Is it a business? Concentration test?",
+     "back": {
+      "simplified": "Business = Input + Substantive process (output optional). Concentration test passes → asset purchase."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-b",
+   "title": "Acquirer, reverse acquisition and acquisition date",
+   "emoji": "🤝",
+   "cards": [
+    {
+     "id": "c-bc-acquirer",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.6–7, B13–B18",
+      "Low"
+     ],
+     "front": "Step 1 — identifying the acquirer: what is the rule?",
+     "back": {
+      "simplified": "The acquirer is the entity that obtains control (Ind AS 110: power, exposure to variable returns, ability to use power to affect returns — considering potential voting rights and substantive rights). If unclear: in a cash/asset/liability deal, usually the entity that pays ; in an equity exchange, usually the entity that issues shares — but consider (a) relative voting rights after the combination, (b) a large minority voting interest, (c) composition of the governing body, (d) senior management, (e) who pays a premium, (f) relative size, and who initiated it.",
+      "explanation": "Company A, much larger, issues 20% of combined capital to B's shareholders → A is acquirer (SM Example 8). Company A issues 70% of combined capital to the larger B's shareholders who take over management → B is the accounting acquirer; A is the legal acquirer (Example 9). A new entity formed to issue shares is not usually the acquirer, but a NewCo paying cash after new investors obtained control of it can be (SM Example 11).",
+      "cases": [
+       "Company A, much larger, issues 20% of combined capital to B's shareholders → A is acquirer (SM Example 8). Company A issues 70% of combined capital to the larger B's shareholders who take over management → B is the accounting acquirer; A is the legal acquirer (Example 9).",
+       "A new entity formed to issue shares is not usually the acquirer, but a NewCo paying cash after new investors obtained control of it can be (SM Example 11)."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-acquirer-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.6–7, B13–B18",
+      "Low"
+     ],
+     "front": "Memory hook: Identifying the acquirer?",
+     "back": {
+      "simplified": "Acquirer clues: Votes, Minority block, Board, Management, Premium, Size, Initiator."
+     }
+    },
+    {
+     "id": "c-bc-reverse",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.B19–B27",
+      "Low"
+     ],
+     "front": "Reverse acquisitions: what is the rule?",
+     "back": {
+      "simplified": "A reverse acquisition occurs when the entity that issues securities ( legal acquirer ) is the acquiree for accounting purposes , and the legal acquiree is the accounting acquirer (e.g. a private operating company reverse-merging into a listed shell). The accounting acquiree must be a business. Consideration is measured as the fair value of the number of shares the accounting acquirer would have had to issue to give the legal acquirer's owners the same percentage of the combined entity.",
+      "explanation": "SM Example 9 (reverse acquisition): A issues 2.5 shares per B share (1,50,000 shares); B's owners hold 83.33%. B would have issued 30,000 ÷ 2.5 = 12,000 shares × ₹105 = ₹12,60,000; goodwill = 12,60,000 − 11,00,000 = ₹1,60,000. Consolidated statements are issued in the legal parent's name but are a continuation of the legal subsidiary's (accounting acquirer's) financial statements.",
+      "cases": [
+       "SM Example 9 (reverse acquisition): A issues 2.5 shares per B share (1,50,000 shares); B's owners hold 83.33%. B would have issued 30,000 ÷ 2.5 = 12,000 shares × ₹105 = ₹12,60,000; goodwill = 12,60,000 − 11,00,000 = ₹1,60,000."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-reverse-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.B19–B27",
+      "Low"
+     ],
+     "front": "Memory hook: Reverse acquisition?",
+     "back": {
+      "simplified": "Reverse = the paper buyer is the real target."
+     }
+    },
+    {
+     "id": "c-bc-date",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.8–9",
+      "Low"
+     ],
+     "front": "Step 2 — the acquisition date: what is the rule?",
+     "back": {
+      "simplified": "The acquisition date is the date the acquirer obtains control — usually the closing date (consideration transferred, assets acquired, liabilities assumed) but it can be earlier or later (e.g. a written agreement giving control before closing). Consider all facts. It fixes when consideration, assets, liabilities and NCI are measured and from when the acquiree is consolidated.",
+      "explanation": "SM Example 12: control of the board obtained on 1 July 20X1 → acquisition date 1 July, not the 1 April 'appointed date', 1 June agreement, 15 July payment or 1 August share transfer. Court-approved schemes and regulatory approvals: control usually does not pass until substantive approvals are obtained (SM Illustrations 9 and 10).",
+      "cases": [
+       "SM Example 12: control of the board obtained on 1 July 20X1 → acquisition date 1 July, not the 1 April 'appointed date', 1 June agreement, 15 July payment or 1 August share transfer.",
+       "Court-approved schemes and regulatory approvals: control usually does not pass until substantive approvals are obtained (SM Illustrations 9 and 10)."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-c",
+   "title": "Consideration, step acquisition, contingent consideration",
+   "emoji": "📦",
+   "cards": [
+    {
+     "id": "c-bc-consideration",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.37–38, 53",
+      "Low"
+     ],
+     "front": "Purchase consideration and acquisition-related costs: what is the rule?",
+     "back": {
+      "simplified": "Consideration transferred = acquisition-date fair values of assets transferred (including cash), liabilities incurred to former owners, and equity interests issued (plus contingent consideration). Non-monetary assets transferred are remeasured to fair value with the gain/loss in profit or loss — unless they stay within the combined entity (then carrying amount, no gain). Replacement share-based awards are measured under Ind AS 102. Acquisition-related costs (finder's fees, due diligence, legal, advisory, valuation, bonuses for the deal) are expensed ; costs of issuing debt or equity follow Ind AS 32/109.",
+      "explanation": "Land transferred to former owners: fair value is consideration; land derecognised with gain/loss in profit or loss. SM Illustrations 13–14 test which costs are expensed vs deducted from equity (share issue costs).",
+      "cases": [
+       "SM Illustrations 13–14 test which costs are expensed vs deducted from equity (share issue costs)."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-consideration-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.37–38, 53",
+      "Low"
+     ],
+     "front": "Memory hook: Consideration and acquisition costs?",
+     "back": {
+      "simplified": "Costs of doing the deal → P&L; costs of issuing shares → equity."
+     }
+    },
+    {
+     "id": "c-bc-step",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.41–42",
+      "High"
+     ],
+     "front": "Business combination achieved in stages (step acquisition): what is the rule?",
+     "back": {
+      "simplified": "When control is obtained in stages, the acquirer remeasures its previously held equity interest at acquisition-date fair value and recognises any gain or loss in profit or loss (or OCI if the interest was designated at FVOCI). Amounts previously in OCI are treated as if the interest were disposed of directly. The fair value of the previously held interest is added to consideration in computing goodwill. Before control, the interest is under Ind AS 109 or Ind AS 28.",
+      "explanation": "15% → 35% → 100% (65% more on 31 March 20X3): acquisition date is when control is obtained, 31 March 20X3. A party to a joint operation obtaining control of it remeasures its previously held interest — a step acquisition.",
+      "cases": [
+       "SM Illustration 11 works the remeasurement and goodwill."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-step-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.41–42",
+      "High"
+     ],
+     "front": "Memory hook: Step acquisition?",
+     "back": {
+      "simplified": "Step up = sell the old stake at fair value, buy the whole at fair value."
+     }
+    },
+    {
+     "id": "c-bc-step-apply",
+     "type": "illustration",
+     "tags": [
+      "Ind AS 103.41–42",
+      "High"
+     ],
+     "front": "Worked example: Step acquisition — what does ICAI's illustration show?",
+     "back": {
+      "simplified": "SM Illustration 11 works the remeasurement and goodwill.",
+      "explanation": ""
+     }
+    },
+    {
+     "id": "c-bc-nocons",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.43–44",
+      "Low"
+     ],
+     "front": "Combination without transfer of consideration (incl. by contract alone): what is the rule?",
+     "back": {
+      "simplified": "The acquisition method applies when control is obtained without consideration: (a) the acquiree buys back enough of its own shares for an investor to obtain control; (b) minority veto rights lapse; (c) combination by contract alone (stapling, dual-listed). By contract alone, the acquiree's net assets are attributed to its owners as NCI — possibly 100%. Goodwill uses the acquisition-date fair value of the acquirer's interest in place of consideration.",
+      "explanation": "SM Illustration 12 (business combination by contract alone).",
+      "cases": [
+       "SM Illustration 12 (business combination by contract alone)."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-contingent",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.39–40, 58",
+      "High"
+     ],
+     "front": "Contingent consideration: what is the rule?",
+     "back": {
+      "simplified": "Recognise contingent consideration at acquisition-date fair value as part of consideration (increasing goodwill). Classify as liability or equity under Ind AS 32; a right to return of consideration is an asset. Later: changes from new information about facts at the acquisition date within the measurement period adjust goodwill; changes from post-acquisition events (targets met, share price) are not measurement-period adjustments — equity-classified is not remeasured ; other contingent consideration is remeasured at fair value through profit or loss .",
+      "explanation": "SM Example 14: additional ₹20 million cash if targets met, fair value ₹15 million at acquisition → financial liability; if the target becomes less likely, remeasure through P&L, not goodwill. Payments to selling shareholders who stay as employees may be remuneration, not consideration — see employee contingent payments .",
+      "cases": [
+       "SM Example 14: additional ₹20 million cash if targets met, fair value ₹15 million at acquisition → financial liability; if the target becomes less likely, remeasure through P&L, not goodwill."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-contingent-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.39–40, 58",
+      "High"
+     ],
+     "front": "Memory hook: Contingent consideration?",
+     "back": {
+      "simplified": "Day 1 fair value into goodwill; later changes → P&L (unless equity or measurement-period facts)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-d",
+   "title": "Recognising and measuring what is acquired",
+   "emoji": "💰",
+   "cards": [
+    {
+     "id": "c-bc-recognise",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.10–17",
+      "Low"
+     ],
+     "front": "Step 3 — recognising identifiable assets and liabilities: what is the rule?",
+     "back": {
+      "simplified": "At the acquisition date recognise, separately from goodwill, the identifiable assets acquired, liabilities assumed and any NCI. They must meet the definitions of assets and liabilities (using the Framework for the Preparation and Presentation of Financial Statements , not the 2021 Conceptual Framework) and be part of what was exchanged. Items the acquiree never recognised (internally generated brands, patents, customer relationships) can be recognised. Classify/designate on conditions at the acquisition date (FVTPL/amortised cost/FVOCI, hedges, embedded derivatives) — except a lease where the acquiree is lessor (classified at inception, not reassessed).",
+      "explanation": "Planned restructuring or exit costs the acquirer is not obliged to incur are not liabilities at acquisition — post-combination expenses. Only assets and liabilities that are part of the deal; separate transactions follow other Ind AS.",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-bc-measure",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.18–31",
+      "Low"
+     ],
+     "front": "Measurement at fair value and the exceptions: what is the rule?",
+     "back": {
+      "simplified": "Measure identifiable assets and liabilities at acquisition-date fair value , with exceptions. Recognition exception : contingent liabilities — recognise a present obligation from past events whose fair value is reliably measurable even if an outflow is not probable (Ind AS 37 tests do not apply). Recognition and measurement exceptions : income taxes (Ind AS 12), employee benefits (Ind AS 19), indemnification assets (same basis as the indemnified item), leases where acquiree is lessee (Ind AS 116 at PV of remaining payments, ROU adjusted for favourable/unfavourable terms; short-term/low-value exempt). Measurement exceptions : reacquired rights (remaining contractual term, no renewals), share-",
+      "explanation": "SM Example 15: suit for ₹10 million disclosed as contingent liability by the acquiree; fair value ₹2 million → recognised in acquisition accounting. SM Example 16: claim ₹250, seller indemnifies losses above ₹100 → liability ₹250, indemnification asset ₹150.",
+      "cases": [
+       "SM Example 15: suit for ₹10 million disclosed as contingent liability by the acquiree; fair value ₹2 million → recognised in acquisition accounting.",
+       "SM Example 16: claim ₹250, seller indemnifies losses above ₹100 → liability ₹250, indemnification asset ₹150."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-measure-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.18–31",
+      "Low"
+     ],
+     "front": "Memory hook: Fair value and exceptions?",
+     "back": {
+      "simplified": "Exceptions 'TEIL' for recognition+measurement (Tax, Employee benefits, Indemnification, Lessee leases); 'RSHI' measurement only (Reacquired rights, Share-based, Held for sale, Insurance); Contingent liabilities = recognition only."
+     }
+    },
+    {
+     "id": "c-bc-intangibles",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.B31–B40",
+      "Medium"
+     ],
+     "front": "Identifiable intangible assets, assembled workforce: what is the rule?",
+     "back": {
+      "simplified": "Recognise an intangible separately from goodwill if it is identifiable: it meets the contractual-legal criterion (even if not separable) or the separability criterion (capable of being sold, licensed, rented or exchanged, alone or with a related contract, asset or liability — evidence of exchange for similar assets suffices). An assembled workforce and potential contracts under negotiation are not identifiable → subsumed in goodwill .",
+      "explanation": "Nuclear plant operating licence (contractual-legal, not separable) — may be combined with the plant if useful lives are similar. Customer lists are usually separable unless confidentiality prohibits exchange (SM Example 17); depositor relationships separable with deposit liabilities; unpatented know-how separable with the trademark.",
+      "cases": [
+       "Customer lists are usually separable unless confidentiality prohibits exchange (SM Example 17); depositor relationships separable with deposit liabilities; unpatented know-how separable with the trademark."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-intangibles-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.B31–B40",
+      "Medium"
+     ],
+     "front": "Memory hook: Intangibles in a business combination?",
+     "back": {
+      "simplified": "Identifiable = Contract/law OR Separable. Workforce → goodwill."
+     }
+    },
+    {
+     "id": "c-bc-reacquired",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.29, B35–B36, 55",
+      "Low"
+     ],
+     "front": "Reacquired rights: what is the rule?",
+     "back": {
+      "simplified": "A right the acquirer had granted to the acquiree (franchise to use its trade name, technology licence) and now reacquires is an identifiable intangible recognised separately from goodwill, measured on the remaining contractual term without renewals , and amortised over that term. If the contract terms are favourable or unfavourable relative to market, recognise a settlement gain or loss separately from the combination.",
+      "explanation": "If later sold to a third party, include its carrying amount in the gain or loss on sale. SM Illustrations 19–20.",
+      "cases": [
+       "SM Illustrations 19–20."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-e",
+   "title": "Goodwill, NCI, bargain purchase, measurement period",
+   "emoji": "⚖️",
+   "cards": [
+    {
+     "id": "c-bc-nci",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.19, B44–B45",
+      "High"
+     ],
+     "front": "Non-controlling interest at acquisition: what is the rule?",
+     "back": {
+      "simplified": "For each business combination, measure NCI that are present ownership interests entitling holders to a proportionate share of net assets on liquidation at either (a) fair value (full goodwill) or (b) their proportionate share of the recognised identifiable net assets (partial goodwill). All other components of NCI at fair value unless another Ind AS requires otherwise.",
+      "explanation": "Fair value per share of NCI may differ from the acquirer's because of a control premium or a discount for lack of control. Choice is made combination by combination. SM Illustration 29.",
+      "cases": [
+       "Choice is made combination by combination. SM Illustration 29."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-goodwill",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.32–33",
+      "High"
+     ],
+     "front": "Step 4 — goodwill: what is the rule?",
+     "back": {
+      "simplified": "Goodwill = (a) consideration transferred at acquisition-date fair value + (b) NCI measured under Ind AS 103 + (c) in a step acquisition, acquisition-date fair value of the previously held interest; minus (d) net identifiable assets acquired measured under Ind AS 103. Where only equity is exchanged and the acquiree's equity is more reliably measured, use the acquiree's equity fair value; where no consideration is transferred, use the fair value of the acquirer's interest.",
+      "explanation": "Goodwill is not amortised; tested for impairment under Ind AS 36. Reverse acquisition goodwill uses deemed consideration (see reverse acquisitions ).",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-bc-goodwill-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.32–33",
+      "High"
+     ],
+     "front": "Memory hook: Goodwill computation?",
+     "back": {
+      "simplified": "Goodwill = C + NCI + PHI − Net assets."
+     }
+    },
+    {
+     "id": "c-bc-bargain",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.34–36A",
+      "High"
+     ],
+     "front": "Bargain purchase (capital reserve): what is the rule?",
+     "back": {
+      "simplified": "If net assets exceed consideration + NCI + previously held interest, first reassess identification and measurement of all assets, liabilities, NCI, previously held interest and consideration. If a gain remains and there is clear evidence of the reason (e.g. forced sale), recognise it in OCI and accumulate it in equity as capital reserve ; if there is no clear evidence, recognise it directly in equity as capital reserve . The gain is attributed to the acquirer, not NCI.",
+      "explanation": "Indian carve-out from IFRS 3 (which takes the gain to profit or loss). SM Example 18: assets sold under a competition authority's deadline — likely bargain purchase. SM Illustration 21.",
+      "cases": [
+       "SM Example 18: assets sold under a competition authority's deadline — likely bargain purchase. SM Illustration 21."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-bargain-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.34–36A",
+      "High"
+     ],
+     "front": "Memory hook: Bargain purchase gain?",
+     "back": {
+      "simplified": "Bargain gain: clear reason → OCI → capital reserve; no clear reason → straight to capital reserve. Never P&L."
+     }
+    },
+    {
+     "id": "c-bc-mperiod",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.45–50",
+      "High"
+     ],
+     "front": "Measurement period (provisional accounting): what is the rule?",
+     "back": {
+      "simplified": "If initial accounting is incomplete, report provisional amounts. During the measurement period , adjust them retrospectively (against goodwill) for new information about facts and circumstances that existed at the acquisition date , and recognise additional assets or liabilities. The period ends when the information is obtained or is not obtainable, and cannot exceed one year from the acquisition date. After that, corrections are errors under Ind AS 8; changes from post-acquisition events are not measurement-period adjustments.",
+      "explanation": "SM Illustrations 22–23 work provisional values revised within and after the period.",
+      "cases": [
+       "SM Illustrations 22–23 work provisional values revised within and after the period."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-mperiod-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.45–50",
+      "High"
+     ],
+     "front": "Memory hook: Measurement period (max 1 year)?",
+     "back": {
+      "simplified": "Existed at day 1 + found within 1 year → adjust goodwill; otherwise P&L or Ind AS 8 error."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-f",
+   "title": "What is part of the combination",
+   "emoji": "✅",
+   "cards": [
+    {
+     "id": "c-bc-separate",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.51–53, B50–B52",
+      "Medium"
+     ],
+     "front": "What is part of the business combination; pre-existing relationships: what is the rule?",
+     "back": {
+      "simplified": "Account only for what was exchanged for the acquiree. Separate transactions include: settling a pre-existing relationship between acquirer and acquiree; remunerating employees or former owners for future services ; reimbursing the acquiree or its owners for the acquirer's acquisition costs. Factors: reasons for the transaction, who initiated it, and its timing. A pre-existing relationship is settled at the lesser of (a) the favourable/unfavourable amount relative to market and (b) any stated settlement provision; non-contractual (e.g. lawsuit) at fair value — the gain or loss to profit or loss , not goodwill.",
+      "explanation": "Reacquired rights in a pre-existing franchise are capitalised and amortised (see reacquired rights ). SM Illustration 24.",
+      "cases": [
+       "SM Illustration 24."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-separate-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.51–53, B50–B52",
+      "Medium"
+     ],
+     "front": "Memory hook: Separate transactions and pre-existing relationships?",
+     "back": {
+      "simplified": "Ask Why, Who, When — benefit to acquirer = separate transaction."
+     }
+    },
+    {
+     "id": "c-bc-employees",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.B54–B55",
+      "Low"
+     ],
+     "front": "Contingent payments to employees or selling shareholders: what is the rule?",
+     "back": {
+      "simplified": "Indicators of whether payments are consideration or post-combination remuneration : (a) continuing employment — payments automatically forfeited if employment ends are remuneration ; (b) duration of required employment vs payment period; (c) level of other remuneration; (d) incremental payments to employee-sellers vs non-employee sellers; (e) number of shares held by those who stay; (f) linkage to valuation (low end of a range → consideration); (g) formula — multiple of earnings suggests consideration, a percentage of earnings suggests profit sharing; (h) other agreements (below-market leases, non-competes).",
+      "explanation": "SM Illustrations 25–26 (payments to former owners who stay as employees).",
+      "cases": [
+       "SM Illustrations 25–26 (payments to former owners who stay as employees)."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-employees-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.B54–B55",
+      "Low"
+     ],
+     "front": "Memory hook: Contingent payments to employee-sellers?",
+     "back": {
+      "simplified": "Leave the job, lose the money → salary, not price."
+     }
+    },
+    {
+     "id": "c-bc-sbp",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.B56–B62",
+      "Low"
+     ],
+     "front": "Replacement and non-replacement share-based awards: what is the rule?",
+     "back": {
+      "simplified": "Replacement awards : the portion attributable to pre-combination service = market-based measure of the acquiree award × vesting period completed ÷ greater of total vesting period and original vesting period → part of consideration ; the rest (and any excess of the replacement over the acquiree award) → post-combination remuneration . If the acquirer replaces awards it was not obliged to replace (awards would expire), the whole measure is remuneration. Non-replacement awards : vested → NCI at market-based measure; unvested → pre-combination portion to NCI, the rest employee cost over remaining vesting (credited to NCI).",
+      "explanation": "SM Example 19: pre-combination portion ₹100, 95% expected to vest → ₹95 in consideration; later changes in expected vesting go to remuneration cost. SM Illustration 28: award ₹500, 2 of 5 years served → ₹200 to NCI; ₹300 expensed over the reduced 2-year remaining period.",
+      "cases": [
+       "SM Example 19: pre-combination portion ₹100, 95% expected to vest → ₹95 in consideration; later changes in expected vesting go to remuneration cost.",
+       "SM Illustration 28: award ₹500, 2 of 5 years served → ₹200 to NCI; ₹300 expensed over the reduced 2-year remaining period."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-sbp-mem",
+     "type": "mnemonic",
+     "tags": [
+      "Ind AS 103.B56–B62",
+      "Low"
+     ],
+     "front": "Memory hook: Share-based awards in a combination?",
+     "back": {
+      "simplified": "Pre-combination share = measure × served ÷ max(total, original)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-g",
+   "title": "Subsequent measurement and disclosures",
+   "emoji": "🧾",
+   "cards": [
+    {
+     "id": "c-bc-subsequent",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.54–58",
+      "Low"
+     ],
+     "front": "Subsequent measurement of items from the combination: what is the rule?",
+     "back": {
+      "simplified": "Generally other Ind AS apply after acquisition, except: reacquired rights — amortise over the remaining contractual period; contingent liabilities — higher of the Ind AS 37 amount and the initial amount less cumulative Ind AS 115 income; indemnification assets — same basis as the indemnified item, subject to contractual limits and collectability, derecognised only when collected, sold or the right is lost; contingent consideration — equity not remeasured; others at fair value through profit or loss.",
+      "explanation": "",
+      "cases": []
+     }
+    },
+    {
+     "id": "c-bc-disclose",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103.59–63, B64–B67",
+      "Low"
+     ],
+     "front": "Disclosures: what is the rule?",
+     "back": {
+      "simplified": "Disclose for each combination in the period (or after the reporting date before approval): name and description of acquiree, acquisition date, % voting interests, reasons and how control was obtained, qualitative factors making up goodwill, fair value of consideration by class, contingent consideration and indemnification assets (amount, basis, range), acquired receivables, amounts for each major class of assets/liabilities, contingent liabilities, goodwill deductible for tax, separate transactions and acquisition-related costs, bargain purchase gain (OCI/equity and reasons), NCI and its measurement basis, step-acquisition fair value and gain, and acquiree revenue and profit since acquisitio",
+      "explanation": "",
+      "cases": []
+     }
+    }
+   ]
+  },
+  {
+   "id": "s-j",
+   "title": "Common control combinations (Appendix C)",
+   "emoji": "📘",
+   "cards": [
+    {
+     "id": "c-bc-cc-scope",
+     "type": "concept",
+     "tags": [
+      "Ind AS 103 App. C",
+      "Low"
+     ],
+     "front": "Common control business combinations — scope: what is the rule?",
+     "back": {
+      "simplified": "A common control business combination involves entities or businesses ultimately controlled by the same party or parties both before and after the combination, where that control is not transitory . NCI levels are irrelevant. The controlling party may be an individual or a group of individuals acting together under a contractual arrangement, who need not prepare Ind AS statements.",
+      "explanation": "Examples: merger of fellow subsidiaries, merger of a subsidiary into its parent, acquisition of an entity from within the group, bringing entities under common control into a legal structure. Transitory control (structured to fall in Appendix C briefly before a real change of control) → Ind AS 103 acquisition method; a combination before an IPO is not transitory merely for that reason.",
+      "cases": [
+       "SM Illustrations 30–33."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-cc-pooling",
+     "type": "concept",
+     "tags": [
+      "App. C · pooling",
+      "Low"
+     ],
+     "front": "Pooling of interests method: what is the rule?",
+     "back": {
+      "simplified": "Account for common control combinations by the pooling of interests method : (i) assets and liabilities at carrying amounts ; (ii) no fair value adjustments or new assets/liabilities — only harmonise accounting policies ; (iii) restate prior periods as if the combination occurred from the beginning of the earliest period presented (or from the date common control began, if later). Consideration: securities at nominal value ; non-cash assets at fair value. Transferor's retained earnings are aggregated with the transferee's (or transferred to general reserve); identity of reserves is preserved. The difference between (share capital issued + other consideration) and the transferor's share capit",
+      "explanation": "SM Illustrations 34–40 work the journal entries and balance sheets.",
+      "cases": [
+       "SM Illustrations 34–40 work the journal entries and balance sheets."
+      ]
+     }
+    },
+    {
+     "id": "c-bc-cc-pooling-mem",
+     "type": "mnemonic",
+     "tags": [
+      "App. C · pooling",
+      "Low"
+     ],
+     "front": "Memory hook: Pooling of interests?",
+     "back": {
+      "simplified": "Pooling = Carrying amounts, Restate comparatives, Reserves keep their names, Difference to capital reserve."
+     }
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "id": "p-p1",
+   "prompt": "The draft Balance Sheet of JAY Ltd. and KAY Ltd. as at 31st March 2021 is given below:\n  PARTICULARS JAY Limited (₹ in lakh) KAY Limited (₹ in lakh)   ASSETS     NON-CURRENT ASSETS    Property, Plant & Equipment 400 500  Investments 450 120  CURRENT ASSETS    Inventories 180 130  Financial Assets    - Trade Receivables 520 270  - Cash & Cash Equivalents 260 145  - Others 350 175  TOTAL 2,160 1,340   EQUITY AND LIABILITIES     EQUITY    Share Capital - JAY Limited: Equity Shares of ₹ 10 each; KAY Limited: Equity Shares of ₹ 100 each 600 450  OTHER EQUITY 725 210  NON-CURRENT LIABILITIES    Financial Liabilities - Long Term Borrowings 350 250  Long Term Provisions 70 80  Deferred Tax 40 20  CURRENT LIABILITIES    Financial Liabilities - Short Term Borrowings 125 145  - Trade Payables 250 185  TOTAL 2,160 1,340  Other information:\n a. JAY Ltd. acquired 75% shares of KAY Ltd. on 1st April, 2021 by issuing its own shares in the ratio of 2 shares of JAY Ltd. for every 3 shares of KAY Ltd. The fair value of the shares of JAY Ltd. was ₹ 50 per share.\n b. The fair value exercise resulted in the following:\n i. Fair value of Property, Plant & Equipment of KAY Ltd. on 1st April, 2021 was ₹ 425 lakh;\n ii. JAY Ltd. also agreed to pay an additional payment as consideration that is higher of ₹ 45 lakh and 30% of any excess profits in the first year, after acquisition, over its profits in the preceding 12 months made by KAY Ltd. This additional amount will be due after 3 years. KAY Ltd. has earned ₹ 15 lakh profit in the preceding year and expects to earn another ₹ 20 lakh;\n iii. In addition to the above, JAY Ltd. also had agreed to pay one of the founder shareholder a payment of ₹ 22 lakh provided he stays with the Company for 3 years after acquisition;\n iv. KAY Ltd. had certain equity settled share based payment award (original award) which got replaced by the new awards issued by JAY Ltd. As per the original terms, the vesting period was 5 years and as of the acquisition date the employees of KAY Ltd. have already served 2 years of service. As per the replaced awards, the vesting period has been reduced to 1 year (1 year from the acquisition date). The fair value of the award on the acquisition date was as follows:\n • Original award - ₹ 6 lakh\n • Replacement award - ₹ 9 lakh\n v. KAY Ltd. had a lawsuit pending with a customer who made a claim of ₹ 70 lakh. Management reliably estimated the fair value of the liability to be ₹ 7.5 lakh;\n vi. The applicable tax rate for both entities is 30%.\n You are required to prepare consolidated balance sheet of JAY Ltd. as on 1st April, 2021. Assume 10% per annum discount rate. Management notes and working notes should form part of your answer. (15 Marks)",
+   "clauseRef": "PYQ May 2022 · Q1(a) · 15 marks",
+   "hints": [
+    "Start from the deciding requirement: Non-controlling interest at acquisition."
+   ],
+   "modelAnswer": "(a) Consolidated Balance Sheet of JAY Ltd. as on 1st April, 2021 (₹ in lakh)\n   Amount   Assets    Non-Current Assets:   Property, plant and equipment 825.00  Financial assets - Investment 570.00  Current assets:   Inventories 310.00  Financial assets - Trade receivables 790.00  Cash and cash equivalents 405.00  Others 525.00  Total 3,425.00   Equity and Liabilities    Equity   Share capital - Equity shares of ₹ 10 each 622.50  Other Equity 1,120.38  Non-controlling Interest 150.56  Non-Current liabilities:   Financial Liabilities - Long term borrowings 600.00  Long term provisions 183.81  Deferred tax 35.25  Current Liabilities:   Financial Liabilities - Short term borrowings 270.00  Trade payables 435.00  Provision for Lawsuit damages 7.50  Total 3,425.00  Management Notes:\n a. As per Ind AS 103, the acquirer is required to record the assets and liabilities acquired at their respective fair value. Accordingly, the PPE of KAY Ltd. will be recorded at ₹ 425 lakh.\n b. The value of replacement award is allocated between consideration transferred and post combination expense. The portion attributable to purchase consideration is determined based on the fair value of the replacement award for the service rendered till the date of the acquisition. Accordingly, ₹ 2.4 lakh (6 x 2/5) is considered as a part of purchase consideration and is credited to JAY Ltd. equity as this will be settled in its own equity. The balance of ₹ 6.60 lakh (₹ 9 lakh – ₹ 2.4 lakh) will be recorded as compensation expense in the post combination financial statements over the remaining life, which is 1 year in this scenario.\n c. There is a difference between contingent consideration and deferred consideration. In the given case ₹ 45 lakh is the minimum payment to be paid after 3 years and accordingly will be considered as deferred consideration. The other element is if company meet certain target, then they will get 30% of that or ₹ 45 lakh whichever is higher. In the given case, the minimum what is expected to be paid has been considered and the fair value of the contingent consideration has been considered as zero. The impact of time value on deferred consideration has been given @ 10%.\n d. The additional consideration of ₹ 22 lakh to be paid to the founder shareholder is contingent to him/her continuing in employment and hence this will be considered as employee compensation and will be recorded as post combination expenses in the income statement of JAY Ltd.\n Working Notes:\n 1. Computation for Purchase consideration\n  Particulars Amount (₹)  Share capital of KAY Ltd. 4,50,00,000  Number of shares 4,50,000  Shares to be issued 3:2 3,00,000  Fair value ₹ per share 50    ₹ in lakh  PC (3,00,000 x 75% x ₹ 50 per share) (A) 112.50  Deferred consideration after discounting ₹ 45 lakh for 3 years @ 10% (P.V. Factor 0.7513) (B) 33.81  Replacement award market-based measure of the acquiree award (6) x ratio of the portion of the vesting period completed (2) / greater of the total vesting period (3) or the original vesting period (5) of the acquiree award ie (6 x 2/5) (C) 2.40  PC in lakh (A+B+C) 148.71  2. Allocation of Purchase price\n  Particulars Book value (A) Fair value (B) FV adjustment (A-B)  Property, plant and equipment 500.00 425.00 (75.00)  Investment 120.00 120.00   Inventories 130.00 130.00   Financial assets: Trade receivables 270.00 270.00   Cash and cash equivalents 145.00 145.00   Others 175.00 175.00    1,340.00 1,265.00 (75.00)  Less: Long term borrowings (250.00) (250.00)   Long term provisions (80.00) (80.00)   Deferred tax (20.00) (20.00)   Short term borrowings (145.00) (145.00)   Trade payables (185.00) (185.00)   Contingent liability - (7.50) (7.50)  Net assets (X) 660.00 577.50 (82.50)  Deferred tax asset on FV adjustment (82.50 x 30%) (Y)  24.75   Net assets (X+Y)  602.25   Non-controlling interest (602.50 x 25%) rounded off  150.56   Purchase consideration (PC)  148.71   Capital Reserve (Net assets – NCI – PC)  302.98   3. Computation of consolidated amounts of consolidated financial statements (₹ in lakh)\n   JAY Ltd. KAY Ltd. (pre-acquisition) PPA Allocation Total   Assets       Non-current assets: Property, plant and equipment 400.00 500.00 (75.00) 825.00  Investment 450.00 120.00  570.00  Current assets: Inventories 180.00 130.00  310.00  Financial assets: Trade receivables 520.00 270.00  790.00  Cash and cash equivalents 260.00 145.00  405.00  Others 350.00 175.00 - 525.00  Total 2,160.00 1,340.00 (75.00) 3,425.00   Equity and Liabilities       Share capital - Equity shares of ₹ 10 each 600.00     Shares allotted to KAY Ltd. (W.N.1) (3,00,000 x 75% x ₹ 10 per share)   22.50 622.50  Other Equity 725.00   1,120.38  Replacement award (W.N.1)   2.40   Security Premium (W.N.1) (3,00,000 shares x 75% x ₹ 40)   90.00   Capital Reserve (W.N.2)   302.98   Non-controlling interest (W.N.2) -  150.56 150.56  Non-current liabilities: Financial liabilities - Long term borrowings 350.00 250.00  600.00  Long term provisions (W.N.1) 70.00 80.00 33.81 183.81  Deferred tax (W.N.2) 40.00 20.00 (24.75) 35.25  Current liabilities: Financial liabilities - Short term borrowings 125.00 145.00  270.00  Trade payable 250.00 185.00  435.00  Liability for lawsuit damages - - 7.50 7.50  Total 2,160.00 680.00 585.00 3,425.00   Study-material link: variant of SM Illustration 40 (Ch 12, Professional Ltd. / Dynamic Ltd.)",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p2",
+   "prompt": "RST Ltd. prepares consolidated financial statements as at 31st March each year. On 1st July, 2021, RST Ltd. acquired 75% of the equity shares of DHF Ltd. and gained control of DHF Ltd. The issued shares of DHF Ltd. are 1,20,00,000 equity shares. Details of the purchase consideration are as follows:\n On 1st July 2021, RST Ltd. issued two shares for every three shares acquired in DHF Ltd. On 1st July 2021, the market value of an equity share in RST Ltd. was ₹ 6.50 and the market value of an equity share in DHF Ltd. was ₹ 5.50.\n On 30th June 2022, RST Ltd. will make cash payment of ₹ 71,50,000 to the former shareholders of DHF Ltd. who sold their shares to RST Ltd. on 1st July 2021. On 1st July, 2021, RST Ltd. would have to pay interest at an annual rate of 10% on borrowings.\n On 30th June 2023, RST Ltd. may make a cash payment of ₹ 3,00,00,000 to the former shareholders of DHF Ltd. who sold their shares to RST Ltd. on 1st July 2021. This payment is contingent upon the revenues of RST Ltd. growing by 15% over the two-year period from 1st July, 2021 to 30th June, 2023. On 1st July 2021, the fair value of this contingent consideration was ₹ 2,50,00,000. On 31st March 2022, the fair value of the contingent consideration was ₹ 2,20,00,000.\n On 1st July 2021, the carrying values of the identifiable net assets of DHF Ltd. in the books of that company was ₹ 6,00,00,000. On 1st July 2021, the fair values of these net assets was ₹ 7,00,00,000. The rate of deferred tax to apply to temporary differences is 20%.\n During the nine months ended on 31st March 2022, DHF Ltd. had a poorer than expected operating performance. Therefore, on 31st March, 2022 it was necessary for RST Ltd. to recognize an impairment of the goodwill arising on acquisition of DHF Ltd. amounting to 12.50% of its total computed value.\n Compute the impairment of goodwill in the consolidated financial statements of RST Ltd. under the methods permitted by Ind AS 103 for the initial computation of the non-controlling interest in DHF Ltd. at the acquisition date. (5 Marks)",
+   "clauseRef": "PYQ May 2022 · Q6(d) · 5 marks",
+   "hints": [
+    "Start from the deciding requirement: Non-controlling interest at acquisition."
+   ],
+   "modelAnswer": "(d) Computation of goodwill impairment\n   NCI at fair value (₹ in 000) NCI at proportionate share of net assets (₹ in 000)  Cost of investment    Share exchange (12,000 x 75% x 2/3 x ₹ 6.50) 39,000 39,000  Deferred consideration (7,150 / 1.10) 6,500 6,500  Contingent consideration 25,000 25,000  Total Purchase Consideration (a) 70,500 70,500  Non-controlling interest on the date of acquisition: (b)    Fair value – 3,000 x ₹ 5.50 16,500   % of net assets – 68,000 (Refer W.N.) x 25%  17,000  Net assets on the acquisition date (Refer W.N.) (c) (68,000) (68,000)  Goodwill on acquisition (a+b-c) 19,000 19,500  Impairment @ 12.50% 2,375.00 2,437.50  Working Note: Net assets on the acquisition date\n   ₹ in 000  Fair value at the acquisition date 70,000  Deferred tax on fair value adjustments [20% x (70,000 – 60,000)] (2,000)   68,000   Study-material link: variant of SM TYK Question 9 (Ch 12; ABC Ltd. / JKL Ltd., same structure and the same ₹71,50,000 deferred payment)",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p3",
+   "prompt": "The draft balance sheets of Swan Limited and Duck Limited as at 31st March 2023 is as under: Amount ₹ in lakhs\n  Particulars Swan Limited Duck Limited   Assets     Non-Current Assets    Property, Plant and Equipment 800 1,000  Investments 900 240  Current Assets    Inventories 360 260  Financial Assets - Trade Receivables 1,040 540  - Cash & Cash Equivalents 520 290  Other Current Assets 700 350  Total 4,320 2,680   Equity and Liabilities     Equity: Share Capital - Swan Limited: Equity Shares of ₹ 10 each 1,200 -  - Duck Limited: Equity Shares of ₹ 100 each - 900  Other Equity 1,450 420  Non-Current Liabilities: Financial Liabilities - Long-Term Borrowings 700 500  Long-Term Provisions 140 200  Deferred Tax 80 -  Current Liabilities: Financial Liabilities - Short-Term Borrowings 250 290  - Trade Payables 500 370  Total 4,320 2,680  On 1st April 2023, Swan Limited acquired 80% equity shares of Duck Limited.\n Swan Limited agreed to pay to each shareholder of Duck Limited, ₹ 20 per equity share in cash and to issue five equity shares of ₹ 10 each of Swan Limited in lieu of every six shares held by the shareholders of Duck Limited. The fair value of the shares of Swan Limited was ₹ 100 per share as on the date of acquisition.\n Swan Limited also agreed to pay an additional consideration being higher of ₹ 90 lakhs and 30% of any excess profits in the first year, after acquisition, over Duck Limited's profits in the preceding 12 months (financial year 2022-2023) made by Duck Limited. The additional amount will be due in 3 years post the date of acquisition. Duck Limited earned ₹ 30 lakhs profit in the preceding year and expects to earn ₹ 40 lakhs in financial year 2023-2024.\n The fair value exercise resulted in the following:\n i. Fair value of Property, Plant and Equipment and Investments of Duck Limited on 1st April, 2023 was ₹ 1,200 lakhs and ₹ 300 lakhs respectively.\n ii. Duck Limited owns a popular brand name that meets the recognition criteria for Intangible Assets under Ind AS 103 'Business Combinations'. Independent valuers have attributed a fair value of ₹ 250 lakhs for the brand. However, the brand does not have any cost for tax purposes and no tax deductions are available for the same.\n iii. Following is the statement of contingent liabilities of Duck Limited as on 1st April, 2023:\n  Particulars Fair Value (₹ in lakhs) Remarks  Lawsuit filed by a customer for a claim of ₹ 20 lakhs 5 It is not probable that an outflow of resources embodying economic benefits will be required to settle the claim. Any amount which would be paid in respect of lawsuit will be tax deductible.  Income tax demand of ₹ 70 lakhs raised by tax authorities. Duck Limited has challenged the demand in the High Court 20 It is not probable that an outflow of resources embodying economic benefits will be required to settle the claim.  iv. Duck Limited had certain equity settled share-based payment awards (original award) which were replaced by the new awards issued by Swan Limited. As per the terms of original awards, the vesting period was 5 years and as of the acquisition date the employees of Duck Limited had already served 2 years of service. As per the new awards, the vesting period has been reduced to 1 year (1 year from the acquisition date). The fair value of the award on acquisition date was as follows:\n Original Awards: ₹ 12 lakhs\n New Awards: ₹ 18 lakhs.\n v. Further, Swan Limited has also agreed to pay one of the founder shareholder of Duck Limited a sum of ₹ 15 lakhs provided he stays with the Company for two years after the acquisition.\n vi. The acquisition cost of Swan Limited for Duck Limited was ₹ 26 lakhs.\n vii. The applicable tax rate for both the companies is 30%.\n viii. Assume 10% per annum discount rate.\n ix. Also, assume, unless stated otherwise, all items have a fair value and tax base equal to their carrying amounts at the acquisition date.\n You are required to prepare opening Consolidated Balance Sheet of Swan Limited as on 1st April 2023. Working Notes should form part of your answer. (15 Marks)",
+   "clauseRef": "PYQ May 2023 · Q1(a) · 15 marks",
+   "hints": [
+    "Start from the deciding requirement: Non-controlling interest at acquisition."
+   ],
+   "modelAnswer": "(a) Consolidated Balance Sheet of Swan Ltd as on 1st April, 2023\n   Notes No. ₹ in lakhs   Assets     Non-current assets    Property, plant and equipment 9 2,000.00  Intangible assets 10 250.00  Financial assets - Investment 11 1,200.00  Current assets    Inventories 12 620.00  Financial assets: Trade receivables 13 1,580.00  Cash and cash equivalents 14 640.00  Other current assets 15 1,050.00  Total  7,340.00   Equity and Liabilities     Equity    Share capital - Equity shares of ₹ 10 each 1 1,260.00  Other equity 2 2,475.18  Non-controlling interest (W.N.4)  330.70  Non-current liabilities    Financial liabilities - Long-term borrowings 3 1,200.00  Long-term provisions 4 407.62  Deferred tax liability 5 231.50  Current Liabilities    Financial liabilities - Short-term borrowings 6 540.00  Trade payables 7 870.00  Short-term provision 8 25.00  Total  7,340.00  Notes to Accounts (All figures are ₹ in lakhs)\n      1. Equity Share capital     Equity shares of ₹ 10 each as per the balance sheet before acquisition of Duck Ltd. 1,200   Shares allotted to Duck Ltd. (7,50,000 x 80% x ₹ 10) 60 1,260   2. Other Equity     As per the balance sheet before acquisition of Duck Ltd. 1,450   Less: Acquisition cost (26) 1,424  Replacement award  4.80  Security Premium (7,50,000 shares x 80% x ₹ 90)  540  Capital Reserve (W.N.5)  506.38  Total  2,475.18   3. Long-term borrowings     As per the balance sheet before acquisition of Duck Ltd. 700   Duck Ltd. 500 1,200   4. Long-term provisions     As per the balance sheet before acquisition of Duck Ltd. 140   Deferred consideration 67.62   Duck Ltd. 200 407.62   5. Deferred tax liability     As per the balance sheet before acquisition of Duck Ltd. 80   Deferred tax impact due to acquisition of Duck Ltd. (W.N.2) 151.50 231.50   6. Short term borrowings     As per the balance sheet before acquisition of Duck Ltd. 250   Duck Ltd. 290 540   7. Trade payables     As per the balance sheet before acquisition of Duck Ltd. 500   Duck Ltd. 370 870   8. Short-term provisions     Lawsuit damages 5   Income-tax demand 20 25   9. Property, plant and equipment     As per the balance sheet before acquisition of Duck Ltd. 800   Duck Ltd. 1,200 2000   10. Intangible assets     Brand of Duck Ltd. acquired  250   11. Investment     As per the balance sheet before acquisition of Duck Ltd. 900   Duck Ltd. 300 1,200   12. Inventories     As per the balance sheet before acquisition of Duck Ltd. 360   Duck Ltd. 260 620   13. Trade receivables     As per the balance sheet before acquisition of Duck Ltd. 1,040   Duck Ltd. 540 1,580   14. Cash and cash equivalents     As per the balance sheet before acquisition of Duck Ltd. 520   Less: Acquisition cost paid (26)   Less: Paid to Duck Ltd. (144) 350  Duck Ltd.  290  Total  640   15. Other current assets     As per the balance sheet before acquisition of Duck Ltd. 700   Duck Ltd. 350 1,050  Working Notes:\n 1. Computation of Purchase Consideration\n  Particulars No. of shares ₹ in lakhs  Share capital of Duck Ltd.  900  Number of shares 9,00,000   Shares to be issued (5 shares against 6 shares of Duck Ltd.) 7,50,000   Fair value of Swan Ltd.'s share is ₹ 100 per share    Purchase consideration    Shares issued (7,50,000 x 80% x ₹ 100 per share) (A)  600  Cash payment (₹ 20 x 9,00,000 x 80%) (B)  144  Deferred consideration (discounting ₹ 90 lakhs for 3 years @10%) (C)  67.62  Replacement award [Market based measure of the acquiree award (12) x ratio of the portion of the vesting period completed (2) / greater of the total vesting period (3) or the original vesting period (5) of the acquiree award (ie 12 x 2/5)] (D)  4.80  Purchase consideration for 70% shares (A + B + C + D)  816.42  2. Computation of deferred tax impact due to change in fair value of asset and liabilities acquired\n  Particulars Book value (A) Fair value (B) FV adjustment (A-B)  Property, plant and equipment 1,000 1,200 200  Intangible assets (Brand) - 250 250  Investment 240 300 60    1,750 510  Less: Contingent liability acquired - Provision for lawsuit damages   (5)  Net difference in fair value   505  Deferred tax liability @ 30%   151.5  (The FV adjustment column again shows B − A values under an \"(A-B)\" header.)\n 3. Computation of fair value of net identifiable assets acquired from Duck Ltd.\n  Particulars Book value  Total assets as per the balance sheet 2,680  Add: Fair value adjustment in PPE and Investment (200+60) 260  Add: Intangible assets (Brand) 250  Fair value of total identifiable assets 3,190  Less: Total liabilities as per the balance sheet (500+200+290+370) (1,360)  Less: Contingent liability acquired: Lawsuit damages 5; Income tax demand 20 (25)  Less: Defer tax liability (W.N.2) (151.50)  Fair value of net identifiable assets (100%) 1,653.50  4. Computation of non-controlling interest in Duck Ltd. (Proportionate share basis)\n Non-controlling interest (1,653.50 x 20%) = 330.70\n 5. Computation of capital reserve on acquisition of Duck Ltd.\n  Particulars Book value  Fair value of net identifiable assets 1,653.50  Less: Purchase consideration (816.42)  Less: NCI (W.N.4) (330.70)  Capital reserve 506.38  Notes:\n (a) The value of replacement award is allocated between consideration transferred and post combination expense. The portion attributable to purchase consideration is determined based on the fair value of the replacement award for the service rendered till the date of the acquisition. Accordingly, ₹ 4.8 lakh (12 x 2/5) is considered as a part of purchase consideration and is credited to Swan Ltd.'s equity as this will be settled in its own equity. Since the fair value of the award on the acquisition date is ₹ 18 lakh the balance of (18 - 4.8) ₹ 13.2 lakh will be recorded as employee expense in the books of Duck Ltd. over the remaining life, which is 1 year in this scenario.\n (b) With respect to deferred consideration, ₹ 90 lakh is the minimum payment to be paid after 3 years. The other element is if company meet certain target then they will get 30% of that or ₹ 90 lakh whichever is higher. In the given case, since the minimum what is expected to be paid the fair value of the contingent consideration has been considered as zero. The impact of time value on deferred consideration has been given @ 10%.\n (c) The additional consideration of ₹ 15 lakhs to be paid to the founder shareholder is contingent to him/her continuing in employment and hence this will be considered as employee compensation and will be recorded as post combination expenses in the statement of profit and loss of Duck Ltd.\n Study-material link: variant of SM Illustration 40 (Ch 12, Professional Ltd. / Dynamic Ltd.)",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p4",
+   "prompt": "A Limited and B Limited are engaged in the manufacture of pharmaceuticals. On 1st June, 2024, A Limited acquired 15% of equity shares of B Limited. On 1st October, 2024, A Limited obtains control of B Limited when it acquires a further 55% of B Limited's shares, thereby resulting into a total holding of 70%. The fair value of the shares of B Limited was ₹ 40 per share as on that date.\n Prior to the acquisition of additional 55% stake by A Limited on 1st October, 2024, the Balance Sheets of the two companies stood as under: (₹ in lakhs)\n  Particulars A Ltd. B Ltd.   Assets     Non-Current Assets    Property, Plant and Equipment 600 400  Investments (6,00,000 Shares of B Ltd. acquired on 1st June, 2024) 210 -  Current Assets    Inventories 500 150  Financial Assets - Trade receivables 450 300  Cash and cash equivalents 400 100  Other Current Assets 200 230  Non-current assets held for sale - 250  Total 2,360 1,430   Equity and Liabilities     Equity: Share Capital – Equity Shares of ₹ 100 each 500 -  Share Capital – Equity Shares of ₹ 10 each - 400  Other Equity 810 225  Non-Current Liabilities - Financial Liabilities: Long-term Borrowings 250 200  Long-term Provisions 50 70  Deferred Tax Liability 40 -  Current Liabilities - Financial Liabilities: Short-term Borrowings 400 285  Trade Payables 310 250  Total 2,360 1,430  In consideration of the additional stake acquired by A Limited on 1st October, 2024, it agreed to pay to each selling shareholder of B Limited a sum of ₹ 15 per share in cash and issue 1 Equity Share of ₹ 100 each of A Limited in lieu of 8 Equity Shares of ₹ 10 each held by the selling shareholder in B Limited. The fair value of the shares of A Limited as on 1st October, 2024 is ₹ 160 per share.\n In addition to the above:\n (a) A Limited agreed to pay an additional payment as consideration that is higher of ₹ 35 lakhs and 25% of any excess profit in the first year, after acquisition over its profits in the preceding one year made by B Limited. This additional amount would be due after 2 years. B Limited has earned ₹ 10 lakhs profit in the preceding year and expects to earn another ₹ 20 lakhs.\n (b) A Limited also agreed to pay one of the promoter shareholders of B Limited a payment of ₹ 15 lakhs provided he stays with the company for two years after acquisition.\n (c) A Limited* had a certain equity settled share-based payment award (Original award) which was replaced by the new award issued by B Limited**. As per the original terms, the vesting period was 4 years and as of the acquisition date, the employees of B Limited have already served 2 years of service. As per the replaced award, the vesting period is reduced to one year (one year from the acquisition date). The fair value of the award on the acquisition date was as under:\n (i) Original Award: ₹ 5 lakhs\n (ii) Replacement Award: ₹ 8 lakhs\n [* PS: Read 'A Limited' as 'B Limited'. ** PS: Read 'B Limited' as 'A Limited'. (ICAI's printed corrections.)]\n (d) The fair value exercise resulted in the following:\n (i) The fair value of Property, Plant and Equipment and Inventory of B Limited as on 1st October, 2024 was ₹ 480 lakhs and ₹ 170 lakhs respectively.\n (ii) The carrying value of Non-Current Asset held for sale of ₹ 250 lakhs of B Limited represents its fair value less cost to sell in accordance with the relevant Ind AS.\n (iii) B Limited has developed and patented a new drug for Parkinson disease which has been approved for clinical use. The cost of developing the drug was ₹ 140 lakhs. Based on early assessment of its sales success, the valuer has estimated its market value at ₹ 200 lakhs.\n (iv) B Limited had a lawsuit for infringement of Trademark pending with a competitor who had made a claim of ₹ 50 lakhs. B Limited has disclosed the same as a contingent liability as it is not probable that the amount would be payable. Management reliably estimated the fair value of the liability to be 10 lakhs. Any sum which would be paid in respect of the lawsuit would be tax deductible.\n (e) The cost of capital of A Limited is 10%. The appropriate discount factor for ₹ 1 @ 10% payable at the end of 1st year is 0.91 and 2nd year is 0.83.\n (f) The applicable tax rate for both the entities is 30%.\n Unless stated otherwise, all items have a fair value and tax base equal to their carrying amounts at the acquisition date. A Limited chooses to measure the Non-Controlling Interest in B Limited as per Proportionate Share of identifiable net assets method.\n You are required to prepare the opening Consolidated Balance Sheet of A Limited as on 1st October, 2024 as per the applicable Ind AS. Working Notes should form part of your answer. (14 Marks)",
+   "clauseRef": "PYQ May 2025 · Q1 · 14 marks",
+   "hints": [
+    "Start from the deciding requirement: Business combination achieved in stages (step acquisition)."
+   ],
+   "modelAnswer": "Consolidated Balance Sheet of A Ltd. and its subsidiary B Ltd. as at 1st October, 2024\n   Notes No. ₹ in lakhs   Assets     Non-current assets    Property, plant and equipment 1 1,080.00  Goodwill 2 461.95  Intangible assets (patents)  200.00  Current assets    Inventories 3 670.00  Financial assets - Cash and cash equivalents 4 170.00  Trade receivables 5 750.00  Other current assets 6 430.00  Assets held for sale  250.00  Total  4,011.95   Equity and Liabilities     Equity 7 775.00  Other equity 8 1007.50  Non-controlling interest (W.N.4)  248.40  Non-current liabilities - Financial liabilities - Long-term borrowings 9 450.00  Long-term provisions 10 149.05  Deferred tax liabilities 11 127.00  Current Liabilities - Financial liabilities - Short-term borrowings 12 685.00  Trade payables 13 560.00  Provision for lawsuit damages  10.00  Total  4,011.95  Notes to Accounts (₹ in lakhs)\n  Particulars     1. Property, Plant and Equipment     A Ltd.  600.00  B Ltd. 400.00; Add: Fair value gain 80.00 480.00 1,080.00   2. Goodwill     Goodwill on acquisition of B Ltd. (Refer W.N.5)  461.95   3. Inventories     A Ltd.  500.00  B Ltd. 150.00; Add: Fair value given 20.00 170.00 670.00   4. Cash and cash equivalents     A Ltd. 400.00; Less: Paid to B Ltd.'s Shareholders (330.00) 70.00   B Ltd. 100.00 170.00  Note: The additional consideration paid to promoter shareholder is contingent to him/her continuing in employment and hence this will be considered as employee compensation and will be recorded as post combination expense in the income statement by A Ltd.\n  Particulars     5. Trade receivables     A Ltd. 450.00   B Ltd. 300.00 750.00   6. Other current assets     A Ltd. 200.00   B Ltd. 230.00 430.00   7. Equity     Equity Share Capital: 7,75,000 Equity shares of ₹ 100 each (Out of the above, 2,75,000 Equity shares of ₹ 100 each allotted to shareholders of B Ltd for consideration other than cash)  775.00   8. Other equity     A. Retained earnings of A Ltd. 810.00; Add: Gain on previously acquired shares of A Ltd. 30.00 840.00   B. Replacement award 2.50   C. Security premium (2,75,000 shares x ₹ 60) 165.00 1007.50   9. Long-term borrowings     A Ltd. 250.00   B Ltd. 200.00 450.00   10. Long term provisions     A Ltd. 50.00; Add: Deferred consideration 29.05 79.05   B Ltd. 70.00 149.05   11. Deferred tax liabilities     Deferred tax liability of A Ltd 40.00   Deferred tax liability (W.N. 2) 87.00 127.00   12. Short term borrowings     A Ltd. 400.00   B Ltd. 285.00 685.00   13. Trade payables     A Ltd. 310.00   B Ltd. 250.00 560.00  Working Notes:\n 1. Calculation of purchase consideration (₹ in lakhs)\n  Investment in B Ltd. - Shares acquired    On 1st June, 2024 15% [(400/10) x 15% x ₹ 40] 240.00  On 1st October, 2024 55%: Own equity given (40 x 55%) x 1/8 x ₹160 440.00  Cash (40 x 55%) x ₹ 15 330.00  Contingent consideration (35 x 0.83) 29.05  Replacement award (5 x 2/4) 2.50    1041.55  2. Calculation of deferred tax on assets and liabilities acquired as part of the business combination (₹ in lakhs)\n  Item Book value Fair value Tax base Taxable (deductible) temporary difference Deferred tax assets (liability) @ 30%  Property, plant and equipment 400.00 480.00 400.00 80.00 (24.00)  Intangible assets  200.00 0.00 200.00 (60.00)  Inventories 150.00 170.00 150.00 20.00 (6.00)  Trade receivables 300.00 300.00 300.00 - -  Cash and cash equivalents 100.00 100.00 100.00 - -  Other current assets 230.00 230.00 230.00 - -  Non-current asset held for sale 250.00 250.00 250.00 - -  (A) 1,430.00 1,730.00 1,430.00 300.00 (90.00)  Trade payables 250.00 250.00 250.00 - -  Long-term provisions 70.00 70.00 70.00 - -  Short-term borrowings 285.00 285.00 285.00 - -  Contingent liability - 10.00 - (10.00) 3.00  (B) 605.00 615.00 605.00 (10.00) 3.00  Deferred tax liabilities (A-B)     (87.00)  3. Calculation of fair value of identifiable net assets acquired\n   ₹ in lakhs ₹ in lakhs  Property, plant and equipment 480.00   Intangible assets 200.00   Inventories 170.00   Trade receivables 300.00   Cash and cash equivalents 100.00   Non-current asset held for sale 250.00   Other current assets 230.00   Total assets  1,730.00  Less: Long-term borrowings 200.00   Trade payables 250.00   Long-term provisions 70.00   Short-term borrowings 285.00   Contingent liabilities 10.00   Deferred tax liabilities 87.00   Total liabilities  (902.00)  Net identifiable assets  828.00  4. Calculation of NCI by proportionate share of identifiable net assets\n Identifiable net assets of S Ltd. on 1st October, 2024 (Refer W.N.3) = ₹ 828.00 lakhs\n NCI on 1st October, 2024 = 828.00 lakhs x 30% = 248.40 lakhs\n 5. Calculation of Goodwill\n  Particulars ₹ in Lakhs  Fair Value of Net Identifiable Assets 828.00  Less: NCI (248.40)   579.60  Less: Purchase Consideration (1041.55)  Goodwill on 1st October, 2024 461.95   Study-material link: variant of SM Illustration 40 (Ch 12, Professional Ltd. / Dynamic Ltd.: same ₹35 lakh / 25% / ₹10 and ₹20 lakh / 4-year award ₹5 and ₹8 lakh features), with a step-acquisition element as in Ch 12 TYK Q1",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p5",
+   "prompt": "(Case Scenario-II facts (1)-(3) as in MCQ 6 above.)\n 8. Determine the amount of consideration for Business Combination for acquiring Sour Ltd.\n (A) ₹ 192.40 lakhs\n (B) ₹ 187.60 lakhs\n (C) ₹ 200 lakhs\n (D) ₹ 194 lakhs",
+   "clauseRef": "PYQ May 2026 · MCQ 8 · 2 marks",
+   "hints": [
+    "Start from the deciding requirement: What is part of the business combination; pre-existing relationships."
+   ],
+   "modelAnswer": "ICAI has not yet published the answer (question paper only).",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  },
+  {
+   "id": "p-p6",
+   "prompt": "Panama Pharma Ltd. is a leading company engaged in the manufacturing of generic medicines. The company decided to acquire Bio Gen Research Ltd., a biotech firm specializing in viral vector technology to diversify its portfolio and enter the high-growth vaccine segment.\n To achieve this, Panama Pharma Ltd. initially acquired a 30% stake in Bio Gen Research Ltd. for ₹ 15,00,000 on 1st July, 2025.\n Subsequently, to gain control, Panama Pharma Ltd. acquired a further 40% stake on 1st January, 2026 for ₹ 24,00,000. On the date of acquiring control (1st January, 2026), the fair value of the previously held 30% equity interest was determined to be ₹ 17,50,000.\n The summarized Balance Sheets of both the companies as at 1st January, 2026 were as follows :\n   Note No. Bio Gen Research Ltd. ₹ Panama Pharma Ltd. ₹   ASSETS :      Non-current Assets     Property, Plant and Equipment (Labs)  18,00,000 60,00,000  Investments in Bio Gen Research Limited  – 39,00,000  Investments in bonds  10,00,000 –  Current Assets     Inventories  5,00,000 15,00,000  Financial Assets     Trade Receivables  4,00,000 8,50,000  Cash and cash equivalent  2,00,000 12,50,000  Total  39,00,000 1,35,00,000   EQUITY AND LIABILITIES :      Equity & Liabilities     5,000 Equity share capital (of face value of ₹ 100 each)  5,00,000 50,00,000  Other Equity     Other reserves  24,00,000 60,00,000  Non-current Liabilities     Long term Borrowings  – 15,00,000  Current Liabilities     Trade payables  10,00,000 10,00,000  Total  39,00,000 1,35,00,000  Additional Information :\n (i) Bio Gen Research Ltd. has developed a proprietary vaccine formula known as 'Vax-Shield'. This is a self-generated intangible asset and has not been recognized in the books of Bio Gen Research Ltd. The fair value of 'Vax-Shield' as at 1st January, 2026, is assessed at ₹ 8,50,000.\n (ii) The Trade Receivables of Panama Pharma Ltd. include ₹ 1,00,000 due from Bio Gen Research Ltd. for consultancy services provided in December 2025. Bio Gen Research Ltd. has recorded this amount in its Trade Payables.\n (iii) During the year, Panama Pharma Ltd. sold goods to Bio Gen Research Ltd. for ₹ 2,00,000. The cost of these goods to Panama Pharma Ltd. was ₹ 1,50,000. As on 1st January, 2026, 40% of these goods remain in the Inventory of Bio Gen Research Ltd.\n (iv) The fair value of the assets of Bio Gen Research Ltd. as on 1st January, 2026 was as follows :\n  Assets Fair Value (₹)  Property, Plant and Equipment (Labs) 26,00,000  Investment in Bonds 11,50,000  (v) The NCI is to be measured at Fair Value. The Fair Value of NCI on the acquisition date 1st January, 2026 is ₹ 16,00,000.\n You are required to :\n (i) Pass necessary journal entries in the books of Panama Pharma Ltd. to account for the business combination in accordance with Ind AS 103 as at 1st January, 2026.\n (ii) Prepare the Consolidated Balance Sheet of Panama Pharma Ltd. and its subsidiary as at 1st January, 2026, incorporating all necessary adjustments for inter-company balances and unrealized profits. Also provide necessary working notes. Ignore tax implications.\n (Marks printed: 14. The row \"5,000 Equity share capital (of face value of ₹ 100 each)\" is printed as one label against both companies' figures, ₹ 5,00,000 and ₹ 50,00,000.)",
+   "clauseRef": "PYQ May 2026 · Q1 · 14 marks",
+   "hints": [
+    "Start from the deciding requirement: Business combination achieved in stages (step acquisition)."
+   ],
+   "modelAnswer": "ICAI has not yet published the answer (question paper only).",
+   "markingPoints": [
+    "Names the governing Ind AS and paragraph",
+    "Applies each condition to the specific facts",
+    "Figures and treatment match ICAI's answer (allocation, entries, amounts)",
+    "Clear conclusion with the treatment and amounts"
+   ]
+  }
+ ]
+}

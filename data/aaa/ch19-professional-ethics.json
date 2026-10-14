@@ -269,6 +269,17 @@
           }
         },
         {
+          "id": "s1p1c6-7-map",
+          "type": "concept",
+          "tags": ["Cl 6", "Cl 7", "Exam trap"],
+          "front": "Cl 6 vs Cl 7 — solicitation or permitted visibility?",
+          "back": {
+            "simplified": "Cl 6 asks whether the CA pushed or solicited work. Cl 7 asks whether the CA advertised attainments/services or used an unauthorised description. A permitted channel is still subject to its own conditions.",
+            "explanation": "Open the mastery lesson 'First Schedule Part I (6) and (7)' for the consolidated channel table and sorting drill.",
+            "trap": "A home nameplate is a separate s.27 rule: individual name + CA only; the firm's residence nameboard is not allowed."
+          }
+        },
+        {
           "id": "s1p1c8",
           "type": "clause",
           "tags": ["Cl 8"],

@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { shuffle } from '@/lib/casebook';
 import { useLearnState } from '@/lib/learn';
+import { H, RunHead } from '@/components/learn/ui';
 
-const H = ({ html }: { html: string }) => <span dangerouslySetInnerHTML={{ __html: html }} />;
 
 export default function CompareView() {
   const { learn, chapterId, P } = useChapter();
@@ -59,8 +59,7 @@ export default function CompareView() {
       {mode === 'quiz' && (
         <div className="card lm-card">
           {cur ? <>
-            <div className="lm-prog"><span>Statement {i + 1} of {total}</span><span>{score} right</span></div>
-            <div className="track"><i style={{ transform: `scaleX(${i / total})` }} /></div>
+            <RunHead left={`Statement ${i + 1} of ${total}`} right={`${score} right`} frac={i / total} />
             <p className="lm-q"><H html={cur.s} /></p>
             <div className="lm-four">{labels.map((l, n) => {
               const cls = pick === null ? '' : n === cur.ans ? 'right' : n === pick ? 'wrong' : '';

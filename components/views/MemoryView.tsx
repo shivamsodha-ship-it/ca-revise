@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { shuffle, stripTags } from '@/lib/casebook';
 import { useLearnState } from '@/lib/learn';
+import { H, RunHead } from '@/components/learn/ui';
 
-const H = ({ html }: { html: string }) => <span dangerouslySetInnerHTML={{ __html: html }} />;
 type Card = { id: string; front: string; back: React.ReactNode; p?: string };
 
 export default function MemoryView() {
@@ -57,8 +57,7 @@ export default function MemoryView() {
       ) : (
         <div className="card lm-card">
           {cur ? <>
-            <div className="lm-prog"><span>Card {i + 1} of {deck.length}</span><span>{got} known</span></div>
-            <div className="track"><i style={{ transform: `scaleX(${i / deck.length})` }} /></div>
+            <RunHead left={`Card ${i + 1} of ${deck.length}`} right={`${got} known`} frac={i / deck.length} />
             <p className="lm-q">{tab === 'mn' ? 'Recall: ' : 'What is the figure for: '}{cur.front}</p>
             {!show ? <button className="btn pri" onClick={() => setShow(true)}>Reveal</button> : <>
               <div className="mm-back">{cur.back}</div>

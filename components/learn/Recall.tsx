@@ -1,21 +1,15 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { shuffle } from '@/lib/casebook';
+import { useState } from 'react';
 import { checkNum, fmtNum } from '@/lib/numcheck';
 import type { Recall } from '@/lib/learnData';
+import { H, OrderBoard, RunHead } from '@/components/learn/ui';
 
-const H = ({ html }: { html: string }) => <span dangerouslySetInnerHTML={{ __html: html }} />;
 
 // One recall question. Calls onDone(ok) when the learner presses Continue.
 export function RecallCard({ r, onDone, last }: { r: Recall; onDone: (ok: boolean) => void; last?: boolean }) {
   const [pick, setPick] = useState<number | null>(null);
   const [typed, setTyped] = useState('');
   const [res, setRes] = useState<boolean | null>(null);
-  const [mix, setMix] = useState<string[]>([]);
-  const [chosen, setChosen] = useState<string[]>([]);
-
-  useEffect(() => { if (r.k === 'order') setMix(shuffle(r.items)); }, [r]);
-
   const done = res !== null;
   const finish = (ok: boolean) => setRes(ok);
 
@@ -40,18 +34,7 @@ export function RecallCard({ r, onDone, last }: { r: Recall; onDone: (ok: boolea
         </form>
       )}
 
-      {r.k === 'order' && (
-        <div>
-          <ol className="lm-ord">{chosen.map((c, i) => <li key={i} className={done ? (c === r.items[i] ? 'right' : 'wrong') : ''}>{c}</li>)}</ol>
-          {!done && <>
-            <div className="lm-pool">{mix.filter(m => !chosen.includes(m)).map(m => <button key={m} className="lm-tok" onClick={() => setChosen(c => [...c, m])}>{m}</button>)}</div>
-            <div className="lm-act">
-              <button className="btn" disabled={!chosen.length} onClick={() => setChosen(c => c.slice(0, -1))}>Undo</button>
-              <button className="btn pri" disabled={chosen.length !== r.items.length} onClick={() => finish(chosen.every((c, i) => c === r.items[i]))}>Check order</button>
-            </div></>}
-          {done && !res && <p className="lm-fix"><b>Correct order:</b> {r.items.join(' → ')}</p>}
-        </div>
-      )}
+      {r.k === 'order' && <OrderBoard items={r.items} result={res} onCheck={finish} />}
 
       {done && <>
         <div className={'fb ' + (res ? 'right' : 'wrong')} role="status">
@@ -81,8 +64,7 @@ export function RecallRun({ items, onFinish, label = 'Check' }: { items: Recall[
   );
   return (
     <div>
-      <div className="lm-prog"><span>{label} {i + 1} of {items.length}</span><span>{ok} right</span></div>
-      <div className="track"><i style={{ transform: `scaleX(${i / items.length})` }} /></div>
+      <RunHead left={`${label} ${i + 1} of ${items.length}`} right={`${ok} right`} frac={i / items.length} />
       <RecallCard key={round + ':' + i} r={items[i]} last={i === items.length - 1} onDone={good => {
         const n = ok + (good ? 1 : 0);
         setOk(n);

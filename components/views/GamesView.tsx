@@ -1,18 +1,18 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useChapter } from '@/components/ChapterShell';
 import { shuffle } from '@/lib/casebook';
 import { useLearnState, type Game } from '@/lib/learn';
 import { autoGames } from '@/lib/autoGames';
+import { H, OrderBoard, RunHead } from '@/components/learn/ui';
 
-const H = ({ html }: { html: string }) => <span dangerouslySetInnerHTML={{ __html: html }} />;
 type Report = (pct: number) => void;
 
 export default function GamesView() {
   const { learn, cb, chapterId } = useChapter();
   const { L, bump } = useLearnState(chapterId);
   const [openId, setOpenId] = useState<string | null>(null);
-  const games: Game[] = [...(learn?.games ?? []), ...autoGames(cb)];
+  const games = useMemo<Game[]>(() => [...(learn?.games ?? []), ...autoGames(cb)], [learn, cb]);
   if (!games.length) return null;
   const g = games.find(x => x.id === openId);
 
@@ -65,8 +65,7 @@ function Match({ g, report }: { g: Extract<Game, { type: 'match' }>; report: Rep
   const finished = pairs.length > 0 && done.length === pairs.length;
   return (
     <div className="card lm-card">
-      <div className="lm-prog"><span>{done.length} of {pairs.length} matched</span><span>{miss} slips</span></div>
-      <div className="track"><i style={{ transform: `scaleX(${pairs.length ? done.length / pairs.length : 0})` }} /></div>
+      <RunHead left={`${done.length} of ${pairs.length} matched`} right={`${miss} slips`} frac={pairs.length ? done.length / pairs.length : 0} />
       <div className="lm-match">
         <div>{left.map(l => <button key={l} className={'lm-tile' + (done.includes(l) ? ' ok' : '') + (sel === l ? ' sel' : '')} disabled={done.includes(l)} onClick={() => setSel(l)}><H html={l} /></button>)}</div>
         <div>{right.map(r => {
@@ -95,8 +94,7 @@ function Sort({ g, report }: { g: Extract<Game, { type: 'sort' }>; report: Repor
   return (
     <div className="card lm-card">
       {cur ? <>
-        <div className="lm-prog"><span>Card {i + 1} of {order.length}</span><span>{ok} right</span></div>
-        <div className="track"><i style={{ transform: `scaleX(${i / order.length})` }} /></div>
+        <RunHead left={`Card ${i + 1} of ${order.length}`} right={`${ok} right`} frac={i / order.length} />
         <p className="lm-q lm-sortq"><H html={cur.t} /></p>
         <div className="lm-buckets" style={{ gridTemplateColumns: `repeat(${Math.min(g.buckets.length, 2)}, minmax(0, 1fr))` }}>{g.buckets.map((b, n) => {
           const cls = pick === null ? '' : n === cur.b ? 'right' : n === pick ? 'wrong' : '';
@@ -118,26 +116,20 @@ function Sort({ g, report }: { g: Extract<Game, { type: 'sort' }>; report: Repor
 // ---------- Order: tap steps in sequence ----------
 function Order({ g, report }: { g: Extract<Game, { type: 'order' }>; report: Report }) {
   const [r, setR] = useState(0);
-  const [mix, setMix] = useState<string[]>([]);
-  const [chosen, setChosen] = useState<string[]>([]);
   const [res, setRes] = useState<boolean | null>(null);
   const [ok, setOk] = useState(0);
   const round = g.rounds[r];
-  useEffect(() => { if (round) setMix(shuffle(round.items)); setChosen([]); setRes(null); }, [round]);
+  useEffect(() => { setRes(null); }, [round]);
   if (!round) return (
     <div className="card lm-card lm-done"><div className="lm-big">{ok}<small>/{g.rounds.length}</small></div><button className="btn pri" onClick={() => { setR(0); setOk(0); }}>Play again</button></div>
   );
-  const check = () => { const good = chosen.every((c, i) => c === round.items[i]); setRes(good); if (good) setOk(o => o + 1); };
-  const next = () => { if (r === g.rounds.length - 1) report(Math.round((ok) / g.rounds.length * 100)); setR(r + 1); };
+  const check = (good: boolean) => { setRes(good); if (good) setOk(o => o + 1); };
+  const next = () => { if (r === g.rounds.length - 1) report(Math.round(ok / g.rounds.length * 100)); setR(r + 1); };
   return (
     <div className="card lm-card">
       <div className="lm-prog"><span>Puzzle {r + 1} of {g.rounds.length}</span><span>{ok} right</span></div>
       <p className="lm-q"><H html={round.q} /></p>
-      <ol className="lm-ord">{chosen.map((c, i) => <li key={i} className={res === null ? '' : c === round.items[i] ? 'right' : 'wrong'}>{c}</li>)}</ol>
-      {res === null && <>
-        <div className="lm-pool">{mix.filter(m => !chosen.includes(m)).map(m => <button key={m} className="lm-tok" onClick={() => setChosen(c => [...c, m])}>{m}</button>)}</div>
-        <div className="lm-act"><button className="btn" disabled={!chosen.length} onClick={() => setChosen(c => c.slice(0, -1))}>Undo</button><button className="btn pri" disabled={chosen.length !== round.items.length} onClick={check}>Check order</button></div>
-      </>}
+      <OrderBoard items={round.items} result={res} onCheck={check} />
       {res !== null && <>
         <div className={'fb ' + (res ? 'right' : 'wrong')} role="status">{res ? 'In order.' : `Correct order: ${round.items.join(' → ')}`}</div>
         <div className="lm-act"><button className="btn pri" autoFocus onClick={next}>{r === g.rounds.length - 1 ? 'See my score' : 'Next puzzle'}</button></div>

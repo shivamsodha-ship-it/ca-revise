@@ -67,3 +67,6 @@ One development to know about: search results report that RBI issued consolidate
 - 70 numericals given `nums`; every figure recomputed in Python (helper agent for ICAI papers, main session for SM). All ICAI figures within 0.25% except those listed in research/fr-ch09.md with corrected workings.
 - Mastery layer: every solver and numeric recall figure recomputed in scripts/learn-src/fr-ch09.mjs check() — 0 mismatches.
 - Level l09 figures rewritten to the SM's own units (₹1 million / ₹10,00,000) after audit VERIFY.
+
+## fr-ch09 (14 Oct 2026, later)
+- Removed all 'Corrected working (app)' / 'Note (app)' paragraphs: apparent ICAI slips were not verified against the PDF page images and are likely text-extraction artefacts. ICAI text kept as published.

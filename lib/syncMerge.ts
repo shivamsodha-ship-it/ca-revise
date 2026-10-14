@@ -5,17 +5,18 @@
 import type { CaseState } from './progress';
 import type { CardProgress } from './spacedRep';
 import { mergeLearn, type LearnState } from './learnData';
+import { mergeBoard, mergeFocus, type Board, type Focus } from './plan';
 
 export const KEY_PREFIX = 'ca-revise:v1:';
 
 const SUBJECTS = ['fr', 'afm', 'aaa'];
 const CHAPTER = /^[a-z0-9-]{1,60}$/;
 
-// Keys that travel: case progress, flip-card schedule, written attempts, streak, last-day plan.
+// Keys that travel: case progress, flip-card schedule, written attempts, streak, last-day plan, syllabus board, focus log.
 export function isSyncKey(key: string): boolean {
   if (!key.startsWith(KEY_PREFIX)) return false;
   const rest = key.slice(KEY_PREFIX.length);
-  if (rest === 'streak') return true;
+  if (rest === 'streak' || rest === 'board' || rest === 'focus') return true;
   const [kind, id] = rest.split(/:(.+)/);
   if (!id) return false;
   if (kind === 'case' || kind === 'prog' || kind === 'prac' || kind === 'learn') return CHAPTER.test(id);
@@ -87,6 +88,8 @@ export function mergeValue(key: string, a: unknown, b: unknown): unknown {
   const rest = key.slice(KEY_PREFIX.length);
   try {
     if (rest === 'streak') return mergeStreak(a as StreakState, b as StreakState);
+    if (rest === 'board') return mergeBoard(a as Board, b as Board);
+    if (rest === 'focus') return mergeFocus(a as Focus, b as Focus);
     const kind = rest.split(':')[0];
     if (kind === 'case') return mergeCase(a as CaseState, b as CaseState);
     if (kind === 'prog') return mergeProg(a as Record<string, CardProgress>, b as Record<string, CardProgress>);
@@ -101,6 +104,8 @@ export function mergeValue(key: string, a: unknown, b: unknown): unknown {
 export function validValue(key: string, v: unknown): boolean {
   const rest = key.slice(KEY_PREFIX.length);
   if (rest === 'streak') return !!v && typeof v === 'object' && !Array.isArray(v);
+  if (rest === 'board') return !!v && typeof v === 'object' && !!(v as Board).items && typeof (v as Board).items === 'object';
+  if (rest === 'focus') return !!v && typeof v === 'object' && !!(v as Focus).log && typeof (v as Focus).log === 'object';
   const kind = rest.split(':')[0];
   if (kind === 'prac') return Array.isArray(v);
   return !!v && typeof v === 'object' && !Array.isArray(v);

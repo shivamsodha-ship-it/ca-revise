@@ -2,6 +2,7 @@ import type { Chapter, ChapterIndexRow, Subject } from './types';
 import type { Casebook } from './casebook';
 import { formulaCards } from './formulaCards';
 import type { LearnData } from './learnData';
+import type { SeedChapter } from './plan';
 
 // Subjects shown on the home page, in this order.
 export const SUBJECTS: { id: Subject; label: string; long: string }[] = [
@@ -82,3 +83,6 @@ export async function countChapter(row: ChapterIndexRow): Promise<ChapterCounts>
     sections: ch.sections.length,
   };
 }
+
+// Built chapters as plain rows for the Today screen and the syllabus board.
+export const seedChapters = (): SeedChapter[] => listChapters().map(c => ({ id: c.id, s: c.subject, n: c.number, t: c.title }));

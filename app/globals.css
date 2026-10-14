@@ -873,3 +873,43 @@ body { background: radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, 
 .acct-chip { margin-left: auto; max-width: 9.5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-soft); padding: 6px 12px; border-radius: 999px; text-decoration: none; min-height: 32px; display: inline-flex; align-items: center }
 .acct-chip:hover { filter: brightness(.96) }
 .acct-chip + .streak { margin-left: 8px }
+
+/* ---------- today (home) and syllabus board ---------- */
+.today { display: grid; gap: 12px; margin: 8px 0 20px }
+.countdown { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px }
+.cd { display: flex; flex-direction: column; gap: 2px; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); color: var(--ink); text-decoration: none; min-width: 0 }
+.cd:hover { border-color: var(--blue) }
+.cd-l { font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--blue) }
+.cd b { font-family: var(--disp); font-size: clamp(1.7rem, 6vw, 2.4rem); line-height: 1; font-variant-numeric: tabular-nums }
+.cd .muted { font-size: 12px }
+.cd-r { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums }
+.cd-bar { position: relative; display: block; height: 6px; margin-top: 8px; border-radius: 99px; background: var(--card2) }
+.cd-bar i { position: absolute; inset: 0 auto 0 0; border-radius: 99px; background: var(--blue); transition: width var(--t-med) var(--ease-out) }
+.cd-bar em { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--ink); opacity: .55 }
+.cd-bar.big { height: 10px; margin: 0 0 14px }
+.focus { padding: 18px }
+.focus h2 { font-size: 1.35rem }
+.clock { font-family: var(--disp); font-size: clamp(3.4rem, 16vw, 5.5rem); line-height: 1; margin: 6px 0 10px; font-variant-numeric: tabular-nums; color: var(--blue) }
+.focus-go { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 10px }
+.pickch, .brow select { min-height: var(--tap); max-width: 100%; margin-top: 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); font: inherit }
+.daygoal { padding: 16px }
+.daygoal h2 { font-size: 1.2rem }
+.pipsrow { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px }
+.pipsrow i { width: 22px; height: 22px; border-radius: 6px; border: 1px solid var(--line); background: var(--card2) }
+.pipsrow i.on { background: var(--n); border-color: var(--n) }
+.week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; height: 84px; align-items: end }
+.wk { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; gap: 4px }
+.wk i { width: 100%; max-width: 28px; border-radius: 4px 4px 0 0; background: var(--muted); opacity: .45 }
+.wk i.hit { background: var(--n); opacity: 1 }
+.wk small { font-size: 11px; color: var(--muted) }
+.home-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px }
+.brows { list-style: none; padding: 0; margin: 0 0 12px; border-top: 1px solid var(--line) }
+.brow { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--line) }
+.brow-t { flex: 1; min-width: 0; overflow-wrap: anywhere }
+.brow-t small { display: block; font-family: var(--mono); font-size: 11.5px; color: var(--muted) }
+.brow select { margin-top: 0; flex: none; width: 9.5rem }
+.brow.st-sure .brow-t { color: var(--n) }
+.brow.st-skip .brow-t { color: var(--muted); text-decoration: line-through }
+.badd summary { min-height: var(--tap); display: flex; align-items: center; cursor: pointer; font-weight: 700; color: var(--blue) }
+.badd textarea { width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); margin-bottom: 8px }
+@media (max-width: 420px) { .brow { flex-wrap: wrap } .brow select { width: auto; flex: 1 } }

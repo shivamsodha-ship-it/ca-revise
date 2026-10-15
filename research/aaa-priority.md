@@ -6,7 +6,7 @@ Each file was checked by its own header (paper, series, attempt) before it was u
 **Method (app-written, approximate).** Every question (the text before a "(N Marks)" marker) is matched to the SM chapter whose own text it resembles most, using ICAI's chapter PDFs (TF-IDF cosine over words and word pairs; `scripts/rank-sweep.py`). *Share* = the chapter's marks in a paper as a percentage of all marks listed in that paper, averaged over the question papers. Papers list about 118 marks for a 100-mark paper because of internal choice, so the share is of marks asked, not of marks a student writes. *Desc* = descriptive marks across the question papers; *MCQ* = 2-mark MCQ marks, which the matcher classifies less reliably because the case scenario is not part of the question text. *QP* = number of question papers (of those fetched) with the chapter. *RTP/MTP* = questions matched.
 This orders the build; it is not an ICAI marks count. A question that mixes chapters is counted once, under the closest. Treat shares within about 1 point as equal.
 
-**Could not use:** the May 2026 question papers (scanned images, no text; no OCR here), the Nov 2023 question papers (Drive copies returned a web page, not a PDF), the May 2022 AAA paper (not on the index), and ICAI's Nov 2024 – Sep 2025 MTPs that the index does not link. Two MTP answer-only files were skipped.
+**Could not use:** the May 2026 question papers (scanned images, no text; no OCR here), the Nov 2023 question papers (Drive copies returned a web page, not a PDF), the May 2022 AAA paper (not on the index), and any MTP not on the index (the 11 series used run Mar 2024 to Sep 2026). MTP answer-only files were skipped.
 
 | Ch | Chapter | Share of paper (%) | Cumulative (%) | Desc marks | MCQ marks | QP | RTP | MTP | In app |
 |---|---|---|---|---|---|---|---|---|---|
@@ -29,3 +29,4 @@ This orders the build; it is not an ICAI marks count. A question that mixes chap
 | 9 | Related Services | 1.9 | 96.4 | 14 | 0 | 3 | 3 | 1 |  |
 | 15 | Overview of Audit of Public Sector Undertakings | 1.8 | 98.2 | 5 | 10 | 4 | 6 | 17 | built |
 | 11 | Prospective Financial Information and Other Assurance Services | 1.6 | 99.8 | 13 | 0 | 3 | 3 | 5 |  |
+AAA note: MTP Series I Nov 2025 and Mar 2026 gave no readable questions and add nothing to the MTP counts.

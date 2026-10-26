@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PrintButton from '@/components/PrintButton';
+import WeightageTable from '@/components/WeightageTable';
 import { SUBJECTS, subjectOf } from '@/lib/registry';
 import weightage from '../../../data/lastday/weightage.json';
 
@@ -21,7 +22,6 @@ export default function Weightage({ params }: { params: { subject: string } }) {
   const s = subjectOf(params.subject);
   const w = W[params.subject];
   if (!s || !w) notFound();
-  const sum = (f: (r: Row) => number) => w.rows.reduce((n, r) => n + f(r), 0);
   return (
     <>
       <header className="topbar noprint"><div className="topbar-in">
@@ -34,32 +34,10 @@ export default function Weightage({ params }: { params: { subject: string } }) {
           <p className="eyebrow">{s.long}</p>
           <h1 className="vh">{s.label}: chapter-wise weightage, last three attempts</h1>
           <p className="muted">Sep 2025, Jan 2026 and May 2026, from ICAI&apos;s question papers. Marks are as printed. Each paper sets 118 marks counting both alternatives of an EITHER/OR question (114 otherwise) and you attempt 100: Part I (30) and Q1 are compulsory, and you answer four of Q2 to Q6. Compulsory marks are always attempted; choice marks can be skipped. Chapter mapping is the app&apos;s analysis of ICAI&apos;s papers and answers{s.id === 'fr' ? '; FR is grouped by Ind AS standard with its study-material chapter' : ''}.</p>
-          <p className="noprint"><PrintButton /> <Link className="btn" href={`/${s.id}/analysis`}>Full analysis →</Link> <Link className="btn" href="/write-plan">Writing plan →</Link></p>
+          <p className="noprint"><PrintButton /> <Link className="btn" href={`/${s.id}/analysis`}>Full analysis →</Link> <Link className="btn" href={`/${s.id}/write-plan`}>Writing plan →</Link></p>
         </header>
 
-        <div className="wt-scroll">
-          <table className="wt-t">
-            <thead><tr>
-              <th>#</th><th className="wt-unit">{s.id === 'fr' ? 'Ind AS / SM unit' : 'SM chapter'}</th>
-              {w.attempts.map(a => <th key={a}>{a}</th>)}
-              <th>Total</th><th>% of marks set</th><th>Compulsory</th><th>Choice</th><th>Seen in</th>
-            </tr></thead>
-            <tbody>
-              {w.rows.map((r, i) => (
-                <tr key={r.unit}>
-                  <td>{i + 1}</td><td className="wt-unit">{r.unit}</td>
-                  {w.attempts.map(a => <td key={a}>{r.by[a] || '–'}</td>)}
-                  <td><strong>{r.total}</strong></td><td>{r.pct}%</td><td>{r.comp || '–'}</td><td>{r.choice || '–'}</td><td>{r.n} of 3</td>
-                </tr>
-              ))}
-            </tbody>
-            <tfoot><tr>
-              <td /><td className="wt-unit">Total marks set</td>
-              {w.attempts.map(a => <td key={a}>{w.setPerAttempt[a]}</td>)}
-              <td>{sum(r => r.total)}</td><td>100%</td><td>{sum(r => r.comp)}</td><td>{sum(r => r.choice)}</td><td />
-            </tr></tfoot>
-          </table>
-        </div>
+        <WeightageTable subject={s.id} />
 
         <h2 className="pk-h wt-break">What each chapter was tested on</h2>
         <p className="muted pk-note">Every question from the three papers, under its chapter: attempt, question, marks and the concept. &ldquo;C&rdquo; marks a compulsory question (Part I or Q1).</p>

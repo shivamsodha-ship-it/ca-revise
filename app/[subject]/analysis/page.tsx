@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Md from '@/components/Md';
+import WeightageTable from '@/components/WeightageTable';
 import { SUBJECTS, subjectOf } from '@/lib/registry';
 import { analysisOf } from '@/lib/writePlan';
 
@@ -28,8 +29,11 @@ export default function Analysis({ params }: { params: { subject: string } }) {
           <p className="eyebrow">{s.long}</p>
           <h1 className="vh">Last three attempts: topics and weightage</h1>
           <p className="muted">Marks and question labels are as printed by ICAI; chapter mapping, concept names and the paragraphs are the app&apos;s analysis of ICAI&apos;s papers and answers. A paper sets 114 marks (30 MCQ, compulsory Q1, five choice questions); you attempt 100.</p>
-          <p><Link className="btn primary" href={`/${s.id}/weightage`}>Printable weightage table →</Link> <Link className="btn" href="/write-plan">Writing plan →</Link></p>
+          <p><Link className="btn primary" href={`/${s.id}/weightage`}>Printable weightage table →</Link> <Link className="btn" href={`/${s.id}/write-plan`}>Writing plan →</Link></p>
         </header>
+        <h2 className="pk-h">{s.label}: chapter-wise weightage</h2>
+        <WeightageTable subject={s.id} />
+        <p className="muted pk-note">Concepts under each chapter, and a printable version: <Link href={`/${s.id}/weightage`}>weightage page</Link>. The detailed analysis follows.</p>
         <Md text={a.analysis} />
       </main>
     </>

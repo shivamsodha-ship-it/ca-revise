@@ -12,6 +12,7 @@ type Plans = Record<string, { days: PlanDay[] }>;
 const P = plan as unknown as Plans;
 export const SUBJECT_ORDER = ['fr', 'afm', 'aaa'] as const;
 
+export const subjectDates = (subject: string): string[] => (P[subject]?.days ?? []).map(d => d.date).sort();
 export const planDates = (): string[] => [...new Set(Object.values(P).flatMap(s => s.days.map(d => d.date)))].sort();
 export const dayOf = (subject: string, date: string): PlanDay | undefined => P[subject]?.days.find(d => d.date === date);
 export const analysisOf = (subject: string): { analysis: string; plan: string } | undefined =>

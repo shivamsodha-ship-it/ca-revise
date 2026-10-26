@@ -875,8 +875,8 @@ body { background: radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, 
 .acct-chip + .streak { margin-left: 8px }
 
 /* ---------- today (home) and syllabus board ---------- */
-.today { display: grid; gap: 12px; margin: 8px 0 20px }
-.countdown { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px }
+.today { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin: 8px 0 20px }
+.countdown { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px }
 .cd { display: flex; flex-direction: column; gap: 2px; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); color: var(--ink); text-decoration: none; min-width: 0 }
 .cd:hover { border-color: var(--blue) }
 .cd-l { font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--blue) }
@@ -963,3 +963,43 @@ body { background: radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, 
 .md-t th { background: var(--card2); white-space: nowrap }
 .md-t td { min-width: 90px }
 .md code { font-family: var(--mono); font-size: 12.5px }
+
+/* Home: last-day package */
+.ld { margin: 18px 0 22px }
+.ld-h { font-size: 1.25rem; margin: 0 0 4px }
+.ld-p { font-size: 14px; margin: 0 0 12px }
+.ld-wp { margin-bottom: 12px }
+.ld-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px }
+.ld-card { padding: 14px; display: grid; gap: 2px; border-top: 4px solid var(--blue) }
+.ld-long { font-size: 12.5px; margin-bottom: 6px }
+.ld-link { display: flex; align-items: center; min-height: var(--tap); border-top: 1px solid var(--line); color: var(--blue); font-weight: 700; text-decoration: none }
+
+/* Weightage table: screen and print */
+.wt-scroll { overflow-x: auto; max-width: 100%; margin: 0 0 18px; border: 1px solid var(--line); border-radius: 10px }
+.wt-t { border-collapse: collapse; width: 100%; font-size: 13px }
+.wt-t th, .wt-t td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top }
+.wt-t th { background: var(--card2); font-size: 12px }
+.wt-t .wt-unit, .wt-d td:last-child, .wt-d th:last-child { text-align: left }
+.wt-t .wt-unit { min-width: 190px }
+.wt-t tfoot td { font-weight: 800; border-top: 2px solid var(--ink) }
+.wt-d { margin: 0 0 8px }
+.wt-d td:nth-child(1) { white-space: nowrap }
+.wt-h { font-size: 1rem; margin: 16px 0 4px }
+.wt-h .muted { font-size: 12.5px; font-weight: 400 }
+.wt-ch { overflow-x: auto; max-width: 100% }
+@media print {
+  @page { size: A4; margin: 12mm }
+  .noprint, .topbar { display: none !important }
+  html, body { background: #fff !important; color: #000 !important }
+  .page { max-width: none !important; padding: 0 !important }
+  .wt .muted { color: #333 !important }
+  .wt-scroll { overflow: visible; border: 0 }
+  .wt-t { font-size: 9.5pt }
+  .wt-t th, .wt-t td { border: 1px solid #888; padding: 3px 5px }
+  .wt-t th { background: #eee !important; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  .wt-t tr { break-inside: avoid }
+  .wt-break { break-before: page }
+  .wt-ch { break-inside: avoid-page; overflow: visible }
+  .wt-h { break-after: avoid; font-size: 10.5pt }
+  .vh { font-size: 15pt }
+}

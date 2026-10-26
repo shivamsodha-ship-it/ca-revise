@@ -28,7 +28,7 @@ export default function Analysis({ params }: { params: { subject: string } }) {
           <p className="eyebrow">{s.long}</p>
           <h1 className="vh">Last three attempts: topics and weightage</h1>
           <p className="muted">Marks and question labels are as printed by ICAI; chapter mapping, concept names and the paragraphs are the app&apos;s analysis of ICAI&apos;s papers and answers. A paper sets 114 marks (30 MCQ, compulsory Q1, five choice questions); you attempt 100.</p>
-          <p><Link className="btn" href="/write-plan">Writing plan →</Link></p>
+          <p><Link className="btn primary" href={`/${s.id}/weightage`}>Printable weightage table →</Link> <Link className="btn" href="/write-plan">Writing plan →</Link></p>
         </header>
         <Md text={a.analysis} />
       </main>

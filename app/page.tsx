@@ -18,13 +18,13 @@ export default function Home() {
         <section className="ld" aria-labelledby="ld-h">
           <h2 id="ld-h" className="ld-h">Last-day package</h2>
           <p className="muted ld-p">For the chapters not built yet: ICAI&apos;s most-asked questions with ICAI&apos;s answers, what the last three papers tested, and a daily handwriting plan.</p>
-          <Link className="btn primary ld-wp" href="/write-plan">Daily writing plan →</Link>
           <div className="ld-grid">
             {SUBJECTS.map(s => (
               <div key={s.id} className="card ld-card" data-subj={s.id}>
                 <strong>{s.label}</strong><span className="muted ld-long">{s.long}</span>
-                <Link className="ld-link" href={`/${s.id}/must-do`}>Must-do packs</Link>
                 <Link className="ld-link" href={`/${s.id}/weightage`}>Chapter-wise weightage (printable)</Link>
+                <Link className="ld-link" href={`/${s.id}/must-do`}>Must-do packs</Link>
+                <Link className="ld-link" href={`/${s.id}/write-plan`}>Daily writing plan</Link>
                 <Link className="ld-link" href={`/${s.id}/analysis`}>Last 3 attempts: full analysis</Link>
                 <Link className="ld-link" href={`/${s.id}/last-day`}>Timed last-day plan</Link>
                 <Link className="ld-link" href={`/${s.id}/formulas`}>Formula bank</Link>

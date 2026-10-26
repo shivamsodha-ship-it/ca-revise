@@ -1,12 +1,12 @@
 # AFM: topic analysis of the last three attempts (Sep 2025, Jan 2026, May 2026)
 
-Prepared 26 Oct 2026 for the AFM exam on 4 Nov 2026. Marks, question labels and question text come from the ICAI papers. Everything else (chapter mapping, concept names, groupings, paragraphs) is **app-written analysis**.
+Prepared 26 Oct 2026 for the AFM exam on 4 Nov 2026 (May 2026 rows updated from ICAI's published suggested answers). Marks, question labels and question text come from the ICAI papers. Everything else (chapter mapping, concept names, groupings, paragraphs) is **app-written analysis**.
 
 ## Sources and reading notes
 
 - Sep 2025 and Jan 2026: ICAI suggested-answer files (text layer), `work/papers/afm_sep25_qp_2.txt`, `work/papers/afm_jan26_qp_2.txt`.
-- May 2026: image-only question paper `work/papers/afm_may26_qp_1.pdf`, all 24 pages read as images; marks are as printed. No ICAI suggested answers are published yet.
-- **Not clearly readable:** May 2026 Q2(a). Its marks figure is cut off at the page edge in the scan. I recorded 6 marks because a '6' shows at the edge of the facing page and 14 - 4 - 4 = 6. Please treat this one value as inferred.
+- May 2026: ICAI suggested answers including the full question paper, `work/papers/afm_may26_sa_1.txt` (published after the first version of this file). The May 2026 rows were re-checked against it; the earlier read of the scanned paper `afm_may26_qp_1.pdf` agreed on every mark and every question.
+- **May 2026 Q2(a) is printed as 6 marks** in the ICAI file (earlier inferred from the scan, now confirmed). Nothing in the three papers is unreadable. Concept wording for May 2026 rows was refined from ICAI's answers (Q1(a), Q1(b), Q2(a), Q3(a), Q4(b), Q4(c) or, Q5(b)); no chapter mapping changed. For MCQs ICAI publishes only an answer key; for MCQ 6 the key says 'No correct option'.
 - Chapter mapping uses the SM chapter text in `work/sm/afm/`. Mappings that are judgement calls: Jan 2026 Q1(b) (bonus issue to meet the promoter-holding limit; nearest SM material is Ch 14 free-float and promoter-holding illustrations), Jan 2026 MCQ CS-V (expected value of profit; nearest is Ch 3 probability/expected value), Sep 2025 Q1(a) (EV/EBITDA is Ch 13, the CAPM part is Ch 5), May 2026 Q1(a) (foreign project with a currency swap; filed under Ch 11, swaps also appear in Ch 10), May 2026 Q4(b) (closed-ended fund; filed under Ch 8).
 
 ## How marks are counted (student's correction applied)
@@ -21,7 +21,7 @@ So a topic in Part I or Q1 is always attempted; a topic that sits only in Q2 to 
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | Sep 2025 | 30 (15 x 2) | 14 (6+4+4) | 14 (6+4+4) | 14 (6+4+4) | 14 (6+4+4, c is either/or) | 14 (7+7) | 14 (7+7) | 114 | 4 (Q4(c) or) | 118 | none |
 | Jan 2026 | 30 (15 x 2) | 14 (6+4+4) | 14 (6+4+4) | 14 (6+4+4) | 14 (6+4+4) | 14 (8+6) | 14 (6+4+4, c is either/or) | 114 | 4 (Q6(c) or) | 118 | none |
-| May 2026 | 30 (15 x 2) | 14 (6+4+4) | 14 (6?+4+4) | 14 (6+4+4) | 14 (6+4+4, c is either/or) | 14 (5+7+2) | 14 (7+7) | 114 | 4 (Q4(c) or) | 118 | Q2(a) marks inferred |
+| May 2026 | 30 (15 x 2) | 14 (6+4+4) | 14 (6+4+4) | 14 (6+4+4) | 14 (6+4+4, c is either/or) | 14 (5+7+2) | 14 (7+7) | 114 | 4 (Q4(c) or) | 118 | none |
 
 Each paper's printed marks total 30 + 14 + 5 x 14 = 114 (118 if both OR alternatives are counted). Each of the six Part II questions carries 14, so any four of the five choice questions plus Q1 and Part I gives exactly 100.
 
@@ -93,24 +93,52 @@ Marks for MCQ case scenarios = 3 MCQs x 2 marks. Where a question is either/or, 
 | May 2026 | MCQ CS-III 7-9 | 6 | Compulsory (Part I) | Ch 14 Mergers, Acquisitions and Corporate Restructuring | Takeover defence and restructuring terms: poison pill, greenmail, carve-out (identify the tactic from a description) | MCQ |
 | May 2026 | MCQ CS-IV 10-12 | 6 | Compulsory (Part I) | Ch 2 Risk Management | Value at Risk of a two-stock portfolio (annual VaR at 99%), diversification benefit at 90%, effect of change in correlation | MCQ |
 | May 2026 | MCQ CS-V 13-15 | 6 | Compulsory (Part I) | Ch 10 Foreign Exchange Exposure and Risk Management | Forward purchase contract: maturity settlement cost, closing out and rebooking, early settlement outflow, mark-to-market gain/loss on cancellation | MCQ |
-| May 2026 | Q1(a) | 6 | Compulsory (Q1) | Ch 11 International Financial Management | Project in a foreign country with a currency swap on initial/terminal principal and forwards for other flows: NPV in rupees, including facilitation fee | Numerical |
-| May 2026 | Q1(b) | 4 | Compulsory (Q1) | Ch 5 Security Valuation | H-model intrinsic value with linearly declining growth (from ROE and retention), and % over/undervaluation against market price | Numerical |
+| May 2026 | Q1(a) | 6 | Compulsory (Q1) | Ch 11 International Financial Management | Foreign project with a currency swap at spot for the initial and terminal principal; forward rates for technical fees and the excess resale proceeds; PV of facilitation fee; NPV in rupees and accept/reject | Numerical |
+| May 2026 | Q1(b) | 4 | Compulsory (Q1) | Ch 5 Security Valuation | H-model intrinsic value (long-run growth = terminal ROE x retention; H = half of transition period) and % overvaluation against market price | Numerical |
 | May 2026 | Q1(c) | 4 | Compulsory (Q1) | Ch 1 Financial Policy and Corporate Strategy | Sustainable growth rate versus target growth: concerns on an additional loan request and two alternative courses of action | Theory |
-| May 2026 | Q2(a) | 6 | Choice | Ch 6 Portfolio Management | Two-factor Arbitrage Pricing Theory: test whether two securities are correctly priced; long-short portfolio amounts for target factor sensitivities | Numerical |
-| May 2026 | Q2(b) | 4 | Choice | Ch 9 Derivatives Analysis and Valuation | Six options (calls and puts, three strikes): ITM/ATM/OTM, intrinsic and time value, rational exercise and profit/loss per contract for +150 and -150 expiry prices | Numerical |
+| May 2026 | Q2(a) | 6 | Choice | Ch 6 Portfolio Management | Two-factor APT: required return = Rf + sum of risk premium x beta, tested against actual return; long and short amounts from two simultaneous equations for target sensitivities | Numerical |
+| May 2026 | Q2(b) | 4 | Choice | Ch 9 Derivatives Analysis and Valuation | Six options (calls and puts, three strikes): ITM/ATM/OTM, intrinsic and time value, exercise or decline and net profit/loss per contract at +150 and -150 expiry prices | Numerical |
 | May 2026 | Q2(c) | 4 | Choice | Ch 15 Startup Finance | True/False with justification on start-up finance: valuation of early-stage firms, venture capital staging, bootstrapping, angel investors | Theory |
-| May 2026 | Q3(a) | 6 | Choice | Ch 11 International Financial Management | Adjusted Present Value of a project in Europe with 50% debt: cheapest borrowing currency using interest rate parity, then APV | Numerical |
+| May 2026 | Q3(a) | 6 | Choice | Ch 11 International Financial Management | Project in Europe with 50% debt: forward rates by interest rate parity, cheapest borrowing option, then APV (unlevered NPV at 12% plus PV of tax shield at 5%); ICAI gives a main and an alternative answer | Numerical |
 | May 2026 | Q3(b) | 4 | Choice | Ch 8 Mutual Funds | Dividend plan versus bonus plan of a mutual fund: total return and holding period return after entry/exit loads; which plan is better | Numerical |
 | May 2026 | Q3(c) | 4 | Choice | Ch 7 Securitization | Securitisation of NPAs: benefit to balance sheet versus regulatory and valuation challenges | Theory |
 | May 2026 | Q4(a) | 6 | Choice | Ch 6 Portfolio Management | Sharpe single-index model optimal portfolio with given cut-off rate: securities selected, proportions, CAPM expected return and value, consistency with CAPM | Numerical |
-| May 2026 | Q4(b) | 4 | Choice | Ch 8 Mutual Funds | Closed-ended fund: average return per period (geometric mean) for an investor, geometric growth of NAV, premium/discount interpretation | Numerical |
+| May 2026 | Q4(b) | 4 | Choice | Ch 8 Mutual Funds | Closed-ended fund: market price from NAV and premium/discount, total, average and geometric return per period for the investor, geometric growth of NAV, interpretation | Numerical |
 | May 2026 | Q4(c) [either] | 4 | Choice | Ch 4 Security Analysis | Elliott Wave Theory of technical analysis | Theory |
-| May 2026 | Q4(c) [or] | 4 | Choice | Ch 12 Interest Rate Risk Management | Zero-cost collar on a floating-rate loan: floor rate that offsets cap premium (cap 9.5%, expected rates and discount factors given) | Numerical |
+| May 2026 | Q4(c) [or] | 4 | Choice | Ch 12 Interest Rate Risk Management | Zero-cost collar on a floating-rate loan: value of cap = value of floor (intrinsic value, PV of payoffs); solve the floor rate | Numerical |
 | May 2026 | Q5(a) | 5 | Choice | Ch 5 Security Valuation | Two-stage FCFE valuation: PV of high-growth FCFE, and implied terminal growth rate for a given market price | Numerical |
-| May 2026 | Q5(b) | 7 | Choice | Ch 12 Interest Rate Risk Management | Re-pricing (gap) analysis for a bank: gap position, effect of repo rate change on NII, Earnings at Risk versus policy limit and hedging decision | Numerical |
+| May 2026 | Q5(b) | 7 | Choice | Ch 12 Interest Rate Risk Management | Re-pricing gap (RSA - RSL): negative gap, favourable/unfavourable scenario, Earnings at Risk = gap x rate change x 1/4 versus 8% of NII limit, hedging decision | Numerical |
 | May 2026 | Q5(c) | 2 | Choice | Ch 10 Foreign Exchange Exposure and Risk Management | Why transaction exposure is generally more critical than translation exposure | Theory |
 | May 2026 | Q6(a) | 7 | Choice | Ch 14 Mergers, Acquisitions and Corporate Restructuring | Acquisition with cash, hybrid equity and hybrid convertible-bond offers: synergies, P/E, fair value per share, shares offered, ranking of the offers | Numerical |
 | May 2026 | Q6(b) | 7 | Choice | Ch 9 Derivatives Analysis and Valuation | Black-Scholes: hedge ratio (N(d1)), probability of expiry above exercise price, value of call and put | Numerical |
+
+### May 2026: what ICAI's suggested answers rely on
+
+| Q label | Marks | ICAI answer relies on |
+|---|---|---|
+| MCQ CS-I 1-3 | 6 | ICAI answer key only: Q1 (B), Q2 (D), Q3 (C); no workings published |
+| MCQ CS-II 4-6 | 6 | ICAI answer key only: Q4 (C), Q5 (A), Q6 'No correct option'; no workings published |
+| MCQ CS-III 7-9 | 6 | ICAI answer key only: Q7 (C), Q8 (D), Q9 (B) |
+| MCQ CS-IV 10-12 | 6 | ICAI answer key only: Q10 (C), Q11 (D), Q12 (A) |
+| MCQ CS-V 13-15 | 6 | ICAI answer key only: Q13 (C), Q14 (B), Q15 (A) |
+| Q1(a) | 6 | Swap at spot 50 for 4,000m VL = Rs 80m both ends; fees and excess 4,000m VL converted at forward rates; PV factors at 14%; fee PV on 2.913; NPV Rs 8.2526m, accept |
+| Q1(b) | 4 | H-model: gn = 12% x 0.50 = 6%, gc = 15%, H = 2.50, Ke 13%; value Rs 734.28; market Rs 850 overvalued by 15.76% (or 13.61% on price) |
+| Q1(c) | 4 | Concerns: debt already at 2.5:1, 16% growth above 10% sustainable growth, inflation raises financing need; alternatives: raise equity, cut growth to 10% or lower |
+| Q2(a) | 6 | APT required return X 13.3% (actual 14%, underpriced), Y 16.2% (actual 16%, overpriced); equations 1.2L - 0.8S = 1,40,000 and 0.5L - 1.4S = 5,000 give long Rs 1,50,000, short Rs 50,000 |
+| Q2(b) | 4 | Table: A ITM (intrinsic 80, time 50), B and E ATM, C and D OTM, F ITM (intrinsic 80, time 75); scenario tables of exercise/decline and total profit per lot |
+| Q2(c) | 4 | (i) False, (ii) True, (iii) True, (iv) False, each with a short justification |
+| Q3(a) | 6 | IRP forward rates 93.42 and 97.01 (EUR/INR); main answer picks EUR borrowing (post-tax 3.5%); unlevered NPV Rs 41.8525m + tax shield Rs 5.3077m = APV Rs 47.1602m; alternative answer compares total outflows and picks INR |
+| Q3(b) | 4 | Dividend plan 19.8962% (14,705.88 units after 2% entry load, reinvestment, exit load); bonus plan 31.38% on its own figures; bonus plan higher |
+| Q3(c) | 4 | Benefits (lower gross NPAs, better capital adequacy) versus valuation, regulatory compliance, moral hazard and market appetite challenges |
+| Q4(a) | 6 | Ratios (R-Rf)/beta: A 7.86, B 8.18, C 7.77, D 8.33 versus C* 7.95: select B and D; weights D 63.8%, B 36.2%; CAPM: both undervalued; consistent with CAPM |
+| Q4(b) | 4 | Market price = NAV x (1 + premium/discount); total return 15.96%, average 3.99%, geometric 3.771% per period; NAV geometric growth 2.76% |
+| Q4(c) [either] | 4 | Elliott formulated in 1934; impulsive (basic) waves and corrective (reaction) waves; full cycle of 8 waves |
+| Q4(c) [or] | 4 | Zero-cost collar: cap value = floor value; cap payoff 1.10 crore in Year 4 PV 0.924 crore; floor pays in Years 1 to 3 |
+| Q5(a) | 5 | Ke 12%; FCFE Year 1 57.00, Year 2 85.25, Year 3 onwards 241.875; PV of stage 1 Rs 118.84 crore; implied terminal g 10.51% (alternative presentation 10.50%) |
+| Q5(b) | 7 | Gap = 12,500 - 15,800 = -3,300 crore (negative); Scenario A unfavourable, B favourable; EaR (A) = -4.125 crore (-0.9167% of NII) against the 8% limit (Rs 36 crore), so no hedging needed |
+| Q5(c) | 2 | Transaction exposure affects actual cash flows, whereas translation exposure is an accounting effect |
+| Q6(a) | 7 | Synergy PAT Rs 400 crore; MedGen fair value Rs 18,900 crore, P/E 42x, industry P/E 35, Rs 3,780 per share; Offer 2 X = 10 shares (or 13); ranking at Rs 330: Offer 3, 2, 1 (alternative ranking with 13 shares) |
+| Q6(b) | 7 | N(d1) = 0.7045 (hedge ratio about 0.70); d2 = 0.4264, N(d2) = 0.6651 (about 67%); call Rs 8.89, put Rs 2.63 by put-call parity |
 
 ## 2(a). Weightage by SM chapter
 
@@ -200,7 +228,7 @@ Denominator: marks **set** on the paper: 118 per attempt counting both OR altern
 
 ## 2(b). Repeat list
 
-Concepts are grouped by technique, even when the wording differs. Codes R1 to R19 are used in the writing plan.
+Concepts are grouped by technique, even when the wording differs. Codes R1 to R18 are used in the writing plan.
 
 ### Tested in all 3 attempts
 

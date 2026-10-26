@@ -108,7 +108,7 @@ def split_questions(text, pair=False):
     """Descriptive questions: 'Question N' blocks (or sequential numbered lines), then (a)(b)(c) sub-parts.
     pair=True: the block holds the question(s) then an 'Answer' block; each sub-part gets its own answer."""
     out = []
-    blocks = re.split(r'(?m)^\s*Question\s*(?:No\.?\s*)?(\d{1,2})\b(?! is compulsory)[^\n]*\n', text)
+    blocks = re.split(r'(?m)^\s*Questions?\s*(?:No\.?\s*)?(\d{1,2})\b(?! is compulsory)[^\n]*\n', text)
     if len(blocks) < 7:  # fewer than 3 'Question N' headers: fall back to numbered lines
         blocks, exp = [''], 1
         for ln in text.split('\n'):
@@ -194,7 +194,7 @@ def parse_papers():
                 items = sequential(raw, None)
             for it in items:
                 qs.append({'src': src, 'kind': 'pyq', 'att': att, 'file': f.name, **it})
-    return [q for q in qs if len(words(q['text'])) >= 12]
+    return [q for q in qs if len(words(q['text'])) >= 4]
 
 # ---------- BM25 ----------
 def build_bm25(docs):

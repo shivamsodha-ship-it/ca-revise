@@ -9,8 +9,8 @@ Exam: 4 Nov 2026. All marks, question labels and question text are from the ICAI
 - Each block starts with an 8-minute formula drill (write the key formulas of that day's chapter from memory, then check against the SM chapter text in `work/sm/afm/`). The remaining minutes in a block are 'compare and tidy' time.
 - **Modes:** *copy* = copy the ICAI model answer neatly (formula first, then substitution, units, boxed result). *from-memory* = read the question and the ICAI answer, close it, write it again, compare. *timed* = blank sheet, 1.8 min per mark, then compare. *full-paper* = whole ICAI-style paper under the clock.
 - **Days 7 and 8 are full 3-hour papers** (180 minutes, Nov 2026 MTP Series I and II), which is an exception to the 90-minute day. If 3 hours is not available, do the 90-minute sectional given under each day (50 marks x 1.8 = 90 minutes). Marking against the ICAI answers is done separately and is not counted.
-- May 2026 questions have no ICAI suggested answer yet, so on those rows the 'compare' step uses the SM chapter or an earlier ICAI answer that uses the same method (named in the row). RTPs print no marks, so no RTP question is used in the timed plan.
-- Priority follows the analysis (afm-last3-analysis.md): Ch 9 (45 marks), Ch 10 (41), Ch 6 (38), Ch 8 (37), Ch 5 (34), Ch 14 (29), Ch 11 (25), Ch 12 (21). Repeat codes R1 to R19 refer to the repeat list there.
+- May 2026 questions now have ICAI suggested answers (`work/papers/afm_may26_sa_1.txt`), so they are used for from-memory and timed work and compared with ICAI's answer. For May 2026 MCQs ICAI gives only an answer key (MCQ 6 of Case Scenario II says 'No correct option'). RTPs print no marks, so no RTP question is used in the timed plan.
+- Priority follows the analysis (afm-last3-analysis.md): Ch 9 (45 marks), Ch 10 (41), Ch 6 (38), Ch 8 (37), Ch 5 (34), Ch 14 (29), Ch 11 (25), Ch 12 (21). Repeat codes R1 to R18 refer to the repeat list there.
 
 ## Hand and format checklist (app-written)
 
@@ -65,7 +65,7 @@ Exam: 4 Nov 2026. All marks, question labels and question text are from the ICAI
 | 3 | Wed 28 Oct | A | Formula drill, SM Ch 9 | Black-Scholes d1/d2 and N(d), put-call parity, risk-neutral probability, abandonment option value | 8 | from memory, then check SM |
 | 3 | Wed 28 Oct | A | PYQ Jan 2026 Q6(b), 4 marks | Ch 9 abandonment option, risk-neutral method (R13) | 7 | from-memory |
 | 3 | Wed 28 Oct | A | PYQ Nov 2024 Q1(b), 4 marks | Ch 9 abandonment option with up/down project value (R13) | 7 | from-memory |
-| 3 | Wed 28 Oct | A | PYQ Jan 2026 Q2(c), 4 marks | Ch 9 real vs financial options, four points (R13) | 7 | from-memory |
+| 3 | Wed 28 Oct | A | PYQ May 2026 Q2(b), 4 marks | Ch 9 six options: moneyness, intrinsic/time value, exercise and P/L (R3) | 7 | from-memory |
 | 3 | Wed 28 Oct | A | PYQ May 2025 Q6(a), 7 marks | Ch 9 Nifty futures marking to market and margin calls (R17) | 13 | from-memory |
 | 3 | Wed 28 Oct | A | Compare and tidy (app-written) | Compare with ICAI answer / key or SM; re-do one wrong line; tidy layout | 3 | compare / tidy |
 | 3 | Wed 28 Oct | B | Formula drill, SM Ch 5 | Gordon growth, two-stage and H-model, FCFF/FCFE, bond refunding NPV, repo dirty price | 8 | from memory, then check SM |
@@ -80,9 +80,8 @@ Exam: 4 Nov 2026. All marks, question labels and question text are from the ICAI
 |---|---|---|---|---|---|---|
 | 4 | Thu 29 Oct | A | Formula drill, SM Ch 14 | swap ratio on weights, post-merger EPS and P/E, true cost of merger, buyback price and EPS | 8 | from memory, then check SM |
 | 4 | Thu 29 Oct | A | MTP Nov 2026 Series I Q5(a), 10 marks | Ch 14 swap ratio with weights, promoter holding, post-merger EPS and price (R5) | 18 | from-memory |
-| 4 | Thu 29 Oct | A | MTP Nov 2026 Series I Q6(b), 4 marks | Ch 14 buyback price, shares bought back | 7 | from-memory |
-| 4 | Thu 29 Oct | A | PYQ May 2024 Q4(b), 4 marks | Ch 14 true cost of merger at an exchange ratio (R5) | 7 | from-memory |
-| 4 | Thu 29 Oct | A | Compare and tidy (app-written) | Compare with ICAI answer / key or SM; re-do one wrong line; tidy layout | 5 | compare / tidy |
+| 4 | Thu 29 Oct | A | PYQ May 2026 Q6(a), 7 marks | Ch 14 acquisition offers: synergy, P/E, shares offered, ranking (R5) | 13 | from-memory |
+| 4 | Thu 29 Oct | A | Compare and tidy (app-written) | Compare with ICAI answer / key or SM; re-do one wrong line; tidy layout | 6 | compare / tidy |
 | 4 | Thu 29 Oct | B | Formula drill, SM Ch 12 | FRA settlement formula, cap/floor premium, gap and Earnings at Risk, zero-cost collar | 8 | from memory, then check SM |
 | 4 | Thu 29 Oct | B | PYQ Sep 2025 Q2(b), 4 marks | Ch 12 FRA settlement amount | 7 | from-memory |
 | 4 | Thu 29 Oct | B | PYQ Jan 2026 Q4(a), 6 marks | Ch 12 cap for borrower, floor for depositor, premium (R12) | 11 | from-memory |
@@ -95,16 +94,16 @@ Exam: 4 Nov 2026. All marks, question labels and question text are from the ICAI
 | Day | Date | Block | ICAI question (source label, marks) | Concept drilled | Minutes | What to do |
 |---|---|---|---|---|---|---|
 | 5 | Fri 30 Oct | A | Formula drill, SM Ch 6 and Ch 9 | single-index cut-off C*, two-factor APT expected return, Black-Scholes | 8 | from memory, then check SM |
-| 5 | Fri 30 Oct | A | PYQ May 2026 Q4(a), 6 marks | Ch 6 Sharpe single-index optimal portfolio with given cut-off (R4) | 11 | timed (no ICAI answer yet; check method against Jan 2026 Q5(a) answer and SM Ch 6 section 7) |
-| 5 | Fri 30 Oct | A | PYQ May 2026 Q2(a), 6 marks | Ch 6 two-factor APT (R4) | 11 | timed (no ICAI answer yet; check against SM Ch 6 APT section) |
-| 5 | Fri 30 Oct | A | PYQ May 2026 Q6(b), 7 marks | Ch 9 Black-Scholes hedge ratio, probability, call and put | 13 | timed (no ICAI answer yet; check against SM Ch 9 section 7.3) |
+| 5 | Fri 30 Oct | A | PYQ May 2026 Q4(a), 6 marks | Ch 6 Sharpe single-index optimal portfolio with given cut-off (R4) | 11 | timed (ICAI answer in afm_may26_sa_1.txt) |
+| 5 | Fri 30 Oct | A | PYQ May 2026 Q2(a), 6 marks | Ch 6 two-factor APT (R4) | 11 | timed (ICAI answer in afm_may26_sa_1.txt) |
+| 5 | Fri 30 Oct | A | PYQ May 2026 Q6(b), 7 marks | Ch 9 Black-Scholes hedge ratio, probability, call and put | 13 | timed (ICAI answer in afm_may26_sa_1.txt) |
 | 5 | Fri 30 Oct | A | Compare and tidy (app-written) | Compare with ICAI answer / key or SM; re-do one wrong line; tidy layout | 2 | compare / tidy |
 | 5 | Fri 30 Oct | B | Formula drill, SM Ch 8 and Ch 5 | dividend vs bonus plan return, geometric mean, H-model, two-stage FCFE | 8 | from memory, then check SM |
-| 5 | Fri 30 Oct | B | PYQ May 2026 Q3(b), 4 marks | Ch 8 dividend vs bonus plan HPR (R1) | 7 | timed (no ICAI answer yet; method as Sep 2025 Q3(b) and Q5(b) answers) |
-| 5 | Fri 30 Oct | B | PYQ May 2026 Q4(b), 4 marks | Ch 8 closed-ended fund geometric return (R1) | 7 | timed (no ICAI answer yet; check against SM Ch 8) |
-| 5 | Fri 30 Oct | B | PYQ May 2026 Q1(b), 4 marks | Ch 5 H-model valuation (R11) | 7 | timed (no ICAI answer yet; check against SM Ch 5 H-model) |
-| 5 | Fri 30 Oct | B | PYQ May 2026 Q5(a), 5 marks | Ch 5 two-stage FCFE (R11) | 9 | timed (no ICAI answer yet; method as Sep 2025 Q6(a) answer) |
-| 5 | Fri 30 Oct | B | PYQ May 2026 Q5(c), 2 marks | Ch 10 transaction vs translation exposure (theory) | 4 | timed (no ICAI answer yet; check against SM Ch 10 sections 10.1-10.2) |
+| 5 | Fri 30 Oct | B | PYQ May 2026 Q3(b), 4 marks | Ch 8 dividend vs bonus plan HPR (R1) | 7 | timed (ICAI answer in afm_may26_sa_1.txt) |
+| 5 | Fri 30 Oct | B | PYQ May 2026 Q4(b), 4 marks | Ch 8 closed-ended fund geometric return (R1) | 7 | timed (ICAI answer in afm_may26_sa_1.txt) |
+| 5 | Fri 30 Oct | B | PYQ May 2026 Q1(b), 4 marks | Ch 5 H-model valuation (R11) | 7 | timed (ICAI answer in afm_may26_sa_1.txt) |
+| 5 | Fri 30 Oct | B | PYQ May 2026 Q5(a), 5 marks | Ch 5 two-stage FCFE (R11) | 9 | timed (ICAI answer in afm_may26_sa_1.txt) |
+| 5 | Fri 30 Oct | B | PYQ May 2026 Q5(c), 2 marks | Ch 10 transaction vs translation exposure (theory) | 4 | timed (ICAI answer in afm_may26_sa_1.txt) |
 | 5 | Fri 30 Oct | B | Compare and tidy (app-written) | Compare with ICAI answer / key or SM; re-do one wrong line; tidy layout | 3 | compare / tidy |
 
 ### Day 6: Timed: Ch 10 case MCQs, Ch 14, Ch 12
@@ -114,13 +113,13 @@ Exam: 4 Nov 2026. All marks, question labels and question text are from the ICAI
 | 6 | Sat 31 Oct | A | Formula drill, SM Ch 10 | swap-point interpolation, early delivery/cancellation of forward, mark-to-market | 8 | from memory, then check SM |
 | 6 | Sat 31 Oct | A | PYQ Sep 2025 MCQ CS-IV Q10-12, 6 marks | Ch 10 swap points and forward rates (R2) | 11 | timed (full workings, then check ICAI option key) |
 | 6 | Sat 31 Oct | A | PYQ Jan 2026 MCQ CS-II Q4-6, 6 marks | Ch 10 early delivery of forward (R14) | 11 | timed (full workings, then check ICAI option key) |
-| 6 | Sat 31 Oct | A | PYQ May 2026 MCQ CS-V Q13-15, 6 marks | Ch 10 forward cancellation and rebooking (R14) | 11 | timed (no key published; check against SM Ch 10 section 12.2) |
+| 6 | Sat 31 Oct | A | PYQ May 2026 MCQ CS-V Q13-15, 6 marks | Ch 10 forward cancellation and rebooking (R14) | 11 | timed (ICAI answer key in afm_may26_sa_1.txt (key only, no workings)) |
 | 6 | Sat 31 Oct | A | Compare and tidy (app-written) | Compare with ICAI answer / key or SM; re-do one wrong line; tidy layout | 4 | compare / tidy |
-| 6 | Sat 31 Oct | B | Formula drill, SM Ch 14, Ch 12 | exchange offers and synergy value, gap and EaR formulas | 8 | from memory, then check SM |
-| 6 | Sat 31 Oct | B | PYQ May 2026 Q6(a), 7 marks | Ch 14 acquisition offers, synergy, ranking (R5) | 13 | timed (no ICAI answer yet; check against SM Ch 14 section 4.3) |
-| 6 | Sat 31 Oct | B | PYQ May 2026 Q5(b), 7 marks | Ch 12 gap analysis and Earnings at Risk | 13 | timed (no ICAI answer yet; check against SM Ch 12 section 4.1.1) |
-| 6 | Sat 31 Oct | B | PYQ May 2026 Q2(c), 4 marks | Ch 15 true/false start-up finance (R7) | 7 | timed (no ICAI answer yet; check against SM Ch 15) |
-| 6 | Sat 31 Oct | B | Compare and tidy (app-written) | Compare with ICAI answer / key or SM; re-do one wrong line; tidy layout | 4 | compare / tidy |
+| 6 | Sat 31 Oct | B | Formula drill, SM Ch 11, Ch 12 | APV, IRP forward rate, gap and EaR formulas | 8 | from memory, then check SM |
+| 6 | Sat 31 Oct | B | PYQ May 2026 Q3(a), 6 marks | Ch 11 APV of a project in Europe with IRP forward rates (R15) | 11 | timed (ICAI answer in afm_may26_sa_1.txt) |
+| 6 | Sat 31 Oct | B | PYQ May 2026 Q5(b), 7 marks | Ch 12 gap analysis and Earnings at Risk | 13 | timed (ICAI answer in afm_may26_sa_1.txt) |
+| 6 | Sat 31 Oct | B | PYQ May 2026 Q2(c), 4 marks | Ch 15 true/false start-up finance (R7) | 7 | timed (ICAI answer in afm_may26_sa_1.txt) |
+| 6 | Sat 31 Oct | B | Compare and tidy (app-written) | Compare with ICAI answer / key or SM; re-do one wrong line; tidy layout | 6 | compare / tidy |
 
 ### Day 7: Full 3-hour paper: MTP Series I
 
@@ -173,7 +172,7 @@ Light day: only questions already written earlier in the plan, no new topic. Sto
 |---|---|
 | PYQ Sep 2025 | `work/papers/afm_sep25_qp_2.txt` |
 | PYQ Jan 2026 | `work/papers/afm_jan26_qp_2.txt` |
-| PYQ May 2026 | `work/papers/afm_may26_qp_1.pdf (question only, image PDF)` |
+| PYQ May 2026 | `work/papers/afm_may26_sa_1.txt (ICAI suggested answers incl. question paper)` |
 | PYQ May 2024 | `work/papers/afm_may24_qp_2.txt` |
 | PYQ Nov 2024 | `work/papers/afm_nov24_qp_2.txt` |
 | PYQ May 2025 | `work/papers/afm_may25_qp_2.txt` |
@@ -182,4 +181,4 @@ Light day: only questions already written earlier in the plan, no new topic. Sto
 
 ## Coverage check (app-written)
 
-Marks written in single-question exercises on Days 1 to 6 and 9, by chapter (the two full papers add Part I and the Series I and II questions on top): Ch 9: 50, Ch 10: 39, Ch 6: 32, Ch 8: 29, Ch 5: 28, Ch 14: 25, Ch 12: 21, Ch 15: 8, Ch 4: 4, Ch 7: 4.
+Marks written in single-question exercises on Days 1 to 6 and 9, by chapter (the two full papers add Part I and the Series I and II questions on top): Ch 9: 50, Ch 10: 39, Ch 6: 32, Ch 8: 29, Ch 5: 28, Ch 12: 21, Ch 14: 17, Ch 15: 8, Ch 11: 6, Ch 4: 4, Ch 7: 4.

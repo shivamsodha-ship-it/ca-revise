@@ -7,7 +7,7 @@
 - 90 minutes of FR handwriting per day, in two blocks (A and B, about 45 minutes each). Change the minutes if your day is shorter or longer; keep the ratio.
 - Timing yardstick: ICAI papers give 100 marks in 3 hours, so **1.8 minutes per mark** (a 6-mark answer is about 11 minutes; 14 marks is about 25 minutes). Minutes in the table are marks x 1.8, rounded. A 'compare' line is extra time after the writing; each day's total is within a few minutes of 90, and Day 7 is deliberately about 40.
 - Modes: **copy** = copy the ICAI model answer neatly (warm the hand, learn the layout); **from-memory** = same question again with the ICAI answer closed, then compare in a different colour; **timed** = a question you have not seen, stopped at the minutes shown, then compare.
-- Marks are as printed in the ICAI paper. May 2026 questions are not used because ICAI has not published its answers; the RTP is not used because its questions carry no printed marks. May 2026 MCQs are not written practice.
+- Marks are as printed in the ICAI paper. May 2026 questions are used now that ICAI has published the suggested answers (`work/papers/fr_may26_sa_1.txt`) to compare with; the RTP is not used because its questions carry no printed marks. MCQs are not written practice.
 - Priority follows the analysis file (`research/lastday/fr-last3-analysis.md`): consolidated balance sheet (compulsory Q1 every paper) gets five exercises; compound instruments five; Ind AS 19 four; Ind AS 20 four; then Ind AS 115, 101, 36, 23, 33, 113, 8, 1, 34, 105, 21 and the Ethics case.
 
 ## Day-by-day plan
@@ -30,7 +30,7 @@
 | Day 2 | Tue 27 Oct 2026 | B | Compare with the ICAI answers of this block (red pen) | Find missed working notes, wrong layout, time overruns | 5 | compare |
 | Day 3 | Wed 28 Oct 2026 | A | PYQ Sep 2025 Q5(a), 5 marks | Ind AS 115: variable consideration and contract modification | 9 | copy |
 | Day 3 | Wed 28 Oct 2026 | A | PYQ Jan 2026 Q5(a), 5 marks | Ind AS 115: significant financing component | 9 | copy |
-| Day 3 | Wed 28 Oct 2026 | A | PYQ Sep 2025 Q5(b), 5 marks | Ind AS 101: opening balance sheet items (deemed cost etc.) | 9 | copy |
+| Day 3 | Wed 28 Oct 2026 | A | PYQ May 2026 Q5(b), 5 marks | Ind AS 101: compound instrument at date of transition (split, unwind, retained earnings) | 9 | copy |
 | Day 3 | Wed 28 Oct 2026 | A | PYQ Jan 2026 Q5(b), 5 marks | Ind AS 101: equity reconciliation at transition | 9 | copy |
 | Day 3 | Wed 28 Oct 2026 | A | PYQ Sep 2025 Q6(b), 5 marks | Ind AS 36: value in use table, impairment, revised depreciation | 9 | copy |
 | Day 3 | Wed 28 Oct 2026 | B | PYQ Sep 2025 Q3(a), 8 marks | Ind AS 19 defined benefit plan: redo from memory (copied on Day 1) | 14 | from-memory |
@@ -38,21 +38,21 @@
 | Day 3 | Wed 28 Oct 2026 | B | PYQ Sep 2025 Q6(b), 5 marks | Ind AS 36: redo from memory | 9 | from-memory |
 | Day 3 | Wed 28 Oct 2026 | B | PYQ Jan 2026 Q5(b), 5 marks | Ind AS 101 reconciliation: redo from memory | 9 | from-memory |
 | Day 3 | Wed 28 Oct 2026 | B | Compare with the ICAI answers of this block (red pen) | Find missed working notes, wrong layout, time overruns | 5 | compare |
-| Day 4 | Thu 29 Oct 2026 | A | PYQ May 2025 Q1, 14 marks | Consolidated opening balance sheet: step acquisition, contingent consideration, replacement award, fair-value adjustments | 25 | timed |
-| Day 4 | Thu 29 Oct 2026 | A | PYQ May 2024 Q4(a), 8 marks | Ind AS 19 defined benefit plan (same pattern as Sep 2025 Q3(a)) | 14 | timed |
+| Day 4 | Thu 29 Oct 2026 | A | PYQ May 2026 Q1, 14 marks | Consolidated balance sheet and journal entries: control in stages, NCI at fair value, unrealised profit, intangible | 25 | timed |
+| Day 4 | Thu 29 Oct 2026 | A | PYQ May 2026 Q4(a), 6 marks | Ind AS 19: defined benefit plan over three years, OCI, net liability | 11 | timed |
+| Day 4 | Thu 29 Oct 2026 | A | PYQ May 2026 Q2(b), 4 marks | Ind AS 34: seasonal revenue, tax at average annual rate, change in estimate | 7 | timed |
 | Day 4 | Thu 29 Oct 2026 | A | Compare with the ICAI answers of this block (red pen) | Find missed working notes, wrong layout, time overruns | 6 | compare |
-| Day 4 | Thu 29 Oct 2026 | B | PYQ May 2024 Q4(b), 6 marks | Ind AS 20: grants incl. deferred income | 11 | timed |
+| Day 4 | Thu 29 Oct 2026 | B | PYQ May 2026 Q4(b), 8 marks | Ind AS 20: five grant cases | 14 | timed |
 | Day 4 | Thu 29 Oct 2026 | B | PYQ May 2024 Q3(b), 6 marks | Ind AS 32: convertible debentures finance cost and closing balance | 11 | timed |
 | Day 4 | Thu 29 Oct 2026 | B | PYQ May 2025 Q3(b), 6 marks | Ind AS 33: basic and diluted EPS with options | 11 | timed |
-| Day 4 | Thu 29 Oct 2026 | B | PYQ May 2025 Q2(b), 4 marks | Ind AS 34: adjusting quarterly profit | 7 | timed |
 | Day 4 | Thu 29 Oct 2026 | B | Compare with the ICAI answers of this block (red pen) | Find missed working notes, wrong layout, time overruns | 5 | compare |
 | Day 5 | Fri 30 Oct 2026 | A | PYQ Nov 2024 Q1, 14 marks | Consolidated balance sheet: fair-value changes, unrealised profit, inter-company balances, pre-acquisition dividend | 25 | timed |
-| Day 5 | Fri 30 Oct 2026 | A | MTP Series I Nov 2026 Q2(a), 10 marks | Ind AS 32: repurchase of convertible debenture | 18 | timed |
+| Day 5 | Fri 30 Oct 2026 | A | PYQ May 2026 Q2(a), 10 marks | Ind AS 32: convertible debentures with put option: split, issue entry, derecognition on put | 18 | timed |
 | Day 5 | Fri 30 Oct 2026 | A | Compare with the ICAI answers of this block (red pen) | Find missed working notes, wrong layout, time overruns | 5 | compare |
 | Day 5 | Fri 30 Oct 2026 | B | PYQ May 2025 Q3(a), 8 marks | Ind AS 36: goodwill/CGU impairment and reversal | 14 | timed |
-| Day 5 | Fri 30 Oct 2026 | B | PYQ Jan 2026 Q6(c), 4 marks | Ind AS 113: fair value per share, two approaches | 7 | timed |
+| Day 5 | Fri 30 Oct 2026 | B | PYQ May 2026 Q6(b), 5 marks | Ind AS 23: building in phases, capitalise vs expense | 9 | timed |
+| Day 5 | Fri 30 Oct 2026 | B | PYQ May 2026 Q6(c), 4 marks | Ind AS 113: principal vs most advantageous market | 7 | timed |
 | Day 5 | Fri 30 Oct 2026 | B | PYQ Jan 2026 Q6(a), 5 marks | Ethics: ICAI Code, earnings pressure case | 9 | timed |
-| Day 5 | Fri 30 Oct 2026 | B | MTP Series I Nov 2026 Q4(b), 6 marks | Ind AS 105: disposal group measurement at two dates | 11 | timed |
 | Day 5 | Fri 30 Oct 2026 | B | Compare with the ICAI answers of this block (red pen) | Find missed working notes, wrong layout, time overruns | 4 | compare |
 | Day 6 | Sat 31 Oct 2026 | A | MTP Series II Nov 2026 Q1, 14 marks | Ind AS 103 acquisition: workings and journal entries | 25 | timed |
 | Day 6 | Sat 31 Oct 2026 | A | MTP Series II Nov 2026 Q2(a), 10 marks | Ind AS 32 + Ind AS 33: convertible debenture finance cost, basic and diluted EPS | 18 | timed |
@@ -64,19 +64,19 @@
 | Day 7 | Sun 1 Nov 2026 | A | PYQ Sep 2025 Q6(c), 4 marks | Ind AS 8: from memory, short answer | 7 | from-memory |
 | Day 7 | Sun 1 Nov 2026 | A | PYQ Jan 2026 Q2(b), 4 marks | Ind AS 1: from memory | 7 | from-memory |
 | Day 7 | Sun 1 Nov 2026 | A | PYQ Jan 2026 Q5(a), 5 marks | Ind AS 115: from memory | 9 | from-memory |
-| Day 7 | Sun 1 Nov 2026 | A | PYQ Jan 2026 Q6(c), 4 marks | Ind AS 113: from memory | 7 | from-memory |
+| Day 7 | Sun 1 Nov 2026 | A | PYQ May 2026 Q6(c), 4 marks | Ind AS 113: from memory | 7 | from-memory |
 | Day 7 | Sun 1 Nov 2026 | A | Compare with the ICAI answers of this block (red pen) | Find missed working notes, wrong layout, time overruns | 5 | compare |
 | Day 7 | Sun 1 Nov 2026 | A | Hand and format checklist (below), read once; then stop | Confidence, no new topics | 5 | checklist |
 
-Day totals (writing + compare, minutes): Day 1 = 89; Day 2 = 92; Day 3 = 91; Day 4 = 90; Day 5 = 93; Day 6 = 89; Day 7 = 40. Day 7 is a light, confidence-building session of about 40 minutes (stop by 45) with only questions already done earlier in the week (no new topics).
+Day totals (writing + compare, minutes): Day 1 = 89; Day 2 = 92; Day 3 = 91; Day 4 = 90; Day 5 = 91; Day 6 = 89; Day 7 = 40. Day 7 is a light, confidence-building session of about 40 minutes (stop by 45) with only questions already done earlier in the week (no new topics).
 
 ## Day 6 alternative: full three-hour paper (app-written)
 
-If you can sit 3 hours on 31 Oct, replace Day 6 with a full ICAI paper: **MTP Series I Nov 2026 or MTP Series II Nov 2026** (not both). Part I 30 marks = about 54 minutes by the yardstick; Part II 70 marks = about 126 minutes (Q1 plus any 4 of Q2-Q6). The 90-minute sectional in the table covers 44 marks of MTP Series II Part II (Q1 14, Q2(a) 10, Q3(b) 6, Q4(a) 8, Q4(b) 6). The MTP Series I questions used on Day 5 are Q2(a) 10 and Q4(b) 6 only, so Series I remains available as the full paper if you prefer it.
+If you can sit 3 hours on 31 Oct, replace Day 6 with a full ICAI paper: **MTP Series I Nov 2026 or MTP Series II Nov 2026** (not both). Part I 30 marks = about 54 minutes by the yardstick; Part II 70 marks = about 126 minutes (Q1 plus any 4 of Q2-Q6). The 90-minute sectional in the table covers 44 marks of MTP Series II Part II (Q1 14, Q2(a) 10, Q3(b) 6, Q4(a) 8, Q4(b) 6). MTP Series I is not used in the daily table, so it stays available as the full paper if you prefer it.
 
 ## Optional swaps if you have spare time (not scheduled; app-written suggestion)
 
-The three-attempt analysis shows these topics appeared only once, so they are lower priority but still possible: Ind AS 12 = PYQ Jan 2026 Q3(b), 6 marks; Ind AS 116 = MTP Series I Q3(a), 8 marks, or PYQ May 2024 Q3(a), 8 marks; Ind AS 16 = PYQ Jan 2026 Q3(a), 8 marks; Ind AS 115 = MTP Series II Q5(a), 7 marks. Swap only for an exercise of equal marks.
+The three-attempt analysis shows these topics appeared only once, so they are lower priority but still possible: Ind AS 12 = PYQ Jan 2026 Q3(b), 6 marks; Ind AS 116 = PYQ May 2026 Q3(a), 10 marks, or MTP Series I Q3(a), 8 marks; Ind AS 108 = PYQ May 2026 Q3(b), 4 marks; Ind AS 115 bill-and-hold = PYQ May 2026 Q5(a), 5 marks; Ind AS 16 = PYQ Jan 2026 Q3(a), 8 marks; Ind AS 105 = MTP Series I Q4(b), 6 marks. Swap only for an exercise of equal marks.
 
 ## Hand and format checklist (app-written)
 
@@ -97,6 +97,7 @@ The three-attempt analysis shows these topics appeared only once, so they are lo
 | PYQ Sep 2025 | `work/papers/fr_sep25_qp_2.txt` |
 | PYQ May 2024 | `work/papers/fr_may24_qp_2.txt` |
 | PYQ Nov 2024 | `work/papers/fr_nov24_qp_2.txt` |
+| PYQ May 2026 | `work/papers/fr_may26_sa_1.txt` |
 | PYQ May 2025 | `work/papers/fr_may25_qp_2.txt` |
 | MTP Series I Nov 2026 | `work/papers/fr_nov26_mtps1_1.txt (answers fr_nov26_mtps1_2.txt)` |
 | MTP Series II Nov 2026 | `work/papers/fr_nov26_mtps2_1.txt (answers fr_nov26_mtps2_2.txt)` |

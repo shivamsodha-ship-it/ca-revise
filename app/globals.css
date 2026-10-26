@@ -913,3 +913,37 @@ body { background: radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, 
 .badd summary { min-height: var(--tap); display: flex; align-items: center; cursor: pointer; font-weight: 700; color: var(--blue) }
 .badd textarea { width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); margin-bottom: 8px }
 @media (max-width: 420px) { .brow { flex-wrap: wrap } .brow select { width: auto; flex: 1 } }
+
+/* Must-do packs: ICAI text for chapters not built yet */
+.pk-basis { font-size: 13px; margin: 0 0 18px }
+.pk-tier { margin: 0 0 22px }
+.pk-h { font-size: 1.15rem; margin: 0 0 8px }
+.pk-h .muted { font-size: 13px; font-weight: 400 }
+.pk-list { list-style: none; margin: 0; padding: 0 }
+.pk-row { display: grid; gap: 2px; min-height: var(--tap); padding: 12px 4px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink) }
+.pk-row:hover .pk-title { color: var(--blue) }
+.pk-title { font-family: var(--disp); font-weight: 700; font-size: 1.05rem }
+.pk-meta { font-size: 13px }
+.pk-sec { margin: 0 0 26px }
+.pk-note { font-size: 13.5px; margin: 0 0 12px }
+.pk-q { padding: 14px; margin: 0 0 14px }
+.pk-qh { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-bottom: 4px }
+.pk-chip { border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 700; color: var(--muted) }
+.pk-chip-on { background: var(--blue-soft); border-color: var(--blue); color: var(--blue) }
+.pk-cov { font-size: 12.5px; margin: 0 0 8px }
+.pk-warn { background: var(--sun-soft); color: var(--sun); border-radius: 8px; padding: 8px 10px; font-size: 13px; margin: 0 0 8px }
+.pk-empty { padding: 14px }
+.pk-text { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; min-width: 0 }
+.pk-text > * { min-width: 0 }
+.pk-pre { margin: 0; font-family: var(--mono); font-size: 13px; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere }
+.pk-prose p { margin: 0 0 4px; font-size: 15px; line-height: 1.55; overflow-wrap: anywhere }
+.pk-table { white-space: pre; overflow-x: auto; overflow-wrap: normal; max-width: 100%; padding-bottom: 4px }
+.pk-ans { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 4px }
+.pk-ans > summary, .pk-read > summary { min-height: var(--tap); display: flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; cursor: pointer; font-weight: 700; color: var(--blue) }
+.pk-read { padding: 4px 14px 12px; margin: 0 0 10px }
+.pk-check { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 }
+.pk-check li { display: grid; grid-template-columns: 22px minmax(0, 1fr); column-gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14.5px }
+.pk-tick { color: var(--muted); font-weight: 800 }
+.pk-on .pk-tick { color: var(--blue) }
+.pk-cm { grid-column: 2; font-size: 12.5px }
+.pk-foot { font-size: 12.5px; border-top: 1px solid var(--line); padding-top: 12px }

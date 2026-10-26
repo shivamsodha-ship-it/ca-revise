@@ -20,7 +20,7 @@ export default function SubjectPage({ params }: { params: { subject: string } })
         <span className="chapter-name">{s.label}</span>
         <AccountChip />
       </div></header>
-      <main className="page"><h1 className="sr">{s.label}: {s.long}</h1><p style={{ margin: '0 0 12px' }}><Link className="btn" href={`/${s.id}/formulas`}>Formula bank →</Link><Link className="btn" href={`/${s.id}/last-day`} style={{ marginLeft: 8 }}>Last-day revision →</Link></p><ChapterList only={s.id} /></main>
+      <main className="page"><h1 className="sr">{s.label}: {s.long}</h1><p style={{ margin: '0 0 12px' }}><Link className="btn" href={`/${s.id}/formulas`}>Formula bank →</Link><Link className="btn" href={`/${s.id}/last-day`} style={{ marginLeft: 8 }}>Last-day revision →</Link><Link className="btn" href={`/${s.id}/must-do`} style={{ marginLeft: 8 }}>Must-do packs →</Link></p><ChapterList only={s.id} /></main>
     </>
   );
 }

@@ -142,9 +142,9 @@ for e in topics:
     e['tier'] = 'must' if r >= 0.5 else 'should' if r >= 0.25 else 'quick'
 
 BASIS = {
- 'fr': 'Order: ICAI papers May 2022 to Nov 2026, from research/fr-priority.md (a unit counts as tested when its Ind AS number or key terms appear three or more times in ICAI answers). Questions: ICAI question papers with suggested answers May 2024 to Jan 2026, RTPs May 2024 to Nov 2026, MTPs Mar 2025 to Sep 2026, and ICAI\'s Practice Questions in the study material.',
- 'afm': 'Order: how many questions in ICAI papers May 2024 to Nov 2026 are about the chapter (question paper 2 points, RTP or MTP 1 point, +1 for a Nov 2026 RTP or MTP). Questions: ICAI question papers with suggested answers May 2024 to Jan 2026, RTPs May 2024 to Nov 2026, MTPs Mar 2024 to Sep 2026.',
- 'aaa': 'Order: how many questions in ICAI papers May 2024 to Nov 2026 are about the chapter (question paper 2 points, RTP or MTP 1 point, +1 for a Nov 2026 RTP or MTP). Questions: ICAI question papers with suggested answers May 2024 to Jan 2026, RTPs May 2024 to Nov 2026, MTPs Mar 2024 to Sep 2026.',
+ 'fr': 'Order: ICAI papers May 2022 to Nov 2026, from research/fr-priority.md (a unit counts as tested when its Ind AS number or key terms appear three or more times in ICAI answers). Questions: ICAI question papers with suggested answers May 2024 to May 2026, RTPs May 2024 to Nov 2026, MTPs Mar 2025 to Sep 2026, and ICAI\'s Practice Questions in the study material.',
+ 'afm': 'Order: how many questions in ICAI papers May 2024 to Nov 2026 are about the chapter (question paper 2 points, RTP or MTP 1 point, +1 for a Nov 2026 RTP or MTP). Questions: ICAI question papers with suggested answers May 2024 to May 2026, RTPs May 2024 to Nov 2026, MTPs Mar 2024 to Sep 2026.',
+ 'aaa': 'Order: how many questions in ICAI papers May 2024 to Nov 2026 are about the chapter (question paper 2 points, RTP or MTP 1 point, +1 for a Nov 2026 RTP or MTP). Questions: ICAI question papers with suggested answers May 2024 to May 2026, RTPs May 2024 to Nov 2026, MTPs Mar 2024 to Sep 2026.',
 }
 out = {'subject': subj, 'basis': BASIS[subj], 'topics': topics}
 d = ROOT / 'data' / 'lastday'; d.mkdir(parents=True, exist_ok=True)

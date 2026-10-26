@@ -1,6 +1,6 @@
 {
  "subject": "afm",
- "basis": "Order: how many questions in ICAI papers May 2024 to Nov 2026 are about the chapter (question paper 2 points, RTP or MTP 1 point, +1 for a Nov 2026 RTP or MTP). Questions: ICAI question papers with suggested answers May 2024 to Jan 2026, RTPs May 2024 to Nov 2026, MTPs Mar 2024 to Sep 2026.",
+ "basis": "Order: how many questions in ICAI papers May 2024 to Nov 2026 are about the chapter (question paper 2 points, RTP or MTP 1 point, +1 for a Nov 2026 RTP or MTP). Questions: ICAI question papers with suggested answers May 2024 to May 2026, RTPs May 2024 to Nov 2026, MTPs Mar 2024 to Sep 2026.",
  "topics": [
   {
    "id": "chapter-9-derivatives-analysis-and-valuation",
@@ -124,7 +124,7 @@
      "t": "Black-Scholes Model",
      "p0": 27,
      "p1": 32,
-     "hits": 2
+     "hits": 4
     },
     {
      "n": "7.4",
@@ -152,7 +152,7 @@
      "t": "Collateralized Debt Obligations (CDOS)",
      "p0": 37,
      "p1": 38,
-     "hits": 2
+     "hits": 4
     },
     {
      "n": "8.2",
@@ -180,7 +180,7 @@
      "t": "Type of Real Options",
      "p0": 42,
      "p1": 47,
-     "hits": 5
+     "hits": 7
     },
     {
      "n": "10",
@@ -445,34 +445,30 @@
     },
     {
      "closest": {
-      "t": "Risk Neutral Method",
-      "p0": 26,
+      "t": "Black-Scholes Model",
+      "p0": 27,
       "file": true
      },
      "role": "drill",
-     "src": "MTP Nov 2026 S-I",
-     "label": "3(a)",
-     "kind": "mtp",
+     "src": "PYQ May 2026",
+     "label": "6(b)",
+     "kind": "pyq",
      "loose": false,
      "covers": [
       14,
-      15,
       16,
       17,
-      24,
-      41,
-      43,
       50
      ],
-     "prompt": "Following is the information available pertaining to shares of O Ltd.:\n             Current Market Price (₹)                                                  ₹ 840.00\n             Maximum Expected Price (₹) in 6 Months, with a 45%                       ₹ 1050.00\n             Probability\n             Minimum Expected Price (₹) in 6 Months                                    ₹ 756.00\n             Continuously Compounded Rate of Interest (p.a.) (%)                          7.00%\n\n           Required:\n           (i)     Assuming that a 6-month European call option on the shares of O Ltd. is\n                   available with a strike price of ₹ 900.00, calculate the value of the call option\n                   using the Replicating Portfolio Approach and the Risk-Neutral Valuation\n                   Method.\n\n\f           (ii)       Examine whether the given probability can be applied to determine the\n                      value of the option using the Risk-Neutral Valuation Method.\n           Note: (1) e0.035 =1.0356\n           (2) Round off all calculations upto 2 decimal points.                          (10 Marks)",
-     "ans": "(i)   (A)    Call Option value using Replicating Portfolio Approach\n                                               ₹ 1050 (150)\n\n                        ₹ 840\n                                               ₹ 756 (0)\n\n\f                           ₹ 150 - ₹ 0\n                    ∆=                  = 0.51\n                         ₹ 1050 - ₹ 756\n                    Initial Investment= 0.51 x ₹ 840 = ₹ 428.40\n                    Value of Portfolio if Price goes down to ₹ 756.\n                    Value of holding 0.51 x ₹ 756 = ₹ 385.56\n                    Accordingly Let ‘P' be the option price, then\n                    ₹ 428.40 - P = ₹ 385.56/1.0356 = ₹ 372.31\n                                P = ₹ 56.09\n             (B)    Value of Call Option using Risk Neutral Method\n                    Let ‘P' be the probability of Price increase, then\n                    p x 1050 + (1 - p) x 756 = 840(1.0356)\n                    147p = 50.48\n                    p = 0.39\n                    Probability of Price increase = 0.39\n                    Probability of Price decrease= 0.61\n                    Accordingly, the price of the options shall be:\n                     0.39 × 150 + 0.61 ×0\n                                          = ₹ 56.49\n      (ii)   In Risk Neutral Model, valuation of options is based on arbitrage and is\n             therefore independent of risk preferences; one should be able to value\n             options assuming any set of risk preferences and get the same answer.\n             Hence, the given probability cannot be used to value the option. Instead,\n             the risk-neutral probability should be computed and used for valuing the\n             option.                                                       (10 marks)"
+     "prompt": "The current price of F Ltd is ₹ 120 and a European option with an exercise\n    price of ₹ 115 will expire in 50 days. The annual continuously compounded\n    risk free rate of interest is 8%. The standard deviation of annual returns on\n    F Ltd. is 30%.\n    Value of (d₁) = 0.5375; Year =365 days and value of e-rt = 0.9891.\n    Using Black-Scholes Model, you are required to calculate:\n    (i)    The Hedge Ratio\n    (ii) The probability that price in spot market on expiration would be higher\n         than the exercise price of the call option.\n    (iii) Value of call and put options.\n    Cumulative Area Table extract\n\n                      0.00       0.01        0.02      0.030     0.04         0.05\n     0.4            0.6554    0.6591       0.6628     0.6664   0.6700       0.6736\n     0.5            0.6915    0.6950       0.6985     0.7019   0.7054       0.7088\n     0.6            0.7257    0.7291       0.7324     0.7357   0.7389       0.7422\n\n                                                                           (7 Marks)",
+     "ans": "(i) Hedge Ratio i.e. N(d1)\n        Since d1 is given, we shall calculate N(d1) i.e. N (0.5375) and we shall use\n        Interpolation method as follows:\n\n            Cumulative Area under Normal Curve for N (0.54)                   0.7054\n            Cumulative Area under Normal Curve for N (0.53)                   0.7019\n            Cumulative Area under Normal Curve for N (0.01)                   0.0035\n            Difference Variable 0.5375 – 0.53                                 0.0075\n\n                                           0.0035                           0.002625\n            The additive value to 0.53 =            × 0.0075\n            Cumulative Area under Normal Curve for N (0.5375)                 0.7045\n\n        Thus, Hedge ratio shall be approximately 0.70 or 70%\n\n(ii) Probability that price in spot market on expiration would be higher\n     than exercise price of the Call is N(d2)\n    d2 = d1 - σ t\n\n    d2 = 0.5375 – 0.30 50/365\n\n    d2 = 0.4264\n    N (0.4264) we shall use Interpolation method as follows:\n\n      Cumulative Area under Normal Curve for N (0.43)            0.6664\n      Cumulative Area under Normal Curve for N (0.42)            0.6628\n      Cumulative Area under Normal Curve for N (0.01)            0.0036\n      Difference Variable 0.4264 – 0.42                          0.0064\n\n                                     0.0036                    0.002304\n      The additive value to 0.42 =            × 0.0064\n      Cumulative Area under Normal Curve for N (0.4264)          0.6651\n\n    Thus, the probability that price in spot market on expiration would be\n    higher than the exercise of the call option shall be approximately 67%.\n(iii) Value of Call Option\n\n    = ₹ 120 x 0.7045 – ₹ 115 x 0.9891 x 0.6651\n    = ₹ 84.54 – ₹ 75.65\n    = ₹ 8.89\n    Value of Put Option\n    VP = - VS + VC + PV(E)\n    = -120 + 8.89 + 0.9891 x 115\n    = ₹ 2.63"
     }
    ],
    "reading": [
     {
-     "sec": 21,
-     "text": "It is a combination of following 3 words:\nCredit : Loan given\nDefault : Non payment\nSwap : Exchange of Liability or Risk\n\n                                  DERIVATIVES ANALYSIS AND VALUATION                      9.39\n\nAccordingly, CDS can be defined as an insurance (not in stricter sense) against the risk of default\non a debt which may be debentures, bonds etc.\n\nUnder this arrangement, one party (called buyer) needing protection against the default pays a\nperiodic premium to another party (called seller), who in turn assumes the default risk. Hence, in\ncase default takes place then there will be settlement and in case no default takes place no cash\nflow will accrue to the buyer alike option contract and agreement is terminated. Although it resembles\nthe options but since element of choice is not there it more resembles the swap arrangements.\nAmount of premium mainly depends on the price of underlying and especially when the credit risk is\nmore.\n8.2.1 Main Features of CDS\nThe main features of CDS are as follows:\n(a)     CDS is a non-standardized private contract between the buyer and seller. Therefore, it is\n        covered in the category of Forward Contracts.\n(b)     They are normally not traded on any exchange and hence remains free from the regulations\n        of Governing Body.\n(c)     The International Swap and Derivative Association (ISDA) publishes the guidelines and\n        general rules used normally to carry out CDS contracts.\n(d)     CDS can be purchased from third party to protect itself from default of borrowers.\n(e)     Similarly, an individual investor who is buying bonds from a company can purchase CDS to\n        protect his investment from insolvency of that company. Thus, this increases the level of\n        confidence of investor in Bonds purchased.\n(f)     The cost or premium of CDS has a positive relationship with risk attached with loans.\n        Therefore, higher the risk attached to Bonds or loans, higher will be premium or cost of CDS.\n(g)     If an investor buys a CDS without being exposed to credit risk of the underlying bond issuer,\n        it is called “naked CDS”.\n8.2.2 Uses of Credit Default Swap\nFollowing are the main purposes for which CDS can be used:\n(a)     Hedging- Main purpose of using CDS is to neutralize or reduce a risk to which CDS is\n        exposed to. Thus, by buying CDS, risk can be passed on to CDS seller or writer.\n(b)     Arbitrage- It involves buying a CDS and entering into an asset swap. For example, a fixed\n        coupon payment of a bond is swapped against a floating interest stream.\n\n                  9.402.40             ADVANCED FINANCIAL MANAGEMENT\n\n(c)     Speculation- CDS can also be used to make profit by exploiting price changes. For example,\n        a CDS writer assumed risk of default, will gain from contract if credit risk does not materialize\n        during the tenure of contract or if compensation received exceeds potential payout.\n8.2.3 Parties to CDS\nIn a CDS at least three parties are involved which are as follows:\ni.      The initial borrowers- It is also called a ‘reference entity', which are owing a loan or bond\n        obligation.\nii.     Buyer- It is also called ‘investor' i.e. the buyer of protection. The buyer will make regular\n        payment to the seller for the protection from default or credit event of reference entity.\niii.    Seller- It is also called ‘writer' of the CDS and makes payment to buyer in the event of credit\n        event of reference entity. It receives a regular pay off from the buyer of CDS.\nExample\nSuppose BB Corp. buys CDS from SS Bank for the Bonds amounting $ 10 million of Danger Corp.\nIn such case, the BB Corp. will become the buyer, SS Bank becomes seller and Danger Corp.\nbecomes the reference entity. BB Corp. will make regular payment to SS Bank of the premium and\nif Danger Corp. defaults on its debts, the BB Corp. will receive one time payment and CDS contract\nis terminated.\n8.2.4 Settlement of CDS\nBroadly, following are main ways of settlement of CDS.\n(i)     Physical Settlement – This is the traditional method of settlement. It involves the delivery of\n        Bonds or debts of the reference entity by the buyer to the seller and seller pays the buyer the\n        par value.\n        For example, as mentioned above suppose Danger Corp. defaults then SS Bank will pay $\n        10 Million to BB Corp. and BB Corp will deliver $10 Million face value of Bonds to SS Bank.\n(ii)    Cash Settlement- Under this arrangement seller pays the buyer the difference between par value\n        and the market price of a debt (whatever may be the market value) of the reference entity.\n        Continuing the above example suppose, the market value of Bonds is 30%, as market is of belief\n        that bond holder will receive 30% of the money owed in case company goes into liquidation. Thus,\n        the SS Bank shall pay BB Corp. $ 10 Million - $3 million (100% - 30%) = $ 7 Million.\n        To make Cash settlement even more transparent, the credit event auction was developed.\n        Credit event auction set a price for all market participants that choose to cash settlement.\n\n                                  DERIVATIVES ANALYSIS AND VALUATION                            9.41",
-     "cut": false
+     "sec": 16,
+     "text": "The Black-Scholes model is used to calculate a theoretical price of an Option. The Black-Scholes\nprice is nothing more than the amount an option writer would require as compensation for writing a\ncall and completely hedging the risk of buying stock. The important point is that the hedger's view\nabout future stock prices is irrelevant. Thus, while any two investors may strongly disagree on the\nrate of return they expect on a stock they will, given agreement to the assumptions of volatility and\nthe risk-free rate, always agree on the fair value of the option on that underlying asset. This key\nconcept underlying the valuation of all derivatives -- that fact that the price of an option is\nindependent of the risk preferences of investors -- is called risk-neutral valuation. It means that all\nderivatives can be valued by assuming that the return from their underlying assets is the risk-free\nrate.\nThe model is based on a normal distribution of underlying asset returns.\n\nThe following assumptions accompany the model:\n1.      European Options are considered,\n2.      No transaction costs,\n3.      Short term interest rates are known and are constant,\n4.      Stocks do not pay dividend,\n5.      Stock price movement is similar to a random walk,\n6.      Stock returns are normally distributed over a period of time, and\n7.      The variance of the return is constant over the life of an Option.\nThe original formula for calculating the theoretical option price (OP) is as follows:\n\n                  9.282.28             ADVANCED FINANCIAL MANAGEMENT\n\nWhere:\n\nThe variables are:\nS       =       current stock price\n\nX       =       strike price of the option\nt       =       time remaining until expiration, expressed as a percent of a year\nr       =       current continuously compounded risk-free interest rate\nv       =       annual volatility of stock price (the standard deviation of the short-term returns over\n                one year).\nln      =       natural logarithm\nN(x) =          standard normal cumulative distribution function (Area under Normal Curve)\ne       =       the exponential function\nUnderstanding the formula\n\nN(d1) represents the hedge ratio of shares of stock to Options necessary to maintain a fully hedged\nposition.\nConsider the Option holder as an investor who has borrowed an equivalent amount of the exercise\nprice at interest rate r. Xe-rtN(d2) represents this borrowing which is equivalent to the present value\nof the exercise price times an adjustment factor of N(d2)\nN(d2) in the above formulae represents the probability that price in spot market on expiration would\nbe higher than the exercise price of the call option.\nThe main advantage of the Black-Scholes model is speed -- it lets you calculate a very large number\nof option prices in a very short time.\nThe Black-Scholes model has one major limitation that it cannot be used to accurately price options\nwith an American-style exercise as it only calculates the option price at one point of time -- at\nexpiration. It does not consider the steps along the way where there could be the possibility of early\nexercise of an American option.\n\n                                  DERIVATIVES ANALYSIS AND VALUATION                        9.29\n\nIllustration 3\n(i)     The shares of TIC Ltd. are currently priced at ₹ 415 and call option exercisable in three\n        months' time has an exercise rate of ₹ 400. Risk free interest rate is 5% p.a. and standard\n        deviation (volatility) of share price is 22%. Based on the assumption that TIC Ltd. is not going\n        to declare any dividend over the next three months, is the option worth buying for ₹ 25?\n(ii)    Calculate value of aforesaid call option based on Black Scholes valuation model if the current\n        price is considered as ₹ 380.\n(iii)   What would be the worth of put option if current price is considered ₹ 380.\n(iv)    If TIC Ltd. share price at present is taken as ₹ 408 and a dividend of ₹ 10 is expected to be\n        paid in the two months time, then, calculate value of the call option.\n\nGiven\nIn(1.0375) = 0.03681\nIn(0.95) = -0.05129\nIn(0.9952) = -0.00481\ne0.0125 = 1.012578\ne0.008333 = 1.0084\nSolution\n(i)     Given: TIC Ltd. Current Price = ₹ 415\n        Exercise rate = 400\n        Risk free interest rate is = 5% p.a.\n        SD (Volatility) = 22%\n        Based on the above bit is calculated value of an option based on Black Scholes Model:\n                          415          1\n                      l        + .05 +\n                       n  400 \n                                            (.22)2 .25\n                                         2        \n                  d =\n                   1               .22 .25\n\n            .03681 + .01855\n        =                   = .5032727\n                  .11\n\n                  9.302.30             ADVANCED FINANCIAL MANAGEMENT\n\n                        415         1     2\n                    ln       + .05 - (.22)  .25\n                         400         2\n                d2 =                         \n                                .22 .25\n            .03681 + .00645\n        =                   = 0.3932727\n                  .11\n        N(d1) = N (.50327) = 1 − 0.3072 = 0.6928\n        N(d2) = N (.39327) = 1 − 0.3471 = 0.6529\n        Value of Option = 415 (.6928) -                         (.6529)\n                                              e   (.05) (.25)\n\n                           = 287.512 -            (.6529) = 287.512 – 257.916 = ₹ 29.60\n        NB : N(0.39327) can also be find as under :\n        Step 1:     From table of area under normal curve find the area of variable 0.39 i.e. 0.6517.\n        Step 2:     From table of area under normal curve find the area of variable 0.40.\n        Step 3:     Find out the difference between above two variables and areas under normal\n                    curve.\n        Step 4 : Using interpolation method find out the value of 0.00327. Which is as follows:\n                                                × 0.00327 = 0.0012\n        Step 5:     Add this value, computed above to the N(0.39). Thus N (0.39327)\n                    = 0.6517 + 0.0012 = 0.6529\n        Since market price of ₹ 25 is less than ₹ 29.60 (as per Black Scholes Valuation model)\n        indicate that option is underpriced, hence worth buying.\n(ii)    If the current price is taken as ₹ 380 the computations are as follows:\n                380          1\n            ln       + .05 +   (.22)2  .25\n                 400          2                 -0.05129 + .01855\n        d1 =                                  =                   = -0.297636\n                         .22 .25                          .11\n                380         1     2\n            ln       + .05 - (.22)  .25\n                 400         2              -0.05129 + .00645\n        d2 =                              =                             = -0.407636\n                        .22 .25                       .11\n\n                                       DERIVATIVES ANALYSIS AND VALUATION                           9.31\n\n                           E\n        Vo = Vs N(d1) -         N(d2)\n                           e rt\n                N(d1) = N(-0.297636) = 0.3830\n                N(d2) = N(-0.407636) = 0.3418\n                380 (.3830) -         (.05 ) (.25 )\n                                                      × (.3418)\n                                  e\n        145.54 -            (.3418) = 145.54 – 135.02 = ₹ 10.52\n(iii)   Value of call option = ₹ 10.52\n        Current Market Value = ₹ 415\n                                                             400                 400\n        Present Value of Exercise Price =                         = 395.06 or          = 395.03\n                                                           1.0125             1.012578\n        Value of Put Option can be find by using Put Call Parity relationship as follows:",
+     "cut": true
     },
     {
      "sec": 24,
@@ -491,13 +487,13 @@
     }
    ],
    "sweep": {
-    "points": 57,
+    "points": 61,
     "mtp": 24,
-    "pyq": 10,
+    "pyq": 12,
     "rtp": 5
    },
    "rank": {
-    "score": 57
+    "score": 61
    },
    "tier": "must"
   },
@@ -672,7 +668,7 @@
      "t": "Translation Exposure",
      "p0": 25,
      "p1": 26,
-     "hits": 0
+     "hits": 2
     },
     {
      "n": "10.3",
@@ -1067,7 +1063,7 @@
      "t": "Cash Flow Based Models",
      "p0": 11,
      "p1": 13,
-     "hits": 5
+     "hits": 7
     },
     {
      "n": "6.4",
@@ -1137,7 +1133,7 @@
      "t": "PRECAUTIONS NEED TO BE TAKEN BY A VALUER",
      "p0": 37,
      "p1": 57,
-     "hits": 35
+     "hits": 37
     },
     {
      "n": "10",
@@ -1280,13 +1276,13 @@
     }
    ],
    "sweep": {
-    "points": 42,
+    "points": 44,
     "mtp": 17,
-    "pyq": 7,
+    "pyq": 8,
     "rtp": 6
    },
    "rank": {
-    "score": 42
+    "score": 44
    },
    "tier": "must"
   },
@@ -1482,7 +1478,7 @@
      "t": "ARBITRAGE PRICING THEORY MODEL (APT)",
      "p0": 48,
      "p1": 49,
-     "hits": 4
+     "hits": 6
     },
     {
      "n": "10.1",
@@ -1510,7 +1506,7 @@
      "t": "SHARPE'S OPTIMAL PORTFOLIO",
      "p0": 53,
      "p1": 54,
-     "hits": 2
+     "hits": 4
     },
     {
      "n": "12.1",
@@ -1573,7 +1569,7 @@
      "t": "Gold",
      "p0": 67,
      "p1": 68,
-     "hits": 0
+     "hits": 2
     },
     {
      "n": "16.3",
@@ -1771,13 +1767,13 @@
     }
    ],
    "sweep": {
-    "points": 42,
+    "points": 44,
     "mtp": 16,
-    "pyq": 9,
+    "pyq": 10,
     "rtp": 5
    },
    "rank": {
-    "score": 42
+    "score": 44
    },
    "tier": "must"
   },
@@ -1805,7 +1801,7 @@
      "t": "Types of Interest Rate Risk",
      "p0": 4,
      "p1": 6,
-     "hits": 2
+     "hits": 4
     },
     {
      "n": "3.2",
@@ -1826,14 +1822,14 @@
      "t": "Modern Methods",
      "p0": 10,
      "p1": 17,
-     "hits": 4
+     "hits": 6
     },
     {
      "n": "2",
      "t": "What do you know about swaptions and their uses?",
      "p0": 17,
      "p1": 29,
-     "hits": 30
+     "hits": 34
     }
    ],
    "questions": [
@@ -1860,24 +1856,22 @@
     },
     {
      "closest": {
-      "t": "What do you know about swaptions and their uses?",
-      "p0": 17,
+      "t": "Types of Interest Rate Risk",
+      "p0": 4,
       "file": true
      },
      "role": "drill",
-     "src": "RTP Nov 2026",
-     "label": "7",
-     "kind": "rtp",
+     "src": "PYQ May 2026",
+     "label": "5(b)",
+     "kind": "pyq",
      "loose": false,
      "covers": [
-      1,
       2,
       4,
-      5,
       6
      ],
-     "prompt": "7.   Two companies ABC Ltd. and XYZ Ltd. approach the DEF Bank for FRA\n     (Forward Rate Agreement). Both companies want to borrow a sum of ₹\n     100 crores after 2 years for a period of 1 year. Bank has calculated Yield\n     Curve of both companies as follows:\n\n                   Year                XYZ Ltd.           ABC Ltd.\n                    1                   3.86%              4.12%\n                    2                   4.20%              5.48%\n                    3                   4.48%              5.78%\n\n     Required:\n     (i)     Identify at least one reason for difference in the Yield Curve for the\n             companies.\n     (ii)    Calculate the rate of interest DEF Bank would quote to both\n             companies for 2V3 FRA, using the company's yield information as\n             quoted above.\n     (iii)   Suppose DEF Bank offers Interest Rate Guarantee at 5% for a\n             premium of 0.10% of the amount of loan, calculate the cost of\n             interest for XYZ Ltd. if interest rate for one year in 2 years turns out\n             to be\n             (1)        4.50%\n             (2)        5.50%\nPortfolio Management",
-     "ans": "7.    (i)    The difference in yield curve may due to the lower credit rating of\n             ABC Ltd. compared to XYZ Ltd.\n      (ii)   DEF Bank will fix interest rate for 2V3 FRA after 2 years as follows:\n             XYZ Ltd.\n                               (1+r) (1+0.0420)2 =     (1+0.0448)3\n                               (1+r) (1.0420)2   =     (1.0448)3\n                                     r           =     5.04%\n             Bank will quote 5.04% for a 2V3 FRA.\n             ABC Ltd.\n                               (1+r) (1+0.0548)2=      (1+0.0578)3\n                               (1+r) (1.0548)2   =     (1.0578)3\n                                         r       =     6.38%\n             Bank will quote 6.38% for a 2V3 FRA.\n      (iii) Interest payable by XYZ Ltd. under two scenarios will be computed\n            as follows:\n                                                     4.50%      - 5.50%    -\n                                                     Option    is Option  is\n                                                     allowed to Exercised\n                                                     be lapsed\n             Interest        ₹ 100 crores X 4.50%     ₹ 4.50 crores              -\n                             ₹ 100 crores X 5.04%*                 - ₹ 5.04 crores\n             Premium (Cost ₹ 100 crores X 0.10%       ₹ 0.10 crores ₹ 0.10 crores\n             of Option)\n                                                      ₹ 4.60 crores ₹ 5.14 crores\n\n             * Since after 2 years 1 year interest rate turned out to be 5.50%, it\n             will be beneficial for XYZ Ltd. to exercise its option."
+     "prompt": "Zenith Commercial Bank's ALCO is evaluating the re-pricing risk for the\n    0-90 days' time bucket. The following quarterly data is available:\n    Financial Data:\n    •     Rate Sensitive Assets (RSAs): ₹ 12,500 Crores\n    •     Rate Sensitive Liabilities (RSLs): ₹ 15,800 Crores\n    •     Quarterly Net Interest Income (NII): ₹ 450 Crores\n    Risk Policy:\n    The bank's Earnings at Risk (EaR) limit is 8% of quarterly NII. Hedging is\n    mandatory if the potential NII impact in any scenario exceeds this threshold.\n    You are required to:\n    (i)   Identify the Gap Position (Positive/Negative) and determine which of the\n          following scenarios is favourable for the bank's NII, providing a brief\n          justification:\n          •   Scenario A: Repo rate increase of 50 bps.\n          •   Scenario B: Repo rate decrease of 25 bps.\n    (ii) Calculate the Earnings at Risk (EaR) in ₹ Crores and as a percentage of\n         NII for both scenarios. Based on the bank's risk policy, advice whether\n         management should activate hedging strategies or not.         (7 Marks)",
+     "ans": "(i)   Gap Position & Favorability\n          ●        Gap Calculation: ₹ 12,500 crore – ₹ 15,800 crore = - ₹ 3,300 Crore\n                   (Negative Gap)\n          ●        Un-Favorable Senario: Senario A (50 bps). In a negative (liability-\n                   sensitive) gap, increase in rates causes liabilities to reprice upward\n                   more than assets, leading to a decrease in Net Interest Income.\n\n        ●    Favorable Senario: Senario B (-25 bps). In a negative (liability-\n             sensitive) gap, a decrease in rates causes liabilities to reprice\n             downward more than assets, leading to an increase in Net Interest\n             Income.\n    (ii) EAR in two different scenarios\n        Scenario A:\n        EAR = (RSA – RSL) x Change in Interest Rate x (1/4)\n        = (₹ 12500 crore – ₹ 15800 crore) x 0.50% x (1/4)\n        EAR = - ₹ 4.125 crore\n        Or (₹ 12500 crore – ₹ 15800 crore) x 0.50% x (90/365) = - ₹ 4.0685 crore\n        EAR in %= -4.125/450=-0.9167% Or -4.0685/450=-0.90411%\n        Bank Ear = 8% x ₹ 450 Crore = ₹ 36 crore\n        Since EAR - 0.9167% Or - 0.90410% is less than EaR 8% limits no need\n        of hedging.\n        Scenario B:\n        EAR = (RSA – RSL) x Change in Interest Rate x (1/4)\n        = (₹ 12500 crore – ₹ 15800 crore) x (- 0.25%) x (1/4)\n        EAR = ₹ 2.0625 crore Or\n        = (₹ 12500 crore – ₹ 15800 crore) x (- 0.25%) x (90/365)\n        EAR = ₹ 2.0342 crore\n        EAR in % = 2.0625/450 = 0.4583% or 0.4521%\n        Since Value is positive no need of hedging."
     },
     {
      "closest": {
@@ -1922,15 +1916,349 @@
     }
    ],
    "sweep": {
-    "points": 34,
+    "points": 38,
     "mtp": 12,
-    "pyq": 7,
+    "pyq": 9,
     "rtp": 6
    },
    "rank": {
-    "score": 34
+    "score": 38
    },
    "tier": "must"
+  },
+  {
+   "id": "chapter-14-mergers-acquisitions-and-corporate-rest",
+   "title": "Ch 14 · Mergers, Acquisitions and Corporate Restructuring",
+   "url": "https://resource.cdn.icai.org/83291bos67342-cp14.pdf",
+   "sections": [
+    {
+     "n": "0",
+     "t": "Introduction and overview",
+     "p0": 1,
+     "p1": 2,
+     "hits": 0
+    },
+    {
+     "n": "1",
+     "t": "CONCEPTUAL FRAMEWORK",
+     "p0": 2,
+     "p1": 4,
+     "hits": 0
+    },
+    {
+     "n": "2",
+     "t": "RATIONALE FOR MERGERS AND ACQUISITIONS",
+     "p0": 4,
+     "p1": 6,
+     "hits": 0
+    },
+    {
+     "n": "3",
+     "t": "FORMS (TYPES) OF MERGERS",
+     "p0": 6,
+     "p1": 8,
+     "hits": 0
+    },
+    {
+     "n": "4.1",
+     "t": "Gains from Mergers or Synergy",
+     "p0": 8,
+     "p1": 10,
+     "hits": 0
+    },
+    {
+     "n": "4.2",
+     "t": "Scheme of Amalgamation or Merger",
+     "p0": 10,
+     "p1": 11,
+     "hits": 1
+    },
+    {
+     "n": "4.4",
+     "t": "Arranging Finance for Acquisition",
+     "p0": 11,
+     "p1": 11,
+     "hits": 0
+    },
+    {
+     "n": "5.1",
+     "t": "Take Over Strategies",
+     "p0": 11,
+     "p1": 12,
+     "hits": 0
+    },
+    {
+     "n": "5.2",
+     "t": "Defensive Tactics",
+     "p0": 12,
+     "p1": 13,
+     "hits": 3
+    },
+    {
+     "n": "6",
+     "t": "REVERSE MERGER",
+     "p0": 13,
+     "p1": 14,
+     "hits": 0
+    },
+    {
+     "n": "7.1",
+     "t": "Seller's Perspective",
+     "p0": 14,
+     "p1": 15,
+     "hits": 0
+    },
+    {
+     "n": "7.2",
+     "t": "Different Forms",
+     "p0": 15,
+     "p1": 17,
+     "hits": 0
+    },
+    {
+     "n": "8",
+     "t": "FINANCIAL RESTRUCTURING",
+     "p0": 17,
+     "p1": 21,
+     "hits": 0
+    },
+    {
+     "n": "9.1",
+     "t": "Going Private",
+     "p0": 21,
+     "p1": 21,
+     "hits": 0
+    },
+    {
+     "n": "9.3",
+     "t": "Leveraged Buyout (LBO)",
+     "p0": 21,
+     "p1": 22,
+     "hits": 0
+    },
+    {
+     "n": "9.4",
+     "t": "Equity buyback",
+     "p0": 22,
+     "p1": 24,
+     "hits": 5
+    },
+    {
+     "n": "10",
+     "t": "UNLOCKING THE VALUE THROUGH MERGERS &",
+     "p0": 24,
+     "p1": 24,
+     "hits": 0
+    },
+    {
+     "n": "11",
+     "t": "PREMIUM AND DISCOUNT",
+     "p0": 24,
+     "p1": 25,
+     "hits": 0
+    },
+    {
+     "n": "12",
+     "t": "MERGERS AND ACQUISITIONS FAILURES",
+     "p0": 25,
+     "p1": 27,
+     "hits": 0
+    },
+    {
+     "n": "13",
+     "t": "ACQUISITION THROUGH SHARES",
+     "p0": 27,
+     "p1": 31,
+     "hits": 5
+    },
+    {
+     "n": "7",
+     "t": "Expected Annual growth rate in",
+     "p0": 31,
+     "p1": 31,
+     "hits": 0
+    },
+    {
+     "n": "14",
+     "t": "CROSS-BORDER M&A",
+     "p0": 31,
+     "p1": 32,
+     "hits": 0
+    },
+    {
+     "n": "15",
+     "t": "SPECIAL PURPOSE ACQUISITION COMPANIES",
+     "p0": 32,
+     "p1": 58,
+     "hits": 9
+    },
+    {
+     "n": "8",
+     "t": "Working Notes",
+     "p0": 58,
+     "p1": 66,
+     "hits": 6
+    },
+    {
+     "n": "15",
+     "t": "Compute Value of Equity",
+     "p0": 66,
+     "p1": 68,
+     "hits": 0
+    },
+    {
+     "n": "17",
+     "t": "Swap Ratio",
+     "p0": 68,
+     "p1": 70,
+     "hits": 0
+    },
+    {
+     "n": "18",
+     "t": "SWAP RATIO",
+     "p0": 70,
+     "p1": 74,
+     "hits": 4
+    },
+    {
+     "n": "21",
+     "t": "As per T Ltd.'s Offer",
+     "p0": 74,
+     "p1": 76,
+     "hits": 1
+    },
+    {
+     "n": "3",
+     "t": "Book value per share",
+     "p0": 76,
+     "p1": 83,
+     "hits": 0
+    },
+    {
+     "n": "30",
+     "t": "Calculation of Purchase Consideration",
+     "p0": 83,
+     "p1": 85,
+     "hits": 2
+    }
+   ],
+   "questions": [
+    {
+     "closest": {
+      "t": "ACQUISITION THROUGH SHARES",
+      "p0": 27,
+      "file": true
+     },
+     "role": "comprehensive",
+     "src": "RTP May 2026",
+     "label": "11",
+     "kind": "rtp",
+     "loose": false,
+     "covers": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12,
+      15,
+      19,
+      22,
+      23,
+      24,
+      26,
+      27,
+      28,
+      29
+     ],
+     "prompt": "11.   Long Ltd., is planning to acquire Tall Ltd., with the following data\n      available for both the companies:\n\n                                            Long Ltd.      Tall Ltd.\n        Expected EPS                           ₹ 12           ₹5\n        Expected DPS                           ₹ 10           ₹3\n        No. of Shares                       30,00,000     18,00,000\n        Current Market Price of Share         ₹ 180          ₹ 50\n\n      As per an estimate Tall Ltd., is expected to have steady growth of\n      earnings and dividends to the tune of 6% per annum. However, under\n      the new management the growth rate is likely to be enhanced to 8% per\n      annum without additional investment.\n      You are required to:\n      (i)     Calculate the net cost of acquisition by Long Ltd., if ₹ 60 is paid for\n              each share of Tall Ltd.\n      (ii)    If the agreed exchange ratio is one share of Long Ltd., for every\n              three shares of Tall Ltd., in lieu of the cash acquisition as per (i)\n              above, what will be the net cost of acquisition?\n      (iii)   Calculate Gain from acquisition.\nMutual Funds",
+     "ans": "11.   (i)    Net cost of acquisition shall be computed as follows:\n              Cash Paid for the shares of Tall Ltd. (₹ 60 ×      ₹ 10,80,00,000\n              18,00,000)\n              Less: Value of Tall Ltd., as a separate entity         ₹ 9,00,00,000\n              (18,00,000 × ₹ 50)\n              Net Cost of acquisition of Tall Ltd.                   ₹ 1,80,00,000\n      (ii)   Net Cost of acquisition in case of exchange of shares:\n             Exchange ratio = 1 share of long Ltd for every 3 shares of Tall Ltd.\n\n              Number of shares to be issued in Long Ltd. = 6,00,000 shares\n              (18,00,000/3)\n              Total no. of shares in Long Ltd. after merger    = 36,00,000\n              (30,00,000 + 6,00,000)\n\n              Calculation of cost of Equity of Tall Ltd. = D1/P0 +g\n              Growth rate under new management after = ₹ 3/50 + 0.06 = 12%\n              acquisition\n              Value of Merged company assuming = 8%\n              perpetual growth\n              Value of merged company\n              (₹ 180 x 30,00,000) + (₹ 3/ (0.12 - 0.08) x = ₹ 67,50,00,000\n              18,00,000\n              = 54,00,00,000 + (75 X 18,00,000)\n              Value per share of merged company = ₹ 187.50 per share\n              (67,50,00,000/36,00,000)\n\n              Calculation of net cost of acquisition\n              Gross cost of acquisition (6,00,000 x 187.50)            11,25,00,000\n              Less: CMP (18,00,000 x 50)                                9,00,00,000\n              Net Cost of acquisition                                   2,25,00,000\n\n            Alternatively, Net Cost of Acquisition can also be computed as\n            follows:\n\n             No. of shares issued to shareholders of Tall Ltd. in           6,00,000\n             the ratio of 1:3\n             Existing price of one share of Long Ltd.                          ₹ 180\n             Value of consideration paid for acquisition of Tall                   ₹\n             Ltd.                                                       10,80,00,000\n             Less: Existing Value of Tall Ltd., as a separate entity    ₹ 9,00,00,000\n             Net Cost of acquisition of Tall Ltd.                       ₹ 1,80,00,000\n\n      (iii) Calculation of gain from acquisition:\n\n             Total Earnings of Long Ltd. (₹ 12 x 30,00,000)             ₹ 3,60,00,000\n             Total Earnings of Tall Ltd. (₹ 5 x 18,00,000)               ₹ 90,00,000\n             Combined Earnings                                          ₹ 4,50,00,000\n             PE Ratio of Long Ltd. (180/12)                                       15\n             Value of Long Ltd. after acquisition                      ₹ 67,50,00,000\n             Less: Value of two companies separately\n             Long Ltd. (₹ 180 x 30,00,000)   ₹ 54,00,00,000\n             Tall Ltd. (₹ 50 x 18,00,000)        ₹ 9,00,00,000         ₹ 63,00,00,000\n             Gain from Acquisition                                      ₹ 4,50,00,000"
+    },
+    {
+     "closest": {
+      "t": "SPECIAL PURPOSE ACQUISITION COMPANIES",
+      "p0": 32,
+      "file": true
+     },
+     "role": "drill",
+     "src": "PYQ May 2024",
+     "label": "4(b)",
+     "kind": "pyq",
+     "loose": false,
+     "covers": [
+      12,
+      15,
+      18,
+      19,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+     ],
+     "prompt": "PQ Ltd., plans to acquire RS Ltd. The relevant financial details of the two firms\n    prior to the merger announcement are:\n                                                     PQ Ltd.,       RS Ltd.,\n          Market price per share                        ₹ 100          ₹ 50\n          Number of outstanding shares              20,00,000     10,00,000\n\n    The merger is expected to generate gains, which have a present value of\n    ₹ 300 lakhs. The exchange ratio agreed to is 0.5.\n    You are required to calculate the true cost of the merger from the point of\n    view of PQ Ltd.                                                  (4 Marks)",
+     "ans": "Shareholders of RS Ltd. will get 5 lakh share of PQ Ltd., so they will get:\n               5 lakh\n    =                    = 20% of shares PQ Ltd.\n          20 lakh+5 lakh\n    The value of PQ Ltd. after merger will be:\n    = ₹ 100 x 20 lakh + ₹ 50 x 10 lakh + ₹ 300 lakh\n    = ₹ 2000 lakh + ₹ 500 lakh + ₹ 300 lakh = ₹ 2800 lakh\n    True Cost of Merger will be:\n    (₹ 2800 x 20%) ₹ 560 lakhs – ₹ 500 lakhs = ₹ 60 lakh"
+    },
+    {
+     "closest": {
+      "t": "SWAP RATIO",
+      "p0": 70,
+      "file": true
+     },
+     "role": "drill",
+     "src": "MTP Nov 2026 S-I",
+     "label": "5(a)",
+     "kind": "mtp",
+     "loose": false,
+     "covers": [
+      6,
+      15,
+      19,
+      22,
+      23,
+      25,
+      26,
+      27,
+      28
+     ],
+     "prompt": "The following information is provided relating to the acquiring company E Ltd., and\n                    the target company H Ltd:\n                                                                           E Ltd.          H Ltd.\n                      Particulars\n                                                                            (₹)             (₹)\n                      Number of shares (Face value ₹ 10 each)               20 Lakhs         15 Lakhs\n                      Market Capitalization                               1000 Lakhs      1500 Lakhs\n                      P/E Ratio (times)                                         10.00               5.00\n                      Reserves and surplus in ₹                          600.00 Lakhs   330.00 Lakhs\n                      Promoter's Holding (No. of shares)                   9.50 Lakhs     10.00 Lakhs\n\n                    The Board of Directors of both the companies have decided to give a fair deal to\n                    the shareholders. Accordingly, the weights are decided as 40%, 25% and 35%\n                    respectively for earnings (EPS), book value and market price of share of each\n                    company for swap ratio.\n                    Calculate the following:\n                    (i)     Market price per share, earnings per share and Book Value per share;\n                    (ii)    Swap ratio;\n                    (iii)   Promoter's holding percentage after acquisition;\n                    (iv)    EPS of E Ltd. after acquisitions of H Ltd;\n                    (v)     Expected market price per share and market capitalization of E Ltd.; after\n                            acquisition, assuming P/E ratio of E Ltd. remains unchanged; and\n                    (vi)    Free float market capitalization of the merged firm.            (10 Marks)\n           (b)      Projected financial statements provide potential investors with an overview of the\n                    expected financial performance and position of a start-up. Explain the basic\n                    documents that comprise a start-up's projected financial statements. (4 Marks)",
+     "ans": "(i)                                                            E Ltd.        H Ltd.\n                   Market capitalisation                             1000 lakhs 1500 lakhs\n                   No. of shares                                        20 lakhs     15 lakhs\n                   Market Price per share                                   ₹ 50        ₹ 100\n                   P/E ratio                                                  10             5\n\n\f              EPS                                                        ₹5          ₹ 20\n              Profit                                             ₹ 100 lakh ₹ 300 lakh\n              Share capital                                      ₹ 200 lakh ₹ 150 lakh\n              Reserves and surplus                               ₹ 600 lakh ₹ 330 lakh\n              Total                                              ₹ 800 lakh ₹ 480 lakh\n              Book Value per share                                     ₹ 40          ₹ 32\n\n      (ii)    Calculation of Swap Ratio\n              EPS                                 1 : 4 i.e.    4.0 × 40%          1.6\n              Book value                         1 : 0.8 i.e.   0.8 × 25%          0.2\n              Market price                        1 : 2 i.e.    2.0 × 35%          0.7\n                                                                 Total         2.5\n              Swap ratio is for every one share of H Ltd., to issue 2.5 shares of E Ltd.\n              Hence, total no. of shares to be issued 15 lakh × 2.5 = 37.50 lakh shares\n      (iii)   Promoter's holding = 9.50 lakh shares + (10× 2.5 = 25 lakh shares) = 34.50\n              lakh i.e. Promoter's holding % is (34.50 lakh/57.50 lakh) × 100 = 60%.\n      (iv)    Calculation of EPS after merger\n              Total No. of shares 20 lakh + 37.50 lakh = 57.50 lakh\n                   Total profit           100 lakh + 300 lakh            400\n              =\n              EPS                         =                                   = ₹ 6.956\n                  No. of shares                57.50 lakh               57.50\n      (v)     Calculation of Market price and Market capitalization after merger\n\n               Expected market price EPS 6.956 × P/E 10 = ₹ 69.56\n               Market capitalization    = ₹ 69.56 per share × 57.50 lakh shares\n                                        = ₹ 3,999.70 lakh or ₹ 4,000 lakh\n      (vi)    Free float of market capitalization = ₹ 69.56 per share × (57.50 lakh × 40%) =\n              ₹ 1599.88 lakh                                                     (10 Marks)"
+    }
+   ],
+   "reading": [
+    {
+     "sec": 15,
+     "text": "This refers to the situation wherein a company buys back its own shares back from the market. This\nresults in reduction in the equity capital of the company. This strengthens the promoter's position by\nincreasing his stake in the equity of the company.\nThe buyback is a process in which a company uses its surplus cash to buy shares from the public.\nIt is almost the opposite of initial public offer in which shares are issued to the public for the first\ntime. In buyback, shares which have already been issued are bought back from the public and once\nthe shares are bought back, they get absorbed and cease to exist.\nFor example, a company has one crore outstanding shares and owing a huge cash pile of ₹ 5 crores.\nSince, the company has very limited investment options it decides to buy back some of its\noutstanding shares from the shareholders, by utilizing some portion of its surplus cash. Accordingly,\nit purchases 10 lakh shares from the existing shareholders by paying ₹ 20 per share utilizing total\ncash of ₹ 2 crore. The process of buyback can be shown with the help of following diagram:\n\n                   INITIAL PUBLIC OFFER (IPO)               BUY-BACK\n\n                              COMPANY                        COMPANY\n                                                                      SHARES\n                                                              C S\n                                       CASH\n\n                           INVESTORS                        INVESTORS\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                 14.23\n\nExample\nCairn India bought back 3.67 crores shares and spent nearly ₹ 1230 crores by\nMay 2014.\nEffects of Buyback\n\nThere are several effects or consequences of buyback some of which are as follows:\n(i)     It increases the proportion of shares owned by controlling shareholders as the number of\n        outstanding shares decreases after the buyback.\n(ii)    Earning Per Share (EPS) escalates as the number of shares reduces leading the market price\n        of shares to step up.\n(iii)   A share repurchase also effects a company's financial statements as follows:\n        (a)     In balance sheet, a share buyback will reduce the company's total assets position as\n                cash holdings will be reduced and consequently as shareholders' equity reduced it\n                results in reduction on the liabilities side by the same amount.\n        (b)     Amount spent on share buybacks shall be shown in Statement of Cash Flows in the\n                “Financing Activities” section, as well as from the Statement of Changes in Equity\n                or Statement of Retained Earnings.\n(iv)    Ratios based on performance indicators such as Return on Assets (ROA) and Return on\n        Equity (ROE) typically improve after a share buyback. This can be understood with the help\n        of following Statement showing Buyback Effect of a hypothetical company using ₹ 1.50 crore\n        of cash out of total cash of ₹ 2.00 for buyback.\n                                                    Before Buyback    After Buyback (₹)\n              Cash (₹)                                  2,00,00,000           50,00,000\n              Assets (₹)                                5,00,00,000         3,50,00,000\n              Earnings (₹)                               20,00,000            20,00,000\n              No. of Shares outstanding (Nos.)           10,00,000              9,00,000\n              Return on Assets (%)                           4.00%                5.71%\n              Earnings Per Share (EPS) (₹)                    2.00                  2.22\n\nAs visible from the above figure, the company's cash pile has been reduced from ₹ 2 crore to ₹ 50\nlakh after the buyback because cash is an asset, this will lower the total assets of the company from\n₹ 5 crore to ₹ 3.5 crore. Now, this leads to an increase in the company's ROA, even though earnings\nhave not changed. Prior to the buyback, its ROA was 4% but after the repurchase, ROA increases\n\nto 5.71%. A similar effect can be seen in the EPS, which increases from ₹ 2.00 to\n₹ 2.22.",
+     "cut": false
+    },
+    {
+     "sec": 19,
+     "text": "The acquirer can pay the target company in cash or exchange shares in consideration. The analysis\nof acquisition for shares is slightly different. The steps involved in the analysis are:\n\n•       Estimate the value of acquirer's (self) equity.\n•       Estimate the value of target company's equity.\n•       Calculate the maximum number of shares that can be exchanged with the target company's\n        shares; and\n•       Conduct the analysis for pessimistic and optimistic scenarios.\nExchange ratio is the number of acquiring firm's shares exchanged for each share of the selling\nfirm's stock. Suppose company A is trying to acquire company B's 100,000 shares at ₹ 230. So, the\ncost of acquisition is ₹ 230,00,000. Company A has estimated its value at ₹ 200 per share. To get\none share of company B, A has to exchange (230/200) 1.15 share, or 115,000 shares for 100,000\nshares of B. The relative merits of acquisition for cash or shares should be analyzed after giving due\nconsideration to the impact on EPS, capital structure, etc.\nNormally, when shares are issued as payment to the selling company's shareholders, stockholders\nwill find the merger desirable only if the value of their shares is higher with the merger than without\nthe merger. The number of shares that the buying company will issue in acquiring the selling\ncompany is determined as follows:\n\n(1)     The acquiring company will compare its value per share with and without the merger.\n(2)     The selling company will compare its value with the value of shares that they would receive\n        from acquiring company under the merger.\n\n(3)     The managements of acquiring company and selling company will negotiate the final terms\n        of the merger in the light of (1) and (2); the ultimate terms of the merger will reflect the relative\n        bargaining position of the two companies.\nThe fewer of acquiring company's shares that it issues to the acquired company, the better off the\nshareholders of the acquiring company are and worse off are the shareholders of acquired company.\nHowever, for the merger to be effective, the shareholders of both the acquiring and acquired\ncompany will have to anticipate some benefits from the merger even though their share swap deal\nis subject to synergy risk for both.\n\nImpact of Price Earning Ratio: The reciprocal of cost of equity is Price-Earning (P/E) ratio. The\ncost of equity, and consequently the P/E ratio reflects risk as perceived by the shareholders. The\nrisk of merging entities and the combined business can be different. In other words, the combined\nP/E ratio can very well be different from those of the merging entities. Since market value of a\nbusiness can be expressed as product of earning and P/E ratio (P/E x E = P), the value of combined\nbusiness is a function of combined earning and combined P/E ratio. A lower combined P/E ratio can\noffset the gains of synergy or a higher P/E ratio can lead to higher value of business, even if there\nis no synergy. In ascertaining the exchange ratio of shares due care should be exercised to take the\npossible combined P/E ratio into account.\nIllustration 2\nCompany X is contemplating the purchase of Company Y, Company X has 3,00,000 shares having\na market price of ₹ 30 per share, while Company Y has 2,00,000 shares selling at ₹ 20 per share.\nThe EPS are ₹ 4.00 and ₹ 2.25 for Company X and Y respectively. Managements of both companies\nare discussing two alternative proposals for exchange of shares as indicated below:\n(i)       in proportion to the relative earnings per share of two companies.\n(ii)      0.5 share of Company X for one share of Company Y (0.5:1).\n\nYou are required:\n(i)       to calculate the Earnings Per share (EPS) after merger under two alternatives; and\n(ii)      to show the impact of EPS for the shareholders of two companies under both the alternatives.\nSolution\nWorking Notes: Calculation of total earnings after merger\n       Particulars                                  Company X       Company Y                Total\n       Outstanding shares                             3,00,000         2,00,000\n       EPS (₹)                                               4                 2.25\n       Total earnings (₹)                            12,00,000         4,50,000         16,50,000\n\n(i)       (a)    Calculation of EPS when exchange ratio is in proportion to relative EPS of two\n                 companies\n                     Company X                                                    3,00,000\n                     Company Y                  2,00,000 x 2.25/4                 1,12,500\n                     Total number of shares after merger                          4,12,500\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                      14.29\n\nCompany X\n EPS before merger                                                                           =           ₹4\n EPS after merger = ₹ 16,50,000/4,12,500 shares                                              =           ₹4\n Company Y\n EPS before merger                                                                           =     ₹ 2.25\n EPS after merger\n = EPS of Merged Entity after merger x Share Exchange ratio on EPS basis = ₹ 4×\n                                                                                      4      =     ₹ 2.25\n\n        (b)     Calculation of EPS when share exchange ratio is 0.5 : 1\n                Total earnings after merger =             ₹ 16,50,000\n                Total number of shares after merger = 3,00,000 + (2,00,000 x 0.5) = 4,00,000 shares\n                EPS after merger = ₹ 16,50,000/4,00,000 = ₹ 4.125\n(ii)    Impact of merger on EPS for shareholders of Company X and Company Y\n        (a)     Impact on Shareholders of Company X\n                                                                                                   (₹)\n                  EPS before merger                                                              4.000\n                  EPS after merger                                                               4.125\n                  Increase in EPS                                                                0.125\n\n        (b)     Impact on Shareholders of Company Y\n                                                                                                 (₹)\n                  Equivalent EPS before merger                                               2.2500\n                  Equivalent EPS after merger                                                2.0625\n                  Decrease in EPS                                                            0.1875\nIllustration 3\nA Ltd. is studying the possible acquisition of B Ltd. by way of merger. The following data are\navailable:\n       Firm        After-tax earnings               No. of equity shares   Market price per share\n       A Ltd.         ₹ 10,00,000                         2,00,000                  ₹ 75\n       B Ltd.          ₹ 3,00,000                          50,000                   ₹ 60\n\n(i)     If the merger goes through by exchange of equity shares and the exchange ratio is set\n        according to the current market prices, what is the new earnings per share for A Ltd.\n(ii)    B Ltd. wants to be sure that its earning per share is not diminished by the merger. What\n        exchange ratio is relevant to achieve the objective?\nSolution\n(i)     The current market price is the basis of exchange of equity shares, in the proposed merger,\n        shareholders of B Ltd. will get only 40,000 shares in all or 4 shares of A Ltd. for every 5\n        shares held by them, i.e.,\n                                               50,000 × 60\n                                                             = 40,000\n        The total number of shares in A Ltd. will then be 2,40,000 and, ignoring any synergistic effect,\n        the profit will be ₹ 13,00,000.The new earning per share (EPS) of A Ltd. will be ₹ 5.42, i.e.,\n        ₹ 13,00,000/2,40,000.\n(ii)    The present earnings per share of B Ltd. is ₹6/- (₹ 3,00,000 ÷ 50,000) and that of A Ltd. is\n        ₹5/-, i.e., ₹ 10,00,000 ÷ 2,00,000.If B Ltd. wants to ensure that, even after merger, the earning",
+     "cut": true
+    },
+    {
+     "sec": 22,
+     "text": "In recent times, the concept of Special Purpose Acquisition Companies (SPACs) has come into\nexistence wherein an entity is set up with the objective to raise funds through an IPO to finance a\nmerger or acquisition of an unidentified target within a specific time. It is commonly known as a blank\ncheque company.\nThe main objective of SPAC is to raise money, despite not having any operations or revenues. The\nmoney raised from the public is kept in an escrow account, which can be accessed while making the\nacquisition. However, in case the acquisition is not made within stipulated period of the IPO, the\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                   14.33\n\nSPAC is delisted, and the money is returned to the investors. Shareholders have the option to\nredeem their shares if they are not interested in participating in the proposed merger. Finally, if the\nmerger is approved by shareholders, it is executed, and the target private company or companies\nbecome public entities. Once a formal merger agreement has been executed the SPAC target is\nusually publicly announced.\nNew investment opportunities in Indian companies have resurfaced and have set up new platform\nfor SPAC transactions. The implementation of SPACs might face certain challenges since India does\nnot have a specific regulatory framework guarding these transactions.\n\nThe current regulatory framework in India does not support the SPAC transactions. Further as per\nthe Companies Act, 2013, the Registrar of Companies is authorized to strike-off the name of\ncompanies that do not commence operation within one year of incorporation. SPACs generally take\n2 to 3 years to identify a target and performing due diligence and before it could get operationalized\nits name can be stricken off and hence enabling provisions relating to SPAC need to be inserted in\nthe Companies Act in order to make it functional in India.\nThough, SPACs do not find acceptance under the Securities and Exchange Board of India (SEBI)\nAct as it does not meet the eligibility criteria for public listing however SEBI is planning to come out\nwith a framework for SPACs.\nThe International Financial Services Centres Authority (IFSCA), being the regulatory authority for\ndevelopment and regulation of financial services, financial products and financial institutions in the\nGujarat International Finance Tec-City, has recently released a consultation paper defining critical\nparameters such as offer size to public, compulsory sponsor holding, minimum application size,\nminimum subscription of the offer size, etc.\nSPAC approach offers several advantages over traditional IPO, such as providing companies access\nto capital, even when market volatility and other conditions limit liquidity. SPACs help to lower the\ntransaction fees as well as expedite the timeline in becoming a public company. Raising money\nthrough a SPAC is easier as compared to traditional IPO since the SPAC has already raised money\nthrough an IPO. This implies the company in question only has to negotiate with a single entity, as\nopposed to thousands of individual investors. This makes the process of fundraising a lot easier and\nquicker than an IPO. The involvement of skilled professionals in identifying the target makes the\ninvestment a well thought and a well governed process.\nHowever, the merger of a SPAC with a target company presents several challenges, such as\ncomplex accounting and financial reporting/registration requirements, to meet a public company\n\nreadiness timeline and being ready to operate as a public company within a period of three to five\nmonths of signing a letter of intent.\n\nIt is typically more expensive for a company to raise money through a SPAC than an IPO. Investors'\nmoney invested in a SPAC trust to earn a suitable return for up to two years, could be put to better\nuse elsewhere.\n\nTEST YOUR KNOWLEDGE\nTheoretical Questions\n1.      Explain synergy in the context of Mergers and Acquisitions.\n2.      What is take over by reverse bid or Reverse Merger.\n3.      What is an equity curve out? How does it differ from a spin off.\n4.      Write a short note on Horizontal Merger and Vertical Merger.\n\nPractical Questions\n1.      B Ltd. is a highly successful company and wishes to expand by acquiring other firms. Its\n        expected high growth in earnings and dividends is reflected in its PE ratio of 17. The Board\n        of Directors of B Ltd. has been advised that if it were to take over firms with a lower PE ratio\n        than it own, using a share-for-share exchange, then it could increase its reported earnings\n        per share. C Ltd. has been suggested as a possible target for a takeover, which has a PE\n        ratio of 10 and 1,00,000 shares in issue with a share price of ₹ 15. B Ltd. has 5,00,000 shares\n        in issue with a share price of ₹ 12.\n        Calculate the change in earnings per share of B Ltd. if it acquires the whole of C Ltd. by\n        issuing shares at its market price of ₹12. Assume the price of B Ltd. shares remains constant.\n2.      Elrond Limited plans to acquire Doom Limited. The relevant financial details of the two firms\n        prior to the merger announcement are:\n                                                    Elrond Limited           Doom Limited\n          Market price per share                         ₹ 50                     ₹ 25\n          Number of outstanding shares                 20 lakhs                 10 Lakhs\n        The merger is expected to generate gains, which have a present value of ₹200 lakhs. The\n        exchange ratio agreed to is 0.5.\n        What is the true cost of the merger from the point of view of Elrond Limited?\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                   14.35\n\n3.    MK Ltd. is considering acquiring NN Ltd. The following information is available:\n          Company                     Earning after      No. of Equity           Market Value\n                                         Tax (₹)           Shares                Per Share (₹)\n          MK Ltd.                      60,00,000           12,00,000                200.00\n          NN Ltd.                      18,00,000           3,00,000                 160.00\n\n        Exchange of equity shares for acquisition is based on current market value as above. There\n        is no synergy advantage available.\n        (i)     Find the earning per share for company MK Ltd. after merger, and\n        (ii)    Find the exchange ratio so that shareholders of NN Ltd. would not be at a loss.\n4.      ABC Ltd. is intending to acquire XYZ Ltd. by merger and the following information is available\n        in respect of the companies:\n                                                        ABC Ltd.     XYZ Ltd.\n                           Number of equity shares      10,00,000    6,00,000\n                           Earnings after tax (₹)       50,00,000   18,00,000\n                           Market value per share (₹)          42          28\n        Required:\n        (i)     What is the present EPS of both the companies?\n\n        (ii)    If the proposed merger takes place, what would be the new earning per share for ABC\n                Ltd.? Assume that the merger takes place by exchange of equity shares and the\n                exchange ratio is based on the current market price.",
+     "cut": true
+    },
+    {
+     "sec": 23,
+     "text": "(a)\n                                                                    XYZ Ltd.           ABC Ltd.\n                  Equity shares outstanding (Nos.)                 10,00,000               4,00,000\n                  EPS                                                   ₹ 40                  ₹ 28\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                   14.59\n\n                  Profit                                            ₹ 400,00,000     ₹ 112,00,000\n                  PE Ratio                                                  6.25             5.71\n                  Market price per share                                   ₹ 250            ₹ 160\n\n        (b)     EPS after merger\n\n                       No. of shares to be issued (4,00,000 x 0.70)                      2,80,000\n                       Exiting Equity shares outstanding                                10,00,000\n                       Equity shares outstanding after merger                           12,80,000\n                       Total Profit (₹ 400,00,000 + ₹ 112,00,000)                    ₹ 512,00,000\n                       EPS                                                                  ₹ 40\n\n                (i)       Impact of merger on EPS of both the companies\n\n                                                                         XYZ Ltd.       ABC Ltd.\n                              EPS after Merger                               ₹ 40           ₹ 28\n                              EPS before Merger                              ₹ 40           ₹ 28*\n                                                                               Nil            Nil\n                          * ₹ 40 x 0.70\n                (ii)      Gain from the Merger if exchange ratio is 1: 1\n\n                              No. of shares to be issued                                 4,00,000\n                              Exiting Equity shares outstanding                         10,00,000\n                              Equity shares outstanding after merger                    14,00,000\n                              Total Profit (₹ 400,00,000 + ₹ 112,00,000)             ₹ 512,00,000\n                              EPS                                                         ₹ 36.57\n                              Market Price of Share (₹ 36.57 x 6.25)                    ₹ 228.56\n                              Market Price of Share before Merger                       ₹ 160.00\n                              Impact (Increase/ Gain)                                     ₹ 68.56\n\n                (iii)     Gain/ loss from the Merger to the shareholders of XYZ Ltd.\n                             Market Price of Share                                       ₹ 228.56\n                             Market Price of Share before Merger                         ₹ 250.00\n                             Loss from the merger (per share)                             ₹ 21.44\n\n                (iv)    Maximum Exchange Ratio acceptable to XYZ Ltd. shareholders\n                                                                                         ₹ Lakhs\n                          Market Value of Merged Entity (₹ 228.57 x 1400000)             3199.98\n                          Less: Value acceptable to shareholders of XYZ Ltd.             2500.00\n                          Value of merged entity available to shareholders of ABC          699.98\n                          Ltd.\n                          Market Price Per Share                                              250\n                          No. of shares to be issued to the shareholders of ABC              2.80\n                          Ltd. (lakhs)\n\n                        Thus maximum ratio of issue shall be 2.80 : 4.00 or 0.70 share of XYZ Ltd. for\n                        one share of ABC Ltd.\n                        Alternatively, it can also be computed as follows:\n\n                          Earning after Merger (40 x 1000000 + 28 x 400000)               ₹ 512 lakhs\n                          PE Ratio of XYZ Ltd.                                                  6.25\n                          Market Value of Firm after Merger (512 x 6.25)                 ₹ 3200 lakhs\n                          Existing Value of Shareholders of XYZ Ltd.                     ₹ 2500 lakhs\n                          Value of Merged entity available to Shareholders of ABC Ltd.    ₹ 700 lakhs\n                          Market Price per Share                                               ₹ 250\n                          Total No. of shares to be issued                                   2.8 lakh\n\n                        Thus, maximum acceptable ratio shall be 2.80:4.00 i.e. 0.70 share of XYZ Ltd.\n                        for one share of ABC Ltd.\n9.      (i)     Pre-merger EPS and P/E ratios of XYZ Ltd. and ABC Ltd.\n                 Particulars                                             XYZ Ltd.        ABC Ltd.\n                 Earnings after taxes                                      5,00,000      1,25,000\n                 Number of shares outstanding                              2,50,000      1,25,000\n                 EPS                                                             2              1\n                 Market Price per share                                         20             10\n                 P/E Ratio (times)                                              10             10\n\n        (ii)    Current Market Price of ABC Ltd. if P/E ratio is 6.4 = ₹ 1 × 6.4 = ₹ 6.40\n                                      ₹ 20             ₹ 6.40\n                Exchange ratio =            = 3.125 or        = 0.32\n                                     ₹ 6.40             ₹ 20\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                      14.61\n\n                Post-merger EPS of XYZ Ltd.\n                         ₹ 5,00,000 + ₹ 1,25,000\n                =\n                     2,50,000 + (1,25,000/ 3.125)\n                    ₹ 6,25,000\n                =              = 2.16\n                     2,90,000\n\n        (iii)   Desired Exchange Ratio\n                Total number of shares in post-merged company\n                       Post - merger earnings     ₹ 6,25,000\n                =                               =            = 3,12,500\n                    Pre - merger EPS of XYZ Ltd        2\n\n                Number of shares required to be issued\n                = 3,12,500 – 2,50,000 = 62,500\n                Therefore, the exchange ratio is\n                62,500 : 1,25,000\n                     62,500\n                =            = 0.50\n                    1,25,000\n\n10.     (i)     SWAP ratio based on current market prices:\n                EPS before acquisition:\n                Mani Ltd. : ₹2,000 lakhs / 200 lakhs:                             ₹10\n                Ratnam Ltd.: ₹4,000 lakhs / 1,000 lakhs:                      ₹     4\n                Market price before acquisition:\n                Mani Ltd.: ₹10 × 10                                           ₹100\n                Ratnam Ltd.: ₹4 × 5                                           ₹ 20\n                SWAP ratio: 20/100 or 1/5 i.e.                                0.20\n        (ii)    EPS after acquisition:\n                 ₹(2,000 + 4,000) Lakhs\n                   (200 + 200) Lakhs                                      =        ₹15.00\n        (iii)   Market Price after acquisition:\n\n                      EPS after acquisition :                                            ₹15.00\n                      P/E ratio after acquisition 10 × 0.9                                     9\n                      Market price of share (₹ 15 X 9)                                  ₹135.00\n        (iv)          Market value of the merged Co.:\n                      ₹135 × 400 lakhs shares                                 ₹ 540.00 Crores\n                                                                             or ₹ 54,000 Lakhs\n        (v)           Gain/loss per share:\n                                                                                                   ₹ Crore\n                                                                            Mani Ltd.    Ratnam Ltd.\n                         Total value before Acquisition                          200                200\n                         Value after acquisition                                 270                270\n                         Gain (Total)                                             70                 70\n                         No. of shares (pre-merger) (lakhs)                      200               1,000\n                         Gain per share (₹)                                       35                  7\n11.\n              (i)        Exchange Ratio                                                                  1:1\n                         New Shares to be issued                                                    2,00,000\n                         Total shares of Rama Ltd. (4,00,000+2,00,000)                              6,00,000\n                         Total earnings (₹ 10,00,000 + ₹ 7,00,000)                             ₹ 17,00,000\n                         New EPS (₹ 17,00,000/6,00,000)                                              ₹ 2.83\n              (ii)       Existing EPS of Rama Ltd.                                                   ₹ 2.50\n                         Increase in EPS of Rama Ltd (₹ 2.83 – ₹ 2.50)                               ₹ 0.33\n                         Existing EPS of Krishna Ltd.                                                ₹ 3.50\n                         Decrease in EPS of Krishna Ltd. (₹ 3.50 – ₹ 2.83)                           ₹ 0.67\n              (iii)      P/E ratio of new firm (expected to remain same)                            14 times\n                         New market price (14 × ₹ 2.83)                                             ₹ 39.62\n                         Total No. of Shares                                                        6,00,000\n                         Total market Capitalization (6,00,000 × ₹ 39.62)                  ₹ 2,37,72,000\n                         Existing market capitalization (₹ 70,00,000 + ₹ 1,40,00,000)      ₹ 2,10,00,000\n                         Total gain                                                        ₹       27,72,000\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                       14.63\n\n               (iv)\n                                                             Rama Ltd.      Krishna Ltd            Total\n                          No. of shares after merger           4,00,000        2,00,000         6,00,000\n                          Market price                         ₹ 39.62          ₹ 39.62         ₹ 39.62\n                          Total Mkt. Values               ₹ 1,58,48,000     ₹ 79,24,000    ₹ 2,37,72,000\n                          Existing Mkt. values            ₹ 1,40,00,000     ₹ 70,00,000    ₹ 2,10,00,000\n                          Gain to share holders           ₹ 18,48,000       ₹ 9,24,000     ₹ 27,72,000\n                      or ₹ 27,72,000 ÷ 3 = ₹ 9,24,000 to Krishna Ltd. and ₹ 18,48,000 to Rama Ltd. (in 2:\n                      1 ratio)\n12.     (i)           Calculation of new EPS of M Co. Ltd.\n                      No. of equity shares to be issued by M Co. Ltd. to N Co. Ltd.\n                      = 4,00,000 shares × ₹ 160/₹ 200 = 3,20,000 shares\n                      Total no. of shares in M Co. Ltd. after acquisition of N Co. Ltd.\n                      = 16,00,000 + 3,20,000 = 19,20,000\n                      Total earnings after tax [after acquisition]\n                      = 80,00,000 + 24,00,000 = 1,04,00,000\n                                    ₹ 1,04,00,000\n                      EPS =                            = ₹ 5.42\n                               19,20,000 equity shares\n\n        (ii)          Calculation of exchange ratio which would not diminish the EPS of N Co. Ltd. after its\n                      merger with M Co. Ltd.\n                      Current EPS:\n                                           ₹ 80,00,000\n                      M Co. Ltd. =                           =₹5\n                                     16,00,000 equity shares\n                                          ₹ 24,00,000\n                      N Co. Ltd. =                          =₹6\n                                     4,00,000 equity shares\n\n                      Exchange ratio = 6/5 = 1.20\n                      No. of new shares to be issued by M Co. Ltd. to N Co. Ltd.\n                      = 4,00,000 × 1.20 = 4,80,000 shares\n                      Total number of shares of M Co. Ltd. after acquisition\n                      = 16,00,000 + 4,80,000 = 20,80,000 shares\n\n                                            ₹ 1,04,00,000\n                EPS [after merger] =                       =₹5\n                                          20,80,000 shares\n\n                Total earnings in M Co. Ltd. available to new shareholders of N Co. Ltd.\n                = 4,80,000 × ₹ 5 = ₹ 24,00,000",
+     "cut": true
+    }
+   ],
+   "sweep": {
+    "points": 27,
+    "mtp": 8,
+    "pyq": 7,
+    "rtp": 3
+   },
+   "rank": {
+    "score": 27
+   },
+   "tier": "should"
   },
   {
    "id": "chapter-4-security-analysis",
@@ -2224,340 +2552,6 @@
    "tier": "should"
   },
   {
-   "id": "chapter-14-mergers-acquisitions-and-corporate-rest",
-   "title": "Ch 14 · Mergers, Acquisitions and Corporate Restructuring",
-   "url": "https://resource.cdn.icai.org/83291bos67342-cp14.pdf",
-   "sections": [
-    {
-     "n": "0",
-     "t": "Introduction and overview",
-     "p0": 1,
-     "p1": 2,
-     "hits": 0
-    },
-    {
-     "n": "1",
-     "t": "CONCEPTUAL FRAMEWORK",
-     "p0": 2,
-     "p1": 4,
-     "hits": 0
-    },
-    {
-     "n": "2",
-     "t": "RATIONALE FOR MERGERS AND ACQUISITIONS",
-     "p0": 4,
-     "p1": 6,
-     "hits": 0
-    },
-    {
-     "n": "3",
-     "t": "FORMS (TYPES) OF MERGERS",
-     "p0": 6,
-     "p1": 8,
-     "hits": 0
-    },
-    {
-     "n": "4.1",
-     "t": "Gains from Mergers or Synergy",
-     "p0": 8,
-     "p1": 10,
-     "hits": 0
-    },
-    {
-     "n": "4.2",
-     "t": "Scheme of Amalgamation or Merger",
-     "p0": 10,
-     "p1": 11,
-     "hits": 1
-    },
-    {
-     "n": "4.4",
-     "t": "Arranging Finance for Acquisition",
-     "p0": 11,
-     "p1": 11,
-     "hits": 0
-    },
-    {
-     "n": "5.1",
-     "t": "Take Over Strategies",
-     "p0": 11,
-     "p1": 12,
-     "hits": 0
-    },
-    {
-     "n": "5.2",
-     "t": "Defensive Tactics",
-     "p0": 12,
-     "p1": 13,
-     "hits": 1
-    },
-    {
-     "n": "6",
-     "t": "REVERSE MERGER",
-     "p0": 13,
-     "p1": 14,
-     "hits": 0
-    },
-    {
-     "n": "7.1",
-     "t": "Seller's Perspective",
-     "p0": 14,
-     "p1": 15,
-     "hits": 0
-    },
-    {
-     "n": "7.2",
-     "t": "Different Forms",
-     "p0": 15,
-     "p1": 17,
-     "hits": 0
-    },
-    {
-     "n": "8",
-     "t": "FINANCIAL RESTRUCTURING",
-     "p0": 17,
-     "p1": 21,
-     "hits": 0
-    },
-    {
-     "n": "9.1",
-     "t": "Going Private",
-     "p0": 21,
-     "p1": 21,
-     "hits": 0
-    },
-    {
-     "n": "9.3",
-     "t": "Leveraged Buyout (LBO)",
-     "p0": 21,
-     "p1": 22,
-     "hits": 0
-    },
-    {
-     "n": "9.4",
-     "t": "Equity buyback",
-     "p0": 22,
-     "p1": 24,
-     "hits": 5
-    },
-    {
-     "n": "10",
-     "t": "UNLOCKING THE VALUE THROUGH MERGERS &",
-     "p0": 24,
-     "p1": 24,
-     "hits": 0
-    },
-    {
-     "n": "11",
-     "t": "PREMIUM AND DISCOUNT",
-     "p0": 24,
-     "p1": 25,
-     "hits": 0
-    },
-    {
-     "n": "12",
-     "t": "MERGERS AND ACQUISITIONS FAILURES",
-     "p0": 25,
-     "p1": 27,
-     "hits": 0
-    },
-    {
-     "n": "13",
-     "t": "ACQUISITION THROUGH SHARES",
-     "p0": 27,
-     "p1": 31,
-     "hits": 3
-    },
-    {
-     "n": "7",
-     "t": "Expected Annual growth rate in",
-     "p0": 31,
-     "p1": 31,
-     "hits": 0
-    },
-    {
-     "n": "14",
-     "t": "CROSS-BORDER M&A",
-     "p0": 31,
-     "p1": 32,
-     "hits": 0
-    },
-    {
-     "n": "15",
-     "t": "SPECIAL PURPOSE ACQUISITION COMPANIES",
-     "p0": 32,
-     "p1": 58,
-     "hits": 9
-    },
-    {
-     "n": "8",
-     "t": "Working Notes",
-     "p0": 58,
-     "p1": 66,
-     "hits": 6
-    },
-    {
-     "n": "15",
-     "t": "Compute Value of Equity",
-     "p0": 66,
-     "p1": 68,
-     "hits": 0
-    },
-    {
-     "n": "17",
-     "t": "Swap Ratio",
-     "p0": 68,
-     "p1": 70,
-     "hits": 0
-    },
-    {
-     "n": "18",
-     "t": "SWAP RATIO",
-     "p0": 70,
-     "p1": 74,
-     "hits": 4
-    },
-    {
-     "n": "21",
-     "t": "As per T Ltd.'s Offer",
-     "p0": 74,
-     "p1": 76,
-     "hits": 1
-    },
-    {
-     "n": "3",
-     "t": "Book value per share",
-     "p0": 76,
-     "p1": 83,
-     "hits": 0
-    },
-    {
-     "n": "30",
-     "t": "Calculation of Purchase Consideration",
-     "p0": 83,
-     "p1": 85,
-     "hits": 2
-    }
-   ],
-   "questions": [
-    {
-     "closest": {
-      "t": "ACQUISITION THROUGH SHARES",
-      "p0": 27,
-      "file": true
-     },
-     "role": "comprehensive",
-     "src": "RTP May 2026",
-     "label": "11",
-     "kind": "rtp",
-     "loose": false,
-     "covers": [
-      1,
-      2,
-      3,
-      4,
-      11,
-      12,
-      15,
-      19,
-      22,
-      23,
-      24,
-      26,
-      27,
-      28,
-      29
-     ],
-     "prompt": "11.   Long Ltd., is planning to acquire Tall Ltd., with the following data\n      available for both the companies:\n\n                                            Long Ltd.      Tall Ltd.\n        Expected EPS                           ₹ 12           ₹5\n        Expected DPS                           ₹ 10           ₹3\n        No. of Shares                       30,00,000     18,00,000\n        Current Market Price of Share         ₹ 180          ₹ 50\n\n      As per an estimate Tall Ltd., is expected to have steady growth of\n      earnings and dividends to the tune of 6% per annum. However, under\n      the new management the growth rate is likely to be enhanced to 8% per\n      annum without additional investment.\n      You are required to:\n      (i)     Calculate the net cost of acquisition by Long Ltd., if ₹ 60 is paid for\n              each share of Tall Ltd.\n      (ii)    If the agreed exchange ratio is one share of Long Ltd., for every\n              three shares of Tall Ltd., in lieu of the cash acquisition as per (i)\n              above, what will be the net cost of acquisition?\n      (iii)   Calculate Gain from acquisition.\nMutual Funds",
-     "ans": "11.   (i)    Net cost of acquisition shall be computed as follows:\n              Cash Paid for the shares of Tall Ltd. (₹ 60 ×      ₹ 10,80,00,000\n              18,00,000)\n              Less: Value of Tall Ltd., as a separate entity         ₹ 9,00,00,000\n              (18,00,000 × ₹ 50)\n              Net Cost of acquisition of Tall Ltd.                   ₹ 1,80,00,000\n      (ii)   Net Cost of acquisition in case of exchange of shares:\n             Exchange ratio = 1 share of long Ltd for every 3 shares of Tall Ltd.\n\n              Number of shares to be issued in Long Ltd. = 6,00,000 shares\n              (18,00,000/3)\n              Total no. of shares in Long Ltd. after merger    = 36,00,000\n              (30,00,000 + 6,00,000)\n\n              Calculation of cost of Equity of Tall Ltd. = D1/P0 +g\n              Growth rate under new management after = ₹ 3/50 + 0.06 = 12%\n              acquisition\n              Value of Merged company assuming = 8%\n              perpetual growth\n              Value of merged company\n              (₹ 180 x 30,00,000) + (₹ 3/ (0.12 - 0.08) x = ₹ 67,50,00,000\n              18,00,000\n              = 54,00,00,000 + (75 X 18,00,000)\n              Value per share of merged company = ₹ 187.50 per share\n              (67,50,00,000/36,00,000)\n\n              Calculation of net cost of acquisition\n              Gross cost of acquisition (6,00,000 x 187.50)            11,25,00,000\n              Less: CMP (18,00,000 x 50)                                9,00,00,000\n              Net Cost of acquisition                                   2,25,00,000\n\n            Alternatively, Net Cost of Acquisition can also be computed as\n            follows:\n\n             No. of shares issued to shareholders of Tall Ltd. in           6,00,000\n             the ratio of 1:3\n             Existing price of one share of Long Ltd.                          ₹ 180\n             Value of consideration paid for acquisition of Tall                   ₹\n             Ltd.                                                       10,80,00,000\n             Less: Existing Value of Tall Ltd., as a separate entity    ₹ 9,00,00,000\n             Net Cost of acquisition of Tall Ltd.                       ₹ 1,80,00,000\n\n      (iii) Calculation of gain from acquisition:\n\n             Total Earnings of Long Ltd. (₹ 12 x 30,00,000)             ₹ 3,60,00,000\n             Total Earnings of Tall Ltd. (₹ 5 x 18,00,000)               ₹ 90,00,000\n             Combined Earnings                                          ₹ 4,50,00,000\n             PE Ratio of Long Ltd. (180/12)                                       15\n             Value of Long Ltd. after acquisition                      ₹ 67,50,00,000\n             Less: Value of two companies separately\n             Long Ltd. (₹ 180 x 30,00,000)   ₹ 54,00,00,000\n             Tall Ltd. (₹ 50 x 18,00,000)        ₹ 9,00,00,000         ₹ 63,00,00,000\n             Gain from Acquisition                                      ₹ 4,50,00,000"
-    },
-    {
-     "closest": {
-      "t": "SPECIAL PURPOSE ACQUISITION COMPANIES",
-      "p0": 32,
-      "file": true
-     },
-     "role": "drill",
-     "src": "PYQ May 2024",
-     "label": "4(b)",
-     "kind": "pyq",
-     "loose": false,
-     "covers": [
-      12,
-      15,
-      18,
-      19,
-      22,
-      23,
-      24,
-      25,
-      26,
-      27,
-      28
-     ],
-     "prompt": "PQ Ltd., plans to acquire RS Ltd. The relevant financial details of the two firms\n    prior to the merger announcement are:\n                                                     PQ Ltd.,       RS Ltd.,\n          Market price per share                        ₹ 100          ₹ 50\n          Number of outstanding shares              20,00,000     10,00,000\n\n    The merger is expected to generate gains, which have a present value of\n    ₹ 300 lakhs. The exchange ratio agreed to is 0.5.\n    You are required to calculate the true cost of the merger from the point of\n    view of PQ Ltd.                                                  (4 Marks)",
-     "ans": "Shareholders of RS Ltd. will get 5 lakh share of PQ Ltd., so they will get:\n               5 lakh\n    =                    = 20% of shares PQ Ltd.\n          20 lakh+5 lakh\n    The value of PQ Ltd. after merger will be:\n    = ₹ 100 x 20 lakh + ₹ 50 x 10 lakh + ₹ 300 lakh\n    = ₹ 2000 lakh + ₹ 500 lakh + ₹ 300 lakh = ₹ 2800 lakh\n    True Cost of Merger will be:\n    (₹ 2800 x 20%) ₹ 560 lakhs – ₹ 500 lakhs = ₹ 60 lakh"
-    },
-    {
-     "closest": {
-      "t": "SWAP RATIO",
-      "p0": 70,
-      "file": true
-     },
-     "role": "drill",
-     "src": "MTP Nov 2026 S-I",
-     "label": "5(a)",
-     "kind": "mtp",
-     "loose": false,
-     "covers": [
-      6,
-      15,
-      19,
-      22,
-      23,
-      25,
-      26,
-      27,
-      28
-     ],
-     "prompt": "The following information is provided relating to the acquiring company E Ltd., and\n                    the target company H Ltd:\n                                                                           E Ltd.          H Ltd.\n                      Particulars\n                                                                            (₹)             (₹)\n                      Number of shares (Face value ₹ 10 each)               20 Lakhs         15 Lakhs\n                      Market Capitalization                               1000 Lakhs      1500 Lakhs\n                      P/E Ratio (times)                                         10.00               5.00\n                      Reserves and surplus in ₹                          600.00 Lakhs   330.00 Lakhs\n                      Promoter's Holding (No. of shares)                   9.50 Lakhs     10.00 Lakhs\n\n                    The Board of Directors of both the companies have decided to give a fair deal to\n                    the shareholders. Accordingly, the weights are decided as 40%, 25% and 35%\n                    respectively for earnings (EPS), book value and market price of share of each\n                    company for swap ratio.\n                    Calculate the following:\n                    (i)     Market price per share, earnings per share and Book Value per share;\n                    (ii)    Swap ratio;\n                    (iii)   Promoter's holding percentage after acquisition;\n                    (iv)    EPS of E Ltd. after acquisitions of H Ltd;\n                    (v)     Expected market price per share and market capitalization of E Ltd.; after\n                            acquisition, assuming P/E ratio of E Ltd. remains unchanged; and\n                    (vi)    Free float market capitalization of the merged firm.            (10 Marks)\n           (b)      Projected financial statements provide potential investors with an overview of the\n                    expected financial performance and position of a start-up. Explain the basic\n                    documents that comprise a start-up's projected financial statements. (4 Marks)",
-     "ans": "(i)                                                            E Ltd.        H Ltd.\n                   Market capitalisation                             1000 lakhs 1500 lakhs\n                   No. of shares                                        20 lakhs     15 lakhs\n                   Market Price per share                                   ₹ 50        ₹ 100\n                   P/E ratio                                                  10             5\n\n\f              EPS                                                        ₹5          ₹ 20\n              Profit                                             ₹ 100 lakh ₹ 300 lakh\n              Share capital                                      ₹ 200 lakh ₹ 150 lakh\n              Reserves and surplus                               ₹ 600 lakh ₹ 330 lakh\n              Total                                              ₹ 800 lakh ₹ 480 lakh\n              Book Value per share                                     ₹ 40          ₹ 32\n\n      (ii)    Calculation of Swap Ratio\n              EPS                                 1 : 4 i.e.    4.0 × 40%          1.6\n              Book value                         1 : 0.8 i.e.   0.8 × 25%          0.2\n              Market price                        1 : 2 i.e.    2.0 × 35%          0.7\n                                                                 Total         2.5\n              Swap ratio is for every one share of H Ltd., to issue 2.5 shares of E Ltd.\n              Hence, total no. of shares to be issued 15 lakh × 2.5 = 37.50 lakh shares\n      (iii)   Promoter's holding = 9.50 lakh shares + (10× 2.5 = 25 lakh shares) = 34.50\n              lakh i.e. Promoter's holding % is (34.50 lakh/57.50 lakh) × 100 = 60%.\n      (iv)    Calculation of EPS after merger\n              Total No. of shares 20 lakh + 37.50 lakh = 57.50 lakh\n                   Total profit           100 lakh + 300 lakh            400\n              =\n              EPS                         =                                   = ₹ 6.956\n                  No. of shares                57.50 lakh               57.50\n      (v)     Calculation of Market price and Market capitalization after merger\n\n               Expected market price EPS 6.956 × P/E 10 = ₹ 69.56\n               Market capitalization    = ₹ 69.56 per share × 57.50 lakh shares\n                                        = ₹ 3,999.70 lakh or ₹ 4,000 lakh\n      (vi)    Free float of market capitalization = ₹ 69.56 per share × (57.50 lakh × 40%) =\n              ₹ 1599.88 lakh                                                     (10 Marks)"
-    }
-   ],
-   "reading": [
-    {
-     "sec": 15,
-     "text": "This refers to the situation wherein a company buys back its own shares back from the market. This\nresults in reduction in the equity capital of the company. This strengthens the promoter's position by\nincreasing his stake in the equity of the company.\nThe buyback is a process in which a company uses its surplus cash to buy shares from the public.\nIt is almost the opposite of initial public offer in which shares are issued to the public for the first\ntime. In buyback, shares which have already been issued are bought back from the public and once\nthe shares are bought back, they get absorbed and cease to exist.\nFor example, a company has one crore outstanding shares and owing a huge cash pile of ₹ 5 crores.\nSince, the company has very limited investment options it decides to buy back some of its\noutstanding shares from the shareholders, by utilizing some portion of its surplus cash. Accordingly,\nit purchases 10 lakh shares from the existing shareholders by paying ₹ 20 per share utilizing total\ncash of ₹ 2 crore. The process of buyback can be shown with the help of following diagram:\n\n                   INITIAL PUBLIC OFFER (IPO)               BUY-BACK\n\n                              COMPANY                        COMPANY\n                                                                      SHARES\n                                                              C S\n                                       CASH\n\n                           INVESTORS                        INVESTORS\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                 14.23\n\nExample\nCairn India bought back 3.67 crores shares and spent nearly ₹ 1230 crores by\nMay 2014.\nEffects of Buyback\n\nThere are several effects or consequences of buyback some of which are as follows:\n(i)     It increases the proportion of shares owned by controlling shareholders as the number of\n        outstanding shares decreases after the buyback.\n(ii)    Earning Per Share (EPS) escalates as the number of shares reduces leading the market price\n        of shares to step up.\n(iii)   A share repurchase also effects a company's financial statements as follows:\n        (a)     In balance sheet, a share buyback will reduce the company's total assets position as\n                cash holdings will be reduced and consequently as shareholders' equity reduced it\n                results in reduction on the liabilities side by the same amount.\n        (b)     Amount spent on share buybacks shall be shown in Statement of Cash Flows in the\n                “Financing Activities” section, as well as from the Statement of Changes in Equity\n                or Statement of Retained Earnings.\n(iv)    Ratios based on performance indicators such as Return on Assets (ROA) and Return on\n        Equity (ROE) typically improve after a share buyback. This can be understood with the help\n        of following Statement showing Buyback Effect of a hypothetical company using ₹ 1.50 crore\n        of cash out of total cash of ₹ 2.00 for buyback.\n                                                    Before Buyback    After Buyback (₹)\n              Cash (₹)                                  2,00,00,000           50,00,000\n              Assets (₹)                                5,00,00,000         3,50,00,000\n              Earnings (₹)                               20,00,000            20,00,000\n              No. of Shares outstanding (Nos.)           10,00,000              9,00,000\n              Return on Assets (%)                           4.00%                5.71%\n              Earnings Per Share (EPS) (₹)                    2.00                  2.22\n\nAs visible from the above figure, the company's cash pile has been reduced from ₹ 2 crore to ₹ 50\nlakh after the buyback because cash is an asset, this will lower the total assets of the company from\n₹ 5 crore to ₹ 3.5 crore. Now, this leads to an increase in the company's ROA, even though earnings\nhave not changed. Prior to the buyback, its ROA was 4% but after the repurchase, ROA increases\n\nto 5.71%. A similar effect can be seen in the EPS, which increases from ₹ 2.00 to\n₹ 2.22.",
-     "cut": false
-    },
-    {
-     "sec": 22,
-     "text": "In recent times, the concept of Special Purpose Acquisition Companies (SPACs) has come into\nexistence wherein an entity is set up with the objective to raise funds through an IPO to finance a\nmerger or acquisition of an unidentified target within a specific time. It is commonly known as a blank\ncheque company.\nThe main objective of SPAC is to raise money, despite not having any operations or revenues. The\nmoney raised from the public is kept in an escrow account, which can be accessed while making the\nacquisition. However, in case the acquisition is not made within stipulated period of the IPO, the\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                   14.33\n\nSPAC is delisted, and the money is returned to the investors. Shareholders have the option to\nredeem their shares if they are not interested in participating in the proposed merger. Finally, if the\nmerger is approved by shareholders, it is executed, and the target private company or companies\nbecome public entities. Once a formal merger agreement has been executed the SPAC target is\nusually publicly announced.\nNew investment opportunities in Indian companies have resurfaced and have set up new platform\nfor SPAC transactions. The implementation of SPACs might face certain challenges since India does\nnot have a specific regulatory framework guarding these transactions.\n\nThe current regulatory framework in India does not support the SPAC transactions. Further as per\nthe Companies Act, 2013, the Registrar of Companies is authorized to strike-off the name of\ncompanies that do not commence operation within one year of incorporation. SPACs generally take\n2 to 3 years to identify a target and performing due diligence and before it could get operationalized\nits name can be stricken off and hence enabling provisions relating to SPAC need to be inserted in\nthe Companies Act in order to make it functional in India.\nThough, SPACs do not find acceptance under the Securities and Exchange Board of India (SEBI)\nAct as it does not meet the eligibility criteria for public listing however SEBI is planning to come out\nwith a framework for SPACs.\nThe International Financial Services Centres Authority (IFSCA), being the regulatory authority for\ndevelopment and regulation of financial services, financial products and financial institutions in the\nGujarat International Finance Tec-City, has recently released a consultation paper defining critical\nparameters such as offer size to public, compulsory sponsor holding, minimum application size,\nminimum subscription of the offer size, etc.\nSPAC approach offers several advantages over traditional IPO, such as providing companies access\nto capital, even when market volatility and other conditions limit liquidity. SPACs help to lower the\ntransaction fees as well as expedite the timeline in becoming a public company. Raising money\nthrough a SPAC is easier as compared to traditional IPO since the SPAC has already raised money\nthrough an IPO. This implies the company in question only has to negotiate with a single entity, as\nopposed to thousands of individual investors. This makes the process of fundraising a lot easier and\nquicker than an IPO. The involvement of skilled professionals in identifying the target makes the\ninvestment a well thought and a well governed process.\nHowever, the merger of a SPAC with a target company presents several challenges, such as\ncomplex accounting and financial reporting/registration requirements, to meet a public company\n\nreadiness timeline and being ready to operate as a public company within a period of three to five\nmonths of signing a letter of intent.\n\nIt is typically more expensive for a company to raise money through a SPAC than an IPO. Investors'\nmoney invested in a SPAC trust to earn a suitable return for up to two years, could be put to better\nuse elsewhere.\n\nTEST YOUR KNOWLEDGE\nTheoretical Questions\n1.      Explain synergy in the context of Mergers and Acquisitions.\n2.      What is take over by reverse bid or Reverse Merger.\n3.      What is an equity curve out? How does it differ from a spin off.\n4.      Write a short note on Horizontal Merger and Vertical Merger.\n\nPractical Questions\n1.      B Ltd. is a highly successful company and wishes to expand by acquiring other firms. Its\n        expected high growth in earnings and dividends is reflected in its PE ratio of 17. The Board\n        of Directors of B Ltd. has been advised that if it were to take over firms with a lower PE ratio\n        than it own, using a share-for-share exchange, then it could increase its reported earnings\n        per share. C Ltd. has been suggested as a possible target for a takeover, which has a PE\n        ratio of 10 and 1,00,000 shares in issue with a share price of ₹ 15. B Ltd. has 5,00,000 shares\n        in issue with a share price of ₹ 12.\n        Calculate the change in earnings per share of B Ltd. if it acquires the whole of C Ltd. by\n        issuing shares at its market price of ₹12. Assume the price of B Ltd. shares remains constant.\n2.      Elrond Limited plans to acquire Doom Limited. The relevant financial details of the two firms\n        prior to the merger announcement are:\n                                                    Elrond Limited           Doom Limited\n          Market price per share                         ₹ 50                     ₹ 25\n          Number of outstanding shares                 20 lakhs                 10 Lakhs\n        The merger is expected to generate gains, which have a present value of ₹200 lakhs. The\n        exchange ratio agreed to is 0.5.\n        What is the true cost of the merger from the point of view of Elrond Limited?\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                   14.35\n\n3.    MK Ltd. is considering acquiring NN Ltd. The following information is available:\n          Company                     Earning after      No. of Equity           Market Value\n                                         Tax (₹)           Shares                Per Share (₹)\n          MK Ltd.                      60,00,000           12,00,000                200.00\n          NN Ltd.                      18,00,000           3,00,000                 160.00\n\n        Exchange of equity shares for acquisition is based on current market value as above. There\n        is no synergy advantage available.\n        (i)     Find the earning per share for company MK Ltd. after merger, and\n        (ii)    Find the exchange ratio so that shareholders of NN Ltd. would not be at a loss.\n4.      ABC Ltd. is intending to acquire XYZ Ltd. by merger and the following information is available\n        in respect of the companies:\n                                                        ABC Ltd.     XYZ Ltd.\n                           Number of equity shares      10,00,000    6,00,000\n                           Earnings after tax (₹)       50,00,000   18,00,000\n                           Market value per share (₹)          42          28\n        Required:\n        (i)     What is the present EPS of both the companies?\n\n        (ii)    If the proposed merger takes place, what would be the new earning per share for ABC\n                Ltd.? Assume that the merger takes place by exchange of equity shares and the\n                exchange ratio is based on the current market price.",
-     "cut": true
-    },
-    {
-     "sec": 23,
-     "text": "(a)\n                                                                    XYZ Ltd.           ABC Ltd.\n                  Equity shares outstanding (Nos.)                 10,00,000               4,00,000\n                  EPS                                                   ₹ 40                  ₹ 28\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                   14.59\n\n                  Profit                                            ₹ 400,00,000     ₹ 112,00,000\n                  PE Ratio                                                  6.25             5.71\n                  Market price per share                                   ₹ 250            ₹ 160\n\n        (b)     EPS after merger\n\n                       No. of shares to be issued (4,00,000 x 0.70)                      2,80,000\n                       Exiting Equity shares outstanding                                10,00,000\n                       Equity shares outstanding after merger                           12,80,000\n                       Total Profit (₹ 400,00,000 + ₹ 112,00,000)                    ₹ 512,00,000\n                       EPS                                                                  ₹ 40\n\n                (i)       Impact of merger on EPS of both the companies\n\n                                                                         XYZ Ltd.       ABC Ltd.\n                              EPS after Merger                               ₹ 40           ₹ 28\n                              EPS before Merger                              ₹ 40           ₹ 28*\n                                                                               Nil            Nil\n                          * ₹ 40 x 0.70\n                (ii)      Gain from the Merger if exchange ratio is 1: 1\n\n                              No. of shares to be issued                                 4,00,000\n                              Exiting Equity shares outstanding                         10,00,000\n                              Equity shares outstanding after merger                    14,00,000\n                              Total Profit (₹ 400,00,000 + ₹ 112,00,000)             ₹ 512,00,000\n                              EPS                                                         ₹ 36.57\n                              Market Price of Share (₹ 36.57 x 6.25)                    ₹ 228.56\n                              Market Price of Share before Merger                       ₹ 160.00\n                              Impact (Increase/ Gain)                                     ₹ 68.56\n\n                (iii)     Gain/ loss from the Merger to the shareholders of XYZ Ltd.\n                             Market Price of Share                                       ₹ 228.56\n                             Market Price of Share before Merger                         ₹ 250.00\n                             Loss from the merger (per share)                             ₹ 21.44\n\n                (iv)    Maximum Exchange Ratio acceptable to XYZ Ltd. shareholders\n                                                                                         ₹ Lakhs\n                          Market Value of Merged Entity (₹ 228.57 x 1400000)             3199.98\n                          Less: Value acceptable to shareholders of XYZ Ltd.             2500.00\n                          Value of merged entity available to shareholders of ABC          699.98\n                          Ltd.\n                          Market Price Per Share                                              250\n                          No. of shares to be issued to the shareholders of ABC              2.80\n                          Ltd. (lakhs)\n\n                        Thus maximum ratio of issue shall be 2.80 : 4.00 or 0.70 share of XYZ Ltd. for\n                        one share of ABC Ltd.\n                        Alternatively, it can also be computed as follows:\n\n                          Earning after Merger (40 x 1000000 + 28 x 400000)               ₹ 512 lakhs\n                          PE Ratio of XYZ Ltd.                                                  6.25\n                          Market Value of Firm after Merger (512 x 6.25)                 ₹ 3200 lakhs\n                          Existing Value of Shareholders of XYZ Ltd.                     ₹ 2500 lakhs\n                          Value of Merged entity available to Shareholders of ABC Ltd.    ₹ 700 lakhs\n                          Market Price per Share                                               ₹ 250\n                          Total No. of shares to be issued                                   2.8 lakh\n\n                        Thus, maximum acceptable ratio shall be 2.80:4.00 i.e. 0.70 share of XYZ Ltd.\n                        for one share of ABC Ltd.\n9.      (i)     Pre-merger EPS and P/E ratios of XYZ Ltd. and ABC Ltd.\n                 Particulars                                             XYZ Ltd.        ABC Ltd.\n                 Earnings after taxes                                      5,00,000      1,25,000\n                 Number of shares outstanding                              2,50,000      1,25,000\n                 EPS                                                             2              1\n                 Market Price per share                                         20             10\n                 P/E Ratio (times)                                              10             10\n\n        (ii)    Current Market Price of ABC Ltd. if P/E ratio is 6.4 = ₹ 1 × 6.4 = ₹ 6.40\n                                      ₹ 20             ₹ 6.40\n                Exchange ratio =            = 3.125 or        = 0.32\n                                     ₹ 6.40             ₹ 20\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                      14.61\n\n                Post-merger EPS of XYZ Ltd.\n                         ₹ 5,00,000 + ₹ 1,25,000\n                =\n                     2,50,000 + (1,25,000/ 3.125)\n                    ₹ 6,25,000\n                =              = 2.16\n                     2,90,000\n\n        (iii)   Desired Exchange Ratio\n                Total number of shares in post-merged company\n                       Post - merger earnings     ₹ 6,25,000\n                =                               =            = 3,12,500\n                    Pre - merger EPS of XYZ Ltd        2\n\n                Number of shares required to be issued\n                = 3,12,500 – 2,50,000 = 62,500\n                Therefore, the exchange ratio is\n                62,500 : 1,25,000\n                     62,500\n                =            = 0.50\n                    1,25,000\n\n10.     (i)     SWAP ratio based on current market prices:\n                EPS before acquisition:\n                Mani Ltd. : ₹2,000 lakhs / 200 lakhs:                             ₹10\n                Ratnam Ltd.: ₹4,000 lakhs / 1,000 lakhs:                      ₹     4\n                Market price before acquisition:\n                Mani Ltd.: ₹10 × 10                                           ₹100\n                Ratnam Ltd.: ₹4 × 5                                           ₹ 20\n                SWAP ratio: 20/100 or 1/5 i.e.                                0.20\n        (ii)    EPS after acquisition:\n                 ₹(2,000 + 4,000) Lakhs\n                   (200 + 200) Lakhs                                      =        ₹15.00\n        (iii)   Market Price after acquisition:\n\n                      EPS after acquisition :                                            ₹15.00\n                      P/E ratio after acquisition 10 × 0.9                                     9\n                      Market price of share (₹ 15 X 9)                                  ₹135.00\n        (iv)          Market value of the merged Co.:\n                      ₹135 × 400 lakhs shares                                 ₹ 540.00 Crores\n                                                                             or ₹ 54,000 Lakhs\n        (v)           Gain/loss per share:\n                                                                                                   ₹ Crore\n                                                                            Mani Ltd.    Ratnam Ltd.\n                         Total value before Acquisition                          200                200\n                         Value after acquisition                                 270                270\n                         Gain (Total)                                             70                 70\n                         No. of shares (pre-merger) (lakhs)                      200               1,000\n                         Gain per share (₹)                                       35                  7\n11.\n              (i)        Exchange Ratio                                                                  1:1\n                         New Shares to be issued                                                    2,00,000\n                         Total shares of Rama Ltd. (4,00,000+2,00,000)                              6,00,000\n                         Total earnings (₹ 10,00,000 + ₹ 7,00,000)                             ₹ 17,00,000\n                         New EPS (₹ 17,00,000/6,00,000)                                              ₹ 2.83\n              (ii)       Existing EPS of Rama Ltd.                                                   ₹ 2.50\n                         Increase in EPS of Rama Ltd (₹ 2.83 – ₹ 2.50)                               ₹ 0.33\n                         Existing EPS of Krishna Ltd.                                                ₹ 3.50\n                         Decrease in EPS of Krishna Ltd. (₹ 3.50 – ₹ 2.83)                           ₹ 0.67\n              (iii)      P/E ratio of new firm (expected to remain same)                            14 times\n                         New market price (14 × ₹ 2.83)                                             ₹ 39.62\n                         Total No. of Shares                                                        6,00,000\n                         Total market Capitalization (6,00,000 × ₹ 39.62)                  ₹ 2,37,72,000\n                         Existing market capitalization (₹ 70,00,000 + ₹ 1,40,00,000)      ₹ 2,10,00,000\n                         Total gain                                                        ₹       27,72,000\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                       14.63\n\n               (iv)\n                                                             Rama Ltd.      Krishna Ltd            Total\n                          No. of shares after merger           4,00,000        2,00,000         6,00,000\n                          Market price                         ₹ 39.62          ₹ 39.62         ₹ 39.62\n                          Total Mkt. Values               ₹ 1,58,48,000     ₹ 79,24,000    ₹ 2,37,72,000\n                          Existing Mkt. values            ₹ 1,40,00,000     ₹ 70,00,000    ₹ 2,10,00,000\n                          Gain to share holders           ₹ 18,48,000       ₹ 9,24,000     ₹ 27,72,000\n                      or ₹ 27,72,000 ÷ 3 = ₹ 9,24,000 to Krishna Ltd. and ₹ 18,48,000 to Rama Ltd. (in 2:\n                      1 ratio)\n12.     (i)           Calculation of new EPS of M Co. Ltd.\n                      No. of equity shares to be issued by M Co. Ltd. to N Co. Ltd.\n                      = 4,00,000 shares × ₹ 160/₹ 200 = 3,20,000 shares\n                      Total no. of shares in M Co. Ltd. after acquisition of N Co. Ltd.\n                      = 16,00,000 + 3,20,000 = 19,20,000\n                      Total earnings after tax [after acquisition]\n                      = 80,00,000 + 24,00,000 = 1,04,00,000\n                                    ₹ 1,04,00,000\n                      EPS =                            = ₹ 5.42\n                               19,20,000 equity shares\n\n        (ii)          Calculation of exchange ratio which would not diminish the EPS of N Co. Ltd. after its\n                      merger with M Co. Ltd.\n                      Current EPS:\n                                           ₹ 80,00,000\n                      M Co. Ltd. =                           =₹5\n                                     16,00,000 equity shares\n                                          ₹ 24,00,000\n                      N Co. Ltd. =                          =₹6\n                                     4,00,000 equity shares\n\n                      Exchange ratio = 6/5 = 1.20\n                      No. of new shares to be issued by M Co. Ltd. to N Co. Ltd.\n                      = 4,00,000 × 1.20 = 4,80,000 shares\n                      Total number of shares of M Co. Ltd. after acquisition\n                      = 16,00,000 + 4,80,000 = 20,80,000 shares\n\n                                            ₹ 1,04,00,000\n                EPS [after merger] =                       =₹5\n                                          20,80,000 shares\n\n                Total earnings in M Co. Ltd. available to new shareholders of N Co. Ltd.\n                = 4,80,000 × ₹ 5 = ₹ 24,00,000",
-     "cut": true
-    },
-    {
-     "sec": 26,
-     "text": "Abhiman Ltd.       Swabhiman Ltd.\n                                                                               (₹)                   (₹)\n               Share capital                                             200 lacs               100 lacs\n               Free reserves & surplus                                   900 lacs               600 lacs\n               Total                                                    1100 lacs               700 lacs\n               No. of shares                                                2 lacs               10 lacs\n               Book value for share                                        ₹ 550                   ₹ 70\n               Promoters Holding                                             50%                   60%\n               Non promoters holding                                        50%                    40%\n               Free float market capitalization (Public)                 500 lacs          ₹ 156 lacs\n               Total Market Cap                                         1000 lacs            390 lacs\n               No. of shares                                                2 lacs               10 lacs\n               Market Price                                                ₹ 500                   ₹ 39\n               P/E ratio                                                       10                     4\n               EPS                                                       ₹ 50.00                 ₹ 9.75\n\n        Calculation of SWAP Ratio\n              Book Value                            1:0.1273         0.1273 × 25%         0.031825\n              EPS                                   1:0.195          0.195 × 50%          0.097500\n              Market Price                          1:0.078          0.078 × 25%          0.019500\n              Total                                                                       0.148825\n        (i)       SWAP Ratio is 0.148825 shares of Abhiman Ltd. for every share of Swabhiman Ltd.\n                           Total No. of shares to be issued = 10 lakh × 0.148825 = 148825 shares\n        (ii)      Book value, EPS & Market Price.\n                           Total No. shares = 200000 +148825=348825\n                           Total capital = ₹200 lakh + ₹148.825 lac = ₹ 348.825 lac\n                           Reserves = ₹ 900 lac + ₹ 551.175 lac = ₹ 1451.175 lac\n                                                    ₹ 348.825 lac + ₹ 1451.175 lac\n                           Book value Per Share =                                  = ₹ 516.02\n                                                             3.48825 lac\n                           or ₹ 516.02 x 0.148825 = ₹ 76.80\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                       14.71\n\n                               Total Capital 1100lac + 700 lac\n                        or =                 =                 = ₹ 516.02\n                               No. of Shares     348825\n                                   Total Pr ofit   ₹ 100 lac + ₹ 97.50 lac\n                        EPS =                    =                         = ₹ 56.62\n                                  No. of shares           3.48825 lac\n\n                        or ₹ 56.62 x 0.148825 = ₹ 8.43\n                        Expected market price = ₹ 56.62 × PE Ratio= ₹ 56.62 × 10 = ₹ 566.20\n                        or ₹ 566.20 x 0.148825 = ₹ 84.26\n19.\n          (i)                                                                   E Ltd.            H Ltd.\n                  Market capitalisation                                 1000 lakhs            1500 lakhs\n                  No. of shares                                               20 lakhs          15 lakhs\n                  Market Price per share                                         ₹ 50              ₹ 100\n                  P/E ratio                                                        10                    5\n                  EPS                                                             ₹5                   ₹ 20\n                  Profit                                                    ₹ 100 lakh        ₹ 300 lakh\n                  Share capital                                             ₹ 200 lakh        ₹ 150 lakh\n                  Reserves and surplus                                      ₹ 600 lakh        ₹ 330 lakh\n                  Total                                                     ₹ 800 lakh        ₹ 480 lakh\n                  Book Value per share                                           ₹ 40                  ₹ 32\n          (ii)    Calculation of Swap Ratio\n                  EPS                                          1 : 4 i.e.        4.0 × 40%        1.6\n                  Book value                                  1 : 0.8 i.e.       0.8 × 25%        0.2\n                  Market price                                 1 : 2 i.e.        2.0 × 35%        0.7\n                                                                                    Total         2.5\n                 Swap ratio is for every one share of H Ltd., to issue 2.5 shares of E Ltd. Hence, total\n                 no. of shares to be issued 15 lakh × 2.5 = 37.50 lakh shares\n\n        (iii)    Promoter's holding = 9.50 lakh shares + (10× 2.5 = 25 lakh shares) = 34.50 lakh i.e.\n                 Promoter's holding % is (34.50 lakh/57.50 lakh) × 100 = 60%.\n        (iv)     Calculation of EPS after merger\n\n                        Total No. of shares 20 lakh + 37.50 lakh = 57.50 lakh\n\n                    Total profit                100 lakh + 300 lakh          400\n               =\n               EPS                              =                                 = ₹ 6.956\n                   No. of shares                     57.50 lakh             57.50\n        (v)     Calculation of Market price and Market capitalization after merger\n                 Expected market price              EPS 6.956 × P/E 10 = ₹ 69.56\n\n                 Market capitalization              = ₹ 69.56 per share ×57.50 lakh shares\n\n                                                    = ₹ 3,999.70 lakh or ₹ 4,000 lakh\n        (vi)    Free float of market capitalization = ₹ 69.56 per share × (57.50 lakh × 40%) =\n                ₹ 1599.88 lakh\n20.     (a)     Swap Ratio\n                                                           Abhiman Ltd.     Abhishek Ltd.\n                   Share Capital                                200 Lakh        100 Lakh\n                   Free Reserves                                800 Lakh        500 Lakh\n                   Total                                       1000 Lakh        600 Lakh\n                   No. of Shares                                  2 Lakh         10 Lakh\n                   Book Value per share                           ₹ 500             ₹ 60\n                   Promoter's holding                               50%              60%\n                   Non promoter's holding                           50%              40%\n                   Free Float Market Cap. i.e.                  400 Lakh        128 Lakh\n                   relating to Public's holding\n                   Hence Total market Cap.                      800 Lakh        320 Lakh\n                   No. of Shares                                  2 Lakh         10 Lakh\n                   Market Price                                    ₹ 400            ₹ 32\n                   P/E Ratio                                           10               4\n                   EPS                                                 40               8\n                   Profits (₹ 2 X 40 lakh)                      ₹ 80 lakh               -\n                           (₹ 8 X 10 lakh)                              -       ₹ 80 lakh\n                   Calculation of Swap Ratio\n                   Book Value                          1 : 0.12 i.e.\n                                                               0.12 x 25% 0.03\n                   EPS                                 1 : 0.2 0.20 x 50% 0.10\n                   Market Price                        1 : 0.080.08 x 25% 0.02\n                                                               Total           0.15\n                Swap ratio is for every one share of Abhishek Ltd., to issue 0.15 shares of Abhiman\n                Ltd. Hence total no. of shares to be issued.\n                10 Lakh x 0.15 = 1.50 lakh shares\n\n        MERGERS ACQUISITIONS & CORPORATE RESTRUCTURING                                     14.73\n\n        (b)     Book Value, EPS & Market Price\n                Total No of Shares         2 Lakh + 1.5 Lakh = 3.5 Lakh\n                Total Capital              ₹ 200 Lakh + ₹ 150 Lakh = ₹ 350 Lakh\n                Reserves                   ₹ 800 Lakh + ₹ 450 Lakh = ₹ 1,250 Lakh\n                Book Value                 ₹ 350 Lakh + ₹ 1,250 Lakh = ₹ 457.14 per share\n                                               3.5 Lakh\n                                            Total Profit   ₹ 80 Lakh + ₹ 80 Lakh ₹ 160 Lakh\n                EPS                                      =                      =           = ₹ 45.71\n                                           No. of Share          3.5 Lakh            3.5\n                Expected Market Price EPS (₹ 45.71) x P/E Ratio (10) = ₹ 457.10\n        (c)     (i)     Promoter's holding\n                        Promoter's Revised                  Abhiman 50% i.e.     1.00 Lakh shares\n                        Holding                             Abhishek 60% i.e.      0.90 Lakh shares\n                                                                   Total         1.90 Lakh shares\n                        Promoter's % = 1.90/3.50 x 100 = 54.29%\n              (ii)      Free Float Market Capitalisation\n                        Free Float Market             = (3.5 Lakh – 1.9 Lakh) x ₹ 457.10\n                        Capitalisation                = ₹ 731.36 Lakh\n              (iii)     (a) & (b)\n                        Revised Capital                            ₹ 350 Lakh + ₹ 175 Lakh = ₹ 525 Lakh\n                        No. of shares before Split (F.V ₹ 100)     5.25 Lakh\n                        No. of Shares after Split (F.V. ₹ 5 )      5.25 x 20 = 105 Lakh\n                        EPS                                        160 Lakh / 105 Lakh = 1.523\n                        Book Value                                 Cap. ₹ 525 Lakh + ₹ 1075 Lakh\n                                                            No. of Shares =105 Lakh\n                                                            = ₹ 15.238 per share",
-     "cut": false
-    }
-   ],
-   "sweep": {
-    "points": 25,
-    "mtp": 8,
-    "pyq": 6,
-    "rtp": 3
-   },
-   "rank": {
-    "score": 25
-   },
-   "tier": "should"
-  },
-  {
    "id": "chapter-11-international-financial-management",
    "title": "Ch 11 · International Financial Management",
    "url": "https://resource.cdn.icai.org/83288bos67342-cp11.pdf",
@@ -2595,7 +2589,7 @@
      "t": "Adjusted Present Value (APV)",
      "p0": 4,
      "p1": 5,
-     "hits": 0
+     "hits": 2
     },
     {
      "n": "1.6",
@@ -2735,7 +2729,7 @@
      "t": "International Receivables Management",
      "p0": 33,
      "p1": 40,
-     "hits": 15
+     "hits": 17
     },
     {
      "n": "3",
@@ -3595,7 +3589,7 @@
      "t": "Sustainable Growth Rate",
      "p0": 9,
      "p1": 12,
-     "hits": 2
+     "hits": 4
     },
     {
      "n": "6.2",
@@ -3672,8 +3666,8 @@
      "cut": false
     },
     {
-     "sec": 7,
-     "text": "MANAGEMENT\nThe interface of strategic management and financial policy will be clearly understood if we appreciate the\nfact that the starting point of an organization is money and the end point of that organization is also\nmoney. No organization can run an existing business and promote a new expansion project without a\nsuitable internally mobilized financial base or both i.e. internally and externally mobilized financial base.\nSources of finance and capital structure are the most important dimensions of a strategic plan. The\nneed for fund mobilization to support the expansion activity of firm is very vital for any organization.\nThe generation of funds may arise out of ownership capital and or borrowed capital. A company may\nissue equity shares and/or preference shares for mobilizing ownership capital and debentures to\nraise borrowed capital. Public deposits, for a fixed time period, have also become a major source of\nshort and medium-term finance. Organizations may offer higher rates of interest than banking\ninstitutions to attract investors and raise fund. The overdraft, cash credits, bill discounting, bank loan\nand trade credit are the other sources of short-term finance.\nAlong with the mobilization of funds, policy makers should decide on the capital structure to indicate\nthe desired mix of equity capital and debt capital. There are some norms for debt equity ratio which\nneed to be followed for minimizing the risks of excessive loans. For instance, in case of public sector\norganizations, the norm is 1:1 ratio and for private sector firms, the norm is 2:1 ratio. However, this\nratio in its ideal form varies from industry to industry. It also depends on the planning mode of the\norganization. For capital intensive industries, the proportion of debt to equity is much higher. Similar\nis the case for high cost projects in priority sectors and for projects in underdeveloped regions.\nAnother important dimension of strategic management and financial policy interface is the\ninvestment and fund allocation decisions. A planner has to frame policies for regulating investments\nin fixed assets and for restraining of current assets. Investment proposals mooted by different\nbusiness units may be divided into three groups. One type of proposal will be for addition of a new\nproduct by the firm. Another type of proposal will be to increase the level of operation of an existing\nproduct through either an increase in capacity in the existing plant or setting up of another plant for\nmeeting additional capacity requirement. The last is for cost reduction and efficient utilization of\nresources through a new approach and/or closer monitoring of the different critical activities. Now,\ngiven these three types of proposals a planner should evaluate each one of them by making within\ngroup comparison in the light of capital budgeting exercise. In fact, project evaluation and project\nselection are the two most important jobs under fund allocation. Planner's task is to make the best\npossible allocation under resource constraints.\n\n                  1.8 2.8                  ADVANCED FINANCIAL MANAGEMENT\n\nDividend policy is yet another area for making financial policy decisions affecting the strategic\nperformance of the company. A close interface is needed to frame the policy to be beneficial for all.\nDividend policy decision deals with the extent of earnings to be distributed as dividend and the extent\nof earnings to be retained for future expansion scheme of the firm. From the point of view of long-\nterm funding of business growth, dividend can be considered as that part of total earnings, which\ncannot be profitably utilized by the company. Stability of the dividend payment is a desirable\nconsideration that can have a positive impact on share prices. The alternative policy of paying a\nconstant percentage of the net earnings may be preferable from the point of view of both flexibility\nof the firm and ability of the firm. It also gives a message of lesser risk for the investors. Yet some\nother companies follow a different alternative. They pay a minimum dividend per share and additional\ndividend when earnings are higher than the normal earnings. In actual practice, investment\nopportunities and financial needs of the firm and the shareholders preference for dividend against\ncapital gains resulting out of share are to be taken into consideration for arriving at the right dividend\npolicy. Alternatives like cash dividend and stock dividend are also to be examined while working out\nan ideal dividend policy that supports and promotes the corporate strategy of the company.\nThus, the financial policy of a company cannot be worked out in isolation of other functional policies.\nIt has a wider appeal and closer link with the overall organizational performance and direction of\ngrowth. These policies being related to external awareness about the firm, especially the awareness\nof the investors about the firm, in respect of its internal performance. There is always a process of\nevaluation active in the minds of the current and future stake holders of the company. As a result\npreference and patronage for the company depends significantly on the financial policy framework.\nHence, attention of the corporate planners must be drawn while framing the financial policies not at\na later stage but during the stage of corporate planning itself. The nature of interdependence is the\ncrucial factor to be studied and modelled by using an in-depth analytical approach. This is a very\ndifficult task compared to usual cause and effect study because corporate strategy is the cause and\nfinancial policy is the effect and sometimes financial policy is the cause and corporate strategy is\nthe effect.",
+     "sec": 9,
+     "text": "The sustainable growth rate (SGR), concept by Robert C. Higgins, of a firm is the maximum rate of\ngrowth in sales that can be achieved, given the firm's profitability, asset utilization, and desired\ndividend payout and debt (financial leverage) ratios. The sustainable growth rate is a measure of\nhow much a firm can grow without borrowing more money. After the firm has passed this rate, it\nmust borrow funds from another source to facilitate growth. Variables typically include the net profit\nmargin on new and existing revenues; the asset turnover ratio, which is the ratio of sales revenues\nto total assets; the assets to equity ratio; and the retention rate, which is defined as the fraction of\nearnings retained in the business.\n\n                  1.102.10                 ADVANCED FINANCIAL MANAGEMENT\n\nSGR = ROE x (1- Dividend payment ratio)\n\nSustainable growth models assume that the business wants to:\n\n1)    maintain a target capital structure without issuing new equity;\n\n2)    maintain a target dividend payment ratio; and\n\n3)    increase sales as rapidly as market conditions allow.\n\nSince the asset to beginning of period equity ratio is constant and the firm's only source of new\nequity is retained earnings, sales and assets cannot grow any faster than the retained earnings plus\nthe additional debt that the retained earnings can support. The sustainable growth rate is consistent\nwith the observed evidence that most corporations are reluctant to issue new equity. If, however,\nthe firm is willing to issue additional equity, there is in principle no financial constraint on its growth\nrate. Indeed, the sustainable growth rate formula is directly predicted on return on equity.\n\nEconomists and business researchers contend that achieving sustainable growth is not possible\nwithout paying heed to twin cornerstones:\n\n       growth strategy and\n\n       growth capability.\nCompanies that pay inadequate attention to one aspect or the other are doomed to fail in their efforts\nto establish practices of sustainable growth (though short-term gains may be realized). After all, if a\ncompany has an excellent growth strategy in place but has not put the necessary infrastructure in\nplace to execute that strategy, long-term growth is impossible. The reverse is also true.\nThe very weak idea of sustainability requires that the overall stock of capital assets should remain\nconstant. The weak version of sustainability refers to preservation of critical resources to ensure\nsupport for all, over a long-time horizon. The strong concept of sustainability is concerned with the\npreservation of resources under the primacy of ecosystem functioning. These are in line with the\ndefinition provided by the economists in the context of sustainable development at macro level.\n\n                     FINANCIAL POLICY AND CORPORATE STRATEGY                                1.11\n\n   What makes an organisation sustainable?\n   In order to be sustainable, an organisation must:\n           have a clear strategic direction;\n\n           be able to scan its environment or context to identify opportunities for its work;\n           be able to attract, manage and retain competent staff;\n           have an adequate administrative and financial infrastructure;\n           be able to demonstrate its effectiveness and impact in order to leverage further resources;\n            and\n           get community support for, and involvement in its work.\nSource: CIVICUS “Developing a Financing Strategy”.\n\nThe sustainable growth model is particularly helpful in situations in which a borrower requests\nadditional financing. The need for additional loans creates a potentially risky situation of too much\ndebt and too little equity. Either additional equity must be raised, or the borrower will have to reduce\nthe rate of expansion to a level that can be sustained without an increase in financial leverage.\nMature firms often have actual growth rates that are less than the sustainable growth rate. In these\ncases, management's principal objective is finding productive uses for the cash flows that exist in\nexcess of their needs. Options available to business in such cases includes returning the money to\nshareholders through increased dividends or common stock repurchases, reducing the firm's debt\nload, or increasing possession of lower earning liquid assets. These actions serve to decrease the\nsustainable growth rate. Alternatively, these firms can attempt to enhance their actual growth rates\nthrough the acquisition of rapidly growing companies.\nGrowth can come from two sources: increased volume and inflation. The inflationary increase in\nassets must be financed as though it were real growth. Inflation increases the amount of external\nfinancing required and increases the debt-to-equity ratio when this ratio is measured on a historical\ncost basis. Thus, if creditors require that a firm's historical cost debt-to-equity ratio stay constant,\ninflation lowers the firm's sustainable growth rate.\n       Mitsubishi Corporation (MC): New Strategic Direction (charting a new path toward\n                                     sustainable growth)\n Mitsubishi Corporation has abolished its traditional \"midterm management plan\" concept of committing\n to fixed financial targets three years in the future, in favour of a long-term, circa 2020 growth vision.\n The \"New Strategic Direction” consists of basic concepts on management policy together with\n business and market strategies. It seeks to recognize the Company's value and upside potential as\n\n                  1.122.12                 ADVANCED FINANCIAL MANAGEMENT\n\n a sogo shosha capable of \"providing stable earnings throughout business cycles by managing a\n portfolio diversified by business model, industry, market and geography\".\n MC remains dedicated to sustainable growth but as evidenced by its guiding philosophy, the\n \"Three Corporate Principles\", its business activities are even more committed to helping solve\n problems in Japan and around the world. Its chief goal is to contribute to sustainable societal\n growth on a global scale.\n The summary of this New Strategic Direction is:\n       Future pull approach eyeing 2020 with a vision to double the business by building a\n        diversified but focussed portfolio.\n       Clear portfolio strategy: Select winning businesses through proactive reshaping of portfolio.\n\n       Grow business and deliver returns while maintaining financial discipline.",
      "cut": false
     },
     {
@@ -3683,13 +3677,13 @@
     }
    ],
    "sweep": {
-    "points": 16,
+    "points": 18,
     "mtp": 5,
-    "pyq": 3,
+    "pyq": 4,
     "rtp": 3
    },
    "rank": {
-    "score": 16
+    "score": 18
    },
    "tier": "should"
   },
@@ -3950,7 +3944,7 @@
      "t": "Sources of financing",
      "p0": 11,
      "p1": 15,
-     "hits": 2
+     "hits": 4
     },
     {
      "n": "1",
@@ -4005,11 +3999,34 @@
    "questions": [
     {
      "closest": {
+      "t": "Sources of financing",
+      "p0": 11,
+      "file": true
+     },
+     "role": "comprehensive",
+     "src": "PYQ May 2026",
+     "label": "2(c)",
+     "kind": "pyq",
+     "loose": false,
+     "covers": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      8,
+      11
+     ],
+     "prompt": "The technology start-up, Fincorp Pvt. Ltd., is in its early growth stage and is\n    evaluating multiple sources of financing including Angel Investment, Venture\n    Capital (VC), Convertible Notes, SAFE and IPO.\n    Evaluate the following statements and state whether they are True or False,\n    giving brief justification in each case:\n    (i)       In early-stage start-ups, valuation is primarily based on discounted cash\n              flow (DCF) using stable historical earnings.\n    (ii) Venture capital financing typically involves staged funding to reduce\n         agency problems and mitigate investment risk.\n    (iii) Bootstrapping reduces dilution risk but may limit growth due to capital\n          constraints.\n    (iv) Angel investors generally invest at a later stage than venture capitalists\n         and demand stronger control rights.                            (4 Marks)",
+     "ans": "(i) False\n        Justification: Early-stage start-ups usually lack stable historical earnings\n        and predictable cash flows. Therefore, DCF is unreliable.\n    (ii) True\n        Justification: VC financing is commonly structured in stage (Seed. Series\n        A, B, etc.). Staging: Reduces information asymmetry, moral hazard,\n        Links funding to milestone achievement, Limits downside exposure.\n        Exposure. It is a key risk-management mechanism in venture investing.\n    (iii) True\n        Justification: Bootstrapping involves self-financing through personal\n        savings or internal cash flow.\n        Advantage: No equity dilution, Retained control.\n        Disadvantages: Limited capital, Slower scaling, Higher founder financial\n        risk.\n        Thus, growth potential may be constrained.\n    (iv) False\n        Justification: Angel investors typically invest in the seed or very early\n        stage, often before institutional VC funding. They usually take minority\n        stakes and exercise relatively informal control compared to VCs.\n        Venture capitalists invest at later stages and demand stronger\n        governance rights such as board seats, veto rights, and protective\n        provisions."
+    },
+    {
+     "closest": {
       "t": "Meaning of Succession Planning",
       "p0": 22,
       "file": true
      },
-     "role": "comprehensive",
+     "role": "drill",
      "src": "PYQ Nov 2024",
      "label": "4(c)",
      "kind": "pyq",
@@ -4036,23 +4053,6 @@
      ],
      "prompt": "Apart from the support from government, there are quite a few other reasons\n    why India became a sustainable environment for start-up to thrive in\n    What are the other reasons?\n                                        OR",
      "ans": "Apart from the support from government, there are quite a few other\n    reasons why India became such a sustainable environment for start-ups to\n    thrive in. Some of the major reasons are:\n    (i) The Pool of Talent - Our country has a big pool of talent. There are\n        millions of students graduating from colleges and B-schools every\n        year. Many of these students use their knowledge and skills to begin\n        their own ventures, and that has contributed to the startup growth in\n        India. In the past, much of this talent was attracted to only the big\n        companies, but now that is slowly changing.\n    (ii) Cost Effective Workforce - India is a young country with over 10\n         million people joining the workforce every year. The workforce is also\n         cost effective. So, compared to some other countries, the cost of\n         setting up and running a business is comparatively lower.\n\n    (iii) Increasing use of the Internet - India has the world's second-highest\n          population, and after the introduction of affordable telecom services,\n          the usage of internet has increased significantly. It has even reached\n          the rural areas. India has the second-largest internet user base after\n          China, and companies as well as start-ups are leveraging this easy\n          access to the internet.\n    (iv) Technology - Technology has made the various processes of business\n         very quick, simple and efficient. There have been major developments\n         in software and hardware systems due to which data storage and\n         recording has become an easy task. Indian startups are now\n         increasingly working in areas of artificial intelligence and blockchain\n         technologies which is adding to the growth of business.\n    (v) Variety of Funding Options Available - Earlier there were only some\n        very traditional methods available for acquiring funds for a new\n        business model, which included borrowing from the bank or borrowing\n        from family and friends. However, this concept has now changed. There\n        are numerous options and opportunities available. Start-up owners can\n        approach angel investors, venture capitalists, seed funding stage\n        investors, etc. The easing of Foreign Direct Investment norms and\n        opening up of majority of sectors to 100% automatic route has also\n        opened the floodgates for foreign funding in the Indian start-up\n        ecosystem.\n                                        OR"
-    },
-    {
-     "closest": {
-      "t": "SOME OF THE INNOVATIVE WAYS TO FINANCE A",
-      "p0": 2,
-      "file": true
-     },
-     "role": "drill",
-     "src": "MTP Sep 2025 S-II",
-     "label": "4(c)",
-     "kind": "mtp",
-     "loose": true,
-     "covers": [
-      1
-     ],
-     "prompt": "Discuss any four innovative sources of financing available for startups apart\n           from traditional bank loans.                                        (4 Marks)",
-     "ans": "Below are the four innovative sources of financing available for startups apart from\n           traditional bank loans:\n           (i)     Peer-to-peer lending: In this process a group of people come together\n                   and lend money to each other. Peer to peer lending has been there for\n                   many years. Many small and ethnic business groups having similar faith or\n                   interest generally support each other in their start up endeavors.\n           (ii)    Crowdfunding: Crowdfunding is the use of small amounts of capital from\n                   a large number of individuals to finance a new business initiative.\n                   Crowdfunding makes use of the easy accessibility of vast networks of\n                   people through social media and crowdfunding websites to bring investors\n                   and entrepreneurs together.\n           (iii)   Microloans: Microloans are small loans that are given by individuals at\n                   lower interest rates to new business ventures. These loans can be issued\n                   by a single individual or aggregated across a number of individuals who\n                   each contribute a portion of the total amount.\n           (iv)    Vendor financing: Vendor financing is the form of financing in which a\n                   company lends money to one of its customers so that he can buy products\n                   from the company itself. Vendor financing also takes place when many\n                   manufacturers and distributors are convinced to defer payment until the\n                   goods are sold. This means extending the payment terms to a longer period\n                   for e.g. 30 days payment period can be extended to 45 days or 60 days.\n                   However, this depends on one's credit worthiness and payment of more\n                   money."
     }
    ],
    "reading": [
@@ -4078,13 +4078,13 @@
     }
    ],
    "sweep": {
-    "points": 13,
-    "pyq": 3,
+    "points": 15,
+    "pyq": 4,
     "rtp": 2,
     "mtp": 4
    },
    "rank": {
-    "score": 13
+    "score": 15
    },
    "tier": "quick"
   },
@@ -4147,7 +4147,7 @@
      "t": "Application of VAR",
      "p0": 5,
      "p1": 6,
-     "hits": 2
+     "hits": 4
     },
     {
      "n": "4.1",
@@ -4249,13 +4249,13 @@
     }
    ],
    "sweep": {
-    "points": 10,
+    "points": 12,
     "mtp": 5,
-    "pyq": 1,
+    "pyq": 2,
     "rtp": 1
    },
    "rank": {
-    "score": 10
+    "score": 12
    },
    "tier": "quick"
   }

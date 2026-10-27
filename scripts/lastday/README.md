@@ -11,7 +11,7 @@ Inputs (git-ignored, under `work/`):
   answers (with the paper), `mtp*_1` = questions, `mtp*_2` = answers. MTPs are Drive copies from vsijaipur.com checked against
   ICAI's header; the May 2026 question papers are image-only and were read with `ocr.py` (noisy).
 
-Run, per subject (`fr`, `afm`, `aaa`): `python3 scripts/lastday/sweep.py <s>` → `packs.py <s>` → `export.py <s>`.
+Run, per subject (`fr`, `afm`, `aaa`): `python3 scripts/lastday/sweep.py <s>` → `packs.py <s>` → `export.py <s>`; then once: `plan.py`, `weightage.py`, `updates.py`.
 `rank.py <s>` prints the chapter ranking. `drop.json` lists questions removed after manual review.
 
 Limits to remember:

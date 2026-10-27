@@ -7,6 +7,9 @@ Revision app for CA Final Group 1 (FR, AFM, AAA). Next.js 14 (App Router, TypeSc
 - **Chapters are data, not components.** Build chapters with the `ca-chapter` skill (`.claude/skills/ca-chapter`). The mastery layer (`data/<subject>/chNN-learn.json`) is generated from `scripts/learn-src/<id>.mjs` with `node scripts/build-learn.mjs <id>`.
 - **Before any hand-over:** `npx tsc --noEmit`, `npm run lint`, `npm run validate -- <id>`, `node scripts/audit-accuracy.mjs <id>` (0 errors), `npm run build`.
 
+## Last-day packs (not chapters)
+`data/lastday/*.json` feed `/[subject]/must-do`, `/weightage`, `/analysis`, `/updates` and `/write-plan`. They are built by `scripts/lastday` (see its README) from ICAI's SM, papers and suggested answers, shown verbatim; chapter filing is by wording match, so each question shows its closest SM section. Rebuild with `sweep.py`, `packs.py`, `export.py`, `plan.py`, `weightage.py`, `updates.py` per `scripts/lastday/README.md`. Anything ICAI-corrected in a paper goes in `research/accuracy-report.md`; never reword ICAI text.
+
 ## Code style (keep new code like the old code)
 - TypeScript, React function components; client components start with `'use client'`.
 - Styling through tokens in `:root` (light, dark and `data-theme` blocks); per-subject accent via `[data-subj]`. No hard-coded colours in components. Tap targets 44px; layouts work at 390px width with no sideways scroll.

@@ -1,6 +1,6 @@
 // ICAI text exactly as extracted. The PDF hard-wraps lines, so prose is re-flowed (whitespace only, no word changes);
 // paragraphs that look like tables keep their columns and scroll sideways inside the block.
-const ITEM = /^\s*(\(?[ivx]{1,5}\)|\(?[a-zA-Z]\)|\d{1,2}[.)]|[•\-–])\s/;
+const ITEM = /^\s*(\(?[ivx]{1,5}\)|\(?[a-zA-Z]\)|\d{1,2}[.)]|[•❖●\-–])\s/;
 
 function reflow(p: string): string[] {
   const out: string[] = [];

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import PackText from '@/components/PackText';
 import { SUBJECTS, subjectOf } from '@/lib/registry';
 import { TIERS, marksOf, packsOf } from '@/lib/lastday';
+import { packAffected } from '@/lib/updates';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -39,6 +40,9 @@ export default function Pack({ params }: { params: { subject: string; topic: str
           </p>
         </header>
 
+        {packAffected(s.id, p.id) && (
+          <p className="pk-warn">ICAI&apos;s Nov 2026 RTP lists amendments that touch this chapter (Ind AS 1, 7, 12, 21 and 107 disclosures). The study-material text below is the older wording: read <Link href={`/${s.id}/updates`}>what changed for Nov 2026</Link> first.</p>
+        )}
         <section className="pk-sec">
           <h2 className="pk-h">Write these first</h2>
           <p className="muted pk-note">

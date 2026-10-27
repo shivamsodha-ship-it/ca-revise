@@ -1,0 +1,127 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ind AS 19 Deep Dive</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 19 · Deep dive · SM Ch 6 Unit 1</span><span class="tag">DEEP DIVE 1 / 3</span></div>
+  <h1><span class="u">Ind AS 19</span> — Deep Dive</h1>
+  <div class="sub">Full DB numerical, asset ceiling, compensated absences, plan events. ₹ lakh.</div>
+
+  <h2><span class="n">1</span>Defined benefit — full worked example</h2>
+  <p class="small">Opening DBO 1,000; opening plan assets 900; discount rate 8%. Current service cost 120; <b>past service cost 30</b> (plan amended during year); contributions 150 and benefits paid 80 (both at year-end). Actuary: closing DBO <b>1,140</b>, closing plan assets <b>1,060</b>.</p>
+  <div class="cols">
+    <table>
+      <tr><th>DBO</th><th></th></tr>
+      <tr><td>Opening</td><td>1,000</td></tr>
+      <tr><td>+ Current service cost</td><td>120</td></tr>
+      <tr><td>+ Past service cost</td><td>30</td></tr>
+      <tr><td>+ Interest 8% × 1,000</td><td>80</td></tr>
+      <tr><td>− Benefits paid</td><td>(80)</td></tr>
+      <tr><td>Expected closing</td><td>1,150</td></tr>
+      <tr><td><b>Actuarial gain</b> (balancing)</td><td><b>(10)</b></td></tr>
+      <tr><td>Closing (actuary)</td><td>1,140</td></tr>
+    </table>
+    <table>
+      <tr><th>Plan assets</th><th></th></tr>
+      <tr><td>Opening</td><td>900</td></tr>
+      <tr><td>+ Interest income 8% × 900</td><td>72</td></tr>
+      <tr><td>+ Contributions</td><td>150</td></tr>
+      <tr><td>− Benefits paid</td><td>(80)</td></tr>
+      <tr><td>Expected closing</td><td>1,042</td></tr>
+      <tr><td><b>Return excl. interest</b> (balancing)</td><td><b>18</b></td></tr>
+      <tr><td>Closing (actuary)</td><td>1,060</td></tr>
+      <tr><td></td><td></td></tr>
+    </table>
+  </div>
+  <table>
+    <tr><th style="width:50%">Where it goes</th><th>Amount</th><th>Statement</th></tr>
+    <tr><td>Service cost (120 + 30)</td><td>150</td><td class="C">P&amp;L</td></tr>
+    <tr><td>Net interest 8% × net liability 100 (= 80 − 72)</td><td>8</td><td class="C">P&amp;L</td></tr>
+    <tr><td><b>Total P&amp;L charge</b></td><td><b>158</b></td><td></td></tr>
+    <tr><td>Remeasurement gain (10 + 18)</td><td><b>(28)</b></td><td class="NC">OCI</td></tr>
+  </table>
+  <p class="small"><b>Check:</b> opening net liability 100 + P&amp;L 158 − OCI gain 28 − contributions 150 = <b>80</b> = closing DBO 1,140 − plan assets 1,060 ✓</p>
+  <div class="trap"><p>Interest on plan assets = <b>discount rate × opening assets</b>, not actual return. Past service cost → <b>P&amp;L immediately</b>, even if benefits are unvested. Contributions &amp; benefits paid only move balances — they're not expenses.</p></div>
+
+  <div class="foot"><span>Ind AS 19 deep dive · page 1 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 19 · Asset ceiling, absences, other long-term</span><span class="tag">DEEP DIVE 2 / 3</span></div>
+  <h2><span class="n">2</span>Asset ceiling <span class="para">64 · 65</span></h2>
+  <p class="small">DBO 800; plan assets 1,000 → surplus 200. PV of economic benefits available (refunds / reduced future contributions) = 150.</p>
+  <table>
+    <tr><th style="width:62%">Working</th><th>₹ lakh</th></tr>
+    <tr><td>Surplus</td><td>200</td></tr>
+    <tr><td>Asset ceiling</td><td>150</td></tr>
+    <tr><td><b>Net defined benefit asset recognised</b> (lower)</td><td><b>150</b></td></tr>
+    <tr><td>Effect of asset ceiling 50 → <b>OCI</b> (remeasurement); next year, interest on the ceiling effect → part of net interest in P&amp;L</td><td>50</td></tr>
+  </table>
+
+  <h2><span class="n">3</span>Accumulating compensated absences — classic</h2>
+  <p class="small">100 employees, 5 days' paid sick leave a year; unused leave carried forward <b>one year</b>; leave taken first from current year. At year-end, average unused = 2 days. Expected next year: 92 employees take ≤ 5 days; 8 take 6.5 days each.</p>
+  <table>
+    <tr><th style="width:62%">Working</th><th>Days</th></tr>
+    <tr><td>92 employees use current entitlement only → no carried-forward used</td><td>0</td></tr>
+    <tr><td>8 employees use 1.5 days of carried-forward each</td><td><b>12</b></td></tr>
+    <tr><td><b>Liability</b> = 12 days of sick pay (expected, not the full 200 days unused)</td><td></td></tr>
+  </table>
+  <ul class="small">
+    <li>Non-vesting accumulating → still a liability (expected use). <b>Vesting</b> → full amount unused</li>
+    <li>Non-accumulating (lapses) → no liability until absence occurs</li>
+  </ul>
+
+  <h2><span class="n">4</span>Other long-term benefits — the P&amp;L trap</h2>
+  <table>
+    <tr><th style="width:54%">Leave encashment (not wholly within 12 m)</th><th>₹ lakh</th></tr>
+    <tr><td>Current service cost</td><td>40 → P&amp;L</td></tr>
+    <tr><td>Interest cost</td><td>12 → P&amp;L</td></tr>
+    <tr><td>Actuarial loss</td><td>15 → <b class="red">P&amp;L (not OCI)</b></td></tr>
+  </table>
+  <div class="sticky">Post-employment DB → remeasurement in <b>OCI</b>. Other long-term (leave, long-service award) → <b>everything in P&amp;L</b>.</div>
+
+  <div class="foot"><span>Ind AS 19 deep dive · page 2 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 19 · Plan events, termination, India cases</span><span class="tag">DEEP DIVE 3 / 3</span></div>
+  <h2><span class="n">5</span>Plan amendment / curtailment / settlement mid-year</h2>
+  <ol class="small">
+    <li>Remeasure net DBL <b>immediately before</b> the event using current assumptions (difference → OCI)</li>
+    <li>Past service cost / settlement gain or loss = change in DBO from the event → <b>P&amp;L</b></li>
+    <li>For the <b>rest of the year</b>, compute current service cost &amp; net interest using the <b>updated</b> assumptions and remeasured net DBL (2019 amendment)</li>
+    <li>Asset ceiling effect after the event → OCI</li>
+  </ol>
+  <table>
+    <tr><th style="width:46%">Event</th><th>Meaning</th></tr>
+    <tr><td><b>Curtailment</b></td><td>Significant <b>reduction in number of employees</b> covered (plant closure) → past service cost (usually a gain)</td></tr>
+    <tr><td><b>Settlement</b></td><td>Eliminates all further obligation (lump-sum buy-out / annuity purchase) — <b>not</b> normal benefit payments per plan terms</td></tr>
+    <tr><td><b>Plan amendment</b></td><td>Benefits introduced / changed (incl. by <b>law</b>)</td></tr>
+  </table>
+
+  <h2><span class="n">6</span>Termination benefits — VRS</h2>
+  <ul class="small">
+    <li>VRS offered 1 Mar, acceptance window to 15 Apr: recognise when entity <b>can't withdraw</b> the offer — for a VRS, when employees <b>accept</b> (or a restriction on withdrawing takes effect)</li>
+    <li>Involuntary plan → when communicated with sufficient detail &amp; unlikely to change</li>
+    <li>Measured per benefit nature: within 12 m → undiscounted; beyond → discounted</li>
+  </ul>
+
+  <h2><span class="n">7</span>Indian situations</h2>
+  <table>
+    <tr><th style="width:44%">Case</th><th>Treatment</th></tr>
+    <tr><td>PF to EPFO / RPFC</td><td><b>DC</b> — expense contribution</td></tr>
+    <tr><td>PF in exempt trust, employer guarantees EPFO rate</td><td><b>DB</b> — provide for interest shortfall (actuarial / deterministic)</td></tr>
+    <tr><td>Gratuity funded with LIC group policy</td><td><b>DB</b>; LIC policy = <b>plan asset</b> if qualifying insurance policy</td></tr>
+    <tr><td>Superannuation (fixed % to LIC)</td><td><b>DC</b></td></tr>
+    <tr><td>Statutory bonus (Payment of Bonus Act)</td><td>Short-term; accrue for the year</td></tr>
+    <tr><td>Law widens wage base for gratuity</td><td><b>Past service cost → P&amp;L</b> (verify date for your attempt)</td></tr>
+  </table>
+  <div class="exam"><p>"As per para 120 of Ind AS 19, service cost and net interest on the net defined benefit liability are recognised in profit or loss, while remeasurements of the net defined benefit liability are recognised in other comprehensive income; past service cost is recognised in profit or loss at the earlier of the plan amendment and the recognition of related restructuring costs (para 103)."</p></div>
+
+  <div class="foot"><span>Ind AS 19 deep dive · page 3 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+</body></html>

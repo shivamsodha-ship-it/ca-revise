@@ -1,0 +1,121 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ind AS 109 Deep Dive</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 109 · Deep dive · SM Ch 11</span><span class="tag">DEEP DIVE 1 / 3</span></div>
+  <h1><span class="u">Ind AS 109</span> — Deep Dive</h1>
+  <div class="sub">EIR, FVOCI flow, ECL matrix, modification test, intra-group loans &amp; guarantees — all computed (₹).</div>
+
+  <h2><span class="n">1</span>Amortised cost — EIR table</h2>
+  <p class="small">Bond face ₹1,00,000, coupon 6% annual, 3 years; bought for ₹95,000 + transaction cost ₹1,000 → initial carrying <b>₹96,000</b>. EIR (solved) = <b>7.5392%</b>.</p>
+  <table>
+    <tr><th>Year</th><th>Opening</th><th>Interest at EIR (P&amp;L)</th><th>Coupon received</th><th>Closing</th></tr>
+    <tr><td>1</td><td>96,000</td><td>7,238</td><td>6,000</td><td>97,238</td></tr>
+    <tr><td>2</td><td>97,238</td><td>7,331</td><td>6,000</td><td>98,569</td></tr>
+    <tr><td>3</td><td>98,569</td><td>7,431</td><td>6,000</td><td>1,00,000 → redeemed</td></tr>
+  </table>
+  <p class="small">EIR includes transaction costs and discount / premium → they're spread through interest, never expensed upfront (except FVTPL).</p>
+
+  <h2><span class="n">2</span>Same bond as FVOCI (debt)</h2>
+  <table>
+    <tr><th style="width:56%">Year 1</th><th>Amount</th><th>Goes to</th></tr>
+    <tr><td>Interest income at EIR</td><td>7,238</td><td class="C">P&amp;L</td></tr>
+    <tr><td>12-month ECL (say)</td><td>500</td><td class="C">P&amp;L expense; credit to <b>OCI</b> (not to asset)</td></tr>
+    <tr><td>FV at year-end 97,500 vs amortised cost 97,238</td><td>262</td><td class="NC">OCI</td></tr>
+    <tr><td>Balance sheet carrying amount</td><td><b>97,500</b> (FV)</td><td></td></tr>
+  </table>
+  <div class="trap"><p>P&amp;L of an FVOCI debt asset = <b>exactly as if amortised cost</b> (interest, ECL, FX). Only the FV difference sits in OCI — and it's <b>recycled</b> on sale.</p></div>
+
+  <h2><span class="n">3</span>ECL — provision matrix (simplified approach)</h2>
+  <table>
+    <tr><th>Ageing bucket</th><th>Receivables</th><th>Loss rate*</th><th>ECL</th></tr>
+    <tr><td>Not due</td><td>5,00,000</td><td>0.5%</td><td>2,500</td></tr>
+    <tr><td>1 – 30 days</td><td>2,00,000</td><td>1.5%</td><td>3,000</td></tr>
+    <tr><td>31 – 60 days</td><td>1,00,000</td><td>4%</td><td>4,000</td></tr>
+    <tr><td>61 – 90 days</td><td>50,000</td><td>10%</td><td>5,000</td></tr>
+    <tr><td>&gt; 90 days</td><td>30,000</td><td>40%</td><td>12,000</td></tr>
+    <tr><td colspan="3"><b>Loss allowance</b></td><td><b>26,500</b></td></tr>
+  </table>
+  <p class="small">*Historical loss rates <b>adjusted for forward-looking</b> information (GDP, sector stress). Increase / decrease in allowance → impairment loss / gain in P&amp;L.</p>
+
+  <div class="foot"><span>Ind AS 109 deep dive · page 1 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 109 · Modification, intra-group loans, guarantees</span><span class="tag">DEEP DIVE 2 / 3</span></div>
+  <h2><span class="n">4</span>Loan modification — 10% test (borrower)</h2>
+  <p class="small">Loan ₹10,00,000 at 10% (original EIR), 3 years left. Lender agrees to cut interest to 7%; no fees.</p>
+  <table>
+    <tr><th style="width:62%">Working</th><th>₹</th></tr>
+    <tr><td>PV of new cash flows at <b>original EIR 10%</b>: 70,000 × 2.4869 + 10,00,000 × 0.7513</td><td>9,25,394</td></tr>
+    <tr><td>PV of old remaining cash flows (= carrying amount)</td><td>10,00,000</td></tr>
+    <tr><td>Difference 7.46% → <b>&lt; 10%</b> → <b>not substantial</b></td><td></td></tr>
+    <tr><td>Carrying amount adjusted to 9,25,394; <b>modification gain → P&amp;L</b></td><td><b>74,606</b></td></tr>
+  </table>
+  <p class="small">If ≥ 10% (or qualitatively substantial, e.g., currency change, equity conversion feature added) → <b>extinguish</b> old loan, recognise new at <b>FV</b>; difference → P&amp;L; fees → part of gain / loss. Fees in the test: <b>fees paid net of fees received</b>.</p>
+
+  <h2><span class="n">5</span>Interest-free loan to subsidiary (parent's SFS)</h2>
+  <p class="small">Parent lends ₹10,00,000 to S, interest-free, repayable in 3 years; market rate 10%.</p>
+  <table>
+    <tr><th style="width:62%">Entry</th><th>₹</th></tr>
+    <tr><td>Loan at FV = 10,00,000 ÷ 1.1³</td><td>7,51,315</td></tr>
+    <tr><td>Difference → <b>investment in subsidiary</b> (capital contribution)</td><td>2,48,685</td></tr>
+    <tr><td>Year 1 interest income (unwinding at 10%)</td><td>75,131</td></tr>
+  </table>
+  <p class="small">In <b>S's</b> books: liability 7,51,315; difference 2,48,685 → <b>equity</b> (contribution from parent); interest expense unwinds. In <b>CFS</b>: everything eliminates. Loan to <b>employee</b> → difference = <b>prepaid employee benefit</b> (Ind AS 19).</p>
+
+  <h2><span class="n">6</span>Financial guarantee for subsidiary's bank loan</h2>
+  <ul class="small">
+    <li>Parent (issuer): guarantee at <b>FV</b> (e.g., fee a bank would charge, say ₹50,000) → Dr <b>investment in sub</b>, Cr financial guarantee liability; amortise to income over guarantee period</li>
+    <li>Later: <b>higher of</b> (a) ECL allowance and (b) initial amount less cumulative income</li>
+    <li>Sub (holder): guarantee from parent → usually integral to loan, not separately accounted</li>
+    <li>CFS → eliminated</li>
+  </ul>
+  <div class="sticky">Intra-group "free" benefits are never free: the gap between FV and price is a <b>capital contribution</b> (parent → investment; sub → equity).</div>
+
+  <div class="foot"><span>Ind AS 109 deep dive · page 2 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 109 · Classification cases, embedded, hedge numbers</span><span class="tag">DEEP DIVE 3 / 3</span></div>
+  <h2><span class="n">7</span>SPPI &amp; business-model cases</h2>
+  <table>
+    <tr><th style="width:50%">Instrument / situation</th><th>Result</th></tr>
+    <tr><td>Plain fixed / floating rate loan</td><td class="NC">SPPI ✓</td></tr>
+    <tr><td>Interest linked to <b>issuer's profit</b> or an <b>equity index</b></td><td class="C">Fails → FVTPL</td></tr>
+    <tr><td><b>Convertible</b> bond (holder)</td><td class="C">Fails → whole at FVTPL (no bifurcation for asset hosts)</td></tr>
+    <tr><td>Interest reset to 1-year rate every month (<b>tenor mismatch</b>) — modified time value</td><td>Benchmark test: if cash flows significantly different → fails</td></tr>
+    <tr><td>Prepayment at par + reasonable compensation</td><td class="NC">SPPI ✓ (incl. negative compensation if reasonable)</td></tr>
+    <tr><td>Bank sells loans only when credit risk rises</td><td class="NC">Still <b>HTC</b></td></tr>
+    <tr><td>Treasury portfolio sold regularly for liquidity &amp; yield</td><td><b>HTC &amp; sell</b> → FVOCI</td></tr>
+    <tr><td>Portfolio managed &amp; evaluated on <b>FV</b> basis</td><td class="C">FVTPL</td></tr>
+  </table>
+
+  <h2><span class="n">8</span>Embedded derivatives — host is NOT a financial asset</h2>
+  <table>
+    <tr><th style="width:50%">Embedded feature</th><th>Separate?</th></tr>
+    <tr><td>Equity-linked interest in a debt <b>liability</b></td><td class="C">Yes — not closely related</td></tr>
+    <tr><td>Commodity-indexed payments in a debt liability</td><td class="C">Yes</td></tr>
+    <tr><td>Interest-rate cap / floor out of the money at inception</td><td class="NC">No — closely related</td></tr>
+    <tr><td>Purchase contract in <b>functional currency</b> of either party / commonly used currency</td><td class="NC">No</td></tr>
+    <tr><td>Leverage feature that could at least double initial return</td><td class="C">Yes</td></tr>
+  </table>
+
+  <h2><span class="n">9</span>Cash flow hedge — numbers</h2>
+  <p class="small">Forward contract to hedge a highly probable USD purchase of machinery. Cumulative gain on forward ₹1,20,000; cumulative change in PV of hedged cash flows ₹1,00,000 (opposite).</p>
+  <table>
+    <tr><th style="width:62%">Working</th><th>₹</th></tr>
+    <tr><td>OCI (CFH reserve) = lower of the two cumulative amounts</td><td>1,00,000</td></tr>
+    <tr><td>Ineffective portion → P&amp;L</td><td>20,000</td></tr>
+    <tr><td>On purchase of machine → <b>basis adjustment</b>: CFH reserve removed and included in machine's cost (not via OCI)</td><td></td></tr>
+  </table>
+  <div class="exam"><p>"As per para 4.1.2 of Ind AS 109, a financial asset shall be measured at amortised cost if it is held within a business model whose objective is to hold financial assets in order to collect contractual cash flows and the contractual terms give rise on specified dates to cash flows that are solely payments of principal and interest on the principal amount outstanding."</p></div>
+
+  <div class="foot"><span>Ind AS 109 deep dive · page 3 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+</body></html>

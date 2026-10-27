@@ -22,6 +22,7 @@ export default function Home() {
             {SUBJECTS.map(s => (
               <div key={s.id} className="card ld-card" data-subj={s.id}>
                 <strong>{s.label}</strong><span className="muted ld-long">{s.long}</span>
+                <Link className="ld-link" href={`/${s.id}/updates`}>What changed for Nov 2026</Link>
                 <Link className="ld-link" href={`/${s.id}/weightage`}>Chapter-wise weightage (printable)</Link>
                 <Link className="ld-link" href={`/${s.id}/must-do`}>Must-do packs</Link>
                 <Link className="ld-link" href={`/${s.id}/write-plan`}>Daily writing plan</Link>

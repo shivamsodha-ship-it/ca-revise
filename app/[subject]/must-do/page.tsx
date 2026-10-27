@@ -32,6 +32,7 @@ export default function MustDo({ params }: { params: { subject: string } }) {
           <p className="muted">For chapters that are not built in the app yet. Each pack has two to three ICAI questions (the first touches the most of the chapter), ICAI&apos;s own answers, and the study-material text for the sections ICAI asks most. Nothing in a pack is written by the app.</p>
         </header>
         <p className="pk-basis muted">{set.basis}</p>
+        <p className="pk-warn">Read <Link href={`/${s.id}/updates`}>what changed for Nov 2026</Link> alongside these packs: ICAI&apos;s amendments are newer than the study-material text.</p>
         {TIERS.map(t => {
           const rows = set.topics.filter(p => p.tier === t.id);
           if (!rows.length) return null;

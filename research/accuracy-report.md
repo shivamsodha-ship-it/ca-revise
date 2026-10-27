@@ -70,3 +70,18 @@ One development to know about: search results report that RBI issued consolidate
 
 ## fr-ch09 (14 Oct 2026, later)
 - Removed all 'Corrected working (app)' / 'Note (app)' paragraphs: apparent ICAI slips were not verified against the PDF page images and are likely text-extraction artefacts. ICAI text kept as published.
+
+## Last-day packs (27 Oct 2026)
+Scope: `data/lastday/*` (must-do packs, weightage, analysis, writing plan, Nov 2026 updates), built by `scripts/lastday`. All question and answer text is ICAI's, extracted verbatim; layout, ordering, minutes and chapter/concept labels are app-written. Chapter filing is by wording match (BM25) plus the Ind AS number cited, not by ICAI, and each question shows its closest SM section.
+
+ICAI's own corrections and quirks found in the papers (checked against the ICAI files; ICAI text kept as published, nothing corrected by the app):
+- FR Sep 2025, Case Scenario II Q9: ICAI note "Read 'loan notes' as 'preference shares'".
+- FR Sep 2025, Q on Ind AS 19 discount rate: ICAI note "Read 'annual market yield on high quality corporate bonds' as 'market yields on government bonds'".
+- FR Sep 2025, MCQ 15: ICAI's key is "No Correct Option".
+- FR Jan 2026, MCQ 7: ICAI's key is "(A) and (C)" (both accepted).
+- FR May 2026, MCQ CS-I Q5: key accepts B or D. Q5(b): the question says Gama Ltd., ICAI's answer text says "Sigma Ltd." once ("Sigma Ltd. will need to split…") and Gama Ltd. elsewhere.
+- AFM May 2026, Case Scenario II MCQ 6: ICAI's key is "No correct option".
+
+Nov 2026 currency: Part I of the FR and AAA Nov 2026 RTPs (amendments / academic update) is reproduced on `/fr/updates` and `/aaa/updates`; the AFM Nov 2026 RTP has no such section. The AAA list is cumulative (it repeats the Jan 2026 and May 2026 items). The FR amendments (Ind AS 21 exchangeability, Ind AS 1 current/non-current with covenants, Ind AS 7 and 107 supplier finance, Ind AS 12 Pillar Two) are newer than the SM text in Ch 3.1, 3.3, 7.1, 7.2 and 11; those packs carry a notice.
+
+Not verified line by line: the question-to-chapter mapping and concept labels in `research/lastday/*-last3-analysis.md` (agent-written from ICAI's papers and answers; marks and question labels were spot-checked against the ICAI text).

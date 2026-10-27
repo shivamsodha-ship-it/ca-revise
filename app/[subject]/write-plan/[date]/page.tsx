@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PackText from '@/components/PackText';
+import PrintBar from '@/components/PrintBar';
 import PlanTick from '@/components/PlanTick';
 import { SUBJECTS, subjectOf } from '@/lib/registry';
 import { MODE_LABEL, dateLabel, dayOf, subjectDates } from '@/lib/writePlan';
@@ -27,12 +28,13 @@ export default function PlanDay({ params }: { params: { subject: string; date: s
         <span className="crumb-sep" aria-hidden="true">/</span><Link href={`/${s.id}`} className="crumb">{s.label}</Link>
         <span className="crumb-sep" aria-hidden="true">/</span><Link href={base} className="crumb">Writing plan</Link>
       </div></header>
-      <main className="page" data-subj={s.id}>
+      <main className="page rd" data-subj={s.id}>
         <header className="vhead">
           <p className="eyebrow">{s.label} · Day {i + 1} of {dates.length}</p>
           <h1 className="vh">{dateLabel(params.date)}</h1>
           <p className="muted pk-note">{day.items.reduce((n, x) => n + x.minutes, 0)} minutes. Write on paper in the mode shown, stop at the minutes, then open ICAI&apos;s answer and mark yourself.</p>
         </header>
+        <PrintBar answers />
         {day.items.map((it, j) => (
           <article key={j} className="card pk-q">
             <div className="pk-qh">
@@ -44,6 +46,7 @@ export default function PlanDay({ params }: { params: { subject: string; date: s
             {it.q && <PackText text={it.q.prompt} />}
             {it.q?.ans && <details className="pk-ans"><summary>ICAI&apos;s answer</summary><PackText text={it.q.ans} /></details>}
             {it.note && <p className="muted pk-cov">{it.note}</p>}
+            <div className="wp-lines" style={{ ['--wl' as string]: `${it.marks ? Math.min(it.marks * 24, 220) : 60}mm` }} aria-hidden="true" />
             <PlanTick id={`${s.id}:${params.date}:${j}`} />
           </article>
         ))}

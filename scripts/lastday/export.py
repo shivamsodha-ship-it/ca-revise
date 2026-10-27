@@ -53,6 +53,8 @@ def fr_key(fname):
     if un: return f'{int(ch):02d}.{un}'
     return f'{int(ch):02d}'
 
+HDR_TITLES = {'FINANCIAL REPORTING', 'ADVANCED FINANCIAL MANAGEMENT', 'ADVANCED AUDITING, ASSURANCE AND PROFESSIONAL ETHICS', 'ADVANCED AUDITING, ASSURANCE AND', 'PROFESSIONAL ETHICS'}
+
 def clean(t):
     t = t.replace('`', '₹')
     out = []
@@ -62,6 +64,7 @@ def clean(t):
         if re.match(r'^\s*(REVISION TEST PAPERS?|MOCK TEST PAPER|SUGGESTED ANSWERS?)\b[^\n]{0,80}$', ln, re.I) and ln.strip().isupper(): continue
         if re.match(r'^\s*(PAPER\s*[–-]?\s*[123]\s*[:\-–]?\s*)?(ADVANCED\s+(FINANCIAL\s+MANAGEMENT|AUDITING[A-Z ,&]*)|FINANCIAL REPORTING)\s*\d*\s*$', ln, re.I) and ln.strip().isupper(): continue
         if re.match(r'^\s*\d{1,3}\s*$', ln): continue
+        if ln.strip() in HDR_TITLES: continue
         if re.match(r'^\s*FINAL EXAMINATION(:\s*[A-Z]+\s*20\d\d)?\s*$', ln): continue
         if re.match(r'^\s*(PAPER\s*[–-]?\s*[123][^\n]{0,70})$', ln) and ln.strip().isupper(): continue
         if re.match(r'^\s*\d{1,2}\.\d{1,3}\s*(FINANCIAL REPORTING|ADVANCED[A-Z ,&]*|[A-Z ]{8,})?\s*\d*\.?\d*\s*$', ln): continue

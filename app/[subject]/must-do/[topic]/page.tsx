@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PackText from '@/components/PackText';
+import PrintBar from '@/components/PrintBar';
 import { SUBJECTS, subjectOf } from '@/lib/registry';
 import { TIERS, marksOf, packsOf } from '@/lib/lastday';
 import { packAffected } from '@/lib/updates';
@@ -30,7 +31,7 @@ export default function Pack({ params }: { params: { subject: string; topic: str
         <span className="crumb-sep" aria-hidden="true">/</span>
         <Link href={`/${s.id}/must-do`} className="crumb">{s.label} must-do</Link>
       </div></header>
-      <main className="page" data-subj={s.id}>
+      <main className="page rd" data-subj={s.id}>
         <header className="vhead">
           <p className="eyebrow">{tier.label} · {s.long}</p>
           <h1 className="vh">{p.title}</h1>
@@ -40,6 +41,7 @@ export default function Pack({ params }: { params: { subject: string; topic: str
           </p>
         </header>
 
+        <PrintBar answers />
         {packAffected(s.id, p.id) && (
           <p className="pk-warn">ICAI&apos;s Nov 2026 RTP lists amendments that touch this chapter (Ind AS 1, 7, 12, 21 and 107 disclosures). The study-material text below is the older wording: read <Link href={`/${s.id}/updates`}>what changed for Nov 2026</Link> first.</p>
         )}

@@ -31,11 +31,13 @@ for s in SUBJ:
     p = ROOT / 'work' / 'lastday' / f'{s}.json'
     QS[s] = json.load(open(p))['questions'] if p.exists() else []
 
+HDR_TITLES = {'FINANCIAL REPORTING', 'ADVANCED FINANCIAL MANAGEMENT', 'ADVANCED AUDITING, ASSURANCE AND PROFESSIONAL ETHICS', 'ADVANCED AUDITING, ASSURANCE AND', 'PROFESSIONAL ETHICS'}
+
 def clean(t):
     t = t.replace('`', '₹')
     out = [ln.rstrip() for ln in t.split('\n')
            if 'The Institute of Chartered Accountants of India' not in ln and not re.match(r'^\s*\d{1,3}\s*$', ln)
-           and not (ln.strip().isupper() and re.search(r'EXAMINATION|SUGGESTED ANSWER|REVISION TEST|MOCK TEST', ln))]
+           and not (ln.strip().isupper() and re.search(r'EXAMINATION|SUGGESTED ANSWER|REVISION TEST|MOCK TEST', ln)) and ln.strip() not in HDR_TITLES]
     return re.sub(r'\n{3,}', '\n\n', '\n'.join(out)).strip()
 
 def lookup(subj, ps):

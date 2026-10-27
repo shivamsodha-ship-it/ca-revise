@@ -1,0 +1,137 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ind AS 19 LDR</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>CA Final · FR · Last-Day Revision</span><span class="tag">Nov 2026 attempt</span></div>
+  <h1><span class="u">Ind AS 19</span> — Employee Benefits</h1>
+  <div class="sub">Four buckets. The bucket decides <b>discounting</b> and whether remeasurement goes to <b>P&amp;L or OCI</b>.</div>
+
+  <h2><span class="n">1</span>The four buckets</h2>
+  <table>
+    <tr><th style="width:21%">Bucket</th><th style="width:31%">Examples</th><th style="width:20%">Measure</th><th>Remeasurement</th></tr>
+    <tr><td><b>Short-term</b></td><td>Salary, paid leave, bonus — settled <b>wholly within 12 m</b> after year of service</td><td>Undiscounted</td><td>—</td></tr>
+    <tr><td><b>Post-employment</b></td><td>Gratuity, pension, PF, post-retirement medical</td><td>DC: contribution<br>DB: PUCM, discounted</td><td>DB → <b class="hy">OCI</b></td></tr>
+    <tr><td><b>Other long-term</b></td><td>Leave encashment <b>not</b> wholly within 12 m, long-service awards</td><td>PUCM, discounted</td><td><b class="hp">P&amp;L</b></td></tr>
+    <tr><td><b>Termination</b></td><td>VRS, retrenchment compensation</td><td>Short- or long-term rules by timing</td><td>As per timing</td></tr>
+  </table>
+  <div class="trap"><p><b>Leave encashment (other long-term)</b>: actuarial valuation like DB, but actuarial gains / losses go to <b>P&amp;L, NOT OCI</b> <span class="para">154 – 156</span>. Examiners love this.</p></div>
+
+  <h2><span class="n">2</span>Short-term benefits <span class="para">9 – 25</span></h2>
+  <ul>
+    <li><b>Accumulating</b> absences (carried forward) → recognise when service <b>increases entitlement</b> — both vesting and non-vesting (non-vesting: adjust for expected forfeiture)</li>
+    <li><b>Non-accumulating</b> absences (e.g., sick leave lapses) → recognise <b>when absence occurs</b></li>
+    <li><b>Bonus / profit-sharing</b> → when <b>present legal or constructive obligation</b> from past events + reliable estimate <span class="para">19</span></li>
+    <li>Temporary change in settlement timing → no reclassification; reassess if characteristics change <span class="para">10</span></li>
+  </ul>
+
+  <h2><span class="n">3</span>DC vs DB — who bears the risk?</h2>
+  <div class="cols">
+    <div class="box"><h3>Defined contribution</h3><p>Fixed contribution; <b>employee</b> bears actuarial &amp; investment risk. Expense = contribution payable for service. <span class="small">EPFO (RPFC) PF, ESI, NPS.</span></p></div>
+    <div class="box"><h3>Defined benefit</h3><p>Entity promises a benefit; <b>entity</b> bears risk. Gratuity (Payment of Gratuity Act), pensions.</p></div>
+  </div>
+  <div class="sticky">PF in a <b>company-managed exempt trust</b> with <b>guaranteed interest rate</b> → <b>DB</b> (shortfall risk sits with employer).</div>
+
+  <div class="foot"><span>Ind AS 19 · page 1 / 4</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 19 · Defined benefit mechanics</span><span class="tag">NUMERICAL FAVOURITE</span></div>
+  <h2><span class="n">4</span>Net defined benefit liability (asset) <span class="para">57 – 64</span></h2>
+  <div class="box"><p style="text-align:center"><b>Net DBL = PV of DBO − FV of plan assets</b> &nbsp;·&nbsp; surplus capped at <b>asset ceiling</b> (PV of refunds / reductions in future contributions)</p></div>
+  <ul>
+    <li>Method: <b>Projected Unit Credit</b>; attribute benefit per plan formula — <b>straight-line</b> if back-loaded</li>
+    <li><b>Discount rate</b>: market yields on <b class="hy">government bonds</b> at RD <span class="para">83</span> <span class="small">(Indian change; IAS 19 uses high-quality corporate bonds — foreign subs / branches use corporate bonds where deep market)</span></li>
+  </ul>
+
+  <h2><span class="n">5</span>Three components — where each goes <span class="para">120</span></h2>
+  <table>
+    <tr><th style="width:38%">Component</th><th style="width:40%">Includes</th><th>Goes to</th></tr>
+    <tr><td><b>Service cost</b></td><td>Current service cost; past service cost (incl. curtailment); settlement gain / loss</td><td class="C">P&amp;L</td></tr>
+    <tr><td><b>Net interest</b></td><td>Discount rate × <b>net</b> DBL (at start, adjusted for contributions / payments)</td><td class="C">P&amp;L</td></tr>
+    <tr><td><b>Remeasurements</b></td><td>Actuarial gains / losses; return on plan assets <b>excl.</b> net interest; change in asset ceiling <b>excl.</b> interest</td><td class="NC">OCI — never recycled</td></tr>
+  </table>
+  <div class="sticky pink">P&amp;L sees <b>"S + I"</b> (service + interest). OCI sees <b>"R"</b> (remeasurement). OCI may move to retained earnings, <b>never to P&amp;L</b>.</div>
+
+  <h2><span class="n">6</span>Movement table — the exam layout</h2>
+  <table class="small">
+    <tr><th>DBO (PV of obligation)</th><th>Plan assets (FV)</th></tr>
+    <tr><td>Opening</td><td>Opening</td></tr>
+    <tr><td>+ Current service cost</td><td>+ Interest income (opening × rate)</td></tr>
+    <tr><td>+ Interest cost (opening × rate)</td><td>+ Contributions received</td></tr>
+    <tr><td>+ Past service cost</td><td>− Benefits paid</td></tr>
+    <tr><td>− Benefits paid</td><td>± <b>Return excl. interest (balancing → OCI)</b></td></tr>
+    <tr><td>± <b>Actuarial loss / (gain) (balancing → OCI)</b></td><td>= Closing (given by actuary)</td></tr>
+    <tr><td>= Closing (given by actuary)</td><td></td></tr>
+  </table>
+  <div class="trap"><p><b>Interest on plan assets</b> uses the <b>discount rate</b>, <b>not</b> the actual / expected return. Actual return − interest income = remeasurement (OCI).</p></div>
+
+  <div class="foot"><span>Ind AS 19 · page 2 / 4</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 19 · Plan events &amp; termination</span><span class="tag">TRAPS</span></div>
+  <h2><span class="n">7</span>Past service cost, curtailment, settlement <span class="para">99 – 112</span></h2>
+  <ul>
+    <li><b>Past service cost</b> (plan amendment / curtailment) → <b class="hy">immediately in P&amp;L</b> — no spreading over vesting period (unlike old AS 15)</li>
+    <li>Recognise at the <b>earlier</b> of: amendment / curtailment occurs, <b>or</b> related restructuring costs (Ind AS 37) / termination benefits recognised <span class="para">103</span></li>
+    <li><b>Settlement</b> gain / loss = PV of DBO settled − settlement price → P&amp;L</li>
+  </ul>
+  <div class="box"><h3>2019 amendment <span class="para">122A</span></h3>
+    <p>On amendment / curtailment / settlement during the year → <b>remeasure</b> net DBL with <b>updated assumptions</b>, and use those <b>updated assumptions</b> for current service cost &amp; net interest for the <b>rest of the period</b>. Asset ceiling effect handled separately (through OCI).</p></div>
+
+  <div class="trap"><p><b>Law change increasing benefits</b> (e.g., new Labour Codes widening "wages" for gratuity) = <b>plan amendment → past service cost → P&amp;L immediately</b>, not OCI. <span class="small">Verify applicability date for your attempt.</span></p></div>
+
+  <h2><span class="n">8</span>Termination benefits <span class="para">159 – 171</span></h2>
+  <ul>
+    <li>Arise from <b>entity's decision</b> to terminate or employee accepting an <b>offer</b> (VRS) — not from future service</li>
+    <li>Recognise at the <b>earlier</b> of: <b>(a)</b> entity can <b>no longer withdraw</b> the offer; <b>(b)</b> entity recognises <b>restructuring costs</b> (Ind AS 37) involving termination benefits <span class="para">165</span></li>
+    <li>Settled within 12 m → short-term rules; otherwise → long-term (discounted)</li>
+  </ul>
+  <div class="trap"><p>Benefits that are conditional on <b>future service</b> (stay-till-closure bonus) are <b>NOT</b> termination benefits — attribute over the service period.</p></div>
+
+  <h2><span class="n">9</span>Presentation</h2>
+  <ul>
+    <li>Ind AS 19 doesn't split current / non-current → apply <b>Ind AS 1</b>: actuary's estimate of amount payable within 12 m → <b>current</b></li>
+    <li>Offset plan assets of one plan against another's obligation only with legal right + intent <span class="para">131</span></li>
+    <li>Disclose <b>sensitivity analysis</b> for significant actuarial assumptions</li>
+    <li><b>Share-based payments</b> → Ind AS 102, not Ind AS 19</li>
+  </ul>
+
+  <div class="foot"><span>Ind AS 19 · page 3 / 4</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 19 · Links &amp; AAA bridge</span><span class="tag">FR ⇄ AAA</span></div>
+  <h2><span class="n">10</span>Cross-standard links</h2>
+  <ul>
+    <li><b>Ind AS 1</b> — remeasurements in "items that will <b>not</b> be reclassified"; current / non-current split</li>
+    <li><b>Ind AS 12</b> — gratuity / leave provisions deductible on payment (Sec 43B) → <b>DTA</b>; DT on remeasurement → <b>OCI</b></li>
+    <li><b>Ind AS 37</b> — restructuring provision timing drives termination benefit &amp; past service cost timing</li>
+    <li><b>Ind AS 10</b> — bonus fixed after RD where obligation existed at RD = adjusting (para 9(d))</li>
+    <li><b>Ind AS 8</b> — change in actuarial assumptions = estimate (handled as remeasurement)</li>
+    <li><b>Ind AS 2 / 16</b> — employee cost directly attributable may be capitalised into inventory / PPE</li>
+  </ul>
+
+  <h2><span class="n">11</span>AAA bridge</h2>
+  <table>
+    <tr><th style="width:34%">Area</th><th>Requirement</th></tr>
+    <tr><td><b>SA 500 (para 8)</b></td><td>Actuary = <b>management's expert</b> → evaluate competence, capabilities, objectivity; understand work; evaluate appropriateness</td></tr>
+    <tr><td><b>SA 620</b></td><td>Only if the <b>auditor</b> engages their own actuary (auditor's expert)</td></tr>
+    <tr><td><b>SA 540</b></td><td>Assumptions: discount rate (G-sec), salary escalation, attrition, mortality</td></tr>
+    <tr><td><b>SA 580</b></td><td>Representation that significant assumptions are reasonable</td></tr>
+    <tr><td><b>CARO 3(vii)(a)</b></td><td>PF, ESI and other statutory dues deposited regularly; arrears &gt; 6 months</td></tr>
+    <tr><td><b>Exempt PF trust</b></td><td>Check interest shortfall vs guaranteed rate → DB liability</td></tr>
+  </table>
+
+  <div class="exam"><p>"Leave encashment that is not expected to be settled wholly within twelve months after the end of the annual reporting period is an other long-term employee benefit. It is measured using the projected unit credit method, and as per para 156 of Ind AS 19, remeasurements are recognised in profit or loss, not in OCI."</p></div>
+  <div class="exam"><p>"Remeasurements of the net defined benefit liability comprising actuarial gains and losses and return on plan assets excluding amounts included in net interest are recognised in OCI and shall not be reclassified to profit or loss in a subsequent period (para 122)."</p></div>
+
+  <div class="foot"><span>Ind AS 19 · page 4 / 4</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+</body></html>

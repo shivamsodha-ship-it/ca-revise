@@ -15,6 +15,13 @@ function isTable(p: string): boolean {
   return wide >= 2 || figures >= 3;
 }
 
+// Remove the indentation every row shares, so a table is no wider than its content.
+function dedent(p: string): string {
+  const rows = p.split('\n').filter(l => l.trim());
+  const pad = Math.min(...rows.map(l => l.length - l.trimStart().length));
+  return pad > 0 ? p.split('\n').map(l => l.slice(Math.min(pad, l.length - l.trimStart().length))).join('\n') : p;
+}
+
 interface Line { t: string; item: boolean }
 function reflow(p: string): Line[] {
   const out: Line[] = [];
@@ -34,7 +41,12 @@ export default function PackText({ text }: { text: string }) {
   return (
     <div className="pk-text">
       {paras.map((p, i) => {
-        if (isTable(p)) return <pre key={i} className="pk-pre pk-table">{p}</pre>;
+        if (isTable(p)) return (
+          <div key={i}>
+            <p className="pk-hint">Table: swipe sideways to see every column</p>
+            <pre className="pk-pre pk-table" tabIndex={0}>{dedent(p)}</pre>
+          </div>
+        );
         return <div key={i} className="pk-prose">{reflow(p).map((l, j) => <p key={j} className={l.item ? 'pk-li' : undefined}>{l.t}</p>)}</div>;
       })}
     </div>

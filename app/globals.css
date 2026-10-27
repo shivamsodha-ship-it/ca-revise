@@ -1070,3 +1070,47 @@ body { background: radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, 
 
 /* Type floor: nothing below 13px on the home and list screens */
 .chmeta, .chmeta span, .subj-n, .cp-t, .newtag, .chnum small, .md code { font-size: 13px }
+
+/* ---- Review fixes (independent UI review, 27 Oct) ---- */
+/* Tables that must keep their columns: scroll inside the box, with a shadow showing there is more */
+.pk-table, .md-tw, .wt-scroll {
+  background:
+    linear-gradient(to right, var(--card) 30%, transparent) left center / 24px 100% no-repeat local,
+    linear-gradient(to left, var(--card) 30%, transparent) right center / 24px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, .22), transparent) left center / 10px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, .22), transparent) right center / 10px 100% no-repeat scroll;
+}
+.pk-table { font-size: .8125rem; white-space: pre; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; max-width: 100% }
+.pk-table:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px }
+/* Weightage and analysis tables: the chapter name stays visible while the marks scroll */
+@media (max-width: 720px) {
+  .wt-t th:first-child, .wt-t td:first-child { display: none }
+  .wt-t .wt-unit { position: sticky; left: 0; z-index: 1; background: var(--card); min-width: 150px; box-shadow: 1px 0 0 var(--line) }
+  .wt-t thead .wt-unit { background: var(--card2) }
+  .md-t td:first-child, .md-t th:first-child { position: sticky; left: 0; background: var(--card); box-shadow: 1px 0 0 var(--line); min-width: 110px }
+  .md-t th:first-child { background: var(--card2) }
+}
+/* Touch targets */
+main button, .acct-chip, .btn { min-height: var(--tap) }
+.seg button, .chip { min-width: var(--tap) }
+.rd .vhead a, .pk-foot a, .rd .pk-note a { display: inline-flex; align-items: center; min-height: var(--tap) }
+.rd .pk-warn a { display: inline; min-height: 0 }
+/* Contrast and size floor of 14px on the reading pages */
+.pk-warn { color: #6b4f0f }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pk-warn { color: var(--sun) } }
+:root[data-theme="dark"] .pk-warn { color: var(--sun) }
+.rd .pk-chip, .rd .md-t th, .rd .wt-t th, .rd .eyebrow, .pk-basis, .acct-chip, .cd .muted, .cd-r, .cd-l { font-size: .875rem }
+.rd .md-t, .rd .wt-t { font-size: .9375rem }
+/* Readable measure for notes on list pages and home */
+.ld-p, .pk-basis, .rd .pk-note { max-width: 68ch }
+@media print {
+  .pk-table { white-space: pre !important; font-size: 8.5pt; border: 0; background: none; padding: 0 }
+  .md-tw, .wt-scroll { background: none }
+}
+.seg button { min-height: var(--tap); font-size: .875rem }
+.subj-h h2 a { display: inline-flex; align-items: center; min-height: var(--tap) }
+.rd .pk-table { font-size: .8125rem }
+.pk-hint { display: none; margin: 0 0 4px; font-size: .875rem; color: var(--muted) }
+@media (max-width: 720px) { .pk-hint { display: block } }
+@media print { .pk-hint { display: none !important } }
+.wk small { font-size: 13px }

@@ -13,7 +13,7 @@ export default function WritePlanChooser() {
         <Link href="/" className="brand"><span className="seal">CA</span><span className="brand-t">CA Revise</span></Link>
         <span className="crumb-sep" aria-hidden="true">/</span><span className="chapter-name">Writing plan</span>
       </div></header>
-      <main className="page">
+      <main className="page rd">
         <header className="vhead">
           <h1 className="vh">Writing practice plan</h1>
           <p className="muted">One plan per subject, from today to the day before that paper.</p>

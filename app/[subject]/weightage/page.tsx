@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import PrintButton from '@/components/PrintButton';
+import PrintBar from '@/components/PrintBar';
 import WeightageTable from '@/components/WeightageTable';
 import { SUBJECTS, subjectOf } from '@/lib/registry';
 import weightage from '../../../data/lastday/weightage.json';
@@ -29,12 +29,13 @@ export default function Weightage({ params }: { params: { subject: string } }) {
         <span className="crumb-sep" aria-hidden="true">/</span><Link href={`/${s.id}`} className="crumb">{s.label}</Link>
         <span className="crumb-sep" aria-hidden="true">/</span><span className="chapter-name">Weightage</span>
       </div></header>
-      <main className="page wt" data-subj={s.id}>
+      <main className="page rd rd-wide wt" data-subj={s.id}>
         <header className="vhead">
           <p className="eyebrow">{s.long}</p>
           <h1 className="vh">{s.label}: chapter-wise weightage, last three attempts</h1>
           <p className="muted">Sep 2025, Jan 2026 and May 2026, from ICAI&apos;s question papers. Marks are as printed. Each paper sets 118 marks counting both alternatives of an EITHER/OR question (114 otherwise) and you attempt 100: Part I (30) and Q1 are compulsory, and you answer four of Q2 to Q6. Compulsory marks are always attempted; choice marks can be skipped. Chapter mapping is the app&apos;s analysis of ICAI&apos;s papers and answers{s.id === 'fr' ? '; FR is grouped by Ind AS standard with its study-material chapter' : ''}.</p>
-          <p className="noprint"><PrintButton /> <Link className="btn" href={`/${s.id}/analysis`}>Full analysis →</Link> <Link className="btn" href={`/${s.id}/write-plan`}>Writing plan →</Link></p>
+          <PrintBar label="Print weightage table" />
+          <p className="noprint"><Link className="btn" href={`/${s.id}/analysis`}>Full analysis →</Link> <Link className="btn" href={`/${s.id}/write-plan`}>Writing plan →</Link></p>
         </header>
 
         <WeightageTable subject={s.id} />

@@ -25,7 +25,7 @@ export default function MustDo({ params }: { params: { subject: string } }) {
         <span className="crumb-sep" aria-hidden="true">/</span>
         <span className="chapter-name">Must-do packs</span>
       </div></header>
-      <main className="page" data-subj={s.id}>
+      <main className="page rd" data-subj={s.id}>
         <header className="vhead">
           <p className="eyebrow">{s.long}</p>
           <h1 className="vh">Must-do packs</h1>

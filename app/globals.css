@@ -1003,3 +1003,114 @@ body { background: radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, 
   .wt-h { break-after: avoid; font-size: 10.5pt }
   .vh { font-size: 15pt }
 }
+
+/* ---- Reading system for the last-day pages (.rd) ----
+   Measure 38rem (about 66 to 72 characters at 17px), body 17px/1.65, type scale 1.25, nothing under 13px, 8px spacing steps. */
+.rd { --measure: 38rem; max-width: 42rem; font-size: 1.0625rem; line-height: 1.65 }
+.rd.rd-wide { max-width: 68rem }
+.rd-wide .md-p, .rd-wide .md-l, .rd-wide .vhead > p, .rd-wide .pk-note { max-width: var(--measure) }
+.rd .vh { font-size: clamp(1.75rem, 1.25rem + 2vw, 2.25rem); line-height: 1.2; margin: 0 0 8px }
+.rd .vhead { margin-bottom: 24px }
+.rd .vhead .muted { font-size: 1rem; line-height: 1.6; margin: 8px 0 0 }
+.rd .eyebrow { font-size: .875rem }
+.rd .pk-h { font-size: 1.375rem; line-height: 1.3; margin: 40px 0 8px }
+.rd .pk-h .muted { font-size: .875rem }
+.rd .pk-note { font-size: .9375rem; line-height: 1.55; margin: 0 0 16px }
+.rd .pk-cov { font-size: .9375rem; line-height: 1.55; margin: 0 0 12px }
+.rd .pk-meta, .rd .pk-cm { font-size: .875rem }
+.rd .pk-title { font-size: 1.125rem; line-height: 1.35 }
+.rd .pk-row { padding: 16px 4px }
+.rd .pk-chip { font-size: .8125rem; padding: 4px 12px }
+.rd .pk-q { padding: 20px; margin: 0 0 24px; border-radius: 12px }
+.rd .pk-qh { gap: 8px 12px; margin-bottom: 8px; font-size: 1rem }
+.rd .pk-warn { font-size: .9375rem; line-height: 1.55; padding: 12px 16px; margin: 0 0 16px }
+.rd .pk-text { gap: 12px }
+.rd .pk-prose p { margin: 0 0 12px; font-size: 1.0625rem; line-height: 1.65; max-width: var(--measure) }
+.rd .pk-prose p:last-child { margin-bottom: 0 }
+.rd .pk-li { padding-left: 1.25em; text-indent: -1.25em }
+.rd .pk-pre { font-size: .875rem; line-height: 1.6 }
+.rd .pk-ans { margin-top: 16px; padding-top: 8px }
+.rd .pk-ans > summary, .rd .pk-read > summary { font-size: 1rem; padding: 8px 0 }
+.rd .pk-read { padding: 8px 20px 16px; margin: 0 0 16px }
+.rd .pk-check li { padding: 12px 0; font-size: 1rem; line-height: 1.5 }
+.rd .pk-foot { font-size: .875rem; margin-top: 40px }
+.rd .md-p, .rd .md-l { font-size: 1.0625rem; line-height: 1.65 }
+.rd .md-h1, .rd .md-h2 { font-size: 1.375rem; margin: 40px 0 8px }
+.rd .md-h3 { font-size: 1.125rem; margin: 24px 0 8px }
+.rd .md-t, .rd .wt-t { font-size: .875rem }
+.rd .md-t th, .rd .wt-t th { font-size: .8125rem }
+.rd .md-t td, .rd .wt-t td, .rd .md-t th, .rd .wt-t th { padding: 8px 12px }
+.rd .wt-h { font-size: 1.0625rem; margin: 24px 0 8px }
+.rd .wt-h .muted { font-size: .875rem }
+.rd .btn { font-size: 1rem }
+.prb { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px }
+.wp-lines { display: none }
+.ld-long, .ld-link { font-size: .9375rem }
+.cd .muted, .cd-r, .cd-l { font-size: .8125rem }
+
+@media print {
+  @page { size: A4; margin: 14mm }
+  .rd { max-width: none !important; font-size: 11pt; line-height: 1.5; color: #000 !important }
+  .rd .vh { font-size: 17pt }
+  .rd .pk-h { font-size: 13pt; margin: 14pt 0 4pt; break-after: avoid }
+  .rd .pk-prose p, .rd .md-p, .rd .md-l { font-size: 11pt; line-height: 1.5; max-width: none }
+  .rd .pk-pre { font-size: 9.5pt }
+  .rd .card, .rd .pk-q, .rd .pk-read { background: #fff !important; box-shadow: none !important; border: 1px solid #888 !important; border-radius: 0 !important }
+  .rd .pk-q { padding: 8pt 10pt; margin: 0 0 10pt }
+  .rd .muted, .rd .pk-cov, .rd .pk-note { color: #222 !important }
+  .rd .pk-chip { border: 1px solid #555; color: #000 !important; background: #fff !important }
+  .rd a { color: #000 !important; text-decoration: none }
+  .wp-tick, .prb, .pk-ans > summary::marker { display: none !important }
+  .pk-ans:not([open]) { display: none !important }
+  .pk-ans > summary { font-weight: 700; color: #000 !important; list-style: none; padding: 6pt 0 }
+  .wp-lines { display: block; height: var(--wl, 60mm); margin: 8pt 0 0; border: 1px solid #aaa; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(8mm - 1px), #bbb calc(8mm - 1px), #bbb 8mm) }
+  .rd .md-tw, .rd .wt-scroll { overflow: visible }
+  .rd .pk-table { overflow: visible; white-space: pre-wrap }
+}
+
+/* Type floor: nothing below 13px on the home and list screens */
+.chmeta, .chmeta span, .subj-n, .cp-t, .newtag, .chnum small, .md code { font-size: 13px }
+
+/* ---- Review fixes (independent UI review, 27 Oct) ---- */
+/* Tables that must keep their columns: scroll inside the box, with a shadow showing there is more */
+.pk-table, .md-tw, .wt-scroll {
+  background:
+    linear-gradient(to right, var(--card) 30%, transparent) left center / 24px 100% no-repeat local,
+    linear-gradient(to left, var(--card) 30%, transparent) right center / 24px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, .22), transparent) left center / 10px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, .22), transparent) right center / 10px 100% no-repeat scroll;
+}
+.pk-table { font-size: .8125rem; white-space: pre; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; max-width: 100% }
+.pk-table:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px }
+/* Weightage and analysis tables: the chapter name stays visible while the marks scroll */
+@media (max-width: 720px) {
+  .wt-t th:first-child, .wt-t td:first-child { display: none }
+  .wt-t .wt-unit { position: sticky; left: 0; z-index: 1; background: var(--card); min-width: 150px; box-shadow: 1px 0 0 var(--line) }
+  .wt-t thead .wt-unit { background: var(--card2) }
+  .md-t td:first-child, .md-t th:first-child { position: sticky; left: 0; background: var(--card); box-shadow: 1px 0 0 var(--line); min-width: 110px }
+  .md-t th:first-child { background: var(--card2) }
+}
+/* Touch targets */
+main button, .acct-chip, .btn { min-height: var(--tap) }
+.seg button, .chip { min-width: var(--tap) }
+.rd .vhead a, .pk-foot a, .rd .pk-note a { display: inline-flex; align-items: center; min-height: var(--tap) }
+.rd .pk-warn a { display: inline; min-height: 0 }
+/* Contrast and size floor of 14px on the reading pages */
+.pk-warn { color: #6b4f0f }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pk-warn { color: var(--sun) } }
+:root[data-theme="dark"] .pk-warn { color: var(--sun) }
+.rd .pk-chip, .rd .md-t th, .rd .wt-t th, .rd .eyebrow, .pk-basis, .acct-chip, .cd .muted, .cd-r, .cd-l { font-size: .875rem }
+.rd .md-t, .rd .wt-t { font-size: .9375rem }
+/* Readable measure for notes on list pages and home */
+.ld-p, .pk-basis, .rd .pk-note { max-width: 68ch }
+@media print {
+  .pk-table { white-space: pre !important; font-size: 8.5pt; border: 0; background: none; padding: 0 }
+  .md-tw, .wt-scroll { background: none }
+}
+.seg button { min-height: var(--tap); font-size: .875rem }
+.subj-h h2 a { display: inline-flex; align-items: center; min-height: var(--tap) }
+.rd .pk-table { font-size: .8125rem }
+.pk-hint { display: none; margin: 0 0 4px; font-size: .875rem; color: var(--muted) }
+@media (max-width: 720px) { .pk-hint { display: block } }
+@media print { .pk-hint { display: none !important } }
+.wk small { font-size: 13px }

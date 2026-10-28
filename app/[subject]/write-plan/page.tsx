@@ -25,7 +25,7 @@ export default function SubjectPlan({ params }: { params: { subject: string } })
         <span className="crumb-sep" aria-hidden="true">/</span><Link href={`/${s.id}`} className="crumb">{s.label}</Link>
         <span className="crumb-sep" aria-hidden="true">/</span><span className="chapter-name">Writing plan</span>
       </div></header>
-      <main className="page" data-subj={s.id}>
+      <main className="page rd" data-subj={s.id}>
         <header className="vhead">
           <p className="eyebrow">{s.long}</p>
           <h1 className="vh">{s.label} writing practice plan</h1>

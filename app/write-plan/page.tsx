@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SUBJECTS } from '@/lib/registry';
 import { dateLabel, subjectDates } from '@/lib/writePlan';
 import { EXAMS } from '@/lib/plan';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export const metadata = { title: 'Writing practice plan · CA Revise' };
 
@@ -12,6 +13,7 @@ export default function WritePlanChooser() {
       <header className="topbar"><div className="topbar-in">
         <Link href="/" className="brand"><span className="seal">CA</span><span className="brand-t">CA Revise</span></Link>
         <span className="crumb-sep" aria-hidden="true">/</span><span className="chapter-name">Writing plan</span>
+        <ThemeToggle />
       </div></header>
       <main className="page rd">
         <header className="vhead">

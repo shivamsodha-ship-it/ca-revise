@@ -10,6 +10,7 @@ import { SYNCED_EVENT } from '@/lib/sync';
 import type { LearnData } from '@/lib/learnData';
 import Jotter from '@/components/Jotter';
 import AccountChip from '@/components/AccountChip';
+import ThemeToggle from '@/components/ThemeToggle';
 import { autoGames } from '@/lib/autoGames';
 
 export interface DrillOpts { clause?: string | null; focus?: string; missed?: boolean }
@@ -229,6 +230,7 @@ export default function ChapterShell({ subject, subjectLabel, chapterId, ch, cb,
           <Link href={base} className="chapter-name"><span className="chn">Ch {ch.number}</span> {ch.title}</Link>
           <AccountChip />
           {cb && <span className="streak" title={`Current streak · best ${S.best}`}>{FIRE}<b>{S.streak}</b><span className="sr">correct in a row</span></span>}
+          <ThemeToggle />
         </div>
         <nav className="deskbar" aria-label="Chapter sections">
           <div className="deskbar-in">

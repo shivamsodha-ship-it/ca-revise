@@ -395,6 +395,9 @@ td .chip:hover { border-color: var(--blue) }
 .hand .h-head { font-family: 'Caveat', cursive; font-weight: 700 }
 .hand .h-note { font-family: 'Shadows Into Light', cursive; font-size: 18px; color: #4a5775; margin: 0; letter-spacing: .01em }
 .hand .h-count { font-size: 16px; color: #5a6a8a }
+/* The title and line above the paper sit on the page background, so they use theme tokens (readable in dark). */
+.hand .vhead .h-title { color: var(--g) }
+.hand .vhead .h-note { color: var(--ink) }
 .notes-list { display: flex; flex-direction: column; gap: 12px }
 .paper { background: #fefdf6; background-image: repeating-linear-gradient(#fefdf6 0px, #fefdf6 30px, #d9e6f0 30px, #d9e6f0 31px); position: relative; border-radius: 14px; border: 1px solid #e6e0c8; overflow: hidden }
 .paper::before { content: ''; position: absolute; left: 44px; top: 0; bottom: 0; width: 2px; background: #f5b7b1; opacity: .45; pointer-events: none }
@@ -870,9 +873,15 @@ body { background: radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, 
 .chlist li { border: 0 }
 
 /* Who is signed in, in the top bar. */
-.acct-chip { margin-left: auto; max-width: 9.5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-soft); padding: 6px 12px; border-radius: 999px; text-decoration: none; min-height: 32px; display: inline-flex; align-items: center }
+.acct-chip { flex: none; margin-left: auto; max-width: 9.5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-soft); padding: 6px 12px; border-radius: 999px; text-decoration: none; min-height: 32px; display: inline-flex; align-items: center }
 .acct-chip:hover { filter: brightness(.96) }
 .acct-chip + .streak { margin-left: 8px }
+
+/* Light / dark / auto switch, last item in every top bar. */
+.theme-btn { margin-left: auto; flex: none; width: var(--tap); height: var(--tap); display: inline-grid; place-items: center; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); padding: 0 }
+.theme-btn:hover { border-color: var(--blue); color: var(--blue) }
+.theme-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round }
+:is(.acct-chip, .streak) + .theme-btn { margin-left: 8px }
 
 /* ---------- today (home) and syllabus board ---------- */
 .today { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin: 8px 0 20px }

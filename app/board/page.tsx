@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Board from '@/components/Board';
 import { seedChapters } from '@/lib/registry';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export const metadata = { title: 'Syllabus board · CA Revise' };
 
@@ -11,6 +12,7 @@ export default function BoardPage() {
         <Link href="/" className="brand"><span className="seal">CA</span><span className="brand-t">CA Revise</span></Link>
         <span className="crumb-sep" aria-hidden="true">/</span>
         <span className="chapter-name">Syllabus board</span>
+        <ThemeToggle />
       </div></header>
       <main className="page">
         <header className="vhead">

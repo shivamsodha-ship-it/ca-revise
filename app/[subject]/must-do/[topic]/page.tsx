@@ -5,6 +5,7 @@ import PrintBar from '@/components/PrintBar';
 import { SUBJECTS, subjectOf } from '@/lib/registry';
 import { TIERS, marksOf, packsOf } from '@/lib/lastday';
 import { packAffected } from '@/lib/updates';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -30,6 +31,7 @@ export default function Pack({ params }: { params: { subject: string; topic: str
         <Link href="/" className="brand"><span className="seal">CA</span><span className="brand-t">CA Revise</span></Link>
         <span className="crumb-sep" aria-hidden="true">/</span>
         <Link href={`/${s.id}/must-do`} className="crumb">{s.label} must-do</Link>
+        <ThemeToggle />
       </div></header>
       <main className="page rd" data-subj={s.id}>
         <header className="vhead">

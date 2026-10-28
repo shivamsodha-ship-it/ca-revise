@@ -3,11 +3,12 @@ import ChapterList from '@/components/ChapterList';
 import AccountChip from '@/components/AccountChip';
 import Today from '@/components/Today';
 import { SUBJECTS, seedChapters } from '@/lib/registry';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Home() {
   return (
     <>
-      <header className="topbar"><div className="topbar-in"><Link href="/" className="brand"><span className="seal">CA</span><span>CA Revise</span></Link><AccountChip /></div></header>
+      <header className="topbar"><div className="topbar-in"><Link href="/" className="brand"><span className="seal">CA</span><span>CA Revise</span></Link><AccountChip /><ThemeToggle /></div></header>
       <main className="page">
         <section className="intro">
           <p className="eyebrow">CA Final, Group 1 · November 2026</p>

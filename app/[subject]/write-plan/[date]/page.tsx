@@ -5,6 +5,7 @@ import PrintBar from '@/components/PrintBar';
 import PlanTick from '@/components/PlanTick';
 import { SUBJECTS, subjectOf } from '@/lib/registry';
 import { MODE_LABEL, dateLabel, dayOf, subjectDates } from '@/lib/writePlan';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -27,6 +28,7 @@ export default function PlanDay({ params }: { params: { subject: string; date: s
         <Link href="/" className="brand"><span className="seal">CA</span><span className="brand-t">CA Revise</span></Link>
         <span className="crumb-sep" aria-hidden="true">/</span><Link href={`/${s.id}`} className="crumb">{s.label}</Link>
         <span className="crumb-sep" aria-hidden="true">/</span><Link href={base} className="crumb">Writing plan</Link>
+        <ThemeToggle />
       </div></header>
       <main className="page rd" data-subj={s.id}>
         <header className="vhead">

@@ -1,0 +1,99 @@
+@font-face { font-family: 'Kalam'; src: url('../fonts/Kalam-Regular.ttf'); font-weight: 400; }
+@font-face { font-family: 'Kalam'; src: url('../fonts/Kalam-Bold.ttf'); font-weight: 700; }
+@font-face { font-family: 'Caveat'; src: url('../fonts/Caveat.ttf'); font-weight: 400 700; }
+@font-face { font-family: 'Patrick'; src: url('../fonts/PatrickHand-Regular.ttf'); }
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #1f2a52;        /* blue-black gel pen */
+  --red: #c0392b;        /* red pen */
+  --green: #1e7a46;
+  --line: #c9dcef;       /* ruled line */
+  --margin: #e8a3a3;     /* margin line */
+  --hl-y: #fff27a;       /* highlighter yellow */
+  --hl-g: #b8f0c2;
+  --hl-p: #ffc6de;
+  --hl-b: #bfe3ff;
+  --rule: 23px;
+}
+html, body { background: #fff; }
+body { font-family: 'Kalam', cursive; color: var(--ink); font-size: 13.4px; line-height: var(--rule);
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.page {
+  width: 210mm; height: 297mm; position: relative; overflow: hidden;
+  page-break-after: always; break-after: page;
+  padding: 18mm 11mm 12mm 25mm;
+  background-color: #fffdf7;
+  background-image:
+    linear-gradient(to right, transparent 20mm, var(--margin) 20mm, var(--margin) calc(20mm + 1.2px), transparent calc(20mm + 1.2px)),
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--rule) - 1px), var(--line) calc(var(--rule) - 1px), var(--line) var(--rule));
+  background-position: 0 0, 0 18mm;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+/* punch holes */
+.page::before { content: ''; position: absolute; left: 7mm; top: 70mm; width: 6mm; height: 6mm; border-radius: 50%;
+  background: #e9e4d8; box-shadow: 0 150mm 0 #e9e4d8; }
+
+.head { position: absolute; top: 6mm; left: 25mm; right: 11mm; display: flex; justify-content: space-between; align-items: baseline;
+  font-family: 'Patrick'; font-size: 12px; color: #7d8aa8; }
+.head .tag { border: 1.4px solid var(--red); color: var(--red); padding: 0 8px; border-radius: 10px; transform: rotate(-2deg); display: inline-block; line-height: 20px; }
+
+h1 { font-family: 'Caveat'; font-weight: 700; font-size: 40px; line-height: 48px; color: var(--ink); }
+h1 .u { background: linear-gradient(transparent 58%, var(--hl-y) 58%, var(--hl-y) 92%, transparent 92%); padding: 0 4px; }
+.sub { font-family: 'Patrick'; color: #5d6b8c; font-size: 14px; margin-bottom: var(--rule); }
+
+h2 { font-family: 'Caveat'; font-weight: 700; font-size: 27px; line-height: 48px; color: var(--red); display: flex; gap: 8px; align-items: baseline; }
+h2 .n { display: inline-flex; width: 26px; height: 26px; border: 2px solid var(--red); border-radius: 50%; font-size: 19px; line-height: 22px; justify-content: center; transform: translateY(-2px); }
+h3 { font-family: 'Kalam'; font-weight: 700; font-size: 14px; line-height: var(--rule); color: var(--ink); text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+p, li { line-height: var(--rule); }
+ul { list-style: none; }
+ul li { padding-left: 18px; position: relative; }
+ul li::before { content: '→'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+ul.dot li::before { content: '•'; color: var(--ink); }
+ol { padding-left: 20px; }
+
+b, strong { font-weight: 700; }
+.hy { background: var(--hl-y); padding: 0 3px; border-radius: 3px; }
+.hg { background: var(--hl-g); padding: 0 3px; border-radius: 3px; }
+.hp { background: var(--hl-p); padding: 0 3px; border-radius: 3px; }
+.hb { background: var(--hl-b); padding: 0 3px; border-radius: 3px; }
+.red { color: var(--red); }
+.grn { color: var(--green); }
+.para { font-family: 'Patrick'; font-size: 11.5px; color: #fff; background: var(--ink); border-radius: 4px; padding: 0 4px; line-height: 16px; display: inline-block; transform: translateY(-1px); }
+.s { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; opacity: .7; }
+
+.box { border: 2px solid var(--ink); border-radius: 10px 14px 9px 13px; padding: 2px 10px; margin: 0 0 var(--rule) 0; background: rgba(255,255,255,.55); }
+.trap { border: 2px dashed var(--red); border-radius: 12px 8px 14px 9px; padding: 2px 10px; margin: 0 0 var(--rule) 0; background: rgba(255, 236, 236, .7); }
+.trap::before { content: '⚠ TRAP'; font-family: 'Caveat'; font-weight: 700; font-size: 20px; color: var(--red); display: block; line-height: var(--rule); }
+.exam { border-left: 5px solid var(--green); padding: 0 10px; margin: 0 0 var(--rule) 0; background: rgba(184,240,194,.35); }
+.exam::before { content: '✍ Write in exam'; font-family: 'Caveat'; font-weight: 700; font-size: 20px; color: var(--green); display: block; line-height: var(--rule); }
+
+.sticky { background: #fff59a; padding: 6px 12px; transform: rotate(-1.4deg); box-shadow: 2px 3px 0 rgba(0,0,0,.12); margin: 0 6px var(--rule); font-family: 'Caveat'; font-size: 22px; line-height: 27px; color: #3b2f00; }
+.sticky.pink { background: #ffd1e6; transform: rotate(1.2deg); color: #4a1030; }
+.sticky.green { background: #c9f7d3; transform: rotate(-.8deg); color: #0f3d20; }
+.sticky b { font-weight: 700; }
+
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 0 0 var(--rule); font-size: 13px; line-height: 18px;
+  border: 2px solid var(--ink); border-radius: 10px 6px 12px 8px; overflow: hidden; background: rgba(255,255,255,.7); }
+th { font-family: 'Patrick'; font-size: 13.5px; text-align: left; background: #e5ecf8; padding: 3px 7px; border-bottom: 2px solid var(--ink); }
+td { padding: 2px 7px; border-bottom: 1px solid #b7c3dc; vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+td + td, th + th { border-left: 1px solid #b7c3dc; }
+.C { color: var(--red); font-weight: 700; white-space: nowrap; }
+.NC { color: var(--green); font-weight: 700; white-space: nowrap; }
+
+.foot { position: absolute; bottom: 5mm; left: 25mm; right: 11mm; display: flex; justify-content: space-between; font-family: 'Patrick'; font-size: 11px; color: #95a1bb; }
+
+.tl { margin: 0 0 var(--rule); }
+.mt { margin-top: var(--rule); }
+.mb0 { margin-bottom: 0; }
+.small { font-size: 12px; }
+.check { color: var(--green); font-weight: 700; }
+.cross { color: var(--red); font-weight: 700; }

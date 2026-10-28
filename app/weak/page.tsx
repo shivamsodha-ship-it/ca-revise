@@ -3,6 +3,7 @@ import WeakAreas from '@/components/WeakAreas';
 import { SUBJECTS, listChapters } from '@/lib/registry';
 import { stripTags } from '@/lib/casebook';
 import type { SlimChapter } from '@/components/WeakAreas';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export const metadata = { title: 'Weak areas · CA Revise' };
 
@@ -26,6 +27,7 @@ export default async function WeakPage() {
         <Link href="/" className="brand"><span className="seal">CA</span><span className="brand-t">CA Revise</span></Link>
         <span className="crumb-sep" aria-hidden="true">/</span>
         <span className="chapter-name">Weak areas</span>
+        <ThemeToggle />
       </div></header>
       <main className="page">
         <header className="vhead">

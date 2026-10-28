@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import FormulaBank, { formulaLabels } from '@/components/FormulaBank';
 import { SUBJECTS, listChapters, subjectOf } from '@/lib/registry';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -26,6 +27,7 @@ export default async function SubjectFormulas({ params }: { params: { subject: s
         <Link href={`/${s.id}`} className="crumb">{s.label}</Link>
         <span className="crumb-sep" aria-hidden="true">/</span>
         <span className="chapter-name">Formula bank</span>
+        <ThemeToggle />
       </div></header>
       <main className="page">
         <header className="vhead">

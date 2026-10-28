@@ -5,6 +5,7 @@ import PrintBar from '@/components/PrintBar';
 import WeightageTable from '@/components/WeightageTable';
 import { SUBJECTS, subjectOf } from '@/lib/registry';
 import { analysisOf } from '@/lib/writePlan';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -24,6 +25,7 @@ export default function Analysis({ params }: { params: { subject: string } }) {
         <Link href="/" className="brand"><span className="seal">CA</span><span className="brand-t">CA Revise</span></Link>
         <span className="crumb-sep" aria-hidden="true">/</span><Link href={`/${s.id}`} className="crumb">{s.label}</Link>
         <span className="crumb-sep" aria-hidden="true">/</span><span className="chapter-name">Last three attempts</span>
+        <ThemeToggle />
       </div></header>
       <main className="page rd rd-wide" data-subj={s.id}>
         <header className="vhead">

@@ -4,6 +4,7 @@ import PrintBar from '@/components/PrintBar';
 import WeightageTable from '@/components/WeightageTable';
 import { SUBJECTS, subjectOf } from '@/lib/registry';
 import weightage from '../../../data/lastday/weightage.json';
+import ThemeToggle from '@/components/ThemeToggle';
 
 interface Item { a: string; q: string; m: number; c: string; t: string; k: boolean }
 interface Row { unit: string; by: Record<string, number>; total: number; pct: number; comp: number; choice: number; n: number; items: Item[] }
@@ -28,6 +29,7 @@ export default function Weightage({ params }: { params: { subject: string } }) {
         <Link href="/" className="brand"><span className="seal">CA</span><span className="brand-t">CA Revise</span></Link>
         <span className="crumb-sep" aria-hidden="true">/</span><Link href={`/${s.id}`} className="crumb">{s.label}</Link>
         <span className="crumb-sep" aria-hidden="true">/</span><span className="chapter-name">Weightage</span>
+        <ThemeToggle />
       </div></header>
       <main className="page rd rd-wide wt" data-subj={s.id}>
         <header className="vhead">

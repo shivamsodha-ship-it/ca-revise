@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import AccountPanel from '@/components/AccountPanel';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export const metadata = { title: 'Account and sync · CA Revise' };
 
@@ -10,6 +11,7 @@ export default function AccountPage() {
         <Link href="/" className="brand"><span className="seal">CA</span><span className="brand-t">CA Revise</span></Link>
         <span className="crumb-sep" aria-hidden="true">/</span>
         <span className="chapter-name">Account</span>
+        <ThemeToggle />
       </div></header>
       <main className="page">
         <header className="vhead">

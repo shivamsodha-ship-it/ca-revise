@@ -4,6 +4,7 @@ import LastDayPlan, { type PlanChapter } from '@/components/LastDayPlan';
 import { SUBJECTS, listChapters, subjectOf } from '@/lib/registry';
 import { stripTags } from '@/lib/casebook';
 import { formulaCards } from '@/lib/formulaCards';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -37,6 +38,7 @@ export default async function LastDay({ params }: { params: { subject: string } 
         <Link href={`/${s.id}`} className="crumb">{s.label}</Link>
         <span className="crumb-sep" aria-hidden="true">/</span>
         <span className="chapter-name">Last-day revision</span>
+        <ThemeToggle />
       </div></header>
       <main className="page">
         <header className="vhead">

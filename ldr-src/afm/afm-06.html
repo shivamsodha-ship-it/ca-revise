@@ -1,0 +1,213 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 6 LDR</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>CA Final · AFM · Last-Day Revision · SM Ch 6</span><span class="tag">#3 · 10.7% of marks</span></div>
+  <h1><span class="u">Ch 6</span> — Portfolio Management</h1>
+  <div class="sub">Tested every attempt: single-index risk split, Sharpe optimal portfolio &amp; cut-off, CAPM / SML, APT, performance ratios, alternative investments (SGB).</div>
+
+  <h2><span class="n">1</span>Objectives &amp; phases (SM)</h2>
+  <div class="cols">
+    <div class="box small">
+      <h3>Objectives (7)</h3>
+      <p>Security / safety of principal · stability of income · capital growth · marketability · liquidity · diversification · <b>favourable tax status</b></p>
+    </div>
+    <div class="box small">
+      <h3>Phases (5)</h3>
+      <p><b>Security analysis</b> (risk-return of individual securities &amp; correlation) → <b>portfolio analysis</b> (combine into feasible portfolios) → <b>selection</b> (efficient → optimal) → <b>revision</b> (monitor so it stays optimal) → <b>evaluation</b> (return &amp; risk over the period)</p>
+    </div>
+  </div>
+  <p class="small"><b>Efficient portfolio</b>: highest return among feasible portfolios with same / lower risk, or lowest risk with same / higher return.</p>
+
+  <h2><span class="n">2</span>Theories (SM)</h2>
+  <ul class="small">
+    <li><b>Traditional approach</b>: concerned with the investor — study of age, health, responsibilities, needs for income / capital / liquidity, attitude to risk, tax status; objectives; investment strategy (fixed interest vs equity, high payout vs growth, tax, transaction cost vs switching gains, liquidity); diversification; selection of individual investments (intrinsic value)</li>
+    <li><b>Modern approach (Markowitz)</b>: risk of an individual asset hardly matters — what matters is its <b>contribution to overall risk</b>; diversify with low / negatively correlated securities; higher return needs higher risk</li>
+  </ul>
+
+  <h2><span class="n">3</span>Types of risk (SM)</h2>
+  <table class="small">
+    <tr><th style="width:22%"></th><th>Systematic — external, macro, uncontrollable</th><th>Unsystematic — internal, micro, controllable</th></tr>
+    <tr><td>Types</td><td><b>Interest rate</b> (prices move inversely to rates) · <b>Purchasing power / inflation</b> (worst for bonds &amp; fixed income) · <b>Market</b> risk</td><td><b>Business</b> risk (variability of operating profit) · <b>Financial</b> risk (capital structure / leverage, D/E)</td></tr>
+    <tr><td>Measure</td><td>Beta — by <b>correlation method</b> (β = r<sub>im</sub>σ<sub>i</sub>/σ<sub>m</sub>) or <b>regression method</b> (Y = α + βX)</td><td>Residual variance</td></tr>
+  </table>
+  <p class="small"><b>Diversion of risk</b>: as number of securities ↑ total risk ↓; ultimately only systematic risk remains.</p>
+
+  <h2><span class="n">4</span>Return &amp; risk formulas</h2>
+  <div class="box small">
+    <p>E(R) = Σ p<sub>i</sub>X<sub>i</sub> · σ² = Σ p<sub>i</sub>(X<sub>i</sub> − X̄)² · Cov<sub>AB</sub> = r<sub>AB</sub>σ<sub>A</sub>σ<sub>B</sub> · r<sub>AB</sub> = Cov<sub>AB</sub> ÷ σ<sub>A</sub>σ<sub>B</sub></p>
+    <p><b>Two securities</b>: σ<sub>p</sub>² = x<sub>1</sub>²σ<sub>1</sub>² + x<sub>2</sub>²σ<sub>2</sub>² + 2x<sub>1</sub>x<sub>2</sub>r<sub>12</sub>σ<sub>1</sub>σ<sub>2</sub> · <b>n securities</b>: σ<sub>p</sub>² = ΣΣ x<sub>i</sub>x<sub>j</sub>σ<sub>ij</sub> (variance-covariance matrix)</p>
+    <p>SM cases: <b>r = +1</b> → σ<sub>p</sub> = x<sub>1</sub>σ<sub>1</sub> + x<sub>2</sub>σ<sub>2</sub> (no diversification) · <b>r = −1</b> → σ<sub>p</sub> = |x<sub>1</sub>σ<sub>1</sub> − x<sub>2</sub>σ<sub>2</sub>| (zero-risk mix possible) · <b>r = 0</b> → σ<sub>p</sub>² = x<sub>1</sub>²σ<sub>1</sub>² + x<sub>2</sub>²σ<sub>2</sub>²</p>
+  </div>
+  <p class="small">App-computed: w 60 / 40, σ 20% / 30%, ρ 0.3 → σ<sub>p</sub> = 19.35%; min-variance w<sub>A</sub> = (σ<sub>B</sub>² − Cov) ÷ (σ<sub>A</sub>² + σ<sub>B</sub>² − 2Cov) = 76.6%.</p>
+
+  <div class="foot"><span>AFM Ch 6 · page 1 / 6</span><span>checked vs AFM SM Ch 6 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 6 · Markowitz, CML, single index model</span><span class="tag">REPEAT R4</span></div>
+  <h2><span class="n">5</span>Markowitz model (SM)</h2>
+  <ul class="small">
+    <li><b>Assumptions (SM 5.1)</b>: (i) return adequately summarises outcome · (ii) investors visualise a probability distribution of returns · (iii) risk estimates proportional to variance · (iv) decisions on two criteria — expected return &amp; variance · (v) rational &amp; risk-averse (prefer less risk for equal return) · (vi) yield in different scenarios used as return measure</li>
+    <li><b>Efficient frontier</b> (Mean-Variance Dominance): a portfolio is <b>not efficient</b> if another has (a) higher return &amp; lower σ, (b) higher return &amp; same σ, or (c) same return &amp; lower σ. Investor's choice on the frontier depends on risk-return preference</li>
+  </ul>
+
+  <h2><span class="n">6</span>Capital market theory — CML</h2>
+  <ul class="small">
+    <li>Tangent from R<sub>f</sub> to market portfolio B → <b>CML</b> (R<sub>f</sub> B Z). R<sub>f</sub>–B = <b>lending portfolios</b> (part in risk-free); B–Z = <b>borrowing portfolios</b></li>
+    <li>Slope = (R<sub>M</sub> − R<sub>f</sub>) ÷ σ<sub>M</sub> = reward per unit of risk · <b>E(R) = R<sub>f</sub> + [(R<sub>M</sub> − R<sub>f</sub>) ÷ σ<sub>M</sub>] × σ<sub>P</sub></b></li>
+    <li>CML uses total risk σ (efficient portfolios); SML (CAPM) uses β (all securities)</li>
+  </ul>
+
+  <h2><span class="n">7</span>Single index (Sharpe) model</h2>
+  <div class="box small">
+    <p>Co-movement between stocks is due to the market index: <b>R<sub>i</sub> = α<sub>i</sub> + β<sub>i</sub>R<sub>m</sub> + ∈<sub>i</sub></b></p>
+    <p><b>σ<sub>i</sub>² = β<sub>i</sub>²σ<sub>m</sub>² + σ<sub>∈i</sub>²</b> · systematic risk = β<sub>i</sub>² × variance of index · unsystematic = total − systematic · <b>Cov<sub>ij</sub> = β<sub>i</sub>β<sub>j</sub>σ<sub>m</sub>²</b></p>
+    <p>Portfolio: <b>σ<sub>p</sub>² = (Σx<sub>i</sub>β<sub>i</sub>)²σ<sub>m</sub>² + Σx<sub>i</sub>²σ<sub>∈i</sub>²</b> · R<sub>p</sub> = Σx<sub>i</sub>(α<sub>i</sub> + β<sub>i</sub>R<sub>m</sub>) · α<sub>p</sub> &amp; β<sub>p</sub> = weighted averages</p>
+  </div>
+  <p class="small">App-computed: β 1.2, σ<sub>m</sub> 15%, σ 25% → systematic 0.0324, unsystematic 0.0301. <b>MTP May 2026</b> (reverse): σ<sub>p</sub> 25.03 → variance 626.50 = 1.73X² + 67 → σ<sub>m</sub> = <b>17.98</b>.</p>
+  <div class="trap"><p>Unsystematic portfolio risk uses <b>weights squared</b> (Σx²σ<sub>∈</sub>²). Keep variance units consistent (15% → 225 or 0.0225).</p></div>
+
+  <h2><span class="n">8</span>APT (SM)</h2>
+  <ul class="small">
+    <li>Alternative to CAPM; uses risk premia of several macro factors: <b>E(R<sub>i</sub>) = R<sub>f</sub> + λ<sub>1</sub>β<sub>1</sub> + λ<sub>2</sub>β<sub>2</sub> + … + λ<sub>n</sub>β<sub>n</sub></b></li>
+    <li>No surprises → actual = expected. With <b>unanticipated changes</b>: E(R) = R<sub>f</sub> + β<sub>1</sub>(EV<sub>1</sub> − AV<sub>1</sub>) + … (surprise factor = expected − actual value of factor)</li>
+  </ul>
+  <p class="small">App-computed: R<sub>f</sub> 6%, premia 4% &amp; 2%, sensitivities 1.2 &amp; 0.8 → <b>12.4%</b>. May 2026: target sensitivities via long / short amounts — two simultaneous equations.</p>
+
+  <div class="foot"><span>AFM Ch 6 · page 2 / 6</span><span>checked vs AFM SM Ch 6 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 6 · Sharpe's optimal portfolio (cut-off)</span><span class="tag">8-MARK FAVOURITE</span></div>
+  <h2><span class="n">9</span>Steps (SM)</h2>
+  <ol class="small">
+    <li>Find "<b>excess return to beta</b>" (R<sub>i</sub> − R<sub>f</sub>) ÷ β<sub>i</sub> — i.e. Treynor's ratio — for each stock</li>
+    <li>Rank highest to lowest</li>
+    <li>Compute C<sub>i</sub> in ranked order: <b>C<sub>i</sub> = σ<sub>m</sub>² Σ[(R<sub>i</sub> − R<sub>f</sub>)β<sub>i</sub>/σ<sub>ei</sub>²] ÷ [1 + σ<sub>m</sub>² Σ(β<sub>i</sub>²/σ<sub>ei</sub>²)]</b></li>
+    <li><b>C*</b> = highest C<sub>i</sub>; select stocks whose excess-return-to-beta is above C*, reject the rest</li>
+    <li>Weights: <b>Z<sub>i</sub> = (β<sub>i</sub>/σ<sub>ei</sub>²) × [(R<sub>i</sub> − R<sub>f</sub>)/β<sub>i</sub> − C*]</b>; <b>X<sub>i</sub> = Z<sub>i</sub> ÷ ΣZ<sub>i</sub></b></li>
+  </ol>
+  <p class="small">App-computed example: R<sub>f</sub> 5%, σ<sub>m</sub>² 10.</p>
+  <table>
+    <tr><th>Sec</th><th>R<sub>i</sub></th><th>β</th><th>σ<sub>e</sub>²</th><th>(R−R<sub>f</sub>)/β</th><th>Rank</th><th>C<sub>i</sub></th></tr>
+    <tr><td>A</td><td>15</td><td>1.0</td><td>30</td><td>10.0</td><td>1</td><td>2.500</td></tr>
+    <tr><td>B</td><td>17</td><td>1.5</td><td>40</td><td>8.0</td><td>2</td><td>4.132</td></tr>
+    <tr><td>D</td><td>11</td><td>0.8</td><td>10</td><td>7.5</td><td>3</td><td>4.982</td></tr>
+    <tr><td>C</td><td>12</td><td>1.0</td><td>20</td><td>7.0</td><td>4</td><td><b>5.314 = C*</b></td></tr>
+    <tr><td>E</td><td>8</td><td>1.2</td><td>35</td><td>2.5</td><td>5</td><td>4.978 (falls → stop)</td></tr>
+  </table>
+  <table>
+    <tr><th>Sec</th><th>Z<sub>i</sub></th><th>Weight</th></tr>
+    <tr><td>A</td><td>0.1562</td><td>30.27%</td></tr>
+    <tr><td>B</td><td>0.1007</td><td>19.52%</td></tr>
+    <tr><td>D</td><td>0.1749</td><td>33.88%</td></tr>
+    <tr><td>C</td><td>0.0843</td><td>16.33%</td></tr>
+  </table>
+  <div class="trap"><p>Ranking uses <b>excess return ÷ β</b>, not ÷ σ. If the question <b>gives</b> C*, go straight to Z<sub>i</sub> (May 2026 Q4(a)).</p></div>
+
+  <div class="foot"><span>AFM Ch 6 · page 3 / 6</span><span>checked vs AFM SM Ch 6 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 6 · CAPM &amp; evaluation</span><span class="tag">FORMULA CORE</span></div>
+  <h2><span class="n">10</span>CAPM (SM)</h2>
+  <ul class="small">
+    <li><b>R<sub>j</sub> = R<sub>f</sub> + β(R<sub>m</sub> − R<sub>f</sub>)</b>; risk premium of a stock = β × market risk premium. Graph = <b>SML</b> (required return vs β); market β = 1</li>
+    <li>SM: only <b>one risk-free rate</b>; if two are given, aggressive = higher, conservative = lower, moderate = average (Illus. 5)</li>
+    <li><b>Decisions (SM 8.2)</b>: CAPM required &lt; actual / expected return → <b>buy</b> (under-valued) · required &gt; actual → <b>sell</b> (over-valued) · equal → <b>hold</b>. Price basis: actual price &lt; CAPM price → under-valued</li>
+    <li><b>Advantages</b>: (i) risk-adjusted return — usable as risk-adjusted discount rate; (ii) cost of equity for a <b>no-dividend company</b></li>
+    <li><b>Limitations</b>: (a) reliability of beta; (b) ignores other (unsystematic) risks; (c) information available — R<sub>f</sub> and market return hard to estimate</li>
+    <li>Back-solving (Jan 2026 MCQ): two portfolios' returns &amp; betas → solve R<sub>f</sub> and R<sub>m</sub></li>
+  </ul>
+  <p class="small">App-computed: 6 + 1.3 × (14 − 6) = <b>16.4%</b>. SM Illus. 2: β 1.40, R<sub>m</sub> 14, R<sub>f</sub> 10 → 15.6%; premium +2.5 points → 19.1%.</p>
+
+  <h2><span class="n">11</span>Portfolio evaluation (SM)</h2>
+  <table>
+    <tr><th style="width:18%">Measure</th><th style="width:34%">Formula</th><th>SM meaning</th></tr>
+    <tr><td><b>Sharpe ratio</b></td><td>(R<sub>i</sub> − R<sub>f</sub>) ÷ σ<sub>i</sub></td><td>Risk premium per unit of <b>total</b> risk</td></tr>
+    <tr><td><b>Treynor ratio</b></td><td>(R<sub>i</sub> − R<sub>f</sub>) ÷ β<sub>i</sub></td><td>Risk premium per unit of <b>systematic</b> risk</td></tr>
+    <tr><td><b>Jensen's alpha</b></td><td>R<sub>p</sub> − [R<sub>f</sub> + β(R<sub>m</sub> − R<sub>f</sub>)]</td><td>Actual return minus CAPM-expected return</td></tr>
+  </table>
+  <p class="small">App-computed: R<sub>p</sub> 15, σ 18, β 1.1, R<sub>f</sub> 6, R<sub>m</sub> 13 → Sharpe 0.50; Treynor 8.18; Jensen +1.30%.</p>
+
+  <h2><span class="n">12</span>Mixed portfolios (RTP Nov 2026)</h2>
+  <p class="small">Scenario returns × probabilities → E(R), σ, covariance → portfolio variance. Risk-averse → lowest σ for acceptable return; risk-seeker → highest return.</p>
+
+  <div class="foot"><span>AFM Ch 6 · page 4 / 6</span><span>checked vs AFM SM Ch 6 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 5 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 6 · Strategy, selection, revision, allocation</span><span class="tag">THEORY BANK</span></div>
+  <h2><span class="n">13</span>Portfolio strategy (SM)</h2>
+  <ul class="small">
+    <li><b>Active (APS) — 4 principles</b>: <b>market timing</b> (business cycle, moving average, advance-decline, econometric models) · <b>sector rotation</b> · <b>security selection</b> · <b>use of specialised investment concept</b></li>
+    <li><b>Passive — 2 guidelines</b>: (a) well-diversified portfolio at a predetermined risk level; (b) hold relatively unchanged unless inadequately diversified or inconsistent with preferences. Passively managed fund = <b>index fund</b> (doesn't remove market risk)</li>
+  </ul>
+
+  <h2><span class="n">14</span>Selection of securities (SM)</h2>
+  <div class="cols">
+    <div class="box small"><h3>Bonds — 4 factors</h3><p><b>Yield to maturity</b> · <b>tax shield</b> · <b>liquidity</b> · <b>risk of default</b> (credit rating / D/E, interest cover, earning power, industry)</p></div>
+    <div class="box small"><h3>Equity — 3 approaches</h3><p><b>Technical</b> (price &amp; volume) · <b>fundamental</b> (intrinsic value vs price → buy / hold / sell) · <b>random selection</b> (efficient market, fairly priced)</p></div>
+  </div>
+
+  <h2><span class="n">15</span>Revision &amp; rebalancing (SM)</h2>
+  <table class="small">
+    <tr><th style="width:18%"></th><th>Buy &amp; hold ("do nothing")</th><th>Constant mix</th><th>CPPI</th></tr>
+    <tr><td>Mechanism</td><td>No rebalancing; linear exposure to stocks</td><td>Rebalance to fixed % — buy stocks as they fall, sell as they rise</td><td>Floor in non-fluctuating assets; cushion in shares</td></tr>
+    <tr><td>Pay-off</td><td>Straight</td><td><b>Concave</b></td><td><b>Convex</b></td></tr>
+    <tr><td>Down / up market</td><td>Definitely poor in down</td><td>Not much in down, relatively poor in up</td><td>Good in down, well in up</td></tr>
+    <tr><td>Flat market</td><td>Between the other two</td><td><b>Does well</b></td><td><b>Performs poorly</b></td></tr>
+  </table>
+
+  <h2><span class="n">16</span>Asset allocation strategies (SM — 4)</h2>
+  <table class="small">
+    <tr><td style="width:20%"><b>Integrated</b></td><td>Examines market conditions + investor objectives &amp; constraints; allocation incorporating market forecast</td></tr>
+    <tr><td><b>Strategic</b></td><td>Optimal mix from historical returns, risk, covariances; periodically restored to target</td></tr>
+    <tr><td><b>Tactical</b></td><td>Risk tolerance constant; allocation changed on expected market conditions</td></tr>
+    <tr><td><b>Insured</b></td><td>Risk exposure adjusted with wealth — more value, more ability to take risk</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 6 · page 5 / 6</span><span>checked vs AFM SM Ch 6 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 6 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 6 · Fixed income &amp; alternative investments</span><span class="tag">THEORY BANK</span></div>
+  <h2><span class="n">17</span>Fixed income portfolio (SM)</h2>
+  <ul class="small">
+    <li><b>Process (5)</b>: set objective → investment policy guidelines → strategy (active / passive) → select securities → evaluate vs benchmark. <b>Return measures</b>: arithmetic average, time-weighted, rupee-weighted, annualised</li>
+    <li><b>Passive</b>: <b>buy &amp; hold</b> (may set duration = benchmark) · <b>indexation</b> (replicate bond index) · <b>immunization</b> (hybrid; popular with pension funds) · <b>matching cash flows</b> (zero-coupon bonds to meet promised payments)</li>
+    <li><b>Active</b>: (1) <b>forecasting returns &amp; interest rates</b> — <b>bullet</b> (all in one maturity), <b>barbell</b> (equal short &amp; long), <b>ladder</b> (equal across maturities) · (2) <b>bond swaps</b> — <b>pure yield pickup</b>, <b>substitution</b>, <b>inter-market (international) spread</b>, <b>tax swap</b> · (3) <b>interest rate swap</b></li>
+  </ul>
+
+  <h2><span class="n">18</span>Alternative investments (SM)</h2>
+  <ul class="small">
+    <li><b>Features (6)</b>: high fees · limited historical data · illiquidity · less transparency · extensive research required · leveraged buying. <b>Types</b>: real estate, gold, private equity, REITs, hedge funds, ETFs, MFs, commodities, distressed securities</li>
+    <li><b>Real estate</b> — valuation complex (inefficient market, illiquidity, only approximate comparison, high transaction cost…). <b>4 approaches</b>: sales comparison (like P/E), income (perpetual net income ÷ required return), cost (replacement cost + land value, adjusted for location), discounted after-tax cash flow (NPV-like)</li>
+    <li><b>Gold forms</b>: jewellery (making charges) · <b>gold bars / coins</b> (storage cost) · <b>SGBs</b> — government securities in grams of gold, issued by <b>RBI on behalf of GoI</b>, paid &amp; redeemed in cash, quantity of gold protected (market price at redemption), no storage risk / cost, <b>periodical interest</b>, held with RBI or in demat · <b>Gold ETFs</b> (price based on gold; full transparency; low expenses) · <b>E-gold</b> (NSEL, 2010; 1 unit = 1 gram in demat)</li>
+    <li><b>Distressed securities</b>: securities of firms in / near bankruptcy, bought cheap to revive; arbitrage by long debt + short equity. <b>Risks</b>: liquidity, event, market, <b>human</b> (judge's decision)</li>
+  </ul>
+  <p class="small">SGB scheme specifics used in May 2026 MCQ (2.5% p.a. interest, 8-year tenor, redemption gain exempt for individuals) are <b>not stated in the SM</b> — use only the data given in the question.</p>
+
+  <h2><span class="n">19</span>Correlation — how Ch 6 actually connects</h2>
+  <table class="small">
+    <tr><th style="width:25%">Ch 6 idea</th><th>The actual link (app-written cross-reference; the Ch 6 side is SM)</th></tr>
+    <tr><td>CAPM K<sub>e</sub></td><td><b>Ch 5</b>: the K<sub>e</sub> found here is the discount rate in DDM / FCFE; a stock's equity risk premium = β × (R<sub>m</sub> − R<sub>f</sub>), not R<sub>m</sub> − R<sub>f</sub>.</td></tr>
+    <tr><td>β = r<sub>im</sub>σ<sub>i</sub>/σ<sub>m</sub> = Cov ÷ σ<sub>m</sub>²</td><td><b>Ch 9</b>: β<sub>p</sub> (weighted average) decides the number of index futures to sell / buy to change portfolio beta.</td></tr>
+    <tr><td>Sharpe, Treynor, Jensen</td><td><b>Ch 8</b>: same formulas rank mutual funds. Sharpe uses σ (total risk — fund is the whole investment); Treynor uses β (well-diversified); Jensen α = R<sub>p</sub> − [R<sub>f</sub> + β<sub>p</sub>(R<sub>m</sub> − R<sub>f</sub>)].</td></tr>
+    <tr><td>Fixed-income strategies</td><td><b>Ch 5</b>: immunization = duration equal to horizon; bullet / barbell / ladder are duration choices; IRS (Ch 12) changes the duration of the portfolio.</td></tr>
+    <tr><td>Active vs passive</td><td><b>Ch 4</b>: if markets are efficient, passive (index) wins after costs; active needs mispricing. <b>Ch 8</b>: index funds / ETFs are the passive vehicle.</td></tr>
+    <tr><td>Portfolio σ</td><td><b>Ch 2</b>: σ<sub>p</sub> feeds VaR; lower correlation → lower σ<sub>p</sub> → lower VaR.</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 6 · page 6 / 6</span><span>checked vs AFM SM Ch 6 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+</body></html>

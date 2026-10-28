@@ -1,0 +1,93 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 2 LDR</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>CA Final · AFM · Last-Day Revision · SM Ch 2</span><span class="tag">#9 · 4.0% of marks</span></div>
+  <h1><span class="u">Ch 2</span> — Risk Management</h1>
+  <div class="sub">Short chapter — learn every list. SM TYK theory Qs: <b>significance of VaR</b> (3.2) · <b>financial risk from different perspectives</b> (2). Numerical: VaR for a single share / two-share portfolio.</div>
+
+  <h2><span class="n">1</span>Types of risk faced by an organisation (SM 1)</h2>
+  <table class="small">
+    <tr><th style="width:18%">Risk</th><th>SM meaning &amp; example</th></tr>
+    <tr><td><b>Strategic</b></td><td>Company's strategy becomes less effective and it struggles to reach its goal — technology change, new competitor, shift in demand, input-cost rise. <b>Kodak</b> (built a digital camera in 1975, saw it as a threat, left behind) · <b>Nokia</b> (late to touch screens → Samsung led) · <b>Xerox</b> (positive — moved into laser printing)</td></tr>
+    <tr><td><b>Compliance</b></td><td>Complying with Companies Act 2013, SEBI etc.; non-compliance → fine / imprisonment. Real problem when entering a <b>new business line or geography</b> (cement company entering sugar in another state)</td></tr>
+    <tr><td><b>Operational</b></td><td><b>Internal</b>; failure to cope with day-to-day problems; relates to <b>people and process</b> (paying ₹1,00,000 instead of ₹10,000 → second checker or system flag)</td></tr>
+    <tr><td><b>Financial</b></td><td>Unexpected changes in prices, exchange rates, credit rating, interest rates; political risk included as it leads to country risk</td></tr>
+  </table>
+
+  <h2><span class="n">2</span>Categories of financial risk (SM 1.4)</h2>
+  <ul class="small">
+    <li><b>Counter-party</b>: non-honouring of obligations (goods not delivered after payment, loan / interest not repaid) — includes <b>credit risk</b></li>
+    <li><b>Political</b>: faced by overseas investors — (i) confiscation / destruction of property (ii) rationing of remittance (iii) restriction on currency conversion (iv) restriction on borrowings (v) invalidation of patents (vi) price control</li>
+    <li><b>Interest rate</b>: rate changes alter assets &amp; liabilities; most important for <b>banks</b> (earn the spread). Inherent in both fixed and floating rates — floating borrower suffers when rates rise; fixed borrower pays comparatively more when floating rates fall</li>
+    <li><b>Currency</b>: cash flows change with exchange rates, adversely or favourably — ₹ depreciation helps an exporter (<b>Infosys</b>), hurts an importer (<b>IOC</b>)</li>
+    <li><b>Liquidity</b>: inability to meet liabilities when due — inadequate cash or mismatch in timing; common in banks (maturity mismatch)</li>
+  </ul>
+
+  <h2><span class="n">3</span>Evaluation of financial risk — 3 views (SM 2) — TYK Q2</h2>
+  <table class="small">
+    <tr><th style="width:22%">View</th><th>SM</th></tr>
+    <tr><td><b>Stakeholders</b></td><td>Equity holders see <b>financial gearing</b> as risk (last in winding up); lenders see high gearing as risk of default on interest &amp; principal</td></tr>
+    <tr><td><b>Company</b></td><td>Excessive borrowing, or lending to someone who defaults, can force <b>liquidation</b></td></tr>
+    <tr><td><b>Government</b></td><td>Failure of a bank (<b>Lehman Brothers</b>) or downgrade of a financial institution spreads distrust; includes <b>wilful defaulters</b>; extends to <b>sovereign debt crisis</b></td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 2 · page 1 / 3</span><span>checked vs AFM SM Ch 2 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 2 · Value at Risk</span><span class="tag">TYK THEORY Q1 + NUMERICAL</span></div>
+  <h2><span class="n">4</span>Value at Risk (SM 3)</h2>
+  <p class="small">Measure of investment risk: under normal market conditions over a set period (say one day), <b>how much an investment might lose</b> — portfolio, capital investment or forex. Answers: (i) what is the <b>worst case</b>? (ii) what will be the <b>loss</b>? First applied <b>1922 at NYSE</b>; entered finance in the <b>1990s</b>; now the world's most widely used measure of financial risk.</p>
+  <div class="cols">
+    <div class="box small"><h3>Features (SM 3.1)</h3><p>(i) <b>Components</b>: time period · confidence level (generally <b>95% / 99%</b>) · loss in % or amount (ii) <b>statistical</b> tool based on standard deviation (iii) any <b>time horizon</b> — day, week, month (iv) <b>probability</b> of maximum loss, assuming normal distribution (v) <b>risk control</b> by setting maximum-loss limits (vi) <b>Z score</b> = number of σ from the mean; Z × σ = VaR</p></div>
+    <div class="box small"><h3>Application / significance (SM 3.2) — TYK Q1</h3><p>(a) measure <b>maximum possible loss</b> on a portfolio or trading position (b) <b>benchmark</b> for performance measurement of operations / trading (c) fix <b>limits for front-office</b> dealers in treasury (d) help management decide <b>trading strategies</b> (e) tool for <b>ALM</b>, especially in banks</p></div>
+  </div>
+  <div class="box"><p><b>VaR = Z × σ (in ₹) × √t</b> &nbsp;·&nbsp; Z = <b>2.33</b> at 99%, <b>1.65</b> at 95% (one-tailed) &nbsp;·&nbsp; σ<sub>t days</sub> = σ<sub>1 day</sub> × √t</p></div>
+  <table class="small">
+    <tr><th style="width:40%">SM working</th><th>Answer</th></tr>
+    <tr><td><b>SM 3.3</b>: ₹2 cr in X Ltd, daily σ 2%, 252 trading days, 99%</td><td>σ = ₹4 lakh → 1-day VaR = 4 × 2.33 = <b>₹9.32 lakh</b>; 10-day = √10 × 9.32 = <b>₹29.47 lakh</b></td></tr>
+    <tr><td><b>TYK 1</b>: ₹200 lakh each in XYZ &amp; ABC, daily σ 1% each, r = 0.3, 10-day 99%</td><td>Daily σ each ₹2 lakh; variance = 2² + 2² + 2 × 0.3 × 2 × 2 = 10.4 → σ = <b>₹3.22 lakh</b> (or 0.80623% of ₹400 lakh); 10-day σ = 3.22 × √10 = <b>₹10.18 lakh</b>; VaR = 2.33 × 10.18 = <b>₹23.72 lakh</b></td></tr>
+  </table>
+  <div class="trap"><p>Scale σ by <b>√t</b>, never by t. Use portfolio σ with the correlation term — two 1% shares with r = 0.3 give 0.806%, not 1%. 252 days is only needed to annualise.</p></div>
+
+  <h2><span class="n">5</span>Identifying &amp; managing financial risk (SM 4)</h2>
+  <h3>Counter-party risk (4.1)</h3>
+  <p class="small"><b>Hints (5)</b>: (a) failure to obtain resources to complete the project (b) regulatory restrictions (c) hostile action of a foreign government (d) let down by a third party (e) insolvency. <b>Management (6)</b>: (1) <b>due diligence</b> before dealing (2) don't over-commit to one entity / group (3) know exposure limits (4) review credit limits &amp; approval procedure regularly (5) rapid action on likely default (6) performance guarantees, insurance, other instruments.</p>
+
+  <div class="foot"><span>AFM Ch 2 · page 2 / 3</span><span>checked vs AFM SM Ch 2 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 2 · Political, interest &amp; currency risk; correlation</span><span class="tag">LISTS</span></div>
+  <h3>Political risk (4.2)</h3>
+  <div class="cols3">
+    <div class="box small"><p><b>Identify (4)</b>: insistence on resident investors / labour · restriction on currency conversion · <b>expropriation</b> of foreign assets · price fixation</p></div>
+    <div class="box small"><p><b>Assess country risk (4)</b>: political rankings in business magazines · macro-economic conditions · popularity &amp; stability of government · advice from home-country <b>embassies</b></p></div>
+    <div class="box small"><p><b>Mitigate (4)</b>: <b>local sourcing</b> of materials &amp; labour · <b>joint ventures</b> · <b>local financing</b> · <b>prior negotiations</b></p></div>
+  </div>
+  <h3>Interest rate risk (4.3) — identified from (6)</h3>
+  <p class="small">Monetary policy · government action (eg <b>demonetisation</b>) · economic growth · release of industrial data · foreign investment · stock-market changes. Management → Ch 12.</p>
+  <h3>Currency risk (4.4) — parameters (6)</h3>
+  <p class="small">(1) <b>Government action</b> (Brexit → £ lowest since the 1980s) (2) <b>nominal interest rate</b> (IRP) (3) <b>inflation</b> (PPP) (4) natural calamities (5) war, coup, rebellion (6) change of government and its attitude to foreign investment. Management → Ch 10.</p>
+  <div class="sticky">Mnemonic for currency parameters: <b>G-I-I-N-W-C</b> — Government, Interest, Inflation, Natural calamity, War, Change of government.</div>
+
+  <h2><span class="n">6</span>Correlation — how Ch 2 actually connects</h2>
+  <table class="small">
+    <tr><th style="width:24%">Ch 2 idea</th><th>The actual link (app-written cross-reference; the Ch 2 side is SM)</th></tr>
+    <tr><td>VaR of a 2-share portfolio</td><td><b>Ch 6</b>: σ<sub>p</sub>² = w<sub>1</sub>²σ<sub>1</sub>² + w<sub>2</sub>²σ<sub>2</sub>² + 2w<sub>1</sub>w<sub>2</sub>rσ<sub>1</sub>σ<sub>2</sub> — the same formula; lower r → lower σ<sub>p</sub> → lower VaR. That is diversification expressed in rupees.</td></tr>
+    <tr><td>Interest rate risk</td><td><b>Ch 12</b>: identified here, managed there (gap, FRA, caps, swaps); <b>Ch 5</b>: price vs reinvestment risk, duration.</td></tr>
+    <tr><td>Currency risk — IRP, PPP</td><td><b>Ch 10</b>: the parity conditions forecast the rate; the hedges (forward, MMH, options) manage it; <b>Ch 11</b>: political-risk list = complexity list in international capital budgeting.</td></tr>
+    <tr><td>Political risk mitigation</td><td><b>Ch 11</b>: local financing and JVs reduce blocked-fund and expropriation risk; certainty-equivalent cash flows rather than a higher discount rate.</td></tr>
+    <tr><td>Operational risk, limits</td><td><b>Ch 9</b>: Barings (back office run by the trader), Orange County — lessons = separate front / middle / back office, risk limits, VaR + stress tests.</td></tr>
+    <tr><td>Financial gearing as risk</td><td><b>FM / Ch 14</b>: high gearing raises K<sub>e</sub>; LBO targets carry the most gearing risk; <b>AAA</b>: SA 570 going-concern indicators (defaults, negative net worth).</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 2 · page 3 / 3</span><span>checked vs AFM SM Ch 2 · AFM LDR — Ss</span></div>
+</section>
+
+</body></html>

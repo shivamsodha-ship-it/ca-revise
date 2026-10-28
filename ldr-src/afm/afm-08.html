@@ -1,0 +1,181 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 8 LDR</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>CA Final · AFM · Last-Day Revision · SM Ch 8</span><span class="tag">#4 · 10.5% of marks</span></div>
+  <h1><span class="u">Ch 8</span> — Mutual Funds</h1>
+  <div class="sub">Tested every attempt: NAV working, holding-period return (payout vs reinvest), dividend vs bonus plans, back-solving issue price, closed-end premium / discount.</div>
+
+  <h2><span class="n">1</span>Set-up &amp; structure</h2>
+  <ul class="small">
+    <li>MF = <b>trust</b> pooling savings via <b>units</b>; invests in capital &amp; money market; income &amp; gains shared in proportion to units</li>
+    <li>Four constituents: <b>Sponsor → Trust (trustees) → AMC → Custodian</b>, all SEBI-registered. Trust deed registered under the Registration Act, 1908</li>
+    <li>Sponsor: <b>5 years</b> in financial services, holds <b>≥ 40%</b> of AMC net worth. AMC net worth <b>₹100 crore</b> (SM). Trustees <b>⅔ independent</b>; AMC board <b>50% independent</b>. AMC removed by majority of trustees or <b>75%</b> of unit holders</li>
+    <li>Custodian: SEBI-registered, <b>independent of sponsor &amp; AMC</b> (DP for demat)</li>
+  </ul>
+
+  <h2><span class="n">2</span>Classification</h2>
+  <table>
+    <tr><th style="width:22%">Basis</th><th>Types</th></tr>
+    <tr><td>Structure</td><td><b>Open-ended</b> (buy / redeem any time with fund; no maturity) · <b>Close-ended</b> (NFO then exchange; exit on exchange / maturity / repurchase window) · <b>Interval</b> (need not list; in-built redemption window; can issue fresh units at NAV in the interval; no fixed maturity)</td></tr>
+    <tr><td>Asset</td><td>Equity (<b>growth</b> — long-term appreciation; <b>aggressive</b> — IPOs, speculative; <b>income</b> — high-dividend stocks) · Debt / bond (risks: <b>I-C-P-R</b> — interest rate, credit, prepayment, reinvestment) · Money market / liquid · Gilt · Hybrid / balanced</td></tr>
+    <tr><td>Special</td><td><b>Index</b> · <b>International</b> (raises in India, invests abroad) vs <b>Offshore</b> (outside India, raises globally to invest in India) · <b>Capital protection oriented</b> (protection from portfolio structure, not guarantee; close-ended, listed, structure rated) · <b>Quant</b> (rule-based models; no bias, low cost; relies on history) · <b>Fund of funds</b> · <b>ETF</b> · <b>Arbitrage</b> (spot vs futures) · <b>Sector</b> vs <b>thematic</b></td></tr>
+    <tr><td>Ownership</td><td><b>Public sector</b> (sponsored by a public-sector company / bank) · <b>Private sector</b> · <b>Foreign</b> (foreign company operating from India, raises and invests in India)</td></tr>
+    <tr><td>Diversified equity (SM 3.2)</td><td><b>Flexicap</b> · <b>Multicap</b> · <b>Contra</b> (out-of-favour / undervalued companies; blends growth + value; needs aggressive risk appetite) · <b>Index</b> · <b>Dividend yield</b> (yield above the index's; less volatile than growth stocks)</td></tr>
+    <tr><td>Others (SM 3)</td><td><b>Thematic</b> — broader than sector (multi-sector, international, commodity); market may take long to recognise the theme · <b>Arbitrage</b> — open-ended, low-volatility, cash equities + derivatives + debt; spot vs futures differential · <b>Cash fund</b> — open-ended liquid, very short-dated debt &amp; money market, growth &amp; dividend options</td></tr>
+    <tr><td>Schemes</td><td><b>Flexicap</b> (any proportion) vs <b>Multicap</b> (≥ 25% each large / mid / small) · <b>FMP</b> (no interest-rate risk, still credit risk; close-ended, illiquid) · <b>ELSS</b> (80C, 3-yr lock-in; SIP preferred)</td></tr>
+    <tr><td>Options</td><td><b>Growth</b> (nothing paid) · <b>Dividend payout</b> (NAV falls by dividend) · <b>Dividend reinvestment</b> (extra units at ex-dividend NAV)</td></tr>
+    <tr><td>Plans</td><td><b>Direct plan</b> (from 1 Jan 2013) — no distribution expense / trail → lower TER, <b>higher NAV</b> than regular</td></tr>
+  </table>
+  <div class="trap"><p>Interval ≠ close-ended. CPOF ≠ capital <b>guaranteed</b>. FMP is free of <b>interest-rate</b> risk, <b>not</b> credit risk.</p></div>
+
+  <div class="foot"><span>AFM Ch 8 · page 1 / 5</span><span>checked vs AFM SM Ch 8 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 8 · ETFs, hedge funds, pros &amp; cons</span><span class="tag">THEORY</span></div>
+  <h2><span class="n">3</span>ETF vs index fund; hedge fund vs MF</h2>
+  <table>
+    <tr><th style="width:26%">ETF</th><td>Listed; trades all day at real-time prices close to NAV (open-ended fund deals once a day at NAV); <b>authorised participants</b> act as market makers; low cost, tax-efficient, no paperwork. Types: index, commodity (gold), bond, currency</td></tr>
+    <tr><th>Hedge fund vs MF</th><td>Lightly regulated private vehicle for selected clients; little public disclosure; <b>performance fee</b> (losses borne by investors); uses <b>leverage, long / short, derivatives</b></td></tr>
+  </table>
+  <p class="small"><b>High-water mark fee</b> (SM: ANP Plan): ₹20 cr; 0.10% fixed + 2% above ₹21 cr. Return 29% → value 25.8 cr → fee ₹2 L + 2% × 4.8 cr = <b>₹11.60 L</b>; return 4.5% → 20.9 cr &lt; 21 → <b>₹2 L only</b>. Trap: fee on excess over HWM, not on the year's gain.</p>
+
+  <h2><span class="n">4</span>Advantages (12) &amp; drawbacks (4)</h2>
+  <div class="cols">
+    <div class="box small"><h3>Advantages</h3><p>Professional management · diversification · convenient administration · higher returns · <b>low cost</b> (max <b>2.50%</b> for equity funds; excess borne by AMC) · liquidity · transparency · other benefits (SIP / SWP / switch) · highly regulated · economies of scale · flexibility · convenience</p></div>
+    <div class="box small"><h3>Drawbacks</h3><p>1. No guarantee of return (under-performance, entry / exit timing, crashes) · 2. Diversification caps upside · 3. Picking the right fund is hard; past performance no guide · 4. Costs; AMC fees not linked to performance</p></div>
+  </div>
+
+  <h2><span class="n">5</span>Key terms</h2>
+  <table>
+    <tr><th style="width:24%">Term</th><th>Meaning / formula</th></tr>
+    <tr><td><b>NAV</b></td><td>Net assets ÷ units outstanding. Net assets = MV of investments + receivables + accrued income + other assets − accrued expenses − payables − other liabilities</td></tr>
+    <tr><td><b>Loads</b></td><td>Public offer price = NAV ÷ (1 − entry load) · Redemption = NAV ÷ (1 + exit load) [or NAV × (1 − exit load) where the question says]. Exit load goes back to the <b>scheme</b>. No entry load now</td></tr>
+    <tr><td><b>Required MF return</b></td><td>r<sub>2</sub> = r<sub>1</sub> ÷ (1 − initial expenses) + recurring expenses (10%, 6%, 2% → <b>12.64%</b>)</td></tr>
+    <tr><td><b>Expense ratio (TER)</b></td><td>Mgmt &amp; advisory fees, travel, audit, custodian, registrar — <b>excludes brokerage</b>; charged daily (1/365) before NAV</td></tr>
+    <tr><td>Trail commission</td><td>0.30–0.75% p.a. on daily average AUM, paid monthly, while money stays invested</td></tr>
+    <tr><td><b>Side pocketing</b></td><td>Stressed / downgraded assets moved to a segregated portfolio; main NAV reflects liquid assets; protects continuing holders (IL&amp;FS). Recovery paid only to holders on segregation date</td></tr>
+    <tr><td><b>Tracking error</b></td><td>√[Σ(d − d̄)² ÷ (n − 1)], d = fund − benchmark return. Causes: transaction cost, AMC fees, expenses, cash holdings, sampling. Higher TE = higher risk even if outperforming</td></tr>
+    <tr><td><b>Dividend equalisation</b></td><td>New investor pays / exiting investor gets undistributed income per unit: issue = NAV + entry load + income p.u.; repurchase = NAV − exit load + income p.u.</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 8 · page 2 / 5</span><span>checked vs AFM SM Ch 8 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 8 · Returns &amp; NAV workings</span><span class="tag">REPEAT R1 · EVERY ATTEMPT</span></div>
+  <h2><span class="n">6</span>Return formulas</h2>
+  <div class="box">
+    <p><b>HPR</b> = (NAV<sub>1</sub> − NAV<sub>0</sub> + income distributed + capital-gain distributed) ÷ NAV<sub>0</sub></p>
+    <p><b>Reinvestment</b>: extra units = distribution ÷ reinvestment NAV; return = (total units × closing NAV − cost) ÷ cost</p>
+    <p><b>Effective yield p.a.</b> = [(units × closing NAV − investment) + dividends] ÷ investment × <b>365 ÷ days</b></p>
+    <p><b>Annualise</b> monthly return × 12 (simple) unless told to compound; <b>real return</b> = (1 + nominal) ÷ (1 + inflation) − 1</p>
+  </div>
+  <table>
+    <tr><th style="width:42%">Pattern</th><th>Method</th></tr>
+    <tr><td>Payout vs reinvest (Sep 2025 Q3(b))</td><td>Compute both; reinvest at the given (average) NAV; pick higher return</td></tr>
+    <tr><td>Entry load + appreciation + distribution reinvested + exit load + tax + inflation (Sep 2025 Q5(b))</td><td>Units = amount ÷ POP; end value = units × NAV × (1 − exit load); tax on gain; real return</td></tr>
+    <tr><td>Dividend % declared</td><td>Dividend = units × <b>face value ₹10</b> × % (not × NAV)</td></tr>
+    <tr><td>Find month-end NAV from annual return (PYQ May 2024)</td><td>Monthly = 16% ÷ 12 = 1.33%; 0.0133 = (NAV − 78.50 + 0.70) ÷ 78.50 → <b>₹78.84</b></td></tr>
+    <tr><td>Days invested from yields</td><td>Days = period yield × 365 ÷ yield p.a.; count back</td></tr>
+  </table>
+
+  <h2><span class="n">7</span>Dividend vs bonus vs growth plans</h2>
+  <ul class="small">
+    <li>Build a <b>units table</b> per plan to redemption; value = units × closing NAV; deduct STT / tax on short-term units only; annual return = gain ÷ investment × 12 ÷ months</li>
+    <li><b>Back-solve issue price</b> (Jan 2026 Q1(a)): value now = investment × (1 + yield × years); units now = value ÷ NAV; <b>undo bonuses latest first</b> (× b ÷ (a + b)); issue price = investment ÷ original units. SM: ₹16 L, 17.5% × 5 → ₹30 L ÷ ₹100 = 30,000 → 24,000 → 20,000 → <b>₹80</b></li>
+  </ul>
+
+  <h2><span class="n">8</span>NAV statement (new fund, one month)</h2>
+  <ol class="small">
+    <li>Cash = amount raised − underwriting commission − marketing / issue costs − investments bought + sale proceeds + dividends received − expenses <b>paid</b></li>
+    <li>Net assets = cash + market value of holdings + receivables (uncollected dividend) − <b>arrears / outstanding expenses</b></li>
+    <li>Distribution = % of <b>realised</b> earnings only (sale gains + dividends), deducted from cash</li>
+    <li>NAV per unit = net assets ÷ units (underwritten issue → all units outstanding)</li>
+  </ol>
+  <div class="trap"><p>Only expenses <b>paid</b> leave cash; arrears are deducted from net assets. Units issued on a cheque = cheque ÷ <b>unrounded</b> current NAV; NAV unchanged that day.</p></div>
+
+  <div class="foot"><span>AFM Ch 8 · page 3 / 5</span><span>checked vs AFM SM Ch 8 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 8 · Evaluation &amp; risk measures</span><span class="tag">HIGH</span></div>
+  <h2><span class="n">9</span>Evaluating a mutual fund</h2>
+  <div class="cols">
+    <div class="box small"><h3>Quantitative (5)</h3><p>1. Risk-adjusted returns · 2. Benchmark returns (alpha) · 3. Comparison with peers · 4. Returns across economic &amp; market cycles · 5. Financial measures — expense ratio, Sharpe, Treynor, Sortino</p></div>
+    <div class="box small"><h3>Qualitative (3)</h3><p>1. Quality of portfolio (blue chips, diversification, style; debt: credit quality, maturity, modified duration; low turnover) · 2. Track record &amp; competence of fund manager · 3. Credibility of fund house team</p></div>
+  </div>
+  <table>
+    <tr><th style="width:22%">Measure</th><th>Formula / note</th></tr>
+    <tr><td>Sharpe</td><td>(R<sub>p</sub> − R<sub>f</sub>) ÷ σ<sub>p</sub> — total risk</td></tr>
+    <tr><td>Treynor</td><td>(R<sub>p</sub> − R<sub>f</sub>) ÷ β — systematic risk</td></tr>
+    <tr><td>Sortino</td><td>SM: variation of Sharpe using <b>downside deviation</b> instead of total σ in the denominator</td></tr>
+    <tr><td>Jensen α</td><td>R<sub>p</sub> − [R<sub>f</sub> + β(R<sub>m</sub> − R<sub>f</sub>)]</td></tr>
+    <tr><td>M² (not in SM)</td><td>R<sub>f</sub> + Sharpe<sub>p</sub> × σ<sub>m</sub> — compare with R<sub>m</sub></td></tr>
+    <tr><td>Information ratio (not in SM)</td><td>(R<sub>p</sub> − R<sub>benchmark</sub>) ÷ tracking error</td></tr>
+  </table>
+
+  <h2><span class="n">10</span>Reverse-engineering β and NAV</h2>
+  <table>
+    <tr><th style="width:46%">Given</th><th>Get</th></tr>
+    <tr><td>Sharpe &amp; σ → excess return; with Treynor</td><td><b>β = (Sharpe × σ) ÷ Treynor</b></td></tr>
+    <tr><td>ρ, σ<sub>p</sub>, market variance</td><td>β = ρσ<sub>p</sub> ÷ σ<sub>m</sub> ("variance 9%" → σ<sub>m</sub> = 3)</td></tr>
+    <tr><td>Sharpe, Treynor, σ<sub>m</sub></td><td>σ = excess ÷ Sharpe; β = excess ÷ Treynor; ρ = βσ<sub>m</sub> ÷ σ; <b>R² = ρ²</b></td></tr>
+    <tr><td>Jensen α &amp; Treynor</td><td>CAPM return = actual − α; solve R<sub>f</sub> and β simultaneously</td></tr>
+  </table>
+  <p class="small"><b>Expected NAV</b> (SM): NAV ₹70.71, 99% equity, Sharpe 2, σ 11.25, Treynor 15 → β = 22.5 ÷ 15 = 1.5. Market −5% → equity ₹70 × (1 − 7.5%) = 64.75; cash 0.71 − monthly cost 0.25 = 0.46 → <b>NAV ₹65.21</b>. Trap: <b>don't apply β to the cash part</b>.</p>
+
+  <h2><span class="n">11</span>Closed-ended fund premium / discount</h2>
+  <p class="small">Market price = NAV × (1 ± premium / discount). Investor's return uses <b>market prices</b>, so it beats NAV growth if the discount narrows. PYQ May 2026: geometric mean return 3.771% vs NAV growth 2.76%. Geometric mean = [(1 + r<sub>1</sub>)(1 + r<sub>2</sub>)…]<sup>1/n</sup> − 1.</p>
+
+  <div class="foot"><span>AFM Ch 8 · page 4 / 5</span><span>checked vs AFM SM Ch 8 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 5 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 8 · Fund manager, FIIs, formula plans, SIP</span><span class="tag">THEORY + NUMERICAL</span></div>
+  <h2><span class="n">12</span>Role of fund manager &amp; FIIs</h2>
+  <ul class="small">
+    <li><b>Active</b> fund: outperform, generate positive alpha via research &amp; stock picking. <b>Passive</b>: match index with minimum tracking error</li>
+    <li>Other roles (<b>C-M-W-O</b>): <b>C</b>ompliances (SEBI / AMFI, reporting), constant <b>M</b>onitoring of performance, <b>W</b>ealth creation &amp; protection, control over <b>O</b>utsourced work</li>
+    <li><b>FIIs</b> buy units directly from the issuer or through a registered broker on a recognised exchange within SEBI limits; benefits: <b>better corporate governance</b>, <b>more competition</b>, <b>capital inflow</b> (jobs &amp; forex)</li>
+    <li>Fund hedge with index futures: contracts = β × equity value ÷ (futures × lot) — <b>cash not hedged</b> (₹90 cr, β 1.1, 4,300 × 50 → 4,605)</li>
+  </ul>
+
+  <h2><span class="n">13</span>Formula plans — constant ratio plan</h2>
+  <ul class="small">
+    <li>Total value = bonds + units × NAV; when NAV move hits the trigger, <b>reset to the fixed ratio</b> — buy units after a fall, sell after a rise</li>
+    <li>ICAI checks each NAV against the <b>previous</b> one (32 → 38 = +18.75% triggers)</li>
+    <li>Wins in <b>choppy</b> markets ending near the start (sells high, buys low); loses in a strong one-way rise (keeps selling the winner)</li>
+  </ul>
+
+  <h2><span class="n">14</span>SIP / STP / SWP &amp; vocabulary</h2>
+  <ul class="small">
+    <li>SIP: fixed amount in; average cost = total ₹ ÷ total units = <b>harmonic mean</b> of NAVs ≤ average NAV (₹10,000 at 20, 16, 25, 20 → ₹19.75 vs ₹20.25)</li>
+    <li>SWP: fixed amount out · STP: fixed amount moved scheme to scheme</li>
+    <li>NFO · AUM · folio · <b>cut-off time</b> (before → that day's NAV; after → next day's)</li>
+    <li>Gilt fund: rates expected to fall → <b>lengthen duration</b>; to rise → shorten</li>
+  </ul>
+
+  <h2><span class="n">15</span>Correlation — how Ch 8 actually connects</h2>
+  <table class="small">
+    <tr><th style="width:25%">Ch 8 idea</th><th>The actual link (app-written cross-reference; the Ch 8 side is SM)</th></tr>
+    <tr><td>Sharpe / Treynor / Jensen</td><td><b>Ch 6</b>: same formulas; Sharpe for an undiversified investor (σ), Treynor for a diversified one (β), Jensen α positive = fund beat CAPM.</td></tr>
+    <tr><td>Debt / gilt fund NAV</td><td><b>Ch 5</b>: rates ↑ → bond prices ↓ → NAV ↓; % change ≈ −modified duration × Δy, so longer-duration funds swing more.</td></tr>
+    <tr><td>Hedging a fund</td><td><b>Ch 9</b>: sell index futures = Value × β ÷ (futures price × lot) to protect NAV against a market fall.</td></tr>
+    <tr><td>Index funds / ETFs</td><td><b>Ch 6</b> passive strategy and <b>Ch 4</b> efficient-market logic — low cost, tracks index.</td></tr>
+    <tr><td>Units held by a company</td><td><b>FR Ind AS 109</b>: MF units generally fail SPPI and are not equity instruments for the OCI election → FVTPL.</td></tr>
+  </table>
+
+  <div class="exam"><p>"NAV per unit = (market value of investments + receivables + accrued income + other assets − accrued expenses − payables − other liabilities) ÷ number of units outstanding."</p></div>
+
+  <div class="foot"><span>AFM Ch 8 · page 5 / 5</span><span>checked vs AFM SM Ch 8 · AFM LDR — Ss</span></div>
+</section>
+
+</body></html>

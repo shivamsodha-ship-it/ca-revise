@@ -1,0 +1,235 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 10 LDR</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>CA Final · AFM · Last-Day Revision · SM Ch 10</span><span class="tag">#2 · 11.6% of marks</span></div>
+  <h1><span class="u">Ch 10</span> — Forex Exposure &amp; Risk Management</h1>
+  <div class="sub">Tested every attempt: swap points / broken date, cross rates &amp; arbitrage, receivable / payable hedges, early delivery &amp; cancellation (FEDAI), exposure theory.</div>
+
+  <h2><span class="n">1</span>SWIFT &amp; payment gateways (SM)</h2>
+  <ul class="small">
+    <li><b>SWIFT</b> (Society for Worldwide Interbank Financial Telecommunication) — <b>purely a messaging system</b>; assigns <b>3-letter currency codes</b> (USD, GBP, CNY, CAD, AUD, HKD, INR, JPY, NZD, SGD, SEK, CHF, EUR)</li>
+    <li><b>Why important</b> (5): quick settlement (messaging in seconds) besides validation &amp; documentation · catalyst bringing financial agencies to work together · security &amp; reliability reduce <b>operational risk</b> · standardised transactions → efficiency &amp; lower cost · full <b>backup &amp; recovery</b></li>
+    <li><b>Payment gateway</b> — virtual equivalent of physical cash transfer; authenticates &amp; routes payment details securely. <b>Benefits</b>: 24×7×365; real-time card authorisation; rapid processing; multiple payment options; encryption &amp; verification; real-time reports; refunds; no complex software for merchants; CA-authenticated secure servers; bulk data collection; multiple host interfaces; simple admin control; customer &amp; merchant trust. <b>Challenges</b>: customer may lack account with supporting banks; limited banks; reliability, delivery, limited avenues, lack of trust</li>
+  </ul>
+
+  <h2><span class="n">2</span>Accounts, positions, quotes (SM)</h2>
+  <table class="small">
+    <tr><th style="width:24%">Term</th><th>SM meaning</th></tr>
+    <tr><td><b>Nostro</b></td><td>Bank's FC account kept in a foreign country in that country's currency — "<b>our account with you</b>"</td></tr>
+    <tr><td><b>Vostro</b></td><td>Account maintained by a foreign bank with a local bank — "<b>your account with us</b>"</td></tr>
+    <tr><td><b>Loro</b></td><td>Domestic bank uses the account of a <b>third-party bank</b> that holds a Nostro account, to settle forex transactions</td></tr>
+    <tr><td><b>Exchange position</b></td><td>Total purchase &amp; sale commitments of a bank, delivered or not</td></tr>
+    <tr><td><b>Cash position</b></td><td>Balance in Nostro account (credited for purchases, debited for sales). Everything affecting cash position affects exchange position — not vice versa</td></tr>
+    <tr><td>American / European term</td><td>American: US$ per unit of foreign currency · European: foreign currency per US$</td></tr>
+    <tr><td>Direct / indirect quote</td><td>Direct: home-currency price of 1 unit of foreign (₹48 / $) · Indirect: foreign-currency price of 1 unit of home ($0.0208 / ₹)</td></tr>
+    <tr><td>Bid / offer / spread</td><td>Bid = dealer buys; offer = dealer sells; spread = difference</td></tr>
+    <tr><td><b>Cross rate</b></td><td>Rate for a pair in which <b>neither</b> currency is the official currency of the country where quoted</td></tr>
+    <tr><td><b>Pip</b></td><td>Price Interest Point — smallest unit a quote can change</td></tr>
+    <tr><td><b>Merchant rates</b></td><td>Rates to customers (vs interbank rates). Post-liberalisation banks set own margins; FEDAI rule 5A.8: merchant settlements <b>rounded to nearest whole rupee</b>; "card rate" for small walk-in deals</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 10 · page 1 / 6</span><span>checked vs AFM SM Ch 10 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 10 · Forward rates, cross rates, parity</span><span class="tag">FORMULA CORE</span></div>
+  <h2><span class="n">3</span>Forward points &amp; broken period (SM)</h2>
+  <ul class="small">
+    <li>Forward rate is quoted as spot + <b>forward margin (points)</b>; user loads margin into spot. Points depend on interest rates &amp; length; the currency with the <b>lower interest rate is always at a premium</b></li>
+    <li><b>Premium</b> (direct quote): <b>added</b> to both buying &amp; selling rates · <b>Discount</b>: <b>deducted</b> from both. Points ascending (bid &lt; ask) → add; descending → subtract</li>
+    <li><b>Broken period</b>: forward points assumed to "grow" <b>uniformly</b> — interpolate proportionately</li>
+  </ul>
+  <table class="small">
+    <tr><th colspan="3">SM illustration — spot ₹66.2525 / 67.5945; 2-m points 70 / 90; 3-m 160 / 186; need 2 m 15 d (1 point = 0.0001)</th></tr>
+    <tr><td>Points for 15 days = (3-m − 2-m) ÷ 2</td><td>45</td><td>48</td></tr>
+    <tr><td>Points for 2 m 15 d</td><td>115</td><td>138</td></tr>
+    <tr><td>Forward rate</td><td><b>66.2640</b></td><td><b>67.6083</b></td></tr>
+    <tr><td>Annual premium on <b>average</b> rate = 0.0115 ÷ 66.2583 × 12/2.5</td><td><b>0.0833%</b></td><td>0.0980%</td></tr>
+  </table>
+  <p class="small">Annualised premium = (F − S) ÷ S × 12 ÷ months × 100; when the question says "on average rate", divide by (S + F) ÷ 2 as above.</p>
+
+  <h2><span class="n">4</span>Cross rates &amp; arbitrage</h2>
+  <ul class="small">
+    <li>Chain like-to-like: A/C bid = A/B bid × B/C bid; ask = ask × ask. Common base: divide bid by ask</li>
+    <li>SM: ₹/$ 62.22 and ¥/$ 102.34 → ₹/¥ = 62.22 ÷ 102.34 = <b>0.6080</b></li>
+    <li>Arbitrage test: buy via one route at ask, sell via the other at bid; gain only if buy-ask &lt; sell-bid</li>
+  </ul>
+
+  <h2><span class="n">5</span>Parity theories (SM)</h2>
+  <table class="small">
+    <tr><th style="width:14%">Theory</th><th style="width:40%">Formula</th><th>SM summary</th></tr>
+    <tr><td><b>IRP</b></td><td>F ÷ S = (1 + r<sub>D</sub>) ÷ (1 + r<sub>F</sub>)</td><td>Forward premium / discount = interest-rate differential; when IRP holds, <b>covered interest arbitrage</b> isn't feasible</td></tr>
+    <tr><td><b>PPP</b></td><td>E(S<sub>1</sub>) = S<sub>0</sub> × (1 + I<sub>d</sub>) ÷ (1 + I<sub>f</sub>)</td><td><b>Absolute</b> = law of one price; <b>relative</b> allows for imperfections (transport, tariffs, quotas)</td></tr>
+    <tr><td><b>IFE</b></td><td>Nominal rate = real return + expected inflation</td><td>High-interest currencies <b>depreciate</b> (high rates reflect expected inflation; also default risk)</td></tr>
+  </table>
+  <table class="small">
+    <tr><th>SM comparison</th><th>Key variables</th><th>Summary</th></tr>
+    <tr><td>IRP</td><td>Forward premium vs interest differential</td><td>Forward contains premium / discount set by interest differential</td></tr>
+    <tr><td>PPP</td><td>% change in spot vs inflation differential</td><td>Spot changes with inflation differential</td></tr>
+    <tr><td>IFE</td><td>% change in spot vs interest differential</td><td>Spot changes with interest differential</td></tr>
+  </table>
+  <p class="small">App-computed checks: IRP — S 83.50, r<sub>₹</sub> 7%, r<sub>$</sub> 5%, 6 m → F = 83.50 × 1.035 ÷ 1.025 = <b>84.3146</b>. PPP — 83.50, inflation 6% vs 3% → <b>85.932</b>.</p>
+
+  <div class="foot"><span>AFM Ch 10 · page 2 / 6</span><span>checked vs AFM SM Ch 10 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 10 · Forecasting, market, exposures</span><span class="tag">THEORY</span></div>
+  <h2><span class="n">6</span>Forecasting &amp; determination (SM)</h2>
+  <ul class="small">
+    <li>Needed for decisions on hedging, short-term financing &amp; investment, capital budgeting, earnings assessment, long-term financing</li>
+    <li><b>Techniques (4)</b>: <b>Technical</b> (historical data, time-series) · <b>Fundamental</b> (economic relationships — subjective, regression, sensitivity) · <b>Market-based</b> (current spot / forward rates reflect expectations) · <b>Mixed</b> (weighted average of forecasts)</li>
+    <li><b>Determinants</b>: major — <b>inflation</b> &amp; <b>interest</b> rates; others — deficit / surplus on capital / current account, central bank intervention, expectations (<b>band-wagon</b> effect), trade barriers, government controls</li>
+  </ul>
+
+  <h2><span class="n">7</span>Forex market &amp; exposures (SM)</h2>
+  <ul class="small">
+    <li>Market permits transfer of purchasing power between currencies. <b>Participants</b>: non-bank entities, banks, speculators, arbitrageurs, governments</li>
+  </ul>
+  <table class="small">
+    <tr><th style="width:18%">Exposure</th><th>SM meaning</th></tr>
+    <tr><td><b>Transaction</b></td><td>Effect of rate change on obligations existing <b>before</b> the change but settled <b>after</b> — cash flows from existing contracts</td></tr>
+    <tr><td><b>Translation</b></td><td>Need to translate foreign subsidiaries' FS into one reporting currency for consolidation (SM example: FC loan retranslated at year-end)</td></tr>
+    <tr><td><b>Economic</b></td><td>Extent the <b>economic value</b> of the firm can decline due to rate changes — alters input costs &amp; output prices → competitive position</td></tr>
+  </table>
+  <table class="small">
+    <tr><th>Economic exposure (SM table)</th><th>Local revaluation</th><th>Devaluation</th></tr>
+    <tr><td>Local sales vs foreign competition; exports (local or foreign currency); interest from foreign investments — <b>inflows</b></td><td>Decrease</td><td>Increase</td></tr>
+    <tr><td>Imports in foreign currency; interest on foreign debt — <b>outflows</b></td><td>Decrease</td><td>Increase</td></tr>
+    <tr><td>Imports denominated in local currency</td><td colspan="2">Remain the same</td></tr>
+  </table>
+  <div class="exam"><p><b>Transaction vs translation (May 2026, 2 marks):</b> transaction exposure affects actual cash flows on settlement of existing contracts, while translation exposure only restates FC items on consolidation without a cash flow — hence transaction exposure is more critical.</p></div>
+
+  <h2><span class="n">8</span>Internal hedging techniques (SM — 6)</h2>
+  <table class="small">
+    <tr><td style="width:26%"><b>Invoicing in domestic currency</b></td><td>Seller invoices in own / cost currency; buyer prefers own or stable currency</td></tr>
+    <tr><td><b>Asset &amp; liability management</b></td><td><b>Aggressive</b>: raise inflows in strong / outflows in weak currencies. <b>Defensive</b>: match inflows &amp; outflows by currency</td></tr>
+    <tr><td><b>Leading &amp; lagging</b></td><td>Leading = pay before due date; lagging = delay after due date</td></tr>
+    <tr><td><b>Netting</b></td><td>Group companies settle inter-affiliate balances for the net amount</td></tr>
+    <tr><td><b>Matching</b></td><td>Match FC inflows with FC outflows in amount &amp; timing</td></tr>
+    <tr><td><b>Price variation</b></td><td>Raise selling prices to counter adverse rate change</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 10 · page 3 / 6</span><span>checked vs AFM SM Ch 10 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 10 · External techniques</span><span class="tag">REPEAT R2</span></div>
+  <h2><span class="n">9</span>Money market hedge</h2>
+  <p class="small"><b>SM</b>: agreement to exchange a certain amount of one currency for a fixed amount of another at a particular date. <b>Advantages</b>: fixes future rate (no downside); flexible amount; usable where forwards aren't available. <b>Disadvantages</b>: more complicated than a forward; no benefit from favourable moves.</p>
+  <table class="small">
+    <tr><th style="width:50%">Receivable</th><th>Payable</th></tr>
+    <tr><td>1. Borrow FC = receivable ÷ (1 + FC borrowing rate × t)</td><td>1. Deposit FC = payable ÷ (1 + FC deposit rate × t)</td></tr>
+    <tr><td>2. Convert at <b>spot bid</b></td><td>2. Buy FC at <b>spot ask</b> (borrow home currency if needed)</td></tr>
+    <tr><td>3. Invest home currency at deposit rate</td><td>3. Cost = home borrowing × (1 + rate × t)</td></tr>
+    <tr><td>4. Receivable repays FC loan; compare with forward</td><td>4. FC deposit pays supplier; compare with forward</td></tr>
+  </table>
+  <p class="small">App-computed: receivable USD 1,00,000 in 6 m, USD borrowing 5% p.a., spot bid 83.40, ₹ deposit 7% → borrow USD 97,560.98 → ₹81,36,585 → ₹<b>84,21,366</b> at 6 m.</p>
+
+  <h2><span class="n">10</span>Forward vs futures (SM currency table)</h2>
+  <table class="small">
+    <tr><th style="width:22%">Feature</th><th>Forward</th><th>Futures</th></tr>
+    <tr><td>Amount</td><td>Flexible</td><td>Standard</td></tr>
+    <tr><td>Maturity</td><td>Any agreed business date</td><td>Standard date</td></tr>
+    <tr><td>Furthest maturity</td><td>Open</td><td>12 months forward</td></tr>
+    <tr><td>Currencies</td><td>All</td><td>Majors</td></tr>
+    <tr><td>Cross rates</td><td>One contract</td><td>Usually two contracts</td></tr>
+    <tr><td>Market-place</td><td>Global network</td><td>Futures exchanges</td></tr>
+    <tr><td>Price fluctuation</td><td>No daily limit</td><td>Daily limit by exchange</td></tr>
+    <tr><td>Risk</td><td>Counterparty</td><td>Minimal (margins)</td></tr>
+    <tr><td>Honouring</td><td>Delivery</td><td>Mostly reverse transaction</td></tr>
+    <tr><td>Cash flow</td><td>None till maturity</td><td>Initial + variation margin</td></tr>
+    <tr><td>Trading hours</td><td>24 hours</td><td>4–8 hour sessions</td></tr>
+  </table>
+
+  <h2><span class="n">11</span>Options vs futures (SM)</h2>
+  <ul class="small">
+    <li>Only the <b>writer</b> is obliged (options) vs both parties (futures) · premium paid by buyer vs no premium · option buyer's loss restricted, gain unlimited vs unlimited both ways for futures · American option exercisable any time vs futures honoured on the specified date</li>
+    <li><b>Call</b> = right to buy FC at a fixed price on / up to a date (importer); <b>put</b> = right to sell (exporter)</li>
+  </ul>
+
+  <div class="foot"><span>AFM Ch 10 · page 4 / 6</span><span>checked vs AFM SM Ch 10 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 5 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 10 · Fate of forward contracts (FEDAI)</span><span class="tag">REPEAT R14 · MCQ FAVOURITE</span></div>
+  <h2><span class="n">12</span>Delivery · Cancellation · Extension (SM)</h2>
+  <table class="small">
+    <tr><th style="width:22%">Event</th><th>SM treatment</th></tr>
+    <tr><td><b>Delivery on due date</b></td><td>At originally agreed rate, irrespective of spot</td></tr>
+    <tr><td><b>Early delivery</b></td><td>Bank may accept if customer bears the bank's loss: fixed charges + <b>swap difference</b> (loss / gain from offsetting bank's cover) + <b>interest on outlay of funds</b> at not less than <b>prime lending rate</b> (if inflow, bank may pass interest at term-deposit rate)</td></tr>
+    <tr><td>Late delivery</td><td>Current rate on delivery date — after applying automatic-cancellation provisions</td></tr>
+    <tr><td><b>Cancellation on due date</b></td><td>Flat charges + difference between contracted rate and cancellation rate (<b>reverse</b> of original) charged / paid</td></tr>
+    <tr><td><b>Early cancellation</b></td><td>At the <b>opposite</b> rate of the original contract for the date that matches the original maturity (forward rate)</td></tr>
+    <tr><td>Late cancellation</td><td>Automatic-cancellation provisions apply first</td></tr>
+    <tr><td><b>Extension on due date</b></td><td>Cancel at spot (as above) and rebook at forward rate for the new period</td></tr>
+    <tr><td><b>Extension before due date</b></td><td>Cancel at relevant forward rate and rebook at current forward rate</td></tr>
+    <tr><td><b>Automatic cancellation</b></td><td><b>FEDAI Rule 6</b>: overdue contract without instructions on / before due date is automatically cancelled <b>within 3 working days after maturity</b>; customer pays the exchange difference but is <b>not entitled to any profit</b></td></tr>
+  </table>
+  <p class="small"><b>SM Illustration 4</b> (early delivery, exporter): contract sell US$1,00,000 at 65.40 for 31 Dec; delivered 30 Nov. Bank sells spot 65.22, buys 1-m forward 65.27 + 0.15 = 65.42 → swap loss 0.20 × 1,00,000 = <b>₹20,000</b>; interest on outlay 0.18 × 1,00,000 × 18% × 31/365 = <b>₹275</b> → net inflow = 65,40,000 − 20,275 = <b>₹65,19,725</b>.</p>
+  <div class="trap"><p>Cancellation = the bank's <b>reverse action</b>: customer's purchase contract → bank buys back (TT buying); sale contract → bank sells (TT selling). On automatic cancellation the customer bears losses but never gets gains.</p></div>
+
+  <h2><span class="n">13</span>NDF &amp; rollover (SM)</h2>
+  <ul class="small">
+    <li><b>Non-deliverable forward</b>: cash-settled, short-term forward on a thinly traded / non-convertible currency; P/L = (agreed rate − spot at settlement) × notional</li>
+    <li><b>Rollover</b> = spot cancellation + new contract for a later date. <b>Reasons</b>: non-receipt of FC from client (exporter); shortage of local currency (importer); non-agreement of payment with clients; non-availability of longer-period forwards</li>
+  </ul>
+
+  <h2><span class="n">14</span>Swaps (SM)</h2>
+  <ul class="small">
+    <li><b>Currency swap</b>: spot exchange of principal → continuing exchange of interest → re-exchange of principal on maturity. <b>Benefits</b>: considerable cost savings; access currencies that would otherwise command a high premium; diversification of borrowings; treasurers can hedge currency risk</li>
+    <li><b>Commodity swap</b>: series of futures-type settlements on a notional amount at predetermined prices / indices — mainly to hedge <b>oil price</b> risk</li>
+    <li><b>Equity swap</b>: total return on equity / index (dividend + capital) exchanged for fixed or floating interest</li>
+  </ul>
+
+  <div class="foot"><span>AFM Ch 10 · page 5 / 6</span><span>checked vs AFM SM Ch 10 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 6 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 10 · Products, strategies, correlation</span><span class="tag">THEORY + METHOD</span></div>
+  <h2><span class="n">15</span>Popular derivative products (SM)</h2>
+  <table class="small">
+    <tr><td style="width:26%"><b>Forward importer</b></td><td>Counterparty <b>buys</b> notional USD against INR at forward rate</td></tr>
+    <tr><td><b>Forward exporter</b></td><td>Counterparty <b>sells</b> notional USD against INR at forward rate</td></tr>
+    <tr><td><b>FX call option</b></td><td>Counterparty (generally importer) has <b>right to buy</b> USD at strike</td></tr>
+    <tr><td><b>FX put option</b></td><td>Counterparty (generally exporter) has <b>right to sell</b> USD at strike</td></tr>
+    <tr><td><b>IRS USD floating to fixed</b></td><td>One party pays fixed, other floating (reset periodically) in the same currency on a notional (constant / amortising / accreting)</td></tr>
+  </table>
+
+  <h2><span class="n">16</span>Strategies for exposure management (SM — 4)</h2>
+  <table class="small">
+    <tr><td style="width:30%"><b>Low risk : low reward</b></td><td><b>Automatic hedging</b> in forward market as soon as exposure arises</td></tr>
+    <tr><td><b>Low risk : reasonable reward</b></td><td><b>Selective hedging</b> — hedge when forward rates attractive, keep open otherwise</td></tr>
+    <tr><td><b>High risk : low reward</b></td><td>Leave all exposures <b>unhedged</b> — perhaps the worst</td></tr>
+    <tr><td><b>High risk : high reward</b></td><td><b>Active trading</b> — continuous cancellations &amp; re-bookings of forwards</td></tr>
+  </table>
+  <p class="small">Choice depends on attitude to risk, financial strength, nature of business, vulnerability to adverse movements — no single strategy suits all.</p>
+
+  <h2><span class="n">17</span>Exam method</h2>
+  <ul class="small">
+    <li>Identify home currency, receivable / payable; exporter uses <b>bid</b>, importer <b>ask</b>; compare forward / MMH / futures / options / unhedged and <b>recommend</b></li>
+  </ul>
+
+  <h2><span class="n">18</span>Correlation — how Ch 10 actually connects</h2>
+  <table class="small">
+    <tr><th style="width:25%">Ch 10 idea</th><th>The actual link (app-written cross-reference; the Ch 10 side is SM)</th></tr>
+    <tr><td>Interest rate parity</td><td><b>Ch 9</b>: same no-arbitrage logic as cost of carry. Forward premium/discount % ≈ interest differential; if not → covered interest arbitrage (borrow cheap currency, convert spot, invest, cover forward).</td></tr>
+    <tr><td>Money market hedge</td><td><b>Ch 5</b>: uses money-market borrowing / deposit rates for the exposure period — simple interest, days ÷ 360 or 365 exactly as the question states.</td></tr>
+    <tr><td>PPP / forecasting</td><td><b>Ch 11</b>: foreign project cash flows are converted at forecast rates (PPP / IRP); or discount in foreign currency at foreign rate and convert at spot — same answer only if parity holds.</td></tr>
+    <tr><td>Currency options / futures</td><td><b>Ch 9</b>: identical payoff and margin / MTM mechanics; the 11-row forward vs futures table applies to both chapters.</td></tr>
+    <tr><td>Currency swaps</td><td><b>Ch 12</b>: same comparative-advantage logic as interest rate swaps — each party borrows where it is relatively cheaper and swaps.</td></tr>
+    <tr><td>Translation of exposure</td><td><b>FR Ind AS 21</b>: monetary items at closing rate, difference to P&amp;L; <b>Ind AS 109</b>: forward contract is a derivative at fair value.</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 10 · page 6 / 6</span><span>checked vs AFM SM Ch 10 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+</body></html>

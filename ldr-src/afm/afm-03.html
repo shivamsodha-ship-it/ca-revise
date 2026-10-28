@@ -1,0 +1,170 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 3 LDR</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>CA Final · AFM · Last-Day Revision · SM Ch 3</span><span class="tag">#12 · 3.4% of marks</span></div>
+  <h1><span class="u">Ch 3</span> — Advanced Capital Budgeting Decisions</h1>
+  <div class="sub">SM TYK theory Qs: <b>certainty equivalent approach</b> · <b>sensitivity analysis</b> · <b>project appraisal under inflation</b> · <b>steps in simulation analysis</b>. Numericals: inflation NPV, ENPV / σ / CV, RADR, CE, sensitivity, scenario, decision tree, replacement cycle (EAC), APV.</div>
+
+  <h2><span class="n">1</span>Current trends — factors (SM 1)</h2>
+  <p class="small">Intermediate assumed certain cash flows; in practice projects face (i) <b>inflation</b> (ii) <b>change in technology</b> (iii) <b>change in government policies</b>.</p>
+
+  <h2><span class="n">2</span>Inflation in capital budgeting (SM 1.1) — TYK Q3</h2>
+  <ul class="small">
+    <li>Inflation raises revenues and costs; net revenues after adjusting for inflation = net revenues in current terms. Two distortions:</li>
+    <li><b>(1) Depreciation on historical cost</b>: after-tax CF = (R − C)(1 − T) + DT — (R − C)(1 − T) moves with inflation, <b>DT does not</b> → inflation <b>reduces the real rate of return</b>. SM eg: ₹80,000, 4 yrs, revenue 60,000, costs 20,000, tax 50% → CF 30,000 p.a.; with 10% inflation nominal CF 32,000 → 39,282 but <b>real</b> CF 29,091 → 26,830 (falls)</li>
+    <li><b>(2) Cost of capital contains an inflation premium</b>: <b>R<sub>N</sub> = R<sub>R</sub> + P</b> (SM's formula). If the rate has an inflation premium, reflect inflation in cash flows; no inflation → discount at the real rate</li>
+  </ul>
+  <div class="box small">
+    <p><b>Illus 1</b>: outlay 40,000, real CF 15,000 × 4 yrs, cost of capital 12% incl. 10% inflation premium. Discounting real CF at 12% is <b>inconsistent</b>. Either (i) nominal CF = 15,000 × 1.10<sup>t</sup> at 12% → NPV <b>₹17,369</b>, or (ii) real rate = 1.12 ÷ 1.10 − 1 = <b>1.8%</b> on real CF → <b>₹17,367</b> — same answer.</p>
+    <p><b>Different inflation for revenue and cost</b>: NPV = Σ [{R<sub>t</sub> Π(1 + i<sub>r</sub>) − C<sub>t</sub> Π(1 + i<sub>c</sub>)}(1 − T) + D<sub>t</sub>T] ÷ (1 + k)<sup>t</sup> − I<sub>0</sub>. <b>Illus 2</b>: ₹8 lakh, revenue inflation 10/9/8/7%, cost 12/10/9/8% (compounded), tax 60%, dep 2 lakh (shield 1.2 lakh, not inflated), k 10% → NPV <b>₹1,06,744</b>.</p>
+  </div>
+  <div class="trap"><p>Inflate cumulatively: year-3 revenue = R × 1.10 × 1.09 × 1.08. The depreciation tax shield is <b>never</b> inflated.</p></div>
+
+  <h2><span class="n">3</span>Technology change (SM 1.2)</h2>
+  <p class="small"><b>Why analyse</b>: alters production process · benefits (quality, delivery, flexibility) · may lower cost of capital · better cash inflows · may need extra capex · shorter product life cycle. <b>How</b>: (1) at decision time use sensitivity / scenario / simulation (2) after launch, revise estimates (3) if unviable, evaluate <b>abandonment</b> (4) adjust the discount rate. Review continuously.</p>
+
+  <div class="foot"><span>AFM Ch 3 · page 1 / 5</span><span>checked vs AFM SM Ch 3 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 3 · Government policy, risk, factors</span><span class="tag">THEORY</span></div>
+  <h2><span class="n">4</span>Government policies (SM 1.3)</h2>
+  <ul class="small">
+    <li>Affect the firm directly or via suppliers, buyers, service providers; positive or negative; revise estimates, consider abandonment. Some change rarely (New Industrial Policy 1991), others within a year: <b>fiscal policy</b> (spending, taxation, borrowing) and <b>monetary policy</b> (OMO, reserve requirements, selective credit control, currency supply, repo; MPC meets at least <b>4 times a year</b>)</li>
+    <li><b>Domestic</b>: (a) interest-rate changes affect cost of debt / YTM — little effect on long-term-funded capex but big on <b>working capital</b> (overdraft); small changes ignored, ~<b>100 bps</b> calls for revision (b) fiscal policy changes tax and depreciation rates → revise cash flows</li>
+    <li><b>International</b>: (a) bank rate and money supply move exchange rates (b) tax on foreign income / <b>DTAA</b> changes</li>
+  </ul>
+
+  <h2><span class="n">5</span>Risk in investment decisions (SM 2)</h2>
+  <ul class="small">
+    <li>Decisions under (i) <b>certainty</b> (ii) <b>risk</b> — probabilities can be assigned (iii) <b>uncertainty</b> — they can't</li>
+    <li><b>Risk</b> = variability of actual vs estimated returns; measured by σ and CV. Risk: distribution known; uncertainty: not known (terms used interchangeably)</li>
+    <li><b>Why adjust for risk</b>: (1) opportunity cost — are returns proportionate to risk vs other options? (2) to know the real value of inflows — higher risk, higher premium and return</li>
+  </ul>
+
+  <h2><span class="n">6</span>Internal &amp; external risk factors (SM 3)</h2>
+  <table class="small">
+    <tr><th style="width:22%">Factor</th><th>SM meaning &amp; example</th></tr>
+    <tr><td><b>Project-specific</b> (internal)</td><td>Timely completion, estimation errors in resources &amp; cash flows — nuclear vs hydel project</td></tr>
+    <tr><td><b>Company-specific</b> (internal)</td><td>Rating downgrade, KMP changes, IPR / legal violations, labour disputes — two banks with different default exposure</td></tr>
+    <tr><td><b>Industry-specific</b></td><td>Regulatory restrictions, technology — leather, breweries</td></tr>
+    <tr><td><b>Market</b></td><td>Substitutes, demand, access to resources — coal supply to a thermal plant</td></tr>
+    <tr><td><b>Competition</b></td><td>Rival entry, product dynamism, change in tastes</td></tr>
+    <tr><td><b>Economic conditions</b></td><td>Monetary &amp; fiscal changes (new taxes, cess), inflation, GDP, savings, disposable income</td></tr>
+    <tr><td><b>International</b></td><td>Trade / market-access restrictions, recession, bilateral agreements, political &amp; geographical — limits on outsourcing jobs abroad</td></tr>
+  </table>
+
+  <h2><span class="n">7</span>Techniques of risk analysis (SM 4)</h2>
+  <div class="cols3">
+    <div class="box small"><h3>Statistical</h3><p>Probability · variance / σ · coefficient of variation</p></div>
+    <div class="box small"><h3>Conventional</h3><p>Risk-adjusted discount rate · certainty equivalent</p></div>
+    <div class="box small"><h3>Others</h3><p>Sensitivity · scenario · simulation · decision tree</p></div>
+  </div>
+
+  <div class="foot"><span>AFM Ch 3 · page 2 / 5</span><span>checked vs AFM SM Ch 3 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 3 · Statistical &amp; conventional techniques</span><span class="tag">TYK THEORY Q1</span></div>
+  <h2><span class="n">8</span>Statistical techniques (SM 4.1)</h2>
+  <div class="box small">
+    <p><b>ENCF</b> = Σ NCF<sub>i</sub> × P<sub>i</sub> · <b>ENPV</b> = Σ ENCF<sub>t</sub> ÷ (1 + k)<sup>t</sup> (incl. outflows) · <b>σ</b> = √Σ P<sub>i</sub>(NCF<sub>i</sub> − ENCF)² · <b>CV = σ ÷ expected return / cash flow</b></p>
+    <p>CV = risk per unit of expected return — compare projects of different size; <b>lower CV preferred</b>. SM eg: 3,00,000 × 0.3 + 2,00,000 × 0.6 + 1,20,000 × 0.1 = <b>₹2,22,000</b>.</p>
+  </div>
+
+  <h2><span class="n">9</span>Risk-adjusted discount rate (SM 4.2.1)</h2>
+  <ul class="small">
+    <li>Investors demand more from risky projects: rate = compensation for delaying consumption + inflation (= <b>risk-free</b>) + <b>risk premium</b> (depends on perceived risk &amp; risk aversion). <b>RADR = R<sub>f</sub> + risk premium</b></li>
+    <li><b>Illus 7</b>: ₹100 lakh, CF 25/60/75/80/65 → at 7% NPV <b>144.34</b>; at RADR 14% NPV <b>99.79</b></li>
+    <li><b>Advantages</b>: (1) easy to understand (2) builds the premium into the discount rate. <b>Limitations</b>: (1) hard to find the premium / RADR (2) NPV yes, but <b>σ of the project can't be computed</b></li>
+  </ul>
+
+  <h2><span class="n">10</span>Certainty equivalent (SM 4.2.2) — TYK Q1</h2>
+  <div class="box small"><p><b>CIMA</b>: expressing risky future cash flows as the certain cash flow the decision-maker would consider equivalent — <b>indifferent</b> between the risky amount and the (lower) riskless amount. Lets the decision-maker build in his <b>utility function</b>; a set of riskless cash flows replaces the original.</p></div>
+  <ol class="small">
+    <li><b>Step 1</b>: α<sub>t</sub> = certain CF ÷ risky (expected) CF; multiply each CF by α<sub>t</sub>. Coin toss: win ₹10,000 or nothing; indifferent at ₹3,000 certain → <b>CE ₹3,000, α = 0.3</b></li>
+    <li><b>Step 2</b>: discount at the <b>risk-free rate</b> — cost of capital would <b>double-count</b> risk</li>
+    <li><b>Step 3</b>: normal capital budgeting; for <b>IRR compare with risk-free rate</b>, not the required return</li>
+  </ol>
+  <p class="small">α between 0 and 1; α = 1 → certain or risk-neutral; industry usually risk-averse. <b>NPV = Σ α<sub>t</sub> NCF<sub>t</sub> ÷ (1 + k<sub>f</sub>)<sup>t</sup> − I</b>. <b>Illus 8</b>: ₹45 lakh; 10/15/20/25 lakh × 0.90/0.85/0.82/0.78 at 5% → <b>₹5,34,570</b>.</p>
+  <div class="cols">
+    <div class="box small"><h3>Advantages</h3><p>(1) simple to understand and apply (2) easily set for different risk levels in different years</p></div>
+    <div class="box small"><h3>Disadvantages</h3><p>(1) no objective / mathematical way to estimate — subjective (2) reflects <b>management's</b> risk perception, ignores <b>shareholders'</b> → rarely used</p></div>
+  </div>
+  <p class="small"><b>RADR vs CE</b>: CE is <b>superior</b> — it doesn't assume risk grows with time at a constant rate (each year's α fits its risk). But RADR is preferred in practice — easier to adjust a rate than specify a series of α.</p>
+
+  <div class="foot"><span>AFM Ch 3 · page 3 / 5</span><span>checked vs AFM SM Ch 3 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 3 · Sensitivity, scenario, simulation, decision tree</span><span class="tag">TYK THEORY Q2 &amp; Q4</span></div>
+  <h2><span class="n">11</span>Sensitivity analysis (SM 4.3.1) — TYK Q2</h2>
+  <ul class="small">
+    <li><b>CIMA</b>: modelling and risk-assessment procedure in which changes are made to significant variables to find their effect on the planned outcome; special attention to variables of special significance</li>
+    <li>Change <b>one variable at a time</b>; the more sensitive the NPV (IRR), the more <b>critical</b> the variable. <b>Steps</b>: (1) find variables influencing NPV / IRR (2) establish mathematical relationships (3) analyse effect of change in each</li>
+    <li>SM Illus 9: 2.5% adverse change in each variable → <b>selling price</b> has the maximum effect (NPV −24.82%)</li>
+    <li><b>Advantages</b>: (1) identifies <b>critical issues</b> (2) <b>simple</b>. <b>Disadvantages</b>: (1) assumes variables are <b>independent</b> (2) <b>ignores probability</b> of changes</li>
+  </ul>
+
+  <h2><span class="n">12</span>Scenario analysis (SM 4.3.2)</h2>
+  <p class="small">Extends sensitivity: brings in <b>probabilities</b> and changes <b>several variables at once</b>. Base (most likely) case → worst case (low sales &amp; price, high variable cost) → best case; or mixed. Variability of outcomes across scenarios (eg boom / normal / recession) measures risk. <b>More complex</b> than sensitivity — all inputs change simultaneously.</p>
+
+  <h2><span class="n">13</span>Simulation — Monte Carlo (SM 4.3.3) — TYK Q4</h2>
+  <p class="small">Exact replica of the actual situation via a model; infinite calculations for possible outcomes and probabilities; ties together sensitivities and probability distributions; named after casino gambling (from first nuclear-bomb work); gives a <b>probability distribution of NPV</b>, not a point estimate.</p>
+  <ol class="small">
+    <li><b>Model the project</b> — NPV vs <b>parameters</b> (set by decision-maker, constant across runs) and <b>exogenous variables</b> (stochastic, outside control)</li>
+    <li>Specify parameter values and probability distributions of exogenous variables</li>
+    <li>Select a value <b>at random</b> from each exogenous distribution</li>
+    <li>Compute NPV for those values</li>
+    <li><b>Repeat</b> 3 &amp; 4 many times</li>
+    <li>Plot the NPV distribution; compute <b>mean and σ</b></li>
+  </ol>
+  <div class="cols">
+    <div class="box small"><h3>Advantages — "strength lies in variability"</h3><p>(1) predict bad market situations beforehand (2) handles many exogenous variables with any distribution, complex inter-relationships beyond analytical methods, forces explicit consideration of inter-dependencies</p></div>
+    <div class="box small"><h3>Shortcomings (4)</h3><p>(1) hard to model and specify distributions (2) inherently <b>imprecise</b> — misleading when a tail matters (3) built by experts, decision-maker may not understand / use it (4) NPV at <b>risk-free</b> rate (to avoid pre-judging risk) → hard to interpret</p></div>
+  </div>
+
+  <h2><span class="n">14</span>Decision tree (SM 4.3.4)</h2>
+  <ul class="small">
+    <li>Graphic display of the link between a present decision and future events, decisions and consequences — for <b>sequential</b> decisions. <b>Decision</b> (manager controls; acts rationally) vs <b>event</b> (no control; assign probabilities)</li>
+    <li><b>Steps</b>: (1) define investment (launch local / national / international; extend factory vs outsource; dig for oil) (2) identify alternatives (3) draw the tree (4) evaluate — from the <b>last decision (right) backwards</b>; at each decision point keep highest NPV, truncate others; compute expected NPV at chance points</li>
+    <li>Rules: decision node = <b>rectangle</b>; chance node = <b>circle</b>; alternatives as straight lines; drawn <b>left to right</b>; number nodes; add values &amp; probabilities</li>
+  </ul>
+
+  <div class="foot"><span>AFM Ch 3 · page 4 / 5</span><span>checked vs AFM SM Ch 3 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 5 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 3 · Replacement, APV, correlation</span><span class="tag">NUMERICAL + LINKS</span></div>
+  <h2><span class="n">15</span>Replacement decisions (SM 5)</h2>
+  <ul class="small">
+    <li><b>Replace existing machine</b> (newer version or a different machine with the same function), mostly to maintain existing levels of operation. Method (app-written): incremental NPV — cost of new less sale of old, change in operating cash flows and depreciation tax shield, terminal values</li>
+    <li><b>Optimum replacement cycle</b> (continuous replacement): NPVs of different cycle lengths aren't comparable → <b>EAC = PV of costs ÷ PVAF for the cycle</b>; choose the <b>lowest EAC</b>. SM taxi: EAC 1 yr 3,40,044 · 2 yr <b>3,15,331</b> · 3 yr 3,17,639 → replace every <b>2 years</b>. ICAI MTP machine: 4-year cycle lowest at ₹58,656</li>
+  </ul>
+
+  <h2><span class="n">16</span>Adjusted Present Value (SM 6)</h2>
+  <div class="box"><p><b>APV = Base-case NPV + PV of tax benefit on interest</b>. Base case at the <b>unlevered</b> cost of equity (all-equity firm; unlevered K<sub>e</sub> from Ch 13). <b>Separates investment and financing decisions</b>; credits the project for the debt used to finance it.</p></div>
+
+  <h2><span class="n">17</span>Correlation — how Ch 3 actually connects</h2>
+  <table class="small">
+    <tr><th style="width:24%">Ch 3 idea</th><th>The actual link (app-written cross-reference; the Ch 3 side is SM)</th></tr>
+    <tr><td>Real vs nominal (1.12 ÷ 1.10 − 1)</td><td><b>Ch 5</b>: equity is valued on <b>nominal</b> CF at nominal rates; <b>Ch 11</b>: PPP uses the same inflation ratio to forecast exchange rates.</td></tr>
+    <tr><td>RADR = R<sub>f</sub> + premium</td><td><b>Ch 6</b>: CAPM gives the premium objectively — β(R<sub>m</sub> − R<sub>f</sub>); <b>Ch 11</b>: SM says don't load political / FX risk into the rate — use certainty equivalents.</td></tr>
+    <tr><td>Certainty equivalent at R<sub>f</sub></td><td><b>Ch 9</b>: risk-neutral valuation also discounts at R<sub>f</sub> after adjusting the cash flows / probabilities — same "adjust numerator, not denominator" logic.</td></tr>
+    <tr><td>σ and CV of NPV</td><td><b>Ch 6</b>: σ and CV of returns; <b>Ch 2</b>: σ × Z = VaR.</td></tr>
+    <tr><td>Abandonment, decision tree</td><td><b>Ch 9</b>: real options (abandon, expand, wait) give value that static NPV misses; decision trees value them.</td></tr>
+    <tr><td>APV</td><td><b>Ch 11</b>: SM's APV for foreign projects adds interest subsidies; <b>Ch 13</b>: unlevered K<sub>e</sub> via asset beta.</td></tr>
+    <tr><td>Replacement cycle / EAC</td><td><b>FM</b>: EAC from Intermediate; equal-life comparison logic as in lease vs buy.</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 3 · page 5 / 5</span><span>checked vs AFM SM Ch 3 · AFM LDR — Ss</span></div>
+</section>
+
+</body></html>

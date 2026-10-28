@@ -1,0 +1,152 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 12 LDR</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>CA Final · AFM · Last-Day Revision · SM Ch 12</span><span class="tag">#8 · 5.9% of marks</span></div>
+  <h1><span class="u">Ch 12</span> — Interest Rate Risk Management</h1>
+  <div class="sub">Numerical every attempt, different tool each time: FRA (Sep 2025), cap &amp; floor (Jan 2026), gap / Earnings at Risk + zero-cost collar (May 2026). SM TYK theory Qs: <b>Forward Rate Agreements</b> · <b>swaptions and their uses</b>.</div>
+
+  <h2><span class="n">1</span>Interest rates &amp; benchmarks (SM 1–2)</h2>
+  <ul class="small">
+    <li>Interest = cost of borrowing + compensation for service and <b>risk</b> of lending (default) + protection against <b>inflation</b>. <b>Factors</b> (macro): (a) demand / supply of money (b) inflation (c) government — biggest borrower; RBI via note issue / <b>OMO</b> changes CRR, SLR, bank rate</li>
+    <li><b>Benchmark (reference) rate</b>: basis for other rates — loans, overdrafts, mortgages, forwards, futures, options and especially <b>swaps</b>; floating loans = benchmark + bps by credit rating; decided by an independent body; also used to value bonds</li>
+    <li><b>LIBOR</b>: manipulation news 2012 → decided 2017 to end → from <b>1 Jan 2022</b> use <b>Alternative Reference Rates (ARRs)</b>. ARRs differ: (i) based on <b>actual overnight transactions</b> (secured or unsecured), LIBOR unsecured and relied on panel banks' judgment (ii) <b>near risk-free, no term premium</b></li>
+  </ul>
+  <table class="small">
+    <tr><th>Region</th><th>ARR</th><th>Regulator</th><th>Nature</th></tr>
+    <tr><td>USA</td><td><b>SOFR</b> — Secured Overnight Financing Rate</td><td>Federal Reserve Bank of New York</td><td>Secured</td></tr>
+    <tr><td>UK</td><td><b>SONIA</b> — Sterling Overnight Index Average</td><td>Bank of England</td><td>Unsecured</td></tr>
+    <tr><td>Europe</td><td><b>€STER</b> — Euro Short-Term Rate</td><td>European Central Bank</td><td>Unsecured</td></tr>
+    <tr><td>Japan</td><td><b>TONAR</b> — Tokyo Overnight Average Rate</td><td>Bank of Japan</td><td>Unsecured</td></tr>
+    <tr><td>Switzerland</td><td><b>SARON</b> — Swiss Average Rate Overnight</td><td>SIX Swiss Exchange</td><td>Secured</td></tr>
+  </table>
+  <p class="small"><b>India</b>: repo, PLR, MCLR, but most common are <b>MIBOR</b> (rate bank charges a borrower) and <b>MIBID</b> (rate at which bank would borrow from another bank) — used in IRS, FRA, floating-rate debentures.</p>
+  <div class="sticky">Secured ARRs = <b>S</b>OFR and <b>S</b>ARON (both start with S). The other three are unsecured.</div>
+
+  <h2><span class="n">2</span>Interest rate risk (SM 3)</h2>
+  <p class="small">Change in bond prices from rate changes + impact on interest income → <b>price and reinvestment</b> risks both matter.</p>
+
+  <div class="foot"><span>AFM Ch 12 · page 1 / 5</span><span>checked vs AFM SM Ch 12 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 12 · Types &amp; measurement of interest rate risk</span><span class="tag">THEORY + GAP NUMERICAL</span></div>
+  <h2><span class="n">3</span>Types of interest rate risk (SM 3.1)</h2>
+  <table class="small">
+    <tr><th style="width:20%">Type</th><th>SM meaning</th></tr>
+    <tr><td><b>Gap / mismatch</b></td><td>Assets, liabilities, off-BS items with different principal, maturity or <b>re-pricing dates</b>. <b>Positive gap</b> = RSA &gt; RSL → rate <b>rise raises NII</b>. <b>Negative gap</b> = RSL &gt; RSA → NII rises when rates <b>fall</b>. <b>Earnings at Risk (EaR) = gap × assumed rate change</b>; bank fixes an EaR limit (based on last / current income) and a trigger for on- / off-BS hedging.</td></tr>
+    <tr><td><b>Basis</b></td><td>Rates on different assets / liabilities change by different magnitudes (eg assets fixed, liabilities floating); high for banks funding composite assets from composite liabilities; NII expands = favourable basis shift</td></tr>
+    <tr><td><b>Embedded option</b></td><td>Prepayment of loans, call / put on bonds, premature withdrawal of deposits; faster and bigger rate moves → bigger risk; adjust gap statements, charge penalties based on opportunity cost</td></tr>
+    <tr><td><b>Yield curve</b></td><td>Yield-curve movements over business cycles affect portfolio values and income</td></tr>
+    <tr><td><b>Price</b></td><td>Assets sold before maturity; prices and yields inverse; tied to <b>trading book</b> → limit size, holding period, duration, defeasance period, stop-loss, MTM</td></tr>
+    <tr><td><b>Reinvestment</b></td><td>Uncertainty about rate at which future cash flows can be reinvested; mismatches vary NII</td></tr>
+  </table>
+  <div class="box small"><h3>Gap report — 5 limitations (SM)</h3><p>(1) only timing difference of re-pricing; ignores <b>basis and embedded option</b> risk (2) assumes all items in a time band re-price together; ignores effect on <b>economic / market value</b> (3) ignores timing differences in payments caused by rate changes (4) assumes <b>parallel shift</b> of yield curve — seldom happens (5) ignores variability in <b>non-interest</b> revenue &amp; expenses</p></div>
+
+  <h2><span class="n">4</span>Measuring interest rate risk (SM 3.2)</h2>
+  <ul class="small">
+    <li>Must identify and quantify first; system should cover gap, basis, embedded option, yield curve, price, reinvestment and net interest position risks</li>
+    <li>Techniques: <b>maturity gap analysis</b> (sensitivity of <b>earnings</b>) · <b>duration</b> (sensitivity of <b>capital</b>) · <b>simulation</b> · <b>VaR</b> — often used in combination / hybrid</li>
+  </ul>
+  <p class="small"><b>May 2026 Q5(b)</b> (ICAI): re-pricing gap = RSA − RSL (negative); EaR = gap × rate change × ¼ (quarter) vs limit of 8% of NII → hedge if EaR exceeds the limit. Rates up hurts a negative gap; rates down helps.</p>
+
+  <div class="foot"><span>AFM Ch 12 · page 2 / 5</span><span>checked vs AFM SM Ch 12 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 12 · Hedging — ALM, FRA, interest rate futures</span><span class="tag">TYK THEORY Q1</span></div>
+  <h2><span class="n">5</span>Hedging methods (SM 4)</h2>
+  <p class="small"><b>Traditional</b>: (i) Asset Liability Management (ALM) (ii) Forward Rate Agreement (FRA). <b>Modern</b>: (i) Interest Rate Futures (ii) Interest Rate Options (iii) Interest Rate Swaps (+ swaptions).</p>
+
+  <h2><span class="n">6</span>ALM (SM 4.1.1)</h2>
+  <p class="small">Evolved by <b>RBI</b>; introduced in Indian banks w.e.f. <b>1 April 1999</b>. Comprehensive, dynamic framework to measure, monitor and manage <b>liquidity, interest rate, forex, equity and commodity price</b> risks, integrated with business strategy; structure the balance sheet so <b>net interest earnings are maximised</b> within risk preference. Extends to liquidity, market and trading risk, funding &amp; capital planning, profit planning, growth projection. First step in long-term strategic planning — an <b>intermediate-term planning</b> function.</p>
+
+  <h2><span class="n">7</span>Forward Rate Agreement (SM 4.1.2) — TYK Q1</h2>
+  <ul class="small">
+    <li>Borrower / lender protects against adverse rate changes; <b>OTC</b> (not exchange-traded); used by banks to fix cost of future deposits / revenue of variable loans indexed to SOFR, €STER, MIBOR</li>
+    <li><b>Off-balance-sheet</b>; <b>no transfer of principal</b> (notional); <b>cash-settled</b> for the difference</li>
+    <li>RR &gt; FR → <b>seller pays buyer</b> (buyer = borrower protected); RR &lt; FR → buyer pays seller</li>
+    <li>Settled at the <b>start</b> of the period → difference <b>discounted at the actual (RR) rate</b></li>
+  </ul>
+  <div class="box"><p><b>Settlement = N × (RR − FR) × (dtm/DY) ÷ [1 + RR × (dtm/DY)]</b> &nbsp; (DY = 360 or 365)</p></div>
+  <p class="small"><b>SM eg</b>: <b>1 × 4</b> FRA (deposit placed after 1 month, matures 4 months from contract) at 5%, $1 m, 90 days; SOFR 6% → 1 bp = $25 → $2,500 ÷ [1 + 0.06 × 90/360] = <b>$2,463.05</b> to buyer.</p>
+  <p class="small">TYK 1 (app-computed): ₹60 cr, 3 months in 6 months, FRA 9.30% → at 9.60% company <b>receives ₹4,39,453</b>; at 8.80% company <b>pays ₹7,33,855</b>. TYK 2: 6 × 9 FRA ₹100 cr at 5.25%, 3-month MIBOR 5.50% → <b>+25 bp</b>, settlement ≈ <b>₹6,16,523</b>.</p>
+
+  <h2><span class="n">8</span>Interest rate futures (SM 4.2.1)</h2>
+  <ul class="small">
+    <li>Futures on an <b>interest-bearing asset</b> — bonds are the underlying, not the rate. Borrower fearing a <b>rise</b> <b>sells</b> futures (prices fall when rates rise → profit on buying back)</li>
+    <li>NSE: futures on <b>6, 10 and 13-year GoI securities</b> and <b>91-day T-bill</b>. Settlement: <b>daily MTM</b> + <b>physical delivery</b> any day in expiry month; final settlement only on expiry date</li>
+    <li><b>Conversion factor</b> (published by NSE; introduced by RBI): CF × futures price = delivery price of a given bond</li>
+    <li><b>Cheapest to deliver</b>: seller's profit = futures price × CF − quoted spot price; CTD = bond that <b>maximises profit / minimises loss</b></li>
+  </ul>
+
+  <div class="foot"><span>AFM Ch 12 · page 3 / 5</span><span>checked vs AFM SM Ch 12 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 12 · Interest rate options — cap, floor, collar</span><span class="tag">NUMERICAL CORE</span></div>
+  <h2><span class="n">9</span>Interest rate options (SM 4.2.2)</h2>
+  <p class="small">Also called <b>Interest Rate Guarantee (IRG)</b>: a right, not obligation — insurance against adverse moves while keeping favourable ones. An IRO is basically a <b>series of FRAs</b> exercisable at set rates each period.</p>
+  <table class="small">
+    <tr><th style="width:16%">Option</th><th>Who / what</th><th style="width:36%">Payoff (SM)</th></tr>
+    <tr><td><b>Cap</b> (call)</td><td>Buyer (<b>borrower</b>) pays premium; receives difference when benchmark &gt; cap rate; no obligation if below. Evolved from IRGs on floating-rate loans (1985); LBO boom — lenders required caps. Features: notional, benchmark, cap rate (= strike), period with reset / payment dates</td><td><b>N × max(0, r − r<sub>c</sub>) × d<sub>t</sub>/days</b></td></tr>
+    <tr><td><b>Floor</b> (put)</td><td>Buyer (<b>lender / depositor</b>) protected from <b>fall</b> in rates; = right to <b>sell an FRA</b> → European put on an FRA; multi-period floor = bundle of puts on a sequence of FRAs</td><td><b>N × max(0, r<sub>f</sub> − r) × d<sub>t</sub>/days</b></td></tr>
+    <tr><td><b>Collar</b></td><td><b>Buy a cap + sell a floor</b> → rate bounded on both sides; cheaper than a cap alone (floor premium offsets); <b>zero-cost collar</b> = floor premium exactly offsets cap premium; gives up benefit of a big fall</td><td><b>N × [max(0, r − r<sub>c</sub>) − max(0, r<sub>f</sub> − r)] × d<sub>t</sub>/days</b></td></tr>
+  </table>
+  <p class="small"><b>SM cap eg</b>: 1-yr cap, $1 m, 6-month SOFR cap 5%, reset 15 July (first period excluded — known at inception); SOFR 5.5% → paid next 15 Jan (184 days): 1,000,000 × 0.005 × 184/360 = <b>$2,555.56</b>.</p>
+
+  <h2><span class="n">10</span>ICAI patterns</h2>
+  <ul class="small">
+    <li><b>Jan 2026 Q4(a)</b>: borrower <b>buys cap</b>, depositor <b>buys floor</b>. Lump-sum premium converted to per-period: <b>P = A × r<sub>p</sub> ÷ PVAF(i, n)</b> (i = fixed rate per period). AB Ltd ₹5 m, 0.4%, PVAF(4%, 10) 8.1108 → <b>₹2,466</b>; gain 2% × ½ × 5 m = 50,000 → net <b>₹47,534</b>. XY Ltd ₹2 m, 0.5%, PVAF(4%, 6) 5.2421 → <b>₹1,908</b>; net <b>₹18,092</b>. ICAI also accepted n − 1 resets.</li>
+    <li><b>Cap to peg at 9%</b> (MTP): pay actual rate, receive excess over 9% → net cost never above 9%; years at or below 9% → option lapses. Cap preferred to a collar here — selling the floor at 9% causes outflow when rates fall below 9%.</li>
+    <li><b>May 2026 Q4(c)</b>: zero-cost collar — value of cap = value of floor (PV of expected payoffs) → solve the floor rate.</li>
+  </ul>
+  <div class="trap"><p>Cap / floor is per <b>reset period</b> — multiply by the fraction of the year (½ for 6-month resets). The first period is usually excluded (rate already known).</p></div>
+
+  <div class="foot"><span>AFM Ch 12 · page 4 / 5</span><span>checked vs AFM SM Ch 12 · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 5 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 12 · Swaps, swaptions, correlation</span><span class="tag">TYK THEORY Q2</span></div>
+  <h2><span class="n">11</span>Interest rate swaps (SM 4.2.3)</h2>
+  <ul class="small">
+    <li>Counterparties exchange payments indexed to two different rates on a <b>notional</b> principal that is <b>never exchanged</b>. Early swap dealers took a brokerage fee only; contract was between the end users</li>
+    <li><b>Fixed / floating swap</b>: fixed rate · floating rate reset periodically · notional · term with reset and payment dates. Settlement <b>2 days after trade date</b>. Fixed rate quoted as <b>All-In-Cost (AIC)</b> against a flat floating index</li>
+    <li>Fixed payment (semi-annual) = N × AIC × 180/360 (30-day months, 360-day year); floating receipt = N × R × d<sub>t</sub>/360</li>
+  </ul>
+  <table class="small">
+    <tr><th style="width:22%">Type</th><th>SM meaning</th></tr>
+    <tr><td><b>Plain vanilla</b> (generic / coupon)</td><td>Fixed ↔ floating on notional; floating = SOFR, €STER, SONIA, MIBOR, PLR</td></tr>
+    <tr><td><b>Basis rate</b> (non-generic)</td><td>Both legs floating on different benchmarks (eg 1-month vs 3-month SOFR)</td></tr>
+    <tr><td><b>Asset swap</b></td><td>Fixed-rate investments (bonds) swapped for floating-rate investments (an index)</td></tr>
+    <tr><td><b>Amortising</b></td><td>Notional <b>declines</b> over the life — for issuers of redeemable bonds / debentures (hedges the redemption profile)</td></tr>
+  </table>
+
+  <h2><span class="n">12</span>Swaptions (SM 4.2.4) — TYK Q2</h2>
+  <ul class="small">
+    <li>Option on an IRS — right, not obligation, to enter a swap at a future date, fixed rate and term. <b>Payer (call) swaption</b>: pay fixed, receive floating. <b>Receiver (put) swaption</b>: receive fixed, pay floating</li>
+    <li><b>Features</b>: option on a <b>forward-start IRS</b> with terms fixed at inception · "<b>3-month into 5-year</b>" = option to enter a 5-yr IRS in 3 months · option period = trade date to expiry · premium in <b>basis points</b> · can be <b>cash-settled</b> (MTM off the forward curve). Pricing: model of distribution of the forward zero-coupon curve</li>
+    <li><b>Uses</b>: (a) traders &amp; treasurers (b) speculate / hedge swap books (c) hedge <b>embedded optionality</b> (d) borrowers targeting an acceptable rate (e) businesses <b>tendering for contracts</b> (f) protection on <b>callable / puttable bonds</b></li>
+  </ul>
+
+  <h2><span class="n">13</span>Correlation — how Ch 12 actually connects</h2>
+  <table class="small">
+    <tr><th style="width:24%">Ch 12 idea</th><th>The actual link (app-written cross-reference; the Ch 12 side is SM)</th></tr>
+    <tr><td>Price &amp; reinvestment risk</td><td><b>Ch 5</b>: same two risks that <b>immunization</b> offsets (duration = holding period); duration measures sensitivity of capital, gap measures sensitivity of earnings.</td></tr>
+    <tr><td>Cap, floor, collar</td><td><b>Ch 9</b>: cap = series of calls, floor = series of puts on the rate; collar = long call + short put — same as a zero-cost option collar on shares.</td></tr>
+    <tr><td>FRA settlement discounted at RR</td><td><b>Ch 10</b>: same idea as early settlement of a forward — money paid at the start of the period is worth less, so discount at the actual rate.</td></tr>
+    <tr><td>IRS / swaptions</td><td><b>Ch 10</b>: currency swaps use the same comparative-advantage logic; <b>Ch 6</b>: IRS changes the duration of a bond portfolio (active fixed-income strategy).</td></tr>
+    <tr><td>IRF conversion factor, CTD</td><td><b>Ch 5</b>: bond price = PV of coupons + redemption — CF makes bonds with different coupons / maturities comparable.</td></tr>
+    <tr><td>SOFR / SONIA / MIBOR</td><td><b>Ch 11</b>: syndicated loans are priced at SOFR + spread; <b>FR Ind AS 109</b>: IBOR reform and hedge accounting.</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 12 · page 5 / 5</span><span>checked vs AFM SM Ch 12 · AFM LDR — Ss</span></div>
+</section>
+
+</body></html>

@@ -1,0 +1,265 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 9 LDR</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>CA Final · AFM · Last-Day Revision · SM Ch 9</span><span class="tag">#1 · 12.7% of marks</span></div>
+  <h1><span class="u">Ch 9</span> — Derivatives Analysis &amp; Valuation</h1>
+  <div class="sub">Tested every attempt: strangle / straddle payoffs, index-futures beta hedge, Black-Scholes, real options (risk-neutral), futures + options combos. Theory: real vs financial options.</div>
+
+  <h2><span class="n">1</span>Users &amp; Forward vs Futures (SM)</h2>
+  <p class="small"><b>Users</b>: corporations — hedge currency &amp; inventory risk · individual investors — speculation, hedging, yield enhancement · institutional investors — hedging asset allocation, yield enhancement, arbitrage · dealers — hedging, position taking, exploiting inefficiencies, dealer spreads.</p>
+  <table class="small">
+    <tr><th style="width:20%">Feature</th><th>Forward</th><th>Futures</th></tr>
+    <tr><td>Trading</td><td>Personal basis / telephone</td><td>Competitive arena</td></tr>
+    <tr><td>Size</td><td>Individually tailored</td><td>Standardised</td></tr>
+    <tr><td>Exchange</td><td>OTC</td><td>Organised exchange</td></tr>
+    <tr><td>Settlement</td><td>On agreed date</td><td>Daily via clearing house</td></tr>
+    <tr><td>Delivery date</td><td>As agreed; actual delivery</td><td>Cyclical; delivery rarely takes place</td></tr>
+    <tr><td>Transaction cost</td><td>Bid–ask spread</td><td>Brokerage on buy &amp; sell</td></tr>
+    <tr><td>Marking to market</td><td>No</td><td>Yes — daily in margin account</td></tr>
+    <tr><td>Margins</td><td>Not required</td><td>Required</td></tr>
+    <tr><td>Credit risk</td><td>Borne by each party</td><td>Not a concern (clearing house)</td></tr>
+  </table>
+  <p class="small"><b>Basis = Spot − Futures</b>. Normal (<b>contango</b>) market: futures &gt; spot (full cost of carry) → basis negative. <b>Backwardation / inverted</b>: spot &gt; futures (factors other than carry) → basis positive. Basis → 0 at expiry = <b>convergence</b>.</p>
+
+  <h2><span class="n">2</span>Futures pricing — cost of carry</h2>
+  <table>
+    <tr><th style="width:42%">Situation</th><th>Formula</th></tr>
+    <tr><td>Basic (discrete)</td><td><b>F = S + cost of carry − dividend</b> = S(1 + r)<sup>t</sup> − D</td></tr>
+    <tr><td>Continuous compounding</td><td><b>F = S·e<sup>rt</sup></b></td></tr>
+    <tr><td>Known dividend</td><td>F = (S − PV of dividend)·e<sup>rt</sup></td></tr>
+    <tr><td>Index with dividend yield y</td><td>F = S·e<sup>(r − y)t</sup></td></tr>
+    <tr><td>Commodity with storage cost</td><td>F = (S + PV storage)·e<sup>rt</sup> (convenience yield reduces F)</td></tr>
+  </table>
+  <div class="cols">
+    <div class="box small"><h3>Actual F &gt; Theoretical F</h3><p>Futures overpriced → <b>cash-and-carry</b>: borrow, <b>buy spot, sell futures</b>; deliver at expiry.</p></div>
+    <div class="box small"><h3>Actual F &lt; Theoretical F</h3><p>Futures underpriced → <b>reverse cash-and-carry</b>: <b>short-sell spot, invest, buy futures</b>.</p></div>
+  </div>
+  <p class="small">SM: Future price = Spot + carrying cost − returns (dividends etc.). RTP Jan 2026: S = 125, r 8%, D = 4 → F = 125 + 10 − 4 = <b>₹131</b>; contract (1,000 shares) ₹1,31,000. Price falls 6% → S = 117.50 → F = 122.90 → long loses ₹8,100.</p>
+
+  <div class="foot"><span>AFM Ch 9 · page 1 / 7</span><span>checked vs AFM SM Ch 9 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 9 · Hedging with index futures</span><span class="tag">REPEAT R17</span></div>
+  <h2><span class="n">3</span>Margins &amp; mark-to-market</h2>
+  <ul class="small">
+    <li><b>Initial margin = µ + 3σ</b> of daily changes in contract value (SM illustration: µ ₹10,000 + 3 × ₹2,000 = ₹16,000; maintenance 75% = ₹12,000)</li>
+    <li><b>Maintenance margin</b> (usually lower); balance falls below it → <b>margin call</b> to restore to <b>initial</b> margin</li>
+    <li>Daily MTM: long gains when price rises; losses debited to margin account. Cumulative MTM = (final − entry price) × lot</li>
+  </ul>
+
+  <h2><span class="n">4</span>Beta hedge — formulas</h2>
+  <div class="box">
+    <p><b>No. of contracts to fully hedge</b> = (Portfolio value × β<sub>p</sub>) ÷ (Futures price × lot size)</p>
+    <p><b>Change beta</b> from β<sub>1</sub> to β<sub>2</sub>: contracts = (β<sub>2</sub> − β<sub>1</sub>) × Portfolio value ÷ (Futures price × lot) — negative = <b>sell</b>, positive = <b>buy</b></p>
+    <p><b>Long stock + short stock</b>: hedge each leg separately (sell futures for long leg, buy for short leg) or net the beta-weighted values</p>
+  </div>
+  <table>
+    <tr><th style="width:56%">Example</th><th>Working</th></tr>
+    <tr><td>Portfolio ₹1 cr, β 1.2; Nifty futures 22,000; lot 75</td><td>1,00,00,000 × 1.2 ÷ (22,000 × 75) = 7.27 → <b>sell 7 contracts</b></td></tr>
+    <tr><td>Reduce β 1.2 → 0.6 (same data)</td><td>(0.6 − 1.2) × 1 cr ÷ 16,50,000 = −3.64 → sell <b>4</b></td></tr>
+    <tr><td>RTP Jan 2026: portfolio 9,94,450, 5 Nifty contracts sold at 8,767.07 × 25 for full hedge</td><td>Implied β = 5 × 8,767.07 × 25 ÷ 9,94,450 = <b>1.102</b>; 1.102 = 0.9 × 1.10 + 0.1 × β<sub>10</sub> → β<sub>10</sub> = <b>1.12</b></td></tr>
+  </table>
+  <div class="trap"><p>Use the <b>futures</b> price (not spot index) in the denominator. Lot size is whatever the question gives — don't assume. Profit on hedge = (sell price − buy-back price) × lot × contracts; overall P/L = cash position change + futures P/L.</p></div>
+
+  <h2><span class="n">5</span>Options vs single stock futures (SM 6.7)</h2>
+  <table class="small">
+    <tr><th style="width:24%">Point</th><th>Options</th><th>Stock futures</th></tr>
+    <tr><td>Nature</td><td>Buyer has right, not obligation</td><td>Long must square off at / before expiry</td></tr>
+    <tr><td>Movement of market</td><td>Premium moves with <b>delta</b>; may move independently of stock</td><td>Follows the underlying much more closely</td></tr>
+    <tr><td>Price of investing</td><td>Premium = <b>sunk cost</b>; lost if not ITM at expiry</td><td>Initial margin + maintenance (MTM) margin</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 9 · page 2 / 7</span><span>checked vs AFM SM Ch 9 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 9 · Options — payoffs &amp; strategies</span><span class="tag">REPEAT R3 · EVERY ATTEMPT</span></div>
+  <h2><span class="n">7</span>Basics</h2>
+  <table>
+    <tr><th style="width:26%"></th><th>Call (right to BUY at K)</th><th>Put (right to SELL at K)</th></tr>
+    <tr><td><b>In the money</b></td><td>S &gt; K</td><td>S &lt; K</td></tr>
+    <tr><td>At the money</td><td>S = K</td><td>S = K</td></tr>
+    <tr><td>Out of the money</td><td>S &lt; K</td><td>S &gt; K</td></tr>
+    <tr><td><b>Intrinsic value</b></td><td>max(S − K, 0)</td><td>max(K − S, 0)</td></tr>
+    <tr><td><b>Time value</b></td><td colspan="2">Premium − intrinsic value (all premium is time value if OTM / ATM)</td></tr>
+    <tr><td>Buyer's net pay-off</td><td>max(S<sub>T</sub> − K, 0) − premium</td><td>max(K − S<sub>T</sub>, 0) − premium</td></tr>
+    <tr><td>Writer's pay-off</td><td colspan="2">Exact mirror image of buyer (zero-sum)</td></tr>
+  </table>
+  <div class="trap"><p><b>Exercise decision ignores premium</b> (sunk) — exercise whenever ITM, even if net result is still a loss. Premium &amp; brokerage are per share × <b>lot</b>. European = exercise only on expiry; American = any time.</p></div>
+
+  <h2><span class="n">8</span>Strategies &amp; break-evens <span class="para">exam aid — not described in SM; PYQs test the pay-offs</span></h2>
+  <table>
+    <tr><th style="width:22%">Strategy</th><th style="width:38%">Position</th><th>Break-even / view</th></tr>
+    <tr><td><b>Long straddle</b></td><td>Buy call + buy put, <b>same K</b></td><td>K ± total premium; expects big move either way</td></tr>
+    <tr><td><b>Long strangle</b></td><td>Buy OTM call (K<sub>c</sub>) + OTM put (K<sub>p</sub>), K<sub>c</sub> &gt; K<sub>p</sub></td><td>Upper = K<sub>c</sub> + total premium; lower = K<sub>p</sub> − total premium</td></tr>
+    <tr><td>Strip</td><td>1 call + 2 puts (same K)</td><td>Bearish volatility bet</td></tr>
+    <tr><td>Strap</td><td>2 calls + 1 put</td><td>Bullish volatility bet</td></tr>
+    <tr><td>Bull spread</td><td>Buy low-K call, sell high-K call</td><td>Limited gain / loss; moderately bullish</td></tr>
+    <tr><td>Bear spread</td><td>Buy high-K put, sell low-K put (or calls reversed)</td><td>Moderately bearish</td></tr>
+    <tr><td>Butterfly</td><td>Buy 1 low-K + 1 high-K call, sell 2 middle-K calls</td><td>Expects price to stay near middle K</td></tr>
+    <tr><td>Covered call</td><td>Long stock / long futures + <b>sell call</b></td><td>Earns premium; caps upside (Jan 2026 Q3(a))</td></tr>
+    <tr><td>Protective put</td><td>Long stock + buy put</td><td>Floor on loss (insurance)</td></tr>
+  </table>
+  <table class="small">
+    <tr><th colspan="5">Long strangle: call 620 (premium 25) + put 480 (premium 15); total premium 40; BE 660 / 440</th></tr>
+    <tr><td>Expiry price</td><td>700</td><td>550</td><td>400</td><td>660 / 440</td></tr>
+    <tr><td>Net P/L per share</td><td>+40</td><td><b>−40</b> (max loss)</td><td>+40</td><td>0</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 9 · page 3 / 7</span><span>checked vs AFM SM Ch 9 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 9 · Option valuation</span><span class="tag">BINOMIAL · BSM · GREEKS</span></div>
+  <h2><span class="n">9</span>Binomial — one step (three methods, same answer)</h2>
+  <p class="small">S = 100; up 120, down 80; K = 100; r<sub>f</sub> 10% for the period.</p>
+  <table>
+    <tr><th style="width:28%">Method</th><th>Working</th><th style="width:16%">Call</th></tr>
+    <tr><td><b>Risk-neutral</b></td><td>p = (S(1+r) − S<sub>d</sub>) ÷ (S<sub>u</sub> − S<sub>d</sub>) = (110 − 80)/40 = 0.75; C = (0.75 × 20 + 0.25 × 0) ÷ 1.10</td><td><b>13.64</b></td></tr>
+    <tr><td><b>Delta / replicating</b></td><td>Δ = (C<sub>u</sub> − C<sub>d</sub>)/(S<sub>u</sub> − S<sub>d</sub>) = 20/40 = 0.5; borrow B = (ΔS<sub>d</sub> − C<sub>d</sub>)/1.1 = 36.36; C = ΔS − B</td><td><b>13.64</b></td></tr>
+    <tr><td>Put (parity)</td><td>P = C − S + K/(1 + r) = 13.64 − 100 + 90.91</td><td><b>4.55</b></td></tr>
+  </table>
+  <p class="small"><b>Two-step</b>: u = 1.1, d = 0.9, r 5% per step → p = 0.75; terminal call values 21, 0, 0 → C = 0.75² × 21 ÷ 1.05² = <b>10.71</b>. Work backwards node by node (needed for American puts: compare early exercise at each node).</p>
+
+  <h2><span class="n">10</span>Black-Scholes (European, non-dividend)</h2>
+  <div class="box">
+    <p><b>C = S·N(d<sub>1</sub>) − K·e<sup>−rt</sup>·N(d<sub>2</sub>)</b></p>
+    <p>d<sub>1</sub> = [ln(S/K) + (r + σ²/2)t] ÷ σ√t &nbsp;·&nbsp; <b>d<sub>2</sub> = d<sub>1</sub> − σ√t</b></p>
+    <p><b>P = C − S + K·e<sup>−rt</sup></b> (put-call parity) or P = K·e<sup>−rt</sup>N(−d<sub>2</sub>) − S·N(−d<sub>1</sub>)</p>
+    <p class="small"><b>N(d<sub>1</sub>) = hedge ratio / delta</b> · <b>N(d<sub>2</sub>) = probability call finishes ITM</b> · N(−d) = 1 − N(d) · interpolate N() from the table</p>
+  </div>
+  <p class="small"><b>May 2026 Q6(b)</b>: S 120, K 115, 50 days, r 8%, σ 30%, d<sub>1</sub> 0.5375, e<sup>−rt</sup> 0.9891 → N(d<sub>1</sub>) <b>0.7045</b> (hedge ratio ≈ 70%); d<sub>2</sub> = 0.5375 − 0.30√(50/365) = <b>0.4264</b>; N(d<sub>2</sub>) <b>0.6651</b> (≈ 67%); C = 84.54 − 75.65 = <b>₹8.89</b>; P = −120 + 8.89 + 113.75 = <b>₹2.63</b> (ICAI). Verified by code: C 8.89, P 2.64 (rounding).</p>
+
+  <h2><span class="n">11</span>BSM assumptions, factors &amp; Greeks (SM)</h2>
+  <p class="small"><b>Assumptions (7)</b>: European options · no transaction costs · short-term interest rates known &amp; constant · stocks pay no dividend · stock price follows a random walk · returns normally distributed · variance of return constant over option life.</p>
+  <table class="small">
+    <tr><th style="width:30%">Factor affecting value (SM)</th><th>Effect</th></tr>
+    <tr><td>(a) Price of underlying</td><td>Price ↑ → calls ↑, puts ↓</td></tr>
+    <tr><td>(b) Time till expiry</td><td>Option may become worthless at expiry — time value decays</td></tr>
+    <tr><td>(c) Volatility</td><td>Statistical / historical volatility (SV); higher volatility → higher value</td></tr>
+    <tr><td>(d) Interest rate</td><td>Higher rates → lower PV of exercise price (call ↑, put ↓)</td></tr>
+  </table>
+  <table class="small">
+    <tr><th style="width:16%">Greek</th><th>SM definition</th></tr>
+    <tr><td><b>Delta</b></td><td>Degree to which option price moves for a small change in underlying price</td></tr>
+    <tr><td><b>Gamma</b></td><td>How fast delta changes — "delta of the delta"; keep small for delta hedging; adjusted only with options</td></tr>
+    <tr><td><b>Theta</b></td><td>Change in option price for a <b>one-day decrease</b> in time to expiry — time decay</td></tr>
+    <tr><td><b>Rho</b></td><td>Change in option price for a <b>one percentage point</b> change in risk-free rate</td></tr>
+    <tr><td><b>Vega</b></td><td>Sensitivity of option value to change in volatility; used for hedging</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 9 · page 4 / 7</span><span>checked vs AFM SM Ch 9 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 5 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 9 · Real options &amp; exotics</span><span class="tag">REPEAT R13</span></div>
+  <h2><span class="n">12</span>Real options — types (SM)</h2>
+  <table class="small">
+    <tr><th style="width:22%">Option</th><th>SM meaning</th><th style="width:22%">Like</th></tr>
+    <tr><td><b>Growth</b></td><td>Strategic investments: define competitive position, gain knowledge about project profitability, give manufacturing flexibility</td><td>European call</td></tr>
+    <tr><td><b>Abandonment</b></td><td>Exercised if value from project's assets &gt; PV of continuing the project</td><td>American put</td></tr>
+    <tr><td><b>Timing</b></td><td>Third choice besides accept / reject: <b>delay</b> the decision (when to invest)</td><td>American call</td></tr>
+  </table>
+  <p class="small">Valuation methods = same as financial options (binomial, risk-neutral, BSM). <b>Expanded NPV = static NPV + option value</b>.</p>
+
+  <h2><span class="n">13</span>Real vs financial options (SM table — Jan 2026, 4 marks)</h2>
+  <table class="small">
+    <tr><th style="width:18%">Basis</th><th>Financial options</th><th>Real options</th></tr>
+    <tr><td>Underlying</td><td>Assets normally traded — shares, bonds, commodities</td><td>Projects — not traded</td></tr>
+    <tr><td>Pay-off</td><td>Specified in contract → fixed</td><td>Estimated from project cash flows → can vary</td></tr>
+    <tr><td>Exercise period</td><td>Short — maximum up to 1 year</td><td>Starts from end of 1st year; longer</td></tr>
+    <tr><td>Approach</td><td>Traded → <b>"Priced"</b></td><td>Used for decisions → <b>"Valued"</b></td></tr>
+  </table>
+
+  <h2><span class="n">14</span>Risk-neutral real-option numbers (app-computed)</h2>
+  <table class="small">
+    <tr><th style="width:46%">Case</th><th>Working</th></tr>
+    <tr><td><b>Abandonment</b>: PV now 100; next year 140 or 70; salvage 90; r<sub>f</sub> 10%</td><td>p = (110 − 70)/(140 − 70) = 0.5714; value = 0.4286 × 20 ÷ 1.1 = <b>₹7.79</b></td></tr>
+    <tr><td><b>Option to wait</b>: invest 100; PV now 105; next year 130 or 85; r<sub>f</sub> 8%</td><td>p = 0.6311; value = 0.6311 × 30 ÷ 1.08 = <b>₹17.53</b> &gt; NPV 5 → <b>wait</b></td></tr>
+  </table>
+
+  <h2><span class="n">15</span>Exotic options (SM 7.5 — 9 types)</h2>
+  <p class="small">Differ from plain vanilla in pay-off &amp; time of exercise; more complex; mostly <b>OTC</b>.</p>
+  <table class="small">
+    <tr><td style="width:20%"><b>Chooser</b></td><td>After a specified period buyer decides whether it is a call or a put</td></tr>
+    <tr><td><b>Compound</b></td><td>"Split-fee" / option on an option</td></tr>
+    <tr><td><b>Barrier</b></td><td>Activated only if underlying reaches a certain price in a set period</td></tr>
+    <tr><td><b>Asian</b></td><td>Pay-off on <b>average</b> price over a period</td></tr>
+    <tr><td><b>Look-back</b></td><td>Holder chooses most favourable strike from min / max price during life</td></tr>
+    <tr><td><b>Basket</b></td><td>Value depends on a portfolio (basket)</td></tr>
+    <tr><td><b>Bermuda</b></td><td>Compromise between European &amp; American</td></tr>
+    <tr><td><b>Binary / digital</b></td><td>Pay-off on happening of a specific event</td></tr>
+    <tr><td><b>Spread</b></td><td>Pay-off on difference between prices of two underlyings</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 9 · page 5 / 7</span><span>checked vs AFM SM Ch 9 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 6 ================= -->
+<section class="page">
+  <div class="head"><span>Ch 9 · Credit, commodity, weather, electricity, mishaps</span><span class="tag">THEORY BANK</span></div>
+  <h2><span class="n">6</span>Index futures (SM 5.2)</h2>
+  <ul class="small">
+    <li>Based on level of an index (Nifty 50, Sensex); used to <b>speculate</b> on the market or <b>hedge</b> a portfolio against decline</li>
+    <li>Not based on tangible goods → <b>all settlements in cash</b>; traded in number of contracts; value = index × multiplier (SM: 1 contract = 50 units × Nifty)</li>
+    <li>Margin is <b>continuous</b> — computed every business day; position squared off at closing price on expiry (SM: last Thursday of the month)</li>
+    <li>Purposes of futures trading (SM): <b>speculation</b> and <b>hedging</b>. Index futures hedge only <b>systematic</b> risk</li>
+    <li>SM TYK theory: reasons index futures became more popular than stock futures; short note on marking to market</li>
+  </ul>
+
+  <h2><span class="n">16</span>Credit derivatives (SM 8)</h2>
+  <ul class="small">
+    <li><b>CDOs</b> — backed by pool of bonds, ABS, REITs, other CDOs (securitisation is backed by loans / receivables); covers CBOs &amp; CLOs. <b>Types</b>: <b>Cash-flow CDO</b> (backed by cash-market debt; relies on collateral's cash to pay SPV securities) · <b>Synthetic CDO</b> (credit risk transferred <b>without</b> transferring assets; unfunded (CDS only) / fully funded (CLN) / partially funded) · <b>Arbitrage CDO</b> (issuer captures spread between collateral return and borrowing cost + management fee)</li>
+    <li><b>Risks in CDOs</b>: default (hits equity / junior tranche first), interest-rate (basis), liquidity, prepayment, reinvestment, foreign-exchange</li>
+    <li><b>CDS</b> = Credit (loan) + Default (non-payment) + Swap (exchange of risk): buyer pays periodic premium; seller pays on default. <b>Features</b>: non-standardised private (forward-type) contract; not exchange-traded; ISDA guidelines; can be bought from a third party; bondholder can protect against issuer insolvency; premium rises with risk. <b>Uses</b>: hedging, arbitrage, speculation. <b>Parties</b>: reference entity, buyer (investor), seller (writer). <b>Settlement</b>: physical (deliver bonds, get par) or cash (par − market value)</li>
+  </ul>
+
+  <h2><span class="n">17</span>Commodity derivatives (SM 10)</h2>
+  <ul class="small">
+    <li><b>Necessary conditions (SM)</b>: commodity <b>durable &amp; storable</b>; units <b>homogeneous</b>; <b>frequent price fluctuations with wide amplitude</b>; supply &amp; demand <b>large</b>; supply flows naturally to market and there are <b>breakdowns in existing pattern of forward contracting</b></li>
+    <li><b>Investing</b>: complements investment in commodity-using companies; invest in a country's consumption &amp; production; no dividends, only price returns. Market advantages: managers prefer derivatives to tangibles; less hassle (delivery); indirect real-asset exposure — inflation hedge</li>
+    <li><b>Futures</b>: easiest &amp; cheapest way; 3 categories — agricultural (soft), energy, metals. <b>Swaps</b>: <b>fixed-floating</b> and <b>commodity-for-interest</b>; valued as a strip of forwards; factors — hedging cost, institutional structure, liquidity, seasonality, futures bid / offer spread, brokerage, credit risk / capital / admin costs</li>
+  </ul>
+
+  <div class="foot"><span>AFM Ch 9 · page 6 / 7</span><span>checked vs AFM SM Ch 9 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 9 · Weather, electricity, mishaps, correlation</span><span class="tag">THEORY BANK</span></div>
+  <h2><span class="n">18</span>Weather &amp; electricity derivatives (SM 11–12)</h2>
+  <ul class="small">
+    <li><b>Weather</b>: underlying = weather measure (rainfall, temperature, humidity, wind); hedges <b>volume risk</b>, not price risk; first deal 1997 (Aquila Energy, OTC). <b>vs insurance</b>: insurance covers extreme low-probability events; weather derivatives cover normal-condition uncertainty too. Pricing issues: data reliability, weather forecasting, temperature modelling</li>
+    <li><b>Electricity</b>: <b>forwards</b> (fixed quantity at forward price at maturity) · <b>futures</b> (standardised trading, settlement) · <b>swaps</b> (pay fixed vs floating price; = strip of forwards; locational basis swaps)</li>
+  </ul>
+
+  <h2><span class="n">19</span>Derivative mishaps &amp; 6 lessons (SM 13)</h2>
+  <table class="small">
+    <tr><td style="width:22%"><b>Orange County</b> (1994)</td><td>Treasurer Robert Citron, no trading background; yield-curve play + ~$2.8 bn inverse floaters; leveraged ~$7.5 bn fund to ~$20 bn via repo; Fed raised rates 6 times in 1994 → loss ~<b>$2 bn</b>; Citron jailed 1 yr, fined $1,00,000</td></tr>
+    <tr><td><b>Barings</b> (1995)</td><td>Nick Leeson: arbitrage Nikkei 225 futures Singapore vs Osaka turned speculative long; also ran <b>back office</b>, hid losses in error account <b>'8888'</b>; loss $827 mn (SM also cites $1.4 bn); 233-year-old bank bankrupt; ING bought it for <b>£1</b>. Led to operational-risk capital in Basel II</td></tr>
+    <tr><td><b>P&amp;G &amp; Gibson Greetings</b> (1994)</td><td>Bankers Trust sold complex <b>leveraged (ratio / power) swaps</b>; P&amp;G lost $106 mn; Gibson $3 mn then $16.7 mn; out-of-court settlements; BT taken over by Deutsche Bank (1999)</td></tr>
+  </table>
+  <p class="small"><b>Lessons</b>: (a) don't buy a derivative you don't understand (value in-house) · (b) due diligence before making Treasury a profit centre (don't link treasurer's pay to profit) · (c) specify risk limits · (d) separate <b>front, middle &amp; back</b> offices · (e) a hedger shouldn't become a speculator · (f) stress tests, scenario analysis (VaR + scenarios, 10–20 yrs data for black swans).</p>
+
+  <h2><span class="n">20</span>Correlation — how Ch 9 actually connects</h2>
+  <table class="small">
+    <tr><th style="width:25%">Ch 9 idea</th><th>The actual link (app-written cross-reference; the Ch 9 side is SM)</th></tr>
+    <tr><td>Index-futures beta hedge</td><td><b>Ch 6</b>: β<sub>p</sub> = Σ w<sub>i</sub>β<sub>i</sub> (weighted average of stock betas) goes straight into contracts = Value × (β<sub>2</sub> − β<sub>1</sub>) ÷ (futures price × lot). Hedge removes only <b>systematic</b> risk — unsystematic was already diversified away (Ch 6).</td></tr>
+    <tr><td>Cost of carry F = S·e<sup>rt</sup></td><td><b>Ch 10</b>: interest rate parity F = S × (1 + r<sub>h</sub>) ÷ (1 + r<sub>f</sub>) is the same idea — forward = spot + carry, else arbitrage. Actual F &gt; fair F → buy spot, sell forward/futures (cash-and-carry), in both chapters.</td></tr>
+    <tr><td>Put-call parity: C + PV(K) = P + S</td><td>Used in ICAI answers to get P from C (May 2026: P = −S + C + PV(K)). <b>Ch 5</b>: warrant value (MP − E) × n is the <b>intrinsic value of a call</b>; a convertible = straight bond + call on shares.</td></tr>
+    <tr><td>Call / put payoffs</td><td><b>Ch 10</b>: importer (payable) buys a <b>call</b> on the currency, exporter (receivable) buys a <b>put</b> — same max(S − K, 0) / max(K − S, 0) payoff, net of premium. <b>Ch 12</b>: interest-rate cap = series of calls on the rate (borrower), floor = series of puts (lender), collar = buy cap + sell floor.</td></tr>
+    <tr><td>Real options</td><td><b>Ch 3</b>: plain NPV ignores managerial flexibility; option to expand / abandon / wait adds value → project worth NPV + option value. A negative-NPV project can still be accepted.</td></tr>
+    <tr><td>CDO tranches</td><td><b>Ch 7</b>: same tranching as securitisation — senior, mezzanine, equity; losses hit the equity tranche first.</td></tr>
+    <tr><td>Mishaps &amp; 6 lessons</td><td><b>Ch 2</b>: risk limits, front/middle/back-office separation, VaR + stress tests = the risk-management framework. <b>FR (Ind AS 109)</b>: derivatives are at FVTPL unless designated in hedge accounting.</td></tr>
+  </table>
+
+  <div class="foot"><span>AFM Ch 9 · page 7 / 7</span><span>checked vs AFM SM Ch 9 + Saransh (Jul 2025) · AFM LDR — Ss</span></div>
+</section>
+
+</body></html>

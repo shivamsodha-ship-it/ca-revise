@@ -1,0 +1,580 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ind AS 103 SM LDR</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style></head>
+<body><section class="page">
+  <div class="head"><span>CA Final · FR · Ch 12 · Ind AS 103 — in study-material order</span><span class="tag">Nov 2026 attempt</span></div>
+  <h1><span class="u">Ind AS 103</span> — Business Combinations</h1>
+  <div class="sub">Follows ICAI SM Chapter 12 heading by heading (1 Introduction → 17 Carve-in). Every Example, Illustration and TYK with ICAI's answer.</div>
+
+  <h2><span class="n">1</span>Introduction — why Ind AS 103</h2>
+  <ul>
+    <li>Old Indian GAAP: <b>AS 14</b> (Accounting for Amalgamations) + <b>AS 21</b> (consolidation) — not in line with global standards. Ind AS 103 is in line with <b>IFRS 3</b>.</li>
+    <li><b>Business combination</b> = a transaction in which the <b>acquirer obtains control of another business</b> (the acquiree).</li>
+    <li><b>Business</b> = an integrated set of activities and assets capable of being conducted and managed for providing goods or services to customers, generating investment income (dividends, interest) or other income from ordinary activities.</li>
+  </ul>
+  <h3>Business combination vs acquisition of a group of assets (SM table)</h3>
+  <table>
+    <tr><th style="width:20%">Particulars</th><th style="width:40%">Business combination</th><th>Asset acquisition</th></tr>
+    <tr><td>Intangibles incl. goodwill</td><td>Intangibles at <b>fair value</b> if separately identifiable; <b>goodwill recognised</b> as a separate asset</td><td>Intangibles measured by <b>allocating the overall cost by relative fair values</b>; <b>no goodwill</b></td></tr>
+    <tr><td>Transaction costs</td><td>Acquisition-related costs (<b>including stamp duty</b>) <b>expensed</b>; not part of consideration</td><td><b>Capitalised</b> as part of cost of the assets</td></tr>
+    <tr><td>Deferred tax</td><td><b>Recognised</b> on temporary differences of assets acquired (other than goodwill) and liabilities assumed</td><td><b>Not recognised</b> — Ind AS 12 para 15 initial-recognition exemption (not a BC; affects neither accounting nor taxable profit)</td></tr>
+    <tr><td>FV of net assets &gt; consideration</td><td><b>Bargain purchase gain</b> → OCI → capital reserve (or directly capital reserve)</td><td>Allocated on relative FV → <b>no gain</b></td></tr>
+    <tr><td>Contingent liabilities</td><td><b>Recognised</b> if present obligation from past events and FV reliable; later changes to P&amp;L</td><td><b>Not recognised</b>, subject to Ind AS 37</td></tr>
+  </table>
+  <div class="ex"><p><b>Illustration 1 (asset acquisition):</b> equipment (FV 500) + patent (FV 1,000) for a product just commercialised, bought for cash ₹1,000 crore + land (FV 400, carrying 100). → Ind AS 103 para 2(b): <b>not a business</b>. Cost = FV of consideration given (land FV is the more reliable measure) = <b>₹1,400 crore</b>, allocated on relative FV: equipment 500/1,500 × 1,400 = <b>467</b>; patent 1,000/1,500 × 1,400 = <b>933</b>. Gain on land 400 − 100 = <b>₹300 crore</b> to P&amp;L. No goodwill.</p></div>
+
+  <h2><span class="n">2</span>Scope <span class="para">2</span></h2>
+  <p>Applies to a transaction or event that meets the definition of a business combination. Does <b>not</b> apply to:</p>
+  <ul>
+    <li>(a) the <b>formation of a joint arrangement</b> (in the FS of the joint arrangement itself);</li>
+    <li>(b) acquisition of an <b>asset or group of assets that is not a business</b> (asset acquisition) — identify and recognise individual identifiable assets (incl. Ind AS 38 intangibles) and liabilities, allocate cost on <b>relative fair values</b> at date of purchase; <b>no goodwill</b>;</li>
+    <li>(c) combinations of entities or businesses under <b>common control</b> → dealt with in <b>Appendix C</b> (SM §13);</li>
+    <li>(d) acquisition by an <b>investment entity</b> of a subsidiary required to be measured at FVTPL (Ind AS 110).</li>
+  </ul>
+
+  <h2><span class="n">3</span>Definition of business combination</h2>
+  <ul>
+    <li>Occurs when an entity <b>obtains control of a business</b> by acquiring its <b>net assets</b> or a significant <b>equity interest</b>.</li>
+    <li>Control can be obtained <b>by contract only</b> — the acquirer acquires neither net assets nor equity → in the balance sheet <b>controlling interest = 0</b> and <b>NCI = 100%</b>.</li>
+  </ul>
+  <div class="box"><p><b>Two elements, both required:</b> (1) the acquirer <b>obtains control</b> of an acquiree (control as defined in Ind AS 110); and (2) the acquiree is a <b>business</b>.</p></div>
+  <div class="two">
+    <div><h3>Ways of obtaining control</h3><ul class="small">
+      <li>transferring cash, cash equivalents or other assets (incl. net assets that constitute a business)</li>
+      <li>incurring liabilities</li>
+      <li>issuing equity interests</li>
+      <li>providing more than one type of consideration</li>
+      <li><b>without transferring consideration</b>, incl. by contract alone</li></ul></div>
+    <div><h3>Legal structures (not limited to)</h3><ul class="small">
+      <li>businesses become <b>subsidiaries</b>, or their net assets are <b>legally merged</b> into the acquirer</li>
+      <li>one entity transfers its net assets / its owners transfer equity to another entity or its owners</li>
+      <li>all entities transfer to a <b>newly formed entity</b> (roll-up / put-together)</li>
+      <li>a group of former owners of one combining entity obtains control of the combined entity</li></ul></div>
+  </div>
+
+  <h2><span class="n">4</span>Definition and elements of business</h2>
+  <h3>4.1 Definition <span class="para">B7</span></h3>
+  <ul>
+    <li>A business consists of <b>inputs</b> and <b>processes applied to those inputs</b> that have the ability to contribute to the creation of <b>outputs</b>. Businesses usually have outputs, but <b>outputs are not required</b>.</li>
+    <li>The entity must gain control of an <b>integrated set</b> of assets and activities that is <b>more than a collection of assets</b> or of assets and liabilities. A business normally carries out a continuing trade with identifiable revenue — its assets interact with each other and with the <b>people who operate them</b>. In some cases it needs judgement.</li>
+  </ul>
+  <h3>4.2 Elements of business</h3>
+  <table>
+    <tr><th style="width:12%">Element</th><th style="width:46%">Definition</th><th>Examples (SM)</th></tr>
+    <tr><td><b class="red">(a) Input</b></td><td>Any <b>economic resource</b> that creates outputs or has the ability to contribute to the creation of outputs <b>when one or more processes are applied to it</b>.</td><td>Non-current assets (incl. intangibles or <b>rights to use</b> non-current assets), intellectual property, the <b>ability to obtain access to necessary materials or rights</b>, and <b>employees</b>.</td></tr>
+    <tr><td><b class="red">(b) Process</b></td><td>Any <b>system, standard, protocol, convention or rule</b> that when applied to an input or inputs creates output or has the ability to contribute to the creation of outputs.</td><td><b>Strategic management</b>, <b>operational</b> and <b>resource management</b> processes. Typically documented — but the <b>intellectual capacity of an organised workforce</b> having the necessary skills and experience, following rules and conventions, may provide the processes. <b>Accounting, billing, payroll and other administrative systems are typically NOT processes</b> used to create outputs.</td></tr>
+    <tr><td><b class="red">(c) Output</b></td><td>The result of inputs and processes applied to those inputs that <b>provide goods or services to customers</b>, generate <b>investment income</b> (dividends, interest) or generate <b>other income from ordinary activities</b>.</td><td>Sales to customers, dividend and interest income.</td></tr>
+  </table>
+  <h3>4.3 Further assessment — the minimum <span class="para">B8 · B12A–B12C</span></h3>
+  <ul>
+    <li>Two essential elements: <b>inputs and processes applied to those inputs</b>.</li>
+    <li>An integrated set must include, <b>at a minimum, an input and a substantive process that together significantly contribute to the ability to create output</b>.</li>
+  </ul>
+  <table>
+    <tr><th style="width:22%">Substantive process?</th><th>Conditions (SM 4.3)</th></tr>
+    <tr><td><b>(1) No output</b> at acquisition date</td><td>Substantive <b>only if</b> — (a) it is <b>critical</b> to the ability to <b>develop or convert</b> an acquired input or inputs into outputs; <b>and</b> (b) the inputs acquired include <b>both</b> an <b class="hy">organised workforce</b> that has the necessary skills, knowledge or experience to perform that process, <b>and</b> other inputs that the organised workforce could develop or convert into outputs. Those other inputs could include — (i) <b>intellectual property</b> that could be used to develop a good or service; (ii) other <b>economic resources</b> that could be developed to create outputs; or (iii) <b>rights to obtain access</b> to necessary materials or rights that enable creation of future outputs.</td></tr>
+    <tr><td><b>(2) Has outputs</b> at acquisition date</td><td>Substantive if, when applied to an acquired input or inputs, it — (a) is <b>critical to the ability to continue producing outputs</b>, <b>and</b> the inputs acquired include an <b class="hy">organised workforce</b> with the necessary skills, knowledge or experience to perform that process; <b>or</b> (b) <b>significantly contributes</b> to the ability to continue producing outputs <b>and</b> — (i) is considered <b>unique or scarce</b>; or (ii) <b>cannot be replaced without significant cost, effort, or delay</b> in the ability to continue producing outputs.</td></tr>
+  </table>
+  <div class="sticky">Manpower link: <b>no output → organised workforce is compulsory</b>. Output exists → workforce needed for route (a); route (b) (unique / scarce / hard to replace) works <b>without</b> a workforce.</div>
+
+  <h3>4.4 Concentration test <span class="para">B7A–B7C</span></h3>
+  <ul>
+    <li>An <b>optional</b> test that permits a <b>simplified assessment</b> of whether an acquired set is <b>not</b> a business.</li>
+    <li><b>Test met → not a business → no further assessment.</b> &nbsp; <b>Test not met → further assessment</b> (4.3) needed.</li>
+    <li>Met if <b class="hy">substantially all of the fair value of the gross assets acquired</b> is concentrated in a <b>single identifiable asset</b> or <b>group of similar identifiable assets</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:6%"></th><th>Conditions for the test (B7B)</th></tr>
+    <tr><td>(a)</td><td>Gross assets <b>exclude</b> cash and cash equivalents, deferred tax assets, and goodwill resulting from the effects of deferred tax liabilities.</td></tr>
+    <tr><td>(b)</td><td>FV of gross assets <b>includes</b> any consideration transferred (plus FV of any NCI and FV of any previously held interest) <b>in excess of</b> the FV of net identifiable assets acquired.</td></tr>
+    <tr><td>(c)</td><td>A <b>single identifiable asset</b> includes any asset or group of assets that would be recognised and measured as a single identifiable asset in a business combination.</td></tr>
+    <tr><td>(d)</td><td>A tangible asset <b>attached to</b>, and not physically removable and usable separately from, another tangible asset (or from an underlying asset subject to a lease, Ind AS 116) without significant cost or significant diminution in utility or FV → a <b>single</b> identifiable asset (e.g. <b>land and buildings</b>).</td></tr>
+    <tr><td>(e)</td><td>To judge <b>similar</b>: consider the <b>nature</b> of each single identifiable asset and the <b>risks</b> of managing and creating outputs from it (risk characteristics).</td></tr>
+    <tr><td>(f)</td><td><b>Not similar:</b> (i) a tangible and an intangible asset; (ii) tangible assets in <b>different classes</b> unless a single asset under (d); (iii) identifiable intangible assets in different classes; (iv) a financial and a non-financial asset; (v) financial assets in different classes; (vi) assets in the <b>same class</b> but with <b>significantly different risk characteristics</b>.</td></tr>
+  </table>
+  <h3>SM notes</h3>
+  <ol>
+    <li>The test is <b>optional</b>; the decision is made <b>transaction by transaction</b>.</li>
+    <li>It does <b>not prohibit</b> a detailed assessment using the definition of business.</li>
+    <li><b>3-step process:</b> (a) measure FV of gross assets acquired; (b) identify the single identifiable asset or group of similar identifiable assets; (c) if substantially all of (a) is concentrated in (b) → <b>asset acquisition</b>; otherwise assess the business definition.</li>
+  </ol>
+  <p><span class="f fl">FV of gross assets = (i) FV of consideration (incl. FV of NCI and FV of previously held interest) + (ii) FV of liabilities assumed − (iii) cash &amp; cash equivalents, DTA and goodwill resulting from DTL</span></p>
+  <div class="ex"><p><b>Example 1 (concentration test):</b> A holds 20% of B; buys 50% more for ₹300 crore. FV: building 1,000; cash 200; financial liabilities 800; DTL 150. FV of B 400 → NCI 120 (30%), old 20% stake 80.<br>(i) 300 + 120 + 80 = <b>500</b> · (ii) liabilities excl. deferred tax = <b>800</b> · (iii) cash = <b>200</b> → gross assets = 500 + 800 − 200 = <b>1,100</b>. Building 1,000 / 1,100 = <b>91%</b> → substantially all in a single identifiable asset → <b>asset acquisition</b>. "Substantially" is <b>not defined</b> in the standard — judgement; ICAI treats <b>91% as substantial</b>.</p></div>
+
+  <h3>Summary flow chart — business or not? (SM)</h3>
+  <ol>
+    <li>Inputs and processes acquired? <b>No → asset acquisition.</b></li>
+    <li>Outputs exist at acquisition date? <b>Yes →</b> is the process critical to continue producing outputs <b>and</b> is an organised experienced workforce acquired? Yes → substantive. If No → is the process unique/scarce or not replaceable without significant cost, effort or delay? Yes → substantive; No → asset acquisition.</li>
+    <li>Outputs don't exist? <b>→</b> is the process critical to develop/convert inputs into outputs? No → asset acquisition. Yes → do the inputs include <b>both</b> an organised workforce <b>and</b> other inputs it could develop/convert? Yes → substantive; No → asset acquisition.</li>
+    <li>Substantive process acquired → <b>business combination</b>.</li>
+  </ol>
+
+  <h3>SM Examples 2–7 and Illustrations 2–3</h3>
+  <table class="tight">
+    <tr><th style="width:36%">Facts</th><th>ICAI conclusion and reason</th></tr>
+    <tr><td><b>Ex. 2 — simple business:</b> liquor maker X with workforce (operators, testers, marketing, admin), factory, warehouse, machinery, inventory. Y pays USD 80m for 100%; Y's four executive directors take same roles in X.</td><td><b>Business.</b> Trades with assets used by employees in related, integrated activities; input + significant process. Y obtains control on 1 Jan 20X1.</td></tr>
+    <tr><td><b>Ex. 3 — development stage entity:</b> D has no revenue; research engineers developing technology with a pending patent; licensing talks advanced; needs funding. Net assets ₹750m; A pays ₹600m for 60%.</td><td><b>Business.</b> Employs specialist engineers; viable plan to complete development and start production; can access customers. Also A paid a <b>premium (goodwill)</b> — in the absence of evidence to the contrary, D is presumed a business.</td></tr>
+    <tr><td><b>Ex. 4 — investment properties:</b> P owns 3 single-tenant warehouses on long leases; maintenance and security <b>outsourced</b>; part-time admin employee of former parent <b>doesn't transfer</b>.</td><td><b>Asset purchase.</b> Activities ancillary to investment property get lower weight; maintenance/security/admin not critical, not unique, easily replaced. (Tested as <b>PYQ Sep 2025 MCQ 12</b>, answer: asset purchase.)</td></tr>
+    <tr><td><b>Ex. 5 — investment properties:</b> Q owns 3 multi-tenant residential condominiums, short-term rentals, substantial services outsourced; <b>5 employees</b> handle tenants, contractors, tenant selection, lease negotiation, rent reviews, marketing.</td><td><b>Business.</b> Activities go beyond ancillary; tenant selection, negotiation and rent reviews are <b>critical</b> to continue producing outputs.</td></tr>
+    <tr><td><b>Ex. 6 — seller keeps some activities:</b> A buys trade, assets, liabilities and workforce of S's operating segments but not payroll/accounting cost centre or head office.</td><td><b>Business.</b> Payroll, accounting and admin are not used to create outputs — not essential.</td></tr>
+    <tr><td><b>Ex. 7 — shell company:</b> property developer buys a shell company instead of incorporating one.</td><td><b>Not a business.</b> Treat like incorporating a new subsidiary; costs per their nature; <b>no goodwill</b>.</td></tr>
+    <tr><td><b>Illus. 2:</b> pharma company — skilled R&amp;D workforce, patents (IPR), plant with regulatory approval, no revenue, no customer contracts.</td><td><b>Business.</b> Workforce, plant, IPR + strategic and operational processes = inputs and processes; lack of revenue irrelevant (presuming access to customers).</td></tr>
+    <tr><td><b>Illus. 3:</b> as above but with revenue contracts and a sales force; buyer takes everything <b>except the sales force</b>.</td><td><b>Business</b> if the missing input (sales force) can be easily replicated or obtained by a market participant; buyer's own sales force (same line of business) can also fill the gap.</td></tr>
+  </table>
+
+  <h2><span class="n">5</span>The acquisition method</h2>
+  <ol>
+    <li><b>Step 1</b> — Identifying the acquirer. <i>(Who is the acquirer?)</i></li>
+    <li><b>Step 2</b> — Determining the acquisition date. <i>(When is the business acquired?)</i></li>
+    <li><b>Step 3</b> — Recognising and measuring the identifiable assets acquired, liabilities assumed and any NCI. <i>(Which assets and liabilities? At what value?)</i></li>
+    <li><b>Step 4</b> — Recognising and measuring goodwill or a gain from a bargain purchase.</li>
+  </ol>
+
+  <h2><span class="n">6</span>Identifying the acquiring enterprise</h2>
+  <h3>6.1 The acquiring enterprise</h3>
+  <ul>
+    <li>All business combinations in scope use the <b>acquisition method</b> (purchase method). The <b>acquirer</b> = the entity that obtains control; the acquiree's assets and liabilities are the ones measured at FV.</li>
+    <li>Control is determined under <b>Ind AS 110</b>: an investor controls if and only if it has (a) <b>power</b> over the investee; (b) <b>exposure, or rights, to variable returns</b>; (c) <b>ability to use its power to affect</b> its returns.</li>
+    <li>Control does not depend only on voting rights. Also consider: <b>potential voting rights</b>; <b>rights of non-controlling shareholders</b>; <b>other contractual rights</b> of the investor if <b>substantive</b>. (Detail: Ind AS 110 notes.)</li>
+    <li><b>Indicators of control:</b> more than 50% voting rights · power to <b>appoint and remove the board</b> · <b>currently exercisable potential voting rights</b>.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 4 (potential voting rights):</b> P buys 40,000 of X's 1,00,000 shares + option for 25,000 more, exercisable any time in 12 months at a <b>small premium</b>. Others hold 35,000 and 25,000, each with currently exercisable options for 2,000. → Options currently exercisable, no conditions; P would hold 65,000/1,25,000 (&gt;50%); even if all options exercised, 65,000/1,29,000 = majority; small premium (slightly out of the money) still gives <b>economic substance</b> → <b>P controls X</b>.</p></div>
+  <h3>6.2 Acquisition through cash or incurring liabilities <span class="para">B14</span></h3>
+  <p>The acquirer is usually the entity that <b>transfers the cash or other assets or incurs the liabilities</b>.</p>
+  <h3>6.3 Acquisition through issue of equity <span class="para">B15–B17</span></h3>
+  <p>The acquirer is usually the entity that <b>issues its equity</b> — except in <b>reverse acquisitions</b>. Also consider:</p>
+  <table class="tight">
+    <tr><th style="width:4%"></th><th style="width:30%">Factor</th><th>The acquirer is usually…</th></tr>
+    <tr><td>a</td><td>Relative voting rights after the combination</td><td>the entity whose owners as a group retain/receive the <b>largest portion of voting rights</b> (consider unusual or special voting arrangements, options, warrants, convertibles)</td></tr>
+    <tr><td>b</td><td>Large minority voting interest (no other significant holder)</td><td>the entity whose single owner or organised group holds the <b>largest minority voting interest</b></td></tr>
+    <tr><td>c</td><td>Composition of the governing body</td><td>the entity whose owners can <b>elect, appoint or remove a majority</b> of the board</td></tr>
+    <tr><td>d</td><td>Composition of senior management</td><td>the entity whose (former) management <b>dominates</b></td></tr>
+    <tr><td>e</td><td>Terms of exchange of equity</td><td>the entity that <b>pays a premium</b> over the pre-combination FV of the other's equity</td></tr>
+    <tr><td>f</td><td>Relative size</td><td>the entity whose size (assets, revenues, profit) is <b>significantly greater</b>; with more than two entities also consider <b>who initiated</b> the combination</td></tr>
+  </table>
+  <div class="ex"><p><b>Illustration 5:</b> NewCo Meera issues 100 shares to Veera's and 50 to Zeera's shareholders (relative FVs), voting by shareholding → the acquirer must be <b>one of the combining entities</b>; Veera's owners get 67% → <b>Veera is the acquirer</b>.</p></div>
+  <div class="ex"><p><b>Examples 8 &amp; 9:</b> (8) larger A issues shares = <b>20%</b> of combined capital to B's holders; A's holders keep 80% → <b>A is acquirer</b>. (9) smaller A issues 10 shares per B share = <b>70%</b> of combined capital to B's holders, and B's management runs the combined entity → <b>B is the accounting acquirer</b>; A is the <b>legal acquirer</b>. Identification matters because the <b>accounting acquiree's</b> net assets are the ones taken at FV.</p></div>
+  <div class="ex"><p><b>Illustration 6:</b> ABC forms Super Ltd., which borrows from a bank at commercial rates and <b>pays cash</b> at FV for 100% of Focus; Super can appoint/remove a majority of Focus's board and its management dominates → <b>Super Ltd. is the acquirer</b> (key drivers: on whose behalf the NewCo was formed, and what business is acquired).</p></div>
+
+  <h3>6.4 Shell company and reverse acquisition <span class="para">B19–B27</span></h3>
+  <ul>
+    <li><b>Reverse acquisition</b>: the entity that <b>issues securities (legal acquirer)</b> is the <b>acquiree for accounting</b>; the entity whose equity is acquired (<b>legal acquiree</b>) is the <b>accounting acquirer</b>.</li>
+    <li>Typical case: a <b>private operating company</b> wants to become public without registering its shares → arranges for a <b>public entity</b> to acquire its shares in exchange for the public entity's shares → public entity = legal acquirer but accounting acquiree; private entity = accounting acquirer.</li>
+    <li>The <b>accounting acquiree must meet the definition of a business</b>; all Ind AS 103 recognition and measurement principles apply, <b>including goodwill</b>.</li>
+    <li>Consideration = acquisition-date FV of the <b>accounting acquirer's</b> equity: the number of shares the <b>legal subsidiary would have had to issue</b> to give the legal parent's owners the same % of the combined entity.</li>
+  </ul>
+  <div class="ex"><p><b>Example 9 (reverse acquisition):</b> A (30,000 shares; net assets 1,100) issues 2.5 shares per B share → 1,50,000 shares for B's 60,000. B's holders own 1,50,000/1,80,000 = <b>83.33%</b> and 6 of 8 board seats → <b>B is accounting acquirer</b>. B's share price ₹105 (A's ₹20). B would have issued 30,000 ÷ 2.5 = <b>12,000</b> shares (12,000/72,000 same ratio) × ₹105 = <b>₹12,60,000</b>. Goodwill = 12,60,000 − 11,00,000 = <b>₹1,60,000</b>.</p></div>
+  <div class="ex"><p><b>Example 11 (new parent pays cash):</b> A spins off B and C; forms D with independent directors; D raises cash from new investors (99%; A keeps 1%) and <b>pays cash</b> for 100% of B and C → <b>D is the acquirer</b> — it paid cash and its new owners obtained control of B and C from A.</p></div>
+  <div class="trap"><p>Accounting may change significantly if the <b>accounting acquirer differs from the legal acquirer</b>. Always test who really gets control.</p></div>
+
+  <h2><span class="n">7</span>Determining the acquisition date <span class="para">8–9</span></h2>
+  <ul>
+    <li>= the date on which the acquirer <b>obtains control</b>. Generally the <b>closing date</b> (consideration legally transferred, assets acquired, liabilities assumed) — but it can be <b>earlier</b> (written agreement gives control before closing) or <b>later</b>. Consider all facts.</li>
+    <li>It decides when consideration, assets, liabilities and NCI are <b>measured</b>, and from when the acquiree's results are <b>consolidated</b> — it materially affects post-combination earnings.</li>
+  </ul>
+  <div class="ex"><p><b>Example 12:</b> shareholder agreement 1 Jun; appointed date 1 Apr; <b>board control 1 Jul</b>; payment 15 Jul; share transfer 1 Aug → acquisition date <b>1 July 20X1</b> (appointed date isn't control).</p></div>
+  <table class="tight">
+    <tr><th style="width:56%">Illustration</th><th>Acquisition date</th></tr>
+    <tr><td><b>7</b> — signed <b>non-binding letter of intent</b>; exchange expected within 2 months</td><td class="C">Cannot be used — LOI doesn't transfer control</td></tr>
+    <tr><td><b>8</b> — binding all-equity deal, effective control 1 Apr; share issue needs shareholder approval on 30 Apr, else <b>cash</b></td><td><b>1 April</b> (consideration settled anyway)</td></tr>
+    <tr><td><b>9</b> — talks from 1 Jan; agreement and power on 1 Mar; "effective 1 Jan", profits and price based on 1 Jan</td><td><b>1 March</b> — power to direct relevant activities only then</td></tr>
+    <tr><td><b>10</b> — terms agreed; <b>CCI approval</b> (substantive) pending</td><td><b>Not earlier than CCI approval</b></td></tr>
+  </table>
+
+  <h2><span class="n">8</span>Step acquisitions <span class="para">41–42</span></h2>
+  <ul>
+    <li>Acquisition date = date <b>control</b> is obtained. Until then the investment follows <b>Ind AS 109</b> (or <b>Ind AS 28</b> for associates/JVs).</li>
+    <li>On control: <b>remeasure the previously held equity interest at acquisition-date FV</b>; gain or loss in <b>P&amp;L or OCI, as appropriate</b>.</li>
+    <li>Amounts earlier recognised in OCI for that interest → recognised on the <b>same basis as if the interest were disposed of directly</b>.</li>
+  </ul>
+  <div class="ex"><p><b>SM example:</b> Fruits Ltd buys 15% of Mango (1 Apr 20X1) → 20% more (5 Apr 20X2) → 65% more (31 Mar 20X3) → total 90% → control (acquisition date) = <b>31 March 20X3</b>. Assumption: control comes with total stake unless stated otherwise.</p></div>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 12 · Ind AS 103 · Purchase consideration</span><span class="tag">SM §9</span></div>
+  <h2><span class="n">9</span>Determination of the purchase consideration <span class="para">37–40</span></h2>
+  <ul>
+    <li>Measured at <b>fair value</b> = total of acquisition-date FVs of <b>assets transferred (incl. cash)</b> + <b>liabilities incurred to former owners</b> of the acquiree + <b>equity interests issued</b> by the acquirer (+ <b>contingent consideration</b>).</li>
+    <li>Forms: cash, other assets, a business or subsidiary of the acquirer, contingent consideration, ordinary or preference equity instruments, options, warrants, member interests of mutual entities.</li>
+    <li><b>Exception to FV:</b> the portion of the acquirer's <b>share-based payment awards exchanged</b> for acquiree employees' awards that is included in consideration → measured under <b>Ind AS 102</b>.</li>
+    <li><b>Non-monetary assets transferred</b> (carrying amount ≠ FV): remeasure to FV at acquisition date; gain/loss in <b>P&amp;L</b>. E.g. land given to the acquiree's owners → land's FV is consideration; derecognise land; difference to P&amp;L.</li>
+    <li><b>But</b> if the transferred assets/liabilities <b>remain within the combined entity</b> (transferred to the acquiree, not its former owners) → acquirer keeps control → measure at <b>carrying amounts</b>, <b>no gain/loss</b>. They still affect NCI and goodwill.</li>
+  </ul>
+  <p><span class="f">Purchase consideration = FV of assets transferred (incl. cash) + liabilities incurred to former owners + equity interests issued + contingent consideration</span></p>
+
+  <h3>9.1 Business combination achieved in stages (step acquisition)</h3>
+  <ul>
+    <li>Acquirer held an equity interest immediately before the acquisition date. <b>Example 13:</b> A holds 35% of B on 31 Dec 20X1 and buys 40% more → control → step acquisition.</li>
+    <li>Remeasure previously held interest at acquisition-date <b>FV</b>; gain/loss in <b>P&amp;L</b>.</li>
+    <li>If the old interest was designated <b>FVOCI</b> (Ind AS 109 / 27): once elected, all gains/losses stay in OCI even on sale → remeasurement gain/loss goes to <b>OCI</b>.</li>
+    <li>A party to a <b>joint operation</b> that obtains control of the joint operation business → business combination in stages → remeasure its previously held interest at FV.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 11:</b> PQR buys 30% of XYZ for ₹8,000 crore (equity method). Year 1: share of P&amp;L 700, FCTR in OCI 100, revaluation reserve in OCI 50 → carrying amount <b>8,850</b>. Then buys 70% for <b>₹25,000 crore</b>; FV of the 30% = <b>9,000</b>; FV of net assets <b>30,000</b>.<br>
+  Goodwill = 25,000 + 9,000 − 30,000 = <b>4,000</b>. Gain on old stake = 9,000 − 8,850 = 150 + FCTR recycled 100 = <b>250 to P&amp;L</b>. Revaluation reserve 50 → <b>retained earnings</b> (Ind AS 16: not reclassified to P&amp;L).<br>
+  Entry: Dr Net assets 30,000 · Dr Goodwill 4,000 · Dr FCTR 100 · Dr Revaluation reserve 50 · Cr Cash 25,000 · Cr Investment in associate 8,850 · Cr Retained earnings 50 · Cr Gain (P&amp;L) 250.</p></div>
+  <div class="ex"><p><b>SM TYK 5:</b> 5% held at FVOCI (cost 1,00,000; FV 1,05,000; ₹5,000 in OCI), then buys 95% → the ₹5,000 <b>stays in OCI</b> (not recycled under Ind AS 109); investment already at FV, so no remeasurement; FV 1,05,000 + consideration for 95% go into goodwill.</p></div>
+  <div class="ex"><p><b>SM TYK 1 (full acquisition method):</b> A holds 25% of B (equity-method carrying ₹6,00,000; FV ₹20,00,000); buys 65% more on 1 Nov → 90%. Cash 59,00,000 + 1,00,000 shares × ₹10 + contingent consideration (FV) 3,00,000 + old stake 20,00,000 = <b>92,00,000</b>. Costs ₹1,00,000 → <b>P&amp;L</b>. NCI at FV 7,50,000. Net assets 60,00,000 → <b>goodwill 39,50,000</b>. Gain on old stake 20,00,000 − 6,00,000 = <b>14,00,000 to P&amp;L</b>.</p></div>
+
+  <h3>9.2 Business combination without transfer of consideration <span class="para">43–44</span></h3>
+  <ul>
+    <li>(a) The acquiree <b>repurchases enough of its own shares</b> for an existing investor to obtain control.</li>
+    <li>(b) <b>Minority veto rights lapse</b> that had kept the majority holder from controlling.</li>
+    <li>(c) Acquirer and acquiree combine <b>by contract alone</b> — no consideration, no equity interest held now or before (e.g. <b>stapling arrangement</b>, <b>dual listed corporation</b>).</li>
+    <li>By contract alone: attribute the acquiree's net assets to its owners → <b>NCI</b>, even if <b>all</b> of the acquiree's equity is NCI. Goodwill uses the <b>FV of the acquirer's interest</b> in place of consideration.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 12 (contract alone):</b> Sita (FV 100) and Beta (FV 80; net assets 70) form a DLC; Sita gets 6 of 10 board seats → <b>Sita acquirer</b>. Part A: consideration nil + interest in acquiree (NCI at FV) 80 + old interest nil; Part B: net assets 70 → <b>goodwill ₹10 crore</b>.</p></div>
+
+  <h3>9.3 Direct cost of acquisition <span class="para">53</span></h3>
+  <ul>
+    <li><b>Not</b> part of consideration: finder's fees, due diligence, accounting, legal, investment banker fees, <b>even bonuses to employees for a successful acquisition</b>; advisory, valuation, other professional or consulting fees; general admin costs incl. an internal acquisitions department.</li>
+    <li>Expensed in the period the costs are incurred and services received — <b>one exception</b>: costs to issue <b>debt or equity</b> → Ind AS 32 / Ind AS 109.</li>
+    <li>The para 53 list is <b>inclusive</b>, only indicative.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 13 — stamp duty</b> on land acquired in a business combination → <b>acquisition-related cost, expense</b> in the period the acquisition is completed. It is not part of the FV exchange and doesn't increase future benefits (assets are at FV). Separate PPE purchase under Ind AS 16 would capitalise it.</p></div>
+  <div class="ex"><p><b>Illustration 14 — one-time payment to the regulator</b> to transfer a wireless spectrum licence acquired with PQR → <b>transaction cost, expense</b>. Transfer of rights is integral to the business combination. (Bought separately, Ind AS 38 would capitalise it.)</p></div>
+
+  <h3>9.4 Contingent consideration <span class="para">39–40 · 58</span></h3>
+  <ul>
+    <li>Consideration includes any asset or liability from a <b>contingent consideration arrangement</b> → recognise its <b>acquisition-date FV</b> as part of consideration.</li>
+    <li>Classify an obligation to pay as <b>liability or equity</b> using <b>Ind AS 32</b> definitions (or other Ind AS). A right to the <b>return</b> of previously transferred consideration → <b>asset</b>.</li>
+    <li>FV measured on the acquisition date. Direct costs → P&amp;L, never in consideration.</li>
+  </ul>
+  <div class="ex"><p><b>Example 14:</b> extra ₹20m cash if targets met; FV at acquisition ₹15m → <b>financial liability</b> (variable cash) → increases goodwill. Later targets become less likely → <b>remeasure liability; change to P&amp;L</b>.</p></div>
+  <div class="ex"><p><b>SM TYK 10:</b> 10 lakh shares now (FV ₹20) + <b>2 lakh more shares</b> after one year if PBIT &gt; ₹1 crore; FV of contingent consideration ₹25 lakh. → fixed number of shares → <b>equity</b>; consideration 2,00,00,000 + 25,00,000 = <b>2,25,00,000</b>; when target met and share price is ₹25, <b>no remeasurement</b> (equity). Variant: shares of a <b>variable number worth ₹40 lakh</b> → <b>financial liability</b> at ₹25 lakh → remeasured to ₹40 lakh → <b>₹15 lakh loss in P&amp;L</b>.</p></div>
+
+  <h2><span class="n">10</span>Purchase price allocation</h2>
+  <h3>10.1 Recognition of assets and liabilities of the acquired entity <span class="para">10–17</span></h3>
+  <p>At the acquisition date recognise, <b>separately from goodwill</b>, the identifiable assets acquired, liabilities assumed and any NCI. The most important principle: recognise and measure <b>all</b> assets and liabilities acquired on the acquisition date.</p>
+  <h3>10.1.1 Recognition conditions</h3>
+  <ul>
+    <li>Must meet the definitions of assets and liabilities in the <b>Framework for the Preparation and Presentation of FS</b> (not the 2021 Conceptual Framework) at the acquisition date. E.g. costs the acquirer <b>expects but is not obliged</b> to incur to exit an activity, terminate or relocate employees → <b>not liabilities</b> → post-combination expense under other Ind AS.</li>
+    <li>Record only assets and liabilities that are <b>part of the business combination deal</b>; other items follow other Ind AS.</li>
+    <li>Acquirer may record items the acquiree <b>never recorded</b> — internally developed brand name, patent, customer relationship.</li>
+    <li><b>Classification and designation</b> on conditions at the <b>acquisition date</b>: financial assets/liabilities (FVTPL / amortised cost / FVOCI), hedge designation, separation of embedded derivatives (Ind AS 109).</li>
+    <li><b>Only exception:</b> lease contracts where the <b>acquiree is lessor</b> (operating vs finance) → classified on <b>conditions at inception</b>, not reassessed — unless modified at that date.</li>
+  </ul>
+  <h3>10.2 Measurement principle <span class="para">18–19</span></h3>
+  <ul>
+    <li>Identifiable assets and liabilities at <b>acquisition-date fair values</b>.</li>
+    <li><b>NCI</b> — components that are <b>present ownership interests</b> entitling holders to a proportionate share of net assets on liquidation: at <b>fair value</b>, or at the present ownership instruments' <b>proportionate share of the recognised identifiable net assets</b>. All other NCI components at acquisition-date <b>fair value</b>, unless another Ind AS requires otherwise.</li>
+  </ul>
+  <h3>10.2.1 Exceptions to the recognition or measurement principle <span class="para">21–31A</span></h3>
+  <p>Limited to <b>acquisition-date accounting</b>. Result: (1) an item that otherwise would not be recorded <b>gets recorded</b>; or (2) items are measured at a value <b>other than FV</b>.</p>
+  <table>
+    <tr><th style="width:18%">Item</th><th>Guidance under Ind AS 103 (SM)</th></tr>
+    <tr><td><b>Contingent liability</b><br><span class="small">(recognition exception)</span></td><td>Ind AS 37 definition: (a) a <b>possible</b> obligation from past events confirmed only by uncertain future events not wholly within the entity's control; or (b) a <b>present</b> obligation not recognised because outflow is not probable or amount can't be measured reliably. <b>Ind AS 37 doesn't apply</b> at acquisition: recognise a contingent liability assumed if it is a <b>present obligation from past events and its FV can be measured reliably</b> — <b>even if outflow is not probable</b>.</td></tr>
+    <tr><td><b>Income taxes</b></td><td>Recognise and measure DTA/DTL from assets acquired and liabilities assumed under <b>Ind AS 12</b>; account for tax effects of temporary differences and carry-forwards of the acquiree existing at, or arising from, the acquisition (initial-recognition exemption does not apply to a BC).</td></tr>
+    <tr><td><b>Employee benefits</b></td><td>Post-retirement obligations under <b>Ind AS 19</b> — exception to the FV rule.</td></tr>
+    <tr><td><b>Indemnification assets</b></td><td>Seller indemnifies the acquirer for the outcome of a contingency (e.g. losses above a specified amount) → acquirer gets an indemnification asset, recognised <b>at the same time</b> and <b>on the same basis</b> as the indemnified item, subject to valuation allowance for uncollectible amounts.</td></tr>
+    <tr><td><b>Reacquired rights</b></td><td>Rights the acquirer had granted to the acquiree to use its assets (recorded or not) — brand licence, franchise. BC settles the right → any settlement gain/loss is a <b>separate transaction</b>. Measure the intangible on the <b>remaining contractual term</b>, ignoring potential renewals.</td></tr>
+    <tr><td><b>Intangible assets</b></td><td>Record separately from goodwill if identifiable — <b>separability</b> or <b>contractual-legal</b> criterion (10.3).</td></tr>
+    <tr><td><b>Share-based payment</b></td><td>Acquiree's awards, or their replacement by the acquirer's awards → <b>Ind AS 102 method</b> at the acquisition date.</td></tr>
+    <tr><td><b>Assets held for sale</b></td><td>Non-current asset / disposal group classified HFS at acquisition date → <b>Ind AS 105</b>: FV less costs to sell.</td></tr>
+    <tr><td><b>Insurance contracts</b></td><td>Groups of contracts in Ind AS 117 scope (and assets for insurance acquisition cash flows) → <b>Ind AS 117</b>.</td></tr>
+    <tr><td><b>Leases — acquiree is lessee</b></td><td>Recognise ROU assets and lease liabilities (Ind AS 116); not required for leases ending <b>within 12 months</b> of acquisition date or <b>low-value</b> assets. Lease liability = <b>PV of remaining lease payments</b> as if a new lease at acquisition date. ROU asset = <b>same amount</b> as lease liability, adjusted for <b>favourable/unfavourable</b> terms vs market.</td></tr>
+    <tr><td><b>Leases — acquiree is lessor</b></td><td>Take the lease terms into account in the asset's FV; <b>no separate asset or liability</b> for favourable/unfavourable operating lease terms.</td></tr>
+    <tr><td><b>Assembled workforce</b></td><td>Not identifiable → value <b>subsumed into goodwill</b>. It is the existing collection of employees, not their intellectual capital.</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th>Contingent liability outcome</th><th>Ind AS 37</th><th>Business combination</th></tr>
+    <tr><td>Possible obligation</td><td>Not recognised</td><td>Not recognised</td></tr>
+    <tr><td>Present obligation, outflow <b>not probable</b></td><td>Not recognised</td><td class="NC">Recognised if reliably measured</td></tr>
+    <tr><td>Present obligation, probable, <b>can't be measured reliably</b></td><td>Not recognised</td><td>Not recognised</td></tr>
+  </table>
+  <div class="sticky">SM chart: <b>Recognition exception</b> = contingent liabilities · <b>Recognition + measurement</b> = income taxes, employee benefits, indemnification assets, leases (acquiree lessee) · <b>Measurement only</b> = share-based payment, assets held for sale, reacquired rights (+ insurance contracts).</div>
+  <div class="ex"><p><b>Example 15:</b> suit for ₹10m disclosed by B as a contingent liability (present obligation, not probable); FV ₹2m → A recognises <b>₹2m</b> in acquisition accounting.</p></div>
+  <div class="ex"><p><b>Example 16:</b> B sued for ₹250; seller reimburses losses <b>above ₹100</b>; present obligation, FV 250 → liability <b>250</b> + indemnification asset <b>150</b>.</p></div>
+  <div class="ex"><p><b>Illustration 15:</b> suit for ₹2 crore; seller indemnifies up to ₹1 crore; FV of liability ₹70 lakh → liability 70 lakh + indemnification asset 70 lakh; <b>net nil effect on goodwill</b>. If FV were ₹1.2 crore → asset <b>limited to ₹1 crore</b>.</p></div>
+  <div class="ex"><p><b>Illustration 16:</b> 10 class actions; seller indemnifies up to ₹10 crore; liability can't be measured reliably → no liability → <b>no indemnification asset</b>.</p></div>
+
+  <h3>10.3 Intangible assets <span class="para">B31–B34</span></h3>
+  <p>Recognise separately from goodwill if the item meets the <b>definition of an asset</b> and is <b>identifiable</b> by either criterion:</p>
+  <h3>10.3.1 Contractual-legal criterion</h3>
+  <ul>
+    <li>Identifiable <b>even if not transferable or separable</b>.</li>
+    <li>(a) Licence to operate a <b>nuclear power plant</b> → meets the criterion even if it can't be sold apart from the plant; may be combined with the plant as a single asset if useful lives are similar.</li>
+    <li>(b) A <b>technology patent</b> licensed to others outside the domestic market for a % of revenue → both the patent and the licence agreement meet the criterion even if selling them separately isn't practical.</li>
+  </ul>
+  <h3>10.3.2 Separability criterion</h3>
+  <ul>
+    <li>Capable of being separated and <b>sold, transferred, licensed, rented or exchanged</b>, individually or with a related contract, asset or liability.</li>
+    <li>Met <b>even if the acquirer doesn't intend</b> to sell/license it; evidence of exchange transactions for that type of asset (even infrequent, even not involving the acquirer) is enough.</li>
+    <li><b>Example 17:</b> customer and subscriber lists are frequently licensed → separable — <b>unless</b> confidentiality or other agreements prohibit selling or exchanging customer information.</li>
+    <li>Separable <b>with a related item</b>: (a) <b>depositor relationship</b> intangible exchanged with deposit liabilities → recognise separately; (b) <b>registered trademark + documented unpatented technical expertise</b> — expertise must be sold with the trademark → separable.</li>
+  </ul>
+  <h3>Sources for spotting intangibles (SM)</h3>
+  <ul class="small">
+    <li><b>Acquiree's FS:</b> significant <b>R&amp;D cost</b> → technology intangibles · significant <b>sales promotion / marketing cost</b> → marketing intangibles (distributor network, collaterals) · <b>customer acquisition cost</b> (incentives to register first-time users / app downloads) → customer list.</li>
+    <li><b>Share purchase agreement</b> → technical know-how, trademarks, patents named in it.</li>
+    <li><b>Purpose of acquisition</b> → e.g. Coca-Cola bought Thums Up intending to close the brand to raise market share — still a possible intangible.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 17:</b> FMCG A buys e-commerce E with 10 million registered users; E has no intention to sell the list → no legal/contractual right, but <b>separable</b> (useful to others, E can transfer it); intention irrelevant → <b>recognise customer list</b>.</p></div>
+  <div class="ex"><p><b>Illustration 18:</b> pharma XYZ has two drugs in clinical trials — one awaiting approval (expected in 2 years), one approved. Ind AS 38.33: probability and reliable-measurement criteria are <b>always satisfied</b> for intangibles acquired in a BC; IPR&amp;D is recognised if it meets the asset definition and is identifiable → <b>both recognised</b>; the probability of approval is reflected in FV. Later expenditure → Ind AS 38 paras 43, 54–62. (Internal research could never be capitalised.)</p></div>
+
+  <h3>10.3.3 Assembled workforce and other items not identifiable</h3>
+  <ul>
+    <li><b>Assembled workforce</b> — existing collection of employees allowing the business to operate from the acquisition date → not identifiable → <b>goodwill</b>.</li>
+    <li><b>Potential contracts</b> being negotiated with prospective customers → not assets at acquisition date → <b>goodwill</b>; don't reclassify later for post-acquisition events (but check events shortly after acquisition to see if an intangible existed at the date).</li>
+    <li>After initial recognition → Ind AS 38. Identifiability decides recognition only; FV uses market-participant assumptions, e.g. <b>expected contract renewals</b> (renewals need not themselves be identifiable).</li>
+  </ul>
+
+  <h3>10.4 Reacquired rights <span class="para">29 · B35–B36</span></h3>
+  <ul>
+    <li>A right the acquirer had granted to the acquiree to use the acquirer's recognised or unrecognised assets (trade name under a franchise; technology under a licence) → <b>identifiable intangible</b>, separate from goodwill.</li>
+    <li>If the contract is <b>favourable or unfavourable</b> vs current market terms → recognise a <b>settlement gain or loss</b>.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 19:</b> Vadapav buys its franchisee Efficient; licence at <b>current market terms</b> → reacquired right recognised as an intangible; <b>no gain/loss</b>.</p></div>
+  <div class="ex"><p><b>Illustration 20:</b> ABC pays ₹1 crore for PQR. Four years ago it gave PQR a 10-year licence for ₹2,50,000; termination costs unexpired fee + 20% = <b>₹1,80,000</b>; a new 6-year licence would fetch <b>₹4,50,000</b>. Licence recognised at <b>₹4,50,000</b>. Loss = lower of (i) unfavourable amount 4,50,000 − 1,50,000 = 3,00,000 and (ii) settlement 1,80,000 = <b>₹1,80,000</b>. So of ₹1 crore, <b>₹98.2 lakh</b> is consideration; ₹1,80,000 is a separate settlement loss.</p></div>
+
+  <h3>10.5 Goodwill — recognition and measurement <span class="para">32–33</span></h3>
+  <p><span class="f fl">Goodwill = (a) [i. consideration at acquisition-date FV + ii. NCI (Ind AS 103) + iii. FV of previously held interest (step acquisition)] − (b) net identifiable assets (Ind AS 103 amounts)</span></p>
+  <ul>
+    <li>Only <b>equity exchanged</b> and the acquiree's equity FV is <b>more reliable</b> → use the acquiree's equity FV instead.</li>
+    <li><b>No consideration</b> → use the acquisition-date FV of the acquirer's interest in the acquiree.</li>
+  </ul>
+
+  <h3>10.6 Bargain purchase <span class="para">34–36</span></h3>
+  <ul>
+    <li>Extremely rare: net assets acquired <b>exceed</b> the consideration (+ NCI + old stake).</li>
+    <li><b>Clear evidence</b> of the reason → gain in <b>OCI</b> on the acquisition date, accumulated in equity as <b>capital reserve</b>. <b>No clear evidence</b> → <b>directly in equity as capital reserve</b>.</li>
+    <li>Gain attributed to the <b>acquirer</b> — <b>no allocation to NCI</b>.</li>
+    <li>Examples of reasons: <b>forced sale</b> (seller under compulsion), bankruptcy sale, sale due to a regulatory requirement.</li>
+    <li>Before recognising: confirm clear evidence of the reason; <b>reassess</b> whether all assets and liabilities are identified (recognise any found); <b>review the measurement</b> of (i) identifiable assets and liabilities, (ii) NCI, (iii) previously held interest, (iv) consideration — to reflect all information available at the acquisition date.</li>
+  </ul>
+  <div class="ex"><p><b>Example 18:</b> UK competition authority orders X to sell a division of Y's UK assets within a deadline; boutique Z buys it → <b>more likely than not a bargain purchase</b> (seller under compulsion).</p></div>
+  <div class="ex"><p><b>Illustration 21:</b> A buys 80% of B for ₹15 crore; sellers had to dispose by a deadline. Net assets ₹20 crore; NCI FV ₹4.2 crore → 20 − 19.2 = <b>₹80 lakh</b> → (clear evidence) <b>OCI → capital reserve</b>. With proportionate NCI: NCI 4 crore → gain <b>₹1 crore</b>.</p></div>
+  <div class="ex"><p><b>SM TYK 6:</b> 70% for ₹5 million; NCI proportionate; net assets ₹10 million → NCI 3m → gain 10 − 8 = <b>₹2 million</b>. <b>SM TYK 8:</b> Alpha buys 80% of Beta for ₹300 (seller legally compelled); assets 500, liabilities 100; NCI FV 84 → 400 − 384 = <b>₹16</b> → OCI → capital reserve.</p></div>
+
+  <h3>10.7 Measurement period <span class="para">45–50</span></h3>
+  <ul>
+    <li>If information is incomplete at the reporting date, do the purchase price allocation on a <b>provisional</b> basis.</li>
+    <li>During the period: <b>retrospectively adjust</b> provisional amounts for new information about <b>facts and circumstances that existed at the acquisition date</b>; also recognise <b>additional</b> assets/liabilities. Adjust against <b>goodwill</b>.</li>
+    <li>Ends when the information is received or learned unobtainable — <b>never more than one year</b> from acquisition date.</li>
+    <li>Covers: identifiable assets, liabilities and NCI; consideration (or other amount used for goodwill); previously held interest; resulting goodwill or bargain gain.</li>
+    <li>After the period: changes for information that existed at the date → <b>error under Ind AS 8</b>. Conditions that did <b>not</b> exist at the date → other Ind AS (P&amp;L).</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 22:</b> DTA on Y's carried-forward losses not recognised at acquisition (no convincing evidence); a year later Y wins a big contract → DTA recognised then → <b>change of estimate, no goodwill adjustment</b>.</p></div>
+  <div class="ex"><p><b>Illustration 23:</b> claim recognised at ₹1 crore at acquisition (15 Jan 20X1). Oct 20X1 (within period) new info → FV at acquisition ₹2 crore → <b>+₹1 crore liability, +₹1 crore goodwill</b>, comparatives restated and disclosed. Feb 20X2 (after period) FV revised to ₹1.9 crore → <b>no adjustment</b>; Ind AS 37 amount ₹2.2 crore → <b>₹20 lakh to P&amp;L</b>.</p></div>
+  <div class="ex"><p><b>SM TYK 3:</b> Bank F buys Bank E (Oct). Scenario 1: Dec — borrower's results for the year to 30 Sep (before acquisition) show lower income → loan FV lower at acquisition → <b>adjust provisional amount, increase goodwill</b>. Scenario 2: borrower loses a major customer after acquisition → <b>new event → P&amp;L</b>, not goodwill.</p></div>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 12 · Ind AS 103 · What is part of the deal · Employees · Awards · NCI · Subsequent · Disclosures</span><span class="tag">SM §10.8–12</span></div>
+  <h3>10.8 Determining what is part of the business combination transaction <span class="para">51–53 · B50–B53</span></h3>
+  <ul>
+    <li>The parties may have a <b>pre-existing relationship</b> or an arrangement made <b>during negotiations</b> that is separate from the combination. Identify amounts that are <b>not part of the exchange for the acquiree</b>. Apply the acquisition method only to consideration transferred and assets/liabilities exchanged for the acquiree; account for <b>separate transactions under the relevant Ind AS</b>.</li>
+    <li>A transaction entered by or for the <b>acquirer</b> or primarily for the benefit of the acquirer or combined entity (not of the acquiree or its former owners) is likely <b>separate</b>.</li>
+  </ul>
+  <div class="box"><h3>Examples of separate transactions</h3>
+    <p>• settling <b>pre-existing relationships</b> between acquirer and acquiree · • <b>remunerating employees or former owners</b> of the acquiree for <b>future services</b> · • <b>reimbursing</b> the acquiree or its former owners for paying the <b>acquirer's acquisition-related costs</b>.</p></div>
+  <table class="tight">
+    <tr><th style="width:24%">Factor (not mutually exclusive, not individually conclusive)</th><th>How it helps</th></tr>
+    <tr><td><b>I. Reasons</b> for the transaction</td><td>Arranged primarily for the benefit of the <b>acquirer / combined entity</b> → that portion is less likely part of the exchange → account separately.</td></tr>
+    <tr><td><b>II. Who initiated</b> it</td><td>Initiated by the <b>acquirer</b> → likely for its future benefit, little benefit to acquiree/former owners → separate. Initiated by the <b>acquiree or former owners</b> → more likely part of the combination.</td></tr>
+    <tr><td><b>III. Timing</b></td><td>Entered <b>during negotiations</b> in contemplation of the combination to benefit the acquirer → likely separate.</td></tr>
+  </table>
+  <div class="ex"><p><b>Illustration 24:</b> Progressive had recognised a ₹10m liability for a patent suit by Regressive; then buys Regressive for ₹500m; FV of expected settlement ₹20m → litigation <b>settled by the combination</b>: ₹20m treated as paid to settle the claim (purchase price for the business = ₹480m); <b>₹10m loss on settlement</b> in Progressive's P&amp;L.</p></div>
+  <table class="tight">
+    <tr><th>Pre-existing relationship (SM summary)</th><th>Settlement measured at</th><th>Where</th></tr>
+    <tr><td><b>Non-contractual</b> (lawsuit)</td><td>Fair value</td><td rowspan="2">P&amp;L, not goodwill</td></tr>
+    <tr><td><b>Contractual</b> (supply agreement)</td><td>Lesser of (i) favourable/unfavourable amount vs market and (ii) stated settlement provision. If (ii) &lt; (i), the difference is part of the business combination accounting. (Unfavourable ≠ onerous.)</td></tr>
+    <tr><td><b>Reacquired right</b> (franchise)</td><td>Intangible at FV on remaining contractual term (no renewals) → <b>capitalised and amortised</b>; settlement gain/loss as above</td><td>Asset + P&amp;L</td></tr>
+  </table>
+
+  <h3>10.9 Contingent payments to employees or selling shareholders <span class="para">B54–B55</span></h3>
+  <p>Whether they are contingent consideration or a separate transaction depends on the nature of the arrangement — look at <b>why</b> the provision exists, <b>who initiated</b> it and <b>when</b>. If unclear, use these indicators:</p>
+  <table class="tight">
+    <tr><th style="width:21%">Indicator</th><th>Consideration vs remuneration</th></tr>
+    <tr><td>(a) <b>Continuing employment</b></td><td>Payments <b>automatically forfeited if employment terminates</b> → <b>remuneration</b> for post-combination services. Not affected by termination → may be additional consideration.</td></tr>
+    <tr><td>(b) <b>Duration</b> of continuing employment</td><td>Required employment period <b>coincides with or is longer than</b> the contingent payment period → may be remuneration.</td></tr>
+    <tr><td>(c) <b>Level of remuneration</b></td><td>Other pay <b>reasonable</b> vs other key employees → contingent payments may be additional <b>consideration</b>.</td></tr>
+    <tr><td>(d) <b>Incremental payments</b> to employees</td><td>Non-employee sellers get <b>less per share</b> than sellers who become employees → the <b>incremental</b> amount is remuneration.</td></tr>
+    <tr><td>(e) <b>Number of shares owned</b></td><td>Sellers who owned <b>substantially all</b> shares stay as key employees → may be profit-sharing (remuneration). Stayers own <b>few</b> shares and all sellers get the <b>same per share</b> → consideration. Consider shares of related parties (family).</td></tr>
+    <tr><td>(f) <b>Linkage to valuation</b></td><td>Initial price at the <b>low end</b> of the valuation range and the formula relates to that valuation → <b>consideration</b>. Formula consistent with <b>prior profit-sharing</b> → remuneration.</td></tr>
+    <tr><td>(g) <b>Formula</b></td><td><b>Multiple of earnings</b> → consideration (establishes/verifies FV of acquiree). <b>Specified % of earnings</b> → profit sharing → remuneration.</td></tr>
+    <tr><td>(h) <b>Other agreements and issues</b></td><td>Non-competes, executory or consulting contracts, property leases and tax treatment. E.g. lease from a selling shareholder at <b>significantly below market</b> → part of the contingent payments is really <b>rent</b>, recognised post-combination; at market rent → contingent consideration.</td></tr>
+  </table>
+  <div class="ex"><p><b>Illustration 25:</b> KKV buys 100% of VIVA (owner is KMP) for USD 20m + USD 2m after 2 years if EBITDA margin is 21% <b>and</b> the owner stays 2 years (nothing paid otherwise) → consideration <b>USD 20m only</b>; USD 2m = <b>employee cost</b>.</p></div>
+  <div class="ex"><p><b>Illustration 26:</b> 3 equal shareholders, 2 are senior employees who stay. Employee-shareholders get ₹60,00,000 each + ₹1.5–2 crore based on a <b>multiple of earnings</b> over 2 years, <b>forfeited if they leave</b>; non-employee shareholders get ₹1,00,00,000 each; salaries reasonable → the ₹1.5–2 crore is <b>post-combination remuneration</b> (B55(a)); only <b>₹60,00,000</b> each is consideration.</p></div>
+
+  <h3>10.10 Acquirer share-based payment awards exchanged for acquiree employees' awards <span class="para">B56–B62</span></h3>
+  <ul>
+    <li>Replacement awards may cover <b>vested and unvested</b> awards; accounted as <b>modifications</b> under Ind AS 102.</li>
+    <li>If the acquirer replaces acquiree awards, all or part of the <b>market-based measure</b> (remeasured on acquisition date under Ind AS 102) of the replacement awards is included in <b>consideration</b>.</li>
+    <li>Acquiree awards would <b>expire</b> on the combination and the acquirer replaces them <b>without being obliged</b> → <b>all</b> of the market-based measure is <b>post-combination remuneration</b>; none in consideration. The acquirer is <b>obliged</b> if replacement is required by (a) the acquisition agreement, (b) the terms of the acquiree's awards, or (c) laws or regulations (i.e. the acquiree or employees can enforce it).</li>
+    <li>Measure both replacement and acquiree awards at the acquisition date (Ind AS 102).</li>
+  </ul>
+  <p><span class="f fl">Pre-combination portion (→ consideration) = market-based measure of ACQUIREE award × vesting period completed ÷ greater of (total vesting period, original vesting period)</span>
+  <span class="f fl">Post-combination portion (→ remuneration cost) = market-based measure of REPLACEMENT award − pre-combination portion</span></p>
+  <ul class="small">
+    <li>Any <b>excess</b> of replacement over acquiree award measure → post-combination remuneration.</li>
+    <li>Attribute a portion to post-combination service if <b>post-combination service is required</b>, even if employees had completed all service for the acquiree awards.</li>
+    <li>Both portions reflect the <b>best estimate of awards expected to vest</b>. <b>Example 19:</b> pre-combination measure ₹100, 95% expected to vest → <b>₹95</b> in consideration.</li>
+    <li>Later changes in expected vesting / forfeitures, modifications, outcomes of performance conditions → <b>remuneration cost</b> of that period (not consideration).</li>
+    <li>Same rules whether the award is <b>liability or equity</b>-classified; liability-award remeasurements after acquisition → post-combination FS. Income tax effects → <b>Ind AS 12</b>.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 27:</b> original vesting 5 years, 2 served; replacement vests in 2 more years (total 4); original award ₹500, replacement ₹600 → pre-combination = 500 × 2 ÷ greater of (5, 4) = <b>₹200</b> → consideration. Post-combination = 600 − 200 = <b>₹400</b> → expense over 2 years.</p></div>
+
+  <h3>10.11 Non-replacement awards</h3>
+  <ul>
+    <li>Acquiree awards <b>not exchanged</b> by the acquirer → settled in the acquiree's own shares → those holders become <b>NCI</b>.</li>
+    <li><b>Vested</b> → part of <b>NCI</b> at market-based measure (the share-based payment reserve is classified as NCI).</li>
+    <li><b>Unvested</b> → market-based measure as if acquisition date were grant date; <b>pre-combination</b> portion (ratio as above) → <b>NCI</b>; the balance → <b>employee cost</b> over remaining vesting, credited to <b>NCI</b>.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 28:</b> Q's award vests after 5 years; 2 served; P doesn't replace it but cuts the remaining period from 3 to 2 years; measure ₹500 → <b>₹200 to NCI</b> (500 × 2/5, original vesting period); <b>₹300</b> expensed over 2 years.</p></div>
+
+  <h3>10.12 Non-controlling interest in an acquiree <span class="para">19 · B44–B45</span></h3>
+  <ul>
+    <li>NCI may be measured at <b>fair value</b> — from a <b>quoted price</b> in an active market for the shares not held by the acquirer, or other valuation techniques.</li>
+    <li>Per-share FV of the acquirer's interest and of NCI may <b>differ</b>: <b>control premium</b> in the acquirer's, or <b>discount for lack of control</b> (NCI discount) in NCI's.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 29:</b> Classic buys 60% of Natural for ₹97.5 crore; net assets FV 150; FV of the 40% NCI 65; carrying net assets 120 (irrelevant). <b>(a) FV method:</b> Dr Net assets 150, Dr Goodwill <b>12.5</b> · Cr NCI 65, Cr Investment 97.5 (goodwill = FV of Natural 162.5 − 150). <b>(b) Proportionate:</b> NCI 40% × 150 = 60 → goodwill <b>7.5</b> (= 97.5 − 60% × 150).</p></div>
+  <div class="ex"><p><b>SM TYK 4:</b> 90% of B for ₹85 crore in a distress sale; NCI FV ₹15 crore; net assets ₹100 crore → NCI = <b>₹15 crore</b> (FV) or <b>₹10 crore</b> (10% × 100).</p></div>
+
+  <h2><span class="n">11</span>Subsequent measurement and accounting <span class="para">54–58</span></h2>
+  <p>Generally <b>other Ind AS</b> apply after the acquisition date. Ind AS 103 gives specific guidance for four items:</p>
+  <table class="tight">
+    <tr><th style="width:22%">Item</th><th>After acquisition</th></tr>
+    <tr><td><b>11.1 Reacquired rights</b></td><td>Amortise over the <b>remaining contractual period</b> of the contract that granted the right. If later sold to a third party, include its carrying amount in the gain/loss on sale.</td></tr>
+    <tr><td><b>11.2 Contingent liabilities</b></td><td>Until settled, cancelled or expired: <b>higher of</b> (a) the Ind AS 37 amount and (b) the amount initially recognised less cumulative income recognised under Ind AS 115 principles, if appropriate.</td></tr>
+    <tr><td><b>11.3 Indemnification assets</b></td><td>Each reporting date: <b>same basis</b> as the indemnified item, subject to <b>contractual limits</b> and (if not at FV) <b>collectability</b>. Derecognise only when <b>collected, sold</b> or the right is <b>lost</b>.</td></tr>
+    <tr><td><b>11.4 Contingent consideration</b></td><td>Changes from new info about <b>facts existing at acquisition date</b> (within the measurement period) → <b>goodwill</b>. Changes from <b>post-acquisition events</b> (earnings target met, share price reached, R&amp;D milestone) are not measurement-period adjustments: (a) <b>equity</b>-classified → <b>not remeasured</b>; settlement within equity; (b) other — within Ind AS 109: FV each reporting date, changes in <b>P&amp;L</b>; outside Ind AS 109: FV each reporting date, changes in <b>P&amp;L</b>.</td></tr>
+  </table>
+
+  <h2><span class="n">12</span>Disclosures <span class="para">59–63 · B64–B67</span></h2>
+  <p>Objective: let users evaluate the <b>nature and financial effect</b> of business combinations (a) <b>during</b> the period, or (b) <b>after</b> the period end but before FS are approved. For <b>each</b> combination in the period:</p>
+  <table class="tight small">
+    <tr><td style="width:4%">a</td><td>name and description of the acquiree</td><td style="width:4%">j</td><td>each contingent liability recognised (Ind AS 37 para 85); if not recognised for lack of reliable FV — Ind AS 37 para 86 info + reasons</td></tr>
+    <tr><td>b</td><td>acquisition date</td><td>k</td><td>total goodwill expected to be <b>tax-deductible</b></td></tr>
+    <tr><td>c</td><td>% of voting equity acquired</td><td>l</td><td>separate transactions: description, accounting, amounts and line items; method for settling a pre-existing relationship</td></tr>
+    <tr><td>d</td><td>primary reasons and how control was obtained</td><td>m</td><td><b>acquisition-related costs</b>: total, amount expensed and line items; issue costs not expensed and how recognised</td></tr>
+    <tr><td>e</td><td>qualitative factors making up <b>goodwill</b> (synergies, unrecognisable intangibles, other)</td><td>n</td><td><b>bargain purchase</b>: gain in OCI; gain directly in equity; reasons (for the OCI case)</td></tr>
+    <tr><td>f</td><td>acquisition-date FV of total consideration and each class: cash; other assets incl. a business/subsidiary; liabilities incl. contingent consideration; equity interests (number and FV method)</td><td>o</td><td>less than 100% acquired: <b>NCI</b> amount and basis; for FV-measured NCI the valuation techniques and inputs</td></tr>
+    <tr><td>g</td><td><b>contingent consideration and indemnification assets</b>: amount recognised; description and basis; range of outcomes (undiscounted), or why not estimable; unlimited maximum → say so</td><td>p</td><td><b>stages</b>: FV of the old stake immediately before; gain/loss on remeasurement and its line item</td></tr>
+    <tr><td>h</td><td><b>acquired receivables</b>: FV; gross contractual amounts; best estimate not collectable — by major class</td><td>q</td><td>acquiree's <b>revenue and profit since acquisition</b>; combined entity's revenue and profit <b>as if acquired at the start</b> of the year (impracticable → say why)</td></tr>
+    <tr><td>i</td><td>amounts for each <b>major class of assets and liabilities</b></td><td></td><td>Acquired after period end and accounting incomplete at approval → state which disclosures can't be made and why.</td></tr>
+  </table>
+  <h3>Adjustments in the period (each material combination, or aggregated if individually immaterial)</h3>
+  <ul class="small">
+    <li>(a) <b>Provisional</b> accounting: reasons it is incomplete; items affected; nature and amount of measurement-period adjustments.</li>
+    <li>(b) <b>Contingent consideration</b> until settled/expired: changes in recognised amounts (incl. on settlement); changes in range and reasons; valuation techniques and key inputs.</li>
+    <li>(c) <b>Contingent liabilities</b> recognised: Ind AS 37 paras 84–85 by class.</li>
+    <li>(d) <b>Goodwill reconciliation</b>: opening gross amount and accumulated impairment; additions (except HFS on acquisition); adjustments for later DTA recognition; goodwill in HFS disposal groups and derecognised; impairment losses (Ind AS 36); net exchange differences (Ind AS 21); other changes; closing gross and accumulated impairment.</li>
+    <li>(e) Amount and explanation of any material <b>gain or loss</b> in the period relating to assets/liabilities of a combination of this or the previous period.</li>
+  </ul>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 12 · Ind AS 103 · Common control · AS 14 · Carve-out/in · TYK</span><span class="tag">SM §13–17</span></div>
+  <h2 class="brk"><span class="n">13</span>Common control transactions including merger <span class="para">Appendix C</span></h2>
+  <h3>13.1 Definitions</h3>
+  <ul>
+    <li><b>Transferor</b> — entity or business combined into another entity as a result of a business combination.</li>
+    <li><b>Transferee</b> — entity in which the transferor is combined.</li>
+    <li><b>Reserve</b> — portion of earnings, receipts or other surplus (capital or revenue) appropriated by management for a general or specific purpose, <b>other than provision for depreciation</b>.</li>
+    <li><b>Common control business combination</b> — involving entities or businesses that are all <b>ultimately controlled by the same party or parties both before and after</b> the combination, and that control is <b>not transitory</b>.</li>
+  </ul>
+  <h3>13.2 Common control business combinations</h3>
+  <ul>
+    <li>Includes transfers of subsidiaries or businesses <b>between entities within a group</b>.</li>
+    <li><b>Extent of NCI is not relevant</b> — a partly-owned subsidiary is still controlled by the parent.</li>
+    <li>Controller may be an <b>individual</b> or a <b>group of individuals acting together under a contractual arrangement</b>, who need not follow Ind AS — combining entities <b>need not be in the same consolidated FS</b>.</li>
+    <li>A group of individuals controls when, <b>as a result of contractual arrangements</b>, they collectively have power to govern financial and operating policies to obtain benefits, and that collective power is not transitory.</li>
+    <li>Usually a <b>group reorganisation</b> where direct ownership changes but the ultimate parent stays the same. Judgement needed on:
+      <br>• <b>Transitory</b> — not defined; meant to apply Ind AS 103 acquisition accounting where a <b>substantive change in control</b> is structured so the entity is briefly under common control before and after. Not transitory merely because the combination is done in contemplation of an <b>IPO</b> or sale.
+      <br>• Two or more individuals — do they control <b>collectively under a contractual agreement</b>?</li>
+    <li><b>Examples:</b> merger between fellow subsidiaries · merger of subsidiary with parent · acquisition of an entity from an entity within the same group · bringing entities under common control into a corporate legal structure.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:52%">Illustration</th><th>ICAI conclusion</th></tr>
+    <tr><td><b>30</b> — ultimate parent X reorganises retail: subsidiary Z acquires X's holding in subsidiary Y by issuing its own shares to X</td><td class="NC">Business combination <b>under common control</b> — X controls both before and after; no change from X's perspective</td></tr>
+    <tr><td><b>31</b> — B, C, D, E hold 25% each in ABC and XYZ; B, C, D have a <b>shareholders' agreement</b> giving joint control</td><td class="NC">Common control (group of individuals, contractual arrangement)</td></tr>
+    <tr><td><b>32</b> — same holdings, <b>no agreement</b> to vote jointly</td><td class="C">Not common control — even with an established pattern of voting together</td></tr>
+    <tr><td><b>33</b> — ABC buys Y on 1 Apr; transfers Y to its subsidiary X on 2 Apr</td><td class="C">In X's CFS: <b>X is the acquirer → acquisition accounting</b>. Placing Y briefly under ABC doesn't avoid it — X would have applied acquisition accounting if it bought Y directly ("transitory")</td></tr>
+    <tr><td><b>35</b> — A owns B; forms new subsidiary C, funded by a loan, which pays ₹2,00,000 cash for B (FV net assets 1,50,000; carrying 1,00,000)</td><td>C <b>cannot be the acquirer</b>; C isn't a business; it's a <b>reorganisation of B</b> → B's assets and liabilities in C's CFS at <b>pre-combination carrying amounts</b>, no FV uplift</td></tr>
+    <tr><td><b>TYK 7</b> — A (owned by individuals, no collective agreement) and B (Mr. Ram). B issues 40% new shares to Ram, who passes them to A's owners for A → Ram "controls" both (100% A, 71.42% B)</td><td class="C">Not common control — Ram's control of A was <b>transitory</b>. B obtains control of A → acquisition accounting</td></tr>
+  </table>
+
+  <h3>13.3 Method of accounting — pooling of interests <span class="para">App C · 8–12</span></h3>
+  <ol>
+    <li>Assets and liabilities of the combining entities at their <b>carrying amounts</b>.</li>
+    <li><b>No adjustments to reflect fair values</b>, no new assets or liabilities. <b>Only adjustment: harmonise accounting policies.</b></li>
+    <li>Prior-period financial information <b>restated</b> as if the combination occurred from the <b>beginning of the earliest period presented</b>, irrespective of the actual date. If the combination (common control) occurred after that date, restate <b>only from that date</b>.</li>
+  </ol>
+  <ul>
+    <li>Consideration may be securities, cash or other assets. <b>Securities at nominal value</b>; assets other than cash at <b>fair value</b>.</li>
+    <li>Transferor's <b>retained earnings</b> are aggregated with the transferee's — or transferred to <b>General Reserve</b>, if any.</li>
+    <li><b>Identity of reserves preserved</b>: transferor's General Reserve → transferee's General Reserve; Capital Reserve → Capital Reserve; Revaluation Reserve → Revaluation Reserve. So reserves distributable before stay distributable after.</li>
+  </ul>
+  <p><span class="f fl">Capital reserve = (Share capital issued + additional consideration in cash/other assets) − Share capital of transferor → present separately from other capital reserves; disclose nature and purpose</span></p>
+  <div class="sticky">Acid test: <b>the same shareholders control the entity before and after</b> the reorganisation.</div>
+  <div class="ex"><p><b>Illustration 34:</b> (a) XYZ acquires PQR on 1 Oct 20X9 (year end 31 Mar), both controlled by the same shareholders since incorporation → restate comparatives for 20X8-X9 as if acquired <b>before 1 April 20X8</b>; current year includes the other entity from 1 Apr 20X9. (b) ABC acquires DEF on 1 Oct 20X9; shareholder A invested in DEF only on <b>1 Oct 20X8</b> → restate comparatives <b>from 1 Oct 20X8, not earlier</b>.</p></div>
+  <div class="ex"><p><b>Illustration 36 (demerger to a new company):</b> Enterprise sells loss-making Mobiles division (net assets: PPE 100 + CA 500 − CL 400 − loans 300 = <b>−100</b>) for ₹25 crore to new Turnaround Ltd., which issues 1 crore shares of ₹10 at ₹15 premium to Enterprise's members (one member holds 52% → common control). Enterprise: Dr Loans 300, CL 400, Provision for depreciation 400 · Cr PPE 500, CA 500, <b>100 credit</b> (ICAI's entry credits P&amp;L; its balance sheet note shows it as "Capital reserve on reconstruction 100"). Turnaround: book values; share capital 10 + premium 15; capital reserve 25 − (600 − 700) = <b>(125)</b>; other equity <b>(110)</b>.</p></div>
+  <div class="ex"><p><b>Illustration 37 (demerger):</b> Mini division (PPE 200 WDV + CA 300 − CL 100 − secured loan 100 = 300) to new Mini Ltd. for 5 crore shares of ₹10 at par to Maxi Mini's members. Maxi Mini: <b>loss on reconstruction 300</b> (Dr) → other equity 650 → 350. Mini Ltd.: assets/liabilities at book value; share capital 50; <b>capital reserve 250</b>. NAV per share: pre-demerger 700/5 = <b>₹140</b>; post 400/5 = 80 + Mini 300/5 = 60 = <b>₹140</b> → no change in shareholders' wealth (only yield valuation may change).</p></div>
+  <div class="ex"><p><b>Illustration 38 (amalgamation into new ABX Ltd.):</b> (a) <b>Common control</b>: book values; consideration = net assets − reserves: AX 60,00 + BX 70,00 = <b>1,30,00 thousand</b>; shares split in proportion of net assets (90,50 : 97,00 → 6,27,500 and 6,72,500 shares); reserves keep identity (General 35,00; P&amp;L 15,00; Investment Allowance 6,00; Export Profit 1,50). (b) BX larger and takes control → <b>not common control</b> → BX is accounting acquirer (FV 14,000 vs 11,000 → 56% : 44%) → <b>reverse acquisition</b>: BX at book values; BX would issue 550 thousand shares (700 ÷ 56% − 700) × ₹20 = <b>₹11,000 thousand</b>; AX net assets at FV 10,100 → <b>goodwill 900</b>; equity = 1,250 thousand shares (12,500) + BX's reserves + premium 5,500.</p></div>
+  <div class="ex"><p><b>Illustration 39:</b> talks 9 Apr; board authorises 10 May; offer 15 May; acceptance 31 May; press release 2 Jun; shareholder approval 10 Jun; <b>shares allotted 15 Jun</b> → acquisition date <b>15 June</b>; consideration 12,000 × ₹90 = <b>₹10,80,000</b>.</p></div>
+  <div class="ex"><p><b>Illustration 40 (opening CFS with every special item):</b> Professional buys 70% of Dynamic (1 share for 2; FV ₹40). Consideration: shares 2,00,000 × 70% × ₹40 = <b>56.00</b> + <b>deferred</b> ₹35 lakh minimum payable after 2 years discounted @10% = <b>28.93</b> (the "higher of ₹35 lakh or 25% of excess profit" — minimum is deferred consideration; contingent part FV taken as nil) + replacement award 5 × 2/4 = <b>2.50</b> (rest 8 − 2.5 = 5.5 → expense over 1 year) = <b>87.43</b>. ₹20 lakh to a founder if he stays 2 years → <b>employee cost</b>. Net assets: PPE FV 350 vs 500 (−150); lawsuit FV 5 (claim 50) → net assets 470; DTA on −155 @30% = 46.5 → <b>516.5</b>. NCI 30% = <b>154.95</b>. <b>Capital reserve = 516.5 − 154.95 − 87.43 = 274.12</b>. Share capital 500 + 14 = 514; premium 42.</p></div>
+
+  <h2><span class="n">14</span>Extracts from FS of listed entities (SM)</h2>
+  <p class="small">HUL — amalgamation of GlaxoSmithKline Consumer Healthcare (2020-21) · L&amp;T — majority stake in Mindtree via further acquisition (28.86% held + 31.20% open offer; step acquisition) · L&amp;T — majority stake in L&amp;T Gulf Pvt Ltd.</p>
+
+  <h2><span class="n">15</span>Significant differences — Ind AS 103 vs AS 14</h2>
+  <table class="tight">
+    <tr><th style="width:4%">#</th><th style="width:16%">Basis</th><th style="width:44%">Ind AS 103</th><th>AS 14 / AS 21</th></tr>
+    <tr><td>1</td><td>Applicability</td><td>All business combinations, except formation of JV and asset acquisitions — <b>wider</b></td><td>Amalgamations and mergers only</td></tr>
+    <tr><td>2</td><td>Method</td><td><b>Only acquisition method</b>; pooling only for common control</td><td>Pooling of interests <b>and</b> purchase method</td></tr>
+    <tr><td>3</td><td>Effective date</td><td>Acquisition date = date control obtained</td><td>Not defined; in practice the <b>appointed date</b> in the court scheme</td></tr>
+    <tr><td>4</td><td>Valuation base</td><td>Identifiable assets, liabilities and NCI at <b>fair value</b></td><td>Book values, or FV under purchase method</td></tr>
+    <tr><td>5</td><td>NCI / minority interest</td><td>FV or proportionate share of identifiable net assets</td><td>Equity attributable to minorities at investment date; <b>shown outside shareholders' equity</b></td></tr>
+    <tr><td>6</td><td>Goodwill</td><td><b>Not amortised</b>; annual impairment test (Ind AS 36)</td><td>Amortised over <b>not more than 5 years</b></td></tr>
+    <tr><td>7</td><td>Reverse acquisition</td><td>Guidance given</td><td>Not dealt with</td></tr>
+    <tr><td>8</td><td>Contingent consideration</td><td>Dealt with</td><td>No specific guidance</td></tr>
+    <tr><td>9</td><td>Bargain purchase</td><td>OCI → capital reserve; or directly capital reserve if no clear evidence</td><td>Capital reserve under reserves and surplus</td></tr>
+    <tr><td>10</td><td>Common control</td><td>Appendix C — pooling</td><td>No separate treatment</td></tr>
+  </table>
+  <p class="small">Indian GAAP had no comprehensive standard for obtaining control: treatment depended on the <b>form</b> (separate entity vs legal merger); court schemes could prescribe treatments; AS 21 consolidated at <b>carrying values</b>. Ind AS 103 uses principles and fair values.</p>
+
+  <h2><span class="n">16</span>Carve-out from IFRS 3</h2>
+  <p><b>IFRS 3:</b> bargain purchase gain → <b>P&amp;L</b>. <b>Ind AS 103:</b> → <b>OCI → capital reserve</b>, or directly capital reserve if no clear evidence (same carve-out in <b>Ind AS 28</b>). <b>Reason:</b> continuation of Indian GAAP practice — gain at the time of acquiring a business is capital in nature.</p>
+  <h2><span class="n">17</span>Carve-in to IFRS 3</h2>
+  <p><b>IFRS 3</b> excludes common control combinations. <b>Ind AS 103 Appendix C</b> gives guidance — additional guidance not available under IFRS.</p>
+
+  <h2><span class="n">18</span>Test Your Knowledge — ICAI answers in brief</h2>
+  <table class="tight">
+    <tr><th style="width:5%">Q</th><th style="width:36%">Topic</th><th>ICAI answer</th></tr>
+    <tr><td>1</td><td>Step acquisition with contingent consideration, costs, NCI at FV</td><td>Acquirer A; date 1 Nov; consideration 59,00,000 + 10,00,000 + 3,00,000 + 20,00,000 = <b>92,00,000</b>; costs 1,00,000 → P&amp;L; NCI 7,50,000; old stake gain <b>14,00,000</b> → P&amp;L; <b>goodwill 39,50,000</b></td></tr>
+    <tr><td>2</td><td>Reverse acquisition with CBS</td><td>B accounting acquirer (60%); consideration 40 shares × ₹40 = <b>1,600</b> (measured using A's quoted price: 100 × ₹16); A's net assets 1,300 → <b>goodwill 300</b>. CBS: NCA 4,500 · goodwill 300 · CA 1,200 = <b>6,000</b>; issued equity 600 + 1,600 = <b>2,200</b> (structure: A's 250 shares); RE <b>1,400</b> (B's); NCL 1,500; CL 900</td></tr>
+    <tr><td>3</td><td>Measurement period</td><td>Info about pre-acquisition facts → adjust provisional amount and goodwill; post-acquisition event → Ind AS 109 allowance in P&amp;L</td></tr>
+    <tr><td>4</td><td>NCI options</td><td>₹15 crore (FV) or ₹10 crore (10% × 100)</td></tr>
+    <tr><td>5</td><td>FVOCI old stake</td><td>₹5,000 stays in OCI (not recycled); FV 1,05,000 + consideration for 95% in acquisition accounting</td></tr>
+    <tr><td>6</td><td>Bargain purchase review</td><td>Procedures appropriate after review; 1,00,00,000 − 50,00,000 − 30,00,000 = <b>₹20,00,000</b> gain</td></tr>
+    <tr><td>7</td><td>Transitory control</td><td><b>Not</b> common control; B acquires A → acquisition method</td></tr>
+    <tr><td>8</td><td>Bargain purchase + entry</td><td>Gain <b>16</b>: Dr Assets 500 · Cr Cash 300, Liabilities 100, OCI/Equity 16, NCI 84. Proportionate NCI: 80 → gain <b>20</b></td></tr>
+    <tr><td>9</td><td>Goodwill impairment, both NCI methods, deferred tax</td><td>Shares 12,000 × 75% × 2/3 × ₹6.50 = 39,000; deferred 7,150 ÷ 1.10 = 6,500; contingent 25,000. Net assets 70,000 − DTL 20% × 10,000 = <b>68,000</b>. NCI: FV 3,000 × ₹6 = 18,000 / proportionate 17,000. Goodwill <b>20,500 / 19,500</b>; 10% impairment <b>2,050 / 1,950</b> (₹'000)</td></tr>
+    <tr><td>10</td><td>Contingent consideration in shares</td><td>(i) Fixed 2 lakh shares → <b>equity</b>, 25,00,000, not remeasured (consideration 2,25,00,000). (ii) Variable shares worth 40 lakh → <b>liability</b>; loss <b>15,00,000</b> to P&amp;L; issue 1,60,000 shares (40 lakh ÷ ₹25) at ₹15 premium</td></tr>
+  </table>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+</body></html>

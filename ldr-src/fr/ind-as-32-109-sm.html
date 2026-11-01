@@ -1,0 +1,423 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ind AS 32 109 SM LDR</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style></head>
+<body><section class="page">
+  <div class="head"><span>CA Final · FR · Ch 11 · Ind AS 32 &amp; 109 — revision notes</span><span class="tag">Nov 2026 attempt</span></div>
+  <h1><span class="u">Ind AS 32 &amp; 109</span> — Financial Instruments</h1>
+  <div class="sub">Condensed from ICAI SM Chapter 11 (Units 1–7) for revision. Exam focus last 3 attempts: <b>compound instruments</b> (10-mark Q every attempt + MCQs) · <b>amortised cost / EIR with transaction costs</b> · <b>loan refinancing &amp; modification</b> · <b>interest-free loans to subsidiaries</b> · <b>fixed-for-fixed</b> on own shares · FX loans at amortised cost.</div>
+
+  <h2><span class="n">1</span>The three definitions — one table <span class="para">Ind AS 32.11</span></h2>
+  <table class="tight">
+    <tr><th style="width:4%"></th><th style="width:32%">Financial asset</th><th style="width:32%">Financial liability</th><th>Equity instrument</th></tr>
+    <tr><td>1</td><td>Cash</td><td>—</td><td>Residual interest in assets after all liabilities</td></tr>
+    <tr><td>2</td><td>Equity instrument of <b>another</b> entity</td><td>—</td><td>—</td></tr>
+    <tr><td>3</td><td>Contractual <b>right to receive</b> cash / FA, or to exchange FA/FL on <b>potentially favourable</b> terms</td><td>Contractual <b>obligation to deliver</b> cash / FA, or to exchange on <b>potentially unfavourable</b> terms</td><td><b>No</b> contractual obligation to deliver cash or exchange on unfavourable terms</td></tr>
+    <tr><td>4</td><td>Contract settled in <b>own</b> equity: non-derivative → <b>receive variable</b> number; derivative → <b>not</b> fixed-for-fixed</td><td>Contract settled in <b>own</b> equity: non-derivative → <b>deliver variable</b> number; derivative → <b>not</b> fixed-for-fixed</td><td>Settled in own equity: non-derivative → <b>fixed number</b>; derivative → <b>fixed cash for fixed number</b> (fixed-for-fixed)</td></tr>
+  </table>
+  <div class="sticky">Two tests for equity (Ind AS 32.16) — both must pass: <b>(a) no obligation to pay cash</b> · <b>(b) if settled in own shares → fixed-for-fixed</b>. Fail either → liability (or a liability component).</div>
+  <ul>
+    <li><b>Contract</b> needed — need not be written. <b>Not financial</b>: income tax (statutory), constructive obligations (Ind AS 37), PPE, inventory, ROU assets, intangibles, <b>prepaid expenses and advances for goods/services</b> (benefit is goods/services, not cash), deferred revenue, most warranties.</li>
+    <li>Contingent rights/obligations (e.g. <b>financial guarantee</b>) are financial instruments — a financial guarantee is <b>not</b> a contingent liability disclosure (Ind AS 37 excludes Ind AS 109 items).</li>
+    <li><b>Carve-out:</b> foreign-currency variability is <b>ignored</b> in classifying an FCCB — conversion into a fixed number of shares for a fixed amount in <b>any currency</b> can still be equity.</li>
+    <li><b>Rights issue carve-in:</b> rights/options/warrants for a fixed number of own shares for a fixed amount of <b>any currency</b>, offered <b>pro rata</b> to all existing owners of that class → <b>equity</b>.</li>
+    <li>Ordinary share dividend → liability only when <b>approved by shareholders (AGM)</b>; a board proposal creates no obligation.</li>
+  </ul>
+
+  <h3>Preference shares — the classification table (SM)</h3>
+  <table class="tight">
+    <tr><th style="width:36%">Terms</th><th>Classification (issuer)</th></tr>
+    <tr><td>Redeemable on a <b>fixed date</b> or at <b>holder's option</b></td><td class="C">Financial liability — inability to pay (no funds, no profits, legal limit) does <b>not</b> negate the obligation</td></tr>
+    <tr><td>Redeemable at <b>issuer's option</b></td><td class="NC">Equity — becomes a liability when the issuer <b>notifies</b> its intention to redeem</td></tr>
+    <tr><td>Irredeemable, dividend at issuer's <b>discretion</b> (cumulative or not)</td><td class="NC">Equity — history of paying, intention, share-price impact, reserves, expected profits are <b>irrelevant</b></td></tr>
+    <tr><td>Irredeemable, dividend <b>mandatory</b> (no right to defer)</td><td><b>Compound</b> — liability = PV of dividends; equity = rest</td></tr>
+    <tr><td>Redeemable + discretionary dividend</td><td>Liability for the <b>redemption amount</b> only; dividends equity when declared</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus. 3:</b> perpetual bond, 8% forever, redeemable only at issuer's option/liquidation → holder: FA; issuer: ICAI treats as <b>compound</b> (para 28) — interest stream is the obligation. <b>Illus. 5:</b> loan rescheduled to one-time 13,00,000 vs 12,54,400 due → extra 45,600 = exchange on <b>unfavourable</b> terms → FL. <b>Illus. 6:</b> irredeemable pref. (₹10 + ₹90 premium), 8% dividend only if equity dividend declared → <b>equity</b>. <b>Illus. 7:</b> CCPS converting 1:1, discretionary dividend → <b>equity</b>. <b>Illus. 8:</b> loan settled by shares <b>worth ₹10 lakh</b> (variable number) → shares used as currency → <b>FL</b>.</p></div>
+
+  <h2><span class="n">2</span>Scope — what Ind AS 109 / 32 do NOT cover <span class="para">Ind AS 109.2</span></h2>
+  <table class="tight">
+    <tr><th style="width:50%">Excluded item</th><th>Goes to</th></tr>
+    <tr><td>Interests in subsidiaries, associates, JVs (Ind AS 110/27/28) — but derivatives on them are in scope unless own equity</td><td>Ind AS 27/28/110</td></tr>
+    <tr><td>Leases — <b>except</b>: lessor's lease receivables (derecognition + impairment), lessee's lease liability (derecognition), embedded derivatives</td><td>Ind AS 116</td></tr>
+    <tr><td>Employee benefit plans</td><td>Ind AS 19</td></tr>
+    <tr><td>Insurance contracts (financial guarantees are in scope unless issuer elected insurance accounting)</td><td>Ind AS 117</td></tr>
+    <tr><td>Forward to buy/sell an acquiree for a business combination (reasonable period)</td><td>Ind AS 103</td></tr>
+    <tr><td>Loan commitments — <b>except</b> those designated FVTPL, net-settled ones (derivatives), and below-market-rate commitments</td><td>Impairment and derecognition still apply</td></tr>
+    <tr><td>Share-based payments</td><td>Ind AS 102</td></tr>
+    <tr><td>Reimbursement rights for Ind AS 37 provisions</td><td>Ind AS 37</td></tr>
+    <tr><td>Rights/obligations under Ind AS 115 (except as Ind AS 115 says, e.g. receivables)</td><td>Ind AS 115</td></tr>
+  </table>
+  <h3>Own-use exemption — contracts for non-financial items <span class="para">109.2.4–2.7</span></h3>
+  <ul>
+    <li>A contract to buy/sell a non-financial item that <b>can be settled net</b> is treated like a derivative — <b>unless</b> entered into and held for the entity's <b>expected purchase, sale or usage</b> (own use) → executory contract, outside Ind AS 109.</li>
+    <li>"Settled net" includes: terms allow net settlement · <b>practice</b> of net-settling similar contracts · <b>practice</b> of taking delivery and selling quickly for trading profit · item <b>readily convertible to cash</b>.</li>
+    <li>May irrevocably <b>designate FVTPL</b> at inception if it removes an accounting mismatch. <b>Written options</b> that can be net settled are never own use.</li>
+    <li><b>Example 4:</b> buy 100 t cocoa at 1,000 for delivery in 12 months, can't be net settled, for own use → <b>not a derivative</b> even though market moves to 1,500.</li>
+  </ul>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 11 Unit 3 · Ind AS 32 · Liability vs equity · Compound instruments</span><span class="tag">10 MARKS EVERY ATTEMPT</span></div>
+  <h2 class="brk"><span class="n">3</span>Liability or equity — the decision path <span class="para">Ind AS 32.15–22</span></h2>
+  <ol>
+    <li>Is there a <b>contractual</b> obligation? No → not a financial instrument (other Ind AS).</li>
+    <li>Obligation to <b>deliver cash / FA</b> that the issuer <b>can't unconditionally avoid</b>? → <b>Liability</b> (even if amount tied to an index; even if indirect).</li>
+    <li>Obligation to <b>exchange</b> on <b>potentially unfavourable</b> terms? → <b>Liability</b>. <span class="small">(Ex. 1: written call at ₹100 settled net; share at ₹110 → issuer pays ₹10 → liability.)</span></li>
+    <li>Settled in <b>own shares</b> — is <b>either</b> the consideration <b>or</b> the number of shares variable? Yes → <b>liability</b>. Both fixed → <b>equity</b>.</li>
+  </ol>
+  <ul class="small">
+    <li>Classify from the <b>issuer's</b> view, <b>component by component</b>, on <b>substance</b> — but substance never overrides the contract, and the contract can't override law in force (ignore expected future changes in law).</li>
+    <li><b>Can't avoid = liability</b> even if: lack of funds, insufficient profits, need for regulatory/forex approval (Illus. 4).</li>
+    <li>Issuer's alternative is to transfer a <b>non-financial asset</b> worth much more (Illus. 6: a building) → still <b>liability</b> — it can avoid cash only by settling the non-financial obligation.</li>
+  </ul>
+
+  <h3>Fixed-for-fixed test — the 4 boxes</h3>
+  <table class="tight">
+    <tr><th style="width:18%">Consideration</th><th style="width:22%">No. of own shares</th><th>Result</th></tr>
+    <tr><td>Fixed</td><td>Variable</td><td class="C">Liability — shares used as <b>currency</b> (Illus. 8, 12, 13)</td></tr>
+    <tr><td>Fixed</td><td>Fixed</td><td class="NC">Equity — fixed-for-fixed (Illus. 14: ₹100 cr → 15 cr shares)</td></tr>
+    <tr><td>Variable</td><td>Fixed</td><td class="C">Liability — holder exposed to variability (Illus. 16, 17)</td></tr>
+    <tr><td>Variable</td><td>Variable</td><td class="C">Liability</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th style="width:50%">Conversion ratio changes because…</th><th>Fixed-for-fixed?</th></tr>
+    <tr><td>Passage of time only (1:1 → 1.5:1 → 2:1 by date) — Illus. 18</td><td class="NC">Yes — equity</td></tr>
+    <tr><td>Anti-dilution for <b>splits / bonus issues</b> (protects holder vs other shareholders) — Illus. 19</td><td class="NC">Yes — equity</td></tr>
+    <tr><td><b>Down-round protection</b> — compensates if later shares issued below ₹10 (underwrites return) — Illus. 20</td><td class="C">No — liability</td></tr>
+    <tr><td>Converts at FV within a band (stake 15%–40%) — Illus. 21</td><td class="C">No — liability</td></tr>
+    <tr><td><b>Independent</b> events in different periods (each a separate fixed contract) — Illus. 22</td><td class="NC">Yes — equity</td></tr>
+    <tr><td><b>Inter-dependent</b> valuation-linked events (EV 100/150/200m) — one contract — Illus. 23</td><td class="C">No — liability</td></tr>
+    <tr><td><b>Written option</b>: fixed shares at fixed ₹50 (premium ₹2) — Illus. 15</td><td class="NC">Equity; premium credited to equity, no FV changes. Price linked to index → derivative liability at FVTPL</td></tr>
+  </table>
+  <ul class="small">
+    <li><b>Settlement options</b> (32.26): a derivative giving <b>either party a choice</b> of settlement is an FA/FL <b>unless all</b> alternatives would be equity (e.g. option issuer can settle net in cash or gross in shares → liability).</li>
+    <li><b>Obligation to buy own shares</b> (32.23): forward/written put to repurchase own shares for cash → <b>liability for PV of redemption amount</b>, even if fixed-for-fixed.</li>
+    <li><b>FCCB carve-out:</b> USD 100 bond → 1,000 shares: conversion option is <b>equity</b> (fixed in any currency); the 6% coupon is a liability → <b>compound</b> (Illus. 24). IFRS: derivative liability.</li>
+    <li><b>Contingent settlement</b> (event outside both parties' control): <b>liability</b> — unless the liability feature is <b>not genuine</b>, or cash payable <b>only on liquidation</b>, or the puttable/liquidation exception applies. Event within issuer's control → equity.</li>
+    <li><b>Group view (CFS):</b> a parent's guarantee or put given to holders of a subsidiary's instrument → <b>liability in the consolidated FS</b>, even if equity in the subsidiary's own FS (written puts over NCI).</li>
+  </ul>
+
+  <h3>Puttable instruments &amp; obligations only on liquidation — exception (32.16A–D)</h3>
+  <p class="small">Normally liabilities (mutual fund units, limited-life SPVs), but <b>equity</b> if: (1) <b>pro rata share of net assets on liquidation</b> (no cap — Illus. 7: Class B capped at ₹1 crore → not equity) · (2) in the <b>most subordinate class</b> (Illus. 8: manager's token units ranking last → equity; other units → liability) · (3) all instruments in that class have <b>identical features</b> (Illus. 9: different voting rights → neither is equity) · (4) <b>no other obligation</b> to pay cash or deliver variable shares (Illus. 10: extra conversion into variable shares → fails) · (5) cash flows based substantially on <b>profit, change in net assets or FV of net assets</b> · (6) issuer has <b>no other contract</b> with the holder that substantially fixes/restricts their return (Illus. 11: management contract for 50% of profit vs market 4–6% → fails). <b>Puttables: 1–6. Liquidation-only: 1–3 and 6.</b> Reclassify when conditions start/stop: liability → equity at <b>carrying amount</b>; equity → liability at <b>FV</b>, difference in equity.</p>
+
+  <h2><span class="n">4</span>Compound instruments — split accounting <span class="para">Ind AS 32.28–32 · AG30–AG35</span></h2>
+  <div class="box">
+    <p><b>Step 1 — Liability component</b> = PV of contractual cash flows (interest + principal / redemption premium), <b>ignoring conversion</b>, at the <b>market rate for a similar instrument without the conversion option</b>.</p>
+    <p><b>Step 2 — Equity component</b> = Proceeds (FV of whole instrument) − Liability. <b>Residual</b>, never remeasured. No day-1 gain/loss.</p>
+    <p><b>Step 3 — Transaction costs</b> → split <b>in proportion to the allocation of proceeds</b>; liability share goes into EIR, equity share deducted from equity.</p>
+    <p><b>Step 4 — Each year</b>: finance cost = opening liability × <b>market rate (EIR)</b> → P&amp;L; liability = opening + finance cost − coupon paid. It accretes to the redemption amount.</p>
+    <p><b>Other embedded derivatives</b> (issuer's call / prepayment option) → included in the <b>liability</b> component, not equity.</p>
+  </div>
+  <table class="tight">
+    <tr><th style="width:12%">SM</th><th style="width:46%">Facts</th><th>Split</th></tr>
+    <tr><td>Illus. 28</td><td>Perpetual loan ₹12 lakh, 8% mandatory interest; market 12%</td><td>Liability = 96,000 ÷ 12% = <b>8,00,000</b>; equity <b>4,00,000</b> (perpetual principal)</td></tr>
+    <tr><td>Illus. 29</td><td>OCRPS ₹10 lakh, 6% p.a., convert anytime (fixed) or redeem in 3 years; market 9%</td><td>PV principal 7,72,183 + PV interest 1,51,878 = <b>9,24,061</b>; equity <b>75,939</b></td></tr>
+    <tr><td>Illus. 30</td><td>₹10 lakh, coupon RBI base + 1% (=10%), market base + 4% (=13%), 3 years</td><td>6,93,050 + 2,36,115 = <b>9,29,165</b>; equity <b>70,835</b></td></tr>
+  </table>
+  <table class="tight num">
+    <tr><th>Illus. 32 schedule (₹)</th><th>Cash flow</th><th>Finance cost @9%</th><th>Liability</th></tr>
+    <tr><td>1 Jul 20X1</td><td>10,00,000</td><td>—</td><td>9,24,061</td></tr>
+    <tr><td>30 Jun 20X2</td><td>(60,000)</td><td>83,165</td><td>9,47,226</td></tr>
+    <tr><td>30 Jun 20X3</td><td>(60,000)</td><td>85,250</td><td>9,72,476</td></tr>
+    <tr><td>30 Jun 20X4</td><td>(10,60,000)</td><td>87,524</td><td>—</td></tr>
+  </table>
+  <h3>Later events</h3>
+  <ul>
+    <li><b>Likelihood of conversion changes</b> → <b>no reclassification</b>.</li>
+    <li><b>Conversion at maturity</b> → transfer liability to equity; original equity component stays in equity (may move between lines); <b>no gain/loss</b>.</li>
+    <li><b>Early redemption / repurchase</b> (conversion terms unchanged): split the <b>payment</b> the same way as at issue, using the <b>current market rate</b> at settlement → liability part vs its carrying amount → <b>P&amp;L</b>; rest → <b>equity</b>.</li>
+    <li><b>Induced conversion</b> (sweetened terms before a date): FV of what holder gets under new terms − FV under original terms → <b>loss in P&amp;L</b> at amendment date.</li>
+  </ul>
+  <div class="ex"><p><b>Illus. 32 — early redemption:</b> on 30 Jun 20X3 D pays ₹11 lakh; a 1-year straight instrument would now cost 5%. Liability FV = 10,00,000/1.05 (9,52,381) + 60,000/1.05 (57,142) = <b>10,09,523</b> vs carrying 9,72,476 → <b>loss 37,047 to P&amp;L</b>; equity part 11,00,000 − 10,09,523 = <b>90,477</b> → equity.</p></div>
+
+  <h2><span class="n">5</span>Treasury shares · distributions · transaction costs · offsetting <span class="para">32.33–50</span></h2>
+  <table class="tight">
+    <tr><th style="width:28%">Item</th><th>Rule</th></tr>
+    <tr><td>Treasury shares</td><td>Cost <b>deducted from equity</b>; never an asset; no P&amp;L on buy/sell/cancel. In CFS, shares held by group members deducted too. Held as agent for clients → not in balance sheet.</td></tr>
+    <tr><td>Interest / dividends / gains</td><td>On a <b>liability</b> (or component) → <b>P&amp;L</b> (dividend on a liability-classified preference share = finance cost). On <b>equity</b> → directly in <b>equity</b>. FV changes of own equity not recognised.</td></tr>
+    <tr><td>Transaction costs</td><td>Equity issue → <b>deduct from equity</b> (incremental, directly attributable; abandoned issue → expense). Liability → in <b>EIR</b>. Compound → <b>pro rata</b> to proceeds split. Tax on these → Ind AS 12.</td></tr>
+    <tr><td>Offsetting (32.42)</td><td>Only if <b>both</b>: (a) <b>currently legally enforceable right</b> — not contingent on a future event, enforceable in normal course, default <b>and</b> insolvency of all parties; and (b) <b>intention</b> to settle net or simultaneously (gross settlement with insignificant credit/liquidity risk in one cycle counts). Not for: synthetic instruments (floating loan + swap), same-risk derivatives with different counterparties, collateral for non-recourse debt, sinking funds, insurance recoveries.</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th></th><th>Financial liability</th><th>Equity</th></tr>
+    <tr><td>Remeasured?</td><td>Yes — Ind AS 109</td><td>No</td></tr>
+    <tr><td>Interest / dividends / gains</td><td>P&amp;L</td><td>Retained earnings</td></tr>
+    <tr><td>Transaction costs</td><td>In EIR, amortised</td><td>Deducted from equity</td></tr>
+  </table>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 11 Unit 2 · Ind AS 109 · Classification &amp; measurement</span><span class="tag">MCQs + 10-mark loans</span></div>
+  <h2 class="brk"><span class="n">6</span>Classifying a financial asset — the 2 tests <span class="para">Ind AS 109.4.1</span></h2>
+  <div class="box">
+    <p><b>Step 1 — What is it?</b> Derivative → <b>FVTPL</b> (unless hedging instrument). Equity share → <b>FVTPL</b>, or irrevocable <b>FVOCI election</b> if not held for trading. Debt → go to Step 2.</p>
+    <p><b>Step 2 — SPPI test</b> (instrument level): are cash flows <b>solely payments of principal and interest</b> on principal outstanding? Fail → <b>FVTPL</b>.</p>
+    <p><b>Step 3 — Business model test</b> (portfolio level, set by KMP): <b>Hold to collect</b> → <b>Amortised cost</b> · <b>Collect and sell</b> → <b>FVOCI (debt, with recycling)</b> · <b>Other</b> (trading, managed on FV) → <b>FVTPL</b>.</p>
+    <p><b>Step 4 — FV option</b>: AC / FVOCI debt may be irrevocably <b>designated FVTPL</b> at initial recognition only if it removes or significantly reduces an <b>accounting mismatch</b>.</p>
+  </div>
+  <table class="tight">
+    <tr><th style="width:24%">Business model</th><th>What it looks like (SM)</th></tr>
+    <tr><td>Hold to collect</td><td>Sales <b>infrequent</b> or <b>insignificant</b> in value, or due to <b>credit deterioration</b> (Illus. 1), or close to maturity. Selling more in one year ≠ change of model and ≠ prior-period error (Illus. 12–13). Sales forced by a <b>stress case</b> don't count (Illus. 6), but <b>regulator-forced significant sales</b> → not HTC.</td></tr>
+    <tr><td>Collect &amp; sell</td><td>Both are <b>integral</b> — e.g. liquidity management, matching asset duration to liabilities (Illus. 4); govt bonds likely sold for liquidity needs (Illus. 19).</td></tr>
+    <tr><td>Other / FVTPL</td><td>Held for trading; managed and evaluated on <b>fair value</b> basis; collection only incidental.</td></tr>
+  </table>
+  <ul class="small">
+    <li>Evidence of BM: how performance is <b>evaluated and reported to KMP</b>, the <b>risks</b> and how they're managed, how <b>managers are paid</b> (FV-based or cash-flow-based).</li>
+    <li><b>Securitisation (Illus. 5):</b> loans sold to an SPV that the group consolidates → in <b>CFS</b> still hold to collect; in the transferor's <b>separate FS</b> → not HTC if sale derecognises.</li>
+  </ul>
+
+  <h3>SPPI — passes vs fails</h3>
+  <table class="tight">
+    <tr><th style="width:50%">Passes SPPI</th><th>Fails SPPI (→ FVTPL)</th></tr>
+    <tr><td>Interest = <b>time value</b> + <b>credit risk</b> + liquidity/other lending risk + costs + profit margin (<i>principal</i> = FV at initial recognition)</td><td>Exposure to <b>equity or commodity prices</b>, <b>leverage</b> (e.g. options, forwards, swaps)</td></tr>
+    <tr><td>Inflation-linked, unleveraged, in the instrument's currency (Illus. 7)</td><td><b>Convertible bond</b> — holder's return linked to equity (Illus. 8); <b>OCPS</b> convertible 1:1 or redeemable at 20% premium (Illus. 24)</td></tr>
+    <tr><td><b>Prepayment</b> at unpaid principal + interest + reasonable compensation; <b>negative compensation</b> OK if FV of prepayment feature is insignificant at recognition</td><td><b>Deferred interest</b> with no interest-on-interest (Illus. 9)</td></tr>
+    <tr><td>Floating with a <b>cap</b> (Illus. 16); full-recourse loan with <b>collateral</b> (Illus. 10)</td><td><b>Inverse floater</b> — rate moves opposite to market (Illus. 11)</td></tr>
+    <tr><td><b>Interest-free loan to subsidiary</b> — on demand or fixed term (Illus. 14–15); trade receivables (Illus. 17); <b>security deposit</b> (Illus. 18)</td><td>Equity shares, mutual-fund units (no contractual P&amp;I)</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th style="width:22%">Category</th><th>Interest / dividend</th><th>FV changes</th><th>On sale</th><th>ECL?</th></tr>
+    <tr><td>Amortised cost</td><td>EIR → P&amp;L</td><td>Not recognised</td><td>Gain/loss → P&amp;L</td><td>Yes</td></tr>
+    <tr><td>FVOCI — debt</td><td>EIR → P&amp;L</td><td>OCI</td><td><b>Recycled</b> to P&amp;L</td><td>Yes (allowance in OCI, not on asset)</td></tr>
+    <tr><td>FVOCI — equity</td><td>Dividend → P&amp;L</td><td>OCI</td><td><b>Never recycled</b> (may move within equity)</td><td>No</td></tr>
+    <tr><td>FVTPL</td><td>P&amp;L</td><td>P&amp;L</td><td>P&amp;L</td><td>No</td></tr>
+  </table>
+
+  <h2><span class="n">7</span>Measurement — initial, EIR, transaction costs <span class="para">109.5.1 · B5.4</span></h2>
+  <table class="tight">
+    <tr><th style="width:26%">Point</th><th>Rule</th></tr>
+    <tr><td>Initial measurement</td><td><b>Fair value</b> (normally transaction price) <b>± transaction costs</b> — except <b>FVTPL</b> (costs expensed: Illus. 26, ₹500 → P&amp;L) and trade receivables without significant financing (transaction price under Ind AS 115).</td></tr>
+    <tr><td>Off-market terms</td><td>FV = PV of future cash flows at <b>market rate</b>. Difference: FV is Level 1 / only observable data → <b>P&amp;L day 1</b>; any other basis → <b>deferred</b> (asset if it qualifies, else amortised).</td></tr>
+    <tr><td>Transaction costs</td><td><b>Incremental</b> and directly attributable: agents' fees, advisers, brokers, levies, transfer duties. <b>Not</b>: premiums/discounts, financing costs, internal admin or holding costs.</td></tr>
+    <tr><td>Fees <b>in</b> EIR</td><td>Origination / processing fee · commitment fee where the loan is <b>probable</b> (if it lapses → revenue on expiry) · fees paid on issuing a liability at AC.</td></tr>
+    <tr><td>Fees <b>not</b> in EIR</td><td>Loan <b>servicing</b> fee · commitment fee where loan <b>unlikely</b> · <b>syndication</b> fee when no part retained (or retained at same EIR).</td></tr>
+    <tr><td>Floating rate</td><td>Re-estimating cash flows changes the EIR; if recognised at par, no significant effect — interest at current market rate.</td></tr>
+    <tr><td>Change in estimated cash flows</td><td>Recompute gross carrying amount = PV of revised cash flows at <b>original EIR</b>; difference → <b>P&amp;L</b> (catch-up). Not for renegotiation of terms.</td></tr>
+    <tr><td>Unquoted equity</td><td><b>Cost</b> may approximate FV only in limited cases (no recent info / wide range). Never for <b>quoted</b> equity. Watch indicators: performance vs budget, market changes, fraud, fresh issues.</td></tr>
+  </table>
+  <div class="sticky">EIR in one line: the rate that discounts <b>all</b> future cash flows to the <b>net</b> amount on day 1 (loan − processing fee). Exam: interpolate between two rates.</div>
+  <div class="ex"><p><b>Illus. 31 (loan, books of borrower):</b> ₹10,000 at 10%, fee 500, bullet in 5 years. Initial = <b>9,500</b>. PV @10% = 10,000; @13% = 8,945 → EIR = 10% + 3% × 500/1,055 = <b>11.42%</b>. Year 1: 9,500 + 1,085 − 1,000 = 9,585 → 9,679 → 9,785 → 9,902 → nil (yr-5 interest 1,098 rounding). <b>Illus. 20:</b> 1% fee on ₹10 lakh / ₹8 lakh → initial 9,90,000 / 7,92,000; EIR above coupon. <b>Illus. 22 (FVOCI):</b> bought 100 + commission 2 = 102; FV next day 100 → loss 2 in OCI (ignore selling cost 3).</p></div>
+
+  <h3>Interest-free loans &amp; deposits — the exam favourite</h3>
+  <table class="tight">
+    <tr><th style="width:24%">Situation</th><th>Measurement</th><th>Day-1 difference goes to</th></tr>
+    <tr><td><b>Repayable on demand</b></td><td>FV = <b>face value</b> (Ind AS 113.47 — can't be less than amount payable on demand). No interest accrues.</td><td>None</td></tr>
+    <tr><td><b>Fixed term</b> (Illus. 28b: ₹10 lakh, 3 yrs, 10%)</td><td>PV = <b>7,51,315</b>; unwind 75,131 / 82,645 / 90,909 → 10,00,000</td><td>Parent: <b>deemed investment in sub</b> 2,48,685 · Sub: <b>equity (capital contribution)</b> 2,48,685</td></tr>
+    <tr><td><b>When funds available</b> (Illus. 28c / 23)</td><td>Not on demand → <b>estimate repayment date</b> (e.g. from expected dividends) and discount at market rate</td><td>From shareholder → <b>equity contribution</b> in investee; <b>investment</b> in shareholder's books</td></tr>
+    <tr><td><b>Security deposit</b> under lease (Illus. 25: ₹10 lakh, 5 yrs, 12%)</td><td>PV = <b>5,67,427</b>; interest yr 1 = 68,091 … yr 5 = 1,07,143</td><td><b>ROU asset / prepaid rent</b> 4,32,573 — depreciated SL (Illus. 21: 10,000 → 8,163; 1,837 prepaid rent)</td></tr>
+    <tr><td>Below-market loan to get cheap goods/services</td><td>FV at market rate</td><td>Asset (prepayment) if it qualifies, else P&amp;L</td></tr>
+  </table>
+  <ul class="small">
+    <li><b>CFS:</b> intra-group loan, interest and deemed investment all <b>eliminate</b> — no impact. But if the loan is in <b>foreign currency</b>, the exchange difference stays in P&amp;L (Ind AS 21).</li>
+    <li>Entries (Illus. 28b, parent): Loan to sub Dr 7,51,315 · Deemed investment Dr 2,48,685 · To Bank 10,00,000. Each year: Loan Dr / Interest income Cr.</li>
+  </ul>
+
+  <h3>Journal pattern — equity investments</h3>
+  <ul class="small">
+    <li><b>FVTPL (Illus. 26):</b> buy 10,000 + cost 500 → asset 10,000, cost 500 → P&amp;L; FV 11,200 → gain 1,200 P&amp;L.</li>
+    <li><b>FVOCI election (Illus. 27):</b> 10,000 shares for 5,00,000; FV ₹45 → loss 50,000 to <b>OCI (items not reclassified)</b> → equity investment FV reserve.</li>
+  </ul>
+
+  <h2><span class="n">8</span>Financial liabilities — classification &amp; measurement <span class="para">109.4.2 · 5.3</span></h2>
+  <table class="tight">
+    <tr><th style="width:30%">Category</th><th>Includes / measurement</th></tr>
+    <tr><td>Amortised cost (default)</td><td>Borrowings, trade payables (Illus. 29 — price per tonne is FV; interest only if paid late), debentures. EIR → P&amp;L.</td></tr>
+    <tr><td>FVTPL — mandatory</td><td><b>Held for trading</b>: derivatives (not hedges), short sales (deliver borrowed securities), debt to repurchase near term, short-term profit portfolios · <b>contingent consideration</b> of acquirer (Ind AS 103). A loan merely <b>funding</b> trading is not HFT.</td></tr>
+    <tr><td>FVTPL — designated</td><td>(i) removes accounting <b>mismatch</b> (Illus. 30: fixed-rate assets funded by fixed-rate debentures → both FVTPL) or (ii) group <b>managed on FV</b> basis and reported so to KMP.</td></tr>
+    <tr><td>Special basis</td><td>Transfers that fail derecognition / continuing involvement · <b>Financial guarantees</b> &amp; below-market loan commitments: <b>higher of</b> (ECL allowance) and (initial amount − cumulative Ind AS 115 income).</td></tr>
+  </table>
+  <ul class="small">
+    <li><b>Designated FVTPL liability:</b> FV change due to <b>own credit risk → OCI</b> (never recycled), rest → P&amp;L; all in P&amp;L if OCI would create a mismatch.</li>
+    <li><b>Financial liabilities can never be reclassified.</b></li>
+    <li>Shares held as <b>stock-in-trade</b> by a broker → Ind AS 109/32/107, not Ind AS 2 (Illus. 35).</li>
+  </ul>
+
+  <h3>Modification, refinancing &amp; processing fees</h3>
+  <div class="box">
+    <p><b>10% test:</b> PV of <b>new</b> cash flows (incl. fees paid net of fees received, only between borrower and lender) discounted at the <b>original EIR</b> vs PV of <b>remaining old</b> cash flows (also at original EIR). Difference <b>≥ 10%</b> → substantial.</p>
+    <p><b>Substantial → extinguishment:</b> derecognise old (with its <b>unamortised fees</b>), recognise new at <b>FV</b>; new EIR on revised terms; costs/fees → part of <b>gain/loss on extinguishment</b> (P&amp;L).</p>
+    <p><b>Not substantial → modification:</b> revised cash flows discounted at <b>original EIR</b>; difference → <b>P&amp;L</b> now; costs/fees <b>adjust the carrying amount</b> and amortise over remaining term.</p>
+  </div>
+  <table class="tight">
+    <tr><th style="width:38%">Refinancing (Illus. 34) — Bank A loan taken over by Bank B</th><th>Treatment</th></tr>
+    <tr><td><b>Prepayment premium</b> paid to Bank A</td><td><b>P&amp;L</b> — part of loss on extinguishment of the old loan</td></tr>
+    <tr><td><b>Unamortised processing fee</b> of old loan</td><td><b>P&amp;L</b> — it was inside the old loan's carrying amount</td></tr>
+    <tr><td><b>Processing fee</b> for new Bank B loan</td><td><b>Transaction cost</b> of the new loan → deduct, include in <b>EIR</b></td></tr>
+    <tr><td>Fee for undisbursed tranches (Illus. 33)</td><td>Drawdown <b>probable</b> → defer, deduct when drawn, into EIR · <b>not probable</b> → expense SL over loan term</td></tr>
+  </table>
+
+  <h2><span class="n">9</span>Reclassification <span class="para">109.4.4 · 5.6</span></h2>
+  <ul class="small">
+    <li>Financial <b>assets only</b>, and only when the <b>business model changes</b> — very rare, decided by senior management, significant, demonstrable (start/stop a business line: acquire a loan-servicing company; shut a mortgage business). <b>Prospective</b> from the <b>first day of the next reporting period</b>; no restatement.</li>
+    <li><b>Not</b> a change: intention on particular assets, temporary disappearance of a market, transfer between divisions. <b>Not</b> reclassifications: start/stop of cash-flow / net-investment hedge, credit-derivative FV designation.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:22%">From → To</th><th>On reclassification date (bond 1,00,000, FV 90,000)</th></tr>
+    <tr><td>AC → FVTPL</td><td>Measure at FV; difference 10,000 → <b>P&amp;L</b></td></tr>
+    <tr><td>AC → FVOCI</td><td>Measure at FV; difference 10,000 → <b>OCI</b>; EIR and ECL unchanged</td></tr>
+    <tr><td>FVTPL → AC</td><td>FV becomes new <b>gross carrying amount</b>; new EIR on that FV</td></tr>
+    <tr><td>FVTPL → FVOCI</td><td>Stays at FV; EIR set on FV at reclassification date</td></tr>
+    <tr><td>FVOCI → AC</td><td>Reverse cumulative OCI <b>against the asset</b> → as if always at AC (1,00,000); no P&amp;L; EIR and ECL unchanged</td></tr>
+    <tr><td>FVOCI → FVTPL</td><td>Stays at FV; cumulative OCI loss 10,000 <b>recycled to P&amp;L</b></td></tr>
+  </table>
+
+  <h2><span class="n">10</span>Impairment — expected credit loss (ECL) <span class="para">109.5.5</span></h2>
+  <table class="tight">
+    <tr><th style="width:50%">ECL applies to</th><th>ECL does NOT apply to</th></tr>
+    <tr><td>Debt at <b>AC</b> · debt at <b>FVOCI</b> · lease receivables · contract assets · loan commitments · financial guarantees</td><td><b>Equity</b> instruments (FVTPL or FVOCI) · anything at <b>FVTPL</b></td></tr>
+  </table>
+  <table class="tight">
+    <tr><th></th><th>Stage 1</th><th>Stage 2</th><th>Stage 3</th></tr>
+    <tr><td>Credit risk since initial recognition</td><td>No significant increase</td><td><b>Significant increase</b></td><td><b>Credit-impaired</b></td></tr>
+    <tr><td>Allowance</td><td><b>12-month</b> ECL</td><td><b>Lifetime</b> ECL</td><td><b>Lifetime</b> ECL</td></tr>
+    <tr><td>Interest on</td><td>Gross carrying amount</td><td>Gross carrying amount</td><td><b>Amortised cost</b> (net of allowance)</td></tr>
+  </table>
+  <ul class="small">
+    <li><b>Credit loss</b> = PV (at original EIR; credit-adjusted EIR for POCI) of <b>cash shortfalls</b> = contractual − expected cash flows, incl. collateral proceeds. Probability-weighted, time value, reasonable and supportable forward-looking info. Period = max <b>contractual</b> period incl. extensions.</li>
+    <li><b>12-month ECL</b> = lifetime losses from defaults possible in the next 12 months — not cash shortfalls over 12 months.</li>
+    <li><b>Simplified approach</b> (lifetime from day 1, no tracking): <b>mandatory</b> for trade receivables / contract assets <b>without a significant financing component</b>. <b>POCI</b> assets: only cumulative changes in lifetime ECL.</li>
+    <li><b>30 days past due</b> → rebuttable presumption of significant increase. Indicators: credit spread, CDS prices, rating downgrades, adverse business/economic changes, covenant breaches expected, collateral or guarantee quality falls, parent support reduced.</li>
+    <li><b>Credit-impaired</b> evidence: significant financial difficulty, default/past due, concession granted, probable bankruptcy, active market lost, bought at deep discount.</li>
+  </ul>
+  <div class="ex"><p><b>Illus. 42 (PD approach):</b> loan 10,00,000 × LGD 25% × 12-m PD 0.5% = <b>1,250</b>. <b>Illus. 43 (loss rate):</b> Group X loss 600 ÷ 2,00,000 = <b>0.3%</b>; Group Y 450 ÷ 3,00,000 = <b>0.15%</b>. <b>Illus. 44 (provision matrix):</b> receivables 3 crore — current 1.5 cr × 0.3% = 45,000; 1–30 days 75 lakh × 1.6% = 1,20,000; 31–60 40 lakh × 3.6% = 1,44,000; 61–90 25 lakh × 6.6% = 1,65,000; &gt;90 10 lakh × 10.6% = 1,06,000 → <b>lifetime ECL 5,80,000</b>.</p></div>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 11 Units 4–7 · Derecognition · Derivatives · Hedging · Disclosures</span><span class="tag">MCQ + 5–8 marks</span></div>
+  <h2 class="brk"><span class="n">11</span>Recognition &amp; regular-way trades <span class="para">109.3.1 · Unit 5</span></h2>
+  <table class="tight">
+    <tr><th style="width:36%">Contract</th><th>Recognise when</th></tr>
+    <tr><td>Receivables / payables</td><td>Entity becomes party to the contract (legal right/obligation)</td></tr>
+    <tr><td>Firm commitment to buy/sell goods</td><td>Not until one party performs (goods delivered) — unless designated FVTPL (net FV recognised on commitment date)</td></tr>
+    <tr><td>Forward · option</td><td>On commitment date (forward usually FV nil; option has a premium)</td></tr>
+    <tr><td>Planned future transaction</td><td><b>Never</b></td></tr>
+  </table>
+  <ul class="small">
+    <li><b>Regular way</b> = delivery within the market's normal time frame (e.g. T+2). Choose <b>trade date</b> or <b>settlement date</b> accounting, consistently per category. Applies to <b>financial assets only</b>.</li>
+    <li><b>Settlement date</b>: buyer still records FV change between trade and settlement date like the asset — AC: none; FVTPL: P&amp;L; FVOCI: OCI. Seller derecognises on settlement, ignores FV changes.</li>
+    <li><b>Illus. 3:</b> bought 10,00,000 on 1 Jan; FV 10,50,000 on 4 Jan → AC: asset 10,00,000 (no gain); FVTPL: gain 50,000 P&amp;L; FVOCI: 50,000 OCI — same under either date method.</li>
+    <li><b>Illus. 1:</b> forward via a broker for listed shares in one month (market is 2 days) → <b>not regular way</b> → derivative, FV changes to P&amp;L. <b>Illus. 2:</b> exchange-traded option with 7-day settlement under market rules → regular way.</li>
+  </ul>
+
+  <h2><span class="n">12</span>Derecognition of financial assets — the flowchart <span class="para">109.3.2 · B3.2.1</span></h2>
+  <div class="box">
+    <p><b>0.</b> <b>Consolidate</b> subsidiaries first (incl. SPVs/trusts) — test at group level.</p>
+    <p><b>1.</b> Apply to a <b>part</b> only if the part is: specifically identified cash flows (interest strip) · fully proportionate share (90% of all cash flows) · proportionate share of identified flows (90% of interest). <b>Otherwise whole asset</b> (first 90% of collections; 90% sold with an 8% loss guarantee — Illus. 5).</p>
+    <p><b>2.</b> Rights to cash flows <b>expired</b>? → derecognise. (Renegotiation can count: moratorium/extension, big rate cut, conversion right.)</p>
+    <p><b>3.</b> <b>Transferred</b> the rights (sale, assignment, factoring)? — or a <b>pass-through</b> meeting all 3 conditions (pay only what is collected · can't sell/pledge the asset · remit without material delay, no reinvestment)? No → keep asset.</p>
+    <p><b>4.</b> Transferred <b>substantially all risks &amp; rewards</b>? → <b>derecognise</b>. Retained substantially all? → <b>keep asset</b>, cash received = <b>liability</b>.</p>
+    <p><b>5.</b> Neither? → <b>Control retained</b>? (Can the transferee <b>practically sell</b> the asset unilaterally to a third party?) No → derecognise. Yes → <b>continuing involvement</b>.</p>
+  </div>
+  <table class="tight">
+    <tr><th style="width:50%">Risks &amp; rewards <b>transferred</b> → derecognise</th><th>Risks &amp; rewards <b>retained</b> → keep asset</th></tr>
+    <tr><td>Unconditional sale · sale with repurchase at <b>FV</b> · right of first refusal at FV (Illus. 7) · put/call <b>deep out of the money</b> (Illus. 8–9) · <b>without-recourse</b> factoring (Illus. 11: receivables 10 lakh for 9 lakh, no recourse → derecognise, <b>loss 1 lakh</b>)</td><td>Repo at <b>fixed price or price + lender's return</b> (same, substantially same, or substitutable asset) · securities lending · total return swap back to seller · put/call <b>deep in the money</b> · guarantee of <b>likely</b> credit losses on short-term receivables (full recourse)</td></tr>
+  </table>
+  <ul class="small">
+    <li>Call option <b>neither</b> deep in nor out, asset <b>readily available</b> in market → transferee can sell → control lost → <b>derecognise</b> (Illus. 9iii). Asset not traded / valuable put or guarantee held by transferee → control retained.</li>
+    <li><b>Pass-through (Illus. 6):</b> loan 100 cr to trust; investor pays 90 cr for 90% of collections, no guarantee → derecognise <b>90 cr</b>, keep <b>10 cr</b>.</li>
+    <li>Short-term receivables: key risk = <b>credit risk</b>. Long-term: interest-rate and slow-payment risk.</li>
+    <li>On derecognition: gain/loss = carrying amount − consideration (new assets at FV are part of consideration; liabilities assumed reduce it); <b>FVOCI debt</b> reserve recycled. Retained-risk case: liability at FV less costs, then AC.</li>
+  </ul>
+  <div class="ex"><p><b>Illus. 12 (factoring with recourse — continuing involvement):</b> receivables face 100 cr, carrying <b>95 cr</b>; factor pays 91.5 cr less service 1.5 cr = <b>90 cr</b>; C guarantees losses up to <b>5 cr</b> over expected 5 cr; guarantee FV 0.5 cr. Continuing involvement asset = lower of asset 95 and guarantee amount <b>5.5 cr</b> → 5.5 cr. Associated liability = guarantee 5 + FV 0.5 = <b>5.5 cr</b>. Entry: Cash Dr 90 · Loss Dr 5 · CI asset Dr 5.5 · To Receivables 95 · To Associated liability 5.5. The 0.5 cr guarantee is amortised to P&amp;L.</p></div>
+
+  <h2><span class="n">13</span>Derecognition of financial liabilities <span class="para">109.3.3 · B3.3</span></h2>
+  <ul class="small">
+    <li>Remove only when <b>extinguished</b> — paid, or <b>legally released</b> by law/creditor. Paying a third party to assume the debt <b>without</b> legal release → no derecognition. Released but guarantee given → new liability at FV of guarantee.</li>
+    <li>Gain/loss = <b>carrying amount − consideration paid</b> (incl. non-cash assets/liabilities assumed) → P&amp;L.</li>
+    <li>Renegotiation <b>after year-end</b> (before approval) → gain/loss in the period it is <b>contractually agreed</b> (next year) — Illus. 13.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:50%">Example 3 — extinguishment (10% test met)</th><th>Example 4 — modification (10% test failed)</th></tr>
+    <tr><td>Bond 10 lakh, 10%, 10 yrs. After 5 yrs: extend to 7 more yrs, coupon 5%, redeem at <b>15 lakh</b>, fees <b>1 lakh</b>; market rate 11%.<br>PV at <b>original 10%</b>: 7,69,737 + 2,43,421 + 1,00,000 = <b>11,13,158</b> vs 10,00,000 → <b>11.32%</b> → extinguish.<br>New liability FV @11% = 7,22,487 + 2,35,610 = <b>9,58,097</b>.<br>Loss = 10,00,000 − 9,58,097 − 1,00,000 = <b>(58,097)</b>. New EIR 11%.</td><td>Same bond. After 5 yrs: no more interest, redeem at <b>16 lakh</b> on original date, fee <b>50,000</b>.<br>PV at 10%: 9,93,474 + 50,000 = <b>10,43,474</b> → <b>4.35%</b> → modification.<br>Carrying 10,00,000 − fee 50,000 = <b>9,50,000</b>; new EIR <b>10.99%</b> → 1,04,405 / 1,15,879 / 1,28,614 / 1,42,749 / 1,58,353 → 16,00,000.</td></tr>
+  </table>
+  <div class="sticky">Two ways the SM handles a non-substantial modification of a liability: Unit 2 says re-discount at the <b>original EIR</b> and take the difference to P&amp;L; Unit 5 Example 4 instead nets the fee and <b>resets the EIR</b> (no day-1 P&amp;L), noting the standard isn't explicit. Follow what the question asks; if silent, state which approach you used.</div>
+
+  <h3>Debt-for-equity swap <span class="para">Appendix D</span></h3>
+  <ul class="small">
+    <li>Shares issued to extinguish a liability: measure at <b>FV of shares</b>; if not reliable, at <b>FV of liability</b> extinguished. Difference vs carrying amount → <b>P&amp;L</b>.</li>
+    <li>Not applied if: creditor acts as an existing <b>shareholder</b>; common control with a distribution/contribution in substance; conversion is per the <b>original terms</b> (that's Ind AS 32 conversion).</li>
+    <li>Part extinguished → allocate consideration; test remaining part for substantial modification.</li>
+  </ul>
+  <div class="ex"><p><b>Example 5:</b> JK owes 90 cr (EIR 10%). 2/3 (60 cr) → 70% equity; FV net assets 80 cr → shares FV <b>56 cr</b> → <b>gain 4 cr</b>. Remaining 1/3 = 30 cr; revised terms PV at original EIR 25 cr (&gt;10% change) → extinguish 30, new liability at FV <b>28 cr</b> → <b>gain 2 cr</b>.</p></div>
+
+  <h2><span class="n">14</span>Derivatives &amp; embedded derivatives <span class="para">Unit 4</span></h2>
+  <table class="tight">
+    <tr><th style="width:30%">Derivative — all 3</th><th>Points / SM cases</th></tr>
+    <tr><td>(i) Value changes with an <b>underlying</b></td><td>Rate, price, FX, index, credit rating; a non-financial variable must <b>not be specific to a party</b> (fire damage to own asset, residual value from condition → not derivative; city temperature index → OK).</td></tr>
+    <tr><td>(ii) <b>No / small</b> initial net investment</td><td>Prepaid <b>fixed leg</b> of swap (Illus. 1) → still derivative · prepaid <b>variable leg</b> (Illus. 2: pay 36 cr, receive 10 cr p.a.) → a loan, <b>not</b> derivative · <b>prepaid forward</b> at spot (Illus. 3) → not derivative.</td></tr>
+    <tr><td>(iii) Settled at a <b>future date</b></td><td>Gross or net doesn't matter; option lapsing unexercised is also settlement (Illus. 5). Euro sales converted at fixed 80 → derivative with 2 underlyings (Illus. 4).</td></tr>
+  </table>
+  <ul class="small">
+    <li>All derivatives at <b>FVTPL</b> unless a designated hedge. <b>Illus. 6:</b> gold bought, paid in shares worth the gold price at ₹10 each → variable shares → <b>derivative liability FVTPL</b>. <b>Illus. 7:</b> written call on Target's shares at ₹100 → derivative liability. <b>Illus. 8:</b> warrants to all shareholders at fixed ₹150 → derivative but <b>equity</b> (fixed-for-fixed).</li>
+    <li><b>Own-use (Illus. 14 — oil seeds):</b> import contract, 30% net settled in practice → <b>derivative</b>. Domestic contract, only 1% net settled, delivery for processing → <b>own use</b>, executory. Exchange contract settled net → <b>derivative FVTPL</b>.</li>
+  </ul>
+  <div class="box">
+    <p><b>Embedded derivative</b> = part of a hybrid contract with a <b>non-derivative host</b> that makes some cash flows vary like a derivative. Separately transferable or different counterparty → separate instrument, not embedded. Fixed annual increase of ₹3 m in rent → no underlying → none (Illus. 9).</p>
+    <p><b>Separate only if all:</b> (1) host is <b>not</b> a financial asset in Ind AS 109 (FA hosts → classify whole thing, usually FVTPL if SPPI fails) · (2) <b>not closely related</b> to host · (3) a stand-alone instrument would be a derivative · (4) hybrid <b>not</b> at FVTPL.</p>
+    <p><b>Accounting:</b> derivative at FV (FVTPL); host = <b>residual</b>. Non-option derivative separated at <b>FV nil</b>; option-based on stated terms (may have value). Can't measure → whole hybrid FVTPL; may elect FVTPL for whole hybrid (non-FA host). <b>No reassessment</b> unless terms change cash flows significantly.</p>
+  </div>
+  <table class="tight">
+    <tr><th style="width:50%">Not closely related → separate</th><th>Closely related → don't separate</th></tr>
+    <tr><td>Debt with interest/principal indexed to <b>equity or commodity</b> (Illus. 10) · lease rent linked to <b>US inflation</b> for Indian parties (Illus. 11) · rent linked to <b>profit after tax</b> (Illus. 12) · FX in a currency that's nobody's functional currency and not routine (Illus. 15)</td><td>Inflation index of <b>own economic environment</b> · contingent rent based on <b>sales</b> · prepayment option with exercise price ≈ <b>amortised cost</b>, or reimbursing lost interest · FX in a party's functional currency, routinely used for that good (USD crude), or commonly used locally</td></tr>
+  </table>
+  <ul class="small">
+    <li><b>Illus. 13 (prepayment option):</b> 100 cr at 12%, 6 yrs, prepay with 3% penalty (103 cr); rate without option 11% → host AC 104.22 → 103.68, 103.09, 102.43, 101.70, 100.90. Differences +0.7%, +0.1%, −0.6%, −1.3%, −2.1% → policy decides "approximately equal" (e.g. &gt;2% → separate).</li>
+    <li><b>Illus. 15 (USD machine bought from Indian supplier):</b> USD 10 lakh, forward 67.8 at order → embedded forward FV nil. 30 Sep forward 67.5 → derivative asset <b>3,00,000</b> (P&amp;L); 31 Dec spot 67.0 → further <b>5,00,000</b>. PPE at forward rate <b>6,78,00,000</b> = creditor 6,70,00,000 + derivative 8,00,000.</li>
+  </ul>
+
+  <h2><span class="n">15</span>Hedge accounting <span class="para">Unit 6 · optional</span></h2>
+  <table class="tight">
+    <tr><th style="width:24%">Element</th><th>Rule</th></tr>
+    <tr><td>Hedged item</td><td>Recognised asset/liability, unrecognised <b>firm commitment</b>, <b>highly probable</b> forecast transaction, net investment in a foreign operation; whole item or a component (risk component, selected cash flows, part of nominal); reliably measurable.</td></tr>
+    <tr><td>Hedging instrument</td><td>Derivative at FVTPL (<b>not a net written option</b>) · non-derivative FA/FL at FVTPL (not an FVTPL liability with own-credit in OCI) · FX risk component of a non-derivative (not FVOCI equity). <b>External</b> party only. Whole instrument, except: intrinsic value only, spot element only, a <b>proportion</b> (e.g. 50%) — never a part of its life.</td></tr>
+    <tr><td>Qualifying criteria</td><td>Eligible items · formal <b>designation and documentation at inception</b> · effectiveness: <b>economic relationship</b>, credit risk does <b>not dominate</b>, <b>hedge ratio</b> = actual quantities (no deliberate imbalance).</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th style="width:18%">Type</th><th>Hedges</th><th>Accounting</th></tr>
+    <tr><td><b>Fair value</b></td><td>FV changes of recognised item or firm commitment</td><td>Instrument gain/loss → <b>P&amp;L</b>; hedged item adjusted for hedged risk → <b>P&amp;L</b> (carrying amount adjusted). FVOCI equity hedged → both in <b>OCI</b>. Firm commitment → cumulative FV change recognised as asset/liability.</td></tr>
+    <tr><td><b>Cash flow</b></td><td>Variable cash flows (floating interest, forecast purchase/sale)</td><td>CFHR = <b>lower of</b> cumulative gain/loss on instrument and cumulative change in PV of hedged cash flows → effective part in <b>OCI</b>, rest (ineffective) → <b>P&amp;L</b>. Later: non-financial asset bought → <b>basis adjustment</b> to its cost (not via OCI); others → recycle when hedged cash flows hit P&amp;L; loss not recoverable → P&amp;L at once.</td></tr>
+    <tr><td><b>Net investment</b></td><td>FX on net assets of foreign operation</td><td>Like cash flow: effective → <b>OCI (FCTR)</b>; ineffective → P&amp;L; recycled on (partial) <b>disposal</b>.</td></tr>
+  </table>
+
+  <h2><span class="n">16</span>Ind AS 107 disclosures — what to remember <span class="para">Unit 7</span></h2>
+  <ul class="small">
+    <li><b>Objective:</b> users can evaluate (a) <b>significance</b> of financial instruments for position and performance, (b) <b>nature and extent of risks</b> and how they are managed.</li>
+    <li><b>Balance sheet:</b> carrying amounts by category (FVTPL designated / mandatory, AC assets, AC liabilities, FVOCI debt, FVOCI equity designated); FVTPL-designated items → credit-risk effect; FVOCI equity → which investments, why, FV, dividends, transfers within equity, disposals (reason, FV, cumulative gain/loss); <b>reclassifications</b> (date, BM change explanation, amounts; EIR and interest after leaving FVTPL); <b>offsetting</b> (gross, set-off, net); collateral; allowance for credit losses; defaults and breaches.</li>
+    <li><b>P&amp;L:</b> net gains/losses per category, interest income/expense (EIR), fee income/expense, impairment.</li>
+    <li><b>Other:</b> accounting policies, hedge accounting, <b>fair value</b> by class (and FV hierarchy per Ind AS 113); <b>risks</b> — qualitative and quantitative for <b>credit</b>, <b>liquidity</b> (maturity analysis) and <b>market</b> risk (sensitivity analysis).</li>
+  </ul>
+
+  <h2><span class="n">17</span>Exam checklist</h2>
+  <div class="sticky">
+    <b>Classification Q:</b> issuer's view → contractual obligation? own shares fixed-for-fixed? → liability / equity / compound.<br>
+    <b>Compound Q:</b> PV at market rate without conversion → equity residual → costs pro rata → finance cost schedule → conversion (no gain) / early redemption (split at current rate).<br>
+    <b>Loan Q:</b> net of fees → EIR by interpolation → schedule. Interest-free intra-group loan: demand = face; term = PV, difference = investment / equity contribution; "when funds" = estimate date.<br>
+    <b>Refinance Q:</b> prepayment penalty + unamortised old fees → P&amp;L; new fee → new EIR. Change of terms → 10% test at original EIR.<br>
+    <b>Asset Q:</b> SPPI → BM → AC / FVOCI / FVTPL; equity FVOCI never recycles; ECL stage 1 = 12-month, 2 &amp; 3 = lifetime; trade receivables = simplified (provision matrix).
+  </div>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+</body></html>

@@ -85,3 +85,8 @@ ICAI's own corrections and quirks found in the papers (checked against the ICAI 
 Nov 2026 currency: Part I of the FR and AAA Nov 2026 RTPs (amendments / academic update) is reproduced on `/fr/updates` and `/aaa/updates`; the AFM Nov 2026 RTP has no such section. The AAA list is cumulative (it repeats the Jan 2026 and May 2026 items). The FR amendments (Ind AS 21 exchangeability, Ind AS 1 current/non-current with covenants, Ind AS 7 and 107 supplier finance, Ind AS 12 Pillar Two) are newer than the SM text in Ch 3.1, 3.3, 7.1, 7.2 and 11; those packs carry a notice.
 
 Not verified line by line: the question-to-chapter mapping and concept labels in `research/lastday/*-last3-analysis.md` (agent-written from ICAI's papers and answers; marks and question labels were spot-checked against the ICAI text).
+
+## LDR notes: Ind AS 32 & 109 (SM Ch 11), 1 Nov 2026
+`ldr-src/fr/ind-as-32-109-sm.html` → `public/ldr/fr/FR_LDR_IndAS32_109_Financial_Instruments.pdf`. Condensed from ICAI SM Ch 11 Units 1–7; every figure is ICAI's. Inconsistencies in the SM flagged in the notes and left as ICAI wrote them:
+- Non-substantial modification of a financial liability: Unit 2 (2.8) says to re-discount revised cash flows at the original EIR and take the difference to P&L; Unit 5 Example 4 instead nets the fee against the carrying amount and resets the EIR (10.99%), saying the standard is not explicit. The notes give both.
+- Unit 5 Example 4: difference shown as 4.35% in the text and "4%" in the working note (43,474 ÷ 10,00,000 = 4.35%).

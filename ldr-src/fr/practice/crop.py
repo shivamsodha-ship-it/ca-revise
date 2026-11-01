@@ -26,7 +26,7 @@ class Doc:
             if maxx is not None and r[3]>maxx: continue
             if re.match(pat, r[4]): return r
         return None
-    def crop(s, a, b, name, zoom=2.2, inclusive_end=False):
+    def crop(s, a, b, name, zoom=float(os.environ.get('ZOOM', 2.2)), inclusive_end=False):
         """a,b = (pno,y). crop from a to b (exclusive) across pages; returns list of png paths"""
         out=[]; pno,y=a
         while True:
@@ -44,7 +44,7 @@ class Doc:
                     yb=min(yb,y1)
                     clip=pymupdf.Rect(45,y0,W-30,yb)
                     pix=p.get_pixmap(matrix=pymupdf.Matrix(zoom,zoom),clip=clip)
-                    fn=f'img/{name}_{len(out)}.jpg'; pix.save(fn, jpg_quality=78); out.append((fn,clip.width,clip.height))
+                    fn=f'img/{name}_{len(out)}.jpg'; pix.save(fn, jpg_quality=int(os.environ.get('JQ', 78))); out.append((fn,clip.width,clip.height))
             if pno>=b[0]: break
             pno+=1; y=0
         out=CL(out); out.txt=s.text(a,b)

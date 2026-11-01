@@ -1,0 +1,209 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ind AS 115 LDR</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style></head>
+<body><section class="page">
+  <div class="head"><span>CA Final · FR · Ch 9 · Ind AS 115 — last-day notes</span><span class="tag">7 marks every paper</span></div>
+  <h1><span class="u">Ind AS 115</span> — Revenue from Contracts with Customers</h1>
+  <div class="sub">Short notes from ICAI SM Chapter 9 + RTP / MTP / past papers. <b>Pattern:</b> every paper = one 5-mark Q5(a) + 1–2 MCQs. Asked: <b>contract modification</b> (Sep 2025, May 2026 MCQ, May 2023), <b>significant financing</b> (Jan 2026, Nov 2022), <b>bill-and-hold</b> (May 2026, May 2022), <b>loyalty points / material right</b> (Nov 2024, May 2024, Nov 2022), <b>licences</b> (May 2025), right of return + volume rebates (May 2022), uninstalled materials (May 2023), service concession (Nov 2022), scope MCQ (Jan 2026).</div>
+
+  <h2><span class="n">1</span>The five steps and scope <span class="para">115.2–9</span></h2>
+  <table class="tight">
+    <tr><th style="width:22%">Step</th><th>Question to answer</th></tr>
+    <tr><td>1 Contract</td><td>Is there an enforceable contract meeting all 5 criteria? Combine? Modified?</td></tr>
+    <tr><td>2 Performance obligations</td><td>Which promises are <b>distinct</b>? (each distinct good/service or series = one PO)</td></tr>
+    <tr><td>3 Transaction price</td><td>Fixed + variable (constrained) − financing effect + non-cash FV − consideration payable to customer</td></tr>
+    <tr><td>4 Allocate</td><td>To POs on relative <b>stand-alone selling prices</b> (discount and variable amounts may go to specific POs)</td></tr>
+    <tr><td>5 Recognise</td><td>When (or as) <b>control</b> passes — over time (3 tests) or at a point in time</td></tr>
+  </table>
+  <ul class="small">
+    <li><b>Out of scope:</b> leases (116), insurance (117), financial instruments (109), and <b>non-monetary exchanges between entities in the same line of business</b> to facilitate sales (two oil companies swapping oil; Jan 2026 MCQ: same-industry bottle swap).</li>
+    <li>Barter between <b>different</b> businesses is in scope — measure non-cash consideration at FV (TYK 2: talk time for power — each records revenue ₹ 50,000 at the FV of what it receives).</li>
+    <li>Ind AS 115 vs AS 9/7: control-based, 5 steps, financing adjusted, contract costs capitalised, detailed disclosures.</li>
+  </ul>
+
+  <h2><span class="n">2</span>Step 1 — the contract <span class="para">115.9–21</span></h2>
+  <div class="box">
+    <p><b>All 5 criteria:</b> (1) approved and parties committed · (2) each party's rights identifiable · (3) payment terms identifiable · (4) commercial substance · (5) collection of the consideration <b>probable</b> (ability and intention to pay; the amount may be after expected price concessions — TYK 5: price ₹ 2 m, expected 1.75 m → transaction price 1.75 m and the contract exists).</p>
+    <p><b>Criteria not met</b> (TYK 4: P pays 5% non-refundable deposit, credit risk high): cash received = <b>liability</b> until (a) no obligations remain and substantially all consideration received and non-refundable, or (b) contract terminated and cash non-refundable. Keep reassessing.</p>
+  </div>
+  <ul class="small">
+    <li><b>Contract term</b> = period of enforceable rights. Gym, 12 months but cancellable free after 3 → term <b>3 months</b> (Illus 2). 100 cameras but cancellable free after 10 → contract for <b>10 units</b> + option for 90 (Illus 3).</li>
+    <li><b>Combine contracts</b> (same customer/related parties, about the same time) if: negotiated as one package with one commercial objective, OR price of one depends on the other, OR goods form a single PO (Illus 5: licence + customisation 3 days later → combine; Illus 6: two government entities, discount only if both buy → combine; Illus 4: planes + spare parts → separate).</li>
+  </ul>
+
+  <h3>Contract modification — the exam favourite <span class="para">115.18–21</span></h3>
+  <table class="tight">
+    <tr><th style="width:30%">Situation</th><th style="width:28%">Treatment</th><th>ICAI figures</th></tr>
+    <tr><td>Adds <b>distinct</b> goods <b>and</b> price reflects their <b>SSP</b></td><td class="NC"><b>Separate new contract</b></td><td>Illus 7: 120 units at 1,000; after 60, +30 at 950 (SSP) → new contract at 950</td></tr>
+    <tr><td>Remaining goods distinct from those transferred, price not at SSP</td><td class="NC"><b>Prospective</b>: terminate old + new contract; price = unrecognised old consideration + new</td><td>Illus 8: maintenance cut 55,000 → 45,000 p.m. → remaining 6 months at 2,70,000</td></tr>
+    <tr><td>Remaining goods <b>not distinct</b> (part of one PO, e.g. construction)</td><td class="C"><b>Cumulative catch-up</b>: new price × new % complete − revenue to date</td><td>Illus 9: 200 h × 150 + 50 h × 100 = 35,000 / 250 = 140 → 100 h × 140 − 15,000 = <b>(1,000)</b>. May 2026 MCQ: same logic → <b>(2,000)</b></td></tr>
+  </table>
+  <div class="ex"><p><b>PQ 8 (S Ltd / Corp — asked May 2023, Sep 2025, 4 MTPs):</b> ₹ 20 lakh + 2.5 lakh bonus (constrained at inception); expected cost 11 lakh. Year 1: 65% done → revenue <b>13 lakh</b>, cost 7.15 lakh. Modification on 4 June: fixed price +1.5 lakh, cost +80,000, bonus now highly probable → price 24 lakh; % complete 7.15 / 11.80 = 60.60% → catch-up revenue <b>1,54,400</b> (60.60% × 24 lakh − 13 lakh). Same steps in Sep 2025 (₹ 1.2 cr + 35 lakh bonus) and May 2023 (₹ 30 lakh + 3.75 lakh → 2,31,600).</p></div>
+
+  <h2><span class="n">3</span>Step 2 — performance obligations <span class="para">115.22–30</span></h2>
+  <div class="box">
+    <p><b>Distinct = both:</b> (a) capable — customer can benefit on its own or with readily available resources; (b) separately identifiable in the contract. <b>Not</b> separately identifiable if: significant <b>integration</b> into a combined output, one <b>significantly modifies/customises</b> another, or they are <b>highly interdependent</b>.</p>
+    <p><b>Series</b> of substantially the same goods/services with the same pattern of transfer = <b>one</b> PO (cable TV each month — Illus 24; hotel management each day — Illus 13; 2,000 customised engines transferred over time — RTP May 2026).</p>
+  </div>
+  <table class="tight">
+    <tr><th style="width:52%">Facts (SM)</th><th>POs</th></tr>
+    <tr><td>Water purification plant / power plant — design, build, procure, integrate (Illus 10, 12)</td><td>1 (integration)</td></tr>
+    <tr><td>Design + construction of mall where design keeps changing (Illus 14)</td><td>1</td></tr>
+    <tr><td>Broadband + voice + modem buyable elsewhere (Illus 11; Nov 2024); modem + router + internet (Illus 17)</td><td>3</td></tr>
+    <tr><td>Licence + installation + updates + support (Illus 15)</td><td>4</td></tr>
+    <tr><td>Same but installation <b>significantly customises</b> the software (Illus 16)</td><td>3 (licence + customisation is one)</td></tr>
+    <tr><td>Anti-virus licence + updates critical to use (Illus 18)</td><td>1</td></tr>
+    <tr><td>Magazine print + online (Illus 19)</td><td>2</td></tr>
+    <tr><td>Implied promises: free support to reseller's end users (Illus 20); free 2-year maintenance advertised by carmaker (Illus 21)</td><td>Separate PO</td></tr>
+    <tr><td>Telecom registration / activation fee (Illus 28)</td><td>Not a PO — fee is an advance for future service</td></tr>
+  </table>
+
+  <h3>Customer options, loyalty points, material rights <span class="para">B39–B43</span></h3>
+  <ul class="small">
+    <li>Option that gives a <b>material right</b> (a discount the customer would not get without the contract) = separate PO → allocate price on relative SSP; revenue when used or lapses.</li>
+    <li>SSP of an option = discount × expected purchase × likelihood of use, <b>excluding</b> any discount everyone gets anyway.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 23 (Nov 2022, May 2024 variants):</b> 40% voucher, but 10% to all → incremental 30% × ₹ 500 average purchase × 80% = SSP <b>120</b>; allocate 1,000 × 1,000/1,120 = <b>890</b> product, <b>110</b> voucher. <b>PQ 9:</b> 1 point per ₹ 100, point worth ₹ 5, 100 points × 5 = 500 → points 10,000 × 500/10,500 = <b>476</b> deferred, 9,524 now. <b>Illus 22 (renewal option):</b> 7,500 + 6,000 + 6,000 with 50% attrition → 12,00,000 / 175 memberships = <b>6,857</b> revenue per member in year 1, <b>643</b> contract liability. <b>Loyalty points (PQ 5; Nov 2024):</b> allocate sales between goods and points on relative SSP (points × value × expected redemption); release points revenue = allocated amount × points redeemed ÷ total points expected to be redeemed; re-estimate each year, catch up.</p></div>
+
+  <h3>Principal vs agent · consignment · upfront fees <span class="para">B34–B38, B77–B78</span></h3>
+  <ul class="small">
+    <li><b>Principal</b> = controls the good/service before transfer (indicators: primarily responsible, inventory risk, price discretion) → revenue <b>gross</b>. Agent → <b>net</b> commission. Illus 26: ticket reseller bound to buy tickets → principal. Illus 27: ad agency controls the service though no inventory risk/no price discretion → principal.</li>
+    <li><b>Consignment:</b> no revenue on delivery to the consignee; revenue when the consignee sells or must pay (Illus 25).</li>
+    <li><b>Non-refundable upfront fee</b> not tied to a transferred good → advance for future goods; recognise over the period (include renewals if it gives a material right).</li>
+  </ul>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ind AS 115 · Steps 3–5</span><span class="tag">Q5(a) material</span></div>
+  <h2 class="brk"><span class="n">4</span>Step 3 — transaction price <span class="para">115.47–72</span></h2>
+  <h3>Variable consideration and the constraint</h3>
+  <ul class="small">
+    <li>Discounts, rebates, refunds, credits, price concessions, incentives, bonuses, penalties → estimate by <b>expected value</b> (many contracts / range of outcomes) or <b>most likely amount</b> (two outcomes), whichever predicts better; estimate each element separately.</li>
+    <li><b>Constraint:</b> include only to the extent it is <b>highly probable</b> that a significant reversal will not occur. Re-assess every reporting date; changes go to revenue (catch-up).</li>
+    <li>Cash discount for early payment (RTP May 2022): if paid after year-end but before approval, it is evidence → adjust sales.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 30:</b> ₹ 25 cr + early-completion bonus (expected value 2.125 cr) + quality bonus (most likely 2 cr) = <b>29.125 cr</b>. <b>PQ 3:</b> 1,30,000 (90%) or 1,10,000 → most likely <b>1,30,000</b>. <b>PQ 2 (price protection):</b> 5,000 × 70% + 4,500 × 20% + 4,000 × 10% = <b>4,800</b> per TV. <b>PQ 1:</b> 1,000 − expected reimbursement 50 = <b>950</b>.</p></div>
+  <div class="ex"><p><b>Volume rebates:</b> Illus 31 (HT Ltd) — Q1: 10 units × 1,000 = <b>10,000</b> (100 units not expected); Q2: estimate changes → 50 × 900 − 10 × 100 = <b>44,000</b>. PQ 10 (chargers, same logic): 53,050. TYK 6: expected 2.8 m containers → price ₹ 90; Q1 7 lakh containers → revenue <b>63 m</b>, refund liability <b>7 m</b>. May 2022 PYQ (nut bolts): liability 24,000 × (200 − 190) = <b>2,40,000</b>.</p></div>
+  <h3>Sale with right of return <span class="para">B20–B27</span></h3>
+  <ul class="small">
+    <li>Revenue only for goods <b>not</b> expected to be returned; <b>refund liability</b> for the rest; <b>asset</b> (right to recover goods) at former carrying amount less recovery costs and value loss; reduce cost of sales.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 34:</b> 1,000 × ₹ 50, 3% expected back, cost ₹ 30 → revenue <b>48,500</b>; refund liability <b>1,500</b>; asset <b>900</b>; cost of sales 29,100. (MTP Nov 2026: 10,000 moulds, same steps; May 2022 PYQ car locks.)</p></div>
+  <h3>Warranties <span class="para">B28–B33</span></h3>
+  <table class="tight">
+    <tr><th style="width:26%">Type</th><th>Test</th><th>Accounting</th></tr>
+    <tr><td>Assurance-type</td><td>Only promises the product works as agreed</td><td>Ind AS 37 provision (expense)</td></tr>
+    <tr><td>Service-type</td><td>Extra service (sold separately, longer than normal, beyond specification)</td><td>Separate PO → allocate price → contract liability → revenue over the coverage</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 35:</b> computers 36,000 incl. extended cover → revenue 32,000; contract liability (service warranty) <b>4,000</b>; assurance warranty provision 2,000. <b>Illus 36:</b> 100 batteries × 2,000 with 5-year guarantee (normal 1 year) → revenue 1,70,000, contract liability <b>30,000</b> (years 2–5), assurance provision 10,000. Sep 2025 MCQ: free service after the 1-year warranty = separate PO, allocate on relative SSP.</p></div>
+  <h3>Significant financing component <span class="para">115.60–65</span></h3>
+  <div class="box">
+    <p><b>When:</b> payment timing gives a significant financing benefit (gap between cash price and promised amount; long interval; interest rates). <b>Not</b> significant if: advance paid and timing at customer's discretion; consideration variable on an uncontrollable event (sales royalty — Illus 44); difference is for another reason (retention money protecting the customer — Illus 41; advance from low-credit customers — Illus 43). <b>Practical expedient:</b> gap ≤ 1 year → ignore (Illus 47).</p>
+    <p><b>How:</b> transaction price = PV at the rate for a <b>separate financing transaction</b> with that customer (credit-adjusted), not the contract rate if that is lower. Payment in arrears → revenue at PV, interest income (Ind AS 109). Advance received → contract liability grows with <b>interest expense</b>; revenue = liability at transfer.</p>
+  </div>
+  <div class="ex"><p><b>Illus 38:</b> ₹ 1,21,000 after 2 years; cash price 1,00,000 → revenue 1,00,000, interest 21,000 over 2 years. <b>Illus 39 Case B:</b> 60 × 2,12,470 at 14% → TP <b>91,31,346</b>. <b>Illus 40:</b> advance 4,000, 6% for 2 years → interest expense <b>494</b>; revenue 4,494. <b>Jan 2026 Q5(a):</b> 5 × 2,50,438 at 8% contract, 10% market → TP = 2,50,438 × 3.79 = <b>9,49,160</b>. <b>Mercury / Mohan (MTPs, Nov 2022):</b> instalments discounted → sale at PV (Mercury 9,50,000), finance income over 2 years.</p></div>
+  <h3>Non-cash consideration · consideration payable to a customer</h3>
+  <ul class="small">
+    <li>Non-cash → FV at <b>contract inception</b> (later changes due to its form are not revenue). If FV not reliable → SSP of goods given. Illus 50: 1,000 + ad slots FV 600 = <b>1,600</b> (else 1,500). Illus 51: customer-provided tooling FV 2 cr that the supplier controls → TP <b>27 cr</b>. Illus 49: shares bonus valued at inception ₹ 100 → 360 cr if earned.</li>
+    <li>Payment to customer (slotting fees, coupons, rebates, credits) → <b>reduce revenue</b> unless for a distinct good/service at FV. Recognise the reduction at the later of revenue and promise to pay. Illus 52: 1.5 cr on 15 cr commitment = 10% → first month 1.25 − 0.125 = <b>1.125 cr</b>. Illus 53: port-in credit → TP 19,200 − 2,000 = <b>17,200</b>. TYK 7: rebate coupon → 50 − 25% × 10 = <b>47.50</b>. RTP Jan 2026: upfront ₹ 50,000 → reduce revenue in proportion to sales (Q2: 1,22,500).</li>
+  </ul>
+
+  <h2><span class="n">5</span>Step 4 — allocate the price <span class="para">115.73–90</span></h2>
+  <ul class="small">
+    <li>SSP: observable price → else adjusted market assessment / expected cost plus margin / <b>residual</b> (only if price highly variable or uncertain). Illus 54: 10,000 on SSPs 5,000 / 2,500 / 7,500 → 3,300 / 1,700 / 5,000.</li>
+    <li><b>Discount</b> goes proportionately unless all 3: each item sold separately; a bundle of some is regularly sold at a discount; that discount ≈ the contract discount → put it on that bundle (Illus 55A; PQ 7). Residual only if result is within the observable range (Illus 55B/C).</li>
+    <li><b>Variable consideration</b> goes to one PO if it relates specifically to it and that is consistent with the objective (Illus 56: royalty on Licence B only).</li>
+    <li><b>Changes in TP</b> after inception: allocate on the inception SSP basis; satisfied POs → revenue now (Illus 57: bonus 20 lakh to implementation → 60% × 1.2 cr = <b>72 lakh</b> to date). Discretionary retention credit → change in price; recognise over remaining term (Illus 58).</li>
+  </ul>
+
+  <h2><span class="n">6</span>Step 5 — when to recognise <span class="para">115.31–45, B</span></h2>
+  <table class="tight">
+    <tr><th style="width:44%">Over time if ANY one</th><th>SM illustration</th></tr>
+    <tr><td>(a) customer receives and consumes the benefit as you perform</td><td>Payroll processing (Illus 59); sea freight — another carrier would not redo it (Illus 60)</td></tr>
+    <tr><td>(b) your work creates/enhances an asset the customer controls</td><td>Building on customer's land</td></tr>
+    <tr><td>(c) no alternative use <b>and</b> enforceable right to payment for work to date (cost + reasonable margin)</td><td>Audit opinion (Illus 61); satellite (Illus 62). Illus 63: no right to payment if customer stops → <b>point in time</b></td></tr>
+  </table>
+  <ul class="small">
+    <li><b>Point in time</b> indicators: present right to payment, legal title, physical possession, risks and rewards, customer acceptance.</li>
+    <li><b>Measuring progress:</b> output methods (milestones, units) or input methods (cost incurred). Exclude costs that don't show progress (wasted materials). Health club → straight line (Illus 64).</li>
+  </ul>
+  <div class="ex"><p><b>Uninstalled materials (Illus 65; TYK 3; May 2023):</b> goods not distinct, controlled by customer before installation, significant, procured not made → recognise revenue = <b>cost</b> for them (no margin) and exclude from % complete. Illus 65: other costs 5 / 25 lakh = 20% × (50 − 15) = 7 lakh + elevators 15 lakh = <b>22 lakh</b>. TYK 3: 20% × 40 lakh + 10 lakh = <b>18 lakh</b> (profit 2 lakh). May 2023: <b>17.60 lakh</b>.</p></div>
+  <h3>Repurchase agreements · bill-and-hold · licences</h3>
+  <table class="tight">
+    <tr><th style="width:26%">Arrangement</th><th>Treatment</th></tr>
+    <tr><td>Forward or <b>call</b> (seller must/can buy back)</td><td>Customer has no control → repurchase price &lt; original = <b>lease</b>; ≥ original = <b>financing</b> (liability; difference = interest). Illus 66: sold 10 lakh, call at 11 lakh → liability 10 lakh, finance cost 1 lakh.</td></tr>
+    <tr><td><b>Put</b> (customer can sell back)</td><td>Significant economic incentive to exercise (repurchase price well above market)? Yes → lease (price &lt; original) or financing; No → sale with right of return. Illus 67: put at 9 lakh, market 7.5 lakh → incentive → lease; if lapses, revenue at 9 lakh.</td></tr>
+    <tr><td><b>Bill-and-hold</b> (Illus 68; May 2022; May 2026)</td><td>Revenue before delivery only if all 4: substantive reason (customer asked), goods identified separately, ready for transfer, can't be used/sent elsewhere. Spare parts held → revenue when criteria met; <b>custodial service</b> = separate PO, straight line over the holding period. Machine delivered → revenue then.</td></tr>
+    <tr><td>Licence — <b>right to access</b></td><td>Licensor's ongoing activities significantly affect the IP, customer exposed to them, not a separate good → <b>over time</b> (franchise with brand upkeep — PQ 4, May 2025; team name and logo — Illus 72)</td></tr>
+    <tr><td>Licence — <b>right to use</b></td><td>IP static (functional) → <b>point in time</b> (1975 recording — Illus 69; software with optional updates — Illus 70; completed film — Illus 71)</td></tr>
+    <tr><td>Sales / usage royalty on a licence</td><td>Recognise only when the sale/usage occurs (exception to the constraint)</td></tr>
+  </table>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ind AS 115 · costs · presentation · SCA · checklist</span><span class="tag">Quick marks</span></div>
+  <h2 class="brk"><span class="n">7</span>Contract costs <span class="para">115.91–104</span></h2>
+  <table class="tight">
+    <tr><th style="width:24%">Cost</th><th>Capitalise when</th><th>Expense</th></tr>
+    <tr><td>To <b>obtain</b> (sales commission)</td><td>Incremental (only because the contract was won) and expected to be recovered</td><td>Bid costs, legal costs incurred win or lose (unless rechargeable); practical expedient: amortisation period ≤ 1 year</td></tr>
+    <tr><td>To <b>fulfil</b></td><td>Not covered by another Ind AS (16, 38, 2) + relate directly to a contract + create resources for future performance + recoverable</td><td>General admin, wasted materials, costs of past performance</td></tr>
+  </table>
+  <ul class="small">
+    <li>Amortise on the pattern of transfer, including <b>expected renewals</b> (Illus 74: 5 years + 2 expected renewals → <b>7 years</b>). Impairment: carrying amount &gt; remaining consideration − costs to provide.</li>
+    <li>Illus 73 (IT outsourcing ₹ 4 lakh): hardware → Ind AS 16; software → Ind AS 38; design and migration/testing → Ind AS 115 asset, amortised over 7 years.</li>
+  </ul>
+
+  <h2><span class="n">8</span>Presentation · foreign currency advance</h2>
+  <ul class="small">
+    <li><b>Contract asset</b> = right to consideration conditional on something other than time (performance done, not yet billable). <b>Receivable</b> = unconditional right (only time). <b>Contract liability</b> = cash received/due before performance.</li>
+    <li>Advance in foreign currency (RTP Sep 2025; MTP Nov 2026): advance is non-monetary → revenue at the rate on the date of the advance for that portion (Ind AS 21 Appendix B); rest at transaction-date rates.</li>
+    <li>Disclose: disaggregated revenue, contract balances, remaining POs, judgements.</li>
+  </ul>
+
+  <h2><span class="n">9</span>Service concession arrangements (Appendix D) <span class="para">Illus 75; Nov 2022 Q2(b) 10 marks</span></h2>
+  <table class="tight">
+    <tr><th style="width:24%">Model</th><th>When</th><th>Accounting</th></tr>
+    <tr><td>Financial asset</td><td>Unconditional right to receive cash from the <b>grantor</b> (annuity, guaranteed amounts)</td><td>Receivable at FV (Ind AS 109); construction revenue; borrowing costs expensed</td></tr>
+    <tr><td>Intangible asset</td><td>Right to charge <b>users</b> (tolls) — payment depends on usage</td><td>Intangible (Ind AS 38) for construction service; amortise over concession; borrowing costs capitalised during construction</td></tr>
+  </table>
+  <ul class="small">
+    <li>Operator does not recognise the infrastructure as PPE. Construction and operation are separate POs. Obligation to restore/resurface → Ind AS 37 provision. Both models possible in one contract (split).</li>
+  </ul>
+
+  <h2><span class="n">10</span>Exam checklist</h2>
+  <div class="sticky">
+    <b>Modification:</b> distinct + SSP → new contract; distinct, not SSP → prospective; not distinct → cumulative catch-up (new price × new % − revenue to date).<br>
+    <b>Variable consideration:</b> expected value vs most likely; constrain; volume rebate → refund liability for the price difference.<br>
+    <b>Financing:</b> &gt; 1 year and significant → discount at the separate-financing rate; arrears → interest income; advance → interest expense on contract liability.<br>
+    <b>Material right / points:</b> SSP = incremental discount × purchase × likelihood → allocate → defer → release on use.<br>
+    <b>Right of return:</b> revenue on expected-to-keep; refund liability; asset at cost.<br>
+    <b>Bill-and-hold:</b> 4 criteria + separate custodial PO over time.<br>
+    <b>Licence:</b> ongoing activities that change the IP → access (over time); static IP → use (point in time).<br>
+    <b>Uninstalled materials:</b> revenue = cost, excluded from % complete.<br>
+    Always write: <b>identify the PO → transaction price → allocation → timing</b>, with the paragraph reference.
+  </div>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+</body></html>

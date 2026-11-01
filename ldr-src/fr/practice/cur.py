@@ -648,3 +648,143 @@ play={
 ],
 }
 )
+
+# ======================================================================= Ind AS 115 (Ch 9)
+def _auto9():
+    import json as _j
+    cb = _j.load(open('/home/user/ca-revise/data/fr/ch09-casebook.json'))
+    out = []
+    for q in cb['Q']:
+        if q['k'] not in ('rtp', 'mtp', 'pyq'): continue
+        m = re.search(r'Study-material link: YES, SM (PQ (\d+)|Illustration (\d+)|Test Your Knowledge Q(\d+))', re.sub(r'<[^>]+>', ' ', q['a']))
+        if not m: continue
+        par = (f'ICAI Practice Questions · Ch 9 Q{m.group(2)}' if m.group(2) else
+               f'SM Ch 9 · Illustration {m.group(3)}' if m.group(3) else f'SM Ch 9 · Test Your Knowledge Q{m.group(4)}')
+        out.append((par, q['src'], 'Same question as this SM item (ICAI reused it word for word or nearly so) — same answer.'))
+    return out
+
+C['9'] = dict(
+title='Ind AS 115 Revenue from Contracts with Customers',
+groups_in='ABCDEFGPS', skip_ids={'K20', 'K21'},
+notes={'r115-core': 'Notes §1 (p 1)', 'r115-scope': 'Notes §1 scope (p 1)', 'r115-transition': 'Notes §1 (p 1)', 'r115-vs-as': 'Notes §1 (p 1)',
+       'r115-contract': 'Notes §2 (p 1)', 'r115-term': 'Notes §2 (p 1)', 'r115-combine': 'Notes §2 (p 1)', 'r115-mod': 'Notes §2 modification (p 2)',
+       'r115-distinct': 'Notes §3 (p 2)', 'r115-series': 'Notes §3 (p 2)', 'r115-options': 'Notes §3 options (p 3)', 'r115-consign': 'Notes §3 (p 3)',
+       'r115-pa': 'Notes §3 (p 3)', 'r115-upfront': 'Notes §3 (p 3)', 'r115-tp': 'Notes §4 (p 4)', 'r115-var': 'Notes §4 (p 4)',
+       'r115-constraint': 'Notes §4 (p 4)', 'r115-return': 'Notes §4 right of return (p 4)', 'r115-warranty': 'Notes §4 warranties (p 4)',
+       'r115-royalty': 'Notes §6 licences (p 6)', 'r115-financing': 'Notes §4 financing (p 5)', 'r115-noncash': 'Notes §4 (p 5)',
+       'r115-payable': 'Notes §4 (p 5)', 'r115-ssp': 'Notes §5 (p 5)', 'r115-discount': 'Notes §5 (p 5)', 'r115-var-alloc': 'Notes §5 (p 5)',
+       'r115-tp-change': 'Notes §5 (p 5)', 'r115-control': 'Notes §6 (p 6)', 'r115-overtime': 'Notes §6 (p 6)', 'r115-progress': 'Notes §6 (p 6)',
+       'r115-pit': 'Notes §6 (p 6)', 'r115-repurchase': 'Notes §6 table (p 6)', 'r115-billhold': 'Notes §6 table (p 6)', 'r115-licence': 'Notes §6 table (p 6)',
+       'r115-cost-obtain': 'Notes §7 (p 7)', 'r115-cost-fulfil': 'Notes §7 (p 7)', 'r115-cost-amort': 'Notes §7 (p 7)', 'r115-present': 'Notes §8 (p 7)',
+       'r115-disclose': 'Notes §8 (p 7)', 'sca-scope': 'Notes §9 (p 7)', 'sca-fa-ia': 'Notes §9 (p 7)'},
+concept={}, drop=[],
+variants=_auto9() + [
+ ('PYQ May 2022 · Q2(b)', 'PYQ May 2026 · Q5(a)', 'Same facts and wording (PQR Ltd., contract 1 Apr 2023, lead time 3 years); ICAI\'s May 2026 answer is not in the repo — use this answer (machine, spare parts, custodial service: three POs; bill-and-hold criteria; storage straight line).'),
+ ('PYQ Nov 2024 · Q5(a)', 'MTP Jan 2026 S-I · Q5(a)', 'Same Big Deal Ltd. facts; ICAI\'s MTP answer differs slightly in the last step (discounted-points revenue ₹ 1,01,739 vs ₹ 1,08,175 in the paper answer).'),
+ ('PYQ Nov 2022 · Q2(a)', 'MTP Sep 2025 S-II · Q6(c)', 'Mercury / Mars: ₹ 10 lakh in three instalments of 3,33,333 (1 Apr 20X1, 31 Mar 20X2, 31 Mar 20X3), 5% cash discount → sale at PV 9,50,000; finance income 33,053 (year 1) and 16,947 (year 2).'),
+ ('PYQ Nov 2022 · Q2(a)', 'MTP May 2026 S-II · Q6(a)', 'Same Mercury / Mars facts with the P&amp;L and balance-sheet extracts (trade receivables 3,16,387 at 31 Mar 20X2).'),
+ ('PYQ Nov 2024 · Q6(a)', 'MTP May 2025 S-II · Q6(a)', 'Identical (broadband, voice, modem — automated process; three POs).'),
+ ('MTP Nov 2022 S-I · Q3(a)', 'MTP May 2025 S-I · Q5(a)', 'Same A Ltd. / Mr Anik facts (10 marks) without the presentation and disclosure part.'),
+ ('RTP Sep 2025 · Q17', 'MTP Nov 2026 S-I · Q3(b)', 'Identical (USD advance for maintenance services).'),
+ ('RTP Jan 2026 · Q14', 'MTP Nov 2026 S-I · Q5(b)', 'Identical (₹ 50,000 upfront payment to paint customer).'),
+ ('RTP Jan 2026 · Q14', 'MTP May 2026 S-I · Q5(a) Either', 'Identical (₹ 50,000 upfront payment to paint customer).'),
+ ('RTP May 2024 · Q12', 'MTP Sep 2025 S-I · Q6(a)', 'Identical (Astra Ltd. — revenue on bill-and-hold-like early billing; ethics).'),
+ ('RTP May 2022 · Q1', 'MTP May 2023 S-I · Q1(a)', 'Identical (Defense Innovators — buyer-furnished equipment).'),
+ ('SM Ch 9 · Test Your Knowledge Q3', 'RTP May 2023 · Q7', 'Same renovation + air-conditioners question (revenue 18 lakh; profit 2 lakh).'),
+],
+master='MTP Nov 2022 S-I · Q3(a)',
+master_tests=['Distinct performance obligations — machine, installation, servicing (Group C)', 'Significant financing component on deferred payment (Group D)',
+              'Allocate price on relative SSP (Group E)', 'Timing — point in time vs over time (Group F)', 'Presentation and revenue note (Group P)'],
+tests={}, full=[],
+play={
+'A': [dict(t='In scope or not?', n='Notes §1 (p 1)', q=['SM Ch 9 · Test Your Knowledge Q1', 'SM Ch 9 · Test Your Knowledge Q2'],
+  when='Barter, swaps, leases, financial instruments.',
+  do=['Exclude leases, insurance, financial instruments, and non-monetary exchanges between entities in the <b>same line of business</b> to facilitate sales.',
+      'Barter between different businesses → in scope: revenue = FV of what is received (else SSP of what is given).'],
+  ex='TYK 2: talk time for power → each recognises ₹ 50,000. Jan 2026 MCQ: same-industry bottle swap → outside Ind AS 115.')],
+'B': [
+ dict(t='Does a contract exist? Term and combination', n='Notes §2 (p 1)', q=['SM Ch 9 · Illustration 1', 'SM Ch 9 · Test Your Knowledge Q4', 'SM Ch 9 · Illustration 2', 'SM Ch 9 · Illustration 3', 'SM Ch 9 · Illustration 6'],
+  when='Doubtful customer, cancellable contracts, related contracts.',
+  do=['Five criteria incl. <b>probable collection</b> of the amount expected after price concessions.', 'Not met → cash received is a liability until obligations end or contract terminates.',
+      'Term = enforceable period; free cancellation shortens it.', 'Combine if one package, price-linked, or a single PO.'],
+  ex='Illus 2: gym cancellable after 3 months → term 3 months. TYK 4: 5% deposit, high credit risk → liability until criteria met.'),
+ dict(t='Contract modification', n='Notes §2 modification (p 2)', q=['SM Ch 9 · Illustration 7', 'SM Ch 9 · Illustration 8', 'SM Ch 9 · Illustration 9', 'ICAI Practice Questions · Ch 9 Q8', 'PYQ May 2023 · Q2(b)', 'PYQ Sep 2025 · Q5(a)'],
+  when='Scope or price changes after inception.',
+  do=['Distinct goods added at SSP → separate contract.', 'Remaining goods distinct (price not SSP) → prospective: unrecognised consideration + new consideration over remaining goods.',
+      'Remaining goods not distinct → cumulative catch-up: new price × new % complete − revenue to date.', 'Re-assess constrained variable consideration at the modification date.'],
+  ex='Illus 9: (1,000). PQ 8: 1,54,400. May 2023: 2,31,600. May 2026 MCQ: (2,000).'),
+],
+'C': [
+ dict(t='How many performance obligations?', n='Notes §3 (p 2)', q=['SM Ch 9 · Illustration 10', 'SM Ch 9 · Illustration 11', 'SM Ch 9 · Illustration 15', 'SM Ch 9 · Illustration 16', 'SM Ch 9 · Illustration 18', 'SM Ch 9 · Illustration 21', 'ICAI Practice Questions · Ch 9 Q6'],
+  when='Bundles of goods and services.',
+  do=['Capable of being distinct (benefit alone or with readily available resources)?', 'Separately identifiable? Not if integrated, significantly customised, or highly interdependent.',
+      'Count implied promises (advertised free service). Series of the same service = one PO.', 'Activation / set-up activities are not POs.'],
+  ex='Illus 15: 4 POs; with significant customisation (Illus 16): 3. Illus 18: anti-virus + critical updates = 1.'),
+ dict(t='Material rights, loyalty points, renewal options', n='Notes §3 options (p 3)', q=['SM Ch 9 · Illustration 22', 'SM Ch 9 · Illustration 23', 'ICAI Practice Questions · Ch 9 Q5', 'ICAI Practice Questions · Ch 9 Q9', 'PYQ Nov 2024 · Q5(a)', 'PYQ May 2024 · Q5(a)'],
+  when='Vouchers, points, discounted renewals.',
+  do=['Option = separate PO only if it is a material right (more than the discount everyone gets).', 'SSP = incremental discount × expected purchase × probability of use (points: points × value × expected redemption).',
+      'Allocate the price on relative SSP; defer the option part.', 'Release as used: allocated amount × redeemed ÷ total expected; re-estimate each period.'],
+  ex='Illus 23: 890 / 110. PQ 9: 476 deferred. Illus 22: 6,857 revenue + 643 liability per member.'),
+ dict(t='Principal or agent; consignment', n='Notes §3 (p 3)', q=['SM Ch 9 · Illustration 25', 'SM Ch 9 · Illustration 26', 'SM Ch 9 · Illustration 27'],
+  when='Third party involved in delivery.',
+  do=['Control before transfer → principal → gross revenue. Otherwise agent → net fee.', 'Consignment → revenue when the consignee sells or must pay.'],
+  ex='Illus 26: committed to buy tickets → principal. Illus 27: controls the ad service → principal though no inventory risk.'),
+],
+'D': [
+ dict(t='Variable consideration, rebates and the constraint', n='Notes §4 (p 4)', q=['SM Ch 9 · Illustration 30', 'SM Ch 9 · Illustration 31', 'SM Ch 9 · Test Your Knowledge Q6', 'ICAI Practice Questions · Ch 9 Q2', 'ICAI Practice Questions · Ch 9 Q3', 'PYQ May 2022 · Q2(c)'],
+  when='Bonuses, penalties, volume discounts, price protection.',
+  do=['Expected value (many outcomes) or most likely amount (two outcomes), per element.', 'Include only what is highly probable not to reverse; re-assess each period.',
+      'Retrospective volume discount: revenue at the expected price; refund liability for the excess billed; catch up when the estimate changes.'],
+  ex='Illus 30: 29.125 cr. Illus 31: Q1 10,000, Q2 44,000. TYK 6: 63 m revenue, 7 m liability. May 2022: liability 2,40,000.'),
+ dict(t='Right of return and warranties', n='Notes §4 (p 4)', q=['SM Ch 9 · Illustration 34', 'SM Ch 9 · Illustration 35', 'SM Ch 9 · Illustration 36', 'MTP Nov 2026 S-II · Q5(a)'],
+  when='Customer may return goods; product guarantees.',
+  do=['Return: revenue on goods expected to be kept; refund liability; asset for goods to recover (cost less recovery costs).',
+      'Warranty: assurance-type → Ind AS 37 provision; service-type (extra service) → separate PO, contract liability, revenue over coverage.'],
+  ex='Illus 34: 48,500 / 1,500 / 900. Illus 35: liability 4,000. Illus 36: 1,70,000 revenue, 30,000 liability.'),
+ dict(t='Significant financing component', n='Notes §4 financing (p 5)', q=['SM Ch 9 · Illustration 38', 'SM Ch 9 · Illustration 39', 'SM Ch 9 · Illustration 40', 'PYQ Jan 2026 · Q5(a)', 'PYQ Nov 2022 · Q2(a)'],
+  when='Payment much earlier or later than transfer (more than a year).',
+  do=['Not significant if: customer chooses timing on an advance; royalty-type variable amount; difference has another purpose (retention money); ≤ 1 year (expedient).',
+      'Discount at the rate of a separate financing with that customer (not a lower contract rate).', 'Arrears → revenue at PV + interest income; advance → contract liability + interest expense.'],
+  ex='Illus 39 B: 91,31,346. Illus 40: interest 494; revenue 4,494. Jan 2026: 9,49,160.'),
+ dict(t='Non-cash consideration and payments to customers', n='Notes §4 (p 5)', q=['SM Ch 9 · Illustration 50', 'SM Ch 9 · Illustration 51', 'SM Ch 9 · Illustration 52', 'SM Ch 9 · Illustration 53', 'SM Ch 9 · Test Your Knowledge Q7', 'RTP Jan 2026 · Q14'],
+  when='Shares, goods, tooling received; slotting fees, coupons, credits paid.',
+  do=['Non-cash at FV at inception (else SSP given); customer-provided tooling that you control → include.', 'Payment to customer → reduce revenue unless it buys a distinct good/service at FV.'],
+  ex='Illus 50: 1,600. Illus 51: 27 cr. Illus 52: 1.125 cr in month 1. TYK 7: 47.50. RTP Jan 2026: Q2 revenue 1,22,500.'),
+],
+'E': [
+ dict(t='Allocate the price — SSP, discounts, variable amounts', n='Notes §5 (p 5)', q=['SM Ch 9 · Illustration 54', 'SM Ch 9 · Illustration 55', 'ICAI Practice Questions · Ch 9 Q7', 'SM Ch 9 · Illustration 56', 'SM Ch 9 · Illustration 57'],
+  when='More than one PO.',
+  do=['Relative SSP (observable; else adjusted market, cost + margin, residual if price highly variable).', 'Discount to a sub-bundle only if it is regularly sold at that discount.',
+      'Variable consideration to one PO if it relates only to it.', 'Later price changes: inception ratios; satisfied POs adjust revenue now.'],
+  ex='Illus 54: 3,300 / 1,700 / 5,000. Illus 57: 72 lakh to date on implementation.'),
+],
+'F': [
+ dict(t='Over time or point in time; measure progress', n='Notes §6 (p 6)', q=['SM Ch 9 · Illustration 59', 'SM Ch 9 · Illustration 61', 'SM Ch 9 · Illustration 63', 'SM Ch 9 · Illustration 65', 'SM Ch 9 · Test Your Knowledge Q3', 'PYQ May 2023 · Q2(c)'],
+  when='Services, construction, customised goods.',
+  do=['Over time if: customer consumes as you perform; or you build an asset the customer controls; or no alternative use + right to payment for work to date.',
+      'Progress by output or input; exclude inputs that do not show progress.', 'Uninstalled materials (not distinct, customer controls, significant, procured): revenue = cost, excluded from % complete.'],
+  ex='Illus 65: 22 lakh. TYK 3: 18 lakh. May 2023: 17.60 lakh. Illus 63: no right to payment → point in time.'),
+ dict(t='Repurchase, bill-and-hold, licences', n='Notes §6 table (p 6)', q=['SM Ch 9 · Illustration 66', 'SM Ch 9 · Illustration 67', 'SM Ch 9 · Illustration 68', 'PYQ May 2022 · Q2(b)', 'SM Ch 9 · Illustration 72', 'ICAI Practice Questions · Ch 9 Q4', 'PYQ May 2025 · Q5(a)'],
+  when='Buy-back clauses, goods held for the customer, IP licences.',
+  do=['Call / forward: lease (price &lt; original) or financing (≥ original). Put: significant incentive → lease/financing; else sale with right of return.',
+      'Bill-and-hold: 4 criteria → revenue before delivery; custodial service = separate PO over time.',
+      'Licence: licensor\'s activities change the IP → right to access (over time); static IP → right to use (point in time). Sales royalties when sales occur.'],
+  ex='Illus 66: liability 10 lakh, interest 1 lakh. Illus 68 / May 2022: 3 POs. PQ 4 / May 2025: franchise fee over the term.'),
+],
+'G': [dict(t='Contract costs', n='Notes §7 (p 7)', q=['SM Ch 9 · Illustration 73', 'SM Ch 9 · Illustration 74'],
+  when='Commissions, set-up and fulfilment costs.',
+  do=['Obtain: capitalise incremental costs expected to be recovered (expedient ≤ 1 year). Fulfil: capitalise if not under another Ind AS, directly related, create resources, recoverable.',
+      'Amortise over the expected period incl. renewals; impair if carrying amount &gt; remaining consideration − costs.'],
+  ex='Illus 74: 5 + 2 renewals → 7 years. Illus 73: hardware Ind AS 16, software Ind AS 38, design and migration Ind AS 115.')],
+'P': [dict(t='Contract asset, receivable, contract liability', n='Notes §8 (p 7)', q=['RTP Sep 2025 · Q17'],
+  when='Balance-sheet presentation.',
+  do=['Receivable = unconditional right; contract asset = conditional on performance; contract liability = paid before performance.',
+      'Foreign-currency advance: non-monetary → revenue for that part at the advance-date rate.'],
+  ex='RTP Sep 2025: USD advance → revenue at the rate on the advance date for the part covered by the advance.')],
+'S': [dict(t='Service concession — financial asset or intangible', n='Notes §9 (p 7)', q=['SM Ch 9 · Illustration 75', 'PYQ Nov 2022 · Q2(b)'],
+  when='Toll roads, power purchase from government.',
+  do=['Right to cash from the grantor → financial asset (Ind AS 109); right to charge users → intangible (Ind AS 38).',
+      'Construction revenue recognised; infrastructure not PPE; borrowing costs expensed (FA) or capitalised in construction (IA); restoration → Ind AS 37.'],
+  ex='Illus 75 / Nov 2022: toll project → intangible asset model; power purchase with guaranteed payments → financial asset model.')],
+}
+)

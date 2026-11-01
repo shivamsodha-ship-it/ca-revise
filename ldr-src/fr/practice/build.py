@@ -171,10 +171,10 @@ master = find(cu['master']); assert master is not None
 full = [find(k) for k in cu['full']]; assert all(full), cu['full']
 for it in full: it['is_full'] = True
 master['is_master'] = True
-topic = [it for it in items if not it.get('is_var') and not it.get('is_full') and not it.get('is_master')]
+topic = [it for it in items if not it.get('is_var') and not it.get('is_master')]
 gorder = [g[0] for g in cb['groups']]
 topic.sort(key=lambda it: (gorder.index(P[it['concept']]['g']), Pidx[it['concept']], RANK[it['kind']], it['order']))
-order = topic + full + [master]
+order = topic + [master]
 for n, it in enumerate(order, 1): it['n'] = n
 def qref(k):
     it = find(k)
@@ -250,7 +250,7 @@ H.append(f'<h1><span class="u">{title}</span> — practice sheet</h1>')
 H.append('<div class="sub"><b>How to use:</b> each topic starts with ICAI\'s small illustrations and questions (cover the solution, solve, check). '
          'Questions that repeat an earlier one are <b>not printed again</b> — the box under the original lists each repeat and what changes. '
          'Each topic ends with <b>"Adjustments in this topic — what to do"</b>: the steps for every adjustment, ICAI\'s figures, the notes section to re-read, and the question numbers to practise. '
-         'Then come the <b>full-scale questions</b>, and last the <b>master question</b> — do it timed, without looking, to see if you are ready.</div>')
+         'Every question — illustration, short question or full-scale exam question — sits in its own topic; full-scale ones show the adjustments they test. The last question is the <b>master question</b> — do it timed, without looking, to see if you are ready.</div>')
 H.append('<div class="sub">Every question header shows its concept and the <b>notes section and page</b> (pages = this PDF\'s notes part, which comes first). '
          'SM illustrations, SM TYK and ICAI Practice Questions are ICAI\'s printed pages; RTP / MTP / past papers are ICAI\'s text and answers; solutions marked app-written are mine.</div>')
 if part == '110':
@@ -259,7 +259,7 @@ H.append('<h2>Index</h2>')
 rows = []
 cur_g = None
 for it in order:
-    sec = 'Full-scale' if it.get('is_full') else ('MASTER' if it.get('is_master') else P[it['concept']]['g'])
+    sec = 'MASTER' if it.get('is_master') else P[it['concept']]['g']
     nv = len(VAR.get(id(it), []))
     rows.append(f'<tr><td>Q{it["n"]}</td><td>{E(sec)}</td><td>{E(P[it["concept"]]["title"])}</td><td>{E(it["src"])}{" (+" + str(nv) + " repeat" + ("s" if nv > 1 else "") + ")" if nv else ""}</td></tr>')
 for i in range(0, len(rows), 22):
@@ -277,11 +277,6 @@ for it in topic:
         curg = g
     H.extend(item_html(it))
 H.extend(play_html(curg)); H.append(FOOT)
-H.append(sect('Full-scale questions'))
-H.append('<h2 class="brk"><span class="n">F</span>Full-scale questions</h2>')
-H.append('<p class="small">Exam-length questions. Each lists the adjustments it tests — if one trips you, go to that topic\'s "what to do" list and the notes section shown.</p>')
-for it in full: H.extend(item_html(it))
-H.append(FOOT)
 H.append(sect('Master question'))
 H.append('<h2 class="brk"><span class="n">M</span>Master question — test yourself</h2>')
 H.append('<div class="sticky">Do this last. Close the notes, set a timer (14 marks ≈ 25 minutes), write the full answer with working notes, then check against the solution on the next page. '

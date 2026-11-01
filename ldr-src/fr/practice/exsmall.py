@@ -3,7 +3,7 @@ import re, os
 from crop import Doc
 SP = os.path.dirname(os.path.abspath(__file__))
 PQF = {'113': '83022bos67129-pq', '40': '83186bos67256-pq', '105': '83186bos67256-pq', '116': '83186bos67256-pq',
-       '21': '83195bod67256-pq', '108': '83195bod67256-pq', '41': '83231bos67302-pq', '20': '83231bos67302-pq', '101': 'pq13'}
+       '21': '83195bod67256-pq', '108': '83195bod67256-pq', '41': '83231bos67302-pq', '20': '83231bos67302-pq', '101': 'pq13', '19': '83195bod67256-pq', '33': '83195bod67256-pq'}
 def pos(r): return (r[0], r[1])
 ILL = r'^(Illustration|Examples?)\s*\d+[A-C]?\s*([:\-–(].*|-\s*\d+)?$'
 def extract(n):
@@ -35,6 +35,7 @@ def extract(n):
         if qs and an:
             for i, (q, a) in enumerate(zip(numbered(D, qs[0], an[0], f't{n}q'), numbered(D, an[0], (D.d.page_count - 1, 9999), f't{n}a'))):
                 out.append(dict(src=f'SM Ind AS {n} · Test Your Knowledge Q{i+1}', kind='sm-tyk', sec='Test Your Knowledge', q=q, a=a))
+    if n not in PQF: return out
     P = Doc(f'{SP}/../small/{PQF[n]}.pdf')
     hdr = [r for r in P.L if re.match(r'^(CHAPTER|UNIT)', r[4]) or 'PUZZLERS' in r[4]]
     me = [r for r in hdr if re.search(rf'IND AS\s*{n}\b', r[4])]

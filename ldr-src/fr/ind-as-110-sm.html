@@ -1,0 +1,727 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ind AS 110 SM LDR</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style></head>
+<body><section class="page">
+  <div class="head"><span>CA Final · FR · Ch 13 Units 1–4 · Ind AS 110 — in study-material order</span><span class="tag">Nov 2026 attempt</span></div>
+  <h1><span class="u">Ind AS 110</span> — Consolidated FS</h1>
+  <div class="sub">Follows ICAI SM Chapter 13: Unit 1 Introduction · Unit 2 Definitions · Unit 3 Ind AS 110 (control, investment entities) · Unit 4 Consolidation procedure. Illustration numbers as printed in the current SM.</div>
+
+  <h2><span class="n">1</span>Unit 1 — Introduction</h2>
+  <ul>
+    <li><b>Consolidated FS</b> present the financial position of the <b>entire group</b> (parent + group companies); <b>separate FS</b> present a single entity.</li>
+    <li>Stakeholders (investors, promoters, lenders, government) prefer consolidated FS — a complete view of the group controlled by the parent. Groups restructure into many companies (tax, efficiency), so consolidated FS are imperative.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:18%">Ind AS</th><th>What it covers in this chapter</th></tr>
+    <tr><td><b>Ind AS 110</b></td><td>Criteria for control → subsidiaries; consolidation procedures — eliminating inter-company transactions, NCI, loss of control (Units 3 and 4)</td></tr>
+    <tr><td><b>Ind AS 111</b></td><td>Whether an arrangement is a joint arrangement; joint operation vs joint venture (Unit 5)</td></tr>
+    <tr><td><b>Ind AS 28</b></td><td>Significant influence → associate; equity method for associates and JVs (Unit 6)</td></tr>
+    <tr><td><b>Ind AS 27</b></td><td>Investments in subsidiaries, associates and JVs in <b>separate FS</b> (Units 7–8)</td></tr>
+    <tr><td><b>Ind AS 112</b></td><td>Disclosures of interests in other entities (Unit 8)</td></tr>
+  </table>
+  <div class="box"><h3>SM decision chart</h3>
+    <p><b>Control?</b> Yes → consolidate as subsidiary (Ind AS 110). No → <b>Joint control?</b> Yes → type of joint arrangement: <b>joint operation</b> → account for own assets, liabilities, revenue, expenses (Ind AS 111); <b>joint venture</b> → equity method (Ind AS 28/111). No → <b>Significant influence?</b> Yes → equity method (Ind AS 28). No → <b>financial asset</b> (Ind AS 109; disclosures Ind AS 107). Disclosures for all under Ind AS 112.</p></div>
+
+  <h2><span class="n">2</span>Unit 2 — Important definitions</h2>
+  <table class="tight">
+    <tr><td style="width:24%"><b>Associate</b></td><td>An entity over which the investor has <b>significant influence</b>.</td></tr>
+    <tr><td><b>Consolidated FS</b></td><td>FS of a group in which assets, liabilities, equity, income, expenses and cash flows of the parent and subsidiaries are presented <b>as those of a single economic entity</b>.</td></tr>
+    <tr><td><b>Control over an investee</b></td><td>The investor is <b>exposed, or has rights, to variable returns</b> from its involvement and has the <b>ability to affect those returns through its power</b> over the investee.</td></tr>
+    <tr><td><b>Group</b></td><td>A parent and its subsidiaries.</td></tr>
+    <tr><td><b>Joint arrangement</b></td><td>An arrangement of which two or more parties have <b>joint control</b>.</td></tr>
+    <tr><td><b>Joint control</b></td><td>Contractually agreed sharing of control, existing only when decisions about relevant activities require the <b>unanimous consent</b> of the parties sharing control.</td></tr>
+    <tr><td><b>Joint operation</b></td><td>Parties with joint control have <b>rights to the assets and obligations for the liabilities</b>.</td></tr>
+    <tr><td><b>Joint venture</b></td><td>Parties with joint control have <b>rights to the net assets</b>.</td></tr>
+    <tr><td><b>Non-controlling interest</b></td><td>Equity in a subsidiary <b>not attributable, directly or indirectly, to a parent</b>.</td></tr>
+    <tr><td><b>Parent</b></td><td>An entity that controls one or more entities.</td></tr>
+    <tr><td><b>Power</b></td><td><b>Existing rights</b> that give the <b>current ability</b> to direct the <b>relevant activities</b>.</td></tr>
+    <tr><td><b>Separate FS</b></td><td>Presented by a parent, or an investor with joint control or significant influence, in which investments are at <b>cost or under Ind AS 109</b>.</td></tr>
+    <tr><td><b>Significant influence</b></td><td>Power to <b>participate</b> in financial and operating policy decisions — <b>not control or joint control</b>.</td></tr>
+    <tr><td><b>Subsidiary</b></td><td>An entity controlled by another entity.</td></tr>
+  </table>
+
+  <h2><span class="n">3</span>Unit 3 — 3.1 Objective of Ind AS 110</h2>
+  <ul>
+    <li>A parent that controls one or more subsidiaries <b>prepares consolidated FS</b>.</li>
+    <li>How to apply <b>control evaluation</b> to decide whether to consolidate an investee.</li>
+    <li>Accounting requirements for consolidated FS (Unit 4).</li>
+    <li>Definition of an <b>investment entity</b> and its consolidation exemption.</li>
+    <li>Ind AS 110 does <b>not</b> deal with business combinations and goodwill — that's Ind AS 103.</li>
+  </ul>
+
+  <h2><span class="n">4</span>3.2 Scope — exemption and exceptions <span class="para">4</span></h2>
+  <h3>Exemption — a parent need not present CFS if ALL are met (para 4(a))</h3>
+  <ol>
+    <li>it is a <b>wholly owned or partly owned subsidiary</b> of another entity and <b>all its owners are informed and do not object</b>;</li>
+    <li>its debt or equity instruments are <b>not traded in a public market</b> (domestic or foreign stock exchange, or OTC market incl. local and regional markets);</li>
+    <li>it has <b>not filed, nor is in the process of filing</b>, its FS with a securities commission or other regulator <b>to issue any class of instruments in a public market</b>;</li>
+    <li>its <b>ultimate or any intermediate parent</b> produces FS <b>available for public use</b> that <b>comply with Ind AS</b>, in which subsidiaries are consolidated or measured at FVTPL under Ind AS 110.</li>
+  </ol>
+  <div class="ex"><p><b>Illustration 1:</b> X (listed, Ind AS CFS) → A → B, C (all 100%); A unlisted; X doesn't object. <b>(A)</b> A is <b>exempt</b>. <b>(B)</b> X is foreign, CFS under its own GAAP → <b>not exempt</b> (parent's FS not Ind AS). <b>(C)</b> A is held 100% by <b>Mr. X, an individual</b> → no Ind AS FS for public use → <b>not exempt</b>.</p></div>
+  <div class="ex"><p><b>Illustration 2:</b> A (listed) → B 100%; A → C 60%; C → X 100%. <b>(A)</b> other 40% of C held by outsiders → C must <b>inform them</b>; exempt only if they don't object. <b>(B)</b> the 40% held by B (A's 100% subsidiary) → C is effectively <b>100% held by A</b> → no need to inform B; <b>exempt</b>.</p></div>
+  <ul>
+    <li><b>Exception 1:</b> Ind AS 110 does not apply to <b>post-employment benefit plans or other long-term employee benefit plans</b> under Ind AS 19 → don't consolidate them. <b>Example 1:</b> employee gratuity trust → <b>not</b> assessed for control, not consolidated.</li>
+    <li><b>Exception 2:</b> an <b>investment entity</b> required to measure all its subsidiaries at FVTPL need not present CFS (§3.7).</li>
+    <li><b>Note:</b> Indian GAAP exclusions — control intended to be <b>temporary</b>; subsidiary under <b>severe long-term restrictions</b> — <b>no longer apply</b> under Ind AS.</li>
+  </ul>
+
+  <h2><span class="n">5</span>3.3 Control evaluation <span class="para">6–9 · B2</span></h2>
+  <div class="def"><p>An investor controls an investee <b>if and only if</b> it has all three: <b class="hy">(1) power over the investee</b> · <b class="hy">(2) exposure, or rights, to variable returns from the investee</b> · <b class="hy">(3) ability to use its power over the investee to affect the investor's returns</b>.</p></div>
+  <ul>
+    <li>After the initial assessment, <b>reassess</b> when there are changes to one or more of the three elements.</li>
+    <li>The investor may need to act in co-operation with another entity, or <b>no single investor</b> may control → account under Ind AS 111 (joint arrangement), Ind AS 28 (associate) or Ind AS 109 (financial instrument).</li>
+  </ul>
+
+  <h2><span class="n">6</span>3.3.1 Power <span class="para">10–14 · B9–B54</span></h2>
+  <p>An investor has power if it has: <b>A. existing rights</b> that give it <b>B. the current ability</b> <b>C. to direct the relevant activities</b> of the investee. (SM explains in reverse: relevant activities → current ability → rights.)</p>
+  <h3>How to identify relevant activities and how decisions about them are made</h3>
+  <ul>
+    <li><b>Relevant activities</b> = activities of the investee that <b>significantly affect the investee's returns</b>. Examples (not limited to): <b>selling and purchasing</b> of goods and services · <b>managing financial assets</b> during their life (incl. upon default) · <b>selecting, acquiring or disposing</b> of assets · <b>researching and developing</b> new products or processes · <b>determining a funding structure</b> or obtaining funding · establishing <b>operating and capital decisions incl. budgets</b> · <b>appointing, terminating and remunerating KMP</b> or service providers.</li>
+    <li>Power to direct relevant activities can be <b>shared</b> by multiple parties without meeting the definition of joint control.</li>
+    <li>Activities <b>before and after</b> a particular event may both be relevant; where investors can direct activities at <b>different times</b>, decide who directs the activities that <b>most significantly affect returns</b> (same as concurrent rights); reconsider if facts change.</li>
+    <li>Two or more investors can each <b>unilaterally direct different</b> relevant activities → the one directing the activities that <b>most significantly affect returns</b> has power.</li>
+  </ul>
+  <div class="ex"><p><b>Example 2:</b> five parties own 20% each, one board seat each; all strategic decisions need consent of <b>any four of five</b> → <b>not joint control</b> (no unanimity required), but power is <b>shared</b> and <b>no single party controls</b>.</p></div>
+  <div class="ex"><p><b>Illustration 3:</b> C Ltd. builds and operates a toll road; A constructs (2 years, recovers cost + fixed margin, first call on toll cash); B then runs operations, maintenance, and takes residual cash as management fee; B sets the tolls → A is merely a <b>contractor</b>; residual risks and rewards are B's → <b>B controls C from inception</b>, even during construction.</p></div>
+  <div class="ex"><p><b>Illustration 4:</b> A Ltd. (asset manager, 10% units) takes investment/divestment decisions of Fund X; majority unitholders appoint a committee for day-to-day <b>administration</b> → A directs the activities that most significantly affect returns → A has <b>power</b> (control still needs returns and link).</p></div>
+  <h3>Current ability to direct relevant activities</h3>
+  <ul>
+    <li>The investor can make decisions <b>at the time they need to be taken</b>. It need not actively direct.</li>
+    <li>Not limited to acting <b>today</b> — steps like calling a meeting don't prevent power, if no other barriers exist.</li>
+    <li>Investees with mostly <b>predetermined</b> decisions: decisions arise only on particular events → the ability to make them <b>if and when they arise</b> is current ability.</li>
+    <li>Current ability always arises from <b>rights</b> (voting, potential voting, rights in other arrangements, or a combination).</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 5:</b> vehicle funded by a debt investor and equity investors (equity takes first loss); an equity investor with 30% is asset manager and manages the portfolio until defaults use up the equity tranche; then a trustee manages it on the debt investor's instructions → relevant activity = <b>managing the asset portfolio</b>; each of the asset manager and the debt investor must judge who directs the activities that <b>most significantly</b> affect returns, considering <b>purpose and design</b> and their exposure to variability.</p></div>
+
+  <h3>3.3.1.1 Rights that give power</h3>
+  <table class="tight">
+    <tr><th style="width:42%">Form of right</th><th>SM example</th></tr>
+    <tr><td><b>Voting rights or potential voting rights</b></td><td>Holding a majority of equity share capital</td></tr>
+    <tr><td>Rights to <b>appoint, reassign or remove KMP</b> who can direct relevant activities</td><td>Right to appoint a majority of the board that decides relevant activities</td></tr>
+    <tr><td>Rights to <b>appoint or remove another entity</b> that directs relevant activities</td><td>Right to appoint/remove the asset manager of a venture capital fund</td></tr>
+    <tr><td>Rights to <b>direct the investee into, or veto changes to, transactions for the investor's benefit</b></td><td>Right to make the investee sell all its output to the investor's group company at a price set by the investor</td></tr>
+    <tr><td><b>Other rights</b> (e.g. decision-making rights in a <b>management contract</b>)</td><td>Rights over relevant activities given to one investor by all others through a <b>shareholders' agreement</b></td></tr>
+  </table>
+  <p class="small">Where the investee has many relevant activities needing continuous decisions, it is usually <b>voting or similar rights</b> that give power.</p>
+
+  <h3>3.3.1.1A Substantive rights vs protective rights</h3>
+  <table class="tight">
+    <tr><th>Substantive rights</th><th>Protective rights</th></tr>
+    <tr><td><b>Can</b> give the investor power</td><td>Do <b>not</b> give power</td></tr>
+    <tr><td>Relate to the <b>relevant activities</b></td><td>Protect the holder's interest <b>without</b> giving rights over relevant activities</td></tr>
+  </table>
+  <h3>1. Substantive rights — holder must have the practical ability to exercise them</h3>
+  <p>Judgement on all facts. Factors (not exhaustive):</p>
+  <ol type="a">
+    <li><b>Barriers</b> that prevent exercise: <b>financial penalties and incentives</b> · <b>high exercise or conversion price</b> · terms that make exercise unlikely (e.g. <b>narrowly limited timing</b>) · <b>no explicit, reasonable mechanism</b> in founding documents or law · holder <b>can't obtain the information</b> needed · <b>operational barriers or incentives</b> (e.g. no other manager willing or able to provide specialised services and take over the existing manager's interests) · <b>legal or regulatory requirements</b> (e.g. foreign investor prohibited from exercising).</li>
+    <li>Where exercise needs <b>more than one party</b> or rights are held by many: is there a <b>mechanism</b> giving them the practical ability to act <b>collectively</b>? No mechanism → probably not substantive. An <b>independent board</b> can be such a mechanism.</li>
+    <li>Would the holders <b>benefit</b> from exercising? Potential voting rights are more likely substantive when the exercise price is <b>below market</b> or there are <b>synergies</b>.</li>
+  </ol>
+  <div class="ex"><p><b>Illustration 5 (SM numbering) — voting rights:</b> A holds 10%; nine others 10% each gave A decision rights for 5 years via a management agreement. <b>(A)</b> the 90% want to terminate after 2 years but a <b>huge penalty</b> is payable → barrier → <b>not substantive</b>. <b>(B)</b> no penalty, but only 4 holders (40%) dispute; removal needs a majority → <b>not substantive</b>.</p></div>
+  <div class="ex"><p><b>Illustration 6 — potential voting rights:</b> investor holds 30% with an option for 30% more. <b>(A)</b> exercise price far above market (loss-making company) → <b>not substantive</b>. <b>(B)</b> price at market, but exercisable only within <b>1 month</b> and the investor can't arrange funds → <b>not substantive</b>. <b>(C)</b> market price <b>unknowable</b> (new, unique business) → can't judge benefit → <b>not substantive</b>.</p></div>
+  <div class="ex"><p><b>Illustration 7 — removal rights:</b> other investors can remove the VC fund's asset manager, but <b>no other manager</b> is willing/able to provide the specialised services and buy its stake → <b>not substantive</b>.</p></div>
+  <ul>
+    <li>To be substantive, a right should be exercisable <b>when decisions need to be made</b> — usually currently exercisable, but <b>not always</b>.</li>
+    <li><b>Example 3:</b> investor holds 30% + option for 40% more exercisable within <b>25 days</b>; next shareholders' meeting on relevant activities is in <b>30 days</b> → can reach 70% in time → <b>substantive</b>.</li>
+    <li>Evidence that the investor <b>has been directing</b> relevant activities helps but is <b>not conclusive</b>.</li>
+    <li>Consider <b>substantive rights held by others</b> — rights to approve or block decisions can prevent the investor from deciding. <b>Example 4:</b> 5 investors; any 2 can call a meeting, but every decision needs <b>unanimous</b> consent → each investor's consent is needed.</li>
+  </ul>
+  <h3>2. Protective rights</h3>
+  <ul>
+    <li>Designed to <b>protect the holder's interest</b> without giving power. Mainly relate to <b>fundamental changes</b> or apply in <b>exceptional circumstances</b> (but not every exceptional/contingent right is protective). They neither give power nor prevent another party from having power.</li>
+    <li>Examples: right exercisable only on <b>fraud or default</b> by the investors who have power · a <b>lender's right to appoint a nominee director</b> to ensure the borrower avoids activities that increase credit risk (*protective only so long as it doesn't give <b>majority control of the board</b>) · <b>minority shareholders' right to approve capex beyond the normal course</b>, or issue of equity or debt · a <b>lender's right to seize assets</b> on default · rights to approve/block <b>change of name</b>, amendment of constitutional documents to enter a new business, change of registered office.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Investor's rights</th><th>Other parties' rights</th><th>Conclusion on power</th></tr>
+    <tr><td>Substantive</td><td>Protective</td><td class="NC">Investor has power</td></tr>
+    <tr><td>Protective</td><td>Substantive</td><td>Other parties have power</td></tr>
+    <tr><td>Substantive</td><td>Substantive</td><td>Further evaluation needed</td></tr>
+  </table>
+  <h3>Franchises</h3>
+  <ul>
+    <li>Franchisor's rights usually <b>protect the brand</b>. Features indicating protective rights: they don't give the franchisor ability to direct the franchisee's relevant activities · <b>other parties</b> have current ability to direct them · they don't affect others' rights to decide · the <b>franchisee operates the business for its own account</b>.</li>
+    <li>Legal form and <b>funding structure</b> may be decided by others and significantly affect returns. The <b>lower the franchisor's financial support</b> and exposure to variability, the more likely its rights are only protective.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 8:</b> PQR (franchisee of ABC's Brand X) funds the outlet itself, decides capital structure, hires staff, fixes pay, selects vendors; ABC sets interiors, uniforms and other guidelines to protect the brand → ABC's rights are <b>protective</b>; PQR directs the relevant activities.</p></div>
+
+  <h3>3.3.1.3 Voting rights</h3>
+  <p>Generally power comes through voting rights. But even a <b>majority</b> may not give power if (i) the voting rights are <b>not substantive</b>, or (ii) <b>another entity</b> (not the investor's agent) has existing rights to direct the relevant activities. Other rights may still give power.</p>
+  <h3>3.3.1.3.1 Power through voting rights</h3>
+  <p><b>A. With a majority</b> — power where (a) relevant activities are directed by a <b>vote of the majority holder</b>, <b>or</b> (b) a <b>majority of the governing body</b> that directs relevant activities is <b>appointed by the majority holder</b> (e.g. board appointed by the majority shareholder).</p>
+  <p><b>B. Without a majority</b> — through: (1) <b>contractual arrangement with other vote holders</b> (investor directs how they vote) · (2) <b>rights from other contractual arrangements</b> (decision rights over, e.g., manufacturing or financing, combined with votes) — <b>economic dependence alone</b> (e.g. supplier and its main customer) does <b>not</b> give power · (3) <b>the investor's own voting rights</b> — <b>de facto control</b> · (4) <b>potential voting rights</b> · (5) a <b>combination</b>.</p>
+  <table class="tight">
+    <tr><th>De facto control — sufficiency of votes</th><th>Higher</th><th>Lower</th></tr>
+    <tr><td>Number of voting rights held by investor</td><td class="NC">More likely power</td><td>Less likely</td></tr>
+    <tr><td>Size of investor's votes relative to other holders</td><td class="NC">More likely power</td><td>Less likely</td></tr>
+    <tr><td>Number of parties needed to outvote the investor</td><td class="NC">More likely power</td><td>Less likely</td></tr>
+  </table>
+  <div class="ex"><p><b>Illustration 9:</b> 45%; thousands of others ≤1% each; no arrangements → <b>more likely power</b> — can conclude on size alone without other evidence. <b>Illustration 10:</b> 40%; six others at 10% each → <b>less likely</b>; size alone is not conclusive — consider additional facts.</p></div>
+  <ul>
+    <li>Also consider potential voting rights and other contractual arrangements. If the investor holds sufficiently more votes and others are <b>widely dispersed</b>, the three factors may be enough.</li>
+    <li>If still unclear → consider additional facts, e.g. <b>voting patterns at previous meetings</b>. If still <b>not clear</b> that the investor has power → it <b>does not control</b>.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 11:</b> 35%; three others hold 5% each; rest ≤1% each; decisions by majority of votes cast; <b>75% of votes</b> cast at recent meetings → active participation means no practical ability to direct unilaterally → <b>no power</b>, even if others happened to vote with the investor.</p></div>
+  <h3>Potential voting rights</h3>
+  <ul>
+    <li>Rights to obtain voting rights — <b>convertible instruments, options, forward contracts</b>. Considered only if <b>substantive</b>.</li>
+    <li>Consider the <b>purpose and design</b> of the instrument and other benefits from exercise; consider them <b>together</b> with the investor's votes and other rights.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 12:</b> A and two others hold one-third each; investee's business closely related to A; A also holds debt <b>convertible at any time</b> at a fixed price (substantive) → 60% on conversion; synergies → <b>A has power</b>.</p></div>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 13 · Ind AS 110 · Power without votes · Returns · Link · Other parties · Silos</span><span class="tag">UNIT 3</span></div>
+  <h3>3.3.1.3.2 Power other than through voting rights</h3>
+  <p>When voting rights <b>can't significantly affect returns</b> (e.g. votes relate to <b>administrative tasks only</b>), consider: <b>(1) purpose and design</b> of the investee · <b>(2) contractual arrangements</b> · <b>(3) special relationship</b> between investor and investee.</p>
+  <h3>(1) Purpose and design</h3>
+  <ul>
+    <li>Helps identify: the <b>relevant activities</b>, <b>how decisions</b> about them are made, <b>who has current ability</b> to direct them, and <b>who receives the returns</b>.</li>
+    <li>Consider the investor's involvement and decisions at <b>design</b> stage. Involvement in design <b>alone is not sufficient</b> for control, but may show the investor had the <b>opportunity to obtain rights</b> sufficient for power.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 13:</b> PQR sets up XYZ to build a power plant and distribute electricity under a state contract; PQR involved in design; decisions on generation and price are not determined by voting rights → involvement in design <b>indicates</b> opportunity to obtain power but is <b>not sufficient</b>; consider other facts such as contractual arrangements.</p></div>
+  <h3>(2) Contractual arrangements</h3>
+  <ul>
+    <li>Consider <b>call rights, put rights, liquidation rights</b> giving explicit or implicit decision rights closely related to relevant activities — even if they operate <b>outside the legal boundaries</b> of the investee.</li>
+    <li>Some investees are designed so that activities and returns are <b>predetermined until particular events occur</b> → only decisions on those events are relevant activities. The events <b>need not actually occur</b>; the right to decide whenever required is enough for power.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 14 — rights contingent on future events:</b> investee buys receivables and services them day to day (collect and pass on); on default, the receivable is <b>automatically put</b> to an investor under a separate agreement; managing defaulted receivables is the only relevant activity → agreement + founding documents are integral → <b>investor has power</b>, though it manages defaulted receivables outside the investee.</p></div>
+  <ul>
+    <li>An explicit or implicit <b>commitment to ensure the investee operates as designed</b> increases exposure and the incentive to obtain power — an <b>indicator</b> only; doesn't by itself give power or prevent another party from having power.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 15:</b> A (pharma) depends entirely on B for packing material (others inferior) → A is committed to ensure B operates as designed → <b>indicator</b> of power; consider other facts before concluding control.</p></div>
+  <h3>(3) Special relationship — for marginal cases (B18–B20)</h3>
+  <p>Ind AS 110 gives guidance on <b>evidence</b> of possible power, <b>indicators</b> of possible power and <b>incentives</b> to obtain power.</p>
+  <table class="tight">
+    <tr><th style="width:44%">Evidence of practical ability to direct unilaterally (B18)</th><th>SM example</th></tr>
+    <tr><td>Investor can <b>appoint or approve KMP</b> who direct relevant activities</td><td>40% of votes, but right to appoint a majority of the board that decides relevant activities</td></tr>
+    <tr><td>Investor can <b>direct the investee into, or veto changes to, significant transactions</b> for its benefit</td><td>A and B 50% each, 2 board members each; A appoints the chairman with a <b>casting vote</b> on deadlock</td></tr>
+    <tr><td>Investor can <b>dominate the nominations process</b> for the governing body, or obtaining proxies</td><td>X and 4 others each appoint one director of P; 2 of the others are X's related parties whom X can direct → X appoints the majority</td></tr>
+    <tr><td>Investee's <b>KMP are related parties</b> of the investor</td><td>Same person is CEO of both</td></tr>
+    <tr><td>Majority of investee's <b>governing body are related parties</b> of the investor</td><td>Majority of investee's board are also on the investor's board</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th>Indicators of more than a passive interest (B19) — may indicate power with other rights</th></tr>
+    <tr><td>Investee's KMP who direct relevant activities are <b>current or previous employees</b> of the investor</td></tr>
+    <tr><td>Investee's operations are <b>dependent</b> on the investor: <b>funding</b> a significant portion of operations · <b>guaranteeing</b> a significant portion of obligations · <b>critical services, technology, supplies or raw materials</b> · investor controls <b>licences or trademarks</b> critical to operations · <b>KMP</b> with specialised knowledge supplied by investor</td></tr>
+    <tr><td>A significant portion of the investee's activities <b>involve or are conducted on behalf of</b> the investor</td></tr>
+    <tr><td>Investor's exposure to returns is <b>disproportionately greater</b> than its voting rights (e.g. more than half the returns, less than half the votes)</td></tr>
+  </table>
+  <ul>
+    <li><b>B20</b> — the greater the exposure to variability, the greater the <b>incentive</b> to obtain power; large exposure is an <b>indicator</b>, not determinative.</li>
+    <li>Weighing B18, B19, B20 with the investor's rights: <b>greater weight to the evidence in B18</b>.</li>
+  </ul>
+
+  <h2><span class="n">7</span>3.3.2 Exposure, or rights, to variable returns <span class="para">15–16 · B55–B57</span></h2>
+  <ul>
+    <li><b>Variable returns</b> = returns <b>not fixed</b> that can vary with the investee's performance — only positive, only negative, or both. The term is "returns", not "benefits".</li>
+    <li>Judge on <b>substance</b>, regardless of legal form: <b>fixed interest on a bond</b> is variable (default/credit risk); <b>fixed performance fees</b> for managing assets are variable (performance risk). A <b>non-refundable</b> income not affected by credit risk or performance can be a <b>fixed</b> return.</li>
+    <li>Returns include <b>direct</b> (mostly financial) and <b>synergistic</b> (indirect) returns.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Examples of variable returns</th></tr>
+    <tr><td><b>Dividends</b>, other distributions (e.g. <b>interest</b> from debt securities) · <b>changes in the value</b> of the investment</td></tr>
+    <tr><td><b>Remuneration for servicing</b> the investee's assets or liabilities · <b>fees and exposure to loss</b> from providing <b>credit or liquidity support</b> · <b>residual interests</b> on liquidation · <b>tax benefits</b> · <b>access to future liquidity</b></td></tr>
+    <tr><td>Returns <b>not available to other interest holders</b> — combining operating functions for economies of scale, cost savings, sourcing scarce products, access to proprietary knowledge, limiting some operations to enhance the investor's other assets</td></tr>
+  </table>
+  <ul>
+    <li>Exposure alone is not enough. A <b>lender</b> exposed to credit risk through interest doesn't control the borrower if it can't affect those payments.</li>
+    <li>Only one investor can control; <b>many can share returns</b> (e.g. NCI).</li>
+    <li><b>Reputational risk</b> — e.g. banks supporting vehicles they sponsored during the financial crisis to protect reputation, with no legal or contractual obligation. Reputational risk <b>in isolation is not a basis for consolidation</b>; it is a factor (part of exposure, from non-contractual sources) that may increase the incentive to secure power, not an indicator of power in its own right.</li>
+  </ul>
+
+  <h2><span class="n">8</span>3.3.3 Link between power and returns <span class="para">17–18 · B58–B72</span></h2>
+  <ul>
+    <li>Control needs the <b>ability to use power to affect the investor's returns</b>. A decision maker must decide whether it is a <b>principal or an agent</b>, and whether another decision maker is acting as <b>its</b> agent.</li>
+    <li><b>Agent</b> — a party primarily engaged to act on behalf and for the benefit of another (the principal). An agent <b>does not control</b> when exercising delegated rights. Rights delegated to the investor's agent are treated as <b>held by the investor</b>.</li>
+    <li>Consider the overall relationship and <b>all four factors</b>, with weights depending on facts: (1) <b>scope of decision-making authority</b> · (2) <b>rights held by other parties</b> · (3) <b>remuneration</b> · (4) <b>exposure to variable returns from other interests</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:20%">Factor</th><th>SM guidance</th></tr>
+    <tr><td><b>Scope of authority</b></td><td>(a) activities permitted by the agreement and law; (b) <b>discretion</b> over them. Consider purpose and design, risks designed to be passed on, and the decision maker's <b>involvement in design</b> — significant involvement may show opportunity and incentive to obtain power.</td></tr>
+    <tr><td><b>Rights held by others — removal rights</b></td><td><b>Single party</b> holds substantive removal rights and can remove <b>without cause</b> → <b>in isolation sufficient: agent</b>. <b>More than one party</b> needed → not conclusive alone. The <b>more parties</b> needed and the <b>bigger</b> the decision maker's other economic interests, the <b>less weight</b> on removal rights.</td></tr>
+    <tr><td><b>Other substantive rights</b></td><td>Rights that restrict discretion are treated like removal rights; a decision maker needing approval from a <b>small number</b> of parties is generally an <b>agent</b>. Include rights of the investee's <b>board</b> — a board appointed by other investors that can remove the decision maker <b>without cause</b> → <b>agent</b>.</td></tr>
+    <tr><td><b>Remuneration</b></td><td>Higher magnitude and variability vs expected returns → <b>principal</b>; lower → agent (e.g. 1% change in investee returns moves remuneration by less than 1% → may be agent; more than 1% → may be principal). <b>Both</b> conditions needed to be an agent: remuneration <b>commensurate with services</b> <b>and</b> only <b>customary, arm's length terms</b>. If either fails → <b>not an agent</b>; if both met → more likely agent, still consider other facts.</td></tr>
+    <tr><td><b>Exposure from other interests</b></td><td>Investments in the investee or performance guarantees → may be <b>principal</b>. Consider remuneration and other interests <b>in aggregate</b> (so remuneration is considered again here). Is its exposure <b>different</b> from other investors' (e.g. <b>subordinated</b> interest, <b>credit enhancement</b>) and might that influence its actions? Evaluate relative to total variability, mainly on expected returns but not ignoring <b>maximum exposure</b>.</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th style="width:9%">Illus.</th><th style="width:16%">Scope</th><th style="width:20%">Removal rights</th><th style="width:20%">Remuneration</th><th style="width:17%">Other interest</th><th>Conclusion</th></tr>
+    <tr><td><b>16</b></td><td>Narrowly defined mandate (regulated public fund)</td><td>None (only redemption within limits); no independent board</td><td>1% of NAV, commensurate</td><td>10% pro rata; no obligation beyond it</td><td class="NC">Agent — no control</td></tr>
+    <tr><td><b>17(A)</b></td><td rowspan="3">Extensive discretion, must act in best interests of all investors</td><td>Simple majority, <b>only for breach of contract</b> → protective</td><td rowspan="3">1% of AUM + 20% of profits above a level, commensurate</td><td>2%</td><td class="NC">Agent</td></tr>
+    <tr><td><b>17(B)</b></td><td>Same (protective)</td><td>More substantial (e.g. 20%)</td><td class="C">Principal — controls (judgement)</td></tr>
+    <tr><td><b>17(C)</b></td><td>Independent board appointed by investors <b>reappoints annually</b>; other managers available → <b>substantive</b></td><td>20%</td><td class="NC">Agent — removal rights get more weight</td></tr>
+    <tr><td><b>18</b></td><td>Within prospectus parameters (ABS portfolio)</td><td>Without cause by simple majority of <b>widely dispersed</b> investors → little weight</td><td>1% AUM + 10% of profits above a level</td><td><b>35% of equity</b>, first-loss, subordinated</td><td class="C">Principal — controls</td></tr>
+  </table>
+  <div class="ex"><p><b>Illustration 19 (sponsor):</b> fund issues short-term debt, buys highly rated medium-term assets; transferors service assets and give first-loss over-collateralisation; sponsor sets fund terms, approves sellers and assets, decides funding, gets a market fee, takes <b>residual return</b>, gives <b>credit enhancement</b> (losses up to 5% after transferors) and <b>liquidity facilities</b>; investors have no substantive rights → exposure <b>different</b> from others → <b>principal → controls</b>. Duty to act in investors' best interest doesn't prevent being principal.</p></div>
+
+  <h2><span class="n">9</span>3.4 Relationship with other parties — de facto agents <span class="para">B73–B75</span></h2>
+  <ul>
+    <li>Consider whether other parties act on the investor's behalf — <b>de facto agents</b>. Judgement on the relationship and how the parties interact. <b>No contract needed</b>.</li>
+    <li>A party is a de facto agent when the investor (or those directing the investor) can <b>direct it to act on the investor's behalf</b>. Combine its decision rights and the investor's indirect exposure through it <b>with the investor's own</b>, as if held directly. Having a de facto agent doesn't automatically mean control.</li>
+  </ul>
+  <div class="ex"><p><b>Example 5:</b> investor 30% + fellow subsidiary 30% that the investor can direct → de facto agent → 60% → <b>control</b>. If the fellow subsidiary held only 10% → 40% → not control on that basis.</p></div>
+  <p class="small"><b>Possible de facto agents:</b> investor's <b>related parties</b> · a party that got its interest as a <b>contribution or loan from the investor</b> · a party that agreed <b>not to sell, transfer or encumber</b> its interest without the investor's prior approval (unless both have mutual approval rights on agreed terms) · a party that <b>can't finance operations without subordinated support</b> from the investor · an investee whose <b>board majority is the same</b> as the investor's · a party with a <b>close business relationship</b> (e.g. professional service provider and a significant client). These are not automatically de facto agents — evaluate each.</p>
+
+  <h2><span class="n">10</span>3.5 Control of specified assets — silos <span class="para">B76–B79</span></h2>
+  <ul>
+    <li>A portion of an investee is a <b>deemed separate entity (silo)</b> if and only if: <b>specified assets</b> (and related credit enhancements) are the <b>only source of payment</b> for specified liabilities or other interests; parties other than those with the specified liability have <b>no rights or obligations</b> on the specified assets or their residual cash flows; in substance <b>none</b> of the returns from the specified assets can be used by the remaining investee and none of the silo's liabilities are payable from the remaining investee's assets — i.e. everything is <b>ring-fenced</b>.</li>
+    <li>Example: mutual fund with sub-funds (debt-oriented, equity-oriented) — check whether each sub-fund is a silo.</li>
+    <li>If a silo exists, assess control of the <b>silo</b> (power, returns, link). The investor that controls it <b>consolidates</b> it; other parties <b>exclude</b> that silo when assessing control of, and consolidating, the investee.</li>
+  </ul>
+
+  <h2><span class="n">11</span>3.6 Continuous assessment <span class="para">8 · B80–B85</span></h2>
+  <table class="tight">
+    <tr><th style="width:38%">Reassess when</th><th>SM example</th></tr>
+    <tr><td>Change in <b>how power can be exercised</b></td><td>Relevant activities no longer directed through voting rights but through contracts giving another party power</td></tr>
+    <tr><td>An <b>event</b> causes gain or loss of power <b>without the investor's involvement</b></td><td>Decision rights of another party that prevented control <b>lapse</b></td></tr>
+    <tr><td>Changes in <b>exposure or rights to variable returns</b></td><td>Contract to receive performance-related fees <b>terminated</b> → may lose control</td></tr>
+    <tr><td>Change in <b>agent/principal</b> status</td><td>Changes in rights of investor or others → reconsider</td></tr>
+  </table>
+  <p class="small">A change in <b>market conditions</b> alone (e.g. investee's returns change) does <b>not</b> change the assessment, unless it changes one of the three elements or the principal–agent relationship.</p>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 13 · Ind AS 110 · Investment entities</span><span class="tag">UNIT 3 · 3.7</span></div>
+  <h2><span class="n">12</span>3.7 Investment entities <span class="para">27–33 · B85A–B85W</span></h2>
+  <h3>3.7.1 Definition — ALL three conditions</h3>
+  <ol>
+    <li><b>Obtains funds</b> from one or more investors for providing those investors with <b>investment management services</b>;</li>
+    <li><b>Commits to its investors</b> that its business purpose is to invest funds <b>solely for returns from capital appreciation, investment income, or both</b>;</li>
+    <li><b>Measures and evaluates</b> the performance of <b>substantially all</b> its investments on a <b>fair value basis</b>.</li>
+  </ol>
+  <p><b>Typical characteristics:</b> more than one investment · more than one investor · investors <b>not related parties</b> · ownership interests in the form of <b>equity or similar</b>. Absence of one or more <b>doesn't disqualify</b> — needs more judgement. <b>Reassess</b> if any element or characteristic changes.</p>
+  <table class="tight">
+    <tr><th style="width:22%">Element</th><th>SM detail</th></tr>
+    <tr><td><b>3.7.1.1 Business purpose</b></td><td>Evidence: <b>offering memorandum</b>, publications, partnership documents, how it presents itself to investors/investees (e.g. "medium-term investment for capital appreciation"). Presenting itself as aiming to <b>jointly develop, produce or market products</b> with investees is <b>inconsistent</b>. May provide <b>investment-related services</b> (advisory, management, support, admin) to third parties and investors, even if substantial. May give investees <b>management services/strategic advice</b> and <b>financial support</b> (loan, capital commitment, guarantee) <b>only</b> to maximise investment returns and if not a <b>separate substantial business</b> or <b>separate substantial source of income</b>.</td></tr>
+    <tr><td><b>3.7.1.2 Exit strategies</b></td><td>Doesn't hold investments indefinitely. Needs a documented exit strategy for substantially all <b>equity</b> and <b>non-financial asset</b> investments, and for debt that could be held indefinitely (<b>perpetual debt</b>). Not one per investment — strategies per type/portfolio with a <b>substantive time frame</b>. Exit only on <b>default</b> events (breach, non-performance) is <b>not</b> an exit strategy. Examples: private equity — IPO, private placement, trade sale, distributions of interests to investors, sale of assets then liquidation; listed equity — sale in private placement or market; real estate — sale via dealers or open market. Investment in another investment entity formed for legal/tax reasons → no exit strategy needed if <b>that</b> entity has them.</td></tr>
+    <tr><td><b>3.7.1.3 Earnings from investments</b></td><td><b>Not</b> an investment entity if it or another <b>group member</b> obtains (or aims to obtain) <b>other benefits</b> not available to unrelated parties: acquisition, use, exchange or exploitation of an investee's processes, assets or technology (incl. <b>disproportionate or exclusive rights</b> to acquire them) · joint arrangements/agreements with an investee to develop, produce, market or provide products · <b>financial guarantees or assets</b> from an investee for borrowings of the entity or group (but it may use an investment as <b>collateral</b>) · an <b>option held by a related party</b> to buy an ownership interest in an investee · transactions with an investee that are on terms unavailable to unrelated parties, <b>not at fair value</b>, or a <b>substantial portion</b> of the investee's or group's business. Investing in several investees in the same industry for synergies is allowed; investees <b>trading with each other</b> doesn't disqualify.</td></tr>
+    <tr><td><b>3.7.1.4 Fair value measurement</b></td><td>Must (a) give investors FV information and measure substantially all investments at FV wherever Ind AS requires or permits, <b>and</b> (b) report FV internally to <b>KMP</b>, who use it as the <b>primary measure</b> for performance and investment decisions. So it would elect the <b>Ind AS 28 exemption</b> from the equity method and measure financial assets at FV under Ind AS 109. <b>Non-investment assets</b> (head office, equipment) and <b>liabilities</b> need not be at FV.</td></tr>
+    <tr><td><b>3.7.1.5 More than one investment</b></td><td>Typical (directly, or via one investment in another investment entity). A <b>single investment</b> is OK when: in <b>start-up</b> period; not yet replaced disposed investments; set up to pool funds for an investment <b>unobtainable individually</b> (minimum too high); in <b>liquidation</b>.</td></tr>
+    <tr><td><b>3.7.1.6 More than one investor</b></td><td>Pooling reduces chance of other benefits. Can be formed by or for a <b>single investor representing a wider group</b> (pension fund, government investment fund, family trust). Temporarily a single investor: within <b>initial offering period</b>; not yet replaced redeemed investors; in <b>liquidation</b>.</td></tr>
+    <tr><td><b>3.7.1.7 Unrelated investors</b></td><td>Typical, but related investors don't disqualify — e.g. a <b>parallel fund</b> for employees/KMP that mirrors the main fund may still qualify.</td></tr>
+    <tr><td><b>3.7.1.8 Ownership interests</b></td><td>Typically (not necessarily) a separate legal entity, with equity or similar interests (partnership interests) giving proportionate shares of net assets. <b>Different classes</b> of investors, with rights to specific investments or different shares, don't preclude it. <b>Example 6:</b> class A gets 10% of profits first, then A and B share proportionately → still OK. Significant ownership in the form of <b>debt</b> (not equity under Ind AS 32) can still qualify if holders are exposed to variable returns from changes in FV of net assets. <b>Example 7:</b> compulsorily convertible bonds into a variable number of shares (financial liability) → exposure to variable returns → OK.</td></tr>
+  </table>
+  <div class="ex"><p><b>Illustration 20 — business purpose:</b> fund raises units from many investors, invests in equity for capital appreciation, holds ≤ 5 years, uses FV; also gives investees <b>strategic advice and loans</b> to boost appreciation → elements 1 and 3 met; typical characteristics present; treat as investment entity <b>only if</b> the services and support are not a substantial business activity or substantial separate income.</p></div>
+  <div class="ex"><p><b>Illustration 21 — exit strategies:</b> exit strategies for equity shares; none for idle funds put into <b>fixed-maturity</b> debt → debt can't be held indefinitely → no exit strategy needed → condition <b>met</b>.</p></div>
+  <div class="ex"><p><b>Illustration 22 — earnings:</b> PQR invests in pharma R&amp;D companies; fellow subsidiary DEF has contracts to get successful patents and distribution rights <b>below market price</b> → group obtains other benefits → PQR is <b>not</b> an investment entity.</p></div>
+  <h3>3.7.2 Exemptions to investment entities</h3>
+  <ul>
+    <li>An investment entity <b>does not consolidate</b> its subsidiaries or apply Ind AS 103 when it obtains control; it measures investments in subsidiaries at <b>FVTPL</b> under Ind AS 109.</li>
+    <li><b>Exception:</b> a subsidiary that is <b>not itself an investment entity</b> and whose main purpose is providing <b>services related to the investment entity's investment activities</b> → <b>consolidate</b> it (and apply Ind AS 103 on acquiring it). If that service subsidiary is itself an investment entity → FVTPL.</li>
+    <li>A <b>parent of an investment entity</b> consolidates <b>all</b> entities it controls, including those held through the investment entity subsidiary — <b>unless the parent itself is an investment entity</b>.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 23:</b> T holds 70% of HTF (rest held by 10 unrelated investors); HTF invests in tech start-ups for appreciation; T holds <b>options to buy HTF's investments at FV</b> if the technology would benefit T; HTF has <b>no exit plans</b> → <b>not an investment entity</b>: (a) T's options give a benefit beyond appreciation/income; (b) no exit strategies for equity investments (T's options aren't HTF's exit strategy).</p></div>
+  <p class="small"><b>Change of status</b> (Unit 4, Illustrations 35–36): ceases to be an investment entity → subsidiary deemed acquired at FV on that date (goodwill = FV of investment + NCI − net assets); becomes one → stop consolidating, gain/loss as on loss of control.</p>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 13 · Unit 4 · Consolidation procedure for subsidiaries</span><span class="tag">UNIT 4</span></div>
+  <h2 class="brk"><span class="n">13</span>Unit 4 — 4.1 Overview</h2>
+  <ul>
+    <li>Consolidated FS = consolidated <b>balance sheet</b>, <b>statement of profit and loss</b>, <b>statement of changes in equity</b>, <b>cash flow statement</b> and <b>notes</b>.</li>
+    <li>Follow <b>Division II of Schedule III</b> to the Companies Act 2013 <i>mutatis mutandis</i>, plus Ind AS disclosures, plus Ind AS 27 and Ind AS 112 information (Unit 8).</li>
+  </ul>
+  <h2><span class="n">14</span>4.2 Consolidation procedure</h2>
+  <p>Consolidate from the date the investor <b>obtains control</b> until it <b>loses control</b>. Key concepts in the SM order: goodwill/capital reserve and NCI on acquisition · step acquisition · control without consideration · uniform policies · measuring the subsidiary's income and expenses · potential voting rights · different reporting periods · dividends and NCI · intra-group eliminations and unrealised profit · NCI share and changes in ownership · preparing CFS · chain holding · loss of control (4.3).</p>
+
+  <h3>4.2.1 Goodwill / capital reserve and NCI on acquisition</h3>
+  <p><span class="f fl">Goodwill = (a) [consideration (FV) + NCI (Ind AS 103) + FV of previously held interest] − (b) identifiable net assets (FV, except common control)</span></p>
+  <ul>
+    <li><b>Capital reserve</b> (bargain purchase, extremely rare): (b) &gt; (a) after the para 36 reassessment → gain in <b>OCI</b>, accumulated in equity as <b>capital reserve</b>, attributed to the acquirer; in all other cases → <b>directly in equity</b> as capital reserve.</li>
+    <li><b>NCI</b> (present ownership interests) at (a) <b>fair value</b> or (b) <b>proportionate share</b> of recognised identifiable net assets.</li>
+    <li><b>4 steps:</b> (1) FV of consideration → (2) NCI → (3) FV of identifiable net assets → (4) goodwill / capital reserve.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:9%">Illus.</th><th style="width:40%">Facts</th><th>FV method</th><th>Proportionate method</th></tr>
+    <tr><td><b>1</b></td><td>80% for ₹120 cr; NCI FV 30; net assets 130</td><td>120 + 30 − 130 = <b>20</b> (Dr NA 130, GW 20; Cr Cash 120, NCI 30)</td><td>NCI 26 → <b>16</b></td></tr>
+    <tr><td><b>2</b></td><td>60% for ₹750 lakh (incl. control premium); NCI FV 480; net assets 1,000</td><td>750 + 480 − 1,000 = <b>230</b></td><td>NCI 400 → <b>150</b></td></tr>
+    <tr><td><b>3</b></td><td>80% for ₹400 lakh; NCI FV 100; net assets 520</td><td>Bargain <b>(20)</b> (Cr gain 20)</td><td>NCI 104 → bargain <b>(16)</b></td></tr>
+    <tr><td><b>4</b></td><td>100% for ₹100 lakh; net assets 80</td><td colspan="2">No NCI → goodwill <b>20</b></td></tr>
+  </table>
+
+  <h3>4.2.2 Step acquisition</h3>
+  <ul>
+    <li><b>Example 1:</b> A holds 25% of B; buys 40% more on 1 Apr 20X1 → control → step acquisition.</li>
+    <li>Remeasure the previously held interest at acquisition-date FV; gain/loss in <b>P&amp;L or OCI</b> as appropriate. Rationale: moving from a non-controlling investment to control is a <b>significant change in nature and economic circumstances</b> — the acquirer derecognises an investment asset and starts reporting underlying assets, liabilities and results → gain/loss at acquisition date.</li>
+    <li>Earlier OCI on an <b>FVOCI</b> equity interest is <b>never reclassified to P&amp;L</b> but <b>may be transferred to retained earnings</b> on this "deemed disposal" — same as an actual disposal.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 5:</b> RS holds 30% of PQ (associate, carrying ₹100 lakh); buys remaining 70% for ₹700 lakh; FV of 30% = 300; net assets 800 → goodwill 700 + 300 − 800 = <b>200</b>; gain 300 − 100 = <b>200 to P&amp;L</b>. Entry: Dr NA 800, Goodwill 200 · Cr Cash 700, Investment in associate 100, Gain 200.</p></div>
+
+  <h3>4.2.3 Control without transfer of consideration</h3>
+  <ul>
+    <li>(a) acquiree <b>buys back its own shares</b>; (b) <b>minority veto rights lapse</b>; (c) combination <b>by contract alone</b> (stapling, dual listed corporation).</li>
+    <li>In the goodwill formula, "FV of consideration transferred" is replaced by the <b>acquisition-date FV of the acquirer's interest</b> in the acquiree — remeasure the existing interest (gain/loss in P&amp;L or OCI) and use it.</li>
+    <li>By contract alone: the acquiree's net assets are attributed to its owners as <b>NCI</b>, even if that means <b>100% NCI</b>. <b>Example 2:</b> A controls B by contract, holds no stake → <b>100% of B's net assets to NCI</b>.</li>
+  </ul>
+
+  <h3>4.2.4 Uniform accounting policies <span class="para">19 · B87</span></h3>
+  <ul>
+    <li>Use uniform policies for <b>like transactions and events in similar circumstances</b>; adjust a group member's FS that use different policies.</li>
+    <li><b>Example 3:</b> US subsidiary under US GAAP → convert to <b>Ind AS</b> for consolidation.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 6:</b> subsidiary uses SLM, parent WDV for PPE. Depreciation <b>method</b> is an <b>accounting estimate</b> (Ind AS 16.60–61, change → Ind AS 8 estimate), not a policy → choose what reflects the pattern of consumption → <b>no adjustment</b>; subsidiary keeps SLM, parent WDV, if that reflects their patterns.</p></div>
+  <div class="ex"><p><b>Illustration 7:</b> H uses FIFO; subsidiary S and associate A use weighted average; different lines of business. Cost formula <b>is</b> an accounting policy (Ind AS 2.36(a)), but Ind AS 2.25–26 allow different formulas for inventories of <b>different nature or use</b> (not merely different location or tax rules) → if nature/use differs, <b>no adjustment</b> needed.</p></div>
+
+  <h3>4.2.5 Measurement of the subsidiary's income and expenses <span class="para">B88</span></h3>
+  <ul>
+    <li>Include from the date control is gained until it ceases.</li>
+    <li>Income and expenses are based on the amounts of assets and liabilities recognised in the CFS <b>at the acquisition date</b>. <b>Example 4:</b> PPE FV ₹100 lakh (book ₹80 lakh) → depreciation in CFS on <b>₹100 lakh</b>.</li>
+  </ul>
+
+  <h3>4.2.6 Potential voting rights held in a subsidiary <span class="para">B89–B91</span></h3>
+  <ul>
+    <li>Allocation of profit/loss and equity changes between parent and NCI is based <b>solely on existing ownership interests</b>, ignoring possible exercise of potential voting rights; those instruments follow <b>Ind AS 109</b>.</li>
+    <li><b>Exception:</b> if a transaction gives the entity, in substance, an <b>existing ownership interest</b> — <b>present access to the returns</b> — allocate taking into account the eventual exercise; then Ind AS 109 does not apply to those instruments. E.g. investor holds 60% with an option for 20% more and gets the returns on the underlying shares <b>even before exercise</b>.</li>
+  </ul>
+
+  <h3>4.2.7 Reporting period of parent and subsidiary <span class="para">B92–B93</span></h3>
+  <ul>
+    <li>Same reporting date. If different (parent 31 Mar 20X1, subsidiary 31 Dec 20X0), the subsidiary prepares <b>additional financial information</b> as of the parent's date, unless <b>impracticable</b>.</li>
+    <li>If impracticable: use the subsidiary's most recent FS <b>adjusted for significant transactions or events</b> up to the CFS date; the gap must be <b>no more than three months</b>.</li>
+    <li>Length of periods and the gap must be the <b>same from period to period</b>; if the gap is removed, <b>restate comparatives</b> for equivalent periods.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 8:</b> classify current/non-current by reference to the <b>group's reporting date</b>. Subsidiary's year end 31 Dec 20X1; payable due 1 Jan 20X3 (non-current for it); parent's year end 31 Mar 20X2 → due within 9 months → <b>current</b> in the CFS.</p></div>
+  <div class="ex"><p><b>Illustration 9:</b> foreign subsidiary breached a covenant before year end; lender agreed after year end (before approval) not to demand repayment. IFRS (IAS 1) → current; <b>Ind AS 1 para 74</b> (Indian carve-out) → <b>non-current</b> in A Ltd.'s CFS — align to Ind AS.</p></div>
+
+  <h3>4.2.8 Dividend from a subsidiary and its impact on NCI</h3>
+  <ul>
+    <li><b>Ind AS 109 para 5.7.1A</b> — dividend in P&amp;L only when (i) the <b>right to receive is established</b>, (ii) it is <b>probable</b> the benefits will flow, and (iii) the amount can be <b>measured reliably</b>.</li>
+    <li><b>Ind AS 27 para 12</b> — dividend from a subsidiary in separate FS when the right to receive is established. Under the Companies Act 2013 that is when declared by <b>shareholders in the AGM</b>.</li>
+    <li>Dividend from a subsidiary, JV or associate is <b>income</b> in separate FS. Under <b>Ind AS 36</b>, a dividend declaration plus some other evidence is an <b>indicator of impairment</b> of the investment.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 10:</b> XYZ buys 80% of ABC on 1 Apr 20X1 for ₹1,40,000; ABC's capital 1,00,000 + P&amp;L 60,000; net assets FV 1,50,000; year's profit 20,000; dividend 30,000 declared and paid later (after AGM). XYZ's entry on receipt: <b>Dr Bank 24,000 · Cr P&amp;L 24,000</b>. NCI (FV, same per-share price as purchased interest): 1,40,000 × 100/80 = 1,75,000 × 20% = <b>35,000</b> → Dr NA 1,50,000, Goodwill <b>25,000</b> · Cr Cash 1,40,000, NCI 35,000. NCI on 31 Mar 20X2 = 35,000 + 20% × 20,000 = <b>39,000</b> (dividend recognised only on AGM approval).</p></div>
+  <table class="tight">
+    <tr><th style="width:9%">Illus.</th><th>Variation</th><th>NCI on 1 Apr</th><th>Goodwill</th><th>NCI on 31 Mar</th></tr>
+    <tr><td><b>11</b></td><td>Proportionate; net assets 1,50,000</td><td>30,000</td><td>20,000</td><td>34,000</td></tr>
+    <tr><td><b>12</b></td><td>FV method; net assets 1,60,000</td><td>35,000</td><td>15,000</td><td>39,000</td></tr>
+    <tr><td><b>13</b></td><td>Proportionate; net assets 1,60,000</td><td>32,000</td><td>12,000</td><td>36,000</td></tr>
+  </table>
+
+  <h3>4.2.9 Elimination of intra-group transactions <span class="para">B86(c)</span></h3>
+  <ul>
+    <li>Intra-group <b>balances, transactions and resulting unrealised profits</b> are eliminated <b>in full</b>. Unrealised <b>losses</b> are also eliminated <b>unless cost cannot be recovered</b>.</li>
+    <li>Set off a liability of one group entity against the asset in the other; exclude intra-group sales from turnover and from purchases (or the relevant expense).</li>
+    <li>If the buyer has <b>sold the goods outside</b> the group → only eliminate sales and cost of sales; no profit adjustment. If still <b>on hand</b> → eliminate the intra-group profit; assets at <b>cost to the group</b>.</li>
+    <li>Applies to inventories, <b>PPE, intangibles and investment property</b>, and to <b>all</b> consolidated subsidiaries, even those less than 100% owned.</li>
+    <li><b>4.2.9.1 Inventories</b> — profit on goods still held by the buyer isn't earned until sold outside the group → eliminate from group profit; inventory at cost to group.</li>
+    <li><b>4.2.9.2 Non-current assets</b> — unrealised profit on intra-group transfers of PPE, intangibles, investment property also eliminated.</li>
+    <li><b>4.2.9.3 Unrealised losses</b> — eliminated unless cost cannot be recovered (i.e. a real impairment).</li>
+  </ul>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 13 · Unit 4 · Unrealised profit · NCI · Changes in stake · Chain holding</span><span class="tag">UNIT 4</span></div>
+  <table class="tight">
+    <tr><th style="width:9%">Illus.</th><th style="width:44%">Facts</th><th>ICAI treatment</th></tr>
+    <tr><td><b>14</b> (upstream)</td><td>Parent owns 60%; <b>subsidiary sells</b> inventory to parent for 35,000, profit 15,000; still held by parent</td><td>Eliminate <b>100%</b>: inventory at 20,000; Dr Consolidated revenue 35 · Cr Cost of sales 20 · Cr Inventory 15 (₹'000). Reduction of 15,000 <b>shared 60% parent : 40% NCI</b>.</td></tr>
+    <tr><td><b>15</b> (downstream)</td><td>Same, but <b>parent sells</b> to subsidiary</td><td>Same entry; reduction of 15,000 allocated <b>entirely to the parent</b>.</td></tr>
+    <tr><td><b>16</b> (downstream + tax)</td><td>A sells goods costing 200 to 80% subsidiary B for 240; 50% in B's stock (120); tax 30%</td><td>Reduce inventory by <b>20</b> → consolidated profit −20; <b>DTA 6</b> (accounting base 100 &lt; tax base 120).</td></tr>
+    <tr><td><b>17</b> (upstream + tax)</td><td>Ram buys goods costing 100 from 80% subsidiary Shyam for 120; 50% in stock (60); tax 30%</td><td>Reduce inventory by <b>10</b> → profit −10; <b>DTA 3</b> (base 50 vs tax base 60).</td></tr>
+    <tr><td><b>18</b> (PPE)</td><td>A (sells capital equipment) sells equipment costing 100 to 80% subsidiary B for 120; B's PPE; life 10 years</td><td>Reduce PPE by 20 and depreciation by <b>2</b>; eliminate sales and cost of sales. Dr Revenue 120 · Cr Cost of sales 100 · Cr PPE 18 · Cr Depreciation 2 (₹ lakh).</td></tr>
+  </table>
+
+  <h3>4.2.10 NCI — allocation and changes in proportion <span class="para">22 · B94–B96</span></h3>
+  <ul>
+    <li>Present NCI in the consolidated balance sheet <b>within equity, separately</b> from equity of the parent's owners.</li>
+    <li><b>4.2.10.1</b> Attribute profit or loss and <b>each component of OCI</b> to owners and NCI; attribute total comprehensive income to NCI <b>even if NCI has a deficit balance</b>.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 19:</b> A buys 70% of B on 1.4.20X1 for 10,00,000 (B: capital 10,00,000 + other equity 80,000; FV = book). NCI 30% × 10,80,000 = <b>3,24,000</b>; goodwill 10,00,000 + 3,24,000 − 10,80,000 = <b>2,44,000</b> (stays the same every year). Losses 2,50,000, 4,00,000, 5,00,000, 1,20,000 then profits 50,000, 1,00,000, 1,50,000 → NCI: 2,49,000 → 1,29,000 → <b>(21,000)</b> → <b>(57,000)</b> → (42,000) → (12,000) → 33,000. NCI goes <b>negative</b> and keeps taking its 30%.</p></div>
+  <div class="ex"><p><b>Illustration 20 (4 cases, proportionate NCI, FV = book):</b> Case 1 (90%, cost 1,40,000, net assets 1,50,000): NCI 15,000 → 17,000; <b>goodwill 5,000</b>; holding RE +18,000 (90% × 20,000). Case 2 (85%, cost 1,04,000, net assets 1,30,000): NCI 19,500 → 18,000; <b>bargain 6,500</b>; RE −8,500 (85% × −10,000). Case 3 (80%, 56,000, 70,000): NCI 14,000 → 14,000; nil; RE nil. Case 4 (100%, 1,00,000, 90,000): no NCI; <b>goodwill 10,000</b>; RE +16,000.</p></div>
+  <ul>
+    <li><b>Cumulative preference shares</b> (equity) held by NCI → compute the parent's share <b>after deducting their dividend, whether declared or not</b>. <b>Example 5:</b> R holds 80% of Y; Y's 10% cumulative preference ₹10,00,000 held by NCI; profit 5,00,000 → 5,00,000 − 1,00,000 = 4,00,000 × 80% = <b>3,20,000</b> to R.</li>
+  </ul>
+  <h3>4.2.10.2 Change in proportion — control retained</h3>
+  <ul>
+    <li>Arises when the parent <b>buys from NCI</b> (60% → 70%), <b>sells to NCI</b> (70% → 60%), or the subsidiary <b>issues new shares to NCI</b> diluting the parent. <b>Example 6:</b> M (70% of N) buys or sells 10% → equity transaction.</li>
+    <li><b>Equity transaction</b> (with owners as owners): adjust controlling and NCI carrying amounts; the difference between the NCI adjustment and the FV of consideration paid/received → <b>directly in equity, attributed to the parent</b>.</li>
+    <li><b>No change</b> to subsidiary's assets (incl. <b>goodwill</b>) and liabilities. <b>No gain or loss</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:9%">Illus.</th><th style="width:44%">Facts</th><th>Entry / result</th></tr>
+    <tr><td><b>21</b></td><td>P sells 20% of wholly-owned subsidiary for 100; carrying net assets 300 incl. goodwill 65</td><td>Dr Cash 100 · Cr NCI 60 (20% × 300) · Cr Other equity <b>40</b></td></tr>
+    <tr><td><b>22</b></td><td>A (60%) buys 20% more for 4,000 (B's FV 20,000); NCI carrying 4,000 (40%)</td><td>Dr NCI 2,000 (4,000 ÷ 40 × 20) · Dr Other equity <b>2,000</b> · Cr Cash 4,000. Note: "FV of entity" sets the price; "FV of net assets" (6,000 then; 12,000 now) is for accounting — later FV of net assets is irrelevant; goodwill 2,400 unchanged</td></tr>
+    <tr><td><b>23</b></td><td>A (70%) buys 10% more for 2,600; NCI 6,600 (30%); goodwill 600</td><td>Dr NCI 2,200 · Dr Other equity <b>400</b> · Cr Cash 2,600 (₹'000); <b>goodwill not adjusted</b></td></tr>
+    <tr><td><b>24</b></td><td>A (70%) buys 10% more for 32; NCI 90 (30%)</td><td>Dr NCI 30 · Dr Other equity <b>2</b> · Cr Cash 32 → group total 1,128; other equity 868; NCI 60; investments 182 in A's books</td></tr>
+    <tr><td><b>25</b></td><td>Amla sells 40% of 100% subsidiary (cost 10,00,000) for 9,00,000; carrying net assets 18,00,000 (16,00,000 + goodwill 2,00,000)</td><td>Separate FS: 9,00,000 − 4,00,000 = <b>5,00,000 gain</b>. CFS: 9,00,000 − 7,20,000 = <b>1,80,000 to other equity</b>, no P&amp;L. Gap 3,20,000 = 40% × post-acquisition profit (18,00,000 − 10,00,000) already reported by the group</td></tr>
+    <tr><td><b>26</b></td><td>Sells 30% of 100% subsidiary for 500 cr; net assets 1,300 + goodwill 200 (NCI initially FV; later proportionate incl. goodwill)</td><td>Dr Cash 500 · Cr NCI 450 (30% × 1,500) · Cr Other equity <b>50</b></td></tr>
+    <tr><td><b>27</b></td><td>A (80% of B); B buys 100% of C for cash; goodwill 1,00,000</td><td>A's CFS shows <b>100% of goodwill</b>, 20% attributed to NCI — NCI of B is a party to the sub-group's transaction</td></tr>
+  </table>
+
+  <h3>4.2.11 Preparing the consolidated FS</h3>
+  <ul>
+    <li><b>Balance sheet:</b> combine assets and outside liabilities with intra-group eliminations; eliminate subsidiary's share capital against parent's investment → goodwill/capital reserve and NCI; add parent's share of <b>post-acquisition</b> profits to the parent's relevant accounts.</li>
+    <li><b>Profit and loss:</b> add income and expenses line by line; eliminate intra-group transactions in full (e.g. parent's sales to subsidiary removed from both sales and purchases).</li>
+    <li><b>Cash flows:</b> add line by line; eliminate inter-company cash flows.</li>
+  </ul>
+
+  <h3>4.2.12 Chain holding</h3>
+  <ul>
+    <li><b>Chain control</b> — the parent controls a subsidiary indirectly (P → S1 → S2).</li>
+    <li><b>Situation 1 — sub-subsidiary:</b> P → 80% → S1 → 60% → S2. P owns 80% × 60% = <b>48%</b> of S2; NCI in S1 owns 20% × 60% = <b>12%</b>; NCI in S2 owns <b>40%</b>. S2 is still a sub-subsidiary (control chain), though P owns only 48%.</li>
+    <li><b>Date S2 comes under P's control:</b> (1) the date P acquired S1, if S1 already held S2; or (2) the date S1 acquired S2, if later.</li>
+    <li>The <b>order</b> in which the group was built decides which reserves of S2 are pre-acquisition (P bought S1 before or after S1 bought S2).</li>
+    <li><b>Situation 2 — direct holding too:</b> P → 80% S1; S1 → 75% S2; P → 10% S2 directly. Group interest in S2 = 80% × 75% + 10% = <b>70%</b>; NCI 30% (direct 15% + indirect 20% × 75% = 15%).</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 29 (chain, mid-year, NCI at FV):</b> P 80% of S; S 75% of SS; both acquired <b>30 Sep 20X1</b>; profits even. Reserves split: S — reserves 80 → 90 at acquisition (post 10); RE 20 → 35 (post 15). SS — reserves 60 → 70 (post 10); RE 30 → 45 (post 15 − unrealised profit on S's inventory from SS at cost + 25%: 10 × 25/125 = 2 → <b>13</b>). Effective interest in SS: 80% × 75% = <b>60%</b>; NCI 40%.<br>
+  Capital reserve: S = 340 + NCI 80 (400 × 20%) − (400 + 125) = <b>105</b>; SS = 280 × 80% = 224 + NCI 128 (320 × 40%) − (320 + 115) = <b>83</b> → total <b>188</b>.<br>
+  NCI: S = 80 + 2 + 3 − 56 (S's investment in SS 280 × 20%) = 29; SS = 128 + 4 + 5.2 = 137.2 → <b>166.2</b>. Other equity: reserves 180 + 8 + 6 = <b>194</b>; RE 160 + 12 + 7.8 = <b>179.8</b>. Bills cancelled: P's 72 vs S's 70 → 2 left; SS 30 vs P's 30. Total <b>2,208</b>. (Assumes SS's sale to S was after acquisition.)</p></div>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ch 13 · Unit 4 · Loss of control · Investment entity status · Ind AS 110 vs AS 21 · TYK</span><span class="tag">UNIT 4 · 4.3–4.5</span></div>
+  <h2><span class="n">15</span>4.3 Loss of control <span class="para">25–26 · B97–B99</span></h2>
+  <p>Ways of losing control: <b>outright sale</b> of the entire stake · <b>partial sale</b> keeping an associate, joint venture or financial asset · <b>deemed loss of control</b> with no consideration, when the parent's interest is diluted — <b>voting rights issued to a new investor</b>, control over relevant activities moving, other shareholders <b>consolidating their votes</b>, an investor buying a <b>substantial stake on the stock exchange</b>.</p>
+  <h3>4.3.1 Accounting on loss of control</h3>
+  <table class="tight">
+    <tr><th style="width:25%">Derecognise</th><th style="width:27%">Recognise</th><th style="width:26%">Reclassify</th><th>Result</th></tr>
+    <tr><td>• the subsidiary's assets (<b>including goodwill</b>) and liabilities<br>• the carrying amount of any <b>NCI</b></td><td>• <b>FV of consideration</b> received<br>• any <b>distribution of shares</b> to owners<br>• any <b>investment retained</b> at its <b>FV</b> on the date control is lost (note 1)</td><td>• amounts in <b>OCI</b> for the subsidiary → to P&amp;L, or directly to retained earnings if other Ind AS require (note 2)</td><td>• difference = <b>gain or loss in P&amp;L</b>, attributable to the parent</td></tr>
+  </table>
+  <ul>
+    <li><b>Note 1:</b> FV of the retained interest = FV on initial recognition of a <b>financial asset</b> (Ind AS 109), or the <b>cost</b> on initial recognition of an <b>associate or JV</b>. <b>Example 7:</b> A sells 50% of its 60% in B, keeps 10% (FV ₹1,00,000) → recorded at ₹1,00,000 as Ind AS 109 initial FV; if A still has significant influence (board seat) → ₹1,00,000 is the <b>cost of the associate</b>.</li>
+    <li><b>Note 2:</b> treat OCI as if the parent had <b>disposed of the related assets/liabilities directly</b>. <b>Example 8:</b> X sells all of Y → cumulative <b>exchange differences</b> (foreign operation) <b>reclassified to P&amp;L</b>; <b>revaluation surplus</b> transferred <b>directly to retained earnings</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:9%">Illus.</th><th style="width:40%">Facts</th><th>ICAI working</th></tr>
+    <tr><td><b>30</b> deemed disposal</td><td>Group 60% (30,000 of 50,000 shares); goodwill 20,000 (partial); minority exercises option for 25,000 new shares at ₹12 (₹3,00,000); net assets before 4,50,000 → group falls to 40%</td><td>FV of 40% retained (30,000 × ₹12) 3,60,000 − net assets 4,50,000 + NCI derecognised 1,80,000 − goodwill 20,000 = <b>gain 70,000</b> in P&amp;L</td></tr>
+    <tr><td><b>31</b> outright sale</td><td>80% bought for 1,60,000 (net assets 1,75,000; goodwill 20,000 partial; impaired 8,000); sold for 2,00,000; net assets at sale 2,25,000 (+ goodwill 12,000)</td><td>Separate FS: 2,00,000 − 1,60,000 = <b>40,000</b>. CFS: 2,00,000 − (80% × 2,25,000 + 12,000) = <b>8,000</b>. (No HFS write-down needed — FV less costs to sell &gt; carrying.)</td></tr>
+    <tr><td><b>32</b> becomes associate</td><td>100% bought for 50,00,000 (goodwill 10,00,000); sells 60% for 67,50,000; keeps 40% (FV 45,00,000); net assets 80,00,000</td><td>Separate FS: 67.5 − 30 = <b>37.5 lakh</b>. CFS: 67.5 + 45 − (80 + 10) = <b>22.5 lakh</b> = 13.5 on the 60% sold + <b>9.0 remeasurement</b> of the 40% (36 → 45) — <b>disclose</b> the remeasurement part</td></tr>
+    <tr><td><b>33</b> keeps 10%</td><td>Same, sells 90% for 85,50,000; 10% FV 9,50,000</td><td>Separate FS: 85.5 − 45 = <b>40.5 lakh</b>. CFS: 85.5 + 9.5 − 90 = <b>5.0 lakh</b> (4.5 on sale + 0.5 remeasurement)</td></tr>
+  </table>
+  <h3>4.3.2 Loss of control in two or more arrangements</h3>
+  <ul>
+    <li>Gain/loss goes to P&amp;L <b>only when control is lost</b> — so a disposal could be split to push gains into equity. <b>Example 9:</b> sell 80% at once → all to P&amp;L; sell 25% then 55% → first part to equity (control kept), second to P&amp;L.</li>
+    <li>Treat multiple arrangements as <b>one transaction</b> if one or more: entered <b>at the same time or in contemplation</b> of each other · form a <b>single transaction for an overall commercial effect</b> · occurrence of one <b>depends</b> on another · one is <b>not economically justified alone</b> (e.g. a disposal priced below market compensated by a later one above market).</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 34:</b> MN (80% of UV) sells 25% for 2,50,000 and 55% for 5,50,000 within a month → single transaction: 8,00,000 − (9,00,000 − 1,80,000) = <b>gain 80,000</b> in P&amp;L. If control is lost at transaction 1 → record then; 5,50,000 shown as <b>consideration receivable</b>. If lost at transaction 2 → record then; 2,50,000 shown as <b>advance consideration received</b>.</p></div>
+
+  <h2><span class="n">16</span>4.4 Change in investment entity status <span class="para">B100–B101</span></h2>
+  <ul>
+    <li>Accounted <b>prospectively</b> from the date of change.</li>
+    <li><b>4.4.1 Ceases</b> to be an investment entity → apply <b>Ind AS 103</b> to subsidiaries previously at FVTPL; date of change = <b>deemed acquisition date</b>; FV of the subsidiary = <b>deemed consideration</b>; consolidate all subsidiaries.</li>
+    <li><b>4.4.2 Becomes</b> an investment entity → stop consolidating subsidiaries at that date (except investment-service subsidiaries that aren't investment entities) → apply <b>loss-of-control</b> accounting as if control were lost that date.</li>
+  </ul>
+  <div class="ex"><p><b>Illustration 35:</b> A ceases on 1 Apr 20X1, holding 80% of B at FVTPL 4,00,000; NCI FV 1,00,000; net assets 4,50,000 → goodwill 4,00,000 + 1,00,000 − 4,50,000 = <b>50,000</b>. Dr Net assets 4,50,000, Goodwill 50,000 · Cr Investment in B 4,00,000, NCI 1,00,000.</p></div>
+  <div class="ex"><p><b>Illustration 36:</b> CD bought 100% of KL for 20,00,000 (net assets 16,00,000; goodwill 4,00,000); becomes an investment entity when investment's FV is 25,00,000 and KL's net assets 19,00,000 → 25,00,000 − (19,00,000 + 4,00,000) = <b>gain 2,00,000</b>.</p></div>
+
+  <h2><span class="n">17</span>4.5 Significant differences — Ind AS 110 vs AS 21</h2>
+  <table class="tight">
+    <tr><th style="width:4%">#</th><th style="width:20%">Topic</th><th style="width:38%">Ind AS 110</th><th>AS 21</th></tr>
+    <tr><td>1</td><td>Preparing CFS</td><td><b>Mandatory</b> for a parent (limited exceptions)</td><td>Not mandated; if presented, apply AS 21</td></tr>
+    <tr><td>2</td><td>Control</td><td><b>Principle-based</b>: power, variable returns, link</td><td><b>Quantitative</b>: more than half of voting power, or control of board composition</td></tr>
+    <tr><td>3</td><td>Number of parents</td><td>Control can be with <b>one entity only</b></td><td>Occasionally <b>two parents</b> — both consolidate</td></tr>
+    <tr><td>4</td><td>Exclusion from consolidation</td><td><b>Not permitted</b> for temporary control or severe long-term restrictions</td><td>Excluded if control temporary or severe long-term restrictions on transferring funds</td></tr>
+    <tr><td>5</td><td>Reporting date gap</td><td>Max <b>3 months</b></td><td>Max <b>6 months</b></td></tr>
+    <tr><td>6</td><td>Changes in ownership without loss of control</td><td>Specific requirements (equity transaction)</td><td>No guidance</td></tr>
+    <tr><td>7</td><td>Uniform policies</td><td>Required; <b>no exemption</b></td><td>Non-uniform allowed if impracticable, with disclosure of fact and proportions</td></tr>
+    <tr><td>8</td><td>Potential voting rights</td><td>Substantive PVRs <b>considered</b> for control</td><td>Not taken into account</td></tr>
+    <tr><td>9</td><td>Deferred tax</td><td>Recognised on temporary differences from <b>eliminations</b> (Ind AS 12)</td><td>Tax = aggregate of separate FS; no deferred tax on eliminated intra-group profits</td></tr>
+  </table>
+
+  <h2><span class="n">18</span>Chapter 13 Test Your Knowledge (Unit 8) — consolidation questions, ICAI answers</h2>
+  <table class="tight">
+    <tr><th style="width:5%">Q</th><th style="width:34%">Facts</th><th>ICAI answer</th></tr>
+    <tr><td>1</td><td>X holds 100% of Y; Y issues convertible preference shares to Z giving Z a consent right on all decisions of Y's equity holder</td><td>Unanimous consent of X and Z → <b>joint control</b>; separate vehicle, no rights to assets/obligations → <b>joint venture</b>. X <b>loses control</b>: derecognise Y's assets and liabilities; 100% equity retained at <b>FV</b>; difference to P&amp;L; then equity method (goodwill/capital reserve vs FV of net assets)</td></tr>
+    <tr><td>2</td><td>M holds 90% of N; N holds 25% of associate O (net assets 300 incl. profit 40)</td><td>Investment in O = 300 × 25% = <b>75</b>; share of profit 10 → <b>9</b> to M (40 × 25% × 90%), <b>1</b> to NCI of N</td></tr>
+    <tr><td>3</td><td>AB holds 30% of associate (cost 300; goodwill 30; carrying 360); associate issues shares to others for 800 → AB falls to 20%</td><td>Deemed sale of 10%: 20% × 800 = 160 added to investment; carrying of interest sold 360 × 1/3 = 120 (incl. goodwill 10) derecognised → <b>gain 40</b> in P&amp;L</td></tr>
+    <tr><td>4</td><td>DEF buys 100% of XYZ on 1 Oct; pre-acquisition dividend paid 1 Nov; FV changes</td><td>P&amp;M uplift 5,75,000; extra dep 25,000; acquisition-date profits 32,85,000; <b>bargain purchase 18,85,000</b> (capital reserve directly — no clear evidence); RE 7,07,000; total 1,15,37,000</td></tr>
+    <tr><td>5</td><td>Ram buys 60% of Krishan on 1 Oct; dividend 1 Nov; FV changes</td><td>Goodwill <b>1,65,800</b>; NCI <b>4,33,600</b>; other equity <b>7,30,600</b>; total <b>24,73,200</b> (worked in the appendix)</td></tr>
+    <tr><td>6–8</td><td>Blue Heavens / Orange County (100%, 75%, one year later)</td><td>Q6: goodwill <b>1,300</b> (6,000 − 4,700); total 15,650. Q7: NCI 25% × 4,700 = <b>1,175</b>; goodwill <b>975</b>; total 16,825. Q8: inventory uplift 100 → cost of sales; building uplift 300 ÷ 20 = 15; impairment 98 → goodwill <b>877</b>; NCI 1,175 + 25% × 435 = <b>1,284</b>; other equity <b>11,228</b>; total <b>18,032</b></td></tr>
+    <tr><td>9</td><td>P sells 100% of S for 3,000 (S's group carrying net assets 2,560 incl. goodwill 180)</td><td>Remove S's lines; cash +3,000 − S's 1,000; <b>gain 440</b> → RE 4,700; total <b>8,100</b></td></tr>
+    <tr><td>10</td><td>Reliance sells 90% of Jio for 1,000 (carrying net assets 1,280 incl. goodwill 90)</td><td>Loss 1,000 − 1,152 = <b>(152)</b>; 10% kept at <b>128</b> (carrying share — no FV given; Ind AS 110.25 requires FV when available); RE 1,978; total <b>3,678</b></td></tr>
+  </table>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Appendix · Exam method (app-written, not ICAI SM) · Consolidation answer plan</span><span class="tag">APP-WRITTEN</span></div>
+  <h2 class="brk"><span class="n">A</span>Appendix — how to write the consolidation answer</h2>
+  <p class="small">This appendix is my exam method (working-note order, passbook for reserves, adjustment tables, self-checks), not study-material text. Every figure in it is checked against ICAI's own answers.</p>
+<h2><span class="n">A</span>Every answer = 5 working notes, in this order</h2>
+  <table class="tight">
+    <tr><th style="width:6%">WN</th><th style="width:30%">What</th><th>Formula</th></tr>
+    <tr><td>1</td><td>S's reserves: pre &amp; post</td><td>Pre = balance on acq. date · Post = Closing − Pre − adjustments</td></tr>
+    <tr><td>2</td><td>Net assets on acq. date</td><td>S's share capital + Pre-acq reserves ± FV changes − S's own goodwill</td></tr>
+    <tr><td>3</td><td>Goodwill / capital reserve</td><td>Consideration + NCI + FV of old stake − WN 2</td></tr>
+    <tr><td>4</td><td>NCI at year end</td><td>NCI on acq. date + NCI% × Post − NCI% × GW impairment (FV method only)</td></tr>
+    <tr><td>5</td><td>Group other equity</td><td>P's reserves + P% × Post ± items P bears alone</td></tr>
+  </table>
+  <p>Balance sheet line = P + S ± FV change ± intra-group cancellation. <b>Only P's share capital</b> appears. Investment in S disappears.</p>
+
+  <h2><span class="n">A</span>Splitting S's reserves — the passbook</h2>
+  <p>Write S's RE like a <b class="hy">bank passbook</b>: events in <b>date order</b> with a running balance.</p>
+  <ol>
+    <li>Profit earned in the year = <b>Closing − Opening + Dividend paid</b> (dividend went out, so put it back).</li>
+    <li>Spread it evenly over the months (unless told it's seasonal).</li>
+    <li>Put each dividend on <b>its date</b>. The running balance must end at the closing RE ✓.</li>
+    <li><b>Pre-acq = balance on acquisition date.</b> Post-acq = Closing − Pre-acq. Do <b>each reserve separately</b>.</li>
+  </ol>
+  <h3>SM TYK 5 — Ram buys 60% of Krishan on 1 Oct; dividend ₹40,000 paid 1 Nov</h3>
+  <p class="small">Earned = 1,64,000 − 60,000 + 40,000 = 1,44,000 → 72,000 per half year.</p>
+  <table class="tight pb">
+    <tr><th style="width:18%">Date</th><th>Event</th><th style="width:16%">Change</th><th style="width:28%">Balance</th></tr>
+    <tr><td>1 Apr</td><td>Opening</td><td></td><td>60,000</td></tr>
+    <tr><td>Apr–Sep</td><td>Profit</td><td>+72,000</td><td>1,32,000</td></tr>
+    <tr><td><b>1 Oct</b></td><td><b>Ram buys</b></td><td></td><td><b class="hy">1,32,000 = PRE</b></td></tr>
+    <tr><td>1 Nov</td><td>Dividend</td><td>−40,000</td><td>92,000</td></tr>
+    <tr><td>Oct–Mar</td><td>Profit</td><td>+72,000</td><td>1,64,000 ✓</td></tr>
+  </table>
+  <p>Post-acq = 1,64,000 − 1,32,000 = <b>32,000</b>. Ram's ₹24,000 dividend: <b>leave it in Ram's RE</b>. Check: 24,000 + 60% × 32,000 = 43,200 = 60% × 72,000 ✓ nothing lost, nothing double. Same dividend paid in <b>May</b> (before Ram bought) → pre-acq 92,000, post-acq 72,000.</p>
+
+  <h2><span class="n">A</span>Dividends — only the date matters</h2>
+  <table class="tight">
+    <tr><th style="width:34%">Situation</th><th>Treatment</th></tr>
+    <tr><td>Paid <b>before</b> P bought</td><td>Before "P buys" in the passbook → lowers pre-acq. P got nothing.</td></tr>
+    <tr><td>Paid <b>after</b> P bought (any profit)</td><td>After "P buys" → lowers post-acq. <b>Keep</b> P's dividend income.</td></tr>
+    <tr><td>Declared, <b>unpaid</b> at year end</td><td>As above + cancel P's receivable vs P's share of payable. <b>NCI's share stays</b> as a liability.</td></tr>
+    <tr><td>Proposed, approved <b>after</b> year end</td><td><b>Ignore</b> (Ind AS 10 · 12). Not in the passbook.</td></tr>
+    <tr><td>Declared but "not accounted" by anyone</td><td>State assumption: ignore / declared unpaid / paid. ICAI accepted all three (PYQ May 2024).</td></tr>
+    <tr><td>Bonus issue by S</td><td>No effect — reserves move to share capital inside S (PYQ May 2024).</td></tr>
+  </table>
+  <div class="trap"><p>ICAI's printed answers write it another way: take the dividend out of <b>pre-acq</b> and take P's share out of <b>P's RE</b>. Same final figures. <b>Pick one way — never both.</b></p></div>
+
+  
+  <h2><span class="n">A</span>Fair value changes — each goes to 3 places</h2>
+  <p><span class="f">FV change = FV − Book value, both on the acquisition date</span></p>
+  <table class="tight">
+    <tr><th style="width:27%">Item</th><th style="width:19%">Net assets (WN 2)</th><th style="width:25%">Post-acq profit (WN 1)</th><th>Balance sheet line</th></tr>
+    <tr><td>PPE worth more</td><td>+ increase</td><td>− extra dep (months held)</td><td>+ increase − extra dep</td></tr>
+    <tr><td>PPE overvalued</td><td>− decrease</td><td>+ dep saved</td><td>− decrease + dep saved</td></tr>
+    <tr><td>Land worth more</td><td>+ increase</td><td>nothing</td><td>+ increase</td></tr>
+    <tr><td>Brand not in S's books</td><td>+ value</td><td>− amortisation</td><td>New intangible</td></tr>
+    <tr><td>Goodwill in S's own books</td><td>− remove</td><td>nothing</td><td>Not shown</td></tr>
+    <tr><td>Inventory, still unsold</td><td>± change</td><td>nothing</td><td>± change</td></tr>
+    <tr><td>Inventory, sold in year</td><td>± change</td><td>reverse (cost of sales)</td><td>nothing</td></tr>
+    <tr><td>Liability worth more</td><td>− increase</td><td>nothing till settled</td><td>+ to liability</td></tr>
+    <tr><td>Contingent liability</td><td>− FV</td><td>reverse if no payment</td><td>Liability / nil</td></tr>
+    <tr><td>Deferred tax (if rate given)</td><td>− DTL on FV increases</td><td>+ DTL reversal on extra dep</td><td>DTL line</td></tr>
+  </table>
+  <p class="small">ICAI: PYQ Nov 2024 (PPE +300, dep 30; inventory −300 kept) · SM TYK 8 (building 300 ÷ 20 = 15; inventory sold → reversed) · PYQ Sep 2025 (machinery overvalued; S's goodwill removed) · PYQ Jan 2026 (brand ₹8 lakh ÷ 10) · RTP Nov 2023 (contingent liability reversed; DT at 20%) · SM TYK 9 (deferred tax on FV adjustment).</p>
+
+  <h2><span class="n">A</span>FV given as a total value on a mid-year date</h2>
+  <p class="small"><i>"FV of P&amp;M on 1 Oct was ₹4,00,000; depreciation 10%."</i> Only the 31 Mar book value (₹2,70,000) is given. — SM TYK 5</p>
+  <ol>
+    <li>Book value on 1 Oct: opening 2,70,000 + 30,000 = 3,00,000 − 6 months' dep 15,000 = <b>2,85,000</b></li>
+    <li>Increase = 4,00,000 − 2,85,000 = <b>1,15,000</b></li>
+    <li>Extra dep = dep on FV for 6 months (20,000) − dep S charged (15,000) = <b>5,000</b></li>
+  </ol>
+  <div class="trap"><p>4,00,000 − 2,70,000 is <b>wrong</b>: it compares a 1 Oct value with a 31 Mar value.</p></div>
+
+  <h2><span class="n">A</span>Intra-group items — cancel, then ask who bears it</h2>
+  <table class="tight">
+    <tr><th style="width:32%">Item</th><th style="width:38%">Do</th><th>Who bears</th></tr>
+    <tr><td>Goods <b>P → S</b> in S's stock</td><td>Remove profit from inventory</td><td><b>P only</b></td></tr>
+    <tr><td>Goods <b>S → P</b> in P's stock</td><td>Remove profit from inventory</td><td>S's post-acq (P + NCI)</td></tr>
+    <tr><td>Machine sold in group</td><td>Remove gain; add back extra dep on it</td><td>The seller</td></tr>
+    <tr><td>Receivable / payable</td><td>Cancel what both show; cash in transit → add to cash first</td><td>Nobody</td></tr>
+    <tr><td>Bills</td><td>Cancel bills still held; <b>discounted</b> bills stay (owed to bank)</td><td>Nobody</td></tr>
+    <tr><td>P holds S's debentures / pref. shares</td><td>Cancel at face value; excess paid = loss</td><td>Group RE; outside pref. → NCI</td></tr>
+    <tr><td>Goods P → associate</td><td>Remove only P%, from the investment</td><td>Group RE</td></tr>
+    <tr><td>Deferred tax on unrealised profit</td><td>DTA at buyer's rate, if a rate is given (SM Illus. 16–17)</td><td>Same as the profit</td></tr>
+  </table>
+  <p><span class="f">"Cost + 25%" → price × 25/125 &nbsp;·&nbsp; "20% on sales" → price × 20%</span> &nbsp; <span class="small">SM Illus. 14–15: unrealised profit 15 → upstream split 60:40; downstream all P. Illus. 18: PPE sold 120 (cost 100), 10 years → PPE −18, depreciation −2.</span></p>
+
+  
+  <h2><span class="n">A</span>NCI and group equity</h2>
+  <div class="two">
+    <div class="box"><h3>NCI at year end</h3>
+      <p>NCI on acq. date + NCI% × post-acq profit</p>
+      <p>− NCI% × GW impairment <b>(FV method only)</b></p>
+      <p>+ S's pref. shares held by outsiders</p>
+      <p>Can go <b>negative</b> — losses still go to NCI <span class="para">B94</span> (Illus. 19)</p></div>
+    <div class="box"><h3>Items P bears alone (WN 5)</h3>
+      <p>Profit on goods/machines <b>P sold</b> to S</p>
+      <p>GW impairment (all, or P% under FV)</p>
+      <p>Loss on S's debentures/pref. held by P</p>
+      <p>Interest on deferred consideration</p>
+      <p>+ Gain on old stake · + share of associate</p></div>
+  </div>
+  <div class="ex"><p><b>Illus. 20 (four cases, proportionate NCI):</b> Case 1 — 90% for 1,40,000; net assets 1,50,000 → NCI 15,000; <b>goodwill 5,000</b>. Case 2 — 85% for 1,04,000; net assets 1,30,000 → NCI 19,500; <b>capital reserve 6,500</b>. Holding's RE adds 90% × (70,000 − 50,000) = 18,000 in case 1; deducts 85% × 10,000 = 8,500 in case 2 (post-acq loss).</p></div>
+
+  <h2><span class="n">A</span>Special structures</h2>
+  <table class="tight">
+    <tr><th style="width:22%">Structure</th><th>Rule</th></tr>
+    <tr><td><b>Chain</b> P → S → T</td><td>P in T = P% × S%; NCI in T = rest. T's goodwill uses S's cost × P%. S's NCI reduced by S's cost of T × S's NCI%. If S bought T after P bought S, split T's reserves at the date S bought T. (SM Illus. 29: 80% × 75% = 60%; capital reserve 105 + 83 = 188; NCI 166.2)</td></tr>
+    <tr><td><b>Indirect goodwill</b></td><td>S (80% owned) buys T outright → group shows <b>100%</b> of T's goodwill, 20% attributed to NCI (SM Illus. 27).</td></tr>
+    <tr><td><b>Associate</b> inside the group</td><td>One line, equity method: cost + P% × post-acq profit − P% × unrealised profit. Cost below P% of net assets → capital reserve. S's associate: group takes S's equity-accounted figure; NCI of S shares it (SM TYK 2: 75; profit 9 to M, 1 to NCI).</td></tr>
+    <tr><td><b>Different year ends</b></td><td>Max 3 months gap; adjust for big transactions.</td></tr>
+  </table>
+
+  <h2><span class="n">A</span>Five checks before you move on</h2>
+  <table class="tight">
+    <tr><th style="width:5%">#</th><th style="width:40%">Check</th><th>Proof on ICAI's PYQ Nov 2024 (₹ lakh)</th></tr>
+    <tr><td>1</td><td>Every point used (tick a tracker; scan the balance sheet for "in S", "due from", "dividend", "bills")</td><td>7 points + debentures found only in the balance sheet</td></tr>
+    <tr><td>2</td><td>Balance sheet agrees</td><td>34,875 = 34,875</td></tr>
+    <tr><td>3</td><td><b>NCI = NCI% × (S's closing equity + FV changes left − upstream profit) + NCI's goodwill</b></td><td>20% × (9,000 + 270 − 300) = 1,794 + (1,450 − 1,400) − 20 = <b>1,824</b> ✓</td></tr>
+    <tr><td>4</td><td>Goodwill split: P's = Cost − P% × WN 2</td><td>(5,800 − 5,600) + (1,450 − 1,400) = <b>250</b> ✓</td></tr>
+    <tr><td>5</td><td>Each cancellation equal on both sides</td><td>Receivable 160 = payable 120 + cheque 40 ✓</td></tr>
+  </table>
+  <div class="sticky green">Check 3 passes → your pre/post split, dividend, FV and NCI are <b>all right</b>. (Also proves SM TYK 5: 40% × 10,84,000 = 4,33,600.)</div>
+  <ul>
+    <li><b>Stuck?</b> Unticked tracker rows = what's left. Unclear fact → <b>one assumption line</b>, move on. Doesn't agree after 3 min → finish the rest. <b class="red">Never force a balancing figure.</b></li>
+  </ul>
+
+  
+  <h2><span class="n">A</span>SM TYK 5 — Ram Ltd. (60%) &amp; Krishan Ltd., acquired 1 Oct 20X1</h2>
+  <p class="small">Krishan 31 Mar: share capital 4,00,000 · other reserves 2,00,000 (unchanged) · RE 1,64,000 (60,000 on 1 Apr; 10% dividend paid 1 Nov; Ram credited its share to RE) · P&amp;M 2,70,000 (FV 4,00,000 on 1 Oct; dep 10%) · FV increases on 1 Oct: L&amp;B 2,00,000, inventory 30,000, trade payables 20,000 (both still outstanding) · Ram's cost 8,00,000 · Ram's RE 1,14,400 · NCI proportionate.</p>
+  <table class="tight num">
+    <tr><th style="width:22%">WN</th><th>Working</th><th style="width:16%">₹</th></tr>
+    <tr><td>1 Passbook</td><td>Pre = 60,000 + 72,000 (dividend 1 Nov is after 1 Oct)</td><td>1,32,000</td></tr>
+    <tr><td></td><td>Post = 1,64,000 − 1,32,000 − extra dep 5,000</td><td>27,000</td></tr>
+    <tr><td>2 Net assets</td><td>4,00,000 + 2,00,000 + 1,32,000 + FV (2,00,000 + 1,15,000 + 30,000 − 20,000)</td><td>10,57,000</td></tr>
+    <tr><td>3 Goodwill</td><td>8,00,000 + NCI 40% × 10,57,000 (4,22,800) − 10,57,000</td><td>1,65,800</td></tr>
+    <tr><td>4 NCI</td><td>4,22,800 + 40% × 27,000</td><td>4,33,600</td></tr>
+    <tr><td>5 Group RE</td><td>1,14,400 + 60% × 27,000 (Ram's 24,000 kept)</td><td>1,30,600</td></tr>
+    <tr><td>Other equity</td><td>Other reserves 6,00,000 + RE 1,30,600</td><td>7,30,600</td></tr>
+  </table>
+  <table class="tight num">
+    <tr><th>Consolidated balance sheet line</th><th>Working</th><th style="width:16%">₹</th></tr>
+    <tr><td>Land &amp; Buildings</td><td>3,00,000 + 3,60,000 + 2,00,000</td><td>8,60,000</td></tr>
+    <tr><td>Plant &amp; Machinery</td><td>4,80,000 + 2,70,000 + 1,15,000 − 5,000</td><td>8,60,000</td></tr>
+    <tr><td>Goodwill</td><td>WN 3</td><td>1,65,800</td></tr>
+    <tr><td>Inventories</td><td>2,40,000 + 72,800 + 30,000</td><td>3,42,800</td></tr>
+    <tr><td>Trade receivables · Cash</td><td>1,99,600 · 45,000</td><td>2,44,600</td></tr>
+    <tr><td><b>Total assets</b></td><td></td><td><b>24,73,200</b></td></tr>
+    <tr><td>Share capital (Ram) · Other equity · NCI</td><td>10,00,000 + 7,30,600 + 4,33,600</td><td>21,64,200</td></tr>
+    <tr><td>Trade payables · Bank overdraft</td><td>(94,200 + 34,800 + 20,000) + 1,60,000</td><td>3,09,000</td></tr>
+    <tr><td><b>Total</b></td><td></td><td><b>24,73,200</b></td></tr>
+  </table>
+  <p class="small">All figures match ICAI's printed answer. ICAI writes WN 5 as 1,14,400 − 24,000 + 60% × 67,000 = 1,30,600 (same result, other route).</p>
+
+  <h2><span class="n">A</span>Key figures to self-check other ICAI questions</h2>
+  <table class="tight">
+    <tr><th style="width:26%">Question</th><th>Key figures</th></tr>
+    <tr><td>PYQ Nov 2024 Q1</td><td>Goodwill 250 → 150 · NCI 1,824 · Other equity 16,292 (₹200 lakh = cost) / 16,297 (= sale price) · Total 34,875 / 34,880</td></tr>
+    <tr><td>SM TYK 4 (DEF/XYZ)</td><td>P&amp;M uplift 5,75,000 · extra dep 25,000 · bargain purchase 18,85,000 · RE 7,07,000 · Total 1,15,37,000</td></tr>
+    <tr><td>SM TYK 8 (Blue Heavens, 75%)</td><td>Goodwill 975 → 877 · NCI 1,284 · Other equity 11,228 · Total 18,032 (₹ lakh)</td></tr>
+    <tr><td>PYQ Jan 2026 Q1</td><td>Consideration 32.50 · Goodwill 20 → 15 · NCI 7.56 · RE 11.79 · Total 150.80 (₹ lakh)</td></tr>
+    <tr><td>PYQ Sep 2025 Q1</td><td>Capital reserve 32,62,500 · NCI 1,07,53,125 · Other equity 3,79,96,875 · Total 14,44,50,000</td></tr>
+    <tr><td>PYQ May 2024 Q1 (alt. A)</td><td>Goodwill 70,000 (fully impaired) · Associate 2,05,600 · NCI 2,85,000 · Total 29,90,100</td></tr>
+    <tr><td>PYQ Nov 2022 Q1 (chain)</td><td>Capital reserve 658 · NCI 581.70 · Total 7,833 (₹ lakh)</td></tr>
+  </table>
+
+    <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+</body></html>

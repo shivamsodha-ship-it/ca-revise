@@ -2,7 +2,9 @@ import sys, pathlib
 from playwright.sync_api import sync_playwright
 
 base = pathlib.Path(__file__).parent
-jobs = [("ind-as-1.html", "FR_LDR_IndAS1_Presentation.pdf"), ("ind-as-10.html", "FR_LDR_IndAS10_Events_after_RP.pdf"), ("ind-as-103-110.html", "FR_LDR_IndAS103_110_Consolidation.pdf")]
+jobs = [("ind-as-1.html", "FR_LDR_IndAS1_Presentation.pdf"), ("ind-as-10.html", "FR_LDR_IndAS10_Events_after_RP.pdf")]
+# ind-as-103-110.html is long-form and auto-paginated; build it with:
+#   node ldr-src/fr/paginate.js ldr-src/fr/ind-as-103-110.html /tmp/paged.html public/ldr/fr/FR_LDR_IndAS103_110_Consolidation.pdf "Ind AS 103 & 110"
 with sync_playwright() as p:
     b = p.chromium.launch()
     pg = b.new_page()

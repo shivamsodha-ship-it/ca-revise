@@ -7,4 +7,6 @@
 - Where ICAI's answer is not in the repo (May 2026 Q1, MCQ 8 for Ind AS 103; MCQ 3 for Ind AS 110), the solution is app-written and labelled so; its figures match ICAI's published key (`research/lastday/fr-last3-analysis.md`). `may26q1.html` is that solution.
 - Ind AS 110 sheet leaves out Ind AS 28 / 111 / 27 / 112 items and SM Ch 13 TYK Q3 (associate only).
 
+Ch 11 (Ind AS 32 & 109): `python3 build11.py <out.html>` — items from `ex11.py` (SM Ch 11 Units 1–5 illustrations/examples, SM TYK file 83232bos67302-tyk.pdf, ICAI PQ 83231bos67302-pq.pdf); no RTP/MTP/past-paper text is in the repo for this chapter, so past papers are named in the adjustment lists only.
+
 Run (PDF paths are in the script's working folder): `python3 build.py 103 <out.html>` with the HTML written into `ldr-src/fr/` (it uses `style.css` and `../fonts`), then `node paginate.js <out.html> <paged.html> <out.pdf> "<label>"`. The combined PDFs in `public/ldr/fr/FR_IndAS10{3,10}_Notes_and_Practice.pdf` are the notes PDF followed by the practice PDF.

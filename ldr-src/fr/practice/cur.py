@@ -1,3 +1,4 @@
+import re
 # Curation for the practice sheets: notes links, variants (not repeated), full-scale set, master question,
 # and the per-topic adjustment lists ("what to do"). Figures quoted are ICAI's (SM / PQ / RTP / MTP / paper answers).
 # Keys are source labels (matched with str.startswith).
@@ -402,6 +403,248 @@ play={
   do=['Shares issued by S dilute P below control → treat as disposal; retained interest at FV.',
       'Linked transactions (same time, one commercial effect, conditional) → one transaction.'],
   ex='Illus 30: FV of 40% kept 360 − (450 − 180 + 20) = <b>gain 70</b> (\'000). Illus 34: 8,00,000 − (9,00,000 − 1,80,000) = <b>gain 80,000</b>.'),
+],
+}
+)
+
+# ======================================================================= Ind AS 32 / 109 (Ch 11)
+def _c11(src):
+    m = re.match(r'SM Ch 11 Unit (\d) · (Illustration|Example)\s*(\d+)([A-C]?)', src)
+    if m:
+        u, k, n = int(m.group(1)), m.group(2), int(m.group(3))
+        if u == 1:
+            if k == 'Example': return {1: 'fi-def', 2: 'fi-def', 3: 'fi-liab', 4: 'fi-scope'}[n]
+            return {1: 'fi-def', 2: 'fi-def', 3: 'fi-liab', 4: 'fi-def', 5: 'fi-liab', 6: 'fi-liab', 7: 'fi-f4f', 8: 'fi-f4f'}[n]
+        if u == 2:
+            if n <= 6 or n in (12, 13, 17, 18, 19): return 'fi-bm'
+            if n <= 11 or n in (14, 15, 16): return 'fi-sppi'
+            if n in (20, 31, 32, 33): return 'fi-eir'
+            if n in (21, 23, 25, 28): return 'fi-init'
+            if n in (22, 24, 26, 27, 35): return 'fi-fv'
+            if n in (29, 30): return 'fi-fl'
+            if n == 34: return 'fi-mod'
+            if 36 <= n <= 41: return 'fi-reclass'
+            return 'fi-ecl'
+        if u == 3:
+            if k == 'Example': return 'fi-f4f'
+            if n <= 6: return 'fi-liab'
+            if n <= 11: return 'fi-put'
+            if n <= 24: return 'fi-f4f'
+            return 'fi-compound'
+        if u == 4:
+            return 'fi-deriv' if n <= 8 or n == 14 else 'fi-embedded'
+        if u == 5:
+            if k == 'Example': return 'fi-derec' if n <= 2 else 'fi-mod'
+            if n <= 3: return 'fi-regular'
+            if n == 13: return 'fi-mod'
+            return 'fi-derec'
+    m = re.match(r'SM Ch 11 · Test Your Knowledge Q(\d)', src)
+    if m: return {1: 'fi-init', 2: 'fi-init', 3: 'fi-mod', 4: 'fi-compound', 5: 'fi-compound', 6: 'fi-guar', 7: 'fi-compound'}[int(m.group(1))]
+    m = re.match(r'ICAI Practice Questions · Ch 11 Q(\d)', src)
+    if m: return {1: 'fi-compound', 2: 'fi-compound', 3: 'fi-def', 4: 'fi-init', 5: 'fi-guar', 6: 'fi-mod'}[int(m.group(1))]
+    raise KeyError(src)
+
+C['11'] = dict(
+title='Ind AS 32 & 109 Financial Instruments',
+conceptfn=_c11,
+groups=[('A', 'Definitions, scope and own-use contracts'), ('B', 'Liability or equity (Ind AS 32)'), ('C', 'Compound instruments'),
+        ('D', 'Classifying financial assets — business model and SPPI'), ('E', 'Measurement — fair value, EIR, FVTPL / FVOCI'),
+        ('F', 'Financial liabilities, guarantees, modification and refinancing'), ('G', 'Reclassification'), ('H', 'Impairment — expected credit loss'),
+        ('I', 'Recognition and derecognition of financial assets'), ('J', 'Derivatives and embedded derivatives')],
+concepts=[('fi-def', 'A', 'Financial asset, financial liability, equity — definitions'), ('fi-scope', 'A', 'Scope and own-use contracts'),
+          ('fi-liab', 'B', 'Obligation to deliver cash — liability or equity'), ('fi-f4f', 'B', 'Settlement in own shares — fixed-for-fixed'),
+          ('fi-put', 'B', 'Puttable instruments exception'), ('fi-compound', 'C', 'Compound instruments — split, conversion, redemption'),
+          ('fi-bm', 'D', 'Business model test'), ('fi-sppi', 'D', 'SPPI (contractual cash flow) test'),
+          ('fi-init', 'E', 'Initial measurement — off-market loans, deposits, staff loans'), ('fi-eir', 'E', 'Amortised cost and EIR with fees'),
+          ('fi-fv', 'E', 'FVTPL and FVOCI accounting'), ('fi-fl', 'F', 'Financial liabilities — classification'),
+          ('fi-guar', 'F', 'Financial guarantee contracts'), ('fi-mod', 'F', 'Modification, refinancing, extinguishment, debt-for-equity'),
+          ('fi-reclass', 'G', 'Reclassification of financial assets'), ('fi-ecl', 'H', 'Expected credit loss'),
+          ('fi-regular', 'I', 'Regular-way purchase and sale'), ('fi-derec', 'I', 'Derecognition of financial assets'),
+          ('fi-deriv', 'J', 'Derivatives — definition and own-share derivatives'), ('fi-embedded', 'J', 'Embedded derivatives')],
+notes={'fi-def': 'Notes §1 (p 1)', 'fi-scope': 'Notes §2 (p 2)', 'fi-liab': 'Notes §1 table, §3 (p 1, 3)', 'fi-f4f': 'Notes §3 four boxes (p 3)',
+       'fi-put': 'Notes §3 puttables (p 4)', 'fi-compound': 'Notes §4 (p 4–5)', 'fi-bm': 'Notes §6 (p 6)', 'fi-sppi': 'Notes §6 SPPI (p 6)',
+       'fi-init': 'Notes §7 interest-free loans (p 7–8)', 'fi-eir': 'Notes §7 (p 7)', 'fi-fv': 'Notes §6 table, §7 (p 6–8)',
+       'fi-fl': 'Notes §8 (p 8)', 'fi-guar': 'Notes §8 special basis (p 8)', 'fi-mod': 'Notes §8 modification, §13 (p 9, 11–12)',
+       'fi-reclass': 'Notes §9 (p 9)', 'fi-ecl': 'Notes §10 (p 9–10)', 'fi-regular': 'Notes §11 (p 11)', 'fi-derec': 'Notes §12 (p 11)',
+       'fi-deriv': 'Notes §14 (p 13)', 'fi-embedded': 'Notes §14 embedded (p 13)'},
+concept={}, drop=[],
+variants=[
+ ('SM Ch 11 Unit 2 · Illustration 12', 'SM Ch 11 Unit 2 · Illustration 13', 'Same debt instrument; the entity later sells because of a liquidity need — still hold to collect, no reclassification.'),
+ ('SM Ch 11 Unit 2 · Illustration 14', 'SM Ch 11 Unit 2 · Illustration 15', 'Interest-free loan of INR 100 m to the subsidiary repayable in <b>ten years</b> (Illus 14: on demand) — still meets SPPI (principal + time value at zero rate is a measurement matter, not a cash-flow feature).'),
+ ('SM Ch 11 Unit 2 · Illustration 25', 'SM Ch 11 Unit 2 · Illustration 21', 'Containers Ltd: deposit 10,000 for 3 years, market 7% → FV 10,000 / 1.07³ = <b>8,163</b>; day-1 difference 1,837 = prepaid rent (ROU asset), depreciated straight line.'),
+ ('SM Ch 11 Unit 2 · Illustration 31', 'SM Ch 11 Unit 2 · Illustration 32', 'Loan 10,000 at 12% with fee 500, repaid in 4 half-yearly instalments of 2,500, interest quarterly; IRR given 16.60% → initial 9,500; first quarter interest 389 → 9,589.'),
+ ('SM Ch 11 Unit 2 · Illustration 36', 'SM Ch 11 Unit 2 · Illustration 37', 'AC → FVOCI: Bonds at FVOCI Dr 90,000 · OCI Dr 10,000 · To Bonds at AC 1,00,000.'),
+ ('SM Ch 11 Unit 2 · Illustration 36', 'SM Ch 11 Unit 2 · Illustration 38', 'FVTPL → AC: Bonds at AC Dr 90,000 · Loss Dr 10,000 · To Bonds at FVTPL 1,00,000 (FV becomes the new gross carrying amount).'),
+ ('SM Ch 11 Unit 2 · Illustration 36', 'SM Ch 11 Unit 2 · Illustration 39', 'FVTPL → FVOCI: Bonds at FVOCI Dr 90,000 · Loss Dr 10,000 · To Bonds at FVTPL 1,00,000.'),
+ ('SM Ch 11 Unit 2 · Illustration 36', 'SM Ch 11 Unit 2 · Illustration 40', 'FVOCI → AC: reverse OCI loss 10,000 against the asset, then Bonds at AC Dr 1,00,000 · To Bonds at FVOCI 1,00,000 — as if always at AC.'),
+ ('SM Ch 11 Unit 2 · Illustration 36', 'SM Ch 11 Unit 2 · Illustration 41', 'FVOCI → FVTPL: OCI loss 10,000 recycled to P&amp;L; Bonds at FVTPL Dr 90,000 · To Bonds at FVOCI 90,000.'),
+ ('SM Ch 11 · Test Your Knowledge Q4', 'SM Ch 11 · Test Your Knowledge Q5', '8% convertible loan 6,00,000 at par, redeemable at par in 4 years; market 10% → liability <b>5,60,160</b>, equity <b>39,840</b>; then interest at 10% for 20X1-X2 (paid 48,000).'),
+ ('SM Ch 11 Unit 4 · Illustration 11', 'SM Ch 11 Unit 4 · Illustration 12', 'Rent rises by 3 m if profit after tax &gt; 200 m → linked to PAT, <b>not</b> closely related (sales-based would be) → separate.'),
+ ('SM Ch 11 Unit 5 · Illustration 4', 'SM Ch 11 Unit 5 · Illustration 5', 'First / last 90% of collections, or 90% sold with an 8% loss guarantee → apply derecognition to the <b>whole</b> asset.'),
+ ('SM Ch 11 Unit 5 · Illustration 8', 'SM Ch 11 Unit 5 · Illustration 9', 'Call option with the transferor: deep in the money → keep asset; deep out → derecognise; neither, asset readily obtainable in the market → control lost → derecognise.'),
+ ('SM Ch 11 Unit 5 · Illustration 12A', 'SM Ch 11 Unit 5 · Illustration 12B', 'Associated liability = guarantee 5 cr + FV of guarantee 0.5 cr = <b>5.5 cr</b>.'),
+ ('SM Ch 11 Unit 5 · Illustration 12A', 'SM Ch 11 Unit 5 · Illustration 12C', 'Entry: Cash Dr 90 · Loss Dr 5 · Continuing involvement asset Dr 5.5 · To Receivables 95 · To Associated liability 5.5 (₹ cr); the 0.5 cr guarantee is amortised to P&amp;L.'),
+],
+master='SM Ch 11 · Test Your Knowledge Q7',
+master_tests=['Compound split at issue — PV at 13% (Group C)', 'Equity component as residual (Group C)', 'Repurchase by tender — allocate the price at the current 10% rate (Group C)', 'Loss on the liability part to P&amp;L; balance to equity (Group C)'],
+tests={'SM Ch 11 · Test Your Knowledge Q3': ['EIR with processing fee', 'Renegotiation — 10% test', 'Extinguishment vs modification entries'],
+       'SM Ch 11 · Test Your Knowledge Q2': ['Staff loan at FV (12%)', 'Prepaid employee cost', 'Prepayment — re-estimate at original EIR'],
+       'SM Ch 11 · Test Your Knowledge Q6': ['Financial guarantee at FV (interest differential)', 'Higher of ECL and amortised amount']},
+full=['SM Ch 11 · Test Your Knowledge Q3', 'SM Ch 11 · Test Your Knowledge Q2', 'SM Ch 11 · Test Your Knowledge Q6'],
+play={
+'A': [
+ dict(t='Is it a financial asset / liability at all?', n='Notes §1 (p 1)', q=['SM Ch 11 Unit 1 · Example 1', 'SM Ch 11 Unit 1 · Example 2', 'ICAI Practice Questions · Ch 11 Q3', 'SM Ch 11 Unit 1 · Illustration 4'],
+  when='List of items to classify.',
+  do=['Needs a <b>contract</b> → right to receive / obligation to deliver <b>cash or another financial asset</b>.',
+      'Not financial: income tax (statute), constructive obligations and lawsuits (Ind AS 37), PPE, inventory, prepaid expenses and advances for goods (benefit is goods/services), deferred revenue.',
+      'Investor side: shares / preference shares of another entity are always a financial asset, whatever the issuer calls them.'],
+  ex='PQ Ch 11 Q3: loan + overdraft used → two financial liabilities; tax dues → not financial; contamination lawsuit → Ind AS 37.'),
+ dict(t='Own-use contracts for non-financial items', n='Notes §2 (p 2)', q=['SM Ch 11 Unit 1 · Example 4', 'SM Ch 11 Unit 4 · Illustration 14'],
+  when='Contract to buy/sell a commodity that can be settled net.',
+  do=['Held for the entity\'s own purchase/sale/usage and not net-settled in practice → executory contract, outside Ind AS 109.',
+      'Practice of net settlement, or of taking delivery and selling quickly → treat as a derivative (FVTPL).'],
+  ex='Illus 14 (oil seeds): import contracts net-settled 30% → derivative; domestic contracts 1% net-settled → own use.'),
+],
+'B': [
+ dict(t='Liability or equity — cash obligation', n='Notes §1 table, §3 (p 1, 3)', q=['SM Ch 11 Unit 3 · Illustration 1', 'SM Ch 11 Unit 3 · Illustration 2', 'SM Ch 11 Unit 3 · Illustration 3', 'SM Ch 11 Unit 1 · Illustration 6', 'SM Ch 11 Unit 3 · Illustration 4', 'SM Ch 11 Unit 3 · Illustration 6'],
+  when='Preference shares, debentures, perpetual loans.',
+  do=['Can the issuer <b>avoid</b> paying cash? No → liability (lack of funds, profits or approvals does not help).',
+      'Redeemable on a fixed date / at holder\'s option → liability. Issuer\'s option → equity until it notifies.',
+      'Dividend mandatory → that stream is a liability; discretionary → equity.',
+      'Both features present → compound (Group C).'],
+  ex='Illus 6 (Unit 1): irredeemable, 8% dividend only if equity dividend paid → <b>equity</b>. Illus 3 (Unit 3): perpetual loan, mandatory 8% → liability for the interest.'),
+ dict(t='Settlement in own shares — fixed-for-fixed', n='Notes §3 (p 3)', q=['SM Ch 11 Unit 1 · Illustration 8', 'SM Ch 11 Unit 3 · Illustration 13', 'SM Ch 11 Unit 3 · Illustration 14', 'SM Ch 11 Unit 3 · Illustration 20', 'SM Ch 11 Unit 3 · Illustration 24'],
+  when='Contract will be settled by issuing own shares.',
+  do=['Shares worth a fixed amount (variable number) → shares used as currency → <b>liability</b>.',
+      'Fixed number of shares for a fixed amount → <b>equity</b>.',
+      'Conversion ratio changes: only time-based, or anti-dilution for splits/bonus → still fixed; down-round protection, FV-based band, inter-dependent targets → liability.',
+      'FCCB (Ind AS carve-out): fixed shares for fixed foreign-currency amount → equity component.'],
+  ex='Illus 13: 100 cr converts into shares worth 100 cr → liability. Illus 14: 100 cr into 15 cr shares → equity.'),
+ dict(t='Puttable instruments — the exception', n='Notes §3 puttables (p 4)', q=['SM Ch 11 Unit 3 · Illustration 7', 'SM Ch 11 Unit 3 · Illustration 8', 'SM Ch 11 Unit 3 · Illustration 9', 'SM Ch 11 Unit 3 · Illustration 10', 'SM Ch 11 Unit 3 · Illustration 11'],
+  when='Holder can put the share back (mutual fund units, co-operatives).',
+  do=['Equity only if all: pro-rata share of net assets on liquidation, most subordinate class, identical features, no other cash obligation, returns based on profit / net assets, no other contract fixing the holder\'s return.'],
+  ex='Illus 7: Class B capped at ₹ 1 crore on liquidation → not equity. Illus 11: management fee of 50% of profit → fails.'),
+],
+'C': [
+ dict(t='Split a compound instrument at issue', n='Notes §4 (p 4)', q=['SM Ch 11 Unit 3 · Illustration 28', 'SM Ch 11 Unit 3 · Illustration 29', 'SM Ch 11 Unit 3 · Illustration 30', 'SM Ch 11 · Test Your Knowledge Q4', 'ICAI Practice Questions · Ch 11 Q2'],
+  when='Convertible debentures / OCPS / perpetual loans with mandatory interest.',
+  do=['Liability = PV of contractual cash flows (interest + redemption amount incl. premium) at the <b>market rate for debt without conversion</b>.',
+      'Equity = proceeds − liability (residual; never re-measured).',
+      'Transaction costs split in the same ratio.',
+      'Non-cumulative / discretionary dividend → part of equity, so liability = PV of redemption only (PQ Q2).'],
+  ex='Illus 29: 9,24,061 liability, 75,939 equity. TYK 4: 18,70,000 + 9,51,000 = <b>28,21,000</b> liability (only the 50% settled in cash), equity <b>21,79,000</b>. Illus 28: 96,000 ÷ 12% = 8,00,000 liability, 4,00,000 equity.'),
+ dict(t='Finance cost each year', n='Notes §4 (p 4–5)', q=['SM Ch 11 Unit 3 · Illustration 32'],
+  when='Years after issue.',
+  do=['Finance cost = opening liability × market rate (EIR) → P&amp;L.', 'Closing = opening + finance cost − coupon; reaches redemption amount at maturity.'],
+  ex='Illus 32: 9,24,061 → 9,47,226 → 9,72,476 → nil (finance cost 83,165 / 85,250 / 87,524).'),
+ dict(t='Conversion, early repurchase, induced conversion', n='Notes §4 later events (p 5)', q=['SM Ch 11 Unit 3 · Illustration 32', 'ICAI Practice Questions · Ch 11 Q1', 'SM Ch 11 · Test Your Knowledge Q7'],
+  when='Holder converts, issuer buys back, or terms are sweetened.',
+  do=['Conversion at maturity: liability → equity; no gain or loss.',
+      'Repurchase / early redemption: split the price — liability part = PV of remaining cash flows at the <b>current</b> rate; liability part − carrying amount → P&amp;L; rest → equity.',
+      'Induced conversion: FV of extra shares given under new terms → loss in P&amp;L.'],
+  ex='Illus 32: liability FV 10,09,523 vs 9,72,476 → <b>loss 37,047</b>; equity part 90,477. PQ Q1: 5 extra shares × ₹ 80 = <b>loss 400</b>. Asked: Sep 2025 Q2(a) (repurchase by tender), May 2026 Q2(a) (holder\'s put — liability measured to the put date).'),
+],
+'D': [
+ dict(t='Business model test', n='Notes §6 (p 6)', q=['SM Ch 11 Unit 2 · Illustration 1', 'SM Ch 11 Unit 2 · Illustration 4', 'SM Ch 11 Unit 2 · Illustration 12', 'SM Ch 11 Unit 2 · Illustration 19'],
+  when='Debt instruments held by the entity.',
+  do=['Hold to collect: sales rare, insignificant, near maturity or due to credit deterioration → amortised cost.',
+      'Collect and sell: selling is integral (liquidity, duration matching) → FVOCI.',
+      'Anything else (trading, managed on FV) → FVTPL.',
+      'One-off higher sales ≠ change of model; no restatement.'],
+  ex='Illus 19: surplus funds put in bonds that will be sold when an opportunity arises → collect and sell → FVOCI.'),
+ dict(t='SPPI test', n='Notes §6 SPPI (p 6)', q=['SM Ch 11 Unit 2 · Illustration 7', 'SM Ch 11 Unit 2 · Illustration 8', 'SM Ch 11 Unit 2 · Illustration 11', 'SM Ch 11 Unit 2 · Illustration 14', 'SM Ch 11 Unit 2 · Illustration 16'],
+  when='Before the business model.',
+  do=['Cash flows only principal + interest for time value, credit risk and normal lending costs/margin → pass.',
+      'Equity/commodity links, leverage, inverse floaters, conversion options → fail → FVTPL.',
+      'Interest-free loan to a subsidiary (on demand or fixed term) → passes.'],
+  ex='Illus 8: convertible bond (holder) → fails. Illus 11: inverse floater → fails. Illus 16: capped floating rate → passes.'),
+],
+'E': [
+ dict(t='Initial measurement — below-market loans and deposits', n='Notes §7 interest-free loans (p 7–8)', q=['SM Ch 11 Unit 2 · Illustration 25', 'SM Ch 11 Unit 2 · Illustration 28', 'SM Ch 11 Unit 2 · Illustration 23', 'SM Ch 11 · Test Your Knowledge Q1', 'SM Ch 11 · Test Your Knowledge Q2', 'ICAI Practice Questions · Ch 11 Q4'],
+  when='Interest-free / low-interest loan or deposit, or deferred payment.',
+  do=['FV = PV of cash flows at the market rate.',
+      'Day-1 difference: to a subsidiary → investment (parent) / equity contribution (subsidiary); deposit under a lease → ROU asset / prepaid rent; staff loan → prepaid employee cost; otherwise P&amp;L.',
+      'Repayable on demand → FV = face value, no interest.',
+      'Unwind at the market rate each year; prepaid cost amortised over the period.'],
+  ex='Illus 28: ₹ 10 lakh, 3 years, 10% → 7,51,315; investment 2,48,685. TYK 1: staff loan 16 lakh → PV <b>14,06,272</b>, prepaid staff cost 1,93,728. Illus 25: deposit 10 lakh → 5,67,427. Asked: Jan 2026 Q2(a).'),
+ dict(t='Amortised cost and EIR with fees', n='Notes §7 (p 7)', q=['SM Ch 11 Unit 2 · Illustration 20', 'SM Ch 11 Unit 2 · Illustration 31', 'SM Ch 11 Unit 2 · Illustration 33'],
+  when='Loan with processing fee / transaction costs.',
+  do=['Initial = amount − fees (fees integral to the loan).',
+      'EIR = rate that discounts all cash flows to that net amount (interpolate between two rates).',
+      'Interest = opening × EIR; closing = opening + interest − payment.',
+      'Fee for undrawn tranches: deferred if drawdown probable; else expensed straight line.'],
+  ex='Illus 31: 9,500; EIR = 10% + 3% × 500/1,055 = <b>11.42%</b>; year 1 interest 1,085 → 9,585. Asked: Jan 2026 MCQ (loan bonds at 8% EIR).'),
+ dict(t='FVTPL and FVOCI investments', n='Notes §6 table, §7 (p 6–8)', q=['SM Ch 11 Unit 2 · Illustration 26', 'SM Ch 11 Unit 2 · Illustration 27', 'SM Ch 11 Unit 2 · Illustration 22', 'SM Ch 11 Unit 2 · Illustration 24'],
+  when='Equity shares or debt at fair value.',
+  do=['FVTPL: transaction cost to P&amp;L; FV changes to P&amp;L.',
+      'FVOCI equity (irrevocable election): FV changes to OCI, never recycled; dividend to P&amp;L.',
+      'FVOCI debt: interest by EIR to P&amp;L, FV change to OCI, recycled on sale.',
+      'Unquoted equity: cost only if it is the best estimate of FV; never for quoted.'],
+  ex='Illus 26: cost 500 expensed; gain 1,200 to P&amp;L. Illus 27: 10,000 shares fall to ₹ 45 → <b>loss 50,000 in OCI</b>.'),
+],
+'F': [
+ dict(t='Financial liabilities — which category', n='Notes §8 (p 8)', q=['SM Ch 11 Unit 2 · Illustration 29', 'SM Ch 11 Unit 2 · Illustration 30'],
+  when='Borrowings, payables, derivatives, contingent consideration.',
+  do=['Default: amortised cost.', 'FVTPL: held for trading, derivatives, contingent consideration of an acquirer, or designated to remove a mismatch.',
+      'Designated FVTPL: own-credit part of FV change → OCI.'],
+  ex='Illus 30: fixed-rate assets funded by fixed-rate debentures → designate both at FVTPL.'),
+ dict(t='Financial guarantee given', n='Notes §8 (p 8)', q=['SM Ch 11 · Test Your Knowledge Q6', 'ICAI Practice Questions · Ch 11 Q5'],
+  when='Parent guarantees a subsidiary\'s bank loan free of charge.',
+  do=['Initial FV = PV of the interest saved (rate without guarantee − rate with guarantee).',
+      'Parent: Investment in subsidiary Dr / Financial guarantee liability Cr.',
+      'Later: higher of ECL allowance and initial amount less amortisation.'],
+  ex='TYK 6: 30,000 a year for 3 years at 11% → <b>73,320</b>; 12-month ECL at 31 Mar 20X2 = 10,00,000 × 1% = 10,000.'),
+ dict(t='Modification, refinancing and extinguishment', n='Notes §8 modification, §13 (p 9, 11–12)', q=['SM Ch 11 Unit 2 · Illustration 34', 'SM Ch 11 Unit 5 · Example 3', 'SM Ch 11 Unit 5 · Example 4', 'ICAI Practice Questions · Ch 11 Q6', 'SM Ch 11 · Test Your Knowledge Q3', 'SM Ch 11 Unit 5 · Example 5'],
+  when='Terms renegotiated, loan prepaid and refinanced, or debt swapped for equity.',
+  do=['10% test: PV of new cash flows + fees paid, at the <b>original EIR</b>, vs PV of remaining old cash flows.',
+      '≥ 10% → extinguish: old liability (with unamortised fees) out; new at FV; difference and costs → P&amp;L.',
+      '&lt; 10% → modification: fees adjust the carrying amount (Example 4 resets the EIR).',
+      'Refinancing with another bank: prepayment penalty + unamortised old fees → P&amp;L; new loan\'s fee → its EIR.',
+      'Debt-for-equity: shares at FV; difference vs liability → P&amp;L.'],
+  ex='Example 3: 11.32% → extinguish, loss <b>58,097</b>. PQ Q6: 6.8% → not extinguished. Example 5: gains 4 cr + 2 cr. Asked: Sep 2025 and May 2026 MCQs (refinancing).'),
+],
+'G': [
+ dict(t='Reclassification of financial assets', n='Notes §9 (p 9)', q=['SM Ch 11 Unit 2 · Illustration 36'],
+  when='Business model changes (rare); never for liabilities.',
+  do=['Prospective from the first day of the next reporting period.',
+      'Into FVTPL from AC: FV − AC → P&amp;L. Into FVOCI from AC: → OCI.',
+      'Out of FVTPL: FV becomes the new gross carrying amount / EIR base.',
+      'FVOCI → AC: reverse OCI against the asset. FVOCI → FVTPL: recycle OCI to P&amp;L.'],
+  ex='Illus 36: bonds 1,00,000, FV 90,000 → loss 10,000 to P&amp;L.'),
+],
+'H': [
+ dict(t='Expected credit loss', n='Notes §10 (p 9–10)', q=['SM Ch 11 Unit 2 · Illustration 42', 'SM Ch 11 Unit 2 · Illustration 43', 'SM Ch 11 Unit 2 · Illustration 44'],
+  when='Debt at AC / FVOCI, trade receivables, guarantees.',
+  do=['Stage 1 → 12-month ECL; stage 2 (significant increase, &gt;30 days past due) and 3 (credit-impaired) → lifetime.',
+      'Trade receivables without financing component → lifetime from day 1 (provision matrix).',
+      'ECL = exposure × LGD × PD (or loss rate).'],
+  ex='Illus 42: 10 lakh × 25% × 0.5% = <b>1,250</b>. Illus 44: provision matrix → <b>5,80,000</b>.'),
+],
+'I': [
+ dict(t='Regular-way trades', n='Notes §11 (p 11)', q=['SM Ch 11 Unit 5 · Illustration 1', 'SM Ch 11 Unit 5 · Illustration 3'],
+  when='Purchase/sale with market-standard settlement.',
+  do=['Trade-date or settlement-date accounting, applied consistently.', 'Settlement date: FV change between dates follows the asset\'s category (AC none, FVTPL P&amp;L, FVOCI OCI).',
+      'Off-market settlement period → derivative.'],
+  ex='Illus 3: 10,00,000 → 10,50,000 by settlement: FVTPL gain 50,000; FVOCI 50,000 in OCI; AC nothing.'),
+ dict(t='Derecognise a financial asset?', n='Notes §12 (p 11)', q=['SM Ch 11 Unit 5 · Illustration 6', 'SM Ch 11 Unit 5 · Illustration 7', 'SM Ch 11 Unit 5 · Illustration 11', 'SM Ch 11 Unit 5 · Illustration 12A'],
+  when='Sale, factoring, securitisation, repo.',
+  do=['Consolidate first; decide part vs whole.', 'Rights expired or transferred (or pass-through tests met)?',
+      'Substantially all risks and rewards transferred → derecognise; retained → keep asset + liability for cash received.',
+      'Neither → control retained? No → derecognise; yes → continuing involvement (lower of asset and guarantee).'],
+  ex='Illus 11: without recourse, 10 lakh for 9 lakh → derecognise, <b>loss 1 lakh</b>. Illus 12A: continuing involvement asset <b>5.5 cr</b>.'),
+],
+'J': [
+ dict(t='Is it a derivative? Own-share derivatives', n='Notes §14 (p 13)', q=['SM Ch 11 Unit 4 · Illustration 1', 'SM Ch 11 Unit 4 · Illustration 2', 'SM Ch 11 Unit 4 · Illustration 6', 'SM Ch 11 Unit 4 · Illustration 8'],
+  when='Swaps, forwards, options, contracts priced on an underlying.',
+  do=['All three: underlying, little or no initial investment, future settlement.', 'Derivatives → FVTPL (unless a hedge).',
+      'Settled in own shares: variable number → derivative liability; fixed for fixed → equity.'],
+  ex='Illus 6: gold paid for in shares worth the gold price → <b>derivative liability</b>. Illus 8: rights warrants at fixed ₹ 150 → equity. Asked: Sep 2025 MCQ (silver for variable shares).'),
+ dict(t='Embedded derivatives', n='Notes §14 (p 13)', q=['SM Ch 11 Unit 4 · Illustration 10', 'SM Ch 11 Unit 4 · Illustration 11', 'SM Ch 11 Unit 4 · Illustration 13', 'SM Ch 11 Unit 4 · Illustration 15'],
+  when='Hybrid contract with a non-derivative host.',
+  do=['Host is a financial asset → no separation (classify the whole).',
+      'Otherwise separate if not closely related, would be a derivative alone, and hybrid not at FVTPL.',
+      'Derivative at FV (FVTPL); host = residual.'],
+  ex='Illus 15: USD contract between two Indian companies → embedded forward: +3,00,000 then +5,00,000; PPE at forward rate 6,78,00,000.'),
 ],
 }
 )

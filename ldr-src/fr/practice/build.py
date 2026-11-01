@@ -147,9 +147,42 @@ for q in cb['Q']:
         a = APP[q['id']]; note = 'app'
     add(q['links'][0], q['src'], q['k'], q['q'], a, 'Numerical' if (part=='103' and q['id']=='P6') else q['v'], note)
 
+# ---- curation ----
+sys.path.insert(0, SP)
+from cur import C as CUR
+cu = CUR[part]
+def key(it, k): return it['src'].startswith(k)
+def find(k):
+    m = [it for it in items if key(it, k)]
+    return m[0] if m else None
+for k, c in cu['concept'].items():
+    it = find(k)
+    if it: it['concept'] = c
+items = [it for it in items if not any(key(it, k) for k in cu['drop'])]
 items = [it for it in items if P[it['concept']]['g'] in groups_in]
+VAR = {}
+for parent, v, txt in cu['variants']:
+    vi = find(v); pi = find(parent)
+    assert pi is not None, ('parent missing', parent)
+    if vi is None: print('WARN variant missing', v); continue
+    vi['is_var'] = True
+    VAR.setdefault(id(pi), []).append((vi['src'], txt))
+master = find(cu['master']); assert master is not None
+full = [find(k) for k in cu['full']]; assert all(full), cu['full']
+for it in full: it['is_full'] = True
+master['is_master'] = True
+topic = [it for it in items if not it.get('is_var') and not it.get('is_full') and not it.get('is_master')]
 gorder = [g[0] for g in cb['groups']]
-items.sort(key=lambda it: (gorder.index(P[it['concept']]['g']), Pidx[it['concept']], RANK[it['kind']], it['order']))
+topic.sort(key=lambda it: (gorder.index(P[it['concept']]['g']), Pidx[it['concept']], RANK[it['kind']], it['order']))
+order = topic + full + [master]
+for n, it in enumerate(order, 1): it['n'] = n
+def qref(k):
+    it = find(k)
+    if it is None: return None
+    if it.get('is_var'):
+        par = next(p for p in order if any(s == it['src'] for s, _ in VAR.get(id(p), [])))
+        return f'Q{par["n"]} (variant)'
+    return f'Q{it["n"]}'
 
 # ---- HTML ----
 def split_tables(h, n=26):
@@ -158,79 +191,124 @@ def split_tables(h, n=26):
         if len(rows) <= n: return t
         head = rows[0] if '<th' in rows[0] else ''
         body = rows[1:] if head else rows
-        chunks = [body[i:i + n] for i in range(0, len(body), n)]
-        return ''.join('<table>' + head + ''.join(c) + '</table>' for c in chunks)
+        return ''.join('<table>' + head + ''.join(body[i:i + n]) + '</table>' for i in range(0, len(body), n))
     return re.sub(r'<table>.*?</table>', rep, h, flags=re.S)
-
+def blocks(h, cls):
+    h = split_tables(h)
+    b = re.findall(r'<table>.*?</table>|<p>.*?</p>|<ul>.*?</ul>|<ol>.*?</ol>|<h4>.*?</h4>', h, re.S)
+    return ''.join(f'<div class="{cls}">{x}</div>' for x in b) if b else f'<div class="{cls}">{h}</div>'
 def imgs(lst):
-    return ''.join(f'<img class="crop" src="file://{SP}/{fn}" style="width:{w*0.3528*0.92:.1f}mm">' for fn, w, h in lst)
-
-KN = {'sm-ill': 'SM Illustration', 'sm-ex': 'SM Example', 'sm-tyk': 'SM Test Your Knowledge', 'pq': 'ICAI Practice Questions',
-      'rtp': 'RTP', 'mtp': 'MTP', 'pyq': 'Past paper'}
+    return ''.join(f'<div class="cbox"><img class="crop" src="file://{SP}/{fn}" style="width:{w*0.3528*0.92:.1f}mm"></div>' for fn, w, h in lst)
+E = html.escape
 title = 'Ind AS 103 Business Combinations' if part == '103' else 'Ind AS 110 Consolidated Financial Statements'
-headtxt = f'Practice sheet · {title}'
+headtxt = f'Practice · {title}'
+FOOT = '<div class="foot"><span></span><span>FR LDR — Ss</span></div></section>'
+def sect(tag): return f'<section class="page"><div class="head"><span>{headtxt}</span><span class="tag">{E(tag)}</span></div>'
+
+def item_html(it, label=None):
+    o = []
+    nref = cu['notes'].get(it['concept'], '')
+    lab = label or f'Q{it["n"]}'
+    o.append(f'<h3 class="qh">{lab} · {E(P[it["concept"]]["title"])}<span class="src">{E(it["src"])}{" · " + it["type"] if it["type"] else ""} · <b>{E(nref)}</b></span></h3>')
+    if it.get('is_full') or it.get('is_master'):
+        tl = cu['tests'].get(next((k for k in cu['tests'] if key(it, k)), ''), []) if it.get('is_full') else cu['master_tests']
+        if tl: o.append('<div class="tests"><b>Adjustments tested:</b> ' + ' · '.join(tl) + '</div>')
+    if it['kind'] in ('sm-ill', 'sm-ex', 'sm-tyk', 'pq'):
+        o.append(imgs(it['q']))
+        if it['note']: o.append(f'<p class="small">{it["note"]}</p>')
+        if it['a']:
+            o.append('<h3 class="solh">Solution — ICAI</h3>' if not it.get('is_master') else '<h3 class="solh brk">Master question — solution (ICAI)</h3>')
+            o.append(imgs(it['a']))
+    else:
+        o.append(blocks(it['q'], 'qtxt'))
+        sh = ('Solution — app-written (ICAI suggested answer not in the repo; figures match ICAI\'s published key/answer)' if it['note'] == 'app' else 'Solution — ICAI')
+        if it.get('is_master'): o.append(f'<h3 class="solh brk">Master question — {sh}</h3>')
+        else: o.append(f'<h3 class="solh">{sh}</h3>')
+        o.append(blocks(it['a'], 'atxt'))
+    vs = VAR.get(id(it))
+    if vs:
+        o.append('<div class="var"><b>Same type — not repeated here.</b> What changes in each:<ul>' + ''.join(f'<li><b>{E(s)}</b> — {t}</li>' for s, t in vs) + '</ul></div>')
+    return o
+
+def play_html(g):
+    o = []
+    pl = cu['play'].get(g, [])
+    if not pl: return o
+    o.append(f'<h2 class="brk"><span class="n">{g}</span>Adjustments in this topic — what to do</h2>')
+    for a in pl:
+        refs = [r for r in (qref(k) for k in a['q']) if r]
+        o.append('<div class="adj">'
+                 f'<div class="at">{a["t"]}<span class="an">{E(a["n"])} · practise: {", ".join(refs)}</span></div>'
+                 f'<p><b>When:</b> {a["when"]}</p>'
+                 '<ol>' + ''.join(f'<li>{s}</li>' for s in a['do']) + '</ol>'
+                 f'<p class="aex"><b>ICAI figures:</b> {a["ex"]}</p></div>')
+    return o
+
 H = []
-H.append(f'<section class="page"><div class="head"><span>{headtxt}</span><span class="tag">Questions + full solutions</span></div>')
+H.append(sect('Questions + full solutions'))
 H.append(f'<h1><span class="u">{title}</span> — practice sheet</h1>')
-H.append('<div class="sub">Every question comes with its full solution, straight after it. <b>Cover the solution, solve by hand, then check.</b> '
-         'SM illustrations, SM Test Your Knowledge and ICAI Practice Questions are reproduced exactly as ICAI printed them (page images). '
-         'RTP, MTP and past-paper questions are ICAI\'s text with ICAI\'s suggested answers. Where ICAI\'s answer is not available, the solution is marked <b>app-written</b>. '
-         'Questions are grouped by concept; inside each concept: SM first, then Practice Questions, RTPs, MTPs and past papers.</div>')
+H.append('<div class="sub"><b>How to use:</b> each topic starts with ICAI\'s small illustrations and questions (cover the solution, solve, check). '
+         'Questions that repeat an earlier one are <b>not printed again</b> — the box under the original lists each repeat and what changes. '
+         'Each topic ends with <b>"Adjustments in this topic — what to do"</b>: the steps for every adjustment, ICAI\'s figures, the notes section to re-read, and the question numbers to practise. '
+         'Then come the <b>full-scale questions</b>, and last the <b>master question</b> — do it timed, without looking, to see if you are ready.</div>')
+H.append('<div class="sub">Every question header shows its concept and the <b>notes section and page</b> (pages = this PDF\'s notes part, which comes first). '
+         'SM illustrations, SM TYK and ICAI Practice Questions are ICAI\'s printed pages; RTP / MTP / past papers are ICAI\'s text and answers; solutions marked app-written are mine.</div>')
 if part == '110':
-    H.append('<p class="small">Scope: Ind AS 110 (control, investment entities, consolidation procedure, changes in stake, loss of control). Ind AS 28 associates, Ind AS 111 joint arrangements and Ind AS 27/112 are not included.</p>')
+    H.append('<p class="small">Scope: Ind AS 110. Ind AS 28 associates, Ind AS 111 joint arrangements and Ind AS 27 / 112 are not included.</p>')
 H.append('<h2>Index</h2>')
 rows = []
-for n, it in enumerate(items, 1):
-    it['n'] = n
-    rows.append(f'<tr><td>Q{n}</td><td>{html.escape(P[it["concept"]]["title"])}</td><td>{html.escape(it["src"])}</td><td>{it["type"]}</td></tr>')
-for i in range(0, len(rows), 20):
-    H.append('<table class="tight idx"><tr><th style="width:8%">No.</th><th style="width:44%">Concept</th><th>Source</th><th style="width:11%">Type</th></tr>' + ''.join(rows[i:i + 20]) + '</table>')
-H.append('<div class="foot"><span></span><span>FR LDR — Ss</span></div></section>')
+cur_g = None
+for it in order:
+    sec = 'Full-scale' if it.get('is_full') else ('MASTER' if it.get('is_master') else P[it['concept']]['g'])
+    nv = len(VAR.get(id(it), []))
+    rows.append(f'<tr><td>Q{it["n"]}</td><td>{E(sec)}</td><td>{E(P[it["concept"]]["title"])}</td><td>{E(it["src"])}{" (+" + str(nv) + " repeat" + ("s" if nv > 1 else "") + ")" if nv else ""}</td></tr>')
+for i in range(0, len(rows), 22):
+    H.append('<table class="tight idx"><tr><th style="width:7%">No.</th><th style="width:9%">Topic</th><th style="width:40%">Concept</th><th>Source</th></tr>' + ''.join(rows[i:i + 22]) + '</table>')
+H.append(FOOT)
 
 curg = None
-for it in items:
+for it in topic:
     g = P[it['concept']]['g']
     if g != curg:
-        if curg is not None: H.append('<div class="foot"><span></span><span>FR LDR — Ss</span></div></section>')
-        H.append(f'<section class="page"><div class="head"><span>{headtxt}</span><span class="tag">{html.escape(G[g])}</span></div>')
-        H.append(f'<h2 class="brk"><span class="n">{g}</span>{html.escape(G[g])}</h2>')
+        if curg is not None:
+            H.extend(play_html(curg)); H.append(FOOT)
+        H.append(sect(G[g]))
+        H.append(f'<h2 class="brk"><span class="n">{g}</span>{E(G[g])}</h2>')
         curg = g
-    H.append(f'<h3 class="qh">Q{it["n"]} · {html.escape(P[it["concept"]]["title"])}<span class="src">{html.escape(it["src"])}{" · " + it["type"] if it["type"] else ""}</span></h3>')
-    if it['kind'] in ('sm-ill', 'sm-ex', 'sm-tyk', 'pq'):
-        H.append(f'<div class="qbox">{imgs(it["q"])}</div>' if len(it['q']) == 1 else ''.join(f'<div class="qbox">{imgs([c])}</div>' for c in it['q']))
-        if it['note']: H.append(f'<p class="small">{it["note"]}</p>')
-        if it['a']:
-            H.append('<h3 class="solh">Solution — ICAI</h3>')
-            H.extend(f'<div class="abox">{imgs([c])}</div>' for c in it['a'])
-    else:
-        qh = split_tables(it['q'])
-        H.append('<div class="qtxt">' + qh + '</div>')
-        H.append('<h3 class="solh">' + ('Solution — app-written (ICAI suggested answer not in the repo; figures match ICAI\'s published key/answer)' if it['note'] == 'app' else 'Solution — ICAI') + '</h3>')
-        ah = split_tables(it['a'])
-        # put each top-level p/table as its own block so pages can break between them
-        for blk in re.findall(r'<table>.*?</table>|<p>.*?</p>|<ul>.*?</ul>|<ol>.*?</ol>|<h4>.*?</h4>', ah, re.S):
-            H.append(f'<div class="atxt">{blk}</div>')
-H.append('<div class="foot"><span></span><span>FR LDR — Ss</span></div></section>')
+    H.extend(item_html(it))
+H.extend(play_html(curg)); H.append(FOOT)
+H.append(sect('Full-scale questions'))
+H.append('<h2 class="brk"><span class="n">F</span>Full-scale questions</h2>')
+H.append('<p class="small">Exam-length questions. Each lists the adjustments it tests — if one trips you, go to that topic\'s "what to do" list and the notes section shown.</p>')
+for it in full: H.extend(item_html(it))
+H.append(FOOT)
+H.append(sect('Master question'))
+H.append('<h2 class="brk"><span class="n">M</span>Master question — test yourself</h2>')
+H.append('<div class="sticky">Do this last. Close the notes, set a timer (14 marks ≈ 25 minutes), write the full answer with working notes, then check against the solution on the next page. '
+         'For every adjustment you missed, go back to the topic list shown in brackets and redo its practice questions.</div>')
+H.extend(item_html(master, label=f'Q{master["n"]} · MASTER'))
+H.append(FOOT)
 
 head = open(f'{SP}/../head.html').read().replace('Ind AS 103 SM LDR', f'Practice {part}')
 css = '''<style>
  h3.qh { font-size: 17px; margin: 14px 0 4px; padding: 3px 8px; background: var(--hl-b, #dceeff); border-radius: 6px; }
- h3.qh .src { display: block; font-family: 'Patrick'; font-size: 13px; font-weight: normal; color: #555; }
+ h3.qh .src { display: block; font-family: 'Patrick'; font-size: 13px; font-weight: normal; color: #444; }
  h3.solh { font-size: 15px; color: var(--green, #1d7a3a); margin: 8px 0 2px; border-top: 2px dashed var(--green, #1d7a3a); padding-top: 3px; }
- .qbox, .abox { margin: 0 0 3px; }
+ .cbox { margin: 0 0 3px; }
  img.crop { display: block; max-width: 100%; max-height: 236mm; background: #fff; border: 1px solid #ccd; }
  .qtxt, .atxt { font-family: Arial, Helvetica, sans-serif; font-size: 11.5px; line-height: 16px; }
  .qtxt p, .atxt p { margin: 0 0 5px; }
  .qtxt table, .atxt table { font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 14px; margin: 0 0 6px; }
  .qtxt td, .atxt td, .qtxt th, .atxt th { padding: 1px 5px; }
- table.idx { font-size: 11.5px; }
+ table.idx { font-size: 11px; }
+ .var { font-size: 12.3px; border: 2px solid #c98a1b; background: #fff6e0; border-radius: 8px; padding: 3px 10px; margin: 6px 0 10px; }
+ .var ul { margin: 2px 0; }
+ .tests { font-size: 12.5px; background: #eef7ee; border-left: 4px solid var(--green, #1d7a3a); padding: 2px 8px; margin: 0 0 6px; }
+ .adj { border: 1.5px solid var(--ink); border-radius: 8px; padding: 2px 10px 4px; margin: 0 0 8px; background: rgba(255,255,255,.7); font-size: 12.8px; }
+ .adj .at { font-family: 'Kalam', cursive; font-size: 16px; font-weight: 700; color: var(--red); }
+ .adj .an { display: block; font-family: 'Patrick'; font-size: 12.5px; font-weight: normal; color: #333; }
+ .adj p { margin: 1px 0; } .adj ol { margin: 2px 0 2px 18px; padding: 0; } .adj li { margin: 0; }
+ .adj .aex { background: rgba(191,227,255,.35); padding: 1px 6px; border-radius: 4px; }
 </style>'''
-# the split above puts the whole question text in one block: split it too
-body = '\n'.join(H)
-def splitq(m):
-    inner = m.group(1)
-    blks = re.findall(r'<table>.*?</table>|<p>.*?</p>|<ul>.*?</ul>|<ol>.*?</ol>', inner, re.S)
-    return ''.join(f'<div class="qtxt">{b}</div>' for b in blks) if blks else m.group(0)
-body = re.sub(r'<div class="qtxt">(.*?)</div>(?=\n<h3 class="solh">)', splitq, body, flags=re.S)
-open(out, 'w').write(head.replace('</style></head>', '</style>' + css + '</head>') + body + '</body></html>')
-print(len(items), 'items')
+open(out, 'w').write(head.replace('</style></head>', '</style>' + css + '</head>') + '\n'.join(H) + '</body></html>')
+print(len(order), 'questions shown;', sum(len(v) for v in VAR.values()), 'repeats folded;', len(full), 'full-scale; master', master['src'])

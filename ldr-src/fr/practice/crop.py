@@ -1,4 +1,5 @@
 import pymupdf, re, os
+class CL(list): pass
 class Doc:
     def __init__(s, path):
         s.d=pymupdf.open(path); s.L=[]
@@ -46,4 +47,8 @@ class Doc:
                     fn=f'img/{name}_{len(out)}.jpg'; pix.save(fn, jpg_quality=78); out.append((fn,clip.width,clip.height))
             if pno>=b[0]: break
             pno+=1; y=0
+        out=CL(out); out.txt=s.text(a,b)
         return out
+
+    def text(s, a, b):
+        return ' '.join(r[4] for r in s.L if a <= (r[0], r[1]) < b and s.bounds[r[0]][0] <= r[1] <= s.bounds[r[0]][1])

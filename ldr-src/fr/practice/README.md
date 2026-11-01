@@ -1,6 +1,6 @@
 # Practice sheets (Ind AS 103, Ind AS 110)
 
-`build.py` builds one practice sheet per standard; `crop.py` cuts ICAI's printed pages into question / solution images.
+`build.py` builds one practice sheet per standard; `crop.py` cuts ICAI's printed pages into question / solution images; `cur.py` holds the curation: notes section/page for each concept, repeated questions folded under the original with what changes, the full-scale set, the master question, and each topic's "adjustments — what to do" list (figures quoted from ICAI's answers).
 
 - SM illustrations, SM examples (Ch 12 Ex 1–7), SM Test Your Knowledge and ICAI Practice Questions are page crops from ICAI's PDFs (SM Ch 12, Ch 13 Units 3, 4, 8; `83352bos67375-pq.pdf`), so tables appear exactly as printed.
 - RTP, MTP and past-paper items come from `data/fr/ch12-casebook.json` / `ch13-casebook.json` (ICAI text and suggested answers).

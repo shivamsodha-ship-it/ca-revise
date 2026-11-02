@@ -1,0 +1,508 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>FR full chapter notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style></head>
+<body><section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 33 Earnings per Share</span><span class="tag">SM Ch 8 Unit 2</span></div>
+  <h1><span class="u">Ind AS 33</span> — Earnings per Share</h1>
+  <div class="sub">Asked every paper: Sep 2025 Q3(b) 6 marks (basic + diluted with options and warrants), Jan 2026 MCQ (CCDs issued in the year), May 2026 MCQ (diluted with 10% convertible bonds, key 2.25).</div>
+
+  <h2><span class="n">1</span>Objective, scope, definitions <span class="para">2.1–2.4</span></h2>
+  <ul>
+    <li><b>Objective:</b> principles for determining and presenting EPS to improve comparison between entities and periods. <b>Limitation</b> (2.2.1): different accounting policies make EPS less comparable — so focus is on the denominator.</li>
+    <li><b>Scope:</b> separate/individual FS of an entity whose ordinary shares are traded (or being issued) in a public market, and CFS of a group whose parent is such an entity. Voluntary EPS must follow Ind AS 33. When both separate and CFS are presented, EPS needs to be shown only on the consolidated information (separate-FS EPS only in separate FS).</li>
+    <li><b>Ordinary share</b> = equity instrument subordinate to all other classes. <b>Potential ordinary share</b> = instrument that may entitle the holder to ordinary shares: convertible debt/preference shares (Example 1: preference shares convertible in 2 years), options and warrants, ESOPs (Example 3), contingently issuable shares (Example 4: more shares if price falls). <b>Dilution</b> = reduction in EPS (or increase in loss per share) on assumed conversion; <b>antidilution</b> = the opposite.</li>
+  </ul>
+
+  <h2><span class="n">2</span>Basic EPS <span class="para">2.6</span></h2>
+  <div class="box"><p><b>Basic EPS = profit or loss attributable to ordinary equity holders of the parent ÷ weighted average number of ordinary shares outstanding</b> — for profit from continuing operations and for total profit.</p></div>
+  <h3>Numerator (2.6.2)</h3>
+  <table class="tight">
+    <tr><th style="width:38%">Item</th><th>Treatment</th></tr>
+    <tr><td>Preference dividends (equity-classified)</td><td>Deduct: <b>cumulative</b> → the period's dividend whether declared or not (not arrears of earlier years); <b>non-cumulative</b> → only declared for the period. Liability-classified preference shares: dividend already in finance cost.</td></tr>
+    <tr><td>Increasing-rate preference shares (issued at discount / low dividend early)</td><td>Amortise the original-issue discount/premium to retained earnings using EIR; treat as preference dividend (Illus 1: deduct 1,00,000 in 20X3-X4).</td></tr>
+    <tr><td>Buy-back of preference shares above carrying amount (2.6.2.1)</td><td>Excess = return to preference holders → <b>deduct</b> (Example 5: ₹ 20 premium each); below carrying amount → <b>add</b>.</td></tr>
+    <tr><td>Early conversion induced by better terms (2.6.2.2)</td><td>FV of extra consideration → deduct.</td></tr>
+    <tr><td>Excess of carrying amount over settlement (2.6.2.3)</td><td>Add.</td></tr>
+    <tr><td>CFS</td><td>Profit attributable to <b>parent</b> (after NCI).</td></tr>
+  </table>
+  <h3>Denominator (2.6.3)</h3>
+  <table class="tight">
+    <tr><th style="width:38%">Event</th><th>Treatment</th></tr>
+    <tr><td>Weighted average</td><td>Shares at start ± shares issued/bought back × time-weighting factor (days or months outstanding). Bought-back shares treated as cancelled from that date (Illus 3).</td></tr>
+    <tr><td>Date of issue (2.6.3.2)</td><td>Generally when consideration is receivable: cash issue → when cash receivable; conversion of debt → from date interest stops; in lieu of interest/dividend → when stops accruing; business combination → acquisition date; settlement of liability → settlement date; for services → as services are rendered. Mandatorily convertible instruments → from contract date.</td></tr>
+    <tr><td>Contingently issuable (2.6.3.3)</td><td>Included from the date all conditions are satisfied (Example 6: issued if profit targets met — included only when met). Shares returnable (contingently returnable) are not outstanding.</td></tr>
+    <tr><td>Bonus issue, split, consolidation (2.6.3.4)</td><td>No change in resources → adjust as if the event happened at the start of the <b>earliest period presented</b>; restate prior-period EPS. Two-for-one bonus → multiply by three (Example 7). Illus 4: 10 paise × 4,000/5,000 = <b>8 paise</b>. Illus 6: 35 p × 9/10 = <b>31.5 p</b>. Illus 5: issue at FV, bonus 1:3, further issue → 15,76,389 shares.</td></tr>
+    <tr><td>Rights issue below FV (2.6.3.5)</td><td>Bonus element: multiply shares before the issue by <b>FV per share immediately before exercise ÷ theoretical ex-rights price</b>. TERP = (FV of all shares before + rights proceeds) ÷ shares after exercise. TYK 1: 1 for 5 at 90 p, cum-rights 1.00 → TERP 0.9833 → 10,00,000 × 3/12 × 1/0.9833 + 12,00,000 × 9/12 = <b>11,54,237</b>. Restate prior EPS by 1/factor. TYK 4: 20X1 EPS 2.54.</td></tr>
+    <tr><td>Partly paid shares (2.11.2)</td><td>Fraction = dividend participation relative to fully paid (Illus 17: 1.75/2.50 → 70,000). Not entitled to dividend → treat as options in diluted EPS.</td></tr>
+  </table>
+
+  <h2><span class="n">3</span>Diluted EPS <span class="para">2.7</span></h2>
+  <div class="box"><p><b>Diluted EPS = (basic earnings + after-tax effect of dilutive potential shares) ÷ (basic weighted shares + weighted dilutive potential shares)</b>. Potential shares deemed converted at the start of the period or the date of issue if later; if lapsed/cancelled during the year, only for the period outstanding; if converted during the year, up to the conversion date (then in basic).</p></div>
+  <table class="tight">
+    <tr><th style="width:30%">Instrument</th><th>Numerator</th><th>Denominator</th></tr>
+    <tr><td>Convertible debt (2.7.3.6)</td><td>+ interest (EIR finance cost) × (1 − tax)</td><td>+ shares on conversion (most advantageous rate to holder)</td></tr>
+    <tr><td>Convertible preference shares</td><td>+ preference dividend deducted in basic</td><td>+ shares on conversion</td></tr>
+    <tr><td>Options, warrants (2.7.3.4) — <b>treasury stock method</b></td><td>No change</td><td>+ shares issued for no consideration = shares under option − (exercise proceeds ÷ <b>average market price</b>); only if exercise price &lt; average price (in the money)</td></tr>
+    <tr><td>ESOPs (2.7.3.5)</td><td>No change</td><td>As options; exercise price includes FV of services still to be received (Ind AS 102 charge yet to be recognised). Performance-based → as contingently issuable.</td></tr>
+    <tr><td>Contingently issuable (2.7.3.7)</td><td>—</td><td>Number that would be issuable if the end of the reporting period were the end of the contingency period (Illus 12)</td></tr>
+    <tr><td>Settleable in shares or cash at issuer's option (2.7.3.9)</td><td>Adjust</td><td>Presume share settlement if dilutive</td></tr>
+    <tr><td>Purchased options (2.7.3.10)</td><td colspan="2">Excluded (always antidilutive)</td></tr>
+    <tr><td>Written put options (2.7.3.11)</td><td>—</td><td>Reverse treasury stock: if exercise price &gt; average price → shares to be issued to raise cash to buy back − shares bought back (Example 11)</td></tr>
+    <tr><td>Subsidiary / JV / associate instruments (2.7.3.3)</td><td colspan="2">Include in group diluted EPS by the parent's share of the change in the subsidiary's earnings (TYK 5; PQ 3: 1,000 options at 40, average 50 → 200 incremental shares)</td></tr>
+  </table>
+  <ul>
+    <li><b>Antidilution test (2.7.3.2):</b> compute <b>earnings per incremental share</b> for each potential share; include in order from most dilutive (lowest) to least, stop when EPS from <b>continuing operations</b> would rise. Loss from continuing operations → all potential shares antidilutive, even if total profit (Illus 13).</li>
+    <li>Each interim period computed independently (2.7.3.2); year-to-date not the sum of quarters.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 8:</b> 10,00,000 shares; 1,000 bonds × 20 shares = 20,000; interest 10,000 less tax 21% → 7,900 → (5,00,000 + 7,900)/10,20,000 = <b>0.498</b> (basic 0.50). <b>TYK 3:</b> 2,00,000 options at ₹ 6, average ₹ 8 → proceeds 12,00,000 buy 1,50,000 → <b>50,000</b> free shares. <b>TYK 2:</b> 5% bonds 1,00,000 (120 shares per ₹ 100), 25,000 converted on 31 March → diluted denominator 11,20,000 (all bonds as if converted from 1 Jan, converted ones up to conversion), interest add-back net of 30% tax → diluted EPS <b>0.181</b>. <b>Illus 11 / PQ 2:</b> options add 25,000 shares for no consideration. <b>Illus 14:</b> convertible bond liability component → interest add-back = EIR finance cost (9% × 3,03,755 = 27,338), shares 5,00,000.</p></div>
+
+  <h2><span class="n">4</span>Retrospective adjustment, presentation, disclosure, two-class <span class="para">2.8–2.11</span></h2>
+  <ul>
+    <li><b>Retrospective adjustment:</b> bonus/split/consolidation (or rights bonus element) after the year-end but before approval → EPS of all periods presented based on new number; disclose. Prior-period errors and policy changes → restate EPS. Diluted EPS of prior periods not restated for changes in assumptions or conversions.</li>
+    <li><b>Presentation:</b> basic and diluted EPS (continuing and total) on the face of the statement of P&amp;L, for each class with a different right to profit, equal prominence, even if negative; discontinued operations EPS in P&amp;L or notes.</li>
+    <li><b>Disclosure:</b> earnings used and reconciliation to profit; weighted shares and reconciliation basic to diluted; antidilutive instruments excluded; share transactions after the year-end that would have changed EPS significantly.</li>
+    <li><b>Two-class method</b> (participating preference shares, 2.11.1): allocate profit to dividends declared, then undistributed profit by participation rights (Illus 15: preference 7.20, ordinary 6.40 per share).</li>
+    <li><b>Ind AS 33 vs AS 20:</b> Ind AS needs EPS on CFS only when CFS presented; options/ESOP rules more detailed; written put options; etc.</li>
+  </ul>
+  <div class="sticky">Exam layout: (1) Basic: profit to equity − pref dividend; weighted shares table (date, shares, months/12, bonus/rights factor). (2) Diluted: list each potential share → earnings increment and share increment → earnings per incremental share → rank → add one by one while EPS falls. (3) State answers for each year presented, restated.</div>
+
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 108 Operating Segments</span><span class="tag">SM Ch 8 Unit 3</span></div>
+  <h2 class="brk"><span class="n">108</span>Ind AS 108 — Operating Segments</h2>
+  <h3>3.1–3.2 Core principle and scope</h3>
+  <ul>
+    <li><b>Core principle:</b> disclose information that lets users evaluate the nature and financial effects of the business activities and the economic environments the entity operates in — using the <b>management approach</b> (what the CODM sees).</li>
+    <li><b>Scope:</b> separate/individual FS and CFS of entities whose debt or equity is traded in a public market or that are filing to issue in one. If CFS and separate FS are in one report → segment information only for CFS. Voluntary disclosure called "segment information" must comply.</li>
+  </ul>
+  <h3>3.3 Operating segment</h3>
+  <ul>
+    <li>Component (a) engaging in business activities that earn revenue and incur expenses (including with other components of the same entity); (b) whose operating results are <b>regularly reviewed by the CODM</b> to allocate resources and assess performance; (c) for which <b>discrete financial information</b> is available. Start-ups without revenue can be segments.</li>
+    <li><b>Not segments:</b> corporate headquarters / functional departments that earn only incidental revenue; post-employment benefit plans (Illus 1). <b>Functions integral to the business</b> (3.3.1) — e.g. R&amp;D serving segments — not segments unless they earn revenue and are reviewed separately. Discontinued operations (3.3.2) may still be a segment if reviewed.</li>
+    <li><b>CODM</b> is a <b>function</b>, not a title (CEO, COO, board, committee). Where multiple sets of information are reviewed (Illus 2, 4): consider which components the CODM uses, nature of activities, existence of segment managers, information presented to the board; matrix structures → management's judgement (Illus 3). Information reviewed may be revenue only (Illus 2).</li>
+    <li><b>Segment manager</b> — accountable to the CODM; one manager may manage several segments.</li>
+  </ul>
+  <h3>3.4–3.6 Reportable segments</h3>
+  <table class="tight">
+    <tr><th style="width:24%">Step</th><th>Rule</th></tr>
+    <tr><td>1 Identify operating segments</td><td>As above.</td></tr>
+    <tr><td>2 Aggregate (optional, 3.5)</td><td>Two or more segments may be combined if consistent with the core principle, they have <b>similar economic characteristics</b> (e.g. similar long-term gross margins), and are similar in <b>each</b> of: nature of products/services; production processes; type/class of customers; distribution methods; regulatory environment (banking, insurance, utilities). Illus 5: France, Italy, Germany (EU) aggregated; UK and India separate. Illus 6: varieties of paper → one segment.</td></tr>
+    <tr><td>3 Quantitative thresholds (3.6) — any one</td><td><b>Revenue</b> (external + inter-segment) ≥ 10% of combined revenue of all operating segments; <b>|profit or loss|</b> ≥ 10% of the greater of combined profit of all profit-making segments and combined loss of all loss-making segments; <b>assets</b> ≥ 10% of combined assets of all segments.</td></tr>
+    <tr><td>4 Below thresholds</td><td>May be reported separately if management thinks useful; may be aggregated with other below-threshold segments only if similar economic characteristics and a majority of aggregation criteria.</td></tr>
+    <tr><td>5 75% test</td><td>Total <b>external</b> revenue of reportable segments ≥ <b>75%</b> of entity revenue; otherwise add segments (even below 10%) until met (Illus 9: each 5% → at least 15).</td></tr>
+    <tr><td>6 Others</td><td>Remaining activities in "all other segments", separate from reconciling items; describe sources of revenue.</td></tr>
+    <tr><td>Practical limit</td><td>Around 10 segments — consider whether too detailed (Illus 7: transport routes).</td></tr>
+    <tr><td>Prior period</td><td>Segment reportable last year stays reportable this year if management judges it of continuing significance; new reportable segment → restate comparatives unless impracticable.</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 8:</b> Pharma, Ayurveda, etc. — a segment failing revenue and profit tests passes the asset test → reportable; Ayurveda meets none. <b>PQ 1:</b> profit-makers A 780 + B 1,500 + E 6,000 = 8,280; losses C 2,300 + D 4,500 = 6,800 → base 8,280 → A 9% no; B, C, D, E yes. <b>TYK 1:</b> A, B, D reportable (83% of external revenue) → C in "other". <b>PQ 2:</b> eight segments — add segments until 75% test met even if below thresholds.</p></div>
+  <h3>3.7–3.9 Disclosure, measurement, restatement</h3>
+  <ul>
+    <li><b>General information:</b> factors used to identify segments (products, geography, regulatory, mix; whether aggregated) and types of products/services of each.</li>
+    <li><b>Profit or loss, assets, liabilities:</b> a measure of profit or loss for each reportable segment; total assets and liabilities if regularly provided to the CODM; and if included in the measure reviewed: external revenue, inter-segment revenue, interest revenue, interest expense (net only if majority of revenue is interest and CODM uses net), depreciation and amortisation, material income/expense items, share of associates/JVs, income tax, other material non-cash items; investment in associates and additions to non-current assets.</li>
+    <li><b>Measurement (3.8):</b> amounts as reported to the CODM; allocations only on a reasonable basis (Illus 10: common costs by usage, time, property value, salaries); if CODM uses more than one measure → the one closest to Ind AS. Explain bases of accounting for inter-segment transactions, differences from entity measurement (TYK 3: FIFO internally vs weighted average — disclose and reconcile), asymmetric allocations.</li>
+    <li><b>Reconciliations (3.8.1):</b> totals of reportable segments' revenue, profit or loss (before tax and discontinued ops unless CODM uses after), assets, liabilities and other material items → entity totals; all material reconciling items separately identified.</li>
+    <li><b>Restatement (3.9):</b> change in internal structure that changes segment composition → restate comparatives (incl. interim) unless information unavailable and cost excessive; disclose.</li>
+  </ul>
+  <h3>3.10 Entity-wide disclosures (even with one segment)</h3>
+  <ul>
+    <li><b>Products and services:</b> external revenue per product/service group.</li>
+    <li><b>Geographical areas:</b> external revenue and non-current assets (excluding financial instruments, deferred tax, post-employment assets) for India and all foreign countries in total, and material individual countries.</li>
+    <li><b>Major customers:</b> revenue from a single external customer ≥ <b>10%</b> of entity revenue → disclose the fact, total amount and segment(s) (identity not required). A group under common control (incl. government-controlled entities, by judgement) = single customer.</li>
+  </ul>
+  <div class="ex"><p><b>TYK 2 (coating industry):</b> prepare the segment report — segment revenue, results, assets, liabilities, capital expenditure, depreciation, reconciliation to entity totals; comparatives needed in practice. <b>Ind AS 108 vs AS 17:</b> management approach vs risks-and-returns approach; no primary/secondary format; CODM concept.</p></div>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 113 Fair Value Measurement</span><span class="tag">SM Ch 4 Unit 3</span></div>
+  <h2 class="brk"><span class="n">113</span>Ind AS 113 — Fair Value Measurement</h2>
+  <div class="sub">Asked: Jan 2026 Q6(c) 4 marks (market + income approach, discounts), May 2026 MCQ (highest and best use of vacant land) and Q6(c) 4 marks (principal vs most advantageous market).</div>
+  <h3>3.1–3.4 What, objective, scope, definition</h3>
+  <ul>
+    <li><b>Fair value</b> = price that would be received to sell an asset or paid to <b>transfer</b> a liability in an <b>orderly transaction</b> between <b>market participants</b> at the measurement date — an <b>exit price</b>, market-based, not entity-specific. A liability is <b>transferred</b> (not settled — Example 1: debt with face 1,00,000, market value 95,000).</li>
+    <li>Ind AS 113 defines FV, sets one framework and requires disclosures — it doesn't say <b>when</b> to use FV (other Ind AS do).</li>
+    <li><b>Out of scope (measurement and disclosure):</b> share-based payments (Ind AS 102), leasing (Ind AS 116), measures similar to FV but not FV — NRV (Ind AS 2), value in use (Ind AS 36). <b>Disclosure-only exclusions:</b> plan assets (Ind AS 19), retirement benefit plan investments, assets whose recoverable amount is FV less costs of disposal (Ind AS 36).</li>
+  </ul>
+  <h3>3.5–3.6 The asset or liability; unit of account</h3>
+  <ul>
+    <li>Consider characteristics a market participant would: <b>condition and location</b>, <b>restrictions on sale or use</b> that attach to the <b>asset</b> (land legally restricted for 10 years — Example 9; car bought for private use with restriction — Example 3). Restrictions specific to the <b>entity</b> are ignored (Example 2: entity's own business objective).</li>
+    <li><b>Unit of account</b> — set by the relevant Ind AS (single asset, CGU, business). No blockage factor for large holdings.</li>
+  </ul>
+  <h3>3.7–3.9 The transaction, participants, the price</h3>
+  <table class="tight">
+    <tr><th style="width:26%">Concept</th><th>Rule</th></tr>
+    <tr><td>Principal market</td><td>Market with the <b>greatest volume and level of activity</b> for the asset/liability that the entity can access. Use its price even if another market gives a better price (Example 7, 18: BSE vs NYSE — BSE if most activity). Presumed to be the market the entity normally transacts in.</td></tr>
+    <tr><td>Most advantageous market</td><td>Only if no principal market: the market that maximises the amount received (asset) after <b>transaction costs and transport costs</b>. Export cap (Example 8: diamonds) — consider access.</td></tr>
+    <tr><td>Market participants</td><td>Independent, knowledgeable, able and willing to transact; entity needn't identify specific ones — assumptions they would use.</td></tr>
+    <tr><td>Transaction costs</td><td>Not part of FV (entity-specific) — used only to choose the most advantageous market.</td></tr>
+    <tr><td>Transport costs</td><td><b>Deducted</b> if location is a characteristic of the asset (commodities) (Example 10).</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK 1:</b> Market A and B, no principal market → choose the market giving the higher net (price − transaction − transport); B nets 22 → FV = 25 − transport 2 = <b>23</b>. <b>May 2026 Q6(c):</b> principal market C → FV = 88 − 6 transport = <b>82</b>; otherwise most advantageous (D, net 76). <b>Illus 1:</b> bond — principal market price <b>500</b> (not 600 "HBU" or NPV).</p></div>
+  <h3>3.10 Non-financial assets — highest and best use, valuation premise</h3>
+  <ul>
+    <li><b>HBU</b> = use by market participants that maximises value: <b>physically possible</b>, <b>legally permissible</b>, <b>financially feasible</b>. Current use presumed HBU unless market factors suggest otherwise. Applies even if the entity intends a different use (TYK 2: factory land vs residential development; May 2026 MCQ: vacant land used as parking — value on HBU).</li>
+    <li><b>Valuation premise:</b> stand-alone, or in combination with other assets (then assume the other assets are available to participants). Defensive value: asset acquired to keep it from competitors still valued at HBU by participants.</li>
+  </ul>
+  <h3>3.11–3.13 Liabilities, own equity, financial assets, initial recognition</h3>
+  <ul>
+    <li><b>Liabilities and own equity:</b> assume transfer to a participant, liability remains outstanding. If held by another party as an asset → use the holder's view (quoted price of the identical item held as asset; else other observable; else income approach). If not held as an asset (decommissioning) → value from the view of a participant that would take it on: expected cash outflows + <b>compensation for risk (risk premium) + profit margin</b>, discounted (PQ 3: <b>194.97</b>).</li>
+    <li><b>Non-performance risk</b> (incl. own credit) included and assumed same before and after transfer. No separate adjustment for transfer restrictions.</li>
+    <li><b>Portfolio exception:</b> groups of financial assets and liabilities managed on net market/credit risk exposure may be measured on the net position.</li>
+    <li><b>Initial recognition:</b> transaction price (entry) usually = FV (exit), but not when: related party, forced/duress sale, unit of account differs (bundle), market differs. Day-1 gain/loss as the relevant Ind AS says (Ind AS 109 B5.1.2A).</li>
+  </ul>
+  <h3>3.14 Valuation techniques</h3>
+  <table class="tight">
+    <tr><th style="width:24%">Approach</th><th>How</th></tr>
+    <tr><td>Market</td><td>Prices of identical/comparable transactions; multiples (EV/EBITDA, P/E), matrix pricing.</td></tr>
+    <tr><td>Cost</td><td>Current replacement cost (cost to a participant to build a substitute of comparable utility, adjusted for obsolescence).</td></tr>
+    <tr><td>Income</td><td>Converts future amounts to one present amount: DCF (present value), option pricing, multi-period excess earnings. Present value: discount rate adjustment technique (Illus 2: risk premiums for 1- and 2-year assets) or expected present value (probability-weighted cash flows — Example 16: 820).</td></tr>
+  </table>
+  <ul>
+    <li>Use techniques appropriate and with sufficient data; maximise observable, minimise unobservable inputs; may use several and weight them (Jan 2026 / PQ 1: market and income approaches weighted equally → enterprise value → − debt + surplus cash → equity value per share; PQ 4: maintainable earnings × P/E → ₹ 170 per share; TYK 4: DCF → ₹ 204.83). Consistent from period to period (change = change in estimate).</li>
+  </ul>
+  <h3>3.15 Inputs — the hierarchy</h3>
+  <table class="tight">
+    <tr><th style="width:12%">Level</th><th>Inputs</th></tr>
+    <tr><td>1</td><td>Quoted prices (unadjusted) in active markets for <b>identical</b> items the entity can access. Adjust only if: large number of similar items priced by matrix, quoted price doesn't represent FV at date (event after close), liability/equity held as asset with features. Adjusted → lower level.</td></tr>
+    <tr><td>2</td><td>Observable other than Level 1: prices for <b>similar</b> items in active markets; identical/similar in <b>inactive</b> markets; observable inputs (interest rates, yield curves, implied volatilities, credit spreads); market-corroborated inputs. Examples 20–22: swap rate beyond observable tenor needing extrapolation, etc.</td></tr>
+    <tr><td>3</td><td><b>Unobservable</b> — entity's own data adjusted to participant assumptions (DCF with own forecasts, unquoted shares — Example 19: drug in final trials; Example 15: unquoted investment).</td></tr>
+  </table>
+  <ul>
+    <li>Category = <b>lowest level input that is significant</b> to the whole measurement.</li>
+    <li>Premiums and discounts (control premium, NCI discount, liquidity discount) only if consistent with the unit of account and a participant would apply them (TYK 3: 5% of XYZ equity 320 = 16 − 10% = <b>14.4</b>).</li>
+    <li><b>Disclosures (3.16):</b> by class — level in hierarchy, transfers between levels, techniques and inputs; for Level 3: reconciliation of opening to closing, unobservable inputs (quantitative), sensitivity narrative, valuation processes; recurring vs non-recurring measurements; HBU different from current use.</li>
+  </ul>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 41 Agriculture</span><span class="tag">SM Ch 10 Unit 1</span></div>
+  <h2 class="brk"><span class="n">41</span>Ind AS 41 — Agriculture</h2>
+  <h3>1.1–1.3 Objective, scope, definitions</h3>
+  <ul>
+    <li>Prescribes accounting for <b>agricultural activity</b> — management by an entity of the <b>biological transformation and harvest</b> of biological assets for sale or for conversion into agricultural produce or additional biological assets.</li>
+    <li><b>Applies to:</b> biological assets (except bearer plants); agricultural produce <b>at the point of harvest</b>; government grants on biological assets measured at FV less costs to sell.</li>
+    <li><b>Does not apply to:</b> land (Ind AS 16/40); <b>bearer plants</b> (Ind AS 16 — but their produce is in Ind AS 41); grants on bearer plants (Ind AS 20); intangibles (Ind AS 38); ROU assets from leases of land with biological assets (Ind AS 116); produce after harvest (Ind AS 2) — e.g. grapes → wine (Illus 1).</li>
+    <li><b>Biological transformation</b> = growth, degeneration, production, procreation. <b>Bearer plant</b> = living plant used in production of produce, expected to bear for more than one period, remote likelihood of sale as produce (except incidental scrap) — tea bushes, vines, fruit trees, coconut palms (PQ 3). <b>Harvest</b> = detachment of produce or cessation of life.</li>
+    <li>Activities: raising livestock, forestry, annual/perennial cropping, orchards, floriculture, aquaculture incl. <b>fish farming</b>. Not: ocean fishing, catching fish from ponds without managing growth (PQ 2), zoo animals for recreation, deforestation of unmanaged forests (TYK 5). Leasing orchards and managing them yourself = agricultural activity (PQ 1).</li>
+  </ul>
+  <h3>1.4–1.6 Recognition, measurement, gains and losses</h3>
+  <table class="tight">
+    <tr><th style="width:26%">Point</th><th>Rule</th></tr>
+    <tr><td>Recognise</td><td>Entity controls it from past events; future benefits probable; FV or cost measurable reliably.</td></tr>
+    <tr><td>Biological asset</td><td><b>Fair value less costs to sell</b> on initial recognition and at each reporting date. Costs to sell = incremental costs of disposal (commissions, levies, transfer duties) — not finance or tax; transport to market is part of FV (Ind AS 113 location).</td></tr>
+    <tr><td>Produce</td><td>FV less costs to sell <b>at the point of harvest</b> — this becomes <b>cost</b> under Ind AS 2 (Illus 5: milk 3,000 litres × ₹ 24 = 72,000).</td></tr>
+    <tr><td>FV not reliable</td><td>Rebuttable presumption that FV is reliable; only on <b>initial recognition</b> where no quoted prices and alternatives are unreliable → cost less accumulated depreciation and impairment, until FV becomes reliable. Once at FV, stays at FV. Cost may approximate FV when little biological transformation has occurred (seedlings just planted).</td></tr>
+    <tr><td>Gains / losses</td><td>Initial recognition gain/loss (loss arises because costs to sell are deducted; gain e.g. birth of a calf — Example 3: ₹ 5,000) and changes in FV less costs to sell → <b>P&amp;L</b> in the period. Produce at harvest → gain/loss in P&amp;L.</td></tr>
+    <tr><td>Groupings</td><td>By attributes (age, quality) for FV; contracts at future prices don't change FV.</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 2:</b> dairy herd of 250 three-year cattle; FV per cattle changes → gain 5,000 to P&amp;L (Biological asset Dr / Gain Cr). <b>Illus 3:</b> 100 sheep for 5,00,000; costs to sell 2% → initial 4,90,000 (loss 10,000); FV rises → gain <b>98,000</b>. <b>TYK 1:</b> cattle 1,00,000 + transport 1,000 at purchase; at year-end FV 1,10,000 less transport and 2% → remeasurement gain 9,800. <b>TYK 2:</b> herd of 500 cows + 20 calves — reconcile by price change vs physical change (closing 1,26,40,000). <b>TYK 3:</b> goat — FV 44,800 − transport 400 − 2% fee = 43,504. <b>TYK 4:</b> goats 10 lakh + 2% cost; FV 9 lakh → loss 98,000.</p></div>
+  <h3>1.7 Government grants</h3>
+  <ul>
+    <li>Unconditional grant on a biological asset at FV less costs to sell → P&amp;L when it becomes <b>receivable</b>.</li>
+    <li>Conditional (incl. requiring the entity not to engage in an activity) → P&amp;L only when conditions are met (Example 4: 10 cr for 5 years' cultivation, refundable if less → recognise after 5 years; if the grant is earned year by year, recognise year by year).</li>
+    <li>Biological asset measured at cost (FV unreliable), or grants on bearer plants / equipment → <b>Ind AS 20</b> (Illus 4: incubator for poultry → reduce asset cost or deferred income over 3-year life).</li>
+  </ul>
+  <h3>1.8 Disclosure</h3>
+  <ul>
+    <li>Aggregate gain/loss for the period on initial recognition and change in FV less costs to sell; description of each group (consumable vs bearer; mature vs immature); reconciliation of carrying amount (purchases, sales, harvest, FV changes, business combinations, FX); restrictions/pledges; commitments; financial risk management; if at cost — why FV not reliable, range of estimates, depreciation method; grants.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 5 (Moon Ltd):</b> land (Ind AS 16), 200 dairy cows at FV less costs (Ind AS 41), milk at harvest → inventory at 72,000. <b>PQ 3 (coconut palms):</b> palms are bearer plants (Ind AS 16); coconuts growing on the palms are produce measured at FV less costs → total ₹ 231 crore.</p></div>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 19 Employee Benefits</span><span class="tag">SM Ch 6 Unit 1</span></div>
+  <h2 class="brk"><span class="n">19</span>Ind AS 19 — Employee Benefits</h2>
+  <h3>1.1–1.4 Objective, scope, the four categories</h3>
+  <ul>
+    <li>Objective: recognise a <b>liability</b> when an employee has given service in exchange for benefits payable in future, and an <b>expense</b> when the entity consumes that service. Applies to all employee benefits except share-based payments (Ind AS 102). Benefits arise under formal plans, legislation/industry arrangements, or <b>informal practices</b> that give a <b>constructive obligation</b>.</li>
+    <li>"Employees" include directors and management; full-time, part-time, permanent, casual, temporary.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:22%">Category</th><th>What</th><th style="width:34%">Accounting in one line</th></tr>
+    <tr><td>Short-term</td><td>Expected to be settled <b>wholly within 12 months</b> after the year end: wages, social security, paid annual/sick leave, profit-sharing and bonuses, non-monetary benefits (medical, housing, cars).</td><td>Undiscounted amount, expense (or asset cost) as service is given.</td></tr>
+    <tr><td>Post-employment</td><td>Payable after completion of employment: pensions, gratuity, PF, post-employment medical.</td><td>DC → contribution as expense. DB → actuarial (PUCM), discounted.</td></tr>
+    <tr><td>Other long-term</td><td>All other benefits not settled within 12 months: long-service leave, sabbatical, jubilee, long-term disability, deferred bonus.</td><td>Like DB, but remeasurements go to <b>P&amp;L</b>.</td></tr>
+    <tr><td>Termination</td><td>Provided in exchange for termination of employment (entity's decision, or employee accepts an offer) — not for service.</td><td>Earlier of: can't withdraw offer, or restructuring costs recognised (Ind AS 37).</td></tr>
+  </table>
+  <h3>1.5 Short-term benefits</h3>
+  <ul>
+    <li><b>Paid absences:</b> <b>accumulating</b> (carried forward) — recognise when service increases entitlement; <b>vesting</b> (paid in cash on leaving) vs <b>non-vesting</b> (lost on leaving) — both create an obligation; non-vesting measured on expected utilisation. <b>Non-accumulating</b> (maternity, jury service) — recognise when the absence occurs.</li>
+    <li>Measure accumulating absences at the <b>additional amount expected to be paid</b> as a result of unused entitlement at the year end.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 1 (vested):</b> 30,00,000 ÷ 300 = 10,000 per day; 2 days unused paid → expense <b>30,20,000</b>. <b>Illus 2 (non-vested, all 3 days expected used):</b> 20X0-X1 expense 30,30,000 (provision 30,000); 20X1-X2 29,70,000. <b>Illus 3:</b> expected 2 days → 30,20,000 / 29,80,000; difference is a change in estimate (Ind AS 8). <b>Illus 4:</b> casual 30 employees × 5 = 150 days, sick 10 × 1 = 10 days. <b>Illus 5:</b> vested 100 × 2 × 2,500 = <b>5,00,000</b>; non-vested 100 × 20% × 1 × 2,500 = <b>50,000</b>. <b>TYK 1 (LIFO):</b> 8 employees × 1.5 days → liability = <b>12 days</b> of sick pay. <b>Illus 6:</b> provision 1,337 man-days × 16,500 = 2,20,60,500.</p></div>
+  <ul>
+    <li><b>Profit-sharing and bonus:</b> recognise when (a) a present legal or <b>constructive</b> obligation from past events and (b) a reliable estimate (formal formula, amounts fixed before FS approved, past practice). Reflect expected leavers (Illus 7: 5% of 200 cr with 10% expected to leave → <b>9 crore</b> = 4.5%). Past practice of inflation-linked bonus = constructive obligation (Illus 8). Settled after 12 months → other long-term.</li>
+  </ul>
+  <h3>1.6–1.7 Post-employment: DC vs DB; DC accounting</h3>
+  <table class="tight">
+    <tr><th style="width:22%">Test</th><th>Defined contribution</th><th>Defined benefit</th></tr>
+    <tr><td>Obligation</td><td>Limited to agreed contributions</td><td>Provide agreed benefits</td></tr>
+    <tr><td>Actuarial + investment risk</td><td><b>Employee</b></td><td><b>Entity</b></td></tr>
+    <tr><td>SM cases</td><td>Illus 10: 12% to state PF/pension fund, state pays → DC</td><td>Illus 9: lump sum on final salary, company funds 3% → DB (company bears shortfall)</td></tr>
+  </table>
+  <ul>
+    <li><b>Multi-employer plans:</b> classify by terms (DC or DB); if DB but insufficient info → treat as DC with disclosures; a contractual agreement to fund a deficit → recognise liability (Example 1). <b>Group plans</b> (entities under common control): DB plan accounted by the entity with the legal sponsor; others recognise their contribution. <b>State plans</b> — usually DC. <b>Insured benefits</b> — DC unless the entity retains an obligation.</li>
+    <li><b>DC accounting:</b> contribution payable for service in the period → expense (or asset), liability for unpaid amount, asset if prepaid; undiscounted unless due beyond 12 months. <b>Illus 11:</b> 12% × 50 cr = 6 cr expense; 2.8 cr paid → <b>3.2 cr payable</b>.</li>
+  </ul>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 19 Employee Benefits (contd.)</span><span class="tag">SM Ch 6 Unit 1</span></div>
+  <h3>1.8 DB plans — the balance sheet</h3>
+  <ul>
+    <li>Payment-basis accounting for gratuity with a disclosure is <b>not</b> Ind AS-compliant — disclosure doesn't cure non-compliance (Illus 12).</li>
+    <li><b>Net defined benefit liability (asset)</b> = PV of DBO − FV of plan assets (deficit or surplus), with a surplus limited to the <b>asset ceiling</b> (PV of economic benefits as refunds or reductions in future contributions).</li>
+  </ul>
+  <div class="ex"><p><b>Illus 13:</b> DBO 3,500 − plan assets 3,332 = <b>168 net liability</b> (non-current provision). <b>Illus 14:</b> 2,975 − 2,750 = surplus 225; ceiling 175 → asset <b>175</b> (lower).</p></div>
+  <h3>1.9 Measuring the DBO — PUCM, attribution, assumptions</h3>
+  <ul>
+    <li><b>Projected unit credit method</b>: each year of service gives an additional unit of benefit; measure each unit separately; discount. Use projected (final) salary. Illus 15: 1% of final salary per year → 131 at end of year 5, PV each year 89, 98, 108, 119, 131 at 10%.</li>
+    <li><b>Attribution:</b> to periods of service under the <b>plan's benefit formula</b>, but on a <b>straight-line basis</b> if later years give a materially higher level of benefit (back-loaded). From the date service first leads to benefits until further service leads to no material further benefit.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:30%">SM case</th><th>Attribution</th></tr>
+    <tr><td>Illus 16: 150/year, vests after 10 years</td><td>150 each year; CSC reflects probability of not completing 10 years (vesting doesn't stop recognition).</td></tr>
+    <tr><td>Illus 17 / TYK 3: 150 (140)/year excluding service before 25, vests immediately</td><td>Nil before 25, 150 (140) each later year.</td></tr>
+    <tr><td>Illus 18: lump sum 2,000 vesting after 10 years, nothing after</td><td>200 to each of the first 10 years; nil after.</td></tr>
+    <tr><td>Illus 19: 5% of final salary each year before 55</td><td>5% each year up to 55; nil after.</td></tr>
+    <tr><td>Illus 20: medical 40% (10–20 yrs) / 50% (20+)</td><td>Leave after 20: 2.5% per year for 20 years (straight-line). Leave in 10–20: 4% each of first 10 years. Within 10: nil.</td></tr>
+    <tr><td>Illus 21: 10% / 50%</td><td>Back-loaded → leave after 20: 2.5% per year; leave in 10–20: 1% each of first 10 years.</td></tr>
+    <tr><td>Illus 22: gratuity capped at ₹ 10,00,000 (Payment of Gratuity Act)</td><td>Cap reached in year 8 → 1,25,000 to each of first 8 years; nil after.</td></tr>
+    <tr><td>Example 3: 4,000 at 55 after 20 years, or at 65</td><td>Join before 35 → 200/year for 20 years; join 35–45 → 4,000 ÷ 20 years; join after 45 → over years to 65.</td></tr>
+  </table>
+  <ul>
+    <li><b>Actuarial assumptions</b> — unbiased and mutually compatible: demographic (mortality, turnover, early retirement, dependants, claim rates) and financial (<b>discount rate</b>, salary growth, medical cost trends, benefit levels). Discount rate = market yields at year end on <b>government bonds</b> in India (for INR) of matching currency and term. Salary projection includes inflation, seniority, promotion.</li>
+  </ul>
+  <h3>1.10 Plan assets and reimbursements</h3>
+  <ul>
+    <li>Plan assets = assets held by a long-term employee benefit fund or qualifying insurance policies, not available to the entity's creditors; at <b>FV</b>; exclude unpaid contributions and non-transferable entity-issued instruments.</li>
+    <li>Reimbursement right (insurer will pay part of the obligation) — not a plan asset → separate asset at FV; treated like plan assets in P&amp;L/OCI.</li>
+  </ul>
+  <h3>1.11 Components of DB cost</h3>
+  <table class="tight">
+    <tr><th style="width:24%">Component</th><th>What</th><th style="width:12%">Where</th></tr>
+    <tr><td>Service cost</td><td><b>Current service cost</b>; <b>past service cost</b> (plan amendment or curtailment — recognise <b>immediately</b>, vested or not, at the earlier of amendment/curtailment and related restructuring or termination costs); <b>gain/loss on settlement</b> (PV of DBO settled − settlement price).</td><td>P&amp;L</td></tr>
+    <tr><td>Net interest</td><td>Net DB liability (asset) × <b>discount rate</b> at start of year (adjusted for contributions/benefits during the year) = interest cost on DBO − interest income on plan assets ± interest on ceiling effect.</td><td>P&amp;L</td></tr>
+    <tr><td>Remeasurements</td><td>Actuarial gains/losses on DBO; return on plan assets <b>excluding</b> interest income; change in asset ceiling effect excluding interest.</td><td><b>OCI</b> — never recycled (may transfer within equity)</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 23:</b> surplus of 60 lakh from first actuarial valuation = remeasurement in OCI — not spread by reducing contributions. <b>TYK 6:</b> pension raised to 3% → past service cost 2,75,000 + 2,21,000 = <b>4,96,000</b> recognised immediately (vested or not).</p></div>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 19 Employee Benefits (contd.)</span><span class="tag">SM Ch 6 Unit 1</span></div>
+  <h3>The exam working — DBO and plan-asset reconciliations</h3>
+  <table class="tight">
+    <tr><th>DBO</th><th>₹</th><th>Plan assets</th><th>₹</th></tr>
+    <tr><td>Opening PV of DBO</td><td>x</td><td>Opening FV</td><td>x</td></tr>
+    <tr><td>+ Interest cost (opening × rate)</td><td>x</td><td>+ Interest income (opening × same rate)</td><td>x</td></tr>
+    <tr><td>+ Current service cost</td><td>x</td><td>+ Contributions</td><td>x</td></tr>
+    <tr><td>+ Past service cost</td><td>x</td><td>− Benefits paid</td><td>(x)</td></tr>
+    <tr><td>− Benefits paid</td><td>(x)</td><td>− Paid on settlement</td><td>(x)</td></tr>
+    <tr><td>− DBO settled / curtailed</td><td>(x)</td><td>± Remeasurement (balancing)</td><td>x</td></tr>
+    <tr><td>± Actuarial loss/(gain) (balancing)</td><td>x</td><td>Closing FV (given)</td><td>x</td></tr>
+    <tr><td>Closing PV (given)</td><td>x</td><td></td><td></td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 24 (RKA, ₹ lacs):</b> DBO 1,400 + interest 112 + CSC 55 + actuarial loss <b>13</b> = 1,580. Assets 1,140 + contribution 111 + actual return 24 = 1,275; interest income 91 → loss on assets 67. P&amp;L = 55 + net interest 21 (8% × 260) = <b>76</b>; OCI = 13 + 67 = <b>80</b>; closing net liability <b>305</b>. Entry: P&amp;L 76 Dr, OCI 80 Dr / Cash 111, Net DB liability 45.</p>
+  <p><b>PQ 6 (Arunachalam, ₹ lakhs):</b> DBO 1,500 + 75 + 155 + PSC 37.5 − 105 − settled 200 + actuarial loss <b>237.5</b> = 1,700. Assets 1,300 + 65 + 175 − 105 − 187.5 + gain <b>152.5</b> = 1,400. P&amp;L = 155 + 37.5 − settlement gain 12.5 + net interest 10 = <b>190</b>; OCI loss <b>85</b>; net liability <b>300</b>. <b>PQ 2 (A Ltd, ₹ '000):</b> same pattern — CSC 6,200, PSC 1,500, net finance 400 (8,000 × 5%), settlement gain 500, remeasurement loss <b>3,400</b>, closing liability 12,000. <b>PQ 3:</b> CSC 5,10,000 + net interest 4,250; OCI loss on DBO 2,33,750, gain on assets 68,000; liability <b>3,40,000</b>. <b>PQ 1:</b> net interest 2,000 × 10% = 200; return 2,000 − interest 1,000 = remeasurement gain 1,000. <b>PQ 4:</b> actual return 2,00,000 − expected 1,17,500 = 82,500 − DBO loss 6,000 = net gain <b>76,500</b> to OCI. <b>PQ 5:</b> P&amp;L 7.41 lakhs (20X1) and 8.64 lakhs (20X2) — CSC + interest − investment income.</p></div>
+  <h3>1.12–1.13 Presentation and disclosure</h3>
+  <ul>
+    <li>Offset an asset of one plan against a liability of another only with a legal right and intention to settle net. Current/non-current split not required by Ind AS 19 (Ind AS 1 governs). Components may be presented in P&amp;L as the entity chooses (service cost in employee cost, net interest in finance cost) — remeasurements in OCI.</li>
+    <li>Disclose: characteristics and risks of plans; reconciliation of opening to closing net liability (DBO, plan assets, ceiling) showing each component; plan assets by class (quoted/unquoted); significant actuarial assumptions and <b>sensitivity analysis</b>; funding arrangements, expected contributions next year, maturity profile (weighted average duration).</li>
+  </ul>
+  <h3>1.14 Other long-term benefits</h3>
+  <ul>
+    <li>Same measurement as DB (PUCM, discounting) but simpler: <b>service cost, net interest and remeasurements all in P&amp;L</b> (no OCI). Long-term disability: if level depends on service → accrue as service given; if not → recognise when the event occurs.</li>
+  </ul>
+  <h3>1.15 Termination benefits</h3>
+  <ul>
+    <li>Recognise at the <b>earlier</b> of: (a) when the entity can no longer withdraw the offer (employee accepts; or a restriction prevents withdrawal) and (b) when it recognises restructuring costs under Ind AS 37 that involve termination benefits.</li>
+    <li>Measure per the nature: settled wholly within 12 months → short-term rules; otherwise → other long-term rules. Voluntary offer → based on number expected to accept.</li>
+    <li>Benefits conditional on future service are <b>not</b> termination benefits (Example 4: factory closing in 10 months; employees who stay to closure get 30,000, leavers get 10,000 → 10,000 = termination benefit recognised on announcement; extra 20,000 = short-term benefit for service, spread over the 10 months).</li>
+  </ul>
+  <h3>1.16 Appendix — limit on DB asset (asset ceiling)</h3>
+  <ul>
+    <li>Refund available if the entity has an <b>unconditional right</b> to it (during plan life, on gradual settlement, or on wind-up), measured as surplus less costs. Reduction in future contributions = future service cost less any minimum funding contributions. Minimum funding requirement for past service that won't be available as a refund/reduction once paid → recognise a <b>liability</b>.</li>
+  </ul>
+  <div class="sticky"><b>Exam frame:</b> classify (short-term / DC / DB / other long-term / termination) → for DB build the two reconciliations → P&amp;L = CSC + PSC ± settlement + net interest → OCI = balancing figures → net liability = closing DBO − closing assets (cap a surplus at the ceiling) → entry.</div>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 36 Impairment of Assets</span><span class="tag">SM Ch 5 Unit 4</span></div>
+  <h2 class="brk"><span class="n">36</span>Ind AS 36 — Impairment of Assets</h2>
+  <div class="sub">Asked: Sep 2025 5 marks (machine, revaluation surplus), Jan 2026 MCQ, May 2026 MCQ (CGUs + corporate asset).</div>
+  <h3>4.1–4.3 Objective, scope, definitions</h3>
+  <ul>
+    <li>An asset may not be carried above its <b>recoverable amount</b>. Applies to PPE, ROU assets, investment property at cost, intangibles, goodwill, investments in subsidiaries/associates/JVs in separate FS (at cost).</li>
+    <li><b>Excluded</b> (own rules): inventories (Ind AS 2), contract assets/costs (115), deferred tax assets (12), employee benefit assets (19), financial assets in Ind AS 109, investment property at FV, biological assets at FV less costs to sell (41), insurance contracts, non-current assets held for sale (105).</li>
+    <li><b>Recoverable amount</b> = higher of <b>FV less costs of disposal</b> and <b>value in use</b>. <b>CGU</b> = smallest identifiable group of assets generating largely independent cash inflows. <b>Corporate assets</b> = assets other than goodwill that contribute to several CGUs (HQ, IT centre).</li>
+  </ul>
+  <h3>4.4–4.5 When to test</h3>
+  <table class="tight">
+    <tr><th style="width:24%">Indicators (each reporting date)</th><th>Examples</th></tr>
+    <tr><td>External</td><td>Market value fell significantly more than expected; adverse technological, market, economic or legal changes; market interest rates up (raises discount rate); <b>carrying amount of net assets above market capitalisation</b>.</td></tr>
+    <tr><td>Internal</td><td>Obsolescence or physical damage; asset idle, plans to discontinue/restructure/dispose early; useful life reassessed as finite; performance worse than expected (cash flows, losses).</td></tr>
+    <tr><td>Subsidiary/associate dividend</td><td>Dividend exceeds total comprehensive income, or separate-FS carrying amount exceeds consolidated net assets incl. goodwill.</td></tr>
+  </table>
+  <ul>
+    <li><b>Annual test regardless of indicators:</b> goodwill from a business combination; intangibles with <b>indefinite</b> lives; intangibles <b>not yet available for use</b>. Any time in the year but the <b>same time each year</b>; different CGUs may be tested at different times; goodwill acquired this year → test before year end (Example 1).</li>
+    <li>Materiality: if earlier calculations show a large headroom and nothing changed, no re-estimate needed. An indicator may also mean the useful life, depreciation method or residual value needs review even if no loss.</li>
+  </ul>
+  <h3>4.6–4.7 Recoverable amount; FV less costs of disposal</h3>
+  <ul>
+    <li>Not always necessary to compute both — if either exceeds carrying amount, no impairment. If FVLCD can't be measured, use VIU; if VIU is not materially above FVLCD (asset held for disposal), use FVLCD. Determined for the individual asset unless it doesn't generate independent inflows → its <b>CGU</b>.</li>
+    <li>FV per Ind AS 113. <b>Costs of disposal</b> = incremental costs directly attributable to disposal (legal costs, stamp duty, removal costs, costs to bring to saleable condition) — not finance costs, tax, or termination benefits/reorganisation costs.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 1:</b> building carrying 300 lakh; recoverable = higher of 250 and 238 = <b>250</b> → loss 50. <b>Illus 4:</b> furnace 250 lakh; VIU 200, FV 200 − disposal 13 = 187 → recoverable <b>200</b>, loss <b>50</b>.</p></div>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 36 Impairment of Assets (contd.)</span><span class="tag">SM Ch 5 Unit 4</span></div>
+  <h3>4.8 Value in use</h3>
+  <table class="tight">
+    <tr><th style="width:26%">Element</th><th>Rule</th></tr>
+    <tr><td>Cash flows — basis</td><td>Reasonable, supportable assumptions; most recent <b>approved budgets</b> for max <b>5 years</b>; beyond that extrapolate with a steady or declining growth rate (not above long-term average for the industry/country) unless justified.</td></tr>
+    <tr><td>Include</td><td>Inflows from continuing use; outflows necessarily incurred (incl. allocated overheads) to generate them; net disposal proceeds at end of life.</td></tr>
+    <tr><td>Exclude</td><td>Future <b>restructuring</b> the entity is not yet committed to (Illus 2: VIU 36 m excluding reorganisation → loss 4 m against 40 m; PQ 10: pre-restructuring VIU 62,73,000 vs 65 lakh → loss <b>2,27,000</b>); <b>improvements/enhancements</b> of performance; <b>financing</b> flows; <b>income tax</b> flows.</td></tr>
+    <tr><td>Current condition</td><td>Asset in its current condition; day-to-day servicing included.</td></tr>
+    <tr><td>Foreign currency</td><td>Estimate in the currency generated, discount at a rate for that currency, translate PV at <b>spot</b> on the date of VIU.</td></tr>
+    <tr><td>Discount rate</td><td><b>Pre-tax</b>, reflecting time value and asset-specific risks not already in the cash flows; start from WACC, incremental borrowing rate, other market rates; adjust (PQ 5: 8% pre-tax → PV 20,73,169).</td></tr>
+    <tr><td>Expected cash flow approach</td><td>PQ 1: 100/200/300 at 10/60/30% → <b>220</b>. PQ 2: 1,000 at years 1/2/3 with 10/60/30% → expected PV <b>892.36</b>. PQ 3: (a) range 50–250 → 150; (b) most likely 100 → 133.33; (c) probabilities → 140.</td></tr>
+  </table>
+  <h3>4.9 Recognising and measuring a loss</h3>
+  <ul>
+    <li><b>Individual asset:</b> loss = carrying amount − recoverable amount → <b>P&amp;L</b>, unless the asset is <b>revalued</b> → first against revaluation surplus (OCI) for that asset, excess in P&amp;L. Loss above carrying amount → liability only if another Ind AS requires. Revise depreciation for remaining life. Recompute deferred tax (Illus 5: carrying 1,000 → 650, tax base 800 → DTL 60 becomes DTA <b>45</b>).</li>
+  </ul>
+  <div class="ex"><p><b>Illus 12:</b> revalued asset — loss first against revaluation surplus of 14 lakh, balance <b>1.30 lakh</b> to P&amp;L; revised carrying 12 lakh ÷ 3 years = <b>4 lakh</b> depreciation. <b>Illus 13:</b> 500 vs VIU 400 / FVLCS 375 → loss <b>100</b> (Impairment loss Dr / Asset Cr; P&amp;L Dr / Impairment loss Cr). <b>PQ 7:</b> machine revalued to 2,50,000 → impairment 1,36,111: 34,000 against surplus, <b>1,02,111</b> to P&amp;L; then 1,00,000 ÷ 10 = 10,000 depreciation. <b>PQ 6:</b> 71,770 loss — 36,000 against surplus, 35,770 to P&amp;L; possible government compensation recognised only when receivable. <b>TYK 4:</b> machinery 100 cr, 1 year → 80 cr; recoverable = higher of VIU 75.31 and FVLCS 70 → loss <b>4.69 cr</b>; 75.31 over 4 years.</p></div>
+  <h3>CGUs</h3>
+  <ul>
+    <li>Identify the CGU consistently from period to period. If an <b>active market</b> exists for the output (even if used internally) → separate CGU, using market prices for the internal output.</li>
+    <li>SM cases: magazine titles → <b>each title</b> (Illus 14); private railway sold only as scrap → <b>the mine</b> (15); 7 bus routes required by contract → <b>the company</b> (16); plant X selling 60% intermediate to Y with no active market → <b>X and Y together</b> (17); plants 1–3 with production allocated between 2 and 3 → <b>XYZ as a whole</b> (18); HQ building with 1/3 vacant → corporate asset, CGU = <b>Apex as a whole</b> (TYK 1).</li>
+    <li>Carrying amount of a CGU includes only assets directly attributable or allocated reasonably, and excludes recognised liabilities unless the buyer would assume them (Illus 6: mine with restoration provision — compare net 500 with recoverable 800/700 → no impairment).</li>
+  </ul>
+  <h3>Goodwill and corporate assets</h3>
+  <ul>
+    <li>Goodwill allocated to each CGU/group expected to benefit — the lowest level monitored internally, <b>not larger than an operating segment</b> (Ind AS 108) before aggregation. Initial allocation completed before the end of the year after acquisition (Illus 7: 50 − 35 → goodwill 15 = CGU 1 <b>8</b>, CGU 2 <b>7</b>).</li>
+    <li>Disposal of an operation within a CGU → include goodwill in its gain/loss on <b>relative values</b> (Example 7). Reorganisation → reallocate on relative values (Example 8 / Illus 19).</li>
+    <li><b>Corporate assets:</b> allocate on a reasonable, consistent basis → test each CGU with its share. If not allocable, test the CGU without it, then the smallest group of CGUs to which it can be allocated (bottom-up / top-down). <b>Illus 8:</b> building 10 allocated 4/6 → CGU A 24 vs recoverable 18 → loss 6 = building <b>1</b> (4/24), other assets <b>5</b>. <b>TYK 2:</b> step I losses for B and C with allocated corporate assets (total 78); step II ABC as a whole 3,072 vs 3,200 → no further loss.</li>
+  </ul>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 36 Impairment of Assets (contd.)</span><span class="tag">SM Ch 5 Unit 4</span></div>
+  <h3>Allocating a CGU loss</h3>
+  <ol>
+    <li>Reduce <b>goodwill</b> allocated to the CGU.</li>
+    <li>Then other assets <b>pro rata</b> to their carrying amounts.</li>
+    <li>No asset below the <b>highest</b> of its FVLCD, VIU (if determinable) and zero — the excess is reallocated pro rata to the others.</li>
+  </ol>
+  <div class="ex"><p><b>Illus 20:</b> Plant A carrying 1,000 cr incl. goodwill 200; loss 500 → goodwill <b>200</b>, other assets <b>300</b> → 600. <b>Illus 9:</b> damaged machine, no independent cash flows, production line not impaired. (1) No commitment to replace → recoverable amount of the machine can't be estimated alone → <b>no loss</b> (review depreciation). (2) Committed to replace and sell soon → VIU ≈ FVLCD → loss recognised on the machine.</p></div>
+  <h3>Goodwill and NCI</h3>
+  <ul>
+    <li>NCI at <b>proportionate share</b> → goodwill recognised is only the parent's share. For testing, <b>gross up</b> the goodwill to a notional 100% (÷ parent %), compare CGU incl. notional goodwill with recoverable amount, allocate loss to goodwill first; recognise only the parent's share of the goodwill loss.</li>
+    <li>NCI at <b>fair value</b> → goodwill already includes NCI's share; no gross-up; loss shared between parent and NCI on the profit-sharing basis.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 11 (₹ '000):</b> 80% for 3,200, net assets 3,000 → goodwill 800, notional NCI goodwill 200 → notional carrying 1,000 + 2,700 = 3,700. Case (i) recoverable 2,000 → loss 1,700; recognised 1,500 (goodwill 800 + other assets 700) — parent 1,360, NCI 140. Case (ii) recoverable 2,800 → loss 900 all on goodwill; recognised 80% = <b>720</b> (goodwill 80 left), all to parent. <b>TYK 3:</b> 80% for 2,100, NCI 300, net assets 1,500 → goodwill 900, of which 500 allocated to other CGUs → 400 in the Subsidiary CGU, grossed up with NCI's 100 → 500. Carrying 1,350 + 500 = 1,850 vs recoverable 1,000 → loss 850: goodwill 500 (recognised 400) and identifiable assets <b>350</b> → carrying after loss 1,000. <b>PQ 8/9 (Vision / Jackson):</b> 80% for 190 m, net assets 200 m, NCI proportionate → goodwill 30 m, grossed 37.5 m; written down by 23.5 m to 14 m; recognised loss <b>18.8 m</b>, closing goodwill <b>11.2 m</b>. <b>Illus 21 (Sun Ltd / Pluto):</b> goodwill 260 − 56 = <b>204</b>; total loss 106 (goodwill 56 + unit C assets 50); 20% (21.2) to NCI.</p></div>
+  <h3>4.10 Reversing an impairment loss</h3>
+  <ul>
+    <li>At each reporting date look for indicators that a loss has decreased (mirror of the impairment indicators). Reverse only if there has been a <b>change in the estimates</b> used to determine recoverable amount — not because of the passage of time ("<b>unwinding of the discount</b>") (TYK 5: no reversal of 4.69 cr).</li>
+    <li>Individual asset: increase to recoverable amount but <b>not above the carrying amount (net of depreciation) that would have existed had no loss been recognised</b>. Reversal → P&amp;L (revalued asset → revaluation surplus via OCI to the extent the loss went to P&amp;L earlier in P&amp;L). Then revise depreciation.</li>
+    <li>CGU: allocate reversal to assets other than goodwill pro rata, each capped at the lower of recoverable amount and the no-impairment carrying amount.</li>
+    <li><b>Goodwill impairment is never reversed</b> (any later increase would be internally generated goodwill — Ind AS 38 prohibits).</li>
+  </ul>
+  <div class="ex"><p><b>Illus 10:</b> Venus / Saturn — carrying 3,68,000 vs VIU 2,12,000 → loss 1,56,000 = goodwill 80,000 + other assets 76,000; when the licence is restored, reversal limited to no-impairment carrying amount 2,56,000 → reversal <b>68,000</b> (2,56,000 − 1,88,000) to P&amp;L; depreciation from 1 April 20X5 = 2,56,000 ÷ 16 = <b>16,000</b>; goodwill not reinstated. <b>PQ 4 (Elia):</b> reversal limited to <b>62,266</b> (9,30,000 − 8,67,734) — Machinery A capped at its own recoverable amount 4,30,000, goodwill not restored.</p></div>
+  <h3>4.11 Disclosure</h3>
+  <ul>
+    <li>For each class: impairment losses and reversals in P&amp;L (line item) and in OCI. By reportable segment if Ind AS 108 applies. For each material loss/reversal: events and circumstances, amount, nature of asset/CGU, segment, whether recoverable amount is FVLCD (with Ind AS 113 level and technique) or VIU (with discount rate). Unallocated goodwill and why.</li>
+    <li>For CGUs with significant goodwill/indefinite-life intangibles: carrying amounts, basis of recoverable amount, key assumptions, period of projections, growth rate, discount rate, and sensitivity if a reasonably possible change would cause impairment.</li>
+  </ul>
+  <div class="sticky"><b>Exam frame:</b> indicator or annual test? → asset or CGU? → recoverable = higher of FVLCD and VIU (pre-tax rate, no restructuring/enhancement, no finance/tax) → loss = carrying − recoverable → revaluation surplus first, then P&amp;L → CGU: goodwill first, then pro rata with floor → NCI gross-up if proportionate → revised depreciation and deferred tax → reversal cap (never goodwill).</div>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 34 Interim Financial Reporting</span><span class="tag">SM Ch 3 Unit 2</span></div>
+  <h2 class="brk"><span class="n">34</span>Ind AS 34 — Interim Financial Reporting</h2>
+  <h3>2.1–2.4 Objective, scope, definitions</h3>
+  <ul>
+    <li>Prescribes the <b>minimum content</b> of an interim financial report and the recognition and measurement principles for complete or condensed interim statements. Ind AS 34 does not mandate <b>who</b> must publish or <b>how often</b> — SEBI LODR (quarterly results) or other regulators do; it applies if an entity publishes an interim report under Ind AS.</li>
+    <li><b>Interim period</b> = reporting period shorter than a full financial year. <b>Interim financial report</b> = complete (Ind AS 1) or condensed set for an interim period.</li>
+  </ul>
+  <h3>2.5 Content of an interim report</h3>
+  <ul>
+    <li><b>Minimum components:</b> condensed balance sheet, condensed statement of P&amp;L (with OCI), condensed SOCE, condensed cash flows, selected explanatory notes. Condensed statements show at least each heading and subtotal of the last annual FS; basic and diluted EPS on the face if Ind AS 33 applies.</li>
+    <li><b>Selected notes</b> (assume the user has the last annual report — explain only significant events and transactions since then, year-to-date basis): same policies or nature of changes; seasonality/cyclicality comments; unusual items; changes in estimates; issues/repurchases of debt and equity; dividends paid; segment information (Ind AS 108 subset); events after the interim period; changes in composition (business combinations, loss of control, discontinued operations); FV disclosures for financial instruments; inventory write-downs, impairment losses and reversals, restructuring provisions, PPE acquisitions/disposals, litigation settlements, prior period errors, related party transactions, transfers between FV levels, contingent liabilities.</li>
+  </ul>
+  <h3>Periods to present</h3>
+  <table class="tight">
+    <tr><th style="width:26%">Statement</th><th>Current</th><th>Comparative</th></tr>
+    <tr><td>Balance sheet</td><td>End of current interim period</td><td>End of <b>immediately preceding financial year</b></td></tr>
+    <tr><td>P&amp;L and OCI</td><td>Current interim period <b>and</b> year-to-date</td><td>Comparable interim period and year-to-date of the preceding year</td></tr>
+    <tr><td>SOCE, cash flows</td><td>Year-to-date</td><td>Comparable year-to-date of the preceding year</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK 1 (31 March year end, report at 30 Sept 20X1):</b> quarterly → BS 30.9.X1 and 31.3.X1; P&amp;L for 3 months and 6 months to 30.9.X1 with the 3 and 6 months to 30.9.X0; SOCE and cash flows 6 months to 30.9.X1 and 30.9.X0. Half-yearly → BS 30.9.X1 and 31.3.X1; P&amp;L, SOCE, cash flows for 6 months to 30.9.X1 and 30.9.X0. Highly seasonal businesses are encouraged to give 12 months to the interim date as well.</p></div>
+  <h3>2.6 Disclosure in annual financial statements</h3>
+  <ul>
+    <li>If an estimate reported in an interim period changes significantly in the final interim period but no separate report is published for it, disclose the nature and amount of the change in a note to the <b>annual</b> FS.</li>
+  </ul>
+  <h3>2.7 Recognition and measurement</h3>
+  <ul>
+    <li><b>Same accounting policies</b> as the annual FS (or the changed policies to be used in the next annual FS). Frequency of reporting must not affect annual results → measurement on a <b>year-to-date basis</b>. Each interim period is part of the annual period ("integral view" in tax and estimates) yet assets/liabilities must meet definitions at the interim date ("discrete view").</li>
+    <li><b>Seasonal, cyclical or occasional revenues</b> — not anticipated or deferred at the interim date if not appropriate at year end (dividend income, royalties, government grants, retailers' seasonal sales) (Illus 3: ICPL can't defer 16 crore expenses to Q3 → Q1 profit <b>29 crore</b>).</li>
+    <li><b>Costs incurred unevenly</b> — anticipated or deferred only if appropriate at year end. Planned major maintenance, year-end bonus without obligation, contingent lease payments, discretionary charitable contributions → not accrued unless an obligation exists at the interim date.</li>
+  </ul>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>FR · Full chapter notes · Ind AS 34 Interim Financial Reporting (contd.)</span><span class="tag">SM Ch 3 Unit 2</span></div>
+  <h3>Specific items (SM Appendix examples)</h3>
+  <table class="tight">
+    <tr><th style="width:26%">Item</th><th>Interim treatment</th></tr>
+    <tr><td>Payroll taxes / insurance contributions assessed annually</td><td>Use the <b>estimated average annual effective rate</b>, even if most payments fall early in the year (PQ 2(i)).</td></tr>
+    <tr><td>Major planned repairs</td><td>Not accrued merely because planned — needs a legal/constructive obligation at the interim date (PQ 2(ii)).</td></tr>
+    <tr><td>Bonus</td><td>Accrue if a legal/constructive obligation and reliable estimate (past practice of annual bonus → accrue 10% of year-to-date operating profit) (PQ 2).</td></tr>
+    <tr><td>Contingent lease payments, volume rebates</td><td>Accrue if the target is probable to be achieved.</td></tr>
+    <tr><td>Intangibles</td><td>Development cost expensed before criteria met is not later capitalised; no deferral to "wait and see".</td></tr>
+    <tr><td>Depreciation</td><td>Only on assets owned during the period; not on planned acquisitions.</td></tr>
+    <tr><td>Inventories</td><td>Same NRV test as year end; loss recognised in the interim period even if price recovery expected by year end (<b>TYK 4</b>: recognise in Q2) — reversed later if recovered in the year.</td></tr>
+    <tr><td>Fixed overheads (Ind AS 2)</td><td>Year-to-date normal-capacity absorption; unabsorbed overheads expensed in the interim period (Illus 4 below).</td></tr>
+    <tr><td>Foreign exchange</td><td>Actual average/closing rates for the period — don't anticipate.</td></tr>
+  </table>
+  <h3>Income tax in interim periods</h3>
+  <ul>
+    <li>Tax expense = interim pre-tax income × <b>estimated average annual effective tax rate</b> (weighted average of the progressive rates on expected total annual earnings). Separate rates for separate categories (capital gains) or jurisdictions where practicable. Different tax year → separate rate for each part of the interim period. Tax credits / loss carry-forwards → reflected in the annual rate if expected to be used this year.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 1:</b> Q1 60,000, then losses 15,000 × 3 → annual 15,000; tax 20% slab → rate 20% → Q1 tax <b>12,000</b>, Q2–Q4 credit (3,000) each. <b>Illus 2:</b> 900 lakh each quarter, loss b/f 600 → tax (3,600 − 600) × 40% = 1,200 → rate 33.33% → <b>300 lakh</b> each quarter. <b>TYK 2 (Narayan):</b> other income 25 lakh → tax 9,50,000 → 38%; Q1 2,66,000, Q2 3,04,000, Q3 1,52,000 + 96,000 (12% on 8 lakh capital gains) = 2,48,000, Q4 2,28,000; total <b>10,46,000</b>. <b>TYK 3:</b> 1,50,000 then losses 50,000 × 3 at 30% → Q1 45,000, Q2–Q4 credit (15,000) each, annual nil — management's "nil each quarter" is wrong. <b>PQ 1 (Dec year end, March tax year):</b> 10,000 each quarter at 25% (Jan–Mar) and 30% → 2,500, 3,000, 3,000, 3,000 = <b>11,500</b>.</p>
+  <p><b>Illus 4 (fixed overheads 10,000, normal 2,000 MT, 5/MT):</b> Q1 400 MT → absorbed 2,000, <b>500 expensed</b>; Q2 year-to-date 1,000 MT × 5 = 5,000 = actual → Q1's 500 reverses; Q3 YTD 1,500 × 5 = 7,500 = actual; Q4 YTD 1,900 × 5 = 9,500 → <b>500 expensed</b> in Q4 — annual unabsorbed 500, same as if no interim reports.</p></div>
+  <h3>2.8 Restatement; materiality; estimates</h3>
+  <ul>
+    <li>A change in accounting policy (other than one with specific transition) → restate prior interim periods of the current year and comparable interim periods of prior years (or from the start of the year if impracticable).</li>
+    <li><b>Materiality</b> assessed in relation to the <b>interim period</b> data, not projected annual data. PQ 4: under-accrual material to Q1 interim but not to the year → must still be corrected. PQ 3: material error → correct and restate comparatives in the next interim report (30 Sept 20X2), not wait for annual FS.</li>
+    <li>Interim measurements rely more on estimates than annual ones (e.g. pensions by extrapolating the last actuarial valuation; inventory by sales margins).</li>
+  </ul>
+  <h3>2.9 Interim reporting and impairment (Appendix A)</h3>
+  <ul>
+    <li>An impairment loss on <b>goodwill</b> recognised in an interim period is <b>not reversed</b> in a later interim or annual period.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 5 (ABC Ltd, Q3 profit 20,00,000):</b> deferred 50% bad debts → charge 50,000; extra depreciation 4,50,000 from change in method — already charged, fine (change in estimate); deferred 50% exceptional loss → charge 14,000; deferral of 5,00,000 uniform admin expenses not allowed → charge. Corrected profit = 20,00,000 − 50,000 − 14,000 − 5,00,000 = <b>14,36,000</b>.</p></div>
+  <div class="sticky"><b>Exam frame:</b> same policies as annual → year-to-date measurement → revenue/costs not anticipated or deferred unless allowed at year end → tax at the annual effective rate (separate rates for categories/years) → materiality on interim data → goodwill impairment not reversed.</div>
+  <div class="foot"><span></span><span>FR LDR — Ss</span></div>
+</section>
+</body></html>

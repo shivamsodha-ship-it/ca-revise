@@ -1,0 +1,106 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ind AS 16 and 12 Deep Dive</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 16 · Deep dive · SM Ch 5 Unit 2</span><span class="tag">DEEP DIVE 1 / 3</span></div>
+  <h1><span class="u">Ind AS 16</span> — Numericals</h1>
+  <div class="sub">Components, revaluation with depreciation, decommissioning, exchanges. ₹ lakh.</div>
+
+  <h2><span class="n">1</span>Component depreciation</h2>
+  <table>
+    <tr><th>Aircraft component</th><th>Cost</th><th>Life</th><th>Annual depreciation</th></tr>
+    <tr><td>Body</td><td>350</td><td>20 yrs</td><td>17.5</td></tr>
+    <tr><td>Engines</td><td>100</td><td>5 yrs</td><td>20.0</td></tr>
+    <tr><td>Interiors</td><td>50</td><td>10 yrs</td><td>5.0</td></tr>
+    <tr><td><b>Total</b></td><td><b>500</b></td><td></td><td><b>42.5</b></td></tr>
+  </table>
+  <p class="small">Engine replaced in year 5 → capitalise new engine; derecognise old engine's carrying amount (nil if fully depreciated). Major inspection every 3 yrs costing 30 → separate component, depreciated over 3 yrs.</p>
+
+  <h2><span class="n">2</span>Revaluation of a depreciable asset</h2>
+  <p class="small">Building cost 1,000, life 10 yrs, SLM. After 2 years CA = 800; revalued to <b>960</b>.</p>
+  <table>
+    <tr><th style="width:44%">Item</th><th>Elimination method</th><th>Proportionate restatement</th></tr>
+    <tr><td>Gross carrying amount</td><td>960</td><td>1,200 (1,000 × 960/800)</td></tr>
+    <tr><td>Accumulated depreciation</td><td>Nil</td><td>240</td></tr>
+    <tr><td>Net carrying amount</td><td>960</td><td>960</td></tr>
+    <tr><td><b>Revaluation surplus (OCI)</b></td><td colspan="2"><b>160</b> (less DTL 40 at 25% → net 120 in OCI)</td></tr>
+  </table>
+  <ul class="small">
+    <li>New depreciation = 960 ÷ 8 = <b>120</b> (vs 100 on cost) → may transfer <b>20 / year</b> from surplus to <b>retained earnings</b> (net of tax 15 if DT considered) — not through P&amp;L</li>
+    <li>Later revalued down to 600 at a date when surplus balance is 140 → OCI (140), P&amp;L for the rest</li>
+  </ul>
+
+  <div class="foot"><span>Ind AS 16 / 12 deep dive · page 1 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+<section class="page">
+  <div class="head"><span>Ind AS 16 · Deep dive (contd.)</span><span class="tag">DEEP DIVE 2 / 3</span></div>
+  <h2><span class="n">3</span>Decommissioning</h2>
+  <p class="small">Oil rig cost 1,000; dismantling in 10 yrs estimated 200; discount rate 8%.</p>
+  <table>
+    <tr><th style="width:62%">Working</th><th>₹ lakh</th></tr>
+    <tr><td>PV of dismantling 200 ÷ 1.08¹⁰ → provision &amp; added to cost</td><td>92.64</td></tr>
+    <tr><td>Total cost</td><td>1,092.64</td></tr>
+    <tr><td>Year 1 depreciation ÷ 10</td><td>109.26</td></tr>
+    <tr><td>Year 1 unwinding → <b>finance cost</b></td><td>7.41</td></tr>
+  </table>
+  <p class="small">Estimate revised in Year 2 (cost model) → change in PV added to / deducted from asset; decrease beyond carrying amount → P&amp;L; new depreciable amount over remaining life.</p>
+
+  <h2><span class="n">4</span>Exchange &amp; deferred payment</h2>
+  <ul class="small">
+    <li>Give machine (CA 300, FV 350) + cash 50 for a new machine (commercial substance) → cost <b>400</b>; gain <b>50</b> on old machine → P&amp;L</li>
+    <li>No commercial substance → cost = CA given up 300 + cash 50 = <b>350</b>; no gain</li>
+    <li>Price 1,000 payable after 1 year vs cash price 900 → cost <b>900</b>; 100 = interest (unless Ind AS 23 capitalises)</li>
+  </ul>
+
+  <div class="sticky">PPE numericals check-list: <b>components → cost items in / out → depreciation start → revaluation (OCI / P&amp;L sequence) → surplus transfer → decommissioning unwind → derecognition gain</b>.</div>
+  <div class="foot"><span>Ind AS 16 / 12 deep dive · page 2 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 12 · Deep dive · SM Ch 7 Unit 1</span><span class="tag">DEEP DIVE 3 / 3</span></div>
+  <h2><span class="n">5</span>Ind AS 12 — full DT schedule (tax 25%)</h2>
+  <table>
+    <tr><th>Item</th><th>CA</th><th>Tax base</th><th>TD</th><th>DTL</th><th>DTA</th></tr>
+    <tr><td>PPE</td><td>800</td><td>600</td><td>200 taxable</td><td>50</td><td></td></tr>
+    <tr><td>Gratuity provision (43B)</td><td>100</td><td>0</td><td>100 deductible</td><td></td><td>25</td></tr>
+    <tr><td>ROU asset</td><td>300</td><td>0</td><td>300 taxable</td><td>75</td><td></td></tr>
+    <tr><td>Lease liability</td><td>320</td><td>0</td><td>320 deductible</td><td></td><td>80</td></tr>
+    <tr><td>Unused losses 200 — only 120 probable</td><td></td><td></td><td>120</td><td></td><td>30</td></tr>
+    <tr><td>FVOCI equity (cost 100)</td><td>150</td><td>100</td><td>50 taxable</td><td>12.5 (OCI)</td><td></td></tr>
+    <tr><td><b>Total</b></td><td></td><td></td><td></td><td><b>137.5</b></td><td><b>135</b></td></tr>
+  </table>
+  <ul class="small">
+    <li>Net <b>DTL 2.5</b> in BS (offset only if same authority + legal right — para 74)</li>
+    <li>Opening net DTL 10 (all P&amp;L items). Closing P&amp;L-items net <b>DTA 10</b> (135 − 125) → <b>deferred tax credit 20 in P&amp;L</b>; DTL 12.5 → <b>OCI</b></li>
+    <li>Lease: DTA &amp; DTL both recognised (2023 amendment) even though initial recognition affected no profit</li>
+  </ul>
+
+  <h2><span class="n">6</span>Tax expense reconciliation (para 81(c))</h2>
+  <table>
+    <tr><th style="width:62%">Item</th><th>₹ lakh</th></tr>
+    <tr><td>Profit before tax 1,000 × 25%</td><td>250</td></tr>
+    <tr><td>+ Non-deductible penalty 20 × 25%</td><td>5</td></tr>
+    <tr><td>− Exempt income 40 × 25%</td><td>(10)</td></tr>
+    <tr><td><b>Tax expense</b> (current + deferred)</td><td><b>245</b> · ETR <b>24.5%</b></td></tr>
+  </table>
+
+  <h2><span class="n">7</span>Twisted Ind AS 12 cases</h2>
+  <table>
+    <tr><th style="width:48%">Case</th><th>Answer</th></tr>
+    <tr><td>Rate enacted after RD but before approval</td><td>Use old rate; disclose (non-adjusting)</td></tr>
+    <tr><td>Company will opt for 115BAA from FY 2027-28</td><td>TDs reversing from FY 27-28 → <b>new rate</b>; rest old; change → P&amp;L / OCI per item</td></tr>
+    <tr><td>Losses for 3 years, budget shows profits</td><td>Budget alone insufficient → need convincing evidence (taxable TDs reversing, firm orders)</td></tr>
+    <tr><td>Goodwill not deductible</td><td>No DTL on initial recognition; later impairment → no DT</td></tr>
+    <tr><td>Goodwill deductible for tax, amortised in tax</td><td>Later TDs (CA &gt; TB as tax amortises) → <b>DTL recognised</b> (not initial recognition)</td></tr>
+    <tr><td>Sub's undistributed profits; parent controls dividends &amp; won't distribute</td><td>No DTL (para 39)</td></tr>
+    <tr><td>Intra-group inventory profit eliminated</td><td>DTA at <b>buyer's</b> rate</td></tr>
+  </table>
+  <div class="exam"><p>"Deferred tax is measured at the tax rates expected to apply when the asset is realised or the liability settled, based on rates enacted or substantively enacted by the end of the reporting period (para 47), and reflects the manner in which the entity expects to recover or settle the carrying amount (para 51)."</p></div>
+
+  <div class="foot"><span>Ind AS 16 / 12 deep dive · page 3 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+</body></html>

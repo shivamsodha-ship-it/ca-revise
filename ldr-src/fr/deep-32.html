@@ -1,0 +1,113 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ind AS 32 Deep Dive</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 32 · Deep dive · SM Ch 11 Unit 3</span><span class="tag">DEEP DIVE 1 / 3</span></div>
+  <h1><span class="u">Ind AS 32</span> — Deep Dive</h1>
+  <div class="sub">Full life of a compound instrument, own-equity contracts, and preference shares — with computed numbers (₹).</div>
+
+  <h2><span class="n">1</span>Compound debenture — full life</h2>
+  <p class="small">10,000 convertible debentures × ₹100 = ₹1,00,00,000; coupon 6% p.a. paid annually; 3 years; market rate for similar non-convertible debt 9%. Split: <b>liability ₹92,40,612</b>, <b>equity ₹7,59,388</b>.</p>
+  <table>
+    <tr><th>Year</th><th>Opening liability</th><th>Interest @ 9% (P&amp;L)</th><th>Coupon paid</th><th>Closing liability</th></tr>
+    <tr><td>1</td><td>92,40,612</td><td>8,31,655</td><td>6,00,000</td><td>94,72,267</td></tr>
+    <tr><td>2</td><td>94,72,267</td><td>8,52,504</td><td>6,00,000</td><td>97,24,771</td></tr>
+    <tr><td>3</td><td>97,24,771</td><td>8,75,229</td><td>6,00,000</td><td><b>1,00,00,000</b></td></tr>
+  </table>
+  <div class="cols">
+    <div class="box small">
+      <h3>Conversion at maturity</h3>
+      <p>Dr Liability 1,00,00,000<br>Dr Equity component 7,59,388<br>Cr Share capital / Securities premium 1,07,59,388<br><b>No gain / loss.</b></p>
+    </div>
+    <div class="box small">
+      <h3>Transaction costs ₹2,00,000</h3>
+      <p>Allocate in ratio of split: liability <b>1,84,812</b> (enters EIR — new EIR &gt; 9%), equity <b>15,188</b> (deducted from equity).</p>
+    </div>
+  </div>
+
+  <h2><span class="n">2</span>Early repurchase at end of Year 1</h2>
+  <p class="small">Repurchased for ₹1,05,00,000. Market rate for 2-year similar debt now 8%.</p>
+  <table>
+    <tr><th style="width:62%">Step</th><th>₹</th></tr>
+    <tr><td>FV of liability component = 6,00,000 ÷ 1.08 + 1,06,00,000 ÷ 1.08²</td><td>96,43,347</td></tr>
+    <tr><td>Carrying amount of liability</td><td>94,72,267</td></tr>
+    <tr><td><b>Loss on liability component → P&amp;L</b></td><td><b>1,71,080</b></td></tr>
+    <tr><td>Consideration allocated to equity = 1,05,00,000 − 96,43,347</td><td>8,56,653</td></tr>
+    <tr><td>Equity component carrying 7,59,388 → difference <b>97,265</b> debited <b>within equity</b> (no P&amp;L)</td><td></td></tr>
+  </table>
+  <div class="trap"><p>Repurchase consideration is split using the liability's FV <b>at repurchase date</b> — never the original split ratio. <b>Induced conversion</b> sweetener → FV of extra consideration → <b>P&amp;L loss</b> when terms change.</p></div>
+
+  <div class="foot"><span>Ind AS 32 deep dive · page 1 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 32 · Own-equity contracts &amp; preference shares</span><span class="tag">DEEP DIVE 2 / 3</span></div>
+  <h2><span class="n">3</span>Contracts in the entity's own shares — classification grid</h2>
+  <table>
+    <tr><th style="width:52%">Contract</th><th>Classification</th></tr>
+    <tr><td>Issue <b>fixed 1,000 shares</b> for <b>fixed ₹50,000</b> cash (written call)</td><td class="NC">Equity (fixed-for-fixed)</td></tr>
+    <tr><td>Deliver shares <b>worth ₹50,000</b> (variable number)</td><td class="C">Financial liability</td></tr>
+    <tr><td>Deliver 1,000 shares for price linked to <b>commodity / index</b></td><td class="C">Derivative liability (not fixed cash)</td></tr>
+    <tr><td><b>Net cash</b> or <b>net share</b> settlement of an option</td><td class="C">Derivative asset / liability</td></tr>
+    <tr><td>Holder can choose cash <b>or</b> shares</td><td class="C">Liability / derivative unless all outcomes equity <span class="para">26</span></td></tr>
+    <tr><td><b>Written put</b> on own shares (entity must buy back at fixed price)</td><td class="C"><b>Liability = PV of redemption amount</b> (gross), debited to equity <span class="para">23</span></td></tr>
+    <tr><td>Purchased call on own shares, gross physical settlement, fixed-for-fixed</td><td class="NC">Equity (deducted)</td></tr>
+    <tr><td><b>FCCB</b> conversion option — fixed shares for fixed foreign-currency amount</td><td class="NC">Equity (Indian carve-out)</td></tr>
+    <tr><td>Bonus / rights issue pro-rata, fixed foreign-currency price</td><td class="NC">Equity <span class="para">11</span></td></tr>
+  </table>
+
+  <h2><span class="n">4</span>Preference shares — worked splits</h2>
+  <table>
+    <tr><th style="width:44%">Terms (₹50 lakh, market rate 12%)</th><th>Classification &amp; measurement</th></tr>
+    <tr><td>Redeemable in 5 yrs; dividend <b>discretionary</b></td><td><b>Compound</b>: liability = 50,00,000 ÷ 1.12⁵ = <b>28,37,134</b>; equity = <b>21,62,866</b>. Unwind at 12% → finance cost; dividends declared → equity</td></tr>
+    <tr><td>Redeemable in 5 yrs; <b>cumulative mandatory</b> dividend</td><td>Whole <b>liability</b> at amortised cost; dividend = <b>finance cost</b></td></tr>
+    <tr><td>Irredeemable; dividend discretionary</td><td><b>Equity</b>; dividends → SOCE</td></tr>
+    <tr><td>Irredeemable; dividend mandatory</td><td><b>Liability</b> (PV of perpetual dividends)</td></tr>
+    <tr><td>Redeemable at <b>issuer's</b> option; discretionary dividend</td><td><b>Equity</b> — becomes liability only when issuer <b>announces</b> redemption</td></tr>
+    <tr><td>Convertible into <b>variable</b> number of shares at FV</td><td><b>Liability</b></td></tr>
+  </table>
+  <div class="sticky">Two questions every time: <b>Must I pay principal?</b> <b>Must I pay return?</b> Yes/Yes → liability. No/No → equity. Mixed → compound.</div>
+
+  <div class="foot"><span>Ind AS 32 deep dive · page 2 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 32 · Edge cases &amp; presentation</span><span class="tag">DEEP DIVE 3 / 3</span></div>
+  <h2><span class="n">5</span>Edge cases examiners use</h2>
+  <table>
+    <tr><th style="width:44%">Case</th><th>Answer</th></tr>
+    <tr><td>Redemption only if company <b>lists</b> within 3 years (contingent)</td><td><b>Liability</b> — listing is outside both parties' control <span class="para">25</span></td></tr>
+    <tr><td>Payment only on <b>liquidation</b> of the issuer</td><td><b>Not</b> a liability for that feature</td></tr>
+    <tr><td>Contingent feature that is <b>not genuine</b> (extremely rare)</td><td>Ignore → equity</td></tr>
+    <tr><td><b>Step-up</b> dividend after 10 yrs, redemption at issuer's option</td><td>Equity — economic compulsion isn't a contractual obligation (but read terms for indirect obligation)</td></tr>
+    <tr><td>Partnership / co-operative shares <b>puttable</b> by members</td><td>Liability, unless para 16A–D conditions met (most subordinate class, pro-rata, no other obligation…)</td></tr>
+    <tr><td>Sub's equity shares with <b>parent's guarantee</b> of return to NCI</td><td>Equity in sub's SFS; <b>liability in CFS</b></td></tr>
+    <tr><td><b>Written put to NCI</b> (parent must buy NCI's 20%)</td><td>CFS: <b>financial liability</b> at PV of exercise price</td></tr>
+  </table>
+
+  <h2><span class="n">6</span>Presentation &amp; tax</h2>
+  <ul>
+    <li>Redeemable preference shares (liability) → <b>Borrowings</b> under Schedule III; dividends → <b>finance costs</b></li>
+    <li>Equity issue costs → <b>reduce equity</b> (net of tax); costs of a <b>failed</b> issue → P&amp;L</li>
+    <li>Liability component in a compound: carrying amount vs tax base (full face) → <b>taxable TD → DTL charged to equity</b> (Ind AS 12 AG / para 23); unwinds through P&amp;L</li>
+    <li><b>Treasury shares</b>: deduct cost from equity; no P&amp;L on sale / cancellation; disclose number held (Ind AS 1)</li>
+  </ul>
+
+  <h2><span class="n">7</span>Ind AS 32 ⇄ 109 hand-off</h2>
+  <table>
+    <tr><th style="width:30%">Question</th><th>Standard</th></tr>
+    <tr><td>Liability or equity?</td><td><b>Ind AS 32</b></td></tr>
+    <tr><td>Then measure the liability (EIR, FVTPL, modification)</td><td><b>Ind AS 109</b></td></tr>
+    <tr><td>Embedded derivative in a debt host liability (non-equity conversion)</td><td><b>Ind AS 109</b> separation test</td></tr>
+    <tr><td>Disclose risks</td><td><b>Ind AS 107</b></td></tr>
+  </table>
+  <div class="exam"><p>"As per para 23 of Ind AS 32, a contract that contains an obligation for an entity to purchase its own equity instruments for cash gives rise to a financial liability for the present value of the redemption amount, even if the obligation is conditional on the counterparty exercising a right to redeem."</p></div>
+
+  <div class="foot"><span>Ind AS 32 deep dive · page 3 / 3</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+</body></html>

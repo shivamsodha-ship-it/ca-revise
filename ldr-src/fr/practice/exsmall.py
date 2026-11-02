@@ -3,7 +3,7 @@ import re, os
 from crop import Doc
 SP = os.path.dirname(os.path.abspath(__file__))
 PQF = {'113': '83022bos67129-pq', '40': '83186bos67256-pq', '105': '83186bos67256-pq', '116': '83186bos67256-pq',
-       '21': '83195bod67256-pq', '108': '83195bod67256-pq', '41': '83231bos67302-pq', '20': '83231bos67302-pq', '101': 'pq13', '19': '83195bod67256-pq', '33': '83195bod67256-pq'}
+       '21': '83195bod67256-pq', '108': '83195bod67256-pq', '41': '83231bos67302-pq', '20': '83231bos67302-pq', '101': 'pq13', '36': '83186bos67256-pq', '23': '83186bos67256-pq', '19': '83195bod67256-pq', '33': '83195bod67256-pq'}
 def pos(r): return (r[0], r[1])
 ILL = r'^(Illustration|Examples?)\s*\d+[A-C]?\s*([:\-–(].*|-\s*\d+)?$'
 def extract(n):

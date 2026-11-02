@@ -2,7 +2,7 @@ import sys, os, re, html, difflib
 SP = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, SP)
 from exsmall import extract
 ORDER = sys.argv[2].split(',')
-TITLE = {'19': 'Ind AS 19 Employee Benefits', '33': 'Ind AS 33 Earnings per Share', '111': 'Ind AS 111 Joint Arrangements', '28': 'Ind AS 28 Associates and Joint Ventures', '27': 'Ind AS 27 Separate Financial Statements', '40': 'Ind AS 40 Investment Property', '41': 'Ind AS 41 Agriculture', '113': 'Ind AS 113 Fair Value Measurement',
+TITLE = {'eth': 'Ethics — Professional and Ethical Duty of a CA', 'cf': 'Conceptual Framework', 'tech': 'Accounting and Technology', '36': 'Ind AS 36 Impairment of Assets', '23': 'Ind AS 23 Borrowing Costs', '19': 'Ind AS 19 Employee Benefits', '33': 'Ind AS 33 Earnings per Share', '111': 'Ind AS 111 Joint Arrangements', '28': 'Ind AS 28 Associates and Joint Ventures', '27': 'Ind AS 27 Separate Financial Statements', '40': 'Ind AS 40 Investment Property', '41': 'Ind AS 41 Agriculture', '113': 'Ind AS 113 Fair Value Measurement',
          '105': 'Ind AS 105 Held for Sale & Discontinued Operations', '108': 'Ind AS 108 Operating Segments', '20': 'Ind AS 20 Government Grants',
          '21': 'Ind AS 21 Foreign Exchange', '116': 'Ind AS 116 Leases', '101': 'Ind AS 101 First-time Adoption'}
 E = html.escape

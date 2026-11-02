@@ -8,3 +8,5 @@
 4. Every SM Test Your Knowledge practical question with ICAI's solution (page crops).
 
 Everything in 2–4 is cropped from ICAI's AFM SM chapter PDFs (`scripts/lastday/sources/sm_links.json`, key `100`); nothing is retyped. `runafm.sh N` builds one chapter (paths point at the session scratchpad: SM PDFs in `afm/cNN.pdf`, `crop.py` from `ldr-src/fr/practice/`, `paginate.js` with an AFM footer); run the HTML from `ldr-src/fr/` so `style.css` and fonts resolve.
+
+`buildtheory.py` (env `OUTHTML`) builds `public/ldr/afm/AFM_Theory_Last3_Papers_with_SM.pdf`: every theory question of Sep 2025, Jan 2026 and May 2026 (ICAI labels and marks; one-line summaries app-written) followed by the SM section(s) it is answered from, as page crops. Which SM section answers a question is app judgement.

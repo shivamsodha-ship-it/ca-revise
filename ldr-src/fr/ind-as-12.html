@@ -1,0 +1,166 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ind AS 12 LDR</title><link rel="stylesheet" href="style.css"></head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+  <div class="head"><span>CA Final · FR · Last-Day Revision</span><span class="tag">Nov 2026 attempt</span></div>
+  <h1><span class="u">Ind AS 12</span> — Income Taxes</h1>
+  <div class="sub">Balance sheet approach: compare <b>carrying amount</b> with <b>tax base</b>. Everything else is an exception or a measurement rule.</div>
+
+  <h2><span class="n">1</span>The core grid</h2>
+  <table>
+    <tr><th style="width:24%"></th><th>Carrying amount &gt; Tax base</th><th>Carrying amount &lt; Tax base</th></tr>
+    <tr><td><b>ASSET</b></td><td class="C">Taxable TD → DTL</td><td class="NC">Deductible TD → DTA</td></tr>
+    <tr><td><b>LIABILITY</b></td><td class="NC">Deductible TD → DTA</td><td class="C">Taxable TD → DTL</td></tr>
+  </table>
+  <div class="sticky">Asset bigger in books → <b>DTL</b>. Liability bigger in books → <b>DTA</b>.</div>
+
+  <h2><span class="n">2</span>Tax base <span class="para">7 · 8</span></h2>
+  <div class="cols">
+    <div class="box small">
+      <h3>Asset</h3>
+      <p>Amount <b>deductible</b> for tax against future taxable benefits.</p>
+      <p>Benefits not taxable (e.g., dividend receivable not taxable) → tax base = <b>carrying amount</b> (no TD).</p>
+    </div>
+    <div class="box small">
+      <h3>Liability</h3>
+      <p>Carrying amount <b>− amount deductible</b> in future.</p>
+      <p><b>Revenue received in advance</b>: CA − revenue not taxable in future.</p>
+    </div>
+  </div>
+  <table>
+    <tr><th style="width:52%">Example</th><th>Result</th></tr>
+    <tr><td>Machine: book WDV 80, tax WDV 60</td><td class="C">Taxable TD 20 → DTL</td></tr>
+    <tr><td>Provision (warranty / gratuity) 50, deductible on payment (43B)</td><td class="NC">TB 0 → deductible TD 50 → DTA</td></tr>
+    <tr><td>Advance received 30, taxed on receipt</td><td class="NC">TB 0 → deductible TD 30 → DTA</td></tr>
+    <tr><td>Interest receivable 10, taxed on receipt</td><td class="C">TB 0 → taxable TD 10 → DTL</td></tr>
+    <tr><td>Land revalued 100 → 160, tax base 100</td><td class="C">Taxable TD 60 → DTL via <b>OCI</b></td></tr>
+    <tr><td>Penalty payable 5, never deductible</td><td>TB = CA → <b>no TD</b> (permanent)</td></tr>
+  </table>
+
+  <h2><span class="n">3</span>Unused losses &amp; credits <span class="para">34 – 36</span></h2>
+  <ul>
+    <li>DTA for unused tax losses / credits → only to extent <b>probable</b> future taxable profit</li>
+    <li><b>History of recent losses</b> → need <b class="hy">convincing other evidence</b> (taxable TDs, firm contracts, tax planning) <span class="para">35</span></li>
+    <li><b>MAT credit</b> → recognised as <b>DTA</b> when probable it will be utilised within the allowed period (ICAI guidance)</li>
+  </ul>
+
+  <div class="foot"><span>Ind AS 12 · page 1 / 4</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 12 · Exceptions &amp; measurement</span><span class="tag">MOST TESTED</span></div>
+  <h2><span class="n">4</span>Initial recognition exceptions <span class="para">15 · 24</span></h2>
+  <p>No DT is recognised for:</p>
+  <ul>
+    <li><b>DTL on initial recognition of goodwill</b> <span class="para">15(a)</span> (DTA on tax-deductible goodwill excess — allowed)</li>
+    <li>Initial recognition of an asset / liability in a transaction that:
+      <ul class="dot">
+        <li>is <b>not a business combination</b>, and</li>
+        <li>affects <b>neither</b> accounting profit <b>nor</b> taxable profit, and</li>
+        <li class="hy">does <b>not</b> give rise to <b>equal</b> taxable and deductible TDs <span class="small">(2023 amendment)</span></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="trap"><p><b>2023 amendment:</b> <b>leases</b> (ROU asset + lease liability) and <b>decommissioning</b> (asset + provision) create <b>equal and opposite TDs</b> → exception <b>no longer applies</b> → recognise <b>both DTA and DTL</b> (gross; offset only if para 74 met).</p></div>
+
+  <h2><span class="n">5</span>Measurement <span class="para">46 – 56</span></h2>
+  <ul>
+    <li>Rates <b>enacted or substantively enacted by RD</b> <span class="para">47</span> — change after RD = Ind AS 10 non-adjusting</li>
+    <li>Rate expected when TD <b>reverses</b>; reflect <b>manner of recovery</b> (use vs sale) <span class="para">51</span></li>
+    <li>Revalued <b>non-depreciable</b> asset (land) → rate for <b>recovery through sale</b> <span class="para">51B</span></li>
+    <li><b class="hp">No discounting</b> of DTA / DTL <span class="para">53</span></li>
+    <li><b>Review DTA</b> each RD — reduce if not probable; reassess <b>unrecognised</b> DTA too <span class="para">37 · 56</span></li>
+  </ul>
+  <div class="box small"><h3>Sec 115BAA (new regime 22% + surcharge &amp; cess)</h3>
+    <p>Measure DT at the rate expected when TDs <b>reverse</b>: if the company expects to opt in a later year, TDs reversing after that year use the <b>new rate</b>. Remeasurement effect → <b>P&amp;L</b> (or OCI / equity if the item was there).</p></div>
+
+  <h2><span class="n">6</span>Where does tax go? <span class="para">57 – 68C</span></h2>
+  <table>
+    <tr><th style="width:50%">Underlying item</th><th>Tax goes to</th></tr>
+    <tr><td>Normal income / expense</td><td><b>P&amp;L</b></td></tr>
+    <tr><td>Revaluation surplus, DB remeasurement, FVOCI, CFH</td><td><b>OCI</b> <span class="para">61A</span></td></tr>
+    <tr><td>Retrospective policy change / error correction; equity component of compound instrument</td><td><b>Equity directly</b></td></tr>
+    <tr><td>Business combination (FV adjustments)</td><td><b>Goodwill</b> <span class="para">66</span></td></tr>
+    <tr><td>Income-tax consequences of <b>dividends</b></td><td>Where the <b>distributable profits</b> were recognised (usually P&amp;L) <span class="para">57A</span></td></tr>
+  </table>
+
+  <div class="foot"><span>Ind AS 12 · page 2 / 4</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 12 · Groups &amp; business combinations</span><span class="tag">CBS LINK</span></div>
+  <h2><span class="n">7</span>Investments in subs, branches, associates, JVs <span class="para">39 · 44</span></h2>
+  <table>
+    <tr><th style="width:20%"></th><th>Recognise unless …</th></tr>
+    <tr><td><b>DTL</b></td><td>parent / investor <b>controls timing</b> of reversal <b>and</b> it is <b>probable not to reverse</b> in foreseeable future <span class="para">39</span></td></tr>
+    <tr><td><b>DTA</b></td><td>recognise <b>only if</b> probable to reverse in foreseeable future <b>and</b> taxable profit available <span class="para">44</span></td></tr>
+  </table>
+  <div class="trap"><p><b>Associate:</b> investor usually <b>cannot control</b> dividend policy → DTL on undistributed profits generally <b>recognised</b> (unless agreement says profits won't be distributed). <b>Subsidiary:</b> parent controls → often not recognised.</p></div>
+
+  <h2><span class="n">8</span>Consolidation adjustments</h2>
+  <ul>
+    <li><b>Unrealised profit</b> in inventory eliminated → deductible TD → <b>DTA at buyer's rate</b> (buyer holds the asset)</li>
+    <li>Downstream → DTA all to parent; upstream → DTA split parent / NCI (see LDR Topic 2)</li>
+    <li>Group DT computed on <b>consolidated</b> carrying amounts vs <b>each entity's</b> tax base</li>
+  </ul>
+
+  <h2><span class="n">9</span>Business combinations <span class="para">19 · 66 – 68</span></h2>
+  <ul>
+    <li>FV uplift on acquiree's assets (tax base unchanged) → <b>DTL</b> → <b>increases goodwill</b></li>
+    <li><b>No DTL on goodwill</b> itself</li>
+    <li>Acquirer's <b>own</b> previously unrecognised DTA becomes recognisable because of the combination → <b>P&amp;L</b>, <b>not goodwill</b> <span class="para">67</span></li>
+    <li>Acquiree DTA recognised <b>later</b>: within <b>measurement period</b> &amp; from new info about facts at acquisition → reduce goodwill (excess → P&amp;L); otherwise → P&amp;L <span class="para">68</span></li>
+  </ul>
+
+  <h2><span class="n">10</span>Presentation &amp; offset <span class="para">71 – 76</span></h2>
+  <ul>
+    <li>Offset current tax assets / liabilities only with <b>legally enforceable right</b> + intent to settle net</li>
+    <li>Offset DTA / DTL only if <b>legally enforceable right</b> to set off current tax <b>and</b> same <b>taxation authority</b> (same entity, or entities intending net settlement) <span class="para">74</span></li>
+    <li><b>DT never current</b> (Ind AS 1 para 56)</li>
+    <li>Disclose <b>tax expense reconciliation</b> (ETR or numerical) <span class="para">81(c)</span></li>
+  </ul>
+
+  <div class="foot"><span>Ind AS 12 · page 3 / 4</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page">
+  <div class="head"><span>Ind AS 12 · Uncertain tax &amp; AAA bridge</span><span class="tag">FR ⇄ AAA</span></div>
+  <h2><span class="n">11</span>Uncertain tax treatments <span class="para">Appendix C</span></h2>
+  <ul>
+    <li>Assume the authority <b>will examine</b> with <b>full knowledge</b> (no detection risk)</li>
+    <li>Probable the authority accepts? <b>Yes</b> → use filed position. <b>No</b> → reflect uncertainty using <b>most likely amount</b> or <b>expected value</b> (whichever predicts better)</li>
+    <li>Consider each treatment separately or together — whichever predicts resolution better</li>
+    <li><b>Reassess</b> when facts change (new assessment order, ruling, expiry of limitation)</li>
+  </ul>
+
+  <h2><span class="n">12</span>Ind AS 12 vs old AS 22</h2>
+  <table>
+    <tr><th style="width:24%"></th><th>AS 22</th><th>Ind AS 12</th></tr>
+    <tr><td>Approach</td><td>P&amp;L (income statement)</td><td><b>Balance sheet</b></td></tr>
+    <tr><td>Differences</td><td>Timing</td><td><b>Temporary</b> (wider: incl. revaluation, BC, OCI items)</td></tr>
+    <tr><td>DTA on losses</td><td>Virtual certainty</td><td><b>Probable</b> (convincing evidence if recent losses)</td></tr>
+  </table>
+
+  <h2><span class="n">13</span>AAA bridge</h2>
+  <table>
+    <tr><th style="width:36%">Area</th><th>Requirement</th></tr>
+    <tr><td><b>SA 540</b></td><td>DTA recoverability (profit forecasts), uncertain tax positions, rate expectations</td></tr>
+    <tr><td><b>SA 250</b></td><td>Compliance with tax laws; non-compliance effect on FS</td></tr>
+    <tr><td><b>SA 580</b></td><td>Written representations on tax planning &amp; future profitability assumptions</td></tr>
+    <tr><td><b>CARO 3(vii)(a)</b></td><td>Undisputed statutory dues (incl. income tax) deposited regularly; arrears &gt; 6 months</td></tr>
+    <tr><td><b>CARO 3(vii)(b)</b></td><td>Disputed dues not deposited — amount &amp; forum</td></tr>
+    <tr><td><b>CARO 3(viii)</b></td><td>Unrecorded income <b>surrendered / disclosed</b> in tax assessments — recorded in books?</td></tr>
+  </table>
+
+  <div class="exam"><p>"As per para 24 and 34 of Ind AS 12, a deferred tax asset shall be recognised for deductible temporary differences and unused tax losses only to the extent that it is probable that taxable profit will be available against which they can be utilised; given the history of recent losses, convincing other evidence is required (para 35)."</p></div>
+  <div class="sticky pink">DTA needs <b>proof of future profit</b>. DTL needs <b>no proof</b> — it's always recognised (except goodwill / IRE / controlled timing).</div>
+
+  <div class="foot"><span>Ind AS 12 · page 4 / 4</span><span>app-written · beyond the SM · FR LDR — Ss</span></div>
+</section>
+
+</body></html>

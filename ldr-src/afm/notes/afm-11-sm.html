@@ -1,0 +1,351 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 11 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 11 International Financial Management</span><span class="tag">SM Ch 11</span></div>
+  <h2 class="brk"><span class="n">11</span>Ch 11 — International Financial Management</h2>
+  <div class="sub">Asked in last 3 papers: Sep 2025 Q5(a) 7m foreign project NPV (forward rates from inflation); Jan 2026 Q5(b) 6m GDR number and cost; May 2026 Q1(a) 6m foreign project with swap and forward rates; May 2026 Q3(a) 6m forward rates by IRP + APV.</div>
+
+  <h3>1. International Capital Budgeting · 1.1 Complexities Involved</h3>
+  <ul>
+    <li>Foreign cash flows must be <b>converted into parent's currency</b>.</li>
+    <li><b>Parent cash flows differ</b> from project cash flows.</li>
+    <li>Remitted profits taxed in <b>home and host</b> country.</li>
+    <li><b>Foreign exchange risk</b> on parent's cash flow.</li>
+    <li><b>Inflation changes</b> shift the competitive environment and cash flows.</li>
+    <li>Host-country <b>restrictions on distribution</b> of cash flows.</li>
+    <li>Initial investment in host country to benefit from <b>release of blocked funds</b>.</li>
+    <li><b>Political risk</b> reduces chance of expected cash flows.</li>
+    <li>Host-country <b>concessions/benefits</b> raise profitability.</li>
+    <li><b>Terminal value</b> hard to estimate — buyers in parent company have divergent views.</li>
+  </ul>
+
+  <h3>1.2 Problems Affecting Foreign Investment Analysis</h3>
+  <ul>
+    <li><b>Foreign exchange risk:</b> forecast host-country inflation over project life; adjust local-currency cash flows for inflation; convert at <b>spot rate × expected depreciation from PPP</b>.</li>
+    <li><b>Remittance restrictions:</b> limits on transfer of profits, depreciation, technical differences → project CF ≠ parent CF. Diluted by <b>internal transfer prices, overhead payments</b>. Blocked funds adjusted at their <b>opportunity cost</b>.</li>
+    <li><b>Taxation:</b> use <b>after-tax</b> cash flows. Two tax regimes, royalties/dividends/management fees, withholding tax, tax treaties, tax discrimination (remitted vs reinvested profits) complicate it. MNCs cut overall tax via <b>transfer pricing</b>.</li>
+    <li>Rule: compute parent's after-tax CF at the <b>higher of home/host tax rate</b>. Feasible → acceptable under a more favourable regime too. Not feasible → bring in other tax-saving aspects to see if it crosses the hurdle rate.</li>
+  </ul>
+
+  <h3>1.3 Project vis-a-vis Parent Cash Flows</h3>
+  <ul>
+    <li>Difference arises from <b>tax rules, exchange controls</b>; management fees and royalty are returns to the parent.</li>
+    <li><b>Project (own) CF basis:</b> project must beat local competitors, else parent would buy local equity/government bonds. But foreign projects often <b>replace imports</b>, not compete locally. Avoids currency conversion and exchange-rate problems.</li>
+    <li><b>Parent CF basis:</b> operating + financial cash flows <b>actually remitted</b> are the yardstick (dividends to shareholders, debt service). Evaluate on <b>net after-tax operating CF</b>; keep financial CF separate from operating CF.</li>
+  </ul>
+
+  <h3>1.4 Discount Rate and Adjusting Cash Flows</h3>
+  <ul>
+    <li>Old practice: raise discount rate for foreign risk. <b>Not proper</b> to combine all risks into one rate:
+      <ul>
+        <li>Political-risk premium in the rate <b>penalises early cash flows more</b> than distant ones.</li>
+        <li>Raising the rate for adverse currency moves ignores <b>gains from favourable moves</b>.</li>
+      </ul></li>
+    <li>Better: <b>adjust cash flows</b> (certainty equivalents, probability, decision tree) for political, exchange and other risks; discount at host- or parent-country rate.</li>
+  </ul>
+
+  <p><b>Forward / expected rates and the two approaches (needed for 1.6 and the TYK practicals):</b></p>
+  <table class="tight">
+    <tr><th style="width:34%">Formula</th><th>Terms / logic</th><th style="width:30%">SM example figures</th></tr>
+    <tr><td><b>PPP:</b> E(S<sub>1</sub>) = S<sub>0</sub> × (1 + I<sub>d</sub>) ÷ (1 + I<sub>f</sub>)</td><td>S<sub>0</sub> = spot (<b>direct quote</b>, home per 1 foreign); I<sub>d</sub> = home inflation; I<sub>f</sub> = foreign inflation. Higher-inflation currency depreciates. Year n: roll forward year by year (or use power n if rates constant).</td><td>Illus 1: 57 × 1.06/1.05 = 57.54</td></tr>
+    <tr><td><b>IRP:</b> F<sub>n</sub> = S<sub>0</sub> × (1 + i<sub>d</sub>)<sup>n</sup> ÷ (1 + i<sub>f</sub>)<sup>n</sup></td><td>Same logic with nominal interest rates ("international parity conditions hold").</td><td>Illus 3: 9.50 × 1.12/1.10 = 9.67; year 2 = 9.85</td></tr>
+    <tr><td><b>Indirect quote</b> (foreign per 1 home): F = S × (1 + rate<sub>foreign</sub>) ÷ (1 + rate<sub>home</sub>)</td><td>Numerator is always the currency in which the quote is expressed. Then ₹ CF = NC CF ÷ rate.</td><td>TYK P5: NC 1.60 × 1.09/1.08 = 1.615, 1.630, 1.645</td></tr>
+    <tr><td><b>Home currency approach:</b> foreign CF × forward rate → discount at home rate</td><td>Convert year by year at expected rates, discount at the home (₹) rate.</td><td>Illus 3(b), TYK P3, TYK P5</td></tr>
+    <tr><td><b>Foreign currency approach:</b> (1 + k<sub>home</sub>) = (1 + i<sub>home</sub>)(1 + RP); k<sub>foreign</sub> = (1 + RP)(1 + i<sub>foreign</sub>) − 1</td><td>RP = project risk premium. Discount foreign CF at the foreign risk-adjusted rate; foreign NPV × spot = home NPV.</td><td>TYK P1: 1.14/1.12 = 1.0179; × 1.08 → 9.9%</td></tr>
+  </table>
+  <p class="small"><i>Linking line (app-written): both approaches give the same answer when parity holds; examiners say which one to use ("foreign currency approach" in TYK P1; "converted at forward rate and discounted at the Indian rate" in TYK P5).</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 11 International Financial Management (contd.)</span><span class="tag">SM Ch 11</span></div>
+  <h3>1.5 Adjusted Present Value (APV) <span class="pyq">Asked: May 2026 Q3(a) 6m</span></h3>
+  <ul>
+    <li><b>Value-additive</b> approach: each cash flow discounted separately at a rate matching <b>its own risk</b>.</li>
+    <li>Test <b>basic viability</b> first; if feasible, stop. If not, add the other complexities (tax shields, subsidies).</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:40%">Formula</th><th>Terms / logic</th></tr>
+    <tr><td>APV = −I<sub>0</sub> + Σ X<sub>t</sub> ÷ (1 + k*)<sup>t</sup> + Σ T<sub>t</sub> ÷ (1 + i<sub>d</sub>)<sup>t</sup> + Σ S<sub>t</sub> ÷ (1 + i<sub>d</sub>)<sup>t</sup></td><td>I<sub>0</sub> = PV of investment outlay (net of usable blocked funds); X<sub>t</sub> = operating CF, discounted at <b>k* = unlevered cost of capital</b>; T<sub>t</sub> = tax saving from financing mix (interest tax shield); S<sub>t</sub> = before-tax value of interest subsidies from project-specific financing; last two at <b>i<sub>d</sub> = before-tax cost of debt</b> (they are as certain as debt).</td></tr>
+  </table>
+  <ul>
+    <li><b>Blocked funds:</b> balances abroad that cannot be remitted. <b>Direct</b> = exchange-control bar. <b>Indirect</b> = heavy local/withholding tax on remittance. If released for the new project, they <b>reduce the investment outlay</b>.</li>
+  </ul>
+
+  <h3>1.6 Scenarios · 1.6.1 A foreign company investing in India <span class="pyq">Asked: Sep 2025 Q5(a) 7m; May 2026 Q1(a) 6m</span></h3>
+  <div class="ex"><p><b>Illus 1 (Perfect Inc., US, JV in Baddi):</b> 55% revenue share + royalty $0.01/bottle; outlay ₹ 200 cr, scrap ₹ 5 cr; depreciation 20% of 195 = 39.00; WC 50 + 5 p.a.; 24 cr bottles at ₹ 7.50 (+₹ 1 each year, plus that year's inflation); production cost 40%. Tax India 30%, US 35% with credit, paid next year. Spot ₹ 57; inflation India 6% (falls 0.50% p.a.), US 5%. Only <b>50% remittable</b> in the year, rest next year. Rate 15%.</p>
+  <p>PPP rates yr 0–6: 57, 57.54, 57.82, 57.82, 57.54, 56.99, 56.18. Inflated prices 7.95, 8.97, 9.98, 10.97, 11.96 → 55% share 104.94 … 157.87. Royalty ₹ 13.81 … 13.68 cr. PBT 37.77 … 69.40; Indian tax 11.33 … 20.82. FCF: −250.00, 71.77, 68.59, 74.15, 79.51, 164.89, −20.82. Remittance (50% + previous 50%): −250.00, 35.88, 70.17, 71.37, 76.84, 122.20, 61.62 → in $ mn −43.86, 6.24, 12.14, 12.34, 13.35, 21.44, 10.97. US tax 35% (next year) less Indian tax credit → net tax; net CF −43.86, 6.24, 11.92, 10.47, 11.84, 20.02, 7.18, −3.84. <b>NPV @15% = −$4.15 mn → do not invest.</b></p></div>
+  <p class="small">Logic: compute project CF in host currency → apply remittance restriction → convert at PPP rates → home tax less foreign tax credit (with the one-year lag) → discount at the parent's required rate.</p>
+
+  <h3>1.6.2 Indian company investing abroad, funds raised in the same country</h3>
+  <ul>
+    <li>Use the <b>foreign competitor's beta</b> (business risk of that market): ungear, then regear at the project's own funding mix, with host-country tax.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:40%">Formula</th><th>Terms / logic</th></tr>
+    <tr><td>β<sub>A</sub> = β<sub>E</sub> × E ÷ [E + D(1 − t)]</td><td>Debt assumed risk-free (β<sub>D</sub> = 0). Same formula reversed to get project β<sub>E</sub>.</td></tr>
+    <tr><td>K<sub>e</sub> = R<sub>f</sub> + β(R<sub>m</sub> − R<sub>f</sub>); WACC = K<sub>e</sub>·W<sub>e</sub> + K<sub>d</sub>(1 − t)·W<sub>d</sub></td><td>CAPM; host-country tax rate on debt.</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 2 (Its Entertainment Ltd., Water Park in Nepal):</b> competitor E 1850, D 510, β<sub>E</sub> 1.35, Nepal tax 20% → β<sub>A</sub> <b>1.106</b>; regeared at 55:45 → β<sub>E</sub> <b>1.83</b>; K<sub>e</sub> = 8% + 1.83(11% − 8%) = <b>13.49%</b>; WACC = 13.49% × 0.55 + 9%(1 − 0.20) × 0.45 = <b>10.66%</b>. Construction NPR 450 cr (225 now, 225 end yr 1); WC 65 cr from yr 1, rising 5%; capital allowance 20% WDV on max NPR 200 cr (40, 32, 25.60, 20.48). Visitors 20,000 × 70% × 360 = 50,40,000; revenue per visitor 303.19 (ticket 242.55 + F&amp;B profit 33.08 + gifts 27.56) in first operating year. Market research ₹ 20 lakh (sunk) and apportioned overheads NPR 5 cr excluded. Net CF: −225.00, −290.00, 45.26, 43.32, 41.84, 369.79 → <b>NPV = NPR −167.32 cr → do not undertake.</b></p></div>
+
+  <h3>1.6.3 Indian company investing abroad, funds raised in a different country through GDRs</h3>
+  <div class="ex"><p><b>Illus 3 (Opus Technologies, project in China, 2 years):</b> cost of GDR K<sub>e</sub> = D<sub>1</sub> ÷ P<sub>net</sub> + g = 2.75 ÷ 198 + 0.10 = <b>11.39%</b> (D<sub>0</sub> 25% of FV ₹ 10 = 2.50; net proceeds ₹ 200 − 1%). Land CN¥ 30,00,000 sold for 35,00,000 → net of 25% tax 33,75,000; office complex 15,00,000 (SLM to zero) sold for 5,00,000 → net 3,75,000. Operating CF 8,35,500 and 8,87,340. (a) <b>NPV in CN¥ @11.39% = −12,025</b>. IRP rates 9.67, 9.85. (b)(i) remitted each year, discount @12%: <b>NPV ₹ 8,70,008</b>; (ii) all remitted at end of yr 2 (CN¥ 54,72,840): <b>NPV ₹ 2,14,257</b>. CN¥ NPV negative but ₹ NPV positive due to weakening of ₹ against CN¥ → <b>accept</b>.</p></div>
+  <p class="small">Logic of (b)(ii): remittance restriction delays the inflow, so PV falls (8,70,008 → 2,14,257).</p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 11 International Financial Management (contd.)</span><span class="tag">SM Ch 11</span></div>
+  <p><b>TYK practicals on international capital budgeting (1.1–1.6):</b></p>
+  <div class="ex"><p><b>TYK P1 (ABC Ltd., US project, foreign currency approach):</b> outlay $1,10,00,000; inflows $20, 25, 30, 40, 50 lakh; spot ₹ 48; R<sub>f</sub> US 8%, India 12%; required 14%. 1 + RP = 1.14/1.12 = 1.0179 → $ rate = 1.0179 × 1.08 − 1 = <b>9.9%</b>; PV $12.013 mn − 11.000 = <b>$1.013 mn</b> → <b>₹ 48.624 mn</b>.</p></div>
+  <div class="ex"><p><b>TYK P2 (US company, software unit in India, transfer price $10 mn):</b> revenue ₹ 48,00,00,000; costs rent 15,00,000 + manpower 400 × 80 × 10 × 365 = 11,68,00,000 + admin 12,00,000 = 11,95,00,000; EBT 36,05,00,000; tax 30% 10,81,50,000; EAT 25,23,50,000.</p><p>(i) WHT 10% 2,52,35,000 → repatriation ₹ 22,71,15,000 = <b>$4.7 mn</b>; cost to US company <b>$5.268 mn</b> vs sale $12.0 mn → develop in India.</p><p>(ii) Alt (no WHT as subsidiary paid tax): repatriation 25,23,50,000 = <b>$5,257,292</b>; cost <b>$4.743 mn</b>.</p><p>(iii) Alt (WHT 10% on EBT 3,60,50,000, credited against corporate tax 7,21,00,000): repatriation same 25,23,50,000 = $5,257,292; cost $4.743 mn.</p></div>
+  <div class="ex"><p><b>TYK P3 (XY Ltd., stores in Africa, real CF):</b> inflation Africa 40%, India 10%; spot Rand 6/₹; rate 20%. Rates 6.00, 7.6364, 9.7190, 12.3696. Nominal ₹ CF −50,000, −1,650, −2,420, −3,327.50; Rand nominal −2,00,000, 70,000, 1,37,200, 2,46,960 → ₹ −33,333, 9,167, 14,117, 19,965. Net −83,333, 7,517, 11,697, 16,637; PV 3 years = <b>−59,320</b>; terminal value 16,637 ÷ 0.20 × 0.579 = <b>48,164</b>; <b>NPV = −11,156 (₹ ’000)</b>.</p>
+  <p class="small"><i>Note (app-written): ICAI labels the rates "as per IRP", but they are computed from the inflation rates (PPP). Figures kept as printed.</i></p></div>
+  <div class="ex"><p><b>TYK P4 (MNC subsidiary in India, replacing exports):</b> outflow 500 + 50 − release of existing WC 15 = <b>$535 mn</b>. CFAT India: sales 5 mn × $80 = 400 − VC 100 − cash fixed 30 − depreciation 100 = EBIT 170; tax 35% 59.50; CFAT <b>210.50</b>. Allocated fixed cost $3 mn ignored (not incremental). Lost export CFAT: 1.5 mn × (80 − 40) = 60 − tax 21 = <b>39.00</b>. Incremental CFAT 171.50 × 3.6048 = 618.2232 + WC release 35 × 0.5674 = 19.8590 → 638.0822 − 535 = <b>NPV $103.0822 mn → accept</b>.</p></div>
+  <div class="ex"><p><b>TYK P5 (XYZ Ltd., import of wood from Nepal; same type as Sep 2025 Q5(a)):</b> NC flows −25.000, 2.600, 3.800, 4.100; ₹ flows 0, 2.869, 4.200, 4.600; rate 9%; inflation Nepal 9%, India 8%; ₹ 1 = NC 1.6. Forward NC/₹ 1.615, 1.630, 1.645 → ₹ −15.625, 1.61, 2.33, 2.49. Total 4.479, 6.53, 7.09 → <b>NPV ₹ −0.547 mn</b>. MIRR: terminal value 5.32 + 7.12 + 7.09 = 19.53; MIRR = (19.53 ÷ 15.625)<sup>1/3</sup> − 1 = <b>7.72%</b>.</p></div>
+  <p class="small">MIRR = (Terminal value of inflows reinvested at k ÷ Initial outlay)<sup>1/n</sup> − 1. TV uses the FV factors given (1.188 for 2 years, 1.090 for 1 year).</p>
+
+  <h3>2. International Sources of Finance · 2.1 Foreign Currency Convertible Bonds (FCCBs)</h3>
+  <ul>
+    <li>Convertible bond issued in a <b>currency other than issuer's domestic currency</b>; mix of debt and equity: regular coupon + principal, plus <b>option to convert</b> into stock.</li>
+    <li>Investors: safety of guaranteed payments + share in price appreciation (via warrants activated at a set price). Issuer: <b>lower coupon</b> due to equity element.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td><ul><li><b>Flexibility</b> to convert into equity or redeem at end of period (normally 3 years).</li><li><b>Delayed dilution</b> of equity and EPS.</li><li><b>Easily marketable</b>: conversion option + minimum fixed interest.</li></ul></td><td><ul><li><b>Exchange risk</b> on interest in foreign currency → only firms with low D/E and large forex earnings opt.</li><li><b>More debt</b> and forex outgo on interest.</li><li>Low interest (around 3–4%) but exchange risk on interest and repayment if not converted. Only major plus: high-growth firm can issue shares later above current price.</li></ul></td></tr>
+  </table>
+
+  <h3>2.2 American Depository Receipts (ADRs)</h3>
+  <ul>
+    <li>Depository receipts issued in the <b>USA</b>; must follow stringent <b>SEC</b> provisions.</li>
+    <li>Created by deposit of non-US company's securities with a <b>custodian bank in issuer's country</b>; custodian informs the US depository, which issues ADRs.</li>
+    <li><b>USD denominated</b>, traded like US securities; holder gets same rights as owners of underlying shares.</li>
+    <li>GDR = same structure, but traded in <b>more than one currency</b> and within as well as outside the US.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 11 International Financial Management (contd.)</span><span class="tag">SM Ch 11</span></div>
+  <h3>2.3 Global Depository Receipts (GDRs) <span class="pyq">Asked: Jan 2026 Q5(b) 6m</span></h3>
+  <ul>
+    <li><b>Negotiable certificate</b>, denominated in a currency not native to the issuer, representing its publicly traded local-currency equity shares. Mostly USD, a few in Euro/Pound. Issued in US = ADR; outside US = GDR. Can represent debt in theory, rarely in practice.</li>
+    <li>Created when local shares are delivered to the depository's <b>local custodian bank</b>; depository bank (e.g. Bank of New York) issues DRs in USD; traded on a foreign exchange, OTC, or among <b>QIBs</b>. Indian issues are GDRs as they are marketed globally.</li>
+    <li>Why Indian companies used them: equity (no principal repayment, lower servicing cost); no other form of term forex funding was available; fetched <b>higher prices</b> than a domestic issue.</li>
+  </ul>
+  <p><b>Impact of GDRs on Indian capital market</b> (TYK T2):</p>
+  <ul>
+    <li>Market shifting from <b>Bombay to Luxemburg</b>.</li>
+    <li><b>Arbitrage</b> possibility in GDR issues.</li>
+    <li>Market <b>no longer independent</b> of the world — investors must track worldwide events.</li>
+    <li><b>Retail investors sidelined</b> — GDR/FII placements + free pricing end easy money on discounted rights/public issues.</li>
+    <li>Result: considerable foreign investment flowed into India.</li>
+  </ul>
+  <p><b>Markets of GDRs:</b></p>
+  <ul>
+    <li>Sold primarily to <b>institutional investors</b>; demand dominated by <b>emerging market funds</b>.</li>
+    <li>FIIs likely to <b>switch</b> from ordinary shares into GDRs.</li>
+    <li>Major demand: <b>UK, USA (QIBs), South East Asia</b> (Hong Kong, Singapore), some continental Europe (France, Switzerland).</li>
+  </ul>
+  <p><b>Mechanism:</b> company issues ordinary shares → kept with custodian/depository bank → GDRs issued to foreign investors.</p>
+  <p><b>Characteristics:</b></p>
+  <ul>
+    <li>Economic benefits of shareholders but <b>no voting rights</b>.</li>
+    <li>Settled through <b>CEDEL &amp; Euro-clear</b>; listed on <b>Luxemburg</b> stock exchange.</li>
+    <li>Traded <b>OTC</b> between professional market makers; <b>freely traded</b>; marketed globally in more than one currency.</li>
+    <li>Dividends paid in issuer currency, converted into dollars by depository → <b>exchange risk with investor</b>.</li>
+    <li><b>Cancellation</b> any time after a cooling period of <b>45 days</b>: depository asks domestic custodian to release underlying shares; BSE/NSE price on date of redemption advice = cost of acquisition.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:36%">Formula</th><th>Terms / logic</th><th style="width:30%">SM example figures</th></tr>
+    <tr><td>Gross issue = Net requirement ÷ (1 − flotation %)</td><td>Funds needed are net of issue cost.</td><td>Illus 4: $10 mn ÷ 0.98 = $10.204 mn</td></tr>
+    <tr><td>Price per GDR = MP × shares per GDR × (1 − discount) ÷ exchange rate</td><td>Converted to $ at expected rate.</td><td>250 × 2 × 90% = ₹ 450 ÷ 60 = $7.50</td></tr>
+    <tr><td>No. of GDRs = Gross issue ÷ price per GDR</td><td></td><td>10.204 ÷ 7.50 = <b>1.3605 mn</b></td></tr>
+    <tr><td>Cost of GDR K<sub>e</sub> = D<sub>1</sub> ÷ Net proceeds per GDR + g</td><td>D<sub>1</sub> and net proceeds both per GDR (in ₹).</td><td>40 ÷ 441 + 0.12 = <b>21.07%</b></td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 4 (X Ltd., plant in US):</b> need $10 mn net, flotation 2%; MP ₹ 250 (FV ₹ 100); 2 shares per GDR at 10% discount; ₹ 60/$; dividend 20% (₹ 20 per share → D<sub>1</sub> ₹ 40 per GDR), growth 12%. Net proceeds per GDR ₹ 450 × 0.98 = ₹ 441.00. (a) <b>1.3605 million GDRs</b>; (b) <b>cost 21.07%</b>. Also see Illus 3: 2.75 ÷ 198 + 0.10 = 11.39%.</p></div>
+
+  <h3>2.4 Euro-Convertible Bonds (ECBs)</h3>
+  <ul>
+    <li>Debt with option to convert into a <b>predetermined number of equity shares</b>; conversion price usually at a <b>premium</b>; <b>fixed interest</b>.</li>
+    <li><b>Call option (issuer's):</b> issuer can call bonds before maturity when share price is far above redemption value — <b>forces conversion</b>; usually when price reaches <b>130% to 150%</b> of conversion price.</li>
+    <li><b>Put option (holder's):</b> holder can sell bonds back to issuer at a pre-determined price and date.</li>
+    <li>Interest and redemption paid by issuer in <b>US dollars</b>.</li>
+  </ul>
+
+  <h3>2.5 Other Sources</h3>
+  <ul>
+    <li><b>Euro-convertible zero coupon bonds:</b> no interest; converted at maturity at a pre-determined price; usually 5 years; a <b>deferred equity issue</b>.</li>
+    <li><b>Euro-bonds with equity warrants:</b> market-based coupon; <b>detachable</b> warrants; pure bonds trade at a discount; suit fixed income funds.</li>
+    <li><b>Syndicated bank loans:</b> large loans from banks, good credit rating, quick, few formalities; 5 to 10 years; rate = index (say <b>SOFR</b>) + spread by credit rating; covenants (key ratios).</li>
+    <li><b>Euro-bonds:</b> debt denominated in a currency, issued <b>outside the country of that currency</b> (e.g. Yen bond floated in France); refuge from tax/regulation, yield arbitrage; usually bearer; forms: fixed rate, FRNs, convertible.</li>
+    <li><b>Foreign bonds:</b> denominated in a currency foreign to the borrower and <b>sold in the country of that currency</b>; subject to that country's restrictions on foreigners.</li>
+    <li><b>Euro commercial papers:</b> short-term, issued at a <b>discount</b>, maturity &lt; 1 year.</li>
+    <li><b>Credit instruments:</b> used for foreign remittances; differ in <b>speed</b> of receipt; rate varies with loss of interest and risk → different exchange rates for different instruments.</li>
+  </ul>
+  <p class="small">TYK T1 (short note on instruments of international finance) → answer from 2.1–2.5.</p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 11 International Financial Management (contd.)</span><span class="tag">SM Ch 11</span></div>
+  <h3>3. International Financial Centre (GIFT City)</h3>
+  <ul>
+    <li>IFC: financial centre catering to customers <b>outside their own jurisdiction</b>; hub for funds, products and services in own land but under a <b>different set of regulations and laws</b>; flexibility in currency trading, insurance, banking.</li>
+  </ul>
+  <h3>3.1 Benefits of IFC</h3>
+  <ul>
+    <li>Qualified professionals working abroad can <b>come and practise</b> here.</li>
+    <li>Platform to pursue <b>global opportunities without leaving homeland</b>.</li>
+    <li>Stops <b>brain drain</b>.</li>
+    <li><b>Brings back</b> financial services transactions now done abroad.</li>
+    <li>Trading of <b>complicated financial derivatives</b> from India.</li>
+  </ul>
+  <h3>3.2 Constituents of IFC</h3>
+  <ul>
+    <li><b>Highly developed infrastructure</b>.</li>
+    <li><b>Stable political environment</b> (avoids country risk).</li>
+    <li><b>Strategic location</b> — near airport, seaport; friendly weather.</li>
+    <li><b>Quality life</b> — to retain highly paid professionals.</li>
+    <li><b>Rational regulatory framework</b> — fair and transparent.</li>
+    <li><b>Sustainable economy</b> — absorbs shocks, boosts investor confidence.</li>
+  </ul>
+  <h3>3.3 GIFT City — India's International Financial Services Centre</h3>
+  <ul>
+    <li>Idea coined in <b>2007</b> to compete with Dubai, Hong Kong; aim: <b>retain financial services business</b> moving out of India; separate jurisdiction with relaxed tax and other laws.</li>
+    <li>IFSC operationalised at <b>GIFT Multi Services SEZ in April 2015</b>; <b>Union Budget 2016</b> gave competitive tax regime.</li>
+    <li><b>India INX</b> (wholly owned subsidiary of BSE) inaugurated <b>9/1/2017</b> — index, currency, commodity, equity derivatives. <b>NSE</b> launched at GIFT on <b>5 June 2017</b>.</li>
+    <li>Competitive cost and tax, <b>single window clearance</b>, relaxed company law, international arbitration centre; moving to <b>unified regulator</b>. <b>FEMA not applicable</b> at GIFT City. Units pay SEZ-level taxes and can offer foreign currency loans.</li>
+  </ul>
+
+  <h3>4. Sovereign Funds</h3>
+  <ul>
+    <li>SWF: <b>state-owned investment fund</b> of money generated by government, generally from <b>surplus reserves</b>. Legal basis: constitutive law, fiscal law, constitution, company law or other laws.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Sources</th><th>Objectives</th><th>Classifications / vehicles</th></tr>
+    <tr><td><ul><li>Surplus from state-owned <b>natural resource</b> revenues and <b>trade surpluses</b></li><li><b>Bank reserves</b> from budgeting excesses</li><li><b>Foreign currency operations</b></li><li><b>Privatisation</b> money</li><li><b>Governmental transfer payments</b></li></ul></td><td><ul><li>Protect and <b>stabilise</b> budget/economy</li><li><b>Diversify</b> from non-renewable exports</li><li><b>Better returns</b> than forex reserves</li><li>Help monetary authorities dissipate <b>unwanted liquidity</b></li><li><b>Savings for future generations</b></li><li>Social and economic <b>development</b></li><li>Sustainable long-term capital growth for target countries</li><li><b>Political strategy</b></li></ul></td><td><ul><li>Classes: stabilisation; savings/future generation; public benefit pension reserve; reserve investment; strategic development SWF (SDSWF)</li><li>Vehicles: SWFs; public pension funds; state-owned enterprises; sovereign wealth enterprises (SWEs)</li></ul></td></tr>
+  </table>
+  <p class="small">Risk appetite ranges from very conservative to high; some prefer returns over liquidity, some vice-versa.</p>
+
+  <h3>5. International Working Capital Management</h3>
+  <p>Reasons for complexity vs a domestic firm:</p>
+  <ul>
+    <li><b>Wider financing options</b> — local or global markets.</li>
+    <li><b>Interest and tax rate differentials</b> between countries.</li>
+    <li><b>Foreign exchange risk</b> on inflows/outflows and imports/exports.</li>
+    <li>Home/host <b>restrictions on movement of cash and inventory</b> (political).</li>
+    <li><b>Limited knowledge</b> of politico-economic conditions of host countries (eased by communication).</li>
+    <li><b>Capital convertibility:</b> full convertibility lets MNC position funds efficiently; not available in countries like India.</li>
+  </ul>
+  <p>Covers multinational cash, inventory and receivables management.</p>
+
+  <h3>5.1 Multinational Cash Management</h3>
+  <ul>
+    <li>Traditional objectives: (1) <b>manage and control cash</b> — better collections/disbursements, accurate forecasts; (2) <b>optimum utilisation and conservation</b> — cash when needed, minimum balance, higher risk-adjusted return.</li>
+    <li>Constraints: country rules, forex conventions, FDI restrictions, <b>repatriation time limits</b>, <b>blocked funds</b>, multiple tax jurisdictions and currencies, no integrated exchange facilities.</li>
+  </ul>
+  <p><b>Objectives of effective international cash management:</b></p>
+  <ul>
+    <li>Minimise <b>currency exposure</b> risk.</li>
+    <li>Minimise <b>overall cash requirement</b> without disturbing subsidiaries.</li>
+    <li>Minimise <b>transaction costs</b>.</li>
+    <li>Minimise <b>country's political risk</b>.</li>
+    <li><b>Economies of scale</b> and superior knowledge.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 11 International Financial Management (contd.)</span><span class="tag">SM Ch 11</span></div>
+  <p><b>Centralised cash management helps to:</b></p>
+  <ul>
+    <li>Keep <b>minimum cash balance</b>; manage <b>liquidity</b> of the centre.</li>
+    <li>Use <b>hedging strategies</b> optimally to minimise exposure.</li>
+    <li>Generate <b>maximum returns</b> by investing all cash.</li>
+    <li>Use <b>multinational netting</b> — lower transaction costs and exposure.</li>
+    <li>Use <b>transfer pricing</b> to enhance profitability.</li>
+    <li>Exploit <b>currency correlations</b>: payables and receivables in positively correlated currencies; payables in negatively correlated currencies; <b>pooling</b> — group variance smaller than sum of individual variances.</li>
+  </ul>
+  <p>Cash flows of an MNC: subsidiaries send fees, dividends, excess cash to parent; parent sends loans and return on cash invested; subsidiaries pay each other for supplies. Two basic objectives: <b>optimising cash flow movements</b> and <b>investing excess cash</b> — no single strategy achieves both.</p>
+  <p><b>Ways of optimising cash flows:</b> accelerating inflows; managing blocked funds; leading and lagging; transfer pricing; netting; investing excess cash.</p>
+
+  <h3>5.1.1 Accelerating Cash Inflows</h3>
+  <ul>
+    <li>Customers send cheques to <b>lockboxes</b> at various locations → less time and collection cost.</li>
+    <li><b>Pre-authorised payment</b> — firm charges customer's bank account up to a limit.</li>
+  </ul>
+  <h3>5.1.2 Managing Blocked Funds</h3>
+  <ul>
+    <li>Host country may block remittance or require <b>local reinvestment</b> (jobs).</li>
+    <li>Subsidiary may <b>borrow locally for the parent</b> so blocked funds repay those bank loans.</li>
+    <li>Assess future blockage (political risk); move funds via <b>transfer pricing, direct negotiations, leading and lagging</b>.</li>
+  </ul>
+  <h3>5.1.3 Leading and Lagging</h3>
+  <ul>
+    <li>Adjust <b>timing of payments</b> (credit terms between units) by expected currency moves — reduces exposure or increases working capital.</li>
+    <li><b>Lead</b> (accelerate) <b>hard currency payables</b>; <b>lag</b> (delay) <b>soft currency payables</b>.</li>
+    <li>SM example: Indian subsidiary buys from Japanese subsidiary. Rupee expected to <b>fall</b> vs yen → pay early (<b>leading</b>). Rupee expected to <b>strengthen</b> → delay (<b>lagging</b>).</li>
+    <li>Check government restrictions first.</li>
+  </ul>
+  <h3>5.1.4 Minimising Tax on Cash Flows through Transfer Pricing</h3>
+  <ul>
+    <li>Higher transfer price → <b>larger profit for transferor</b> division vs transferee.</li>
+    <li>For MNCs complicated by exchange restrictions, inflation differentials, import duties, <b>tax rate differentials</b>, host-country quotas. (Applied in TYK P2: $10 mn transfer price.)</li>
+  </ul>
+  <h3>5.1.5 Netting</h3>
+  <ul>
+    <li>Optimises cash flows by combined effort of subsidiaries → lower <b>administrative and conversion costs</b>; minimises total inter-company fund flow.</li>
+    <li><b>Advantages:</b> fewer <b>cross-border transactions</b>; less <b>forex conversion</b>; better <b>cash forecasting</b> (net transfers at period end); <b>accurate reporting</b> and settlement.</li>
+    <li><b>Bilateral:</b> parent–subsidiary or two subsidiaries. X buys $20 mn from Y, Y buys $30 mn from X → gross $50 mn; Y pays X only <b>$10 mn</b>.</li>
+    <li><b>Multilateral:</b> each affiliate nets all receipts against all payments, pays/receives the balance. Needs <b>centralised communication</b> and disciplined subsidiaries. P → Q → R → P, $50 mn each → transfers <b>completely eliminated</b>.</li>
+  </ul>
+  <p>Method: matrix of receivables and payables in a common currency → each affiliate's net receipt / net payment.</p>
+  <div class="ex"><p><b>SM netting matrix (US parent; France, Germany, UK, Italy; $ '000):</b> receipts France 200, Germany 180, UK 210, Italy 190; payments France 240, Germany 130, UK 160, Italy 250; gross <b>780</b>. Net: Germany +50, UK +50 receive; France −40, Italy −60 pay → net transfers <b>100</b>, a reduction of <b>87%</b>.</p></div>
+  <h3>5.1.6 Investing Excess Cash</h3>
+  <ul>
+    <li><b>Euro currency market</b>: Euro dollar deposits yield more than US bank deposits; also foreign T-bills/CP.</li>
+    <li>Centralised <b>pooling</b> of subsidiaries' surplus → larger deposits, higher returns; separate investment account lets one subsidiary fund another without bank conversion charges.</li>
+    <li>Converting pooled funds into one currency costs money → <b>cost-benefit analysis</b>.</li>
+    <li>Choose currencies with higher interest or expected appreciation; foreign deposit if effective yield beats domestic after exchange risk (forecast rates); <b>diversify</b> across currencies to avoid big loss on sudden depreciation.</li>
+  </ul>
+  <h3>5.2 International Inventory Management</h3>
+  <ul>
+    <li>MNC holds stock above EOQ — <b>stock piling</b> (vertical set-up; political bottlenecks; importing currency expected to depreciate).</li>
+    <li>Decision: <b>cumulative carrying cost vs expected price rise</b> from exchange rate change; if probability of supply interruption is very high, stockpile even at higher cost.</li>
+    <li>Longer <b>lead time</b> + customs → <b>re-order point earlier</b>; depends on quantity imported vs locally available.</li>
+  </ul>
+  <h3>5.3 International Receivables Management</h3>
+  <table class="tight">
+    <tr><th style="width:50%">Inter-firm sales</th><th>Intra-firm sales</th></tr>
+    <tr><td><b>Currency:</b> exporter wants <b>strong</b>, importer <b>weak</b> currency; exporter may accept weak currency if it has <b>debt in that currency</b>. <b>Terms:</b> with weak-currency invoicing, exporter gives short credit; liberal credit if it can borrow against bills receivable or competition is keen (finances importer's inventory, expands sales).</td><td>Focus on <b>global allocation of resources</b>; parts made in different countries → large receivables. Timing does not affect the firm; cash-surplus unit pays early, cash-short unit late — <b>leads and lags</b>.</td></tr>
+  </table>
+
+  <div class="sticky"><p><b>Exam steps — foreign project NPV (home currency approach):</b> 1 forward rates by PPP (inflation) or IRP (interest), watch direct vs indirect quote → 2 foreign CF (inflate if real; tax; depreciation; WC; terminal) → 3 apply remittance restriction / withholding tax / home tax less credit → 4 convert each year → 5 add home-currency CF → 6 discount at home rate → 7 accept if NPV &gt; 0.</p></div>
+  <div class="sticky"><p><b>Exam steps — foreign currency approach:</b> 1 1 + RP = (1 + k<sub>home</sub>) ÷ (1 + i<sub>home</sub>) → 2 k<sub>f</sub> = (1 + RP)(1 + i<sub>f</sub>) − 1 → 3 discount foreign CF → 4 foreign NPV × spot.</p></div>
+  <div class="sticky"><p><b>Exam steps — APV:</b> 1 forward rates (IRP) if foreign flows → 2 base NPV: operating CF at unlevered k* → 3 PV of interest tax shields (and subsidies) at before-tax cost of debt → 4 APV = base NPV + PV shields (− issue costs / + usable blocked funds).</p></div>
+  <div class="sticky"><p><b>Exam steps — GDR:</b> 1 gross issue = net ÷ (1 − flotation) → 2 price per GDR = MP × shares × (1 − discount) ÷ rate → 3 number = gross ÷ price → 4 K<sub>e</sub> = D<sub>1</sub> per GDR ÷ net proceeds per GDR + g.</p></div>
+  <div class="sticky"><p><b>Exam steps — netting:</b> 1 convert all to common currency → 2 matrix: receipts (row) vs payments (column) → 3 net position per affiliate → 4 net transfers vs gross, % saving.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

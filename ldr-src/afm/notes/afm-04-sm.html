@@ -1,0 +1,373 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 4 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 04 Security Analysis</span><span class="tag">SM Ch 04</span></div>
+  <h2 class="brk"><span class="n">04</span>Ch 04 — Security Analysis</h2>
+  <div class="sub">Asked in last 3 papers: all theory, 4m each — technical analysis arguments for/against (Sep 2025), identify chart patterns (Jan 2026), Elliott Wave Theory (May 2026).</div>
+
+  <h3>Introduction</h3>
+  <ul>
+    <li><b>Buying</b> a security: highest return per unit of risk or lowest risk per unit of return. <b>Selling</b> needs no such test. Attractiveness changes with management policy or government economic policy → analyse <b>continuously</b>.</li>
+    <li><b>Security analysis</b>: systematic analysis of risk-return profiles so a rational investor can estimate a value from all price-sensitive information and buy when the market <b>under-prices</b>.</li>
+    <li>Two approaches: <b>fundamental</b> (factors affecting risk-return) and <b>technical</b> (demand/supply of securities and share price trends).</li>
+  </ul>
+
+  <h3>1 Fundamental Analysis</h3>
+  <ul>
+    <li>Assumes share price depends on <b>future dividends</b> expected. PV of future dividends at an appropriate discount rate = <b>intrinsic value</b> (true value).</li>
+    <li>Price <b>below</b> intrinsic value → <b>buy</b>; price <b>above</b> → <b>sell</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:30%">Formula</th><th>Terms / logic</th></tr>
+    <tr><td>P<sub>0</sub> = D/(1+k) + D/(1+k)<sup>2</sup> + D/(1+k)<sup>3</sup> + … (eq. 2); P<sub>0</sub> = D ÷ k (eq. 3)</td><td>Uniform dividend D every year; k = desired return on share. Perpetuity.</td></tr>
+    <tr><td>P<sub>0</sub> = D<sub>1</sub> ÷ (k − g) (eq. 5); P<sub>0</sub> = D<sub>0</sub>(1+g) ÷ (k − g) (eq. 6)</td><td>DPS grows at g p.a. (perpetual geometric series). D<sub>1</sub> ≈ D<sub>0</sub>(1+g). Valid only if <b>g &lt; k</b>; g ≥ k gives infinite price (not restrictive — long-term dividend growth unlikely to exceed k). <b>Gordon's dividend growth model</b> (Myron J. Gordon). g = 0 → back to eq. 3.</td></tr>
+  </table>
+
+  <h3>1.1 Dividend Growth Model and the PE Multiple</h3>
+  <table class="tight">
+    <tr><th style="width:30%">Formula</th><th>Terms / logic</th></tr>
+    <tr><td>P<sub>0</sub> = bE<sub>1</sub> ÷ (k − g) (eq. 7); P<sub>0</sub> = bE<sub>0</sub>(1+g) ÷ (k − g) (eq. 8)</td><td>b = dividend payout ratio, so D<sub>1</sub> = bE<sub>1</sub>; E = EPS. Used to estimate the fundamental price or <b>fundamental P/E</b> multiple.</td></tr>
+  </table>
+  <ul>
+    <li>Prevailing price / P/E <b>higher</b> than fundamental value → overpriced → <b>sell</b> (price falls once information is common knowledge). <b>Lower</b> → underpriced → <b>buy</b>.</li>
+    <li>Industries are interlinked and tied to the economy; a company depends on its industry and its competitive position in it → fundamental analysis = <b>economy → industry → company</b> analysis (three concentric circles = stages of the investment decision).</li>
+  </ul>
+
+  <h3>1.2 Economic Analysis</h3>
+  <ul>
+    <li>Assess macro-economic factors: past/present performance and future expectations, sector growth, signs of stagnation. Trends in people's <b>income and expenditure</b> reflect future industry growth; consumption affects profits, dividends and share prices.</li>
+  </ul>
+  <h3>1.2.1 Factors Affecting Economic Analysis</h3>
+  <ul>
+    <li><b>Growth rates of national income</b>: nominal GDP growth vs <b>real</b> growth (after inflation); pointer to returns from shares.</li>
+    <li><b>Growth rates of industrial sector</b>: by industry, estimated from demand for products.</li>
+    <li><b>Inflation</b>: WPI or CPI; affects demand esp. consumer products → firms fine-tune pricing, distribution, promotion.</li>
+    <li><b>Monsoon</b>: strong forward and backward linkages.</li>
+  </ul>
+  <h3>1.2.2 Techniques Used in Economic Analysis <span class="tag">TYK T4</span></h3>
+  <p>Forecast national income and components; <b>GNP</b> measures national income and is a forecasting tool.</p>
+  <ul>
+    <li><b>(a) Anticipatory surveys</b>: expert opinion on construction, plant &amp; machinery spending, inventory levels, consumer spending habits. Drawbacks: (i) intentions may not materialise; (ii) not forecasts per se (consensus approach). Needs continuous monitoring.</li>
+    <li><b>(b) Barometer / indicator approach</b>:
+      <ul>
+        <li><b>Leading</b> — reach high/low points <b>in advance</b> of economic activity.</li>
+        <li><b>Roughly coincidental</b> — peaks and troughs at about the <b>same time</b> as the economy.</li>
+        <li><b>Lagging</b> — turning points <b>after</b> the economy.</li>
+        <li>Limitation: show <b>direction, not magnitude</b>; may give conflicting signals → use a <b>diffusion / composite index</b> (several indicators in one); difficult to compute and does not eliminate irregular movements.</li>
+        <li><b>Money supply</b>: affects GNP, profits, interest rates, stock prices; more money supply fuels inflation; stocks are a hedge against inflation → prices rise in inflation.</li>
+      </ul></li>
+    <li><b>(c) Economic model building</b> (GNP model / sectoral analysis, national accounting framework). Steps: (i) hypothesise total demand via GNP (political stability, inflation, economic levels); (ii) forecast components — <b>consumption, gross private domestic investment, government purchases, net exports</b>; (iii) add up to forecast GNP; (iv) compare with an <b>independent agency's</b> forecast and test for consistency.</li>
+  </ul>
+  <div class="ex"><p><b>TYK T4</b> (indicators to assess performance of an economy) → ICAI answer: refer para 1.2.2.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 04 Security Analysis (contd.)</span><span class="tag">SM Ch 04</span></div>
+  <h3>1.3 Industry Analysis</h3>
+  <p>Industries do not grow at the same rate → examine demand, cost structure, economic and government constraints; company profitability depends on its industry's prospects.</p>
+  <h3>1.3.1 Factors Affecting Industry Analysis</h3>
+  <ul>
+    <li><b>Product life-cycle</b>: high profitability in initial and growth stages, medium but steady in maturity, sharp decline in last stage.</li>
+    <li><b>Demand-supply gap</b>: excess supply cuts unit price realisation and profit; insufficient supply improves it.</li>
+    <li><b>Barriers to entry</b>: high profits attract entrants; barriers innate to product/technology or created by existing firms.</li>
+    <li><b>Government attitude</b>: crucial determinant.</li>
+    <li><b>State of competition</b>: leaders and nature of competition (foreign/domestic), homogeneous vs differentiated products, demand by customer/area, changes in demand pattern, type of industry — <b>growth, cyclical, defensive, decline</b>.</li>
+    <li><b>Cost conditions and profitability</b>: (i) cost allocation (material, labour, overheads) and controllability; labour cost (wages, productivity); (ii) product price; (iii) capacity — installed, idle, operating; (iv) capex for maintenance/efficiency. Ratios: G.P., operating profit margin, ROE, return on total capital.</li>
+    <li><b>Technology and research</b>: (i) nature of technology; (ii) expected changes → new products, sales; (iii) capex vs sales over time; (iv) R&amp;D spend — redundant or not; (v) sales and profitability in short, immediate, long run.</li>
+  </ul>
+  <h3>1.3.2 Techniques Used in Industry Analysis</h3>
+  <ul>
+    <li><b>Regression analysis</b>: product demand analysis — GNP, disposable income, per capita consumption/income, price elasticity; regression and correlation.</li>
+    <li><b>Input-output analysis</b>: flow of goods/services through the economy from raw material to final consumption → detect growth/decline of industries.</li>
+  </ul>
+
+  <h3>1.4 Company Analysis</h3>
+  <p>Examine the company's quantitative and qualitative fundamentals.</p>
+  <ul>
+    <li><b>(a) Net worth and book value</b>: NW = equity + preference capital + free reserves − intangibles − carried-forward losses; ÷ shares = book value. Not intrinsic worth because (1) market price reflects <b>future earnings</b>, not assets; (2) book value is <b>historical cost</b>, may underestimate replacement/resale value.</li>
+    <li><b>(b) Sources and uses of funds</b> (funds flow analysis): check if <b>short-term sources fund long-term investments</b> → liquidity crunch risk (maturity mismatch).</li>
+    <li><b>(c) Cross-sectional and time series analysis</b>: compare firms, against industry benchmarks, and over time — <b>common-size statements, ratio analysis</b>.</li>
+    <li><b>(d) Size and ranking</b>: net capital employed, net profit, ROI, sales vs peers; technical know-how, R&amp;D, price leadership → risk.</li>
+    <li><b>(e) Growth record</b>: growth in sales, net income, capital employed, EPS. Three indicators: <b>P/E ratio, % growth of EPS p.a., % growth of net block</b>. Net block growth shows capacity build-up/diversification. Assess capacity utilisation (P&amp;L quantitative info), expansion plans (Directors' Report, Chairman's statement, capital commitments), technology. <b>Growth is the single most important factor</b> in company analysis.</li>
+  </ul>
+  <div class="ex"><p><b>SM example (P/E):</b> A — price 150, EPS 25 → P/E <b>6</b>; B — price 250, EPS 25 → P/E <b>10</b>. Other factors similar → A preferable. EPS cannot be the sole basis, but P/E relates market price to EPS.</p></div>
+  <p class="small"><i>Note (app-written): the SM then says to ascertain "why the EPS in company B is comparatively low", but both EPS are ₹ 25 in the SM table; it is B's P/E that is higher.</i></p>
+  <ul>
+    <li><b>(f) Financial analysis</b>: solvency, liquidity, fund-use efficiency, profitability, operating efficiency, financial and operating leverage. Key five: <b>EPS, P/E, yield, book value, intrinsic value</b> — for ~10 years, vs peers and industry averages. Yield and asset backing decide if price is proper. Solvency: current ratio, liquidity ratio, debt-equity.</li>
+    <li><b>(g) Competitive advantage</b>: drives long-term success; shield against competitors (SM: Apple's brand, Samsung's mobile domination).</li>
+    <li><b>(h) Quality of management</b>: intangible; business houses command premium; experience, skills, integrity; dividend/bonus policy. Small investors can't meet top executives. Clues: <b>conference calls</b> (CEO/CFO Q&amp;A), <b>MD&amp;A report</b>, management holding shares (large unloading while saying otherwise = warning), past 5-year performance of executives.</li>
+    <li><b>(i) Corporate governance</b>: compliance with <b>SEBI (LODR) Regulations 2015</b>; how policies serve stakeholders; quality and timeliness of disclosures; quality independent directors.</li>
+    <li><b>(j) Regulation</b>: Companies Act, SCRA, SEBI Act; SEBI monitors listed companies; FEMA compliance for dealings outside India, monitored by RBI.</li>
+    <li><b>(k) Location and labour-management relations</b>: power, skilled labour, raw materials, nearness to markets; state of labour relations.</li>
+    <li><b>(l) Pattern of existing stock holding</b>: stakes of parties (SM case: PNB nationalisation — institutional investors' bargaining raised compensation for opting-out shareholders).</li>
+    <li><b>(m) Marketability</b>: listing ≠ liquidity; see dispersal / public holding, speculative interest, exchange, trading volume.</li>
+  </ul>
+  <p><b>Techniques used in company analysis</b> (statistical):</p>
+  <ul>
+    <li><b>Correlation and regression</b>: simple (2 variables) / multiple (more); links economy, industry, company variables; gives forecasts and tests reliability.</li>
+    <li><b>Trend analysis</b>: one variable over time using regression; historical behaviour.</li>
+    <li><b>Decision tree analysis</b>: range of values with probabilities; sequential decisions — multiply probabilities along each sequence, then sum. Simulation also reduces limitations.</li>
+  </ul>
+  <ul>
+    <li>Fundamental analysis = examination of economic and financial aspects to estimate <b>future earnings and dividends</b>, incl. macro-economic and political factors → buy/sell decision.</li>
+    <li><b>Group analysis</b>: SEBI wants disclosure of group companies' financial health and promise vs performance in offer documents; RBI focuses on <b>Group Exposure Norms</b> of banks.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 04 Security Analysis (contd.)</span><span class="tag">SM Ch 04</span></div>
+  <h3>2 Technical Analysis · 2.1 Meaning</h3>
+  <ul>
+    <li>Study of share price movements through <b>price graphs/charts</b>, assuming price trends are <b>repetitive</b> because investor psychology follows a pattern. Studies <b>investor and price behaviour</b>.</li>
+    <li>Two questions: (i) is there a discernible <b>trend</b>? (ii) are there indications it will <b>reverse</b>? Methods: <b>visual</b> (charts, patterns) and <b>statistical</b> (price and return data).</li>
+  </ul>
+  <p class="small"><i>Note (app-written): the SM prints "The technical analyst is concerned with the fundamental strength or weakness of a company"; the rest of the SM (2.2(iv), section 3) shows technical analysis uses market data, not fundamentals — read as "not concerned".</i></p>
+
+  <h3>2.2 Assumptions</h3>
+  <ul>
+    <li>Market value depends on <b>supply and demand</b> for a security.</li>
+    <li>Supply and demand governed by factors <b>rational or irrational</b> (e.g. Govt NPA initiatives → demand for bank stocks).</li>
+    <li>Prices move in <b>trends</b> that continue for a substantial period (in a bull market a substantial correction gives a buying opportunity).</li>
+    <li>Relies on <b>chart analysis</b> of past prices, not financial statements.</li>
+  </ul>
+
+  <h3>2.3 Principles of Technical Analysis</h3>
+  <ul>
+    <li><b>Market discounts everything</b>: price already reflects everything incl. fundamentals (in line with EMH).</li>
+    <li><b>Price moves in trends</b>: more likely to continue the past trend.</li>
+    <li><b>History tends to repeat itself</b>: chart patterns repeat.</li>
+  </ul>
+
+  <h3>2.4.1 The Dow Theory <span class="tag">TYK T2</span></h3>
+  <ul>
+    <li>Charles Dow (founder of Dow Jones), late 19th century; measures relative strength of the market; <b>barometer of business</b>.</li>
+    <li>Based on two indices: <b>DJIA</b> (Industrial) and <b>DJTA</b> (Transportation) — aggregate impact of all information.</li>
+    <li>Three simultaneous movements:
+      <ul>
+        <li><b>Primary</b> — main trend (bull/bear), <b>1 year to 36 months</b> or longer.</li>
+        <li><b>Secondary</b> — shorter, <b>opposite</b> direction, <b>2 weeks to a month</b> or more.</li>
+        <li><b>Daily fluctuations</b> — not part of Dow interpretation, but study them as they make up longer movements.</li>
+      </ul></li>
+    <li>Tells where the market is and where it is going, <b>not how far</b>. Successive <b>higher highs and higher lows → bullish</b>; lower highs and lower lows → bearish.</li>
+    <li>Primary uptrend: <b>three moves up</b> — (1) accumulation by far-sighted investors; (2) first reports of good earnings; (3) widespread reports of well-being + rampant speculation. Then far-sighted sell → first move down; non-sustainability confirmed → second; <b>distress selling</b> → third.</li>
+  </ul>
+
+  <h3>2.4.2 Elliot Wave Theory <span class="pyq">Asked: May 2026 Q4(c) 4m</span> <span class="tag">TYK T3</span></h3>
+  <ul>
+    <li><b>Ralph Elliot, 1934</b>; inspired by Dow Theory and nature; based on <b>75 years</b> of price movements and charts.</li>
+    <li><b>Wave</b> = movement of market price from one change in direction to the next change in the same direction; caused by buying/selling impulses from demand-supply pressures.</li>
+    <li><b>Impulsive patterns (basic waves)</b>: <b>3 or 5 waves</b> in the direction of the basic movement (bull or bear phase).</li>
+    <li><b>Corrective patterns (reaction waves)</b>: <b>3 waves</b> against the basic direction; correct the earlier rise (bull) or fall (bear).</li>
+    <li>Waves 1, 3, 5 = directional; waves 2, 4 = corrective.</li>
+    <li><b>Complete cycle</b>: five-wave impulse + three-wave correction (a, b, c) = <b>8 waves</b>; two phases, bullish and bearish; then a fresh cycle starts.</li>
+  </ul>
+
+  <h3>2.4.3 Random Walk Theory</h3>
+  <ul>
+    <li>Dow-type theories assume trends give clues to future prices (technical analysis — much subjective judgment).</li>
+    <li><b>Random walk hypothesis</b>: prices are unpredictable; <b>no relationship</b> between present and future prices; prices are independent — mere statistical ups and downs.</li>
+    <li><b>M. G. Kendell</b> (British statistician): price changes behave as if generated by a <b>roulette wheel</b>, each outcome independent of past. Layman: a drunk walking in a blind lane.</li>
+    <li>Argument: (a) prices can never be predicted; (b) trends are not due to underlying factors but a statistical expression of past data; (c) no connection between successive <b>peaks and troughs</b>.</li>
+  </ul>
+
+  <h3>2.5 Charting Techniques</h3>
+  <ul>
+    <li><b>Line chart</b>: closing price of each period (day/week/month) plotted and joined by a line.</li>
+    <li><b>Bar chart</b>: vertical bar from low to high; short horizontal ticks for open and close.</li>
+    <li><b>Japanese candlestick</b>: same OHLC data; body colour — <b>white</b> = close &gt; open (<b>bullish</b>), <b>black</b> = close &lt; open (<b>bearish</b>); open ≈ close = <b>Doji</b> (simple bar). Vertical line = high-low; rectangle = open-close.</li>
+    <li><b>Point and figure</b>: more complex; detects <b>reversals</b>. Decide <b>box size</b> (e.g. ₹ 1, 2, 0.50 — smaller = more sensitive) and <b>reversal criterion</b> (boxes to be retraced to start a new column in the opposite direction). X = rising, O = falling.</li>
+  </ul>
+  <div class="ex"><p><b>SM example (A Ltd., 6 days, O/H/L/C):</b> 01-Jan 58/72/52/68; 02-Jan 71/73/58/64.30; 03-Jan 66/67/56/57; 04-Jan 58.50/75.50/55/72; 05-Jan 73.50/75/58/71; 06-Jan 74.50/76/55/74.50 — plotted as bar and candlestick charts. <b>P&amp;F example:</b> prices 24, 26, 27, 26, 28, 27, 26, 25, 26, 23 over 10 periods — a column of X then a column of O on a 22–30 grid.</p></div>
+  <p class="small"><i>App-written reading of the SM data: 01 and 04 Jan white; 02, 03, 05 Jan black; 06 Jan (open = close 74.50) Doji.</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 04 Security Analysis (contd.)</span><span class="tag">SM Ch 04</span></div>
+  <h3>2.6 Market Indicators</h3>
+  <ul>
+    <li><b>Breadth index</b>: covers all securities traded = <b>net advances or declines ÷ number of issues traded</b>. Supports Dow Jones averages → technical <b>strength</b>; does not → <b>weakness</b> (market to move opposite). Addition to Dow Theory.</li>
+    <li><b>Volume of transactions</b>: rising index with <b>increasing volume → buy</b> (unsatisfied demand); falling with increasing volume → bear, prices fall further; rising with decreasing volume → bull; falling with dwindling volume → bear. Best used with another indicator (Dow).</li>
+    <li><b>Confidence index</b>: willingness to take a chance = <b>high-grade bond yields ÷ low-grade bond yields</b>. Rising index precedes rising market; fall precedes a drop (low-grade yields rising faster / falling slower). Usually, not always, <b>leading</b> → use with other indicators.</li>
+    <li><b>Relative strength analysis</b>: some securities rise faster in bull / fall slower in bear; strength persists → invest in them. Measured by historical average returns, or ratios vs industry / vs market.</li>
+    <li><b>Odd-lot theory</b>: <b>contrary-opinion</b> — the average person is usually wrong; used mainly to predict <b>tops in bull markets</b> and reversals in individual securities.</li>
+  </ul>
+
+  <h3>2.7 Support and Resistance Levels</h3>
+  <ul>
+    <li>Fall from a peak → peak = <b>resistance</b>; rebound from a trough → lowest value = <b>support</b>. Price moves between them.</li>
+    <li>Near resistance → <b>selling pressure</b> (those who missed selling at the high); near support → <b>buying pressure</b>. A <b>breach</b> = departure from status quo, new levels.</li>
+  </ul>
+  <div class="ex"><p><b>SM example (A and B, Dec 2005 – Feb 2006 prices):</b> A — support about <b>₹ 100</b>, resistance <b>₹ 125</b>; B — support <b>₹ 140</b>, resistance <b>₹ 160</b>.</p></div>
+
+  <h3>2.8 Interpreting Price Patterns <span class="pyq">Asked: Jan 2026 Q4(c) 4m</span></h3>
+  <table class="tight">
+    <tr><th style="width:24%">Pattern</th><th>Shape</th><th style="width:30%">Signal</th></tr>
+    <tr><td>(a) Channel</td><td>Series of uniformly changing tops and bottoms</td><td>Upward slope → rising prices; downward → declining</td></tr>
+    <tr><td>(b) Wedge</td><td>Tops and bottoms change in <b>opposite</b> directions, or same direction at <b>different rates</b></td><td>—</td></tr>
+    <tr><td>(c) Head and shoulders</td><td>Large hump (head) between two smaller humps (shoulders); <b>neckline</b> joins where head meets shoulders. Price after 2nd shoulder is crucial.</td><td>Most important <b>reversal</b> pattern. Below neckline → drop ≈ distance from top of head to neckline.</td></tr>
+    <tr><td>(i) H&amp;S top</td><td>Left shoulder, head, right shoulder</td><td><b>Bearish</b>; fall below neckline → <b>sell</b></td></tr>
+    <tr><td>(ii) Inverse H&amp;S</td><td>Inverse of the top formation</td><td><b>Bullish</b>; rise above neckline → <b>buy</b></td></tr>
+    <tr><td>(d) Triangle / coil</td><td>—</td><td><b>Uncertainty</b>; hard to predict breakout direction</td></tr>
+    <tr><td>(e) Flags and pennants</td><td>—</td><td>Previous trend likely to <b>continue</b></td></tr>
+    <tr><td>(f) Double top</td><td>—</td><td><b>Bearish</b>, price expected to fall</td></tr>
+    <tr><td>(g) Double bottom</td><td>—</td><td><b>Bullish</b>, price expected to rise</td></tr>
+    <tr><td>(h) Gap</td><td>Opening price today − previous close</td><td>Wider gap → stronger signal of <b>continuation</b>; up-gap in rising market = eager buyers; lower gap in falling market = extreme selling pressure</td></tr>
+  </table>
+
+  <h3>2.9 Decision Using Data Analysis (Moving Averages)</h3>
+  <table class="tight">
+    <tr><th style="width:32%">Formula</th><th>Terms / logic</th><th style="width:28%">SM figures</th></tr>
+    <tr><td>AMA<sub>n,t</sub> = 1/n [P<sub>t</sub> + P<sub>t−1</sub> + … + P<sub>t−(n−1)</sub>]</td><td>Simple average of the last n prices; equal weight 1/n each.</td><td>Trend: <b>200-day</b> (or 30-week) = long term; <b>60-day</b> = intermediate; <b>10-day</b> = short term.</td></tr>
+    <tr><td>EMA<sub>t</sub> = aP<sub>t</sub> + (1 − a) EMA<sub>t−1</sub>; = (Close today − EMA<sub>t−1</sub>) × a + EMA<sub>t−1</sub>; a = 2 ÷ (n + 1)</td><td>a = exponent / smoothing constant; P<sub>t</sub> = today's price; EMA<sub>t−1</sub> = previous day's EMA; n = days. Decreasing weights, <b>highest on latest price</b>.</td><td>TYK P1: a = 0.062 (31-day)</td></tr>
+  </table>
+  <div class="ex"><p><b>SM example (5-day MA, 10 days' closes 25.00, 26.00, 25.50, 24.50, 26.00, 26.00, 26.50, 26.50, 26.00, 27.00):</b> 5-day sums 127.00, 128.00, 128.50, 129.50, 131.00, 132.00 → two-item centred totals 255.00, 256.50, 258.00, 260.50, 263.00 → MA (÷ 10) <b>25.50, 25.65, 25.80, 26.05, 26.30</b>.</p></div>
+  <table class="tight">
+    <tr><th>Buy signal</th><th>Sell signal</th></tr>
+    <tr><td>(a) Price rises through MA line when MA is flattening out</td><td>(a) Price falls through MA line when MA is flattening out</td></tr>
+    <tr><td>(b) Price falls below MA line which is <b>rising</b></td><td>(b) Price rises above MA line which is <b>falling</b></td></tr>
+    <tr><td>(c) Price above MA falls but rises again before reaching MA</td><td>(c) Price below MA rises but falls again before reaching MA</td></tr>
+  </table>
+  <p class="small"><i>Note (app-written): SM sell (c) prints "which is slow moving average line"; read as "below" (mirror of buy (c)).</i></p>
+  <div class="ex"><p><b>TYK P1 (Sensex, EMA, previous EMA 15,000, a 0.062):</b> 6th 14522 → diff (478) × 0.062 = (29.636) → <b>14970.364</b>; 7th 14925 → <b>14967.55</b>; 10th 15222 → <b>14983.32</b>; 11th 16000 → <b>15046.354</b>; 12th 16400 → <b>15130.28</b>; 13th 17000 → <b>15246.202</b>; 17th 18000 → diff 2753.798 × 0.062 = 170.735 → <b>15416.937</b>. Non-trading days skipped. Conclusion: <b>bullish</b> short to medium term → take <b>long</b> position.</p></div>
+  <p class="small"><i>Note (app-written): TYK P1 question says "NSE Nifty" but the table and answer use Sensex; and 2 ÷ (31+1) = 0.0625, ICAI uses 0.062 as given.</i></p>
+
+  <h3>2.10 Evaluation of Technical Analysis <span class="pyq">Asked: Sep 2025 Q4(c) 4m</span></h3>
+  <table class="tight">
+    <tr><th>Arguments in favour</th><th>Arguments against</th></tr>
+    <tr><td><ul>
+      <li><b>Crowd psychology</b> makes trends persist; tools spot them early.</li>
+      <li>Shifts in demand and supply are <b>gradual</b>, not instantaneous; detected early.</li>
+      <li>Fundamental information is <b>assimilated over time</b>; price moves in the same direction till fully assimilated.</li>
+    </ul></td><td><ul>
+      <li>No <b>convincing explanation</b> for tools used.</li>
+      <li>Empirical evidence for <b>random walk</b> casts a shadow.</li>
+      <li>By the time a trend is signalled it may <b>already have taken place</b>.</li>
+      <li><b>Self-defeating</b>: more users → less value.</li>
+    </ul></td></tr>
+  </table>
+  <p>Nutshell: may not work in a rational, efficient market; helpful in real-world imperfect markets; best used <b>with fundamental analysis</b>.</p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 04 Security Analysis (contd.)</span><span class="tag">SM Ch 04</span></div>
+  <h3>3 Differences between Fundamental and Technical Analysis</h3>
+  <table class="tight">
+    <tr><th style="width:16%">Basis</th><th>Fundamental</th><th>Technical</th></tr>
+    <tr><td>Method</td><td>Macro factors (GDP, inflation, interest rate, growth rate) + company micro factors (sales, profitability, solvency, assets &amp; liabilities, cash)</td><td>Predicts prices and direction from purely <b>historical market data</b> — price movements, volume, open interest</td></tr>
+    <tr><td>Rule</td><td>Prices of a share discounts everything</td><td>Price captures everything</td></tr>
+    <tr><td>Usefulness</td><td><b>Long-term</b> investing</td><td><b>Short-term</b> investing</td></tr>
+  </table>
+
+  <h3>4 Efficient Market Theory (EMH) <span class="tag">TYK T1</span></h3>
+  <ul>
+    <li><b>Eugene Fama</b> (University of Chicago), 1960s. All available price-sensitive information is <b>fully reflected</b> in prices → no one can consistently <b>beat the market</b>; stocks trade at fair value; can't buy undervalued / sell overvalued.</li>
+    <li>Expert stock selection or market timing can't outperform; higher return only by buying <b>riskier investments</b>.</li>
+  </ul>
+  <h3>4.1 Search for Theory</h3>
+  <p>Randomness of prices is the result of an efficient market:</p>
+  <ul>
+    <li>Information <b>freely and instantaneously</b> available to all.</li>
+    <li><b>Keen competition</b> → prices reflect intrinsic values (impound all information).</li>
+    <li>Prices change only in response to <b>new information</b>, unrelated to previous → unpredictable.</li>
+  </ul>
+  <h3>4.2 Misconception about Efficient Market Theory</h3>
+  <ul>
+    <li>EMT implies prices factor in all information, so no consistent long-term returns from market operations.</li>
+    <li>Prices fluctuate and cannot reflect fair value, as the <b>future is uncertain</b> — surprises keep coming.</li>
+    <li>Failure of institutional portfolio managers to outperform is taken to mean <b>lack of competence</b>; in fact efficiency exists <b>because</b> managers do the job well in a competitive setting.</li>
+    <li>Random movement is taken to mean the market is <b>irrational</b>; but <b>randomness ≠ irrationality</b> — rational, competitive investors make price changes random.</li>
+  </ul>
+  <div class="ex"><p><b>TYK T1</b> (EMT and its major misconception) → ICAI answer: refer para 4.</p></div>
+  <h3>4.3 Level of Market Efficiency</h3>
+  <table class="tight">
+    <tr><th style="width:22%">Form (Fama)</th><th>Price reflects</th></tr>
+    <tr><td>Weak</td><td>All information in the record of <b>past prices and volumes</b></td></tr>
+    <tr><td>Semi-strong</td><td>Past prices and volumes + all other <b>publicly available</b> information</td></tr>
+    <tr><td>Strong</td><td>All information, <b>public and private</b> (highest order)</td></tr>
+  </table>
+
+  <h3>4.4 Empirical Evidence on Weak Form</h3>
+  <p>No relationship between past and future price movements. Three tests:</p>
+  <ul>
+    <li><b>(a) Serial correlation test</b>: correlate price change in one period with another; studies (different stocks, lags, periods — daily, weekly, fortnightly, monthly) found <b>no significant serial correlation</b>. Not long-term trends, where prices tend to move upwards.</li>
+    <li><b>(b) Run test</b>: mark each change + (increase) or − (decrease). A <b>run</b> continues while the sign is the same; a change of sign ends it. Compare number of runs with a purely random series of the same size. Results strongly support the <b>random walk</b> model.</li>
+    <li><b>(c) Filter rules test</b>: buy when price rises at least N%, hold till it falls at least N% from a subsequent high, then sell. Studies: filter rules do <b>not outperform buy and hold</b>, esp. after commissions.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:42%">Run test formula (TYK P2 answer)</th><th>Terms / logic</th></tr>
+    <tr><td>µ<sub>r</sub> = [2n<sub>1</sub>n<sub>2</sub> ÷ (n<sub>1</sub> + n<sub>2</sub>)] + 1</td><td>Expected runs in a random series; n<sub>1</sub> = no. of + changes, n<sub>2</sub> = no. of − changes; r = actual runs.</td></tr>
+    <tr><td>σ<sub>r</sub> = √{2n<sub>1</sub>n<sub>2</sub>(2n<sub>1</sub>n<sub>2</sub> − n<sub>1</sub> − n<sub>2</sub>) ÷ [(n<sub>1</sub> + n<sub>2</sub>)<sup>2</sup>(n<sub>1</sub> + n<sub>2</sub> − 1)]}</td><td>Standard deviation of runs.</td></tr>
+    <tr><td>Limits = µ<sub>r</sub> ± t × σ<sub>r</sub></td><td>Two-tailed (too few runs → not random); t at n − 1 df (n = no. of changes). r within limits → random → <b>weak-form efficient</b>.</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P2 (index, Oct 2007, 20 closes → 19 changes):</b> runs r = <b>8</b>; n<sub>1</sub> = 11, n<sub>2</sub> = 8; µ = 176/19 + 1 = <b>10.26</b>; σ = √[176 × 157 ÷ (19<sup>2</sup> × 18)] = √4.252 = <b>2.06</b>. 5% (t 2.101, 18 df): <b>5.932 to 14.588</b>; 10% (t 1.734): <b>6.688 to 13.832</b>. r = 8 within both → market is <b>weak-form efficient</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 04 Security Analysis (contd.)</span><span class="tag">SM Ch 04</span></div>
+  <h3>4.5 Empirical Evidence on Semi-strong Form</h3>
+  <ul>
+    <li>Prices adjust <b>rapidly</b> to all public information → no above-normal risk-adjusted return from public information. Tests: can public information earn above-normal returns, and how fast do prices adjust to earnings, dividends, mergers, acquisitions, stock splits?</li>
+    <li><b>Fama, Fisher, Jensen and Roll</b>: <b>940 stock splits</b>, NYSE, 1957–1959 — prior to the split, stock earns higher returns than predicted by any market model.</li>
+    <li><b>Ball and Brown</b> (SM prints "Boll"): annual earnings announcements; group 1 earnings up vs average, group 2 down. SM: before the announcement group 1 earned <b>positive abnormal</b> returns; group 2 earned <b>negative abnormal</b> returns; stock in both groups earned <b>normal</b> returns (after the announcement).</li>
+    <li><b>Documented inefficiencies / anomalies</b>: prices adjust <b>gradually</b> to unanticipated quarterly earnings; <b>small firms</b> outperform large; <b>low P/E</b> outperforms high P/E; <b>Monday's</b> return lower than other days.</li>
+  </ul>
+  <p class="small"><i>Note (app-written): the SM sentence reads "stock in the second group earned negative abnormal returns after the announcement of earnings. Stock in both the groups earned normal returns" — the wording is muddled; read it as abnormal returns before the announcement and normal returns after it.</i></p>
+  <h3>4.6 Empirical Evidence on Strong Form</h3>
+  <ul>
+    <li>All information, public or private, reflected — an <b>extreme</b> hypothesis.</li>
+    <li>Tested on returns of corporate insiders, stock exchange specialists, mutual fund managers. <b>Insiders</b> (internal information) and <b>specialists</b> (monopolistic exposure) earn <b>superior</b> risk-adjusted returns.</li>
+    <li><b>Mutual fund managers</b> do not on average; professionally managed portfolios no better than random portfolios — <b>Burton Malkiel</b>, <i>A Random Walk Down Wall Street</i>.</li>
+  </ul>
+  <h3>4.7 Challenges to the Efficient Market Theory</h3>
+  <ul>
+    <li><b>Information inadequacy</b>: not freely available or rapidly transmitted; companies circulate misinformation.</li>
+    <li><b>Limited information processing</b>: <b>Herbert Simon</b> — millions of bits per second generated, perception admits not more than a thousand; <b>David Dreman</b> — under anxiety and uncertainty the market can become a giant.</li>
+    <li><b>Irrational behaviour</b>: <b>J. M. Keynes</b> — considerations irrelevant to prospective yield enter valuation; <b>L. C. Gupta</b> — market works haphazardly, like a blind man firing a gun; hit or miss tactics.</li>
+    <li><b>Monopolistic influence</b>: powerful institutions and big operators influence prices → less competitive.</li>
+  </ul>
+
+  <h3>5 Equity Research and Tools Available</h3>
+  <ul>
+    <li>Area of finance / investment banking analysing a company's financial performance and other factors to decide <b>buy, sell or hold</b>; also used in M&amp;A to decide the <b>swap / exchange ratio</b>. Done by Equity Research Analysts; earlier paper based, now online tools.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Tool</th><th>Founded</th><th>Tool</th><th>Founded</th></tr>
+    <tr><td>Bloomberg Terminal</td><td>1981</td><td>Koyfin</td><td>2016</td></tr>
+    <tr><td>Benzinga Pro</td><td>2010</td><td>Finbox.io</td><td>2014</td></tr>
+    <tr><td>Refinitiv EIKON</td><td>2010</td><td>GuruFocus</td><td>2004</td></tr>
+    <tr><td>MarketXLS</td><td>2015</td><td>Business Quant</td><td>2014</td></tr>
+    <tr><td>Stockopedia</td><td>2010</td><td>Ycharts</td><td>2009</td></tr>
+  </table>
+
+  <div class="sticky"><p><b>Exam steps — EMA:</b> a = 2 ÷ (n+1) (or as given) → skip non-trading days → diff = close − previous EMA → × a → add to previous EMA → carry forward → rising EMA = bullish, take long position (TYK P1).</p></div>
+  <div class="sticky"><p><b>Exam steps — Run test:</b> sign each change (+/−) → count runs r, n<sub>1</sub>, n<sub>2</sub> → µ<sub>r</sub> = 2n<sub>1</sub>n<sub>2</sub>/(n<sub>1</sub>+n<sub>2</sub>) + 1 → σ<sub>r</sub> → limits µ ± t σ (df = changes − 1) → r inside = weak-form efficient.</p></div>
+  <div class="sticky"><p><b>Exam steps — Moving average:</b> sum of n most recent closes → (SM) two-item centred total of adjacent sums → ÷ 2n (SM: ÷ 10 for 5-day) → compare price line with MA line using buy/sell signals.</p></div>
+  <div class="sticky"><p><b>Exam steps — Intrinsic value:</b> D<sub>1</sub> = D<sub>0</sub>(1+g) or bE<sub>1</sub> → check g &lt; k → P<sub>0</sub> = D<sub>1</sub>/(k−g) → price &lt; value buy, &gt; value sell.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

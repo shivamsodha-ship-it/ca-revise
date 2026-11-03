@@ -93,3 +93,7 @@ Not verified line by line: the question-to-chapter mapping and concept labels in
 
 ## Conceptual Framework SM Ch 2, Example 13 (physical capital maintenance), 2 Nov 2026
 - ICAI computes closing capital at current cost as ₹ 9,000 [(6,000 × 2.50) − 6,000 drawings] and retained profit (6,000), and says that with no drawings the trader "would have left with ₹ 15,000". The trader actually holds ₹ 12,000 cash (18,000 sales − 6,000 drawings); with no drawings he would hold ₹ 18,000. On the SM's own facts, capital to maintain is ₹ 15,000 (6,000 × 2.50), so the shortfall is ₹ 3,000 and the maximum drawings are ₹ 3,000 (current cost profit 18,000 − 15,000; holding gain 3,000 to capital maintenance adjustment). ICAI's text is kept as printed; this note is app-written.
+
+## AFM SM Ch 9, Illustration 1 (two-step binomial, riskless hedge), 3 Nov 2026
+- ICAI's hedge ratio at the valuation date is ∆ = (5 − 0) ÷ (33 − 27) = 5/6, using the intrinsic values at the one-period nodes (33 − 28 = 5; 27 < 28 → 0). The option values ICAI itself computes at those nodes are Cu = 5.673 and Cd = 1.0341, which would give ∆ = (5.673 − 1.0341) ÷ 6 = 0.773. ICAI's 5/6 is kept as printed; this note is app-written.
+- Same illustration: p uses r = (1.05)^½ = 1.0247, while discounting uses 1.025 (rounded). ICAI's figures are kept.

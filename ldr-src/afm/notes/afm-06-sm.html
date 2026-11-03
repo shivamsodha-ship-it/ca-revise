@@ -1,0 +1,476 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 6 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 06 Portfolio Management</span><span class="tag">SM Ch 06</span></div>
+  <h2 class="brk"><span class="n">06</span>Ch 06 — Portfolio Management</h2>
+  <div class="sub">Asked in last 3 papers: Sep 2025 single-index risk split + two-stock portfolio (6m); Jan 2026 Sharpe optimal cut-off (8m) + CAPM/SML MCQs (6m); May 2026 two-factor APT long/short (6m), Sharpe optimal with given C* + CAPM (6m), SGB MCQs (6m).</div>
+
+  <h3>1. Introduction</h3>
+  <ul>
+    <li>Investor never puts all funds in one security; a <b>well diversified portfolio</b> optimises risk-return; a portfolio can <b>reduce risk without diluting returns</b>.</li>
+    <li><b>Risk</b> = possibility of actual return deviating from expected/average return; measured by <b>standard deviation / variance</b> of return.</li>
+  </ul>
+  <h3>1.1 Activities in Portfolio Management</h3>
+  <ul>
+    <li>(a) <b>Selection</b> of securities; (b) construction of all <b>feasible portfolios</b> from them; (c) deciding <b>weights</b> so that it is the <b>optimal portfolio</b> for that investor's risk appetite.</li>
+  </ul>
+  <h3>1.2 Objectives of Portfolio Management</h3>
+  <ul>
+    <li><b>Security/safety of principal</b> (intact sum and its purchasing power); <b>stability of income</b> (plan reinvestment/consumption); <b>capital growth</b> (reinvest in growth securities).</li>
+    <li><b>Marketability</b> (ease of buying/selling, flexibility); <b>liquidity</b> (nearness to money, to seize opportunities); <b>diversification</b> (reduce risk of loss of capital/income across securities and industries); <b>favourable tax status</b> (minimise tax to raise effective yield).</li>
+  </ul>
+  <div class="ex"><p><b>TYK T2:</b> objectives of portfolio management → answer is para 1.2 (seven objectives above).</p></div>
+
+  <h3>2. Phases of Portfolio Management (2.1–2.5)</h3>
+  <table class="tight">
+    <tr><th>Phase</th><th>What it does (SM points)</th></tr>
+    <tr><td>2.1 Security analysis</td><td>Initial phase: risk-return of individual securities and their <b>correlation</b>; find under-priced (buy) and over-priced (sell). <b>Fundamental analysis</b>: EPS, payout, competition, market share, management, industry factors → intrinsic value vs CMP. <b>Technical analysis</b>: price movements systematic, past patterns predict future; ignores fundamentals. Select across sectors with no strong positive correlation so unsystematic risk is eliminated. <b>Random Walk</b>: price moves random, neither analysis gives sustained gains; <b>EMH</b>: no sustained long-term gains; markets never perfectly efficient.</td></tr>
+    <tr><td>2.2 Portfolio analysis</td><td>Combine securities; each portfolio's risk-return is <b>not the aggregate</b> of constituents — computed from their risk-return and <b>pair-wise correlations</b>. All portfolios from the chosen set = <b>Feasible Portfolios</b>.</td></tr>
+    <tr><td>2.3 Portfolio selection</td><td>Identify <b>Efficient Portfolios</b> (highest return for same/lower risk, or lowest risk for same/higher return), then the <b>Optimal Portfolio</b> suiting risk appetite (Markowitz).</td></tr>
+    <tr><td>2.4 Portfolio revision</td><td>Monitor so it does not lose optimality (economy, new securities); add/delete securities; also investor changes (extra funds, risk appetite, need of cash). Must be scientific and objective — as important as analysis and selection.</td></tr>
+    <tr><td>2.5 Portfolio evaluation</td><td>Measure actual return realised and risk borne over the period; identifies weaknesses in the process. Process is ongoing: analysis → construction → revision → evaluation.</td></tr>
+  </table>
+
+  <h3>3. Portfolio Theories — 3.1 Traditional Approach</h3>
+  <ul>
+    <li><b>Investor's study:</b> age, health, responsibilities, other assets, portfolio needs; need for income, capital maintenance, liquidity; attitude to risk; taxation status.</li>
+    <li><b>Objectives:</b> maximise wealth subject to risk; higher risk → higher expected return.</li>
+    <li><b>Investment strategy:</b> balance fixed interest vs equities; high payout vs high growth companies; income of growth portfolio; income tax vs capital gains tax; transaction cost vs gains from rapid switching; retain liquidity for bargains.</li>
+    <li><b>Diversification</b> reduces volatility; balance equities and fixed interest.</li>
+    <li><b>Selection:</b> intrinsic value vs market (fundamental) or past prices (technical); expert advice; inside information; newspaper tipsters; companies with good asset backing, dividend growth, earnings record, quality management.</li>
+    <li>Followed by most Indian brokers. Says "don't put all money in one basket" — Markowitz showed only <b>particular kinds</b> of securities give diversification benefit; don't pick blindly.</li>
+  </ul>
+  <h3>3.2 Modern Approach (Markowitz Model or Risk-Return Optimization)</h3>
+  <ul>
+    <li>Harry Markowitz (early 1950s), <b>father of Modern Portfolio Theory</b>; <b>Mean Variance Analysis</b> (1952).</li>
+    <li>Two planks: (1) adding securities with <b>low or negative correlation</b> reduces risk; (2) higher return needs higher risk. Risk of an individual asset hardly matters — what matters is its <b>contribution to overall portfolio risk</b>.</li>
+  </ul>
+
+  <h3>4. Risk Analysis — 4.1 Types of Risk</h3>
+  <ul>
+    <li>Risk = variation of actual (realised) return from expected return; stable returns (Govt securities) = low risk; equity = risky.</li>
+    <li><b>Total risk = Systematic risk + Unsystematic risk.</b> Systematic: external, macro, affects many securities, uncontrollable. Unsystematic: internal, micro, company-specific, largely controllable.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>4.1.1 Systematic (non-diversifiable)</th><th>4.1.2 Unsystematic ("idiosyncratic", diversifiable)</th></tr>
+    <tr><td><b>Interest rate risk:</b> prices move inversely with rates; long-term securities vary more than short-term.</td><td><b>Business risk:</b> variability of operating profit; measured by <b>operating leverage</b>.</td></tr>
+    <tr><td><b>Purchasing power (inflation) risk:</b> nominal return = real return + inflation premium; unexpected inflation erodes return; more for bonds/fixed income, less for equity (dividends rise, capital gains).</td><td><b>Financial (leveraged) risk:</b> due to debt; expressed by <b>debt-equity ratio</b>; highly geared → risk of winding up.</td></tr>
+    <tr><td><b>Market risk:</b> share moves with the market — bullish (general rise) / bearish (general fall); seen in BSE Sensex, NSE index.</td><td></td></tr>
+  </table>
+  <h3>4.2 Diversion of Risk</h3>
+  <ul>
+    <li>Combining many securities <b>diversifies away unsystematic risk</b>; total risk falls as number of securities rises; beyond a limit the portfolio contains <b>only systematic risk</b>.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 06 Portfolio Management (contd.)</span><span class="tag">SM Ch 06</span></div>
+  <h3>4.3 Risk &amp; Return</h3>
+  <ul>
+    <li>Return of a share = dividend + capital gain over the period. Risk cannot be measured without reference to return.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>R = (Forecasted dividend + Forecasted end of the period stock price) ÷ Initial investment − 1; same as Returns = [D<sub>1</sub> + (P<sub>1</sub> − P<sub>0</sub>)] ÷ P<sub>0</sub> × 100 (SM Illus 6)</td><td>D<sub>1</sub> dividend; P<sub>1</sub> end price; P<sub>0</sub> initial price (investment). Holding-period return.</td><td>X Ltd: P<sub>0</sub> ₹ 12.00, D ₹ 0.50, P<sub>1</sub> ₹ 17.50 → (0.50 + 17.50)/12 − 1 = <b>0.5 = 50%</b>.</td></tr>
+  </table>
+  <h3>4.3.1 Expected Return</h3>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>(a) With probabilities: X̄ = Σ X<sub>i</sub> · p(X<sub>i</sub>)</td><td>X<sub>i</sub> possible return; p(X<sub>i</sub>) its probability. Probability-weighted average.</td><td>Returns 0.20/0.30/0.40/0.50/0.60, p 0.2/0.2/0.4/0.1/0.1 → <b>0.37 = 37%</b>.</td></tr>
+    <tr><td>(b) Historical: x̄ = Σx<sub>i</sub> ÷ n</td><td>Simple arithmetic mean of past returns.</td><td>X Ltd 5 years 9.50, 7.00, 11.00, −6.00, 2.50 → Σ 24.00 ÷ 5 = <b>4.80%</b>.</td></tr>
+  </table>
+  <p class="small"><i>Note (app-written): the SM lists the possible returns as 20, 30, 50, 60, 70% (p. 13–14), but the worked table uses 0.20, 0.30, 0.40, 0.50, 0.60 with the same probabilities to get 0.37. ICAI's 37% follows the worked table.</i></p>
+  <h3>4.3.2 Risk</h3>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>(a) σ<sup>2</sup> = Σ (X<sub>i</sub> − X̄)<sup>2</sup> · p(X<sub>i</sub>)</td><td>Deviation from mean, squared, weighted by probability. σ = √σ<sup>2</sup> (positive root).</td><td>Same data: variance <b>0.0141</b>, σ = √0.0141 = <b>11.87%</b>.</td></tr>
+    <tr><td>(b) σ<sup>2</sup> = Σ (x<sub>i</sub> − x̄)<sup>2</sup> ÷ n</td><td>Historical data: divide by number of observations instead of multiplying by probabilities.</td><td>Σ dev<sup>2</sup> 187.30 ÷ 5 = <b>37.46</b>; σ = <b>6.12%</b>.</td></tr>
+  </table>
+  <ul>
+    <li>Range of return = mean ± σ (e.g. 11% ± 3% → 8% to 14%). Other measures: range, semi-variance, mean absolute deviation — SD most accepted.</li>
+    <li>SD = <b>total risk</b>. Unsystematic risk can be eliminated by combining with negatively correlated securities, so the <b>relevant risk is systematic</b> (not diversifiable).</li>
+  </ul>
+  <div class="ex"><p><b>TYK P1:</b> cost ₹ 120, no dividend; prices 115–140 → returns −4.17, 0, 4.17, 8.33, 12.50, 16.67% → expected <b>7.083%</b> (or expected price 128.50 → 7.0833%); σ<sup>2</sup> 34.902, σ <b>5.908%</b>. <b>TYK P2:</b> MP ₹ 106 cum ₹ 6 debenture → net cost ₹ 100; total returns 124/112/100 → net 24/12/0 → expected <b>₹ 12 (12%)</b>, σ = √72 = <b>8.49%</b>; 10% debenture interest vs 12% market — accept buy-back unless maturity is short (up to 1 year).</p></div>
+
+  <h3>4.3.3 Measurement of Systematic Risk (Beta)</h3>
+  <ul>
+    <li>Systematic risk is measured by <b>Beta (β)</b> = security's variability relative to the market index. Inputs: historical returns of the security and of the market index. Two methods: correlation and regression.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM / TYK figures</th></tr>
+    <tr><td><b>4.3.3.1 Correlation method:</b> β<sub>i</sub> = r<sub>im</sub> · σ<sub>i</sub> ÷ σ<sub>m</sub></td><td>r<sub>im</sub> correlation of stock with market; σ<sub>i</sub>, σ<sub>m</sub> SDs. <i>App-written derivation:</i> since Cov = r<sub>im</sub>σ<sub>i</sub>σ<sub>m</sub>, β = Cov ÷ σ<sub>m</sub><sup>2</sup> (form used in TYK P10, P12, P17).</td><td>TYK P14: A 20 × 0.60/15 = <b>0.80</b>; B 18 × 0.95/15 = <b>1.14</b>; C 12 × 0.75/15 = <b>0.60</b>.</td></tr>
+    <tr><td><b>4.3.3.2 Regression:</b> Y = α + βX; β = [nΣXY − (ΣX)(ΣY)] ÷ [nΣX<sup>2</sup> − (ΣX)<sup>2</sup>]; α = Y̅ − βX̅</td><td>Y = security return (dependent), X = market return (independent). β = change in Y per unit change in X; α = Y when X is zero. ICAI answers (Illus 6, TYK P11) also use β = (ΣXY − nX̅Y̅) ÷ (ΣX<sup>2</sup> − n(X̅)<sup>2</sup>), and TYK P10/P12 use β = Cov ÷ σ<sub>m</sub><sup>2</sup>.</td><td>TYK P12: Σ dev products 357, Σ dev<sup>2</sup> M 706 → Cov 35.70, σ<sub>m</sub><sup>2</sup> 70.60 → β <b>0.505</b> (alt 0.506); α = 15 − 0.505 × 12 = <b>8.94%</b> → line 8.94 + 0.505 R<sub>M</sub>.</td></tr>
+  </table>
+  <ul>
+    <li><b>Positive β</b>: moves with market; <b>negative β</b>: opposite to market; <b>zero β</b>: independent of market.</li>
+    <li><b>β = 1</b>: risk as market; <b>β &gt; 1</b>: above-average risk (β 2: market +6% → stock +12%, −6% → −12%); <b>β &lt; 1</b>: below-market risk. Beta is a <b>historical</b> measure — assumes the relationship continues.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P9 (probabilities):</b> E(F) <b>17%</b>, σ<sub>F</sub> 11.87; E(P) <b>14%</b>, Var 264, σ 16.25; Cov(F,P) <b>−168</b> → β = −168/264 = <b>−0.636</b>. <b>TYK P10:</b> A: Cov 4.83/3 = 1.61, σ<sub>m</sub><sup>2</sup> 4.67/3 = 1.557 → β<sub>A</sub> <b>1.03</b>; B: Cov 0.78 → β<sub>B</sub> <b>0.50</b>.</p></div>
+
+  <h3>4.4 Portfolio Analysis — 4.4.1 Portfolio Return</h3>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>r̄<sub>p</sub> = Σ x<sub>i</sub> r̄<sub>i</sub></td><td>x<sub>i</sub> proportion of funds in security i; r̄<sub>i</sub> its expected return. Simple weighted average.</td><td>A 16%, B 22%, 40:60 → 0.40 × 16 + 0.60 × 22 = <b>19.6%</b>.</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P32 (X Co., M Ltd &amp; N Ltd):</b> 2009-10: M (10 + 20)/200 = 15%, N (3 − 10)/300 = −2.33%; weights 57:43 (cost) → <b>7.55%</b>. 2010-11: expected prices M 253, N 312; yields 53 and 25.5 on 220 and 290 → 24.09% and 8.79%; weights 60.3:39.7 (31.3.10 values) → <b>18.02%</b>. Risk in ₹: σ<sub>M</sub> <b>21</b> (σ<sup>2</sup> 441), σ<sub>N</sub> <b>14</b> (σ<sup>2</sup> 196); in %: σ<sub>M</sub> <b>9.54%</b>, σ<sub>N</sub> <b>4.83%</b> → M more risky.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 06 Portfolio Management (contd.)</span><span class="tag">SM Ch 06</span></div>
+  <h3>4.4.2 Portfolio Risk <span class="pyq">Asked: Sep 2025 Q4(a) 6m (two-stock risk, 60:40 reallocation)</span></h3>
+  <ul>
+    <li>Portfolio variance = weighted variances of constituents <b>+</b> weighted covariances among pairs. <b>Not</b> a simple weighted average of variances.</li>
+    <li><b>Covariance</b>: how returns of two securities move relative to each other — same direction consistently (+), opposite (−), independent (close to 0).</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>Cov<sub>AB</sub> = Σ[(R<sub>A</sub> − R̄<sub>A</sub>)(R<sub>B</sub> − R̄<sub>B</sub>)] ÷ N (with probabilities: Σ p × dev<sub>A</sub> × dev<sub>B</sub>)</td><td>Product of each period's deviations from the means, averaged over N observations.</td><td>4 years, R̄<sub>x</sub> 15, R̄<sub>y</sub> 13: Σ products −42 → Cov = −42/4 = <b>−10.5</b>.</td></tr>
+    <tr><td>r<sub>AB</sub> = Cov<sub>AB</sub> ÷ (σ<sub>A</sub> σ<sub>B</sub>); Cov<sub>AB</sub> = σ<sub>A</sub> σ<sub>B</sub> r<sub>AB</sub></td><td>Correlation ranges −1 to +1: −1 perfect negative, +1 perfect positive, 0 independent.</td><td>—</td></tr>
+    <tr><td>σ<sub>p</sub><sup>2</sup> = x<sub>1</sub><sup>2</sup>σ<sub>1</sub><sup>2</sup> + x<sub>2</sub><sup>2</sup>σ<sub>2</sub><sup>2</sup> + 2x<sub>1</sub>x<sub>2</sub> r<sub>12</sub> σ<sub>1</sub>σ<sub>2</sub></td><td>x<sub>1</sub> + x<sub>2</sub> = 1. Last term = 2x<sub>1</sub>x<sub>2</sub>Cov<sub>12</sub>. σ<sub>p</sub> = √σ<sub>p</sub><sup>2</sup>.</td><td>A: r 20%, σ 50%; B: r 25%, σ 30%; r<sub>AB</sub> −0.60; 40:60 → R<sub>p</sub> <b>23%</b>; σ<sub>p</sub><sup>2</sup> = 400 + 324 − 432 = <b>292</b>; σ<sub>p</sub> <b>17.09%</b>.</td></tr>
+  </table>
+  <ul>
+    <li>Return and risk depend on (a) returns, risks and covariances of securities — <b>parametric</b>, no control; (b) <b>proportions</b> — the investor's <b>choice</b> variable.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P3 (B σ 10%, ER 12%; D σ 18%, ER 20%; r 0.15):</b> (i) 100% B: 12%, σ 10%; (ii) 50:50: 16%, σ<sup>2</sup> 25 + 81 + 13.5 = 119.50, σ <b>10.93%</b>; (iii) 75:25: 14%, σ<sup>2</sup> 56.25 + 20.25 + 10.125 = 86.625, σ <b>9.31%</b>; (iv) 100% D: 20%, 18%. Return → (iv) best; risk → (iii) best. <b>TYK P4:</b> E(A) 13%, E(B) 15%, 40:60 → <b>14.2%</b>; σ<sub>A</sub> = σ<sub>B</sub> = 3%; Cov 9; r = 9/(3 × 3) = <b>1</b>; σ<sub>p</sub> = √(1.44 + 3.24 + 4.32) = <b>3%</b>. <b>TYK P6 (10 years):</b> R̄<sub>1</sub> 14.8, R̄<sub>2</sub> 21; Σ products −8 → Cov <b>−0.8</b>; σ<sub>1</sub> = √20.76 = 4.56, σ<sub>2</sub> = √8.40 = 2.90 → r = −0.8/13.22 = <b>−0.0605</b>.</p></div>
+
+  <h3>4.4.3 Reduction or Dilution of Portfolio Risk through Diversification</h3>
+  <ul>
+    <li>Diversification = combining more than one security to reduce total risk by eliminating/mitigating unsystematic risk <b>without sacrificing return</b>. 17.09% above &lt; 50% and 30%. Possible even when uncorrelated; <b>no reduction at r = +1</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Case</th><th>Formula</th><th>SM figures (σ<sub>A</sub> 40, σ<sub>B</sub> 25, 0.4:0.6)</th></tr>
+    <tr><td>4.4.3.1 r = +1</td><td>σ<sub>p</sub> = x<sub>1</sub>σ<sub>1</sub> + x<sub>2</sub>σ<sub>2</sub> — weighted average of SDs; only <b>risk averaging</b>, no risk reduction.</td><td>0.4 × 40 + 0.6 × 25 = <b>31</b>; 0.75:0.25 → <b>36.25</b>. Lies between 40 and 25.</td></tr>
+    <tr><td>4.4.3.2 r = −1</td><td>σ<sub>p</sub> = x<sub>1</sub>σ<sub>1</sub> − x<sub>2</sub>σ<sub>2</sub> (absolute) — can be made <b>zero</b>.</td><td>0.4 × 40 − 0.6 × 25 = <b>1</b>; 0.3846:0.6154 → <b>0</b> (risk-free portfolio of two risky assets). Rare in real life.</td></tr>
+    <tr><td>4.4.3.3 r = 0</td><td>σ<sub>p</sub> = √(x<sub>1</sub><sup>2</sup>σ<sub>1</sub><sup>2</sup> + x<sub>2</sub><sup>2</sup>σ<sub>2</sub><sup>2</sup>) — covariance term drops.</td><td>√(256 + 225) = <b>21.93</b> — below both SDs.</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th>r</th><th>1.00</th><th>0.60</th><th>0</th><th>−0.60</th><th>−1.00</th></tr>
+    <tr><td>σ<sub>p</sub></td><td>31</td><td>27.73</td><td>21.93</td><td>13.89</td><td>1.00</td></tr>
+  </table>
+  <ul>
+    <li>Diversification reduces risk in all cases <b>except r = +1</b>; as r falls from +1 to −1, σ<sub>p</sub> falls; reduction greater with negative correlation.</li>
+  </ul>
+  <p class="small"><i>Note (app-written): 4.4.3 says "taking the above example" but uses σ 40% and 25%, not the 50% and 30% of the 4.4.2 example (SM p. 23 vs p. 25). The table above uses ICAI's 40/25.</i></p>
+  <table class="tight">
+    <tr><th>Formula (minimum-risk weights, as printed in TYK P7 answer)</th><th>Terms / logic</th><th>Figures</th></tr>
+    <tr><td>X<sub>ABC</sub> = (σ<sub>X</sub><sup>2</sup> − r<sub>AX</sub>σ<sub>A</sub>σ<sub>X</sub>) ÷ (σ<sub>A</sub><sup>2</sup> + σ<sub>X</sub><sup>2</sup> − 2r<sub>AX</sub>σ<sub>A</sub>σ<sub>X</sub>) or = (σ<sub>X</sub><sup>2</sup> − Cov.<sub>AX</sub>) ÷ (σ<sub>A</sub><sup>2</sup> + σ<sub>X</sub><sup>2</sup> − 2Cov.<sub>AX</sub>); XYZ = 1 − X<sub>ABC</sub></td><td>σ<sub>X</sub> SD of XYZ; σ<sub>A</sub> SD of ABC; r<sub>AX</sub> correlation; Cov.<sub>AX</sub> covariance. Numerator uses the <b>other</b> security's variance. <i>App-written:</i> with r<sub>AX</sub> = −1 it reduces to σ<sub>X</sub> ÷ (σ<sub>A</sub> + σ<sub>X</sub>).</td><td>App-written check on 4.4.3.2: 25/(40 + 25) = 0.3846 (SM's zero-risk weight).</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P7 (ABC, XYZ, ₹ 1,00,000):</b> E(ABC) <b>12.55%</b>, σ<sup>2</sup> 167.75, σ <b>12.95%</b>; E(XYZ) <b>12.1%</b>, σ<sup>2</sup> 126.98, σ <b>11.27%</b>; Cov <b>−144.25</b>. 50:50 → σ<sup>2</sup> = 41.9375 + 31.745 − 72.125 = 1.5575, σ <b>1.25%</b>, return <b>12.325%</b>. Minimum risk: x<sub>ABC</sub> = (126.98 + 144.25)/(167.75 + 126.98 + 288.5) = 271.23/583.23 = <b>46%</b>, XYZ <b>54%</b>.</p></div>
+
+  <h3>4.4.4 Portfolio with more than two securities</h3>
+  <ul>
+    <li>Benefits increase as more securities with less than perfect positive correlation are added; σ<sub>p</sub> keeps falling. In reality securities are positively (but not perfectly) correlated → some reduction, not elimination; effect <b>exhausted rapidly</b> — most reduction by <b>25 or 30 securities</b>; benefits of diversification limited in practice.</li>
+  </ul>
+  <h3>4.4.5 Return and Risk of Portfolio with more than two securities</h3>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>r̄<sub>p</sub> = Σ x<sub>i</sub> r̄<sub>i</sub></td><td>Same formula for any n.</td><td>P 11/0.3, Q 16/0.2, R 22/0.1, S 20/0.4 → <b>16.7%</b>.</td></tr>
+    <tr><td>σ<sub>p</sub><sup>2</sup> = Σ<sub>i</sub> Σ<sub>j</sub> x<sub>i</sub> x<sub>j</sub> r<sub>ij</sub> σ<sub>i</sub> σ<sub>j</sub> = Σ<sub>i</sub> Σ<sub>j</sub> x<sub>i</sub> x<sub>j</sub> σ<sub>ij</sub></td><td><b>Variance-covariance matrix</b>: each cell = weight (row) × weight (column) × r × σ × σ; r<sub>ii</sub> = 1 on the diagonal (gives variance). Sum all n × n cells. <i>App-written expansion for three assets:</i> x<sub>X</sub><sup>2</sup>σ<sub>X</sub><sup>2</sup> + x<sub>Y</sub><sup>2</sup>σ<sub>Y</sub><sup>2</sup> + x<sub>Z</sub><sup>2</sup>σ<sub>Z</sub><sup>2</sup> + 2x<sub>X</sub>x<sub>Y</sub>Cov<sub>XY</sub> + 2x<sub>X</sub>x<sub>Z</sub>Cov<sub>XZ</sub> + 2x<sub>Y</sub>x<sub>Z</sub>Cov<sub>YZ</sub>.</td><td>X 0.25/σ16, Y 0.35/σ7, Z 0.40/σ9; r XY 0.7, XZ 0.3, YZ 0.4 → 16 + 6.86 + 4.32 + 6.86 + 6.0025 + 3.528 + 4.32 + 3.528 + 12.96 = <b>64.3785</b>; σ<sub>p</sub> <b>8.0236</b>.</td></tr>
+  </table>
+  <ul>
+    <li>New portfolios come from changing the securities or their proportions; determining each portfolio's return and risk = <b>portfolio analysis</b>, the first step in portfolio management.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 06 Portfolio Management (contd.)</span><span class="tag">SM Ch 06</span></div>
+  <h3>5. Markowitz Model of Risk-Return Optimization</h3>
+  <ul>
+    <li>Unlike CAPM, the optimal portfolio is <b>investor specific</b>. Two stages: (1) find <b>mean-variance efficient</b> portfolios; (2) select one.</li>
+    <li>Investors dislike risk; trade-off between risk and return; SD measures total risk; diversification removes a good deal of it.</li>
+  </ul>
+  <h3>5.1 Assumptions of the Model</h3>
+  <ul>
+    <li><b>Return</b> adequately summarises the outcome; investors visualise a <b>probability distribution</b> of returns.</li>
+    <li>Risk estimates proportional to <b>variance</b>; decisions on two criteria only — <b>expected return and variance</b>.</li>
+    <li>Investors <b>rational and risk averse</b> (between equal returns, prefer smaller risk).</li>
+    <li><b>Yield</b> in different scenarios is the measure of return; SD = deviation of yields from expected value.</li>
+  </ul>
+  <h3>5.2 Efficient Frontier</h3>
+  <ul>
+    <li>Built on the <b>Mean-Variance Dominance Principle</b>: a portfolio is dominated by another with higher (or same) return for same (or lower) risk. Diversification (Markowitz) = combining assets <b>less than perfectly positively correlated</b> to reduce risk without sacrificing return.</li>
+    <li>If not efficient, the investor may: increase return without more risk; reduce risk without lower return; or a combination — by <b>switching to a portfolio on the frontier</b>.</li>
+    <li><b>Efficient portfolio</b>: highest return for identical risk and lowest risk for identical return. Figures: of A–F, <b>B, C, D</b> lie on the frontier; feasible set = shaded area; any frontier point dominates points to its right/below (B vs E: same return, B has less risk). <b>A</b> = least risk; <b>D</b> = highest return with highest risk.</li>
+    <li><b>Optimal portfolio</b> = where the investor's <b>indifference curve touches the efficient frontier</b>; differs from investor to investor.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P5 (dominance):</b> A (8%, σ 4) dominates B and F (same return, more risk) and D (same risk 4, return 4%) → select <b>A, C &amp; E</b>. Perfect correlation, 75% A + 25% C: risk (3 × 4 + 1 × 12)/4 = <b>6%</b>, return <b>9%</b>; E gives 9% at risk <b>5</b> → <b>E preferable</b>. <b>TYK P31 (minimum variance set, short sales allowed):</b> ₹ 5,000 in X + ₹ 3,000 in Y → A 2,100, B 3,500, C 2,400 → weights <b>0.26, 0.44, 0.30</b>. Critical line W<sub>B</sub> = a + bW<sub>A</sub>: 0.40 = a + 0.30b, 0.50 = a + 0.20b → <b>W<sub>B</sub> = 0.70 − W<sub>A</sub></b>; ₹ 4,000 in A (W<sub>A</sub> 0.50) → W<sub>B</sub> 0.20 (<b>₹ 1,600</b>), W<sub>C</sub> 0.30 (<b>₹ 2,400</b>).</p></div>
+
+  <h3>6. Capital Market Theory</h3>
+  <ul>
+    <li>B (tangent point on the frontier) = <b>market portfolio</b>; tangent line from <b>R<sub>f</sub></b> through B to Z = <b>Capital Market Line (CML)</b> — combinations of market portfolio with borrowing or lending.</li>
+    <li>R<sub>f</sub> to B = <b>lending portfolios</b> (part risk-free, part market); B to Z = <b>borrowing portfolios</b> (borrow and invest in the market portfolio).</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th></tr>
+    <tr><td>Slope of CML = (R<sub>M</sub> − R<sub>f</sub>) ÷ σ<sub>M</sub></td><td>Reward per unit of (total) risk. R<sub>M</sub> market return; R<sub>f</sub> risk-free; σ<sub>M</sub> SD of market.</td></tr>
+    <tr><td>E(R) = R<sub>f</sub> + [(R<sub>M</sub> − R<sub>f</sub>) ÷ σ<sub>M</sub>] × σ<sub>P</sub></td><td>Expected return of an efficient portfolio = R<sub>f</sub> + slope × its SD σ<sub>P</sub>. CML uses <b>σ</b>; SML (CAPM) uses <b>β</b>.</td></tr>
+  </table>
+
+  <h3>7. Single Index Model (Sharpe Index Model) <span class="pyq">Asked: Sep 2025 Q4(a) 6m</span></h3>
+  <ul>
+    <li>Co-movement between stocks is due only to movement in the <b>market index</b>; no effects beyond the market (no fundamental factor effects) explain co-movement. β and α estimated by regression.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM / TYK figures</th></tr>
+    <tr><td>R<sub>i</sub> = α<sub>i</sub> + β<sub>i</sub>R<sub>m</sub> + ∈<sub>i</sub></td><td>α<sub>i</sub> intercept; β<sub>i</sub> slope (sensitivity; β 1.5 → +1.5% per +1% market); R<sub>m</sub> index return; ∈<sub>i</sub> error term (unsystematic). Return = market part + part independent of market. α + βR<sub>m</sub> = <b>characteristic line</b>.</td><td>TYK P11: β = (508 − 6 × 5.75 × 6.33)/(439.25 − 6 × 5.75<sup>2</sup>) = 289.615/240.875 = <b>1.202</b>; α = 6.33 − 1.202 × 5.75 = <b>−0.58</b> → line −0.58 + 1.202 R<sub>m</sub>.</td></tr>
+    <tr><td>σ<sub>i</sub><sup>2</sup> = β<sub>i</sub><sup>2</sup>σ<sub>m</sub><sup>2</sup> + ∈<sub>i</sub><sup>2</sup></td><td>Total variance = <b>systematic</b> (explained by index) + <b>residual/unsystematic</b> (unexplained).</td><td>TYK P11: σ<sub>m</sub><sup>2</sup> 240.86/6 = 40.14; σ<sub>A</sub><sup>2</sup> 497.34/6 = 82.89; systematic 1.202<sup>2</sup> × 40.14 = <b>57.99</b>; unsystematic <b>24.90</b>.</td></tr>
+    <tr><td>Systematic = β<sub>i</sub><sup>2</sup> × σ<sub>m</sub><sup>2</sup>; Unsystematic ∈<sub>i</sub><sup>2</sup> = σ<sub>i</sub><sup>2</sup> − Systematic risk = Variance of Security Return (1 − r<sup>2</sup>) (Illus 1)</td><td>r<sup>2</sup> (coefficient of determination) = % of variation explained by the index.</td><td>Illus 1 below.</td></tr>
+    <tr><td>σ<sub>ij</sub> = β<sub>i</sub>β<sub>j</sub>σ<sub>m</sub><sup>2</sup></td><td>Covariance between two stocks comes only through the market.</td><td>TYK P14: Cov A,B = 0.80 × 1.14 × 225 = <b>205.2</b>; A,C <b>108</b>; B,C <b>153.9</b>.</td></tr>
+    <tr><td>σ<sub>p</sub><sup>2</sup> = [(Σ X<sub>i</sub>β<sub>i</sub>)<sup>2</sup>σ<sub>m</sub><sup>2</sup>] + [Σ X<sub>i</sub><sup>2</sup>∈<sub>i</sub><sup>2</sup>]</td><td>First part = β<sub>p</sub><sup>2</sup>σ<sub>m</sub><sup>2</sup> (portfolio systematic); second = weighted residual variances (weights <b>squared</b>). X<sub>i</sub> = portion of stock i; ∈<sub>i</sub><sup>2</sup> = variation not related to the index.</td><td>Illus 1: <b>3.5876</b>.</td></tr>
+    <tr><td>R<sub>P</sub> = Σ x<sub>i</sub>(α<sub>i</sub> + β<sub>i</sub>R<sub>m</sub>); α<sub>P</sub> = Σ x<sub>i</sub>α<sub>i</sub>; β<sub>P</sub> = Σ x<sub>i</sub>β<sub>i</sub></td><td>Portfolio return, alpha and beta are weighted averages using investment proportions.</td><td>—</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 1 (X, Y, Sensex):</b> σ<sub>m</sub><sup>2</sup> 2.25. X: β 0.71, variance 6.30, r<sup>2</sup> 0.18 → systematic (0.71)<sup>2</sup> × 2.25 = <b>1.134</b>; unsystematic 6.30 − 1.134 = <b>5.166</b> (= 6.30 × 0.82). Y: β 0.685, variance 5.86 → systematic <b>1.056</b>, unsystematic <b>4.804</b>. Equal weights: [(0.355 + 0.3425)<sup>2</sup> × 2.25] + [(0.5)<sup>2</sup>(5.166) + (0.5)<sup>2</sup>(4.804)] = 1.0946 + 2.493 = <b>3.5876</b>.</p></div>
+  <div class="ex"><p><b>TYK P14 (equal weights):</b> matrix diagonals 400, 324, 144 (σ<sup>2</sup>) → total variance <b>200.244</b>; β<sub>p</sub> = (0.80 + 1.14 + 0.60)/3 = <b>0.8467</b>; systematic (0.8467)<sup>2</sup>(15)<sup>2</sup> = <b>161.302</b>; unsystematic <b>38.942</b>. <b>TYK P34:</b> β<sub>p</sub> <b>0.66</b>; σ<sub>m</sub><sup>2</sup> 0.01 → residual A 0.0134, B 0.0225, C 0.0879; SIM variance 0.004356 + 0.014072 = <b>0.018428</b>; Markowitz (9-cell matrix with covariances) <b>0.0363</b>. <b>TYK P37:</b> β<sub>p</sub> <b>1.295</b>; σ<sub>p</sub> = [543.36 + 3.0625 + 10.89 + 0.5625 + 3.24]<sup>½</sup> = √561.115 = <b>23.69%</b> (ICAI alternative: 25.03%).</p></div>
+  <p class="small"><i>Note (app-written): TYK P37's "alternative answer" (SM p. 125) weights each security's total variance by w (not w<sup>2</sup>) and adds no covariance, so its 25.03% is not the single-index portfolio risk. The formula above gives ICAI's main answer, 23.69%.</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 06 Portfolio Management (contd.)</span><span class="tag">SM Ch 06</span></div>
+  <h3>8. Capital Asset Pricing Model (CAPM) <span class="pyq">Asked: Jan 2026 MCQ CS-III 7-9 6m</span></h3>
+  <ul>
+    <li>Portfolio risk = unsystematic (averted by diversification) + systematic (market-related, measured by <b>β</b>). Only <b>non-diversifiable</b> risk is priced; market β = 1.0; portfolio β = Σ proportion × β.</li>
+    <li>Three aspects: market not concerned with diversifiable risk; not concerned with investor holding a diversified portfolio; <b>compensation only for non-diversifiable risk</b>.</li>
+  </ul>
+  <p><b>Assumptions (TYK T3):</b></p>
+  <ul>
+    <li><b>Efficient market</b> (full information, prices reflect intrinsic value; Hampton — CAPM usable for capital budgeting); <b>rational investment goals</b>; <b>risk aversion</b>.</li>
+    <li>Assets <b>divisible and liquid</b>; <b>borrow freely at risk-less rate</b>; <b>no brokerage, taxes or transaction cost</b>; <b>no bankruptcy</b>; capital market in <b>equilibrium</b>.</li>
+    <li>Required return = minimum expected return for investors to buy and hold the asset.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM figures</th></tr>
+    <tr><td>R<sub>j</sub> = R<sub>f</sub> + β(R<sub>m</sub> − R<sub>f</sub>)</td><td>R<sub>f</sub> risk-free return; (R<sub>m</sub> − R<sub>f</sub>) <b>market risk premium</b> (reward for market risk); β × premium = stock's risk premium (β tells how much riskier than market).</td><td>R<sub>f</sub> 5%, R<sub>m</sub> 15% → premium 10%; 30% riskier → 10% + 3% = 13% → 5% + 1.3 × 10% = <b>18%</b>. Premium 6%, β 1.2 → <b>7.2%</b>.</td></tr>
+    <tr><td><b>SML</b>: required return (Y-axis) vs β (X-axis); intercept R<sub>f</sub>, slope (R<sub>m</sub> − R<sub>f</sub>)</td><td>Relationship between <b>systematic risk</b> and return; higher β → higher premium.</td><td>—</td></tr>
+    <tr><td>β<sub>p</sub> = Σ w<sub>i</sub>β<sub>i</sub> (risk-free β = 0, market β = 1)</td><td>Mixing T-bills and market changes β linearly.</td><td>Illus 4.</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 2:</b> β 1.40, R<sub>m</sub> 14%, R<sub>f</sub> 10% → 10% + 5.6% = <b>15.6%</b>; premium +2.50 points → R<sub>m</sub> 16.5% → 10% + 1.40 × 6.5% = <b>19.10%</b>. <b>Illus 3:</b> premium 10%, β 0 / 0.25 / 0.42 / 1.00 / 1.67 → <b>0% / 2.50% / 4.20% / 10.00% / 16.70%</b>. <b>Illus 4:</b> R<sub>f</sub> 5%, R<sub>m</sub> 13% → premium <b>8%</b>; T-bill:market 100:0 β 0 → 5%; 70:30 β 0.3 → <b>7.40%</b>; 30:70 β 0.7 → <b>10.60%</b>; 0:100 β 1 → 13%.</p></div>
+  <div class="ex"><p><b>TYK P13:</b> β aggressive (40 − 4)/(25 − 7) = <b>2</b>; defensive (18 − 9)/(25 − 7) = <b>0.50</b>; expected returns <b>22%</b> and <b>13.5%</b>; R<sub>m</sub> 16% → SML: <b>7.5% + β<sub>i</sub> 8.5%</b>; alphas (R<sub>s</sub> = α + βR<sub>m</sub>): α<sub>A</sub> <b>−10%</b>, α<sub>D</sub> <b>5.5%</b>. <b>TYK P16:</b> premium 7% → returns 10.15/9.45/15.05/19.95% → ₹ 1,45,933 on ₹ 9,05,000 = <b>16.13%</b>; β <b>1.30</b> (weighted 1.3035 → 16.1245%). <b>TYK P19:</b> R<sub>f</sub> = 7/140 = 5%; 15% = 5% + β(10%) → β 1; 1 = 225/σ<sub>m</sub><sup>2</sup> → σ<sub>m</sub> <b>15%</b>; 1 = σ<sub>X</sub> × 0.75/15 → σ<sub>X</sub> <b>20%</b>. <b>TYK P20 (two correctly priced shares):</b> 19.8 = R<sub>f</sub> + 1.2P, 17.1 = R<sub>f</sub> + 0.9P → P = 2.7/0.3 = 9 → R<sub>m</sub> <b>18%</b>, R<sub>f</sub> <b>9%</b>; SML = 9% + β × 9%. <b>TYK P21:</b> B better (higher return, lower risk); 70:30 → 22.6%, σ<sup>2</sup> 0.1374, σ <b>37%</b> (37.06% also correct); R<sub>m</sub> − R<sub>f</sub> = −2/−0.38 = 5.26% → R<sub>f</sub> <b>17.48%</b>, R<sub>m</sub> <b>22.74%</b>; β<sub>p</sub> <b>0.974</b>.</p></div>
+  <div class="ex"><p><b>TYK P23:</b> 20% each → β <b>1.22</b>; 15% A, 30% B, 15% C, 30% D, 10% E → β <b>1.335</b>; at 12% for β 1 → <b>14.64%</b> and <b>16.02%</b>. <b>TYK P25 (₹ 520 lakh):</b> CAPM returns 9 / 10 / 9.60 / 10.40 / 11% → portfolio <b>10.208%</b> (avg β 1.104); "Better" has β 1 = Nifty's 10% → replacement makes no difference. <b>TYK P36 (beta adjustment):</b> market value ₹ 12,00,000, β<sub>p</sub> <b>1.108</b>; to 0.8 → 0.8/1.108 = 72.2% → total ₹ 16,62,050 → buy risk-free <b>₹ 4,62,050</b> (alternative: 13,30,000/(12,00,000 + x) = 0.8 → <b>₹ 4,62,500</b>); to 1.2 → 108.30% → ₹ 11,08,030 → divest <b>₹ 91,970</b> (alternative <b>₹ 91,667</b>). <b>TYK P39:</b> β<sub>asset</sub> = 1.5 × 60/100 = <b>0.9</b> (debt riskless); cost of capital 8% + 0.9 × 10 = <b>17%</b> (or WACC 23% × 3/5 + 8% × 2/5 = 17%).</p></div>
+  <p class="small"><i>Note (app-written): TYK P36's two methods differ only by rounding of 72.2% and 108.30% (SM p. 123–125); the direct equation gives ₹ 4,62,500 and ₹ 91,667. TYK P23(iii) takes return = 12% × β with no risk-free rate given (SM p. 111).</i></p>
+
+  <h3>8.1 Risk free Rate of Return <span class="pyq">Asked: Jan 2026 MCQ (R<sub>f</sub> from average portfolio return)</span></h3>
+  <ul>
+    <li>CAPM has <b>only one</b> risk-free rate. Returns include both <b>dividend and capital appreciation</b> — factor both into β and required return.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 5 (Pearl Ltd):</b> T-bill lowest bid 4.3% (conservative), 4.6% (aggressive) → moderate average <b>4.45%</b>; 15.50% = 4.45% + β(12% − 4.45%) → β = 11.05/7.55 = <b>1.464</b>. <b>Illus 6 (Jaykay):</b> returns = [D<sub>1</sub> + (P<sub>1</sub> − P<sub>0</sub>)]/P<sub>0</sub>: 25.62%, 20.07%, 17.05%; market = index appreciation + dividend yield: 12.62%, 21.79%, 5.32%; β = (851.36 − 830.55)/(662.36 − 525.89) = 20.81/136.47 = <b>0.15</b> → less affected by market. <b>TYK P8 (Krishna):</b> returns 12.24/32.41/16.13% (avg 20.26); market 10.81/16.33/16.79% (avg 14.64); β <b>1.897</b>; R<sub>f</sub> 6% → expected 15.12% (Sell), 25.60% (Buy), 26.47% (Sell).</p></div>
+  <div class="ex"><p><b>TYK P26:</b> dividends 7,025 + capital gain 5,500 on cost 75,000 → R<sub>m</sub> <b>16.7%</b>; average β (0.6 + 0.8 + 0.6 + 0.01)/4 = 0.50 → 15.7 = R<sub>f</sub> + 0.50(16.7 − R<sub>f</sub>) → R<sub>f</sub> <b>14.7%</b>; Gold 15.90%, Silver 16.30%, Bronze 15.90%, GOI 14.72%. <b>TYK P27:</b> R<sub>m</sub> = (146 + 145)/1,105 = <b>26.33%</b>; Epsilon 23.86%, Sigma 22.63%, Omega 20.17%, GOI 14.12% → average <b>20.20%</b>. <b>TYK P28:</b> R<sub>m</sub> = (5,800 + 5,000)/68,000 = <b>15.88%</b>; X 15.70%, Y 15.62%, Z 15.44%, PSU 15.18% → <b>15.49%</b>.</p></div>
+  <p class="small"><i>Note (app-written): TYK P26's alternative (SM p. 113–114) computes β 0.387 and R<sub>f</sub> 5.83% from the GOI bond, then stops at 15.7% = 5.83% + 0.387(R<sub>m</sub> − 5.83%) without solving. Use the main answer.</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 06 Portfolio Management (contd.)</span><span class="tag">SM Ch 06</span></div>
+  <h3>8.2 Under Valued and Over Valued Stocks</h3>
+  <table class="tight">
+    <tr><th>Compare</th><th>Valuation</th><th>Decision</th></tr>
+    <tr><td>CAPM required return &lt; actual/expected return (positive alpha) or actual price &lt; CAPM price</td><td>Undervalued</td><td><b>Buy</b></td></tr>
+    <tr><td>CAPM required return &gt; actual return (negative alpha) or actual price &gt; CAPM price</td><td>Overvalued</td><td><b>Sell</b></td></tr>
+    <tr><td>Equal</td><td>Correctly valued</td><td><b>Hold</b></td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 7:</b> 10 + 1.2(15 − 10) = <b>16%</b> &lt; projected 18% → undervalued → <b>Buy</b>. <b>Illus 8:</b> R<sub>f</sub> 9%, R<sub>m</sub> 14%: A required <b>17.50%</b> vs 18% → under-valued, Buy; B <b>12.00%</b> vs 11% → over-valued, Sell; C <b>15.00%</b> vs 15% → correctly valued, Hold. <b>TYK P22 (XYZ):</b> market value 11,00,500, dividends 2,46,282 → return <b>22.38%</b>; β<sub>p</sub> <b>1.46</b> vs implicit β (0.2238 − 0.11)/0.08 = <b>1.42</b> → marginally riskier than market; CAPM I 20.28%, II 29.24%, III 18.20%, IV 23% → I, II, III yields below → over-priced, sell; IV yield 26% above → increase. <b>TYK P33:</b> E(A) 11.5%, E(B) 10.1%, E(M) 10.2%, Var M 78.96, Cov AM 106.20, BM 106.68 → β<sub>A</sub> <b>1.345</b>, β<sub>B</sub> <b>1.351</b>; required (R<sub>f</sub> 11%) 9.924% and 9.92% → α<sub>A</sub> <b>1.576%</b>, α<sub>B</sub> <b>0.18%</b> → underpriced → make fresh investment.</p></div>
+  <div class="ex"><p><b>CAPM + dividend growth model (P<sub>0</sub> = D<sub>0</sub>(1 + g) ÷ (K<sub>e</sub> − g)):</b> <b>TYK P18 (Amal):</b> 10 + 1.2 × 5 = <b>16%</b>; P<sub>0</sub> = 3.36/0.04 = <b>₹ 84</b>. <b>TYK P29 (Fatlass, MP ₹ 25):</b> existing K<sub>e</sub> 20.4% → P<sub>0</sub> 2.10/0.154 = <b>₹ 13.63</b>; revised 15% → 2.18/0.06 = <b>₹ 36.33</b> → <b>hold</b> (expect appreciation). <b>TYK P30 (X Ltd, MP ₹ 40):</b> 18.5% → 3.27/0.095 = <b>₹ 34.42</b>; 15.60% → 2.675/0.086 = <b>₹ 31.10</b> → <b>sell</b>.</p></div>
+
+  <h3>8.3 Advantages and Limitations of CAPM</h3>
+  <table class="tight">
+    <tr><th>Advantages</th><th>Limitations</th></tr>
+    <tr><td><b>Risk adjusted return</b> — reasonable basis for required return; usable as risk-adjusted discount rate in capital budgeting. <b>No dividend company</b> — computes cost of equity of a company that pays no dividend.</td><td><b>Reliability of beta</b> — reliable β may not exist for many firms; beta's shortcomings apply to CAPM. <b>Other risks</b> — ignores unsystematic risk. <b>Information available</b> — hard to get R<sub>f</sub> (multiple rates) and expected R<sub>m</sub> (volatile).</td></tr>
+  </table>
+
+  <h3>9. Arbitrage Pricing Theory Model (APT) <span class="pyq">Asked: May 2026 Q2(a) 6m</span></h3>
+  <ul>
+    <li>Alternative to CAPM: uses the asset's expected return and the <b>risk premia of several macro-economic factors</b>. Steps: (a) risk premium for each factor × its beta (sensitivity); (b) add R<sub>f</sub>.</li>
+    <li>CAPM = one factor (market); APT needs no particular factor. <b>Stephen Ross</b> factors: <b>inflation, level of industrial production, risk premium, term structure of interest rates</b>. No surprise in factors → actual = expected.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM figures</th></tr>
+    <tr><td>E(R<sub>i</sub>) = R<sub>f</sub> + λ<sub>1</sub>β<sub>1</sub> + λ<sub>2</sub>β<sub>2</sub> + … + λ<sub>n</sub>β<sub>n</sub></td><td>λ<sub>n</sub> = factor price / risk premium of factor n; β<sub>n</sub> = sensitivity to factor n. Expected return in equilibrium.</td><td>Illus 9 below.</td></tr>
+    <tr><td>With surprises: E(R) = R<sub>f</sub> + β<sub>1</sub>(EV<sub>1</sub> − AV<sub>1</sub>) + … + β<sub>n</sub>(EV<sub>n</sub> − AV<sub>n</sub>)</td><td>(EV − AV) = surprise in factor value; β = sensitivity to that macro factor. (ICAI's TYK P38 uses actual − expected.)</td><td>TYK P38.</td></tr>
+    <tr><td>b prop. 1 = Σ (position in security ÷ own funds) × its Factor 1 sensitivity (same for b prop. 2) — as in TYK P15</td><td>Position ÷ own funds; short sale and borrowing are negative weights; risk-free asset has sensitivity 0.</td><td>TYK P15.</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 9:</b> 8% + 1.3 × 4% + 0.3 × 1% + 0.2 × (−4%) = 8 + 5.2 + 0.3 − 0.8 = <b>12.7%</b>. <b>TYK P38 (Tamarind):</b> (actual − expected) × β: 0 + 2.63 + 1.63 + 3.40 + 0.50 = 8.16 → 9.25 + 8.16 = <b>17.41%</b>. <b>TYK P15:</b> (i) +1.50 in A, −0.5 in B → b<sub>1</sub> 1.50 × 0.80 − 0.50 × 1.50 = <b>0.45</b>, b<sub>2</sub> <b>0.30</b>; (ii) borrow ₹ 1,00,000: A 3, B −1, R<sub>f</sub> −1 → <b>0.90</b> and <b>0.60</b>; (iii) 15 = 10 + 0.80λ<sub>1</sub> + 0.60λ<sub>2</sub>, 20 = 10 + 1.50λ<sub>1</sub> + 1.20λ<sub>2</sub> → λ<sub>1</sub> 0, λ<sub>2</sub> = 5/0.60 = <b>8.33%</b>.</p></div>
+  <div class="ex"><p><b>TYK P40 (Nirmal Kumar):</b> (a) APT: small cap growth 5.9925%, small cap value 8.8525%, large cap growth 8.478%, large cap value 7.535% → market index <b>7.7526%</b> (Method II 4.5 + 6.85 − 7.3675 + 3.77 = 7.7525%); (b) CAPM: 9.98, 10.665, 12.48, 10.3225 → <b>11.33%</b>; (c) target β 1 with small cap value (0.90) and large cap growth (1.165): X<sub>1</sub> + X<sub>2</sub> = 1, 0.90X<sub>1</sub> + 1.165X<sub>2</sub> = 1 → X<sub>1</sub> = 0.165/0.265 = <b>62.3%</b>, X<sub>2</sub> <b>37.7%</b>.</p></div>
+  <p class="small"><i>Note (app-written): in TYK P40(b) ICAI takes 12.45 for large cap growth in the total, while its own line above gives 12.48 (SM p. 127); with 12.48 the total is about 11.35%. In TYK P38 the rounded products add to 8.16; the unrounded total is 8.15 (17.40%).</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 06 Portfolio Management (contd.)</span><span class="tag">SM Ch 06</span></div>
+  <h3>10. Portfolio Evaluation Methods (10.1–10.3)</h3>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td><b>10.1 Sharpe</b> S = (R<sub>i</sub> − R<sub>f</sub>) ÷ σ<sub>i</sub></td><td>Risk premium per unit of <b>total risk</b> (SD). Higher = better risk-adjusted return. Use for overall portfolio vs another portfolio or index.</td><td>Index fund 11%, T-bill 6%, σ 20% → <b>0.25</b>. A (30%, σ 11) <b>2</b>; B (25%, σ 5) <b>3.4</b> → B better despite lower return.</td></tr>
+    <tr><td><b>10.2 Treynor</b> T = (R<sub>i</sub> − R<sub>f</sub>) ÷ β<sub>i</sub></td><td>Risk premium per unit of <b>systematic risk</b>; unsystematic assumed diversified.</td><td>β<sub>A</sub> 1.5 → <b>14.67%</b>; β<sub>B</sub> 1.1 → <b>15.45%</b> — same ranking as Sharpe.</td></tr>
+    <tr><td><b>10.3 Jensen alpha</b> = actual return − CAPM expected return [R<sub>f</sub> + β<sub>p</sub>(R<sub>m</sub> − R<sub>f</sub>)]</td><td>Ability of active management to add return above reward for market risk. Meaningful only for portfolios with <b>similar betas</b>. +α = manager doing well; −α = not doing well.</td><td>A: 12%, β 0.7, R<sub>f</sub> 9%, R<sub>m</sub> 12% → 0.09 + 0.021 = 0.111 → α = <b>0.009</b>.</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th>Sharpe vs Treynor</th><th>Sharpe</th><th>Treynor</th></tr>
+    <tr><td>Risk used</td><td>SD — total (systematic + unsystematic) volatility</td><td>Beta — systematic only ("momentum" built in)</td></tr>
+    <tr><td>Better for</td><td><b>Sector-specific</b> / not fully diversified funds</td><td><b>Diversified equity</b> funds</td></tr>
+    <tr><td>Rankings</td><td>Usually similar (most portfolios fully diversified)</td><td>Usually similar (most portfolios fully diversified)</td></tr>
+  </table>
+  <ul>
+    <li>Alpha: compare "apples to apples" (sector fund vs sector fund); alphas from different rating services not comparable; short-term alphas not valid — minimum <b>one year</b>, <b>three years</b> preferable.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P17 (MFX, MFY, Mix):</b> variances = diagonal: <b>4.800, 4.250, 3.100</b>; weights 0.60/0.40 → return <b>14.60%</b>; β<sub>X</sub> 3.370/3.100 = <b>1.087</b>, β<sub>Y</sub> 2.800/3.100 = <b>0.903</b>, β<sub>p</sub> <b>1.013</b>; σ<sub>p</sub><sup>2</sup> = 0.36 × 4.8 + 0.16 × 4.25 + 2 × 0.6 × 0.4 × 4.3 = <b>4.472</b>, σ<sub>p</sub> <b>2.115</b>; CAPM X 12.17%, Y 11.81%, portfolio 12.03%; systematic 3.663 / 2.528 / 3.181, unsystematic 1.137 / 1.722 / 1.291; Sharpe <b>2.282 / 1.94 / 2.175</b>; Treynor <b>4.60 / 4.43 / 4.54</b>; alpha <b>2.83% / 2.19% / 2.57%</b>.</p></div>
+  <p class="small"><i>Note (app-written): in TYK P17 the Sharpe ratios print the variance (4.800, 4.250) as denominator, but the answers use SD: 5/√4.8 = 2.282, 4/√4.25 = 1.94 (SM p. 106).</i></p>
+  <div class="ex"><p><b>TYK P24 (Economy A):</b> (1 − w)10 + w15 = 10.5 → w <b>10%</b>; σ<sup>2</sup> = (0.9)<sup>2</sup>(0.16)<sup>2</sup> + (0.1)<sup>2</sup>(0.30)<sup>2</sup> + 2(0.9)(0.1)(0.16)(0.30)(0.30) = 0.02423 → σ <b>15.6%</b>; Sharpe (10 − 3)/16 = <b>0.437</b> → (10.5 − 3)/15.6 = <b>0.481</b> (improves ~0.04). <b>TYK P41 (R<sub>f</sub> 6%):</b> Sharpe A 1.285, B 1.20, C 1.60, D 1.00, E 1.11 → ranks C, A, B, E, D; Treynor A 7.2, B 16, C 5.71, D 6.12, E 6.67 → ranks B, A, E, D, C. <b>TYK P42:</b> β = σ<sub>p</sub>r/σ<sub>m</sub>: A 1.75, B 0.90, C 0.65, D 1.25, E 0.90; required 17.75 / 13.50 / 12.25 / 15.25 / 13.50; Sharpe 4.00 / 3.00 / 7.50 / 4.25 / 4.50 (C first); Treynor 5.71 / 6.67 / 9.23 / 6.80 / 9.00 (C first); Jensen 1.25 / 1.50 / 2.75 / 2.25 / 3.60 (E first).</p></div>
+
+  <h3>11. Sharpe's Optimal Portfolio <span class="pyq">Asked: Jan 2026 Q5(a) 8m</span> <span class="pyq">Asked: May 2026 Q4(a) 6m</span></h3>
+  <ul>
+    <li>Simplified variant of Markowitz — far less data and computation. Based on <b>excess return over R<sub>f</sub> to beta</b>; ranking plus a unique <b>cut-off point C*</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Step / formula</th><th>Terms / logic</th></tr>
+    <tr><td>(a) (R<sub>i</sub> − R<sub>f</sub>) ÷ β<sub>i</sub> for each stock (Treynor's ratio); (b) rank highest to lowest</td><td>Excess return per unit of systematic risk.</td></tr>
+    <tr><td>(c) C<sub>i</sub> = σ<sub>m</sub><sup>2</sup> Σ<sub>i=1</sub><sup>N</sup> [(R<sub>i</sub> − R<sub>f</sub>)β<sub>i</sub> ÷ σ<sub>ei</sub><sup>2</sup>] ÷ {1 + σ<sub>m</sub><sup>2</sup> Σ<sub>i=1</sub><sup>N</sup> [β<sub>i</sub><sup>2</sup> ÷ σ<sub>ei</sub><sup>2</sup>]}</td><td>σ<sub>m</sub><sup>2</sup> = market index variance; σ<sub>ei</sub><sup>2</sup> = stock's unsystematic (residual) variance. Sums run from the top-ranked stock down to stock i (cumulative in ranked order, as in TYK P35).</td></tr>
+    <tr><td>(d) C* = highest C<sub>i</sub></td><td>Select stocks whose (R<sub>i</sub> − R<sub>f</sub>)/β<sub>i</sub> is <b>above</b> C*; reject those below. If a stock belongs to the optimal portfolio, all higher-ranked ones do too.</td></tr>
+    <tr><td>(e) Z<sub>i</sub><sup>o</sup> = (β<sub>i</sub> ÷ σ<sub>ei</sub><sup>2</sup>) × [(R<sub>i</sub> − R<sub>f</sub>)/β<sub>i</sub> − C*]; X<sub>i</sub><sup>o</sup> = Z<sub>i</sub><sup>o</sup> ÷ Σ<sub>j=1</sub><sup>N</sup> Z<sub>i</sub></td><td>Z<sub>i</sub> gives relative investment; dividing by ΣZ makes weights total 1 (all funds invested).</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P35 (Ramesh, σ<sub>m</sub><sup>2</sup> 10, R<sub>f</sub> 7%):</b> excess return/β: A 5.33, B 2.5, C 1.2, D 2, E 0.83, F 4.67 → rank A, F, B, D, C, E. C<sub>i</sub>: C<sub>A</sub> = 10 × 0.30/[1 + 10 × 0.056] = <b>1.923</b>; C<sub>F</sub> = 10 × 0.65/[1 + 10 × 0.131] = <b>2.814</b>; C<sub>B</sub> 2.668; C<sub>D</sub> 2.542; C<sub>C</sub> 2.165; C<sub>E</sub> 2.047 → <b>C* = 2.814</b> → select A and F. Z<sub>A</sub> = (1.5/40)(5.33 − 2.814) = <b>0.09435</b>; Z<sub>F</sub> = (1.5/30)(4.67 − 2.814) = <b>0.0928</b> → A <b>50.41%</b>, F <b>49.59%</b>.</p></div>
+  <p class="small"><i>Note (app-written): the opening line of section 11 says ranking is "based on the Sharpe Ratio", but step (a) and TYK P35 rank by excess return to beta, i.e. Treynor's ratio (SM p. 53).</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 06 Portfolio Management (contd.)</span><span class="tag">SM Ch 06</span></div>
+  <h3>12. Formulation of Portfolio Strategy — 12.1 Active Portfolio Strategy (APS)</h3>
+  <ul>
+    <li>Followed by most professionals and aggressive investors to earn superior risk-adjusted return and beat the index; most Indian funds are active. Four principles:</li>
+    <li><b>(a) Market timing</b> — depart from long-run asset mix on a forecast of market movement (business cycle, moving average, advance-decline analysis, econometric models); few succeed; forecasting right 75% of the time only breaks even after costs; Fisher Black — investor loses by being out of the market part of the time.</li>
+    <li><b>(b) Sector rotation</b> — overweight sectors expected to do well (e.g. steel, pharma); for bonds, shift in quality, coupon, maturity (expect rate rise → long to medium/short term).</li>
+    <li><b>(c) Security selection</b> — search for under-priced securities by fundamental/technical analysis; overweight attractive, underweight unattractive; bonds: highest YTM at given risk.</li>
+    <li><b>(d) Specialised investment concept</b> — growth, neglected/out-of-favour, asset, technology, cyclical stocks. Helps focus on one's ability, avoid distraction, master a style; disadvantage — <b>may become obsolete</b>.</li>
+  </ul>
+  <h3>12.2 Passive Portfolio Strategy</h3>
+  <ul>
+    <li>Capital market fairly efficient. Two guidelines: (a) create a <b>well-diversified portfolio at a predetermined risk</b>; (b) <b>hold it relatively unchanged</b> unless inadequately diversified or inconsistent with risk-return preference.</li>
+    <li><b>Index fund</b> — invests in the target index in the same weights (e.g. Nifty fund in the 50 Nifty companies); returns track the index; does <b>not</b> mitigate market risk.</li>
+  </ul>
+  <h3>12.3 Selection of Securities — 12.3.1 Bonds; 12.3.2 Equity</h3>
+  <table class="tight">
+    <tr><th>12.3.1 Bonds (fixed income) — factors</th><th>12.3.2 Equity — approaches</th></tr>
+    <tr><td><b>Yield to maturity</b> (return if held to maturity); <b>risk of default</b> (credit rating, else debt-equity, interest coverage, earning power, industry prospects); <b>tax shield</b> (few offer now); <b>liquidity</b> (convert to cash at short notice).</td><td><b>Technical</b> (price and volume data); <b>fundamental</b> (earnings, growth, risk → intrinsic value vs market price); <b>random selection</b> (market efficient, securities properly priced).</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th>Market efficiency</th><th>Technical</th><th>Fundamental</th><th>Random selection</th></tr>
+    <tr><td>Inefficiency</td><td>Best</td><td>Poor</td><td>Poor</td></tr>
+    <tr><td>Weak form</td><td>Poor</td><td>Best</td><td>Poor</td></tr>
+    <tr><td>Semi-strong</td><td>Poor</td><td>Good</td><td>Fair</td></tr>
+    <tr><td>Strong form</td><td>Poor</td><td>Fair</td><td>Best</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK T1:</b> factors affecting investment in fixed income securities → para 12.3 (12.3.1: YTM, risk of default, tax shield, liquidity).</p></div>
+
+  <h3>13. Portfolio Revision and Rebalancing</h3>
+  <ul>
+    <li>Stock and bond values fluctuate, so the mix changes → rebalancing needed. Three policies (portfolio of stocks and bonds), different pay-offs in different markets.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Policy</th><th>Rule</th><th>SM example figures</th></tr>
+    <tr><td><b>(a) Buy and hold</b> ("do nothing")</td><td>No rebalancing; set a <b>floor</b> and put an amount equal to it in bonds; portfolio value <b>linearly</b> related to stock value → <b>straight-line</b> pay-off. Suits investor whose risk tolerance rises with wealth/market but is zero below floor. Features: value positively and linearly dependent on stock; cannot fall below floor (bonds); better if initial stock % high and stock outperforms bonds.</td><td>Bonds ₹ 50,000 + equity ₹ 50,000 at ₹ 100; price ₹ 100 → ₹ 200 → portfolio <b>₹ 1,50,000</b>.</td></tr>
+    <tr><td><b>(b) Constant mix</b> ("do something")</td><td>Keep stock at a <b>constant % of total</b>: when price falls by the trigger %, sell bonds and buy stock; when price rises, sell stock and buy bonds. Suits investor whose tolerance varies proportionally with wealth (holds equity at all levels). <b>Concave</b> pay-off; does well in <b>flat but fluctuating</b> market.</td><td>Text: 60:40, rebalance on 10% move. Table (50:50 on ₹ 1,00,000): price 80 → 40,000 + 50,000 = 90,000 → 45,000/45,000, bond to stock <b>5,000</b>; price 60 → 33,750 + 45,000 = 78,750 → 39,360/39,390, bond to stock <b>5,610</b>. Price 150 → 75,000 + 50,000 = 1,25,000 → 62,400/62,600, stock to bond <b>12,600</b>; price 200 → 83,200 + 62,600 = 1,45,800 → 72,800/73,000, stock to bond <b>10,400</b>.</td></tr>
+    <tr><td><b>(c) CPPI</b> (Constant Proportion Portfolio Insurance)</td><td>Floor value in non-fluctuating assets (T-bills, bonds); <b>Target shares = Multiplier × (Portfolio value − Floor)</b>, multiplier &gt; 1; (portfolio − floor) = <b>cushion</b>. Buy shares as prices rise, sell as they fall → <b>convex</b> pay-off; good in bull market, avoids losses in bear market; very poor in sharp reversals.</td><td>Mr A: wealth ₹ 10,00,000, floor ₹ 7,50,000, multiplier 2 → cushion 2,50,000 → shares <b>₹ 5,00,000</b>, bonds ₹ 5,00,000. Market 100 → 150: shares 7,50,000, portfolio 12,50,000, cushion 5,00,000 → target 10,00,000 → sell bonds, buy shares <b>₹ 2,50,000</b>. Market 100 → 80: shares 4,00,000, portfolio 9,00,000, cushion 1,50,000 → target 3,00,000 → sell shares <b>₹ 1,00,000</b>, invest in bonds.</td></tr>
+  </table>
+  <p class="small"><i>Note (app-written): (1) Constant mix: the text sets 60:40 but the table rebalances 50:50, and ICAI's "after rebalancing" pairs are not exactly equal (39,360/39,390 for 78,750; 62,400/62,600 for 1,25,000; 72,800/73,000 for 1,45,800; exact halves 39,375, 62,500, 72,900) (SM p. 59–60). The switching amounts follow ICAI's rows. (2) CPPI Situation 1: SM says the cushion becomes ₹ 7,50,000, but 12,50,000 − 7,50,000 = ₹ 5,00,000, which is what gives ICAI's target of ₹ 10,00,000 (5,00,000 × 2) (SM p. 61).</i></p>
+  <table class="tight">
+    <tr><th>(d) Comparative evaluation</th><th>Buy &amp; Hold</th><th>Constant Mix</th><th>CPPI</th></tr>
+    <tr><td>Pay-off line</td><td>Straight</td><td>Concave</td><td>Convex</td></tr>
+    <tr><td>Down/Up markets</td><td>Definitely poor in down market</td><td>Not much in down market but relatively poor in up market</td><td>Good in down market and performs well in up market</td></tr>
+    <tr><td>Flat market</td><td>Between constant mix and CPPI</td><td>Tends to do well</td><td>Performs poorly</td></tr>
+  </table>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 06 Portfolio Management (contd.)</span><span class="tag">SM Ch 06</span></div>
+  <h3>14. Asset Allocation Strategies</h3>
+  <ul>
+    <li><b>Integrated</b> — examine capital market conditions and investor objectives/constraints; allocation that best serves needs with the market forecast.</li>
+    <li><b>Strategic</b> — optimal mixes from historical returns, risk, covariances; adjusted periodically to restore <b>target allocation</b>.</li>
+    <li><b>Tactical</b> — risk tolerance assumed <b>constant</b>; allocation changed on expectations about market conditions.</li>
+    <li><b>Insured</b> — risk exposure adjusted with portfolio value; more wealth → more ability to take risk.</li>
+  </ul>
+
+  <h3>15. Fixed Income Portfolio — 15.1 Process; 15.2 Return</h3>
+  <ul>
+    <li>Like an equity portfolio but of bonds, debentures, money market instruments (<b>bond portfolio</b>).</li>
+    <li><b>15.1 Five steps:</b> set objective → draft investment policy guidelines → select strategy (active/passive) → select securities and other assets → evaluate performance against benchmark.</li>
+    <li><b>15.2 Return measures:</b> arithmetic average rate of return; time weighted rate of return; rupee weighted rate of return; annualised return.</li>
+  </ul>
+  <h3>15.3 Strategies — 15.3.1 Passive; 15.3.2 Active</h3>
+  <table class="tight">
+    <tr><th>15.3.1 Passive (securities fairly priced)</th><th>15.3.2 Active (to outperform)</th></tr>
+    <tr><td><b>Buy and hold</b> — do nothing; may set duration equal to benchmark to control interest rate risk. <b>Indexation</b> — replicate a well-known bond index. <b>Immunization</b> — hybrid; popular with pension funds; avoids interest rate risk on fixed liabilities. <b>Matching cash flows</b> — buy zero coupon bonds to meet promised payments.</td><td><b>(1) Forecasting returns and interest rates</b> — expect fall in rates → buy longer maturity. Short-term yield strategies: <b>bullet</b> (concentrate in one bond, e.g. 100% in 5-year bond — for a fixed future need); <b>barbell</b> (equal in short and long, e.g. 1-year and 10-year); <b>ladder</b> (equal amounts across maturities, e.g. 20% each in 1–5 years). Forecast models: inflation, past trends, multi-factor analysis (estimates only); <b>horizon analysis</b> — pick a holding period and predict the yield curve at its end. <b>(2) Bond swaps:</b> <b>pure yield pickup</b> (lower to higher yield, similar quality/maturity; bears interest rate risk); <b>substitution</b> (identical features, different price — temporary imbalance); <b>international spread</b> (yield spread between two sectors temporarily out of line); <b>tax swap</b> (sell at capital loss to set off gains, buy a similar bond). <b>(3) Interest rate swap</b> (see Interest Rate Risk Management chapter).</td></tr>
+  </table>
+  <p class="small"><i>Note (app-written): 15.3.2(1) prints "if he/she expected a fall in interest then he/she should sell bonds with longer period"; read with the line before it, this should say a rise in interest rates (SM p. 64).</i></p>
+
+  <h3>16. Alternative Investment Avenues</h3>
+  <ul>
+    <li>AIs = investments other than stock, bond and cash. <b>Features:</b> high fees; limited historical data; illiquidity; less transparency; extensive research required; leveraged buying.</li>
+    <li>Types: real estates, gold, private equity, REITs, hedge funds, ETFs, mutual funds, commodities, distressed securities (others covered in their chapters).</li>
+  </ul>
+  <h3>16.1 Real Estates (16.1.1 Valuation approaches; 16.1.2 Valuation)</h3>
+  <ul>
+    <li>Tangible: land, buildings, offices, warehouses, shops; country-specific laws reduce appeal of foreign property (rising with globalisation).</li>
+    <li><b>16.1.1 Why valuation is complex:</b> inefficient market; illiquidity; only approximate comparison; high transaction cost; no organised market.</li>
+    <li><b>16.1.2 Approaches:</b> <b>sales comparison</b> (like P/E multiplier — benchmark similar property); <b>income</b> (like perpetual debenture — perpetual net income ÷ required return); <b>cost</b> (replacement cost of building + land value, adjusted for location etc.); <b>discounted after-tax cash flow</b> (PV of inflows − investment, like NPV).</li>
+  </ul>
+  <h3>16.2 Gold <span class="pyq">Asked: May 2026 MCQ CS-I 1-3 6m (SGB)</span></h3>
+  <ul>
+    <li>Jewellery suffers <b>making charges</b> on buying and selling back. Alternatives:</li>
+    <li><b>Gold bars/coins</b> — but cost of physical storage.</li>
+    <li><b>Sovereign Gold Bonds</b> — Government securities in <b>grams of gold</b>, issued by <b>RBI on behalf of GoI</b>; pay issue price in cash, redeemed in cash at market price of gold; periodical interest; no storage risk/cost, no making charges or purity issue; held in RBI books or demat.</li>
+    <li><b>Gold ETFs</b> — traded on exchanges like stock; invest in gold bullion; transparent holdings; much lower expenses.</li>
+    <li><b>E-gold</b> — from 2010, National Spot Exchange Ltd (NSEL); 1 unit = 1 gram, held in demat; backed by gold with custodian.</li>
+  </ul>
+  <p class="small">The May 2026 SGB MCQs also computed post-tax interest, real return, indexed cost and capital gains tax; the SM's 16.2 gives only the features above.</p>
+  <h3>16.3 Distressed securities</h3>
+  <ul>
+    <li>Securities of companies in or near bankruptcy, bought cheap, to try to revive the company; suit investors who cannot participate in the market and want to avoid due diligence.</li>
+    <li>Profit: <b>long position in debt + short position in equity</b> — if condition improves, interest (priority) exceeds dividend on the short; if it deteriorates, both fall and the short gains.</li>
+    <li><b>Risks:</b> liquidity risk; event risk (company-specific events); market risk (not important); human risk (judge's decision).</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 06 Portfolio Management (contd.)</span><span class="tag">SM Ch 06</span></div>
+  <h3>Exam steps by numerical type</h3>
+  <div class="sticky"><b>Exam steps — expected return and SD:</b> returns = [D<sub>1</sub> + (P<sub>1</sub> − P<sub>0</sub>)] ÷ P<sub>0</sub> (net cost if cum-benefit) → E(R) = Σ p × R (or mean) → deviations → σ<sup>2</sup> = Σ p × dev<sup>2</sup> (or ÷ n) → σ = √ (TYK P1, P2, P32).</div>
+  <div class="sticky"><b>Exam steps — two-asset portfolio and minimum risk:</b> means → deviations → Cov = Σ dev<sub>A</sub> × dev<sub>B</sub> (× p or ÷ n) → r<sub>AB</sub> = Cov<sub>AB</sub> ÷ σ<sub>A</sub>σ<sub>B</sub> → σ<sub>p</sub><sup>2</sup> = x<sub>1</sub><sup>2</sup>σ<sub>1</sub><sup>2</sup> + x<sub>2</sub><sup>2</sup>σ<sub>2</sub><sup>2</sup> + 2x<sub>1</sub>x<sub>2</sub>r<sub>12</sub>σ<sub>1</sub>σ<sub>2</sub> → min-risk X<sub>ABC</sub> = (σ<sub>X</sub><sup>2</sup> − Cov.<sub>AX</sub>) ÷ (σ<sub>A</sub><sup>2</sup> + σ<sub>X</sub><sup>2</sup> − 2Cov.<sub>AX</sub>) (TYK P3, P4, P6, P7).</div>
+  <div class="sticky"><b>Exam steps — three-asset portfolio:</b> write the 3 × 3 matrix (diagonal σ<sup>2</sup>, off-diagonal rσσ or Cov) → multiply each cell by row weight × column weight → add all 9 → √ (4.4.5 example, TYK P34(iv)).</div>
+  <div class="sticky"><b>Exam steps — beta:</b> regression β = [nΣXY − (ΣX)(ΣY)] ÷ [nΣX<sup>2</sup> − (ΣX)<sup>2</sup>] with X = market, Y = security; or β = Cov ÷ σ<sub>m</sub><sup>2</sup>; or β = r<sub>im</sub>σ<sub>i</sub> ÷ σ<sub>m</sub> → α = Y̅ − βX̅ → characteristic line α + βR<sub>m</sub> (Illus 6, TYK P8–P12).</div>
+  <div class="sticky"><b>Exam steps — single index risk split:</b> systematic = β<sup>2</sup>σ<sub>m</sub><sup>2</sup> → unsystematic ∈<sub>i</sub><sup>2</sup> = σ<sub>i</sub><sup>2</sup> − systematic (or σ<sub>i</sub><sup>2</sup>(1 − r<sup>2</sup>)) → β<sub>P</sub> = Σx<sub>i</sub>β<sub>i</sub> → σ<sub>p</sub><sup>2</sup> = [(ΣX<sub>i</sub>β<sub>i</sub>)<sup>2</sup>σ<sub>m</sub><sup>2</sup>] + [ΣX<sub>i</sub><sup>2</sup>∈<sub>i</sub><sup>2</sup>]; for a new mix (e.g. 60:40) only change w (Illus 1, TYK P14, P34, P37).</div>
+  <div class="sticky"><b>Exam steps — CAPM valuation:</b> R<sub>f</sub> (T-bill / bond yield = coupon ÷ price) and R<sub>m</sub> (dividend + capital gain ÷ cost) → β → required R<sub>j</sub> = R<sub>f</sub> + β(R<sub>m</sub> − R<sub>f</sub>) → compare with expected: required &lt; expected → undervalued, buy; &gt; → sell; = → hold; for price use P<sub>0</sub> = D<sub>1</sub> ÷ (K<sub>e</sub> − g) vs CMP (Illus 7, 8, TYK P18, P29, P30, P33).</div>
+  <div class="sticky"><b>Exam steps — R<sub>f</sub> and R<sub>m</sub> from data:</b> two correctly priced securities → subtract the two CAPM equations → (R<sub>m</sub> − R<sub>f</sub>) → back-substitute; portfolio average return with average β → solve R<sub>f</sub> (TYK P20, P21, P26).</div>
+  <div class="sticky"><b>Exam steps — beta adjustment / target beta:</b> β<sub>p</sub> = Σ (value ÷ total) × β → required total = (Σ value × β) ÷ target β → risk-free to add (or divest) = required total − current total; target β from two stocks: w<sub>1</sub> + w<sub>2</sub> = 1 and w<sub>1</sub>β<sub>1</sub> + w<sub>2</sub>β<sub>2</sub> = target (TYK P36, P40(c)).</div>
+  <div class="sticky"><b>Exam steps — APT:</b> R<sub>f</sub> + Σ λ<sub>k</sub>β<sub>k</sub> (or Σ β × surprise) → compare with actual return (mispricing) → portfolio sensitivity = Σ (position ÷ own funds) × β, short and borrowing negative → for target sensitivities solve two simultaneous equations in the weights (Illus 9, TYK P15, P38, P40).</div>
+  <div class="sticky"><b>Exam steps — Sharpe / Treynor / Jensen ranking:</b> β = rσ<sub>p</sub> ÷ σ<sub>m</sub> if not given → Sharpe (R<sub>p</sub> − R<sub>f</sub>) ÷ σ<sub>p</sub> → Treynor (R<sub>p</sub> − R<sub>f</sub>) ÷ β → Jensen R<sub>p</sub> − [R<sub>f</sub> + β(R<sub>m</sub> − R<sub>f</sub>)] → rank highest first (TYK P17, P41, P42).</div>
+  <div class="sticky"><b>Exam steps — Sharpe optimal portfolio:</b> (R<sub>i</sub> − R<sub>f</sub>) ÷ β → rank descending → for each row (R<sub>i</sub> − R<sub>f</sub>)β<sub>i</sub> ÷ σ<sub>ei</sub><sup>2</sup> and β<sub>i</sub><sup>2</sup> ÷ σ<sub>ei</sub><sup>2</sup>, keep running totals of both → C<sub>i</sub> = σ<sub>m</sub><sup>2</sup> × first total ÷ (1 + σ<sub>m</sub><sup>2</sup> × second total) → C* = highest C<sub>i</sub> (or given) → select ratios above C* → Z<sub>i</sub> = (β<sub>i</sub> ÷ σ<sub>ei</sub><sup>2</sup>)(ratio − C*) → X<sub>i</sub> = Z<sub>i</sub> ÷ ΣZ (TYK P35).</div>
+  <div class="sticky"><b>Exam steps — rebalancing:</b> CPPI: cushion = portfolio − floor → target shares = multiplier × cushion → buy/sell the gap against bonds. Constant mix: revalue shares at new price → total → restore target % → switch the difference. Buy and hold: value = bonds (floor) + shares × new price (13 examples).</div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

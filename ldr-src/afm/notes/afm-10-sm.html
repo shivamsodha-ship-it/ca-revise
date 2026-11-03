@@ -1,0 +1,506 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 10 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 10 Foreign Exchange Exposure and Risk Management</span><span class="tag">SM Ch 10</span></div>
+  <h2 class="brk"><span class="n">10</span>Ch 10 — Foreign Exchange Exposure and Risk Management</h2>
+  <div class="sub">Asked in last 3 papers: every paper. Sep 2025 MCQ (broken-date swap points) + Q1(b) 4m (importer yen, forward vs unhedged) + Q6(b) 7m (money market hedge); Jan 2026 MCQ (early delivery: swap loss, interest on outlay) + Q2(a) 6m (import payment options) + Q3(b) 4m (cross rates, arbitrage); May 2026 MCQ (forward purchase: settle, close-out, rebook, early settle) + Q5(c) 2m (transaction vs translation).</div>
+
+  <h3>1. Introduction — spot and forward market</h3>
+  <ul>
+    <li><b>Exchange rate</b> = price of one nation's currency in terms of another (the <b>reference currency</b>). ₹ 100/$ → rupee is the reference currency; $ 0.01/₹ → dollar is.</li>
+    <li><b>Spot rate</b>: delivery within <b>two business days</b> after the deal. <b>Forward rate</b>: rate fixed today for delivery on a future date (usually 30, 60, 90 or 180 days); payment and delivery at maturity.</li>
+    <li>(a) <b>Spot market</b>: India quotes rupees per one unit of foreign currency. (b) <b>Forward market</b>: buyer and seller agree today a specific amount, rate and future date; rate stays fixed whatever the spot does. The forward rate is <b>not</b> the future spot rate (which depends on demand and supply on that day).</li>
+    <li>Forex is the only market where <b>barter</b> happens — money delivered for money (selling £ forward = buying ₹ forward).</li>
+  </ul>
+  <div class="ex"><p><b>Illus 1:</b> one rupee buys <b>$ 0.0217</b>; <b>₹ 46.08</b> buys one dollar (reciprocals).</p></div>
+
+  <h3>2. Role of SWIFT in Foreign Exchange</h3>
+  <ul>
+    <li><b>SWIFT</b> (Society for Worldwide Interbank Financial Telecommunication): founded 1973, HQ La Hulpe (Belgium), non-profit; <b>purely a messaging system</b> — standardised communication, <b>not a settlement system</b>. Assigns <b>3-letter currency codes</b> (USD, GBP, CNY, CAD, AUD, HKD, INR, JPY, NZD, SGD, SEK, CHF, EUR). Connects institutions in 200+ countries.</li>
+    <li><b>Why important:</b> <b>quick settlement</b> (messaging in seconds, plus validation and documentation); security and reliability → <b>lower operational risk</b>; standardisation → <b>efficiency and lower cost</b>; <b>full backup and recovery</b>; <b>catalyst</b> for collaboration among financial agencies.</li>
+  </ul>
+
+  <h3>3. National and International Payment Gateways</h3>
+  <ul>
+    <li><b>Payment gateway</b>: virtual equivalent of physical cash transfer; an <b>encrypted channel</b> that authenticates and routes payment details from buyer's PC/mobile to banks for authorisation; completes the order with a reference number.</li>
+    <li><b>Benefits:</b> 24x7x365; real-time card authorisation; rapid processing; multiple payment options; risk minimised by encryption; real-time reports; customer refund; merchants avoid complex software / huge data; CA-authenticated secure servers; cheap bulk data collection with card validity check; multiple host interfaces; simple administrative control; customers' support and merchants' trust.</li>
+    <li><b>Challenges:</b> (a) customer may have no account with supporting banks; (b) limited banks in some gateways; (c) reliability, delivery, limited avenues, lack of trust in the provider.</li>
+    <li><b>International gateways</b>: multi-currency, multi-language; customer pays in own currency → higher conversion, easy benchmarking of prices.</li>
+  </ul>
+
+  <h3>4. Nostro, Vostro and Loro Accounts</h3>
+  <ul>
+    <li>Current accounts banks keep for quick transfer of funds in different currencies: "our", "your", "their".</li>
+    <li><b>Nostro</b> ("our account with you"): bank's FC account held abroad in that country's currency — Indian bank's CHF account in Switzerland.</li>
+    <li><b>Vostro</b>: foreign bank's account with a local bank — Citibank's account with SBI is Vostro for SBI. Nostro for one = Vostro for the other.</li>
+    <li><b>Loro</b>: using a third bank's Nostro account to settle — IDBI (no Nostro with Citi) asks HDFC (has account with Citi) to settle the import bill.</li>
+  </ul>
+  <div class="ex"><p><b>TYK T2</b> (Nostro, Vostro, Loro) → this para.</p></div>
+
+  <h3>4.1–4.2 Exchange Position and Cash Position</h3>
+  <ul>
+    <li><b>Exchange position</b>: total of purchase and sale commitments of the bank, <b>whether delivery has taken place or not</b> — entered on the contract date. Purchases &gt; sales = <b>overbought</b>; sales &gt; purchases = <b>oversold</b>.</li>
+    <li><b>Cash position</b>: balance in the <b>Nostro account</b> — credited for purchases, debited for sales, <b>only when actual delivery</b> takes place.</li>
+    <li>Every cash-position item affects exchange position, <b>not vice versa</b>. Only ready deliveries (TT remitted) hit the Nostro; forward deals, bills purchased, cancellations hit only the exchange position.</li>
+    <li>Cancellation of a forward purchase = a sale entry; cancellation of a draft sold = a purchase entry.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 2 (ABC Bank, £):</b> purchases 35,000 + 12,500 + 40,000 + 15,000 (draft cancelled) = 1,02,500; sales 30,000 + 15,000 + 37,500 = 82,500 → <b>overbought £ 20,000</b>. Nostro 65,000 − 37,500 = <b>£ 27,500</b>. To keep Nostro £ 7,500: <b>sell £ 20,000 spot</b> (position → nil); to keep £ 7,500 overbought: <b>buy £ 7,500 forward</b>.</p><p><b>TYK P51 (CHF):</b> purchases 1,60,000, sales 1,65,000 → <b>oversold 5,000</b>; Nostro 1,00,000 − 75,000 = 25,000 → <b>buy spot 5,000</b> (Nostro 30,000, position nil) and <b>buy forward 10,000</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 10 Foreign Exchange Exposure and Risk Management (contd.)</span><span class="tag">SM Ch 10</span></div>
+  <h3>5.1–5.2 American / European terms; Direct and Indirect quote</h3>
+  <ul>
+    <li><b>American terms</b>: US$ per unit of foreign currency. <b>European terms</b>: foreign currency per US$ (most currencies are quoted this way), e.g. INR 44.92 per $.</li>
+    <li><b>Direct quote</b>: <b>home currency price of one unit of foreign currency</b> — $ 1 = ₹ 48.00 for an Indian. <b>Indirect quote</b>: foreign currency price of one unit of home currency — ₹ 1 = $ 0.0208.</li>
+    <li><b>Direct quote = 1 ÷ Indirect quote</b> (and vice versa). On reversing a two-way quote, bid and ask swap sides: 1/ask becomes the new bid (TYK P40: $/£ 1.5617–1.5673 → £/$ 0.63804–0.64033).</li>
+  </ul>
+  <p class="small"><i>Note (app-written): SM 5.1 prints "U.S. dollar 0.2 per unit of Indian rupee" as the American quote beside INR 44.92/$; the reciprocal of 44.92 is about $ 0.0223.</i></p>
+
+  <h3>5.3 Bid, Offer and Spread</h3>
+  <ul>
+    <li>Two-way quote: <b>Bid</b> = rate at which the <b>dealer buys</b> the currency; <b>Offer/Ask</b> = rate at which he <b>sells</b>. ₹ 48.80–48.90/$: buys $ at 48.80, sells $ at 48.90. Offer is always higher — dealer buys at bid, sells at offer.</li>
+    <li>A bid in one currency is simultaneously an offer in the other.</li>
+    <li><b>Spread % = (Offer − Bid) ÷ Bid × 100</b>.</li>
+    <li>Dealer jargon: "<b>ONE MINE</b>" = I buy one million $ from you (at your ask); "<b>ONE YOURS</b>" = I sell one million $ to you (at your bid).</li>
+    <li><b>Customer side</b> (logic used in all TYK answers): customer <b>sells</b> FC → bank's <b>bid</b>; customer <b>buys</b> FC → bank's <b>ask</b>. Always the rate worse for the customer.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P2:</b> Canara buys $ and credits ₹ to ABN-Amro's Vostro at interbank bid ₹ 51.3625 → $ 15,000,000 ÷ 51.3625 = <b>US$ 2,92,041.86</b> (or at $ 0.01947 → $ 2,92,050). <b>TYK P11 (i)</b> firm sells $ 2 months later at bid 47.00: 25,00,000 ÷ 47 = <b>US$ 53,191.489</b>; <b>(ii)</b> buys $ 2,00,000 spot at ask 46.25 = <b>₹ 92,50,000</b>.</p></div>
+
+  <h3>5.4 Cross Rates <span class="pyq">Asked: Jan 2026 Q3(b) 4m</span></h3>
+  <ul>
+    <li><b>Cross rate</b>: rate between a pair of currencies neither of which is the currency of the country where it is quoted (CAD/GBP quoted in India). In the Bloomberg table, rows are direct quotes for the first-column currency; columns are indirect quotes for the first-row currency.</li>
+    <li><b>Chain rule</b> (SM TYK P6, P3): <b>₹/$ x $/¥ = ₹/¥</b>; two-way: <b>(£/₹)<sub>ask</sub> = (£/$)<sub>ask</sub> x ($/₹)<sub>ask</sub></b>. <i>App-written generalisation:</i> bid leg × bid leg gives the cross bid, ask leg × ask leg gives the cross ask; if one leg is quoted the other way, divide: ₹/HK$ = ₹ 42.85 / 7.5880 (TYK P7).</li>
+    <li>Pick each leg from the side the bank actually deals on: when the bank buys the third currency, it buys $ at ask locally and sells $ for the third currency at the bid abroad.</li>
+    <li><b>Arbitrage test</b>: compute the cross rate; if a quoted rate differs, go round the markets (buy where cheap, sell where dear) and compare the end amount with the start.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>SM item</th><th>Working</th><th>ICAI answer</th></tr>
+    <tr><td>TYK P3 (buy ₹ 25 m with £)</td><td>(£/₹) = (1/1.5260) × (1/61.3625) = £ 0.01068 ≈ 0.0107</td><td><b>£ 2,67,500</b></td></tr>
+    <tr><td>TYK P7 (HK$ 1 crore sold at ₹ 5.70)</td><td>Cover: buy $ at 42.85, sell $ for HK$ at 7.5880 → ₹ 42.85 ÷ 7.5880 = ₹ 5.6471</td><td>Profit <b>₹ 5,29,000</b></td></tr>
+    <tr><td>TYK P8 (DKK 10 lakh sold at ₹ 6.5150 = ₹ 65,15,000)</td><td>London: 10,00,000 ÷ 11.4200 = £ 87,565.67 × 74.3200 = ₹ 65,07,881. New York: ÷ 7.5670 = $ 1,32,152.77 × 49.2625 = ₹ 65,10,176</td><td>Cover in <b>London</b>, profit <b>₹ 7,119</b> (NY ₹ 4,824; saving ₹ 2,295)</td></tr>
+    <tr><td>TYK P9 (SGD 25 lakh remitted late)</td><td>28 Jan: 45.90 × 1.7850 ÷ 3.1575 = 25.9482 + 0.125% (0.0324) = 25.9806. 4 Feb: 45.97 × 1.7775 ÷ 3.1380 = 26.0394 + 0.0325 = 26.0719</td><td>Loss to importer <b>₹ 2,28,250</b></td></tr>
+    <tr><td>TYK P13 (3-market arbitrage, USD 1 crore)</td><td>$ → ₹ at 48.30 = ₹ 48,30,00,000 → £ at 77.52 = £ 62,30,650.155 → $ at 1.6231 = $ 1,01,12,968.26</td><td>Gain <b>USD 1,12,968.26</b></td></tr>
+    <tr><td>TYK P46 (sold $ 10 lakh at € 1.4400, squared up at 1.4450)</td><td>€ 14,40,000 − € 14,45,000 = loss € 5,000; €/₹ = 31.4500 ÷ 1.4400 = ₹ 21.8403</td><td>Loss <b>₹ 1,09,201.50</b></td></tr>
+    <tr><td>TYK P47 (i) (buy £ 1 m with CHF)</td><td>Buy $ from Bank A at CHF 1.4655; buy £ from Bank B at $ 1.7650 → 1.7650 × 1.4655 = CHF 2.5866</td><td><b>CHF 25,86,600</b></td></tr>
+  </table>
+  <p class="small"><i>Note (app-written): TYK P3 — ICAI labels the rate (£/₹)<sub>ask</sub> but multiplies the reciprocals of $/£ 1.5260 and ₹/$ 61.3625; rounding 0.01068 up to 0.0107 gives £ 2,67,500, whereas 25,000,000 × 0.010679 ≈ £ 2,66,980. TYK P8 — the London rupee cost is printed "₹ 65,07,88"; the profit line shows ₹ 65,07,881.</i></p>
+
+  <h3>5.5 Pips</h3>
+  <ul>
+    <li><b>PIP (Price Interest Point)</b> = smallest unit by which a quote can change (like tick size). USD/INR to customer ₹ 61.75 → pip 0.01; Indian interbank quotes to 4 decimals → 0.0001. EUR/USD 1.0213/1.0219 → spread 0.0006 = <b>6 pips</b>.</li>
+  </ul>
+
+  <h3>5.6 Forward exchange rate quotation</h3>
+  <ul>
+    <li>Market convention: forward quoted as <b>spot + forward margin (points)</b>, not as an outright rate. Spot 61.53/54, 6-month outright 61.93/98 → dealer quotes only <b>40/44</b> (61.93 − 61.53; 61.98 − 61.54). The "big figure" (61) is assumed known.</li>
+    <li>Forward margin is <b>not</b> the dealer's profit. Higher future price → <b>forward premium</b>; lower → <b>forward discount</b>.</li>
+    <li>Annualised: 40 paise per 6 months → 80 paise a year → 0.4 × 2 × 100 ÷ 61.53 = <b>1.30% p.a.</b> The forward market is really an <b>interest rate market</b> (compares the two currencies' interest rates).</li>
+  </ul>
+  <p class="small"><i>Note (app-written): SM prints "61.98 – 62.54"; the 44 points come from 61.98 − 61.54.</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 10 Foreign Exchange Exposure and Risk Management (contd.)</span><span class="tag">SM Ch 10</span></div>
+  <h3>5.7 Forward point determination</h3>
+  <ul>
+    <li><b>Direct quote</b>: points <b>added</b> when the FC is at a <b>premium</b>, <b>deducted</b> at a <b>discount</b>. Indirect quote: exactly the opposite.</li>
+    <li><b>How to tell without a sign</b>: spread must widen with time (uncertainty and liquidity). <b>Ascending points (5/8, 43/45) → premium → add</b>; <b>descending (25/20, 35/25) → discount → deduct</b>. GBP 1 = $ 1.6000–1.6010, points 5–8 → $ 1.6005–1.6018.</li>
+    <li>Points reflect the <b>interest rate differential</b>: the currency with the <b>lower interest rate is at a premium</b>; higher yield → cheaper forward. Aberration → arbitrage pushes back to equilibrium.</li>
+    <li>Points = pips of the forward; EUR/USD spot 1.1323, forward 1.1328 → 5 points (1 point = 0.0001).</li>
+  </ul>
+  <div class="ex"><p><b>TYK P18:</b> ₹ 48.5275 → 48.4575 = points (−) 0.0700 (discount); loan $ 20,00,000 + interest (SOFR 2% + 1% = 3% for 6 months) $ 30,000 = $ 20,30,000 × 48.4575 = <b>₹ 9,83,68,725</b>; market expects $ to depreciate — cover unless own view is a larger fall. <b>TYK P35:</b> spot 60.25–60.55, points 35/25 (descending → deduct) → 3-month <b>59.90/60.30</b>. <b>TYK P47 (ii):</b> GBP/CHF spot 1.4650 × 1.7645 = 2.5850 / 1.4655 × 1.7660 = 2.5881; GBP/USD 3m (25/20, discount) 1.7620/1.7640; USD/CHF 3m (5/10, premium) 1.4655/1.4665 → GBP/CHF 3m 2.5822/2.5869 → implied swap points <b>28/12 discount</b>. <b>TYK P16:</b> importer buys SGD 5 lakh on 30 Oct: USD/₹ 49.3800 + Spot/Oct 0.1300 = 49.5100; USD/SGD 1.7058 + 2nd-month 0.0096 = 1.7154; 49.5100 ÷ 1.7154 = 28.8621 + margin 0.05 = <b>₹ 28.9121</b>.</p></div>
+
+  <h3>5.8 Broken period forward rate <span class="pyq">Asked: Sep 2025 MCQ CS-IV 6m</span></h3>
+  <ul>
+    <li>Interbank forwards are for standard amounts and <b>standard month-end dates</b>; customer deals are odd amounts and odd dates (export bill realised 23 Feb). Points for the odd date are <b>interpolated</b> — assumed to grow <b>uniformly (pro rata)</b> over the period.</li>
+    <li>SM: premium for the odd date = <b>10*53/59</b> paise, "53 &amp; 59 are broken &amp; full periods", i.e. full-period points × broken period ÷ full period. Between two standard dates (TYK P5): (c) = (b) − (a) for the month between, (d) = (c)/2 for 15 days, (e) = (a) + (d).</li>
+    <li>Then: <b>merchant forward rate = spot ± broken points ± bank's margin</b> (margin deducted for exporter, added for importer).</li>
+  </ul>
+  <div class="ex"><p><b>SM example:</b> 1 Jan spot ₹ 62, 2-month (28 Feb) premium 10 paise → 62.10; margin 3 paise → importer 62.13, exporter 62.07. For 23 Feb: 10 × 53/59 = <b>8.98 paise</b> → 62.0898 ≈ 62.09 → exporter <b>62.06</b>, importer <b>62.12</b>.</p><p><b>TYK P5 (Sep 2025 MCQ type):</b> 2m points 70/90, 3m 160/186 → 30 days 90/96 → 15 days 45/48 → 2m 15d = <b>115/138</b> (1 point = 0.0001) → rate for 20 June = 66.2525 + 0.0115 = <b>66.2640</b> / 67.5945 + 0.0138 = <b>67.6083</b>. Annual premium on average rate: bid 0.0115 ÷ 66.2583 × 12/2.5 × 100 = <b>0.0833%</b>; ask 0.0138 ÷ 67.6014 × 12/2.5 × 100 = <b>0.0980%</b>.</p></div>
+
+  <h3>5.9 Merchant Rates</h3>
+  <ul>
+    <li>Nobody fixes the rate — market (demand and supply) decides. RBI does <b>not fix</b> but monitors <b>volatility</b> and intervenes by buying/selling USD. Wholesale <b>interbank rate</b> is the base for customer rates.</li>
+    <li><b>Merchant rates</b> = rates to all customers (even an NRI remitting $) vs <b>interbank rates</b> between banks. FEDAI guidelines apply because of the customer-service element.</li>
+    <li>Till 1998 FEDAI prescribed margins; now banks set their own margin depending on their position. Only surviving rule: <b>FEDAI rule 5A.8</b> — merchant settlements <b>rounded to the nearest whole rupee</b>: USD 1,234 × 61.32 = ₹ 75,668.88 → <b>₹ 75,669</b>.</li>
+    <li>History: gold standard ended 1971; rupee pegged to sterling, from 1975 to a basket; sterling schedule abolished 1984; FEDAI's margin / spread guidelines now redundant.</li>
+    <li><b>Card rate</b>: merchant rates for import bill, export bill, inward/outward remittance, with standard spread, advised each morning to branches; used for walk-in and small deals. Regular / high-value customers get a better rate from the dealing room.</li>
+    <li><b>Exchange margin</b> (in all SM illustrations): <b>deducted from a buying rate, added to a selling rate</b>; round as the question says (often to multiples of 0.0025).</li>
+  </ul>
+
+  <h3>6. Exchange Rate Forecasting</h3>
+  <ul>
+    <li>Needed for hedging, short-term financing and investment, capital budgeting, earnings assessment, long-term financing. Four groups:</li>
+    <li><b>Technical</b>: historical data (time series); useful to speculators for day-to-day moves; rarely point/range estimates → limited use to MNCs.</li>
+    <li><b>Fundamental</b>: relationships between economic variables and rates (subjective, regression, sensitivity). <b>Limits:</b> uncertain timing of impact; need to forecast factors with immediate impact; omission of non-quantifiable factors; sensitivity changes over time.</li>
+    <li><b>Market-based</b>: current spot/forward rates (speculators make them reflect expected future rates).</li>
+    <li><b>Mixed</b>: weighted average of several forecasts.</li>
+  </ul>
+
+  <h3>7. Exchange Rate Determination</h3>
+  <ul>
+    <li>Major factors: <b>inflation</b> (→ PPP) and <b>interest rates</b> (→ IRP). Others:</li>
+    <li><b>Deficit/surplus on capital/current account</b>: current-account deficit → depreciation, surplus → appreciation; net capital inflow positive → appreciation, negative → depreciation.</li>
+    <li><b>Trade barriers</b>: more import barriers/quotas → own currency appreciates in the long run.</li>
+    <li><b>Central bank intervention</b> (buying/selling forex); <b>Government controls</b> (limits on FDI, FPI, repatriation).</li>
+    <li><b>Expectations (Band Wagon effect)</b>: a dominant speculator goes short, others follow → currency falls.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 10 Foreign Exchange Exposure and Risk Management (contd.)</span><span class="tag">SM Ch 10</span></div>
+  <h3>8. Exchange Rate Theories — 8.1 Interest Rate Parity (IRP)</h3>
+  <ul>
+    <li><b>IRP</b>: "size of the forward premium (or discount) should equal the <b>interest rate differential</b>". When IRP holds, <b>covered interest arbitrage</b> (FX risk covered by a forward) earns no more than a domestic investment.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td><b>Covered IRP (SM):</b> (1 + r<sub>D</sub>) = <sup>F</sup>/<sub>S</sub> (1 + r<sub>F</sub>). <i>App-written rearrangement:</i> F = S × (1 + r<sub>D</sub>) ÷ (1 + r<sub>F</sub>). TYK P14 writes it as F<sub>1</sub>/E<sub>o</sub> = (1 + R<sub>h</sub>)/(1 + R<sub>f</sub>).</td><td>S, F = spot and forward in <b>direct</b> quote (home per foreign); r<sub>D</sub>, r<sub>F</sub> = domestic and foreign rates <b>for the period</b> (annual rate × months/12; TYK P14 uses 0.10/2, 0.04/2). Left = ₹ 1 invested at home; right = ₹ 1 converted at S, invested abroad, brought back at F. Equal → no arbitrage.</td><td>TYK P14: 55.50 × 1.05 ÷ 1.02 = <b>₹ 57.13</b>; $ at <b>premium</b> (India rate higher); premium (57.13 − 55.50)/55.50 × 12/6 × 100 = <b>5.87%</b></td></tr>
+    <tr><td><b>Uncovered IRP (SM):</b> (1 + r<sub>D</sub>) = <sup>S<sub>1</sub></sup>/<sub>S</sub> (1 + r<sub>F</sub>)</td><td>S<sub>1</sub> = <b>expected future spot</b> at which FC receipts are converted (no forward cover).</td><td>—</td></tr>
+    <tr><td>TYK P31 form: <b>S<sub>1</sub> = S<sub>0</sub> × (1 + in A) ÷ (1 + in B)</b></td><td>Quote is units of currency A per unit of B; numerator = interest of the currency in which the price is stated.</td><td>TYK P31: £/$ 0.7570 × (1 + 0.075 × 3/12) ÷ (1 + 0.035 × 3/12) = 0.7570 × 1.01875/1.00875 = <b>£ 0.7645/$</b>. TYK P4: Can$ 2.50/£ × 1.075 ÷ 1.06 = <b>Can$ 2.535/£</b></td></tr>
+  </table>
+  <ul>
+    <li><b>Arbitrage rule</b> (SM 8.1): compare annualised forward premium/discount with the interest differential. If the forward discount on the high-interest currency is <b>less</b> than the differential → <b>borrow the low-rate currency, invest in the high-rate currency</b>, sell forward. If the discount is <b>larger</b> than the differential (excess premium on the low-rate currency) → invest in the <b>lower-interest</b> currency.</li>
+    <li>Steps: borrow → convert at spot → invest → convert maturity value at the forward → repay loan + interest → difference = gain.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P26:</b> premium on $ (48.8190 − 48.0123)/48.0123 × 12/6 × 100 = 3.36% &lt; differential 12% − 8% = 4% → borrow <b>$ 83,312</b> at 8% (repay $ 86,644.48), convert = ₹ 40,00,000, invest at 12% for 6 months = ₹ 42,40,000 ÷ 48.8190 = $ 86,851.43 → gain <b>US$ 206.95</b> (₹ 10,103).</p><p><b>TYK P27:</b> DM premium (0.67 − 0.665)/0.665 × 12/3 × 100 = <b>3.01%</b> &gt; differential 9% − 7% = 2% → borrow Can$ 1,000 at 9%, buy DM 1,503.76, invest at 7% → DM 1,530.08 × 0.67 = Can$ 1,025.15 − repay 1,022.50 = gain <b>Can$ 2.65</b>.</p><p><b>TYK P49:</b> $ 5,00,000 for 3 months, cost 4%: London £ 3,24,886 + interest £ 4,061 = £ 3,28,947 less $ 5,05,000 ÷ 1.5430 = £ 3,27,285 → £ 1,662; New York $ 5,00,000 × (8% − 4%) × 3/12 = $ 5,000 ÷ 1.5475 = <b>£ 3,231</b>; Frankfurt cross 1.8260/1.5390 = € 1.1865 → € 5,93,250 + € 4,449 = € 5,97,699 × £ 0.5510 (1/1.8150) = £ 3,29,332 − 3,27,285 = £ 2,047 → invest in <b>New York</b>.</p></div>
+
+  <h3>8.2 Purchasing Power Parity (PPP)</h3>
+  <ul>
+    <li>Focus: <b>inflation – exchange rate</b> relationship; rates reflect relative purchasing power of currencies.</li>
+    <li><b>Absolute form ("Law of One Price")</b>: prices of similar products in two countries should be equal in a common currency; discrepancy shifts demand until prices converge. Alternative version allows <b>market imperfections</b> (transport costs, tariffs, quotas) via a <b>sectoral constant</b> — prices may differ, but their <b>rate of change</b> should be similar.</li>
+    <li>Problem: millions of products and constants; CPI baskets differ by consumption pattern (Finland vs Malaysia). <b>Relative form</b> overcomes market imperfections and consumption patterns.</li>
+    <li>PPP holds better in the <b>long run</b> and when disturbances are <b>purely monetary</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td><b>Absolute (equilibrium):</b> S = α × P<sub>D</sub> ÷ P<sub>F</sub></td><td>S = spot (₹/$); P<sub>D</sub>, P<sub>F</sub> = price levels in India / foreign; α = sectoral price and sectoral shares constant.</td><td>Bat ₹ 1,000 + transport ₹ 100 + US duty ₹ 200 → α = 1000/1300 = <b>0.7692</b></td></tr>
+    <tr><td><b>Relative:</b> E(S<sub>1</sub>) = S<sub>0</sub> × (1 + I<sub>d</sub>) ÷ (1 + I<sub>f</sub>)</td><td>S<sub>0</sub> = current spot (direct quote); I<sub>d</sub> = home inflation; I<sub>f</sub> = foreign inflation. Logic: a basket costing S<sub>0</sub> at home and 1 unit abroad grows by each country's inflation; rate = ratio of the two future prices. Higher-inflation currency depreciates. Can also be worked backwards.</td><td>₹ 50 × 1.12 = ₹ 56 vs $ 1.04 → <b>₹ 53.8462/$</b>. TYK P30: 46 × 1.08/1.04 → 47.77, 49.61, 51.52, <b>53.50</b> (years 1–4)</td></tr>
+    <tr><td><b>Real appreciation / depreciation</b> = actual rate − PPP rate</td><td>Any difference from the PPP rate is explained by factors other than inflation.</td><td>45 × 1.10/1.02 = 48.53; actual 50.00 → USD real appreciation <b>₹ 1.47</b> = 1.47/45 = <b>3.27%</b></td></tr>
+  </table>
+
+  <h3>8.3 International Fisher Effect (IFE)</h3>
+  <ul>
+    <li>Uses <b>interest rate</b> (not inflation) differentials to explain exchange-rate changes; closely related to PPP since interest rates are highly correlated with inflation.</li>
+    <li>Nominal risk-free rate = <b>real return + anticipated inflation</b>. If all investors want the same real return, interest differentials reflect expected inflation differentials. <b>High-interest currencies will depreciate</b>. Nominal rate also includes default risk.</li>
+    <li><b>Equation:</b> r<sub>D</sub> − P<sub>D</sub> = r<sub>F</sub> − ∆P<sub>F</sub>, or <b>P<sub>D</sub> − P<sub>F</sub> = ∆S = r<sub>D</sub> − r<sub>F</sub></b>. Terms: r = nominal interest, P = inflation, ∆S = % change in spot. Logic: with free capital flows, investment flows until <b>real returns equalise</b>.</li>
+    <li>If IFE holds, borrowing in one country and investing in another gives <b>no positive return on average</b>. It does not consistently hold because PPP does not (other factors affect rates).</li>
+  </ul>
+
+  <h3>8.4 Comparison of PPP, IRP and IFE</h3>
+  <table class="tight">
+    <tr><th>Theory</th><th>Key variable</th><th>Basis</th><th>Summary</th></tr>
+    <tr><td><b>IRP</b></td><td>Forward premium/discount</td><td>Interest rate differential</td><td>Why forward differs from spot, at a <b>point of time</b>; covered interest arbitrage gives no more than a domestic return.</td></tr>
+    <tr><td><b>PPP</b></td><td>% change in spot rate</td><td>Inflation differential</td><td>Spot changes <b>over time</b> with inflation differential; consumers' purchasing power at home = when importing.</td></tr>
+    <tr><td><b>IFE</b></td><td>% change in spot rate</td><td>Interest rate differential</td><td>Spot changes over time with interest differential; uncovered foreign money-market return on average no higher than domestic.</td></tr>
+  </table>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 10 Foreign Exchange Exposure and Risk Management (contd.)</span><span class="tag">SM Ch 10</span></div>
+  <h3>9. Foreign Exchange Market</h3>
+  <ul>
+    <li>Market where individuals, firms and banks buy and sell foreign currencies; purpose: <b>transfer of purchasing power</b> from one currency to another (trade invoiced in one agreed currency, possibly a third one like $).</li>
+    <li>Demand for FC: tourists going abroad, imports, investing abroad. Supply: foreign tourists, exports, foreign investment received. Commercial banks act as <b>clearing houses</b>.</li>
+    <li><b>Four levels:</b> (1) tourists, importers, exporters, investors; (2) commercial banks; (3) foreign exchange brokers (banks even out flows among themselves); (4) central bank — lender/buyer of last resort (draws down or adds to reserves).</li>
+    <li><b>Participants:</b> non-bank entities (MNCs, individuals); banks; <b>speculators</b> (profit from rate fluctuations); <b>arbitrageurs</b> (profit from price differences in two markets simultaneously); governments via central banks (stabilise rates).</li>
+  </ul>
+
+  <h3>10. Foreign Exchange Exposure <span class="pyq">Asked: May 2026 Q5(c) 2m</span></h3>
+  <ul>
+    <li><b>Exposure</b>: "a contracted, projected or contingent cash flow whose magnitude is not certain at the moment; depends on FX rates and interest rates". FX exposure = parts of business affected if exchange rates change.</li>
+    <li>Examples: traveller (destination currency appreciates); <b>exporter</b> invoicing in FC (FC falls → lower home revenue); <b>importer</b> (FC appreciates → higher cost); fund managers owning foreign assets (currency falls); trade in local currency where rates move the negotiated price.</li>
+    <li>Timing view: <b>translation</b> and <b>transaction</b> exposure look at the moment of the rate change (accounting / settled obligations); <b>operating (economic)</b> exposure looks at expected future cash flows after an unexpected change.</li>
+  </ul>
+  <div class="ex"><p><b>TYK T1</b> ("operations in foreign exchange are exposed to a number of risks") → this para 10 (three exposures). <b>TYK P1:</b> bond return (5,250 − 5,000 + 350)/5,000 = 12% for a US investor; non-US investor with $ up 2%: 1.12 × 1.02 − 1 = <b>14.24%</b>.</p></div>
+
+  <h3>10.1 Transaction Exposure</h3>
+  <ul>
+    <li>Effect of a rate change on <b>outstanding obligations</b> entered before the change but <b>settled after</b> it — cash flows from <b>existing contractual obligations</b>. Arises whenever there are FC receivables/payables.</li>
+    <li>Exporter with $ 1,00,000 receivable in 6 months: $ depreciates → cash loss; appreciates → gain. Budgeted ₹ 62/$, falls to ₹ 57 → commercial profit wiped off. Most common exposure; runs from budgeting until extinguished by sale/purchase of FC.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P48 (A) (Omega, 2,400 units):</b> profit at current rates 2400 [€ 500 × 51.50 − (S$ 800 × 27.25 + 1,000 + 1,500)] = ₹ 34,80,000; after change (52 and 27.75) ₹ 31,20,000 → loss due to transaction exposure <b>₹ 3,60,000</b>. <b>TYK P10 (MNP, net exposure):</b> net inflow × (forward − spot): $ 20 m × 0.81 = 16.20; FFr 12 m × 0.67 = 8.04; £ 10 m × 0.41 = 4.10; yen −10 m × −0.80 = 8.00 (₹ million); yen net payable with yen at discount, others net receivable at premium → positions offsetting.</p></div>
+  <p class="small"><i>Note (app-written): TYK P10 asks for "net exposure in terms of rupees" but ICAI multiplies the net inflow by the forward-minus-spot difference ("spread"), which is the gain from the forward differential rather than the rupee value of the exposure. Keep ICAI's figures.</i></p>
+
+  <h3>10.2 Translation Exposure</h3>
+  <ul>
+    <li>Gains/losses from <b>translating</b> foreign currency assets and liabilities into the parent's currency for <b>consolidation</b>; also called <b>accounting exposure</b> — accounting-derived changes in owner's equity.</li>
+    <li>SM example: $ 1 m loan for imported capital goods at ₹ 55 → asset and loan ₹ 550 lacs; at year end ₹ 58 → translation loss <b>₹ 30 lacs</b>, capitalised → asset ₹ 580 lacs → higher depreciation, lower profit.</li>
+    <li>Both transaction and translation exposures hit the bottom line (gain if movement favourable). <b>Translation exposure becomes transaction exposure</b> at some stage — the loan must be repaid by buying $.</li>
+  </ul>
+
+  <h3>10.3 Economic Exposure</h3>
+  <ul>
+    <li>Extent to which the <b>economic value of the company</b> can decline due to rate changes — overall impact on firm value; rate changes alter input costs and output prices → <b>competitive position</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Cash inflow item (local currency)</th><th>Local revaluation</th><th>Local devaluation</th></tr>
+    <tr><td>Local sales relative to foreign competition</td><td>Decrease</td><td>Increase</td></tr>
+    <tr><td>Exports in local currency / in foreign currency</td><td>Decrease</td><td>Increase</td></tr>
+    <tr><td>Interest from foreign investments</td><td>Decrease</td><td>Increase</td></tr>
+    <tr><th>Cash outflow item</th><th>Revaluation</th><th>Devaluation</th></tr>
+    <tr><td>Imports denoted in local currency</td><td>Same</td><td>Same</td></tr>
+    <tr><td>Imports denoted in foreign currency</td><td>Decrease</td><td>Increase</td></tr>
+    <tr><td>Interest on foreign debt</td><td>Decrease</td><td>Increase</td></tr>
+  </table>
+  <ul>
+    <li><b>Why FX risk management matters:</b> (i) <b>protection against volatility</b> (lock rates in advance); (ii) <b>cost reduction</b>; (iii) <b>competitive advantage</b> (better prices and payment terms); (iv) <b>improved cash flow</b> (visibility, predictability); (v) <b>compliance with regulations</b> (avoid fines).</li>
+  </ul>
+  <div class="ex"><p><b>TYK P48 (B) (operating exposure, price ₹ 25,000):</b> profit at new rate (S$ 27.15) 2400 × 780 = ₹ 18,72,000; after 6 months (27.75) 2400 × 300 = ₹ 7,20,000 → decline <b>₹ 11,52,000</b> (transaction). € price 25,000/51.50 = € 485.44 → 25,000/51.75 = € 483.09, fall € 2.35 (0.48%) × elasticity 1.5 = 0.72% → 2,417 units → profit ₹ 7,25,100 → decrease due to operating exposure <b>₹ 11,46,900</b> (if fixed cost unchanged: ₹ 7,42,100 → ₹ 11,29,900).</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 10 Foreign Exchange Exposure and Risk Management (contd.)</span><span class="tag">SM Ch 10</span></div>
+  <h3>11. Hedging Currency Risk — (A) Internal techniques</h3>
+  <ul>
+    <li><b>Natural hedging</b> by exporters: short-term FC loans — <b>PCFC</b> (pre-shipment credit in FC) / <b>FCNR(B)</b> loans: (1) cheaper than domestic-currency rates; (2) export collections settle the PCFC loan → transaction risk hedged.</li>
+    <li>Internal techniques involve <b>no explicit transaction cost</b>; offset exposure fully or partly:</li>
+    <li>(i) <b>Invoicing in domestic currency</b>: avoids exposure but currency is part of the marketing package; buyer may prefer its own; markets like oil/aluminium follow competitors' currency; in a buyer's market sellers invoice in the buyer's currency. If invoicing in FC, choose a <b>major currency with an active (deep) forward market</b> at least as long as the credit period; avoid limited-convertibility, chronically weak currencies.</li>
+    <li>(ii) <b>Leading and lagging</b>: leading = pay before due date; lagging = delay after due date — to gain from expected devaluation/revaluation. Payer's currency expected to devalue → <b>lead</b>; expected to revalue → <b>lag</b>.</li>
+    <li>(iii) <b>Netting</b>: group companies settle inter-affiliate debts for the <b>net amount</b>. <b>Bilateral netting</b> between pairs; flows reduced by the lower of purchases/sales. Main problem: settlement currency. Reduces banking costs, spreads and charges; increases central control.</li>
+    <li>(iv) <b>Matching</b>: matches FC inflows with FC outflows by amount and timing; applies to <b>intra-group and third parties</b> (netting = within group only). Needs two-way flows in the same currency (<b>natural matching</b>); <b>parallel matching</b> = different currencies expected to move together. Both need enabling exchange control rules — an MNC subsidiary in India cannot net receivables and payables.</li>
+    <li>(v) <b>Price variation</b>: raise selling prices against adverse rate moves; in some countries the only legal tactic. <b>Transfer price variation</b> in inter-company trade — but tax, customs and exchange control authorities require <b>arm's length price</b>.</li>
+    <li>(vi) <b>Asset and liability management</b>: for balance sheet, income or cash-flow exposure (cash-flow focus makes sense; pure translation focus misplaced). <b>Aggressive</b>: increase exposed inflows in strong currencies / outflows in weak ones. <b>Defensive</b>: match inflows and outflows by currency regardless of strength.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P43 (lagging, NP and Co.):</b> (A) cover both: payable $ 7,00,000 × 48.45 = ₹ 3,39,15,000 − receivable $ 4,50,000 × 48.90 = ₹ 2,20,05,000 − interest 12% for 1 month ₹ 2,20,050 = <b>₹ 1,16,89,950</b>. (B) lag receivable 1 month, cover net $ 2,50,000 × 48.45 = ₹ 1,21,12,500, cancellation profit (48.90 − 48.30) × 4,50,000 = ₹ 2,70,000 → <b>₹ 1,18,42,500</b> → option (A) preferred. <b>Matching — TYK P38:</b> £ 1,38,000 receipt matched with £ 4,80,000 payment (both 3 months) → hedge only net £ 3,42,000.</p></div>
+  <p class="small"><i>Note (app-written): TYK P43 — ICAI reads "25/30" and "40/45 points" as outright rates 48.25/48.30 and 48.40/48.45 (its Note 1), and labels the net as "(A) + (B)", but the ₹ 2,70,000 profit is deducted: 1,21,12,500 − 2,70,000 = 1,18,42,500.</i></p>
+
+  <h3>11. (B) External techniques — (i) Money Market Hedge (MMH) <span class="pyq">Asked: Sep 2025 Q6(b) 7m</span></h3>
+  <ul>
+    <li>Fixes today the home-currency value of a future FC flow by <b>borrowing and investing in the money markets</b> at today's spot (SM: owner expecting $ 1 m in six months locks the INR value now).</li>
+    <li><b>Advantages:</b> (a) fixes future rate — no downside risk; (b) <b>flexible amount</b>; (c) usable where <b>forwards are not available</b>. <b>Disadvantages:</b> (a) <b>more complicated</b> than a forward; (b) no benefit from favourable movements.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Step (SM TYK P29 wording)</th><th>FC <b>receivable</b> (exporter)</th><th>FC <b>payable</b> (importer)</th></tr>
+    <tr><td>1 Identify / Create</td><td>FC is an asset → create an FC <b>liability</b></td><td>FC is a liability → create an FC <b>asset</b></td></tr>
+    <tr><td>2 Borrow / Deposit FC</td><td><b>Borrow FC</b> = receivable ÷ (1 + FC borrowing rate for period)</td><td><b>Deposit FC</b> = payable ÷ (1 + FC deposit rate for period)</td></tr>
+    <tr><td>3 Convert at spot</td><td>Sell FC at the rate worse for you (bid in direct quote)</td><td>Buy FC with home currency (ask in direct quote), borrowed at home</td></tr>
+    <tr><td>4 Invest / Borrow home</td><td>Invest home currency at home <b>deposit</b> rate</td><td>Home loan repaid at home <b>borrowing</b> rate</td></tr>
+    <tr><td>5 Settle</td><td>Customer's FC repays the FC loan; keep home deposit maturity</td><td>FC deposit matures = payable; pay home loan + interest</td></tr>
+    <tr><td>6 Compare</td><td>With forward receipt (higher is better)</td><td>With forward cost (lower is better)</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P28 (Rohit, £ 5,00,000 receivable):</b> borrow £ 5,00,000 ÷ 1.0125 = £ 4,93,827 × ₹ 56 = ₹ 2,76,54,312; invest at 12% for 3 months = <b>₹ 2,84,83,941</b>; gain ₹ 4,83,941 over ₹ 56 × 5,00,000.</p><p><b>TYK P29 (UK exporter, $ 3,50,000):</b> borrow at 9% (2.25%/quarter) $ 3,42,298.29; convert at ask 1.5905 (indirect quote) = £ 2,15,214.27; invest at 5% → <b>£ 2,17,904.45</b>; forward 3,50,000 ÷ 1.6140 = £ 2,16,852.54 → MMH better by <b>£ 1,051.91</b>.</p><p><b>TYK P38 (Columbus, payable £ 3,42,000):</b> forward 3,42,000 ÷ 0.9520 = $ 3,59,244; MMH deposit £ 3,42,000 ÷ 1.025 = £ 3,33,658 ÷ 0.9830 = $ 3,39,429 loan × 1.0325 = <b>$ 3,50,460</b> → MMH cheaper. <b>Receipt € 5,90,000 (4 months):</b> forward × 1.9510 = <b>$ 11,51,090</b>; MMH borrow € ÷ 1.0533 = € 5,60,144 × 1.8890 = $ 10,58,113 × 1.0383 = $ 10,98,639 → forward better.</p><p><b>TYK P39 (b):</b> £ 3,00,000 ÷ 1.045 = £ 2,87,081 × $ 2 = $ 5,74,162 × 1.055 = <b>$ 6,05,741</b>. <b>TYK P40 (ii):</b> $ 3,64,897 ÷ 1.0225 = $ 3,56,867 × 0.64033 = £ 2,28,512 + 3.5% interest £ 7,998 = <b>£ 2,36,510</b>.</p></div>
+
+  <h3>11. (B)(ii) Derivative Instruments</h3>
+  <ul>
+    <li><b>Derivative</b>: bilateral contract whose value <b>derives from</b> an underlying asset, reference rate or index (interest rates, FX, commodities, equities). Includes OTC deals, exchange-traded futures and options on futures, call warrants. Transaction risk hedged by <b>forwards, futures, options, swaps</b>.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 10 Foreign Exchange Exposure and Risk Management (contd.)</span><span class="tag">SM Ch 10</span></div>
+  <h3>12. Forward Contract <span class="pyq">Asked: Sep 2025 Q1(b) 4m</span> <span class="pyq">Asked: Jan 2026 Q2(a) 6m</span></h3>
+  <ul>
+    <li>Simplest derivative: obliges one party to buy and the other to sell a specified quantity at a <b>specific price on a specified future date</b>. FX forwards, FRAs, commodities. Importers can cover all liabilities by forwards.</li>
+    <li><b>Hedge choice</b> (all SM answers): exporter <b>sells FC forward</b> (bank's bid); importer <b>buys FC forward</b> (bank's ask). Compare: forward outcome vs unhedged at expected spot.</li>
+    <li><b>Expected spot</b> with probabilities = Σ (rate × probability) (TYK P15, P39).</li>
+    <li><b>Pay now vs credit</b>: pay now = spot cost + borrowing interest for the period; pay later = (FC + supplier's interest) × forward rate (+ bank loan interest for any gap). Choose the lower outflow.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>SM item</th><th>Working</th><th>ICAI answer</th></tr>
+    <tr><td>TYK P17 (importer, 108 lakh yen) — Sep 2025 Q1(b) type</td><td>Spot 108/30 = 3.6 yen/₹; −10% → 3.24 → cost 33.33 lakh; forward 3.3 → 32.73 lakh</td><td>Loss unhedged <b>₹ 3.33 lakh</b>; with forward <b>₹ 2.73 lakh</b> → take forward</td></tr>
+    <tr><td>TYK P6 (JKL, export ¥ 1 crore)</td><td>Cross ₹/¥: 62.22/102.34 = 0.6080; expected 65/124 = 0.5242; forward 66.50/110.35 = 0.6026; actual 66.25/110.85 = 0.5977</td><td>Unhedged loss <b>₹ 8,38,000</b>; forward loss ₹ 54,000; actual unhedged loss ₹ 1,03,000 → forward justified</td></tr>
+    <tr><td>TYK P4 (ABC UK, Can$ 5 lakh)</td><td>Forward Can$ 2.535 → £ 1,97,239. Spot 2.55 → £ 1,96,078; 2.40 → £ 2,08,333; 2.50 → £ 2,00,000</td><td>Gain £ 1,161; loss £ 11,094; loss £ 2,761</td></tr>
+    <tr><td>TYK P11 (iii) ($ 69,000)</td><td>Now 69,000 × 46 = 31,74,000 + 10% for 2 months 52,900 = 32,26,900; forward 69,000 × 47 = 32,43,000</td><td>Encash <b>after 2 months</b></td></tr>
+    <tr><td>TYK P15 (Multinational)</td><td>EV = 0.24 + 0.34 + 0.45 + 0.38 + 0.40 = $ 1.81 vs forward $ 1.80</td><td><b>Retain</b> receivable (don't sell forward)</td></tr>
+    <tr><td>TYK P12 (Z Ltd, USD 2 m) — Jan 2026 Q2(a) type</td><td>(i) 2 m × 57.10 = ₹ 11,42,00,000 + loan 10% 30 days ₹ 9,51,667; (ii) (2 m + 8% 30 days $ 13,333) × 57.50</td><td>(i) <b>₹ 11,51,51,667</b> vs (ii) ₹ 11,57,66,648 → pay in 60 days</td></tr>
+    <tr><td>TYK P22 (DEF, US$ 1 crore)</td><td>(i) 63.15 cr + 9.5% 30 days 0.50 cr; (ii) 1.00646 cr × 63.45</td><td>(i) <b>₹ 63.65 cr</b> vs (ii) ₹ 63.86 cr → (i)</td></tr>
+    <tr><td>TYK P21 ($ 1,30,000)</td><td>Now: 1,30,000 × 48.36 = 62,86,800 + OD 15% 3 months 2,35,755 = 65,22,555. Later: 1,31,625 × 48.83</td><td>Later <b>₹ 64,27,249</b> → pay after 3 months</td></tr>
+    <tr><td>TYK P35 (Gibralter, $ 1,00,000)</td><td>(i) $ 1,02,500 × 60.30 = 61,80,750; (ii) 1,00,000 × 60.55 = 60,55,000 + 14% 3 months 2,11,925</td><td>(i) <b>₹ 61,80,750</b> vs ₹ 62,66,925 → (i)</td></tr>
+    <tr><td>TYK P42 (Sun, 3,400 lakh yen)</td><td>Loan 18% quarterly: 1,000 × 1.045² = 1,092.03. LC: commission 10.00 + interest 0.90 = 10.90; 3,433.53 lakh yen ÷ 345 × 100 = 995.23</td><td><b>₹ 1,006.13 lakh</b>; cheaper by ₹ 85.90 lakh → accept</td></tr>
+    <tr><td>TYK P19 (Excel, $ 1 lakh)</td><td>(45.20 − 45.60)/45.60 × 365/60 × 100; loss (45.20 − 45.50) × 1,00,000</td><td>Discount <b>5.33%</b>; loss <b>₹ 30,000</b></td></tr>
+    <tr><td>TYK P23 ($ 60,000, forward 64, 2% upfront)</td><td>Premium 60,000 × 64 × 2% = 76,800 + 12% for 6 months 4,608 = hedging cost 81,408</td><td>At 68: gain 1,58,592; 62: loss 2,01,408; 70: gain 2,78,592; 65: loss 21,408</td></tr>
+    <tr><td>TYK P24 (AKC, indirect quotes)</td><td>Hedged at 3m forward ask (2.427, 0.0216, 0.0178) = ₹ 1,33,38,719, contribution 26,08,719; unhedged at 3m spot ask = ₹ 1,32,75,578, contribution 25,45,578</td><td>C/S <b>19.56%</b> vs 19.17% → hedge</td></tr>
+  </table>
+
+  <h3>12.1 Forward Rate — Premium and Discount</h3>
+  <ul>
+    <li>Forwards: <b>customised</b>, not standardised (size, grade, place, date, credit period negotiated). Value change ≈ value change in the underlying; payoff profile differs from options. Buyer gains if price at maturity &gt; contract price; buyer's gain = seller's loss.</li>
+    <li><b>Premium</b>: currency costlier forward → in direct quote <b>added</b> to both buying and selling rates. <b>Discount</b>: cheaper forward → <b>deducted</b>.</li>
+    <li><b>Annualised premium/discount = [(Forward Rate – Spot rate) / (Spot rate)] x (12/6)</b> (SM, 6-month example; × 12/months of the forward, × 100 for %; TYK P19 uses × 365/60 for days). Sign + = premium, − = discount. Work it for each currency in its own direct form.</li>
+  </ul>
+  <div class="ex"><p><b>SM example:</b> spot ₹ 55, 6-month ₹ 60 → $ premium (60 − 55)/55 × 12/6 = <b>18.18%</b>; rupee: (0.01667 − 0.01818)/0.01818 × 12/6 = <b>−16.61%</b> (discount). Premium ≠ discount.</p></div>
+  <p class="small"><i>Note (app-written): the SM computes the rupee discount as −16.61% and then says "16.67%"; the gap is rounding (exactly (55/60 − 1) × 2 = −16.67%).</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 10 Foreign Exchange Exposure and Risk Management (contd.)</span><span class="tag">SM Ch 10</span></div>
+  <h3>12.2 Fate of Forward Contracts <span class="pyq">Asked: Jan 2026 MCQ CS-II 6m</span> <span class="pyq">Asked: May 2026 MCQ CS-V 6m</span></h3>
+  <ul>
+    <li>Three fates, each on due date / early / late: <b>(A) Delivery</b>, <b>(B) Cancellation</b>, <b>(C) Extension</b>.</li>
+    <li><b>Core rule — cancel by the reverse deal</b>: bank's <b>sale</b> contract (importer) is cancelled at the bank's <b>buying</b> rate; bank's <b>purchase</b> contract (exporter) at the bank's <b>selling</b> rate. Margin deducted from buying, added to selling. Difference vs contract rate is charged to / paid to the customer (+ flat charges).</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Fate</th><th>Rate applied (SM)</th><th>SM figures</th></tr>
+    <tr><td><b>Delivery on due date</b></td><td>Contract rate, whatever the spot.</td><td>Illus 3: $ 1,00,000 at 65.5000 → debit <b>₹ 65,50,000</b></td></tr>
+    <tr><td><b>Early delivery</b></td><td>Contract rate + charges: (a) <b>swap difference</b> (bank undoes its cover: sells/buys spot now, reverses at forward for original date); (b) <b>interest on outlay of funds</b> at not less than <b>PLR</b> from early date to due date (if inflow, bank may pass on term-deposit interest).</td><td>Illus 4 below</td></tr>
+    <tr><td><b>Late delivery</b></td><td>Current (spot) rate on delivery date, after applying <b>automatic cancellation</b>.</td><td>—</td></tr>
+    <tr><td><b>Cancellation on due date</b></td><td>Reverse at <b>spot</b> (TT) rate ± margin; difference + flat charges.</td><td>Illus 5 below</td></tr>
+    <tr><td><b>Early cancellation</b></td><td>Reverse at the <b>forward rate for the original due date</b> (opposite side).</td><td>Illus 6; TYK P44, P45</td></tr>
+    <tr><td><b>Late cancellation</b></td><td>Automatic cancellation provisions.</td><td>—</td></tr>
+    <tr><td><b>Extension on due date</b></td><td>Cancel at spot (as cancellation on due date) + <b>rebook</b> at forward for the new period.</td><td>Illus 7; TYK P32</td></tr>
+    <tr><td><b>Extension before due date</b></td><td>Cancel at forward for original date + rebook at current forward for new date.</td><td>Illus 8</td></tr>
+    <tr><td><b>Late extension</b></td><td>Current rates after automatic cancellation.</td><td>Illus 9</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 4 (Mr. X exporter, $ 1,00,000 at 65.40, delivered 28/30 Nov instead of 31 Dec; spot 65.22/65.27, 1-month 10/15, PLR 18%):</b> (a) <b>swap loss</b>: bank sells spot 65.22, buys forward 65.27 + 0.15 = 65.42 → 0.20 × 1,00,000 = <b>₹ 20,000</b>; (b) <b>outlay</b>: bank pays customer 65.40, sells spot 65.22 → 0.18 × 1,00,000 × 31/365 × 18% = <b>₹ 275</b>; charges ₹ 20,275; net inflow 65,40,000 − 20,275 = <b>₹ 65,19,725</b>.</p></div>
+  <div class="ex"><p><b>Illus 5 (import $ 2,50,000 at 65.3450 cancelled on due date):</b> spot buying 65.2900 − 0.10% (0.0653) = 65.2247 ≈ <b>65.2250</b>; 65.3450 − 65.2250 = 0.12 × 2,50,000 = ₹ 30,000 + flat ₹ 100 = <b>₹ 30,100</b>.</p><p><b>Illus 6 (purchase AUD 1,00,000 at 47.2500, cancelled after 2 of 3 months):</b> at 1-month forward sale 47.5200 → 0.27 → <b>₹ 27,000</b>. <b>TYK P44:</b> CHF 10,000 at 27.25, cancelled at 1-month sale 27.52 → <b>₹ 2,700</b>. <b>TYK P45:</b> USD/₹ 49.4455 + April 0.4200 = 49.8655 + 0.10% = 49.91537; ÷ 1-month CHF 1.5150 = 32.9474 ≈ 32.9475 − 32.4000 = 0.5475 → <b>₹ 54,750</b>.</p></div>
+  <div class="ex"><p><b>Illus 7 (export $ 1,00,000 at 62.5200, extended on due date by 1 month):</b> cancel at spot selling 62.7200 + 0.10% = 62.78272 ≈ <b>62.7825</b> → 0.2625 → <b>₹ 26,250</b>; rebook at 1-month buying 62.6400 − 0.06264 = 62.57736 ≈ <b>₹ 62.5775</b>.</p><p><b>TYK P32 (import $ 20,000 at 42.32, extended 3 months):</b> cancel at spot buying 41.5000 − 0.075% = 41.4689 ≈ 41.47 → 8,46,400 − 8,29,400 = <b>₹ 17,000</b>; new rate 41.5200 + 0.93% (0.3861) = 41.9061 + 0.20% (0.0838) = 41.9899 ≈ <b>₹ 41.99</b>.</p><p><b>Illus 8 (purchase $ 50,000 at 59.6000, on 5 May extended to 5 July):</b> cancel at June forward selling 59.2425 + 0.0592 = 59.3017 ≈ 59.3025 → 0.2975 × 50,000 = <b>₹ 14,875 payable to the customer</b>; rebook at July buying 59.6300 − 0.0596 = 59.5704 ≈ <b>₹ 59.5700</b>.</p></div>
+  <p class="small"><i>Note (app-written): Illus 8 says "rebooked with the delivery 15th July"; the request and rate used are for 5th July.</i></p>
+
+  <p><b>Automatic cancellation (FEDAI Rule 6):</b> an overdue forward contract with no instructions on or before due date is <b>automatically cancelled within 3 working days</b> after maturity. Customer pays any exchange difference but is <b>not entitled to any profit</b>. Late delivery → fresh contract at spot; extension after due date → forward rate for the desired period. Charges:</p>
+  <ul>
+    <li>(i) <b>Exchange difference</b>: spot rate of offsetting position on the cancellation date (or 3 working days, <b>whichever is earlier</b>) vs contract rate.</li>
+    <li>(ii) <b>Swap loss</b>: bank offsets at spot on the due date and takes the opposite position at the earliest forward.</li>
+    <li>(iii) <b>Interest on outlay of funds</b>: (bank's interbank cover rate − spot of opposite position on due date) × FC amount, for the period from due date to actual cancellation or 3 working days, <b>whichever is later</b>.</li>
+    <li>Any profit to the bank is <b>not passed on</b> to the customer.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 9 (importer $ 2,00,000 at 64.4000, cover 64.2800, due 10 June, extension asked 14 June to 10 Aug; margin 0.10%, interest 12%):</b> (i) cancellation rate = spot buying 13 June 63.6800 − 0.0636 = 63.6163 ≈ <b>63.6175</b>; (ii) 1,28,80,000 − 1,27,23,500 = <b>₹ 1,56,500</b>; (iii) swap on 10 June: sell spot 63.8000, buy June forward 63.9500 → 0.15 → <b>₹ 30,000</b>; (iv) outlay 64.2800 − 63.8000 = 0.48 × 2,00,000 = ₹ 96,000 × 12% for 3 days = <b>₹ 96</b>; (v) new rate August selling 64.2500 + 0.0643 = 64.3143 ≈ <b>₹ 64.3150</b>; (vi) total cost <b>₹ 1,86,596</b>.</p></div>
+  <p class="small"><i>Note (app-written): Illus 9 — ₹ 96,000 × 12% × 3/365 = ₹ 94.68; ICAI's ₹ 96 equals a 360-day year. Also 63.6800 − 0.0636 is 63.6164 (ICAI prints 63.6163 using the unrounded margin 0.06368); the rounded rate 63.6175 is unaffected.</i></p>
+
+  <h3>12.3 Non-deliverable Forward Contract (NDF)</h3>
+  <ul>
+    <li><b>Cash-settled</b>, short-term forward on a <b>thinly traded or non-convertible</b> currency; P/L = (agreed rate − spot at settlement) × notional amount. Has a <b>fixing date</b> (difference calculated) and <b>settlement date</b> (difference paid). Usually 1 month to 1 year, quoted and settled in <b>US$</b>.</li>
+  </ul>
+
+  <h3>12.4 Rollover of Deliverable Forward Contract</h3>
+  <ul>
+    <li>Exporter has no FC / importer has no local currency to deliver at maturity → <b>spot cancellation + new contract for a later date</b>.</li>
+    <li><b>Rationale:</b> non-receipt of FC from client (export); shortage of local currency (import); non-agreement of payment with clients; forwards normally available only up to <b>one year</b>, so longer exposures use rollovers.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 10 Foreign Exchange Exposure and Risk Management (contd.)</span><span class="tag">SM Ch 10</span></div>
+  <h3>13. Futures Contracts</h3>
+  <ul>
+    <li>Like a forward in obligation and payoff, but: <b>standardised</b> terms (quantity/quality, time/place of delivery, payment method); <b>daily marking to market</b> → credit risk greatly reduced; <b>smaller contract sizes</b> → wider market. Bought/sold through a <b>broker</b>; price fixed at outset.</li>
+    <li><b>Hedge working</b> (SM answers): no. of contracts = exposure ÷ contract size (to the nearest whole number as asked); position = receiver of FC sells FC futures (TYK P34) — or, in a quote per unit of home currency, buys home-currency futures (TYK P37, P41); futures gain/loss + actual spot conversion = net; interest on initial margin is a cost (TYK P25).</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Feature</th><th>Forward</th><th>Futures</th></tr>
+    <tr><td>Amount</td><td>Flexible</td><td>Standard amount</td></tr>
+    <tr><td>Maturity</td><td>Any valid business date agreed</td><td>Standard date (e.g. second Tuesday of every month)</td></tr>
+    <tr><td>Furthest maturity</td><td>Open</td><td>12 months forward</td></tr>
+    <tr><td>Currencies</td><td>All currencies</td><td>Majors</td></tr>
+    <tr><td>Cross rates</td><td>Available in one contract</td><td>Usually two contracts</td></tr>
+    <tr><td>Market-place</td><td>Global network</td><td>Regular futures markets / exchanges</td></tr>
+    <tr><td>Price fluctuations</td><td>No daily limit in many currencies</td><td>Daily price limit set by exchange</td></tr>
+    <tr><td>Risk</td><td>Depends on counter party</td><td>Minimal due to margin requirements</td></tr>
+    <tr><td>Honouring</td><td>Taking and giving delivery</td><td>Mostly by a reverse transaction</td></tr>
+    <tr><td>Cash flow</td><td>None until maturity</td><td>Initial margin + variation margin (MTM) + final payment</td></tr>
+    <tr><td>Trading hours</td><td>24 hours a day</td><td>4–8 hour sessions</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P34 (ABC Technologic, $ 4,00,000):</b> sell 400 contracts of $ 1,000 at 45.00, close at 44.50 → gain ₹ 2,00,000 + 44.50 × 4,00,000 = ₹ 1,80,00,000 → effective <b>₹ 45 per $</b>.</p><p><b>TYK P25 (EFD, $ 1 crore):</b> forward $ 10,000,000 ÷ 0.016129 = ₹ 620,001,240; futures 25 contracts, margin 25 × 22,500 = ₹ 5,62,500; spot receipt ÷ 0.016136 = ₹ 619,732,276 + variation margin (0.000016 × 25 × 24,816,975)/0.016136 = ₹ 615,195 − interest 5,62,500 × 7% × 3/12 = ₹ 9,844 → <b>₹ 620,337,627</b> → futures best (no hedge ₹ 619,732,276).</p><p><b>TYK P20 (IMM arbitrage):</b> buy £ 62,500 futures at 1.2806 ($ 80,037.50), sell forward at 1.2816 ($ 80,100) → profit <b>$ 62.50</b>.</p><p><b>TYK P37 (Zaz, € 2.8 m):</b> (a) invoice in £ at 1.1965 → <b>£ 2.340 m</b>; (b) forward 1.1970 − 0.0055 = 1.1915 → <b>£ 2.35 m</b>; (c) 2.8 m ÷ 1.1943 = £ 2,344,470 → 37 contracts; buy at 1.1943, sell at 1.1873 → loss 37 × 62,500 × 0.0070 = € 16,188; € 27,83,812 ÷ 1.1873 = £ 2.3446 m → <b>(b) preferred</b> (also doubt whether German buyer accepts £ invoice).</p><p><b>TYK P41 (Nitrogen, € 4 m):</b> (i) ÷ 1.1770 = £ 33,98,471; (ii) forward 1.1770 + 0.0060 = 1.1830 → £ 33,81,234; (iii) ÷ 1.1760 = £ 34,01,360 → 54 contracts; gain 54 × 62,500 × 0.0025 = € 8,438; € 40,08,438 ÷ 1.1785 = <b>£ 34,01,305</b> → <b>(iii) preferred</b>.</p></div>
+  <p class="small"><i>Note (app-written): TYK P37 — £ 2,344,470 ÷ 62,500 = 37.51, which rounds to 38 to the nearest whole number; ICAI uses 37 contracts. Keep ICAI's 37.</i></p>
+
+  <h3>14. Option Contracts</h3>
+  <ul>
+    <li><b>Call</b>: right, not obligation, to <b>buy</b> a specified quantity of a commodity/currency at a fixed price on or up to a date. <b>Put</b>: right to <b>sell</b>. Buyer = holder; seller = writer/grantor. Premium may be a % of the price per unit.</li>
+    <li><b>American</b>: exercise any time in the period; <b>European</b>: only at the end. Holder may exercise, let it lapse or sell the option.</li>
+    <li><b>Hedge working</b>: importer of FC buys a <b>call on FC</b> (or a put on home currency when the quote is FC per home — TYK P33; a put on £ for a UK importer of $ — TYK P40); contracts = exposure ÷ contract size (whole contracts), <b>exercise only if favourable</b>, premium paid upfront (convert at spot; add interest on premium if asked), uncovered balance at forward.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Point</th><th>Options</th><th>Futures</th></tr>
+    <tr><td>(a) Obligation</td><td>Only the seller (writer)</td><td>Both parties</td></tr>
+    <tr><td>(b) Premium</td><td>Paid by buyer to seller at inception</td><td>None</td></tr>
+    <tr><td>(c) Gain/loss</td><td>Buyer: loss restricted, gain unlimited</td><td>Unlimited gain/loss for buyer</td></tr>
+    <tr><td>(d) Exercise</td><td>American: any time during the period</td><td>Honoured only on the specified date</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th>Price</th><th>Call buyer</th><th>Long futures</th><th>Call seller</th><th>Put buyer</th><th>Short futures</th><th>Put seller</th></tr>
+    <tr><td>Rises</td><td>Unlimited gain</td><td>Unlimited gain</td><td>Unlimited loss</td><td>Limited loss</td><td>Unlimited loss</td><td>Limited gain</td></tr>
+    <tr><td>Falls</td><td>Limited loss</td><td>Unlimited loss*</td><td>Limited gain</td><td>Unlimited gain*</td><td>Unlimited gain*</td><td>Unlimited loss*</td></tr>
+    <tr><td>Unchanged</td><td>Limited loss</td><td>No gain/loss</td><td>Limited gain</td><td>Limited loss</td><td>No gain/loss</td><td>Limited gain</td></tr>
+  </table>
+  <p class="small">* Price cannot go below zero, so technically limited. Transaction costs ignored.</p>
+  <div class="ex"><p><b>TYK P33 (XYZ, JY 5,00,000):</b> forward 1/1.9726 = ₹ 0.5070 → <b>₹ 2,53,500</b>; put on INR at JY 2.125: 5,00,000 ÷ 2.125 = ₹ 2,35,294 + premium (2,35,294 × 0.098 ÷ 1.9516) ₹ 11,815 = <b>₹ 2,47,109</b> → option.</p><p><b>TYK P36 (Can$ payments):</b> forward July 10,10,000 × 0.9501 = $ 9,59,601; Sept 7,05,000 × 0.9556 = $ 6,73,698. Options: 20 contracts at 0.94 = $ 9,40,000 + balance $ 9,501 + premium 50,000 × 20 × 0.0102 = $ 10,200 → $ 9,59,701; 14 at 0.95 = $ 6,65,000 + $ 4,778 + 50,000 × 14 × 0.0164 = $ 11,480 → $ 6,81,258 → <b>forward</b> (cheapest, firm risk averse).</p><p><b>TYK P39 (XYZ US, £ 3,00,000):</b> (a) forward × 1.96 = <b>$ 5,88,000</b>; (b) MMH $ 6,05,741; (c) call 1.97 + 0.04: expected $ 5,94,900 + interest on premium 12,000 × 5.5% = 660 → $ 5,95,560; (d) no hedge Σ = <b>$ 5,86,500</b> → ICAI prefers <b>no hedge</b>.</p><p><b>TYK P40 (A Ltd UK, $ 3,64,897):</b> forward × 0.64704 = £ 2,36,103; MMH £ 2,36,510; option: 17 puts on £ 12,500 at 1.70 = $ 3,61,250, balance $ 3,647 × 0.64704 = £ 2,360, premium 17 × 12,500 × 0.096 = $ 20,400 × 0.64033 = £ 13,063 → £ 2,12,500 + 13,063 + 2,360 = <b>£ 2,27,923</b> → option.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 10 Foreign Exchange Exposure and Risk Management (contd.)</span><span class="tag">SM Ch 10</span></div>
+  <h3>15. Swap Contracts</h3>
+  <ul>
+    <li>"Infinitely flexible": exchange the underlying economic basis of a debt or asset <b>without affecting the principal obligation</b>. Participants exchange cash flows at <b>payment/settlement dates</b> (fixed, or quantity × reference rate).</li>
+    <li>Groups: <b>interest rate, currency, commodity, equity</b>. Notional principal (except currency swaps) is used only to compute payments, <b>not exchanged</b>; interim payments usually <b>netted</b>. Users: large banks and corporations; swaps create credit exposure.</li>
+  </ul>
+
+  <h3>15.1–15.2 Interest Rate Swaps; Currency Swaps</h3>
+  <ul>
+    <li><b>15.1 IRS</b>: covered in Chapter 12 of the SM.</li>
+    <li><b>15.2 Currency swap</b> = exchange of liabilities between currencies. Three stages: (1) <b>spot exchange of principal</b>; (2) <b>continuing exchange of interest</b> — a series of forwards, usually at the initial spot rate; (3) <b>re-exchange of principal</b> on maturity.</li>
+    <li><b>Benefits:</b> hedge currency risk; <b>cost savings</b> (strong Yen borrower raises in Tokyo and swaps into $); access to currencies that would otherwise command a high premium; <b>diversification</b> of borrowings.</li>
+    <li><b>Currency coupon swap (Circus swap)</b>: fixed or floating interest in one currency for floating in another. Principal exchanged at the start, at the end, both, or neither. Often linked to a <b>Eurobond</b> issue — issue where cheapest, swap into the required currency via the underwriter.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P50 (Drilldip, ₹ 500 crore in, ₹ 740 crore back):</b> swap — buy ₹ 500 cr at ₹ 50 (US$ 100 m), swap back at ₹ 50 = $ 100 m + ₹ 240 cr at ₹ 54 = $ 44.44 m − interest 8% $ 8 m → net <b>US$ 36.44 m</b>; without swap ₹ 740 cr ÷ 54 = $ 137.04 m − 8 → <b>US$ 29.04 m</b> → opt for swap.</p></div>
+
+  <h3>15.3–15.4 Commodity Swaps; Equity Swaps</h3>
+  <ul>
+    <li><b>Commodity swap</b>: series of futures-like settlements on a notional amount over multiple dates at specified reference prices/indices; mainly for <b>oil price risk</b>.</li>
+    <li><b>Equity swap</b>: <b>total return</b> on equity or an index (dividend + capital) exchanged for a fixed or floating interest rate.</li>
+  </ul>
+
+  <h3>16. Popular Derivative Products (16.1–16.5)</h3>
+  <table class="tight">
+    <tr><th>Product</th><th>What / risk</th><th>SM example (notional USD 5,00,000)</th></tr>
+    <tr><td><b>16.1 Forward Importer</b></td><td>Counterparty <b>buys</b> USD at forward rate. Protected if settlement rate &gt; forward; if lower, buys worse than market — loss potentially unlimited.</td><td>Strike 80: at 75 loss ₹ 25,00,000; 78.50 loss ₹ 7,50,000; 82.50 gain ₹ 12,50,000</td></tr>
+    <tr><td><b>16.2 Forward Exporter</b></td><td>Counterparty <b>sells</b> USD at forward. Protected against USD depreciation; if rate &gt; forward, potentially unlimited loss.</td><td>Strike 80: 75 gain ₹ 25,00,000; 78.50 gain ₹ 7,50,000; 82.50 loss ₹ 12,50,000</td></tr>
+    <tr><td><b>16.3 FX Call Option</b></td><td>Importer pays premium; right to buy at strike if expiry rate ≥ strike; else buys at market (keeps INR appreciation).</td><td>Strike 78: 64.0080, 71.1200 no settlement; 78.2320 → gain ₹ 1,16,000</td></tr>
+    <tr><td><b>16.4 FX Put Option</b></td><td>Exporter pays premium; right to sell at strike if expiry rate ≤ strike; else sells at market (keeps USD appreciation).</td><td>Strike 78: 75.00 → gain ₹ 15,00,000; 79.00 no settlement</td></tr>
+    <tr><td><b>16.5 IRS USD floating to fixed</b></td><td>Counterparty receives floating USD, pays fixed → floating exposure becomes fixed. Floating &lt; fixed on sustained basis → net negative; &gt; fixed → net positive.</td><td>Fixed 1.50% p.a. semi-annual on USD 10,00,000 = pays 7,500: floating 0% → (7,500); 0.15% receives 750 → (6,750); 2% receives 10,000 → 2,500</td></tr>
+  </table>
+
+  <h3>17. Strategies for Exposure Management (17.1–17.4)</h3>
+  <ul>
+    <li>Shaped by attitude to risk, financial strength, nature of business, vulnerability; no single strategy fits all. Four options:</li>
+    <li><b>17.1 Low risk – low reward</b>: <b>automatic hedging</b> in the forward market as soon as exposures arise. Merits: known yields/costs, little cash-flow destabilisation, no managerial time. Demerit: hardly optimum costs — not an optimum strategy (currencies behave like commodities).</li>
+    <li><b>17.2 Low risk – reasonable reward</b>: <b>selective hedging</b> when forward rates are attractive, else keep open; needs quantified expectations; like a bond (hedged = known) and equity (unhedged = uncertain) mix.</li>
+    <li><b>17.3 High risk – low reward</b>: leave <b>all exposures unhedged</b> — perhaps the worst; very high cash-flow destabilisation; only merit zero managerial effort.</li>
+    <li><b>17.4 High risk – high reward</b>: <b>active trading</b> through continuous cancellations and re-bookings; trading becomes a <b>profit centre</b>; adopt only in full consciousness of risks.</li>
+  </ul>
+
+  <h3>18. Conclusion</h3>
+  <ul>
+    <li>Globalisation gives better international allocation of capital and diversification, but brings exchange-rate risk, political risk and interdependence. Rising rate volatility, trade, global markets and MNCs make study of these risks and their reduction imperative.</li>
+  </ul>
+
+  <div class="sticky"><b>Exam steps — which rate:</b> write each quote as "home per foreign" (direct) → customer sells FC = bid, buys FC = ask (bank's view: buys at bid, sells at ask) → indirect quote: pick the side that gives the customer less → margin: deduct from buying, add to selling → round as told (0.0025 / 0.0001 / whole rupee).</div>
+  <div class="sticky"><b>Exam steps — forward rate from points / broken date:</b> ascending points = premium (add), descending = discount (deduct) → points × 0.0001 → for an odd date, interpolate pro rata (points for full period × days ÷ full days, or add the share of the next month's increment) → add margin → annualise [(Forward Rate – Spot rate)/(Spot rate)] x 12/months x 100.</div>
+  <div class="sticky"><b>Exam steps — cross rate / arbitrage:</b> chain ₹/$ x $/¥ = ₹/¥ (bid × bid, ask × ask; divide where a leg is inverted) → compare with the quoted rate → route: buy in the cheaper market, sell in the dearer → end amount − start = gain.</div>
+  <div class="sticky"><b>Exam steps — IRP arbitrage:</b> (1 + r<sub>D</sub>) = <sup>F</sup>/<sub>S</sub> (1 + r<sub>F</sub>) with period rates → annualised premium vs interest differential → borrow the currency that is "cheap" after the forward, convert spot, invest, convert back at forward, repay loan + interest → gain.</div>
+  <div class="sticky"><b>Exam steps — hedge comparison (exporter / importer):</b> forward (amount × forward) → MMH (PV at FC rate → spot → compound at home rate) → futures (contracts = exposure ÷ size; futures P/L + spot conversion − margin interest) → options (whole contracts, exercise if favourable, premium at spot + interest, balance at forward) → unhedged (expected spot = Σ rate × probability) → receivable: pick highest; payable: pick lowest.</div>
+  <div class="sticky"><b>Exam steps — fate of forward contract:</b> identify bank's side (sale to importer / purchase from exporter) → reverse at opposite rate: spot (on due date), forward for original date (early), spot on cancellation date (after due date, auto-cancel in 3 working days) ± margin → difference × amount + flat charges → early delivery / late: add swap loss (spot vs forward reversal of cover) + interest on outlay (PLR / given rate × days) → extension: rebook at forward for new date ± margin → late: profit to bank not passed on.</div>
+  <div class="sticky"><b>Exam steps — import payment options:</b> pay now = FC × spot (ask) + borrowing interest to due date; pay later = (FC + supplier interest) × forward (ask); gap periods add bank-loan interest → lowest rupee outflow wins.</div>
+  <div class="sticky"><b>Exam steps — exchange and cash position:</b> list purchases vs sales (all deals, incl. forwards, bills, cancellations) → overbought / oversold → Nostro: only ready deliveries (TT remitted / received) → spot deal brings Nostro to target (also moves position) → forward deal sets the required overbought/oversold position.</div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

@@ -97,3 +97,6 @@ Not verified line by line: the question-to-chapter mapping and concept labels in
 ## AFM SM Ch 9, Illustration 1 (two-step binomial, riskless hedge), 3 Nov 2026
 - ICAI's hedge ratio at the valuation date is ∆ = (5 − 0) ÷ (33 − 27) = 5/6, using the intrinsic values at the one-period nodes (33 − 28 = 5; 27 < 28 → 0). The option values ICAI itself computes at those nodes are Cu = 5.673 and Cd = 1.0341, which would give ∆ = (5.673 − 1.0341) ÷ 6 = 0.773. ICAI's 5/6 is kept as printed; this note is app-written.
 - Same illustration: p uses r = (1.05)^½ = 1.0247, while discounting uses 1.025 (rounded). ICAI's figures are kept.
+- SM Ch 9 §6.6.3 (p 9.21): put buyer's gain printed "(Spot Price – Exercise Price – Premium)"; it should be (Exercise Price − Spot Price − Premium), which gives ICAI's own break-even of ₹ 35.
+- SM Ch 9 Illus 3(iii) (p 9.31): PV of exercise price shown as 395.06 and 395.03, giving two put values (25.58 / 25.55); "Current Market Value ₹ 415" is listed though the put uses 380.
+- SM Ch 9 Illus 6 (p 9.47, timing option): expected pay-off includes a negative down-state NPV (−1.3 crore), against the SM's rule that an option's value cannot be negative. ICAI's ₹ 19.96 / 18.48 lakh kept.

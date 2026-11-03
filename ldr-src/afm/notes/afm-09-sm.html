@@ -1,0 +1,467 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 9 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 09 Derivatives Analysis and Valuation</span><span class="tag">SM Ch 09</span></div>
+  <h2 class="brk"><span class="n">09</span>Ch 09 — Derivatives Analysis and Valuation</h2>
+  <div class="sub">Asked in last 3 papers: long strangle (Sep 25 MCQ, Jan 26 4m) · beta hedge with Nifty futures (Sep 25 4m) · futures + short call (Jan 26 6m) · real vs financial options (Jan 26 4m theory) · abandonment option (Jan 26 4m) · option to wait (May 26 MCQ) · ITM/ATM/OTM, intrinsic/time value (May 26 4m) · Black-Scholes call, put, N(d1), N(d2) (May 26 7m).</div>
+
+  <h3>1. Introduction</h3>
+  <ul>
+    <li><b>Derivative</b>: value derived from one or more basic variables (<b>bases</b>: underlying asset, index or reference rate). Underlyings: equity, forex, commodity.</li>
+    <li><b>Importance of underlying</b>: every derivative depends on it for value; change in a forward's value ≈ change in the underlying; no valuable underlying → no value; at maturity profit/loss set by the underlying's price (above contract price → buyer gains; below → buyer loses).</li>
+  </ul>
+  <table class="tight">
+    <tr><th>User</th><th>Purpose</th></tr>
+    <tr><td>Corporation</td><td>Hedge currency risk and inventory risk</td></tr>
+    <tr><td>Individual investors</td><td>Speculation, hedging, yield enhancement</td></tr>
+    <tr><td>Institutional investors</td><td>Hedging asset allocation, yield enhancement, arbitrage</td></tr>
+    <tr><td>Dealers</td><td>Hedging position taking, exploiting inefficiencies, dealer spreads</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th>Point</th><th>Cash market</th><th>Derivative market</th></tr>
+    <tr><td>What is traded</td><td>Tangible assets</td><td>Contracts on tangible or intangible bases (index, rates)</td></tr>
+    <tr><td>Quantity</td><td>Even one share</td><td>Minimum lots fixed</td></tr>
+    <tr><td>Risk</td><td>Riskier</td><td>F&amp;O risk limited up to 20% (SM)</td></tr>
+    <tr><td>Purpose</td><td>Consumption or investment</td><td>Hedging, arbitrage, speculation</td></tr>
+    <tr><td>Link to underlying</td><td>—</td><td>Always linked, not necessarily point-to-point</td></tr>
+    <tr><td>Account</td><td>Securities account with a depository</td><td>Futures trading account with a derivative broker</td></tr>
+    <tr><td>Money</td><td>Full amount upfront</td><td>Only margin money</td></tr>
+    <tr><td>Ownership</td><td>Holder becomes part owner</td><td>No ownership</td></tr>
+  </table>
+
+  <h3>2. Forward Contract</h3>
+  <ul>
+    <li>Agreement obliging the seller to deliver a specified asset (quality, quantity) on a specified date and place, and the buyer to pay a <b>pre-negotiated price</b>. <b>Nothing standardised</b> — parties negotiate every term (gold: weight, fineness, place, period, price).</li>
+    <li>Farmer sells wheat forward: secures cost + reasonable profit, gives up bumper upside.</li>
+    <li>Buyer = <b>long</b>, seller = <b>short</b>. Example: 100 tolas at ₹ 30,000/tola for 31 Dec 2013 → L pays ₹ 30 lakh, S delivers.</li>
+  </ul>
+
+  <h3>3. Future Contract</h3>
+  <ul>
+    <li>Agreement to buy/sell a financial instrument or commodity at a specific price on a future date; completed by <b>physical delivery, cash settlement or offset</b> before expiry. Both sides put "good faith money" in a <b>margin account</b> (levels set by regulators, exchanges, brokers).</li>
+    <li><b>Settlement price</b> = representative price of the closing minutes (or exchange's choice, e.g. average of high and low).</li>
+    <li><b>Marking-to-market</b>: corn 5,000 kg at ₹ 5 → settles ₹ 5.20 → S loses ₹ 1,000, B gains ₹ 1,000 in margin; contract rolled to next day at ₹ 5.20.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Feature</th><th>Forward</th><th>Futures</th></tr>
+    <tr><td>Trading</td><td>Personal basis / telephone</td><td>Competitive arena</td></tr>
+    <tr><td>Size</td><td>Tailored, no standard size</td><td>Standardised quantity</td></tr>
+    <tr><td>Market</td><td>OTC</td><td>Organised exchange, physical location</td></tr>
+    <tr><td>Settlement</td><td>On agreed date</td><td>Daily via clearing house</td></tr>
+    <tr><td>Delivery</td><td>Agreed dates, actual delivery</td><td>Cyclical dates; delivery hardly takes place</td></tr>
+    <tr><td>Transaction cost</td><td>Bid–ask spread</td><td>Brokerage on buy and sell</td></tr>
+    <tr><td>Marking to market</td><td>No</td><td>Yes, daily to margin account</td></tr>
+    <tr><td>Margins</td><td>Not required</td><td>Required</td></tr>
+    <tr><td>Credit risk</td><td>Borne by each party</td><td>Parties need not bother (two-way via exchange)</td></tr>
+  </table>
+
+  <h3>4. Pricing / Valuation of Forward / Future Contracts</h3>
+  <ul>
+    <li><b>Basis = Spot price − Futures price.</b> Normal market: spot &lt; futures (futures include full cost of carry) → basis negative = <b>contango</b>. Spot &gt; futures (factors other than carry) → basis positive = <b>backwardation / inverted</b>. Basis → 0 at expiry = <b>convergence</b>.</li>
+    <li>Futures price exceeds the cost-of-carry price → <b>cash-and-carry</b>: borrow, buy spot, sell futures, deliver. Below → reverse (sell spot, buy futures).</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>F = S + Carrying cost − Returns (dividends)</td><td>Theoretical minimum / arbitrage-free price. Carrying cost = interest on S for t.</td><td>ACC: 220 + (220 × 0.15 × 0.25) − (0.25 × 10) = <b>225.75</b> vs 230 → arbitrage <b>₹ 4.25</b> (inflows 230 + 2.50 − outflows 220 + 8.25)</td></tr>
+    <tr><td>A = P(1 + r/100)<sup>t</sup></td><td>Annual compounding; A terminal value, P invested, r % p.a., t years</td><td>FD ₹ 100 at 10% → 110 (1 yr), 121 (2 yrs)</td></tr>
+    <tr><td>A = P(1 + r/n)<sup>nt</sup></td><td>n compoundings per year</td><td>TYK P1 (monthly rests)</td></tr>
+    <tr><td>A = P e<sup>rt</sup></td><td>Continuous compounding (used in derivatives); e = 2.718; r risk-free; no interim income</td><td>200 × e<sup>(0.25)(0.10)</sup> = <b>₹ 205.06</b></td></tr>
+    <tr><td>A = (P − I) e<sup>rt</sup></td><td>I = PV of income (dividend) during the contract, discounted at e<sup>−rt</sup></td><td>500 × 75; div 1,250 → PV 1,219.13; (37,500 − 1,219.13) e<sup>(4/12)(0.10)</sup> = <b>₹ 37,498.11</b></td></tr>
+    <tr><td>A = P e<sup>t(r − y)</sup></td><td>Income as % yield y (stock index dividend yield)</td><td>See 5.2 (₹ 1,414.07)</td></tr>
+  </table>
+  <ul>
+    <li><b>Forward vs futures price</b>: same maturity → same value if interest rates fixed; with fluid rates MTM cash flows reinvested at variable rates make them differ; market imperfections keep them practically the same.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P1:</b> 208.18 = P(1 + 0.08/12)<sup>6</sup> = P × 1.0409 → spot <b>₹ 200</b>. <b>TYK P2 (Anand):</b> 1,800 + (1,800 × 12/100 × 6/12) = <b>₹ 1,908</b>; futures 1,950 → borrow, buy spot, sell futures → profit <b>₹ 42</b>. <b>TYK P3:</b> average yield Sep–Dec (3+3+4+3)/4 = 3.25%; F = 2,200 e<sup>(0.08 − 0.0325)×4/12</sup> = 2,200 e<sup>0.01583</sup> = <b>₹ 2,235.05</b>. <b>TYK P4 (PQR):</b> 220 + 220 × 0.15 × 0.25 − 0.25 × 10 = <b>225.75</b> vs 230 → overvalued: sell futures, buy stock; 232.50 − 228.25 = <b>₹ 4.25</b>. <b>TYK P6 (X Ltd):</b> 300(1.008)<sup>3</sup> = <b>307.26</b> vs 312 → borrow 300, buy share, sell futures → riskless profit <b>₹ 4.74</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 09 Derivatives Analysis and Valuation (contd.)</span><span class="tag">SM Ch 09</span></div>
+  <h3>5.1 Single Stock Futures</h3>
+  <ul>
+    <li>Standardised contract to buy/sell a specific stock at a future date at an agreed price; completed by <b>offset</b> or delivery. Margin normally <b>20% of notional value</b>. Most not held to expiry; close a long by an offsetting short and vice versa.</li>
+  </ul>
+  <h3>5.2 Index Futures</h3>
+  <ul>
+    <li>Based on index level (S&amp;P 500, Dow, NIFTY, Sensex); used to speculate on the market or <b>hedge a portfolio</b>. Not tangible → <b>all settlements in cash</b>.</li>
+    <li><b>Contract value = lot size × index value</b>: 1 Nifty contract = 50 × Nifty; Nifty 8,000 → <b>₹ 4,00,000</b>.</li>
+  </ul>
+  <div class="ex"><p><b>SM example:</b> index 1,400, yield 6%, CCRRI 10%, 3 months: 1,400 × e<sup>(3/12)(0.10 − 0.06)</sup> = 1,400 × 1.01005 = <b>₹ 1,414.07</b>.</p></div>
+  <h3>5.2.1 Trading Mechanism in Stock Futures</h3>
+  <ul>
+    <li>Both buyer and seller deposit <b>initial margin</b> (rules by exchanges); margin requirement is <b>continuous</b> — computed every business day; top-up if below minimum.</li>
+    <li>Square off before expiry, or auto squared off at closing price on expiry (India: <b>last Thursday</b> of the month, as printed in SM).</li>
+    <li>ITC at ₹ 120, margin 20% = ₹ 24; rises to 122 → long credited ₹ 200 (₹ 2 × 100), short debited ₹ 200.</li>
+  </ul>
+  <h3>5.2.2 Purpose of Trading in Futures — (a) Speculation, (b) Hedging</h3>
+  <table class="tight">
+    <tr><th>SM example</th><th>Margin (20%)</th><th>Profit</th></tr>
+    <tr><td>Long MCD at 80 → 96 (100 units)</td><td>₹ 1,600</td><td>₹ 1,600 (100% on margin — leverage)</td></tr>
+    <tr><td>Short KR at 160 → 140</td><td>₹ 3,200</td><td>₹ 2,000 (&gt; 60%)</td></tr>
+    <tr><td>Long Nifty 8,000 → 8,500 (50 units)</td><td>₹ 80,000</td><td>₹ 25,000</td></tr>
+    <tr><td>Short Bank Nifty 25,000 → 24,000 (10 units)</td><td>₹ 50,000</td><td>₹ 10,000</td></tr>
+  </table>
+  <ul>
+    <li><b>Hedging</b>: take a futures position <b>exactly opposite</b> to the stock position. Tata Steel: holds 100 at cost 300, now 350 → sells ₹ 350 September futures → at 300 / 350 / 400 the net pay-off is always <b>₹ 5,000</b> (gain locked). Portfolio hedges use index futures; number of contracts depends on <b>β</b> (see 5.2.5).</li>
+  </ul>
+  <h3>5.2.3 Marking to Market</h3>
+  <ul>
+    <li>At the end of each session all open contracts are <b>repriced at the settlement price</b>; profit/loss credited/debited to margin. Long at 100, next day 105 → (1) cash profit ₹ 5, (2) old contract at 100 cancelled, (3) new contract at 105. Value of futures reset to <b>zero</b> each day. Better risk management than forwards.</li>
+    <li><b>Margin account (TYK P14 answer):</b> Initial margin = µ + 3σ (µ = average daily absolute change, σ = SD); maintenance margin = % of initial. Balance below maintenance → <b>margin call</b> to restore to <b>initial</b> margin.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P14 (Sensex, multiple 50):</b> initial 10,000 + 3 × 2,000 = <b>₹ 16,000</b>; maintenance 75% = <b>₹ 12,000</b>. Daily change = 50 × (today's close − yesterday's). 6/2: 12,695 (above 12,000, no call). 7/2: −905 → 11,790 → call <b>₹ 4,210</b> (back to 16,000). 18/2: 18,275 − 7,760 → call <b>₹ 5,485</b>. <b>TYK T2</b> = this section.</p></div>
+  <h3>5.2.4 Advantages of Stock Index Futures over Stock Futures <span class="tag">TYK T1</span></h3>
+  <ul>
+    <li><b>Flexibility</b> for portfolio hedging (institutions prefer).</li>
+    <li><b>Leveraged speculative gains</b>; stock futures — gains limited, liabilities greater.</li>
+    <li><b>Most cost-efficient</b> hedge; stock futures costlier.</li>
+    <li><b>Cannot be easily manipulated</b>.</li>
+    <li><b>Less volatile</b> (average of many stocks) → lower capital adequacy and margins; risk diversification.</li>
+    <li>Sell as readily as buy, <b>same margin</b>.</li>
+    <li><b>Cash settled</b> (index accepted as settlement price) vs physical delivery for stocks.</li>
+    <li><b>Less regulatory complexity</b>.</li>
+    <li><b>Insurance</b> for a portfolio in a falling market.</li>
+  </ul>
+  <h3>5.2.5 Uses / Advantages of Stock Index Futures <span class="pyq">Asked: Sep 2025 Q4(b) 4m</span></h3>
+  <ul>
+    <li><b>Change weightings / risk exposure</b> (e.g. 60% US / 40% Japan: buy US index futures, sell Nikkei).</li>
+    <li><b>Separate market timing from selection</b>: buy index futures + PV in risk-free = market exposure; sell unwanted stocks and hold futures until new picks are decided.</li>
+    <li><b>Index arbitrage (program trading)</b>: futures above fair value → buy the basket, sell futures.</li>
+    <li><b>Hedge portfolio value</b> against systematic risk: <b>short hedge / sell-hedge</b> when long the portfolio. Cash and futures must move similarly; amounts invested should be the same. Perfect hedges rare due to <b>basis risk</b>.</li>
+    <li>Flexibility; leverage; keep the portfolio through corrections without selling; sell as readily as buy (same margin); <b>transfer risk quickly and efficiently</b> (vs once-a-day MF pricing).</li>
+  </ul>
+  <div class="ex"><p><b>SM hedge example:</b> portfolio $1.2 million, β 1.00, α 6%; market −15% + 1% dividend = −14%, expected −8%. To halve β: S&amp;P 240 × $500 = $120,000 per contract → sell <b>5 contracts</b> ($600,000). Cheaper than selling shares (capital gains tax, commissions).</p></div>
+  <table class="tight">
+    <tr><th>Formula (from TYK answers)</th><th>Terms / logic</th></tr>
+    <tr><td>No. of contracts = (Value of portfolio × β) ÷ (Futures price × lot size)</td><td>β converts rupee value into index-equivalent exposure. Long shares → <b>sell</b>; short shares → <b>buy</b>. Cash has β 0 and is not hedged.</td></tr>
+    <tr><td>Contracts to change β = P(β − β′) ÷ F</td><td>P portfolio value, β current, β′ target, F value of one contract; reduce β → sell, increase → buy.</td></tr>
+    <tr><td>Target β via risk-free: β′ = β × (1 − p)</td><td>p = share of portfolio moved to risk-free (β 0).</td></tr>
+    <tr><td>Portfolio β (mixed) = Σ wβ; or = % change in portfolio ÷ % change in index</td><td>Weights on market values.</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P5:</b> futures 5,000 + 5,000(0.09 − 0.06) × 4/12 = <b>5,050</b>; contract ₹ 2,52,500; 10,10,000 × 1.5 ÷ 2,52,500 = <b>6 contracts</b>; at 4,500 (1 month left) futures 4,511.25 → gain 6 × (5,050 − 4,511.25) × 50 = <b>₹ 1,61,625</b>. <b>TYK P7 (MF):</b> 1.1 × 90 crore ÷ (4,300 × 50) = <b>4,605</b>; 10% fall: loss 9.90 crore = gain on futures 9.90 crore; cash not hedged. <b>TYK P8:</b> β = 0.85 × 1.6 = <b>1.36</b>; shares −3.2% → index −2%; long ₹ 100 lakh futures → MTM paid 2 lakh; value 85 × 0.968 + 13 = 95.28 lakh (−4.72%) → β = 0.0472/0.02 = <b>2.36</b>. <b>TYK P9:</b> Right long 50 × 1.25 → short 62.5 lakh; Wrong short 25 × 0.90 → long 22.5; Fair short 20 × 0.75 → long 15 → net <b>short ₹ 25 lakh</b> index futures. <b>TYK P10 (Ram):</b> (10,000 × 22 × 1.5 − 5,000 × 40 × 2) ÷ 1,000 = <b>70 contracts long</b>; outlay ₹ 90,000, close-out ₹ 78,550 → <b>loss ₹ 11,450</b>. <b>TYK P11:</b> β <b>0.849</b>; F = 5,900 e<sup>(0.0998)(58/365)</sup> = <b>5,994.28</b> (alt. e<sup>0.105×58/365</sup> → 5,999.24); hedge 1,88,54,860 × 0.849 ÷ (5,994.28 × 200) = <b>13.35</b> (13 or 14); to β 0.6: <b>3.92 ≈ 4</b>. <b>TYK P12:</b> β <b>1.30</b>; 0.91 = 1.30(1 − p) → p 30% → risk-free <b>₹ 1,500 lakh</b>; dispose A 0.90, B 1.20, C 0.60 lakh shares; (1.30 − 0.91) × 5,000 lakh ÷ (8,125 × 200) = <b>120 contracts sold</b>; Nifty +2% → shares 5,130 − MTM 39 = 5,091 → 1.82% ÷ 2% = β <b>0.91</b>. <b>TYK P13:</b> β = 10,95,832.30 ÷ 9,94,450 = <b>1.102</b>; F<sub>May</sub> = 8,500 e<sup>0.0333</sup> (interpolated 1.03387) = <b>8,788</b>; F<sub>June</sub> 8,500 e<sup>0.05</sup> = <b>8,935.80</b>; hedge to June at 8,850 × 25: 100% <b>4.953 ≈ 5</b>, 50% <b>2.47 ≈ 3</b>, 120% <b>5.94 ≈ 6</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 09 Derivatives Analysis and Valuation (contd.)</span><span class="tag">SM Ch 09</span></div>
+  <h3>6. Options; 6.1–6.3 Stock options, index options, parties</h3>
+  <ul>
+    <li><b>Option</b>: privilege sold by one party giving the buyer the <b>right, not obligation</b>, to buy (<b>call</b>) or sell (<b>put</b>) an underlying at an agreed price within a period / on a date.</li>
+    <li><b>Stock options</b>: no commitment for the buyer; exercised only if price rises above (call) / falls below (put) the strike. Stock = ownership; option = contract only. Limited risk, high potential reward, less capital.</li>
+    <li><b>Stock index option</b>: call/put on an index — a bet on the market. <b>Portfolio insurance</b>: for each 100S rupees of a β 1.0 portfolio buy one put with strike X.</li>
+    <li><b>Parties</b>: buyer and <b>writer</b> (seller). Writing creates a new security (neither company nor exchange issues options). Price = <b>premium</b>. Buyer's loss limited to premium; profit theoretically unlimited.</li>
+  </ul>
+  <div class="ex"><p><b>SM example (6.2):</b> portfolio ₹ 10,00,000 = 100 × index 10,000; buy 1 put at 9,000; index falls to 8,500 → portfolio 8,50,000 + put pay-off 1 × (9,000 − 8,500) × 100 = 50,000 → insured value <b>₹ 9,00,000</b>.</p></div>
+  <h3>6.4 Premium for Options; 6.5 Types of Options</h3>
+  <ul>
+    <li>Writer takes premium and assumes the risk of delivering (call) / taking delivery (put); uncovered writer's loss can be <b>unlimited</b>.</li>
+    <li><b>American</b>: exercise any time up to expiry (SM: most exchange-traded and all stock options). <b>European</b>: only on expiry (most options in India).</li>
+  </ul>
+  <h3>6.6 Pay-off scenarios (6.6.1–6.6.4) <span class="pyq">Asked: Sep 2025 MCQ 6m; Jan 2026 Q1(c) 4m; May 2026 Q2(b) 4m</span></h3>
+  <table class="tight">
+    <tr><th>Position</th><th>Net pay-off at expiry (per share)</th><th>Break-even / SM example</th></tr>
+    <tr><td>Long call (buyer)</td><td>Max(0, Spot − X) − premium; exercise only if Spot &gt; X</td><td>X + premium. X 40, premium 5 → loss 5 below 40, BE <b>45</b></td></tr>
+    <tr><td>Short call (writer)</td><td>Mirror image of long call</td><td>Max gain = premium</td></tr>
+    <tr><td>Long put (buyer)</td><td>Max(0, X − Spot) − premium; exercise only if Spot &lt; X</td><td>X − premium. X 40, premium 5 → BE <b>35</b></td></tr>
+    <tr><td>Short put (writer)</td><td>Mirror image of long put</td><td>Max gain = premium</td></tr>
+  </table>
+  <p class="small"><i>Note (app-written): SM 6.6.3 (p 9.21) prints the put buyer's gain as "(Spot Price – Exercise Price – Premium)"; for a put the gain is (Exercise Price − Spot Price − Premium), which is what gives ICAI's own break-even of ₹ 35.</i></p>
+  <ul>
+    <li><b>Buy call + buy put on the same stock</b> (asked as "long strangle" when strikes differ): total premium paid upfront; at expiry only one leg can be in the money. Loss = total premium when price is between the strikes. <i>(App-written from the TYK answers:)</i> upper break-even = call strike + total premium; lower break-even = put strike − total premium.</li>
+    <li><i>App-written labels (asked May 2026):</i> call is in the money if Spot &gt; X, at the money if Spot = X, out of the money if Spot &lt; X (put the reverse); intrinsic value = value if exercised now (never negative); time value = premium − intrinsic value (SM 7: an option with zero theoretical value can still have positive market value while time remains).</li>
+  </ul>
+  <div class="ex"><p><b>TYK P15 (Mr A):</b> call 550 @ 30, put 450 @ 5, 100 shares; price 350 → put gain (450 − 350) × 100 = 10,000 − premium 3,500 = <b>net gain ₹ 6,500</b>. <b>TYK P19 (Delta Corp, same data):</b> at 500 neither exercised → <b>loss ₹ 3,500</b>; at 350 → <b>gain ₹ 6,500</b>; at 600 → call (600 − 550) × 100 − 3,500 = <b>gain ₹ 1,500</b>. <b>TYK P16 (ABC):</b> call 42 @ 2 + put 40 @ 1, cost ₹ 300; at 43 → −300 + 100 = <b>loss ₹ 200</b>; at 36 → −300 + 400 = <b>gain ₹ 100</b>. <b>TYK P20 (VCC, X 220):</b> call net pay-off at 200…240 = −6, −6, −6, 4, 14; put = 15, 5, −5, −5, −5; call gainful above <b>₹ 226</b> (220 + 6), put below <b>₹ 215</b> (220 − 5). <b>TYK P17 (written put, X 300):</b> expected value = 120 × 0.1 + 40 × 0.2 + 20 × 0.5 = <b>₹ 30</b> (not exercised at 320, 400). <b>TYK P18 (call X 150):</b> expected price <b>₹ 160.50</b>; value at that "exercise price prevails" = <b>nil</b>; expected value held to maturity = 10 × 0.5 + 30 × 0.10 + 40 × 0.15 = <b>₹ 14</b>.</p></div>
+  <p class="small"><i>Note (app-written): in TYK P18's alternative table (p 9.83) ICAI prints probabilities 0.1 and 0.2 for prices 120 and 140 (the question gives 0.05 and 0.20); those rows are "not exercised", so the ₹ 14 answer is unaffected.</i></p>
+  <h3>6.7 Comparison with Single Stock Futures <span class="pyq">Asked: Jan 2026 Q3(a) 6m</span></h3>
+  <table class="tight">
+    <tr><th>Point</th><th>Options</th><th>Stock futures</th></tr>
+    <tr><td>Nature</td><td>Buyer has right, not obligation</td><td>Long is obliged to square off at or before expiry</td></tr>
+    <tr><td>Movement</td><td>Premium moves by <b>delta</b>; may fluctuate independently of the stock</td><td>Closely follows the underlying</td></tr>
+    <tr><td>Price of investing</td><td>Premium paid = sunk cost; lost if not in the money</td><td>Initial margin + maintenance (MTM) margin</td></tr>
+  </table>
+  <p class="small">Futures + option combined (Jan 2026): profit on futures = (close − entry) × lot; profit on written call = premium − Max(0, Spot − X) per unit; deduct brokerage on each leg.</p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 09 Derivatives Analysis and Valuation (contd.)</span><span class="tag">SM Ch 09</span></div>
+  <h3>7. Option Valuation Techniques</h3>
+  <ul>
+    <li>European call on a non-dividend stock at expiry = <b>Max(0, S − X)</b>; value can never be negative. Premium &lt; value → buyer profits; premium &gt; value → loses (TVM and costs ignored); writer is the opposite.</li>
+    <li>With time left, a zero theoretical value option can still have positive market value — the price may still rise.</li>
+  </ul>
+  <h3>7.1 Binomial Model</h3>
+  <ul>
+    <li>Breaks time to expiry into steps; at each step price moves <b>up or down</b>; a tree of prices is built forward from today to expiry; terminal option values = intrinsic values; then work <b>backwards</b>.</li>
+    <li>A <b>hedged position</b> (buy stock, write options) offsets price movements; option priced so that the hedge earns the <b>risk-free rate</b>.</li>
+    <li><b>Advantage over Black-Scholes</b>: prices <b>American</b> options — early exercise checked at every node (e.g. deep in-the-money put, dividend); where exercise is better, node value = intrinsic value and flows up the tree.</li>
+  </ul>
+  <p><b>The flow (every binomial / risk-neutral question):</b></p>
+  <ol>
+    <li><b>Pay-off at expiry</b>: call = Max(0, Spot − X); put = Max(0, X − Spot) (X = exercise price).</li>
+    <li><b>u, d, r</b>: u = S<sub>up</sub> ÷ S<sub>0</sub>; d = S<sub>down</sub> ÷ S<sub>0</sub>; r = growth of ₹ 1 at the risk-free rate for one step — use what the question gives (table below).</li>
+    <li><b>Risk-neutral probability</b> p = (r − d) ÷ (u − d); 1 − p for down. <i>Derivation:</i> in a risk-neutral world the stock grows at r: S·r = p·S·u + (1 − p)·S·d → r = d + p(u − d) → p = (r − d)/(u − d).</li>
+    <li><b>One-step value</b>: C<sub>0</sub> = [p·C<sub>u</sub> + (1 − p)·C<sub>d</sub>] ÷ r.</li>
+    <li><b>Two-step</b>: find the three terminal pay-offs (uu, ud, dd), value each middle node by step 4 (C<sub>u</sub>, C<sub>d</sub>), then value today from C<sub>u</sub>, C<sub>d</sub> by step 4 again.</li>
+  </ol>
+  <table class="tight">
+    <tr><th>How ICAI builds "r"</th><th>Case</th><th>r used</th></tr>
+    <tr><td>Compound: (1 + rate)<sup>t</sup></td><td>Illus 1: 5% p.a., 6-month step</td><td>(1.05)<sup>1/2</sup> = <b>1.0247</b> (discounted at 1.025)</td></tr>
+    <tr><td>Simple: 1 + rate × t</td><td>TYK P22: 10% p.a., 3 months</td><td><b>1.025</b></td></tr>
+    <tr><td>Annual step</td><td>TYK P23: 6%, one-year steps</td><td><b>1.06</b></td></tr>
+    <tr><td>Continuous: e<sup>rate × t</sup></td><td>Illus 2 / TYK P24: 8%, 3 months; TYK P21: 3.6% for one month</td><td>e<sup>0.02</sup> = <b>1.0202</b>; e<sup>0.036</sup> = <b>1.037</b></td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P21 (Sumana, EIL):</b> u = 592/421 = 1.406, d = 411/421 = 0.976, e<sup>0.036</sup> = 1.037 → p = (1.037 − 0.976)/0.43 = 0.061/0.43 = <b>0.1418</b> (probability of reaching ₹ 592).</p></div>
+  <div class="ex"><p><b>Illus 1 (CAB Ltd, two 6-month steps, X ₹ 28, 5% p.a.):</b> tree 30 → 33 / 27 → 36.30 / 29.70 / 24.30. u = 33/30 = 36.30/33 = <b>1.10</b>; d = 27/30 = 24.30/27 = <b>0.90</b>; r = (1.05)<sup>1/2</sup> = <b>1.0247</b>; p = (1.0247 − 0.90)/(1.10 − 0.90) = 0.1247/0.20 = <b>0.6235</b>, 1 − p = 0.3765. Pay-offs: C<sub>uu</sub> = Max(0, 36.30 − 28) = <b>8.30</b>; C<sub>ud</sub> = 1.70; C<sub>dd</sub> = 0. Step back: C<sub>u</sub> = (0.6235 × 8.30 + 0.3765 × 1.70)/1.025 = 5.815/1.025 = <b>₹ 5.673</b>; C<sub>d</sub> = (0.6235 × 1.70 + 0.3765 × 0)/1.025 = 1.05995/1.025 = <b>₹ 1.0341</b>; C<sub>0</sub> = (3.537 + 0.3893)/1.025 = <b>₹ 3.83</b>. Hedge (see below): ∆ = (5 − 0)/(33 − 27) = <b>5/6 share held per call written</b>.</p></div>
+  <div class="ex"><p><b>TYK P23 (two-year call, X 50, S 50, ±20%, 6%):</b> p = (1.06 − 0.80)/(1.20 − 0.80) = 0.26/0.40 = <b>0.65</b>, down 0.35. Tree 50 → 60 / 40 → 72 / 48 / 32; pay-offs at D, E, F = <b>22, 0, 0</b> (American = European values at these nodes). Node B = (22 × 0.65 + 0 × 0.35)/1.06 = <b>13.49</b>; node A = (13.49 × 0.65 + 0 × 0.35)/1.06 = <b>8.272</b>.</p></div>
+  <p><b>Riskless hedge / delta (SM 7.1):</b> hold ∆ shares and write 1 call. Up: ∆·S<sub>u</sub> − C<sub>u</sub>; down: ∆·S<sub>d</sub> − C<sub>d</sub>. Make them equal → <b>∆ = (C<sub>u</sub> − C<sub>d</sub>) ÷ (S<sub>u</sub> − S<sub>d</sub>)</b> (C<sub>u</sub>, C<sub>d</sub> = call pay-offs if price goes up/down; S<sub>u</sub>, S<sub>d</sub> = up/down prices). The portfolio is riskless, so it must earn the risk-free rate: (∆·S<sub>0</sub> − C<sub>0</sub>) × r = riskless end value → solve C<sub>0</sub>.</p>
+  <div class="ex"><p><b>TYK P22 (Mr Dayal, S 600, 780 / 480, X 630, 10% p.a., 3 months; real chances 60% / 40%):</b> (i) ∆ = (150 − 0)/(780 − 480) = 150/300 = <b>0.50</b> → buy 0.50 share per call written. (ii) At 780: 0.50 × 780 = 390 − loss on call written (780 − 630) 150 = <b>240</b>; at 480: 0.50 × 480 = <b>240</b> → riskless. (0.50 × 600 = 300 − P) × 1.025 = 240 → <b>P = ₹ 65.85</b>. (iii) Expected option value at the <b>real</b> probabilities = 150 × 0.60 + 0 × 0.40 = 90 → expected return (90 − 65.85)/65.85 × 100 = <b>36.67%</b>.</p></div>
+  <p class="small"><i>Note (app-written check): the risk-neutral method gives the same premium — u 1.30, d 0.80, r 1.025 → p = 0.225/0.50 = 0.45 → 0.45 × 150 ÷ 1.025 = 65.85. Real probabilities (60/40) are used only for the expected return, never for the value.</i></p>
+  <p class="small"><i>Note (app-written) on Illus 1 hedge (p 9.25): ICAI prints ∆ = (5 − 0)/(33 − 27) = 5/6, using pay-offs at 33 and 27 against X 28 as if the option expired after one step. In its own two-step tree the option values at those nodes are 5.673 and 1.0341, which would give ∆ = (5.673 − 1.0341)/6. Keep ICAI's 5/6 for the SM answer. Also, p is computed with r 1.0247 but discounting uses 1.025 (rounding).</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 09 Derivatives Analysis and Valuation (contd.)</span><span class="tag">SM Ch 09</span></div>
+  <h3>7.2 Risk Neutral Method</h3>
+  <ul>
+    <li>Developed by <b>John Cox and Stephen Ross (1976)</b>. Valuation rests on arbitrage, so it is <b>independent of risk preferences</b> — value under any preference set gives the same answer as the binomial model. Simple model; its probabilities are applied in the binomial model.</li>
+    <li><b>Logic</b>: today's price = PV at the risk-free rate of the expected price. Equivalent form (Illus 2): <b>(S<sub>u</sub> − S<sub>0</sub>)p + (S<sub>d</sub> − S<sub>0</sub>)(1 − p) = S<sub>0</sub>(e<sup>rt</sup> − 1)</b> — expected gain = risk-free gain. Then option value = [p × pay-off up + (1 − p) × pay-off down] ÷ r.</li>
+  </ul>
+  <div class="ex"><p><b>SM example (Company X):</b> 50 = [60p + 40(1 − p)]/1.05 → p = <b>0.625</b>; value = [10(0.625) + 0(0.375)]/1.05 = <b>5.95</b>. <b>Illus 2 = TYK P24 (Penchant, S 420, 500 / 400, X 450, 8%, 3 months, e<sup>0.02</sup> = 1.0202):</b> 80p − 20(1 − p) = 420 × 0.0202 = 8.48 → 100p = 28.48 → p = <b>0.2848</b>; call = 0.2848 × (500 − 450)/1.0202 = 0.2848 × 50/1.0202 = <b>₹ 13.96</b>.</p></div>
+  <table class="tight">
+    <tr><th>Point</th><th>Binomial model (7.1)</th><th>Risk-neutral method (7.2)</th><th>Riskless hedge (delta, 7.1)</th></tr>
+    <tr><td>Core idea</td><td>Tree of up/down prices; value backwards node by node</td><td>Stock expected to earn only r; find p, discount expected pay-off at r</td><td>∆ shares + 1 call written = riskless portfolio earning r</td></tr>
+    <tr><td>Key formula</td><td>C = [p·C<sub>u</sub> + (1 − p)·C<sub>d</sub>] ÷ r at each node</td><td>p = (r − d)/(u − d) or expected gain = S(e<sup>rt</sup> − 1)</td><td>∆ = (C<sub>u</sub> − C<sub>d</sub>)/(S<sub>u</sub> − S<sub>d</sub>); (∆S<sub>0</sub> − C<sub>0</sub>) r = end value</td></tr>
+    <tr><td>Steps</td><td>One or many; checks early exercise (American)</td><td>Typically one period</td><td>One period</td></tr>
+    <tr><td>Extra output</td><td>Hedge composition (∆)</td><td>Probability of rise (TYK P21)</td><td>Number of shares per option (TYK P22)</td></tr>
+    <tr><td>SM cases</td><td>Illus 1, TYK P23</td><td>SM example, Illus 2, TYK P21, P24; real options Illus 5, 6</td><td>Illus 1 (5/6), TYK P22 (0.50)</td></tr>
+  </table>
+  <p class="small">All three give the same value: real-world probabilities never enter the option value.</p>
+
+  <h3>7.3 Black-Scholes Model <span class="pyq">Asked: May 2026 Q6(b) 7m</span> <span class="tag">TYK T3</span></h3>
+  <ul>
+    <li>Theoretical price = what a writer needs as compensation for writing a call and <b>completely hedging</b> by buying stock. Hedger's view of future prices is irrelevant → <b>risk-neutral valuation</b> (underlying assumed to earn the risk-free rate). Based on a normal distribution of returns.</li>
+    <li><b>Assumptions</b>: <b>European</b> options; <b>no transaction costs</b>; short-term interest rates <b>known and constant</b>; stocks pay <b>no dividend</b>; price follows a <b>random walk</b>; returns <b>normally distributed</b>; <b>variance constant</b> over the option's life.</li>
+    <li><b>Advantage</b>: speed. <b>Limitation</b>: cannot accurately price <b>American</b> options — values only at expiry, ignores early exercise.</li>
+  </ul>
+  <p><b>Call = S·N(d<sub>1</sub>) − X·e<sup>−rt</sup>·N(d<sub>2</sub>)</b>; &nbsp; <b>d<sub>1</sub> = [log<sub>e</sub>(S/X) + (r + v²/2)t] ÷ v√t</b>; &nbsp; <b>d<sub>2</sub> = d<sub>1</sub> − v√t</b></p>
+  <table class="tight">
+    <tr><th>Piece</th><th>What it is / logic</th><th>Illus 3(i) figures</th></tr>
+    <tr><td>S, X, t, r, v</td><td>Current price; strike; time as fraction of a year; <b>continuously compounded</b> risk-free rate; annual volatility (SD of returns)</td><td>415, 400, 0.25, 5%, 22%</td></tr>
+    <tr><td>log<sub>e</sub>(S/X)</td><td>How far the price is above (+) or below (−) the strike, in log terms <i>(app-written gloss)</i></td><td>log<sub>e</sub>(1.0375) = 0.03681</td></tr>
+    <tr><td>(r + v²/2)t</td><td>Growth at r plus half the variance over the option's life</td><td>(0.05 + 0.0242) × 0.25 = 0.01855</td></tr>
+    <tr><td>÷ v√t</td><td>SD of return over the life → d<sub>1</sub> is a number of SDs (z)</td><td>0.22 × 0.5 = 0.11 → d<sub>1</sub> = <b>0.5033</b></td></tr>
+    <tr><td>d<sub>2</sub> = d<sub>1</sub> − v√t</td><td>Same as using (r − v²/2)t in the numerator</td><td>(0.03681 + 0.00645)/0.11 = <b>0.3933</b></td></tr>
+    <tr><td>N(d<sub>1</sub>)</td><td><b>Hedge ratio (delta)</b>: shares held per call for a fully hedged position; S·N(d<sub>1</sub>) = value of those shares</td><td>0.6928 → 415 × 0.6928 = 287.512</td></tr>
+    <tr><td>N(d<sub>2</sub>)</td><td><b>Probability</b> that spot at expiry &gt; strike (call exercised)</td><td>0.6529</td></tr>
+    <tr><td>X·e<sup>−rt</sup>·N(d<sub>2</sub>)</td><td>Holder seen as having <b>borrowed</b> PV of strike × N(d<sub>2</sub>)</td><td>400/1.012578 × 0.6529 = 257.916</td></tr>
+  </table>
+  <ul>
+    <li><b>Reading N() from ICAI tables</b>: <b>one-tail</b> table (area to the left or right): N(+z) = 1 − tail area; N(−z) = tail area. <b>Cumulative</b> table: read directly. <b>Two-tail</b> table: N(+z) = 1 − two-tail ÷ 2. Not on the table → <b>interpolate</b> between the two nearest z.</li>
+    <li>Interpolation (Illus 3): N(0.39) = 0.6517; difference to N(0.40) is 0.0037 per 0.01 → 0.0037 × 0.00327/0.01 = 0.0012 → N(0.39327) = <b>0.6529</b>.</li>
+    <li><b>Put-call parity</b> (as printed in Illus 3): <b>V<sub>p</sub> = −V<sub>s</sub> + V<sub>c</sub> + PV(E)</b> — put = call − share price + PV of exercise price. Illus 3 writes the call as V<sub>o</sub> = V<sub>s</sub> N(d<sub>1</sub>) − E e<sup>−rt</sup> N(d<sub>2</sub>): V<sub>s</sub> = S, E = X.</li>
+    <li><b>Dividend</b> before expiry: adjusted S = S − PV(dividend), PV = D × e<sup>−rt</sup>; then normal B-S.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 3 (TIC Ltd, X 400, 3 months, 5%, v 22%):</b> (i) S 415: N(d<sub>1</sub>) = N(0.50327) = 1 − 0.3072 = <b>0.6928</b>; N(d<sub>2</sub>) = N(0.39327) = 1 − 0.3471 = <b>0.6529</b>; value 287.512 − 257.916 = <b>₹ 29.60</b> &gt; ₹ 25 → underpriced, <b>worth buying</b>. (ii) S 380: log<sub>e</sub>(0.95) = −0.05129; d<sub>1</sub> = <b>−0.297636</b>, d<sub>2</sub> = <b>−0.407636</b>; N = 0.3830 / 0.3418; 145.54 − 135.02 = <b>₹ 10.52</b>. (iii) Put = −380 + 10.52 + 395.06 = <b>₹ 25.58</b> (or with 395.03 → <b>₹ 25.55</b>). (iv) S 408, dividend ₹ 10 in 2 months: PV = 10 × e<sup>−0.05×0.16666</sup> = <b>9.917</b> → S 398.083; log<sub>e</sub>(0.9952) = −0.00481; d<sub>1</sub> = 0.01374/0.11 = <b>0.125</b>, d<sub>2</sub> = <b>0.015</b>; N = 0.5498 / 0.5060; 218.866 − 199.8858 = <b>₹ 18.98</b>.</p></div>
+  <p class="small"><i>Note (app-written) on Illus 3(iii) (p 9.31): ICAI lists "Current Market Value = ₹ 415" although the put uses 380, and gives two answers because PV of strike is taken as 400/1.0125 = 395.06 in one line and 400/1.012578 = 395.03 in another. Keep both of ICAI's figures.</i></p>
+  <div class="ex"><p><b>TYK P25 (S 80, X 75, v 0.40, 6 months, 12%; one-tail table; ICAI's answer prints C = SN(d<sub>1</sub>) − Ke<sup>−rt</sup>N(d<sub>2</sub>) with σ: K = X, σ = v):</b> d<sub>1</sub> = [0.0646 + (0.12 + 0.08)0.5] ÷ (0.40 × 0.7071) = 0.1646/0.2828 = <b>0.5820</b>; d<sub>2</sub> = 0.5820 − 0.2828 = <b>0.2992</b>; interpolating tails (0.55: 0.2912, 0.60: 0.2743; 0.25: 0.4013, 0.30: 0.3821) → N(d<sub>1</sub>) = <b>0.7197</b>, N(d<sub>2</sub>) = <b>0.6176</b>; call = 80 × 0.7197 − (75/1.062) × 0.6176 = 57.57 − 43.61 = <b>₹ 13.96</b>. ICAI's teaching note gives the same z as cumulative (0.25: 0.5987, 0.30: 0.6179, 0.55: 0.7088, 0.60: 0.7257) and two-tail (0.8026, 0.7642, 0.5823, 0.5485) areas.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 09 Derivatives Analysis and Valuation (contd.)</span><span class="tag">SM Ch 09</span></div>
+  <h3>7.4 Greeks; 7.4.1 Factors Affecting Value of an Option <span class="tag">TYK T4</span></h3>
+  <ul>
+    <li><b>Greeks</b>: statistical values (as percentages) giving a view of how a stock has been performing; help choose option strategies; based on past trends, not guaranteed.</li>
+    <li><b>Price of underlying</b>: price up → calls up, puts down; price down → puts up, calls down.</li>
+    <li><b>Time to expiry</b>: time decay is the buyer's enemy, faster near expiry (final month) — good for the seller.</li>
+    <li><b>Volatility</b>: statistical (historical) volatility measures the past; models need future volatility → implied by working the model "backwards" from the market price.</li>
+    <li><b>Interest rate</b>: higher rates → lower PV of exercise price.</li>
+  </ul>
+  <h3>7.4.2–7.4.6 Delta, Gamma, Theta, Rho, Vega</h3>
+  <table class="tight">
+    <tr><th>Greek</th><th>Measures (SM)</th><th>Points</th></tr>
+    <tr><td><b>Delta</b></td><td>Change in option price for a small change in stock price; = <b>N(d<sub>1</sub>)</b> for a European call</td><td>0.5 → moves ₹ 0.50 per ₹ 1. Deep OTM call ≈ 0, deep ITM ≈ 1. Call +ve, put −ve; <b>put delta = call delta − 1</b>. = hedge ratio: write n calls, hold n × delta shares → <b>delta neutral</b>; needs continual adjustment.</td></tr>
+    <tr><td><b>Gamma</b></td><td>Rate of change of delta (delta of the delta)</td><td>Keep small for fewer hedge adjustments; adjusted only with options, not the underlying.</td></tr>
+    <tr><td><b>Theta</b></td><td>Change in price for one-day decrease in time to expiry (time decay)</td><td>Predictable — hedging it is pointless.</td></tr>
+    <tr><td><b>Rho</b></td><td>Change in price for a 1 percentage point change in risk-free rate</td><td>SM: Rho 0.06 → value changes by 0.06 for a 1.0 change in rate.</td></tr>
+    <tr><td><b>Vega</b></td><td>Change in price for a 1 percentage point change in volatility</td><td>Vega 0.09 → +0.09 if volatility +1, −0.09 if −1. Used for hedging.</td></tr>
+  </table>
+  <h3>7.5 Exotic Options; 7.5.1 Exotic vs Traditional; 7.5.2 Types</h3>
+  <ul>
+    <li>Structure and features differ from plain vanilla (American/European), including expiry; a hybrid between American and European. vs traditional: <b>vary in pay-off and time of exercise</b>; <b>more complex</b>; mostly <b>OTC</b>.</li>
+    <li><b>Chooser</b>: after a set period buyer decides call or put. <b>Compound</b> (split fee, option on option): right to buy another option; pay-off depends on second strike. <b>Barrier</b>: activated only if price reaches a level in a set period. <b>Binary (digital)</b>: fixed pay-off if an event occurs, nil otherwise. <b>Asian</b>: pay-off on average price over a period. <b>Bermuda</b>: exercise on certain dates or expiry. <b>Basket</b>: on a weighted portfolio. <b>Spread</b>: on difference between two prices. <b>Look back</b>: holder picks the most favourable strike from min/max price during life.</li>
+  </ul>
+
+  <h3>8. Credit Derivatives</h3>
+  <ul>
+    <li>Started <b>1996</b> for banks to hedge lending portfolios. Risks: <b>market risk</b> (adverse stock, interest, FX moves) and <b>credit risk</b> (counterparty / default). Financial derivatives hedge market risk; credit derivatives transfer credit risk from risk-averse investors to those willing to take it.</li>
+  </ul>
+  <h3>8.1 Collateralized Debt Obligations (CDOs); 8.1.1 Types; 8.1.2 Risks</h3>
+  <ul>
+    <li>Securitisation is backed by loans/receivables; CDOs by pools of <b>bonds, ABS, REITs and other CDOs</b> — covers CBOs and CLOs.</li>
+    <li><b>Cash flow CDO</b>: backed by cash market debt (low risk weight); relies on collateral's risk weight and cash generation.</li>
+    <li><b>Synthetic CDO</b>: credit risk transferred <b>without transfer of assets</b> (economic effect only) via <b>CDS</b> or <b>Credit Linked Notes</b>; used to hedge rather than fund; customer relations unaffected; regulatory capital relief; popular in Europe (less documentation). Sub-types: <b>unfunded</b> (only CDS), <b>fully funded</b> (CLN), <b>partially funded</b> (both).</li>
+    <li><b>Arbitrage CDO</b>: issuer captures the spread between collateral return and borrowing cost, plus management fee.</li>
+    <li><b>Risks</b>: <b>default</b> (credit; hits equity/junior tranche first); <b>interest rate / basis</b> (floating assets vs fixed liabilities; swaps, caps, floors, collars); <b>liquidity</b> (coupon mismatch); <b>prepayment</b> (fixed-rate debtors with call option repay when rates fall); <b>reinvestment</b>; <b>foreign exchange</b>.</li>
+  </ul>
+  <h3>8.2 Credit Default Swaps (CDSs); 8.2.1–8.2.4</h3>
+  <ul>
+    <li>Credit (loan) + Default (non-payment) + Swap (exchange of risk): an insurance (not strictly) against default on debentures/bonds. <b>Buyer</b> pays periodic premium; <b>seller</b> assumes default risk; settlement only on default. No element of choice → resembles a swap more than an option. Premium depends on the underlying's credit risk.</li>
+    <li><b>Features</b>: non-standardised private contract (forward category); not exchange-traded, free from regulation; <b>ISDA</b> guidelines; bought from third party against borrower default; raises bond investor confidence; premium has <b>positive relation to risk</b>; without exposure = <b>naked CDS</b>.</li>
+    <li><b>Uses</b>: <b>hedging</b>; <b>arbitrage</b> (CDS + asset swap, fixed coupon swapped to floating); <b>speculation</b>.</li>
+    <li><b>Parties</b>: <b>reference entity</b> (initial borrower), <b>buyer</b> (investor, buys protection), <b>seller</b> (writer).</li>
+    <li><b>Settlement</b>: <b>physical</b> — buyer delivers bonds, seller pays par; <b>cash</b> — seller pays par − market value; <b>credit event auction</b> sets one price for cash settlement.</li>
+  </ul>
+  <div class="ex"><p><b>SM example:</b> BB Corp buys CDS from SS Bank on $10 million bonds of Danger Corp. Physical: SS pays $10 million, receives the bonds. Cash: bonds at 30% → SS pays $10 million − $3 million = <b>$7 million</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 09 Derivatives Analysis and Valuation (contd.)</span><span class="tag">SM Ch 09</span></div>
+  <h3>9. Real Options</h3>
+  <ul>
+    <li>Capital budgeting approach using option pricing theory; improves project value estimates; <b>supplements, does not replace</b>, DCF.</li>
+  </ul>
+  <h3>9.1 How Real Option is different from Financial Option <span class="pyq">Asked: Jan 2026 Q2(c) 4m</span></h3>
+  <table class="tight">
+    <tr><th>Basis</th><th>Financial options</th><th>Real options</th></tr>
+    <tr><td>Underlying</td><td>Traded assets — shares, bonds, commodities</td><td>Projects, not traded</td></tr>
+    <tr><td>Pay-off</td><td>Specified in contract, fixed</td><td>Estimated from project cash flows, can vary</td></tr>
+    <tr><td>Exercise period</td><td>Short, maximum up to 1 year</td><td>Mostly from end of year 1, longer</td></tr>
+    <tr><td>Approach</td><td>Traded → "<b>Priced</b>"</td><td>Used for decisions → "<b>Valued</b>"</td></tr>
+  </table>
+  <ul>
+    <li><b>Long call</b>: right to invest / enter / expand. <b>Long put</b>: right to sell or abandon; flexibility to exit. <b>Short call</b>: promise to sell if counterparty buys (commitment to disinvest). <b>Short put</b>: promise to buy if counterparty sells (commitment to invest).</li>
+  </ul>
+  <h3>9.2 Valuation of Real Options</h3>
+  <ul>
+    <li>Same methods as financial options — <b>Binomial</b>, <b>Risk Neutral</b>, <b>Black-Scholes</b> (see 7.1–7.3); difficulty is identifying inputs.</li>
+  </ul>
+  <h3>9.3 Type of Real Options; 9.3.1 Growth Options</h3>
+  <ul>
+    <li>Accept a negative/insignificant-NPV project for future value — like a <b>European call</b>. Examples: <b>R&amp;D</b>, heavy <b>advertisement</b>, initial investment in a <b>foreign market</b>, acquiring making rights, <b>vacant plot</b> for later development. Purposes: competitive position (<b>strategic investment</b>), knowledge of profitability, manufacturing/making flexibility.</li>
+    <li>Patent valued by B-S with delay cost treated like a dividend: <b>C = S·N(d<sub>1</sub>)·e<sup>−Dt</sup> − E·e<sup>−rt</sup>·N(d<sub>2</sub>)</b>; d<sub>1</sub> = [log<sub>e</sub>(S/E) + (R − D + σ²/2)t] ÷ σ√t; d<sub>2</sub> = d<sub>1</sub> − σ√t. S = PV of cash flows, E = development cost, D = 1/patent life (SM's Illus 4 symbols: E = X, σ = v, R = r).</li>
+  </ul>
+  <div class="ex"><p><b>Illus 4 (ABC Ltd, 'Aidrex' patent, 15 yrs):</b> S $16.7m, E $12.5m, σ² 0.268, R 7.8%, D = 1/15 = <b>0.0667</b>. d<sub>1</sub> = [0.2897 + (0.1453)15] ÷ (0.5177 × 3.8730) = 2.4692/2.005 = <b>1.2315</b>; d<sub>2</sub> = <b>−0.7735</b>; N = 0.8910 / 0.2196; value = 16.7 × 0.3677 × 0.8910 − 12.5 × 0.3104 × 0.2196 = 5.471 − 0.852 = <b>$ 4.619 million</b>.</p></div>
+  <h3>9.3.2 Abandonment Option <span class="pyq">Asked: Jan 2026 Q6(b) 4m</span></h3>
+  <ul>
+    <li>Like an <b>American put</b>: exercise if the value from the project's assets (disposal) exceeds PV of continuing. Pay-off = Max(0, abandonment value − project value).</li>
+    <li>Risk-neutral p from returns: <b>risk-free rate = p × up return + (1 − p) × down return</b> (as Illus 5: 8% = p × 30% + (1 − p) × (−40%)); value = expected pay-off ÷ (1 + risk-free rate).</li>
+  </ul>
+  <div class="ex"><p><b>Illus 5 (IPL):</b> PV 100 crore → 130 (+30%) / 60 (−40%); disposal 80 → pay-off 0 / <b>20</b>. 0.08 = 0.30p − 0.40(1 − p) → p = 0.48/0.70 = <b>0.686</b>; expected 0.314 × 20 = <b>6.28 crore</b>; ÷ 1.08 = <b>₹ 5.81 crore</b> (value of put).</p></div>
+  <h3>9.3.3 Timing Option <span class="pyq">Asked: May 2026 MCQ 6m</span></h3>
+  <ul>
+    <li>Third choice besides accept/reject: <b>delay</b> (better information later) — like an <b>American call</b>.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 6 (MIS Ltd, solar plant ₹ 2.50 crore, saving ₹ 21 lakh p.a. forever, WACC 10%, risk-free 8%):</b> today 21 lakh/0.10 = 2.1 crore → NPV <b>−0.4 crore</b>. After 1 year: 35 lakh → 3.50 crore, NPV <b>+1 crore</b>, return 40%; 12 lakh → 1.20 crore, NPV <b>−1.3 crore</b>, return −52%. 0.40p − 0.52(1 − p) = 0.08 → 0.92p = 0.60 → p = <b>0.652</b>. Expected pay-off = 0.652 × 1 + 0.348 × (−1.30) = <b>₹ 19.96 lakh</b>; PV 19.96/1.08 = <b>₹ 18.48 lakh</b> (or /1.10 = 18.15 lakh) → <b>wait and see</b>.</p></div>
+  <p class="small"><i>Note (app-written) on Illus 6 (p 9.47): ICAI includes the down-state NPV of −1.3 crore in the expected pay-off. By SM 7's own rule that an option's value cannot be negative, a firm that waits would not invest in the down state (pay-off 0), giving 0.652 × 1 crore before discounting. Keep ICAI's printed ₹ 19.96 / 18.48 lakh; follow the question's wording in the exam.</i></p>
+
+  <h3>10. Commodity Derivatives; 10.1 Necessary Conditions</h3>
+  <ul>
+    <li>Began to protect farmers; <b>CBOT 1848</b>; Chicago Produce Exchange 1874 (now <b>CME</b>).</li>
+    <li><b>Attributes</b>: (1) <b>durable and storable</b> (temporal allocation of stocks; hedge for carriers of stock); (2) <b>homogeneous units</b> (allows delivery); (3) <b>frequent, wide price fluctuations</b>, large supply and demand; (4) supply flows naturally to market and <b>breakdowns in forward contracting</b> (cash market risk must exist).</li>
+    <li>Contract must be a close substitute for the cash commodity — <b>hedging effectiveness</b>. Customer needs: <b>instrumental</b> (price risk reduction — core service) and <b>convenience</b> (flexibility, easy access, efficient clearing — process quality, peripheral services).</li>
+  </ul>
+  <h3>10.2 Investing in Commodity Derivatives</h3>
+  <ul>
+    <li>Now an investment tool; most traders don't need the commodity. Direct exposure (steel derivative instead of Tata Steel shares); easier to forecast via demand/supply; cheap (small margin).</li>
+    <li>Cash settlement option currently lies with the <b>seller</b>. Settlement and clearing by the <b>clearing house</b> (guards against default).</li>
+    <li>Benefits: complement investment in commodity-using companies; invest in a country's consumption and production; no dividends, only price returns.</li>
+  </ul>
+  <div class="ex"><p><b>SM example (soybean):</b> buy 1 tonne at ₹ 8,700, sells ₹ 9,000 → ₹ 300 = 3.4%. Futures at ₹ 8,700 with 10% margin ₹ 870 → ₹ 300 profit = <b>34.5%</b>; at ₹ 8,400 → loss 34.5%.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 09 Derivatives Analysis and Valuation (contd.)</span><span class="tag">SM Ch 09</span></div>
+  <h3>10.3 Commodity Market; 10.4 Commodity Futures</h3>
+  <ul>
+    <li>Origin: Sumer clay tokens. Raw/primary products traded on regulated exchanges in standardised contracts. Advantages: money managers prefer derivatives to tangibles; <b>less hassle</b> (delivery); indirect investment in real assets — <b>hedge against inflation</b>.</li>
+    <li>Almost all commodities allowed in futures from <b>April 2003</b>; national multi-commodity exchanges, online. Futures = speculating on price direction; "buy"/"sell" = expected direction. Farmer sells futures (corn); cereal maker (Kellogg) buys futures. Speculators provide <b>liquidity</b> and offset before delivery.</li>
+    <li>Advantages: easiest and cheapest way to invest; 3 categories — <b>agricultural</b> (soft), <b>energy</b>, <b>metals</b>.</li>
+  </ul>
+  <h3>10.5 Commodity Swaps; 10.5.1 Types; 10.5.2 Valuing</h3>
+  <ul>
+    <li>Users: <b>producers</b> (fix selling prices — gold, cattle), <b>end-users</b> (fix purchase prices — university electricity, airline jet fuel), <b>speculators</b> (liquidity; inflation hedge; trend opportunities).</li>
+    <li><b>Fixed-floating</b>: like IRS but both indices commodity-based (S&amp;P GSCI, CRB). <b>Commodity-for-interest</b>: like an equity swap — total return on the commodity vs a money market rate ± spread.</li>
+    <li><b>Valuing</b>: a <b>strip of forwards</b>, each priced at inception with zero market value. Peculiarities: cost of hedging; institutional structure; liquidity of the underlying; seasonality; variability of futures bid/offer spread; brokerage; credit risk, capital and admin costs.</li>
+  </ul>
+  <h3>10.6 Hedging with Commodity Derivatives</h3>
+  <ul>
+    <li>Often no exact contract (refined chemical) → OTC price shaded using <b>correlation</b> with a liquid product (crude). Correlation is an <b>un-hedgeable</b> risk for the OTC market maker; his best hope is two-way business (natural hedge). Other swaps (currency, IRS) are in their own chapters.</li>
+  </ul>
+
+  <h3>11. Weather Derivatives</h3>
+  <ul>
+    <li>Underlying = a <b>weather measure</b> (rainfall, temperature, humidity, wind). Primary objective: hedge <b>volume risk</b>, not price risk. First deal <b>1997</b> OTC by <b>Aquila Energy</b>; market jump-started by El Nino winter 1997–98.</li>
+    <li><b>vs insurance</b>: insurance covers extreme, low-probability events; weather derivatives also cover uncertainty in <b>normal conditions</b>. Seller gets premium; pays if buyer suffers loss from adverse weather.</li>
+    <li><b>Pricing issues</b> (cannot be stored): <b>data</b> reliability; <b>forecasting</b> (seasonal, not daily levels); <b>temperature modelling</b> (no perfect, universal model).</li>
+  </ul>
+
+  <h3>12. Electricity Derivatives; 12.1 Forwards; 12.2 Futures; 12.3 Swap</h3>
+  <ul>
+    <li>India: state distribution companies sign long-term <b>PPAs</b> (20–25 years). Spot prices volatile (small market, fuel supply, weather, transmission congestion, RE variation) → hedging needed for generators, buyers and load serving entities. Vanilla forms: <b>forwards, futures, swaps</b>.</li>
+    <li><b>Forwards</b>: obligation to buy/sell fixed electricity at forward price F at time T; custom-tailored. <b>Pay-off = S<sub>T</sub> − F</b>; electricity is a different commodity at different times; S<sub>T</sub> usually the average price over the delivery period.</li>
+    <li><b>Futures</b>: standardised; smaller quantity than forwards; exchange-traded → more transparent; mostly <b>financially settled</b>; lower credit risk and monitoring costs (margins, daily pay-out). Advantages: market consensus, transparency, liquidity, lower costs. Limitation: <b>basis risks</b> from rigid specifications and limited quantities.</li>
+    <li><b>Swap</b>: pay fixed for floating electricity price (or vice versa) for a fixed quantity; short-to-medium-term certainty up to a couple of years; a strip of forwards with identical prices. <b>Locational basis swap</b>: pay/receive difference between a futures price and another location's spot price.</li>
+  </ul>
+
+  <h3>13. Derivative Mishaps and Lessons; 13.1 Orange County</h3>
+  <ul>
+    <li>Warren Buffett: derivatives are "<b>financial weapons of mass destruction</b>".</li>
+    <li><b>Orange County (1994)</b>: Treasurer <b>Robert Citron</b>, no trading background; <b>yield curve play</b> with leverage; $2.8 billion <b>inverse floaters</b>; earned 300–400 bp above peers (1992–93); fund ~$7.5 billion leveraged via repo to ~$20 billion. Fed's six rate rises in 1994 → $515 million margin (Feb–May 1994); collateral $10 billion sold; loss about <b>$1.5 billion (20%)</b>; resigned 3 Dec 1994; bankrupt 6 Dec 1994; 1996 one year jail, fine $1,00,000.</li>
+  </ul>
+  <p class="small"><i>Note (app-written): the SM opens 13.1 (p 9.59) with a loss of "about $2 billion" but later (p 9.60) says Citron admitted a loss of about $1.5 billion (20%). Both are ICAI's figures.</i></p>
+  <h3>13.2 Barings Bank; 13.3 P&amp;G and Gibson Greetings</h3>
+  <ul>
+    <li><b>Barings</b>: <b>Nick Leeson</b>, Nikkei 225 futures arbitrage Singapore vs Osaka → switched to speculation (market and event risk). Ran both floor and <b>back office</b>; hid losses in error account <b>'8888'</b>; 1994 bonus $7,20,000; $354 million margin given unquestioned. Jan 1995: $7 billion notional Nikkei + short JGB futures; <b>Kobe earthquake 17 Jan 1995</b> → loss $827 million ($1.4 billion). 233-year-old bank bankrupt; ING bought it for <b>£1</b> (March 1995). Gave rise to <b>operational risk</b> capital in Basel II.</li>
+    <li><b>Bankers Trust (1994)</b>: sold complex products misrepresented as tailored. <b>P&amp;G</b>: <b>leveraged (ratio / power) swap</b> — profit capped at 0.75% per 6 months, loss unlimited; loss $106 million. <b>Gibson Greetings</b> (1992): ratio and basis swaps — receive 5.5%, pay floating rate squared ÷ 6; loss $3 million (Feb 1994), $16.7 million (Apr 1994). Settled out of court; BT taken over by Deutsche Bank (1999). Rule: don't sell a product the client cannot understand.</li>
+  </ul>
+  <h3>13.4 Lessons from Derivative Mishaps (13.4.1–13.4.6)</h3>
+  <ul>
+    <li><b>Don't buy what you don't understand</b> — value the instrument in-house (Orange County, BT).</li>
+    <li><b>Due diligence before making Treasury a profit centre</b> — don't link treasurer's pay to profit (Citron).</li>
+    <li><b>Specify risk limits</b> — limit position sizes, daily reports even for star traders (Barings).</li>
+    <li><b>Separate front, middle and back offices</b> — firewall, defined roles (Leeson).</li>
+    <li><b>Hedger should not become a speculator</b> — risk limits, risk analysis vs risk appetite.</li>
+    <li><b>Stress test, scenario analysis</b> — VaR followed by scenario analysis; 10–20 years data for Black Swan; simulation (Gibson).</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 09 Derivatives Analysis and Valuation (contd.)</span><span class="tag">SM Ch 09</span></div>
+  <div class="sticky"><p><b>Exam steps — futures price and arbitrage:</b> 1 → pick formula by what is given (simple S + S·r·t − div; compound (1 + r/n)<sup>nt</sup>; continuous Se<sup>rt</sup>, (S − PV div)e<sup>rt</sup>, Se<sup>(r − y)t</sup>) → 2 → compare with quoted futures → 3 → quoted &gt; fair: borrow, buy spot, sell futures; quoted &lt; fair: sell spot, invest, buy futures → 4 → profit = difference at expiry (TYK P2, P4, P6).</p></div>
+  <div class="sticky"><p><b>Exam steps — beta hedge with index futures:</b> 1 → portfolio β = Σ wβ (cash β 0) → 2 → contract value = futures price × lot → 3 → contracts = value × β ÷ contract value (long cash → sell; short cash → buy; net long and short positions) → 4 → change β: P(β − β′) ÷ F → 5 → close-out P/L = change in shares + change in futures (TYK P5, P7–P13).</p></div>
+  <div class="sticky"><p><b>Exam steps — margin account:</b> 1 → initial = µ + 3σ; maintenance = % of initial → 2 → daily MTM = lot × change in closing price → 3 → balance &lt; maintenance → call to restore initial (TYK P14).</p></div>
+  <div class="sticky"><p><b>Exam steps — option pay-offs / call + put combinations:</b> 1 → total premium paid → 2 → at each expiry price, exercise only the leg in the money (call S &gt; X, put S &lt; X) → 3 → net = exercise gain × lot − total premium → 4 → break-evens: call strike + total premium, put strike − total premium (TYK P15, P16, P19, P20).</p></div>
+  <div class="sticky"><p><b>Exam steps — binomial / risk-neutral:</b> 1 → pay-offs at expiry → 2 → u, d, r (as given: compound, simple, e<sup>rt</sup>) → 3 → p = (r − d)/(u − d) → 4 → value each node backwards: [p·C<sub>u</sub> + (1 − p)·C<sub>d</sub>] ÷ r → 5 → hedge ∆ = (C<sub>u</sub> − C<sub>d</sub>)/(S<sub>u</sub> − S<sub>d</sub>) shares per call written (Illus 1, 2, TYK P21, P23, P24).</p></div>
+  <div class="sticky"><p><b>Exam steps — riskless hedge:</b> 1 → ∆ = (C<sub>u</sub> − C<sub>d</sub>)/(S<sub>u</sub> − S<sub>d</sub>) → 2 → end value of ∆ shares − call written (same both states) → 3 → (∆S<sub>0</sub> − C<sub>0</sub>) × r = end value → C<sub>0</sub> → 4 → expected return uses real probabilities (TYK P22).</p></div>
+  <div class="sticky"><p><b>Exam steps — Black-Scholes:</b> 1 → adjust S for PV of dividend (D e<sup>−rt</sup>) → 2 → log<sub>e</sub>(S/X), (r ± v²/2)t, v√t → d<sub>1</sub>, d<sub>2</sub> = d<sub>1</sub> − v√t → 3 → N() from table type given (one-tail: 1 − area for +z, area for −z), interpolate → 4 → C = S·N(d<sub>1</sub>) − X e<sup>−rt</sup> N(d<sub>2</sub>) → 5 → put = −S + C + PV(X) → 6 → compare with market premium; state N(d<sub>1</sub>) = hedge ratio, N(d<sub>2</sub>) = probability of exercise (Illus 3, TYK P25).</p></div>
+  <div class="sticky"><p><b>Exam steps — real options:</b> 1 → identify type (growth = European call; abandonment = American put; timing = American call) → 2 → up/down values and returns → 3 → p from risk-free rate = p × up return + (1 − p) × down return → 4 → option pay-off in each state → 5 → PV of expected pay-off at r<sub>f</sub>; patent → B-S with e<sup>−Dt</sup> (Illus 4, 5, 6).</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

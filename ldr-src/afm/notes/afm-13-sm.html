@@ -1,0 +1,376 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 13 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 13 Business Valuation</span><span class="tag">SM Ch 13</span></div>
+  <h2 class="brk"><span class="n">13</span>Ch 13 — Business Valuation</h2>
+  <div class="sub">Asked in last 3 papers: Sep 2025 Q1(a) 6m (ke by CAPM, EPS, equity value from EBITDA multiple, EV = market cap + debt − cash); Jan 2026 Q4(b) 4m (EVA with CAPM ke, EVA dividend per share); May 2026 — nil.</div>
+
+  <h3>1. Conceptual Framework of Valuation</h3>
+  <ul>
+    <li>Valuation = assessing the <b>'true worth'</b> of an enterprise; both science and art; part of strategic financial management. Used here mainly for <b>M&amp;A</b>.</li>
+    <li>Need for valuation: (a) information for <b>internal stakeholders</b>; (b) <b>comparison</b> with similar enterprises (management efficiency); (c) future <b>public listing</b>; (d) <b>strategic planning</b> (value driver, deployment of surplus cash); (e) <b>ball-park price</b> for acquisition.</li>
+  </ul>
+
+  <h3>2. Important Terms (2.1–2.5)</h3>
+  <table class="tight">
+    <tr><th>Term</th><th>Meaning / logic</th><th>SM figures</th></tr>
+    <tr><td>2.1 PV of cash flows</td><td>Time value of money: ₹ received later is worth less today.</td><td>₹ 1,000 a year hence at 10% ≈ <b>₹ 909</b></td></tr>
+    <tr><td>2.2 IRR</td><td>Discount rate at which NPV of all cash flows = 0 (PV of inflows = investment). Higher IRR → more likely selected.</td><td>—</td></tr>
+    <tr><td>2.3 ROI</td><td>ROI = Return ÷ Investment. With additions during the year, use <b>average investment</b> (recognises timing). <b>Historical</b> ratio → only course correction / channel more money to the better business line.</td><td>(1400 − 1000)/1000 = <b>40%</b>. Opening 1000 + 200 added, closing 2000: return 800 ÷ avg (1000+1200)/2 = 1100 → <b>72%</b></td></tr>
+    <tr><td>2.4 Perpetual growth (Gordon)</td><td>Assumes perpetual growth in dividend. Not widely used: (i) more parameters to factor in, (ii) dividends rarely grow at a steady rate. "Darling of academicians" (constant-rate model).</td><td>—</td></tr>
+    <tr><td>2.5 Terminal Value (TV)</td><td>Value at exit point = <b>'Horizon Value'</b>; mostly by Gordon perpetual growth: TV = (CF at Year 3 × growth rate) ÷ (WACC − growth rate), SM computes it as (517.29 × 1.03)/(0.08 − 0.03), i.e. CF × (1 + growth rate).</td><td>see 3.3</td></tr>
+  </table>
+
+  <h3>3. Approaches / Methods of Valuation</h3>
+  <ul>
+    <li>Unlisted target → price = <b>negotiated</b>. Listed target → market cap is a guide but not the worth (depends on <b>market efficiency</b>; often only a small portion of shares is quoted).</li>
+    <li>Three broad approaches: (a) <b>Asset based</b>, (b) <b>Earning based</b>, (c) <b>Cash flow based</b>; plus other methods.</li>
+  </ul>
+
+  <h3>3.1 Asset Based Approach (3.1.1–3.1.3)</h3>
+  <ul>
+    <li>Value of shares = <b>net assets acquired</b>; based on income-generating assets, not income. <b>Least important for IT companies</b> (assets are IPR and human resources).</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Method</th><th>Basis / formula</th><th>Plus / minus</th></tr>
+    <tr><td>3.1.1 <b>Net Asset Value</b> (Book Value)</td><td>Net assets = Fixed Assets + Net Current Assets − Long Term Debt (historical cost)</td><td>Simplest, data easily available; but Balance Sheet is not a valuation device → gives the <b>lower limit</b>; ignores current values, intangibles (brand, IPR).</td></tr>
+    <tr><td>3.1.2 <b>Net Realizable Value</b> (Liquidation / Adjusted Book Value)</td><td>Realisable value of all assets − liquidation expenses − liabilities (liquidation expenses may be ignored if acquired as going concern)</td><td>Off-market purchase → buyer may offer lowest price; not popular (total break-up); useful where acquirer sells one part and integrates the rest.</td></tr>
+    <tr><td>3.1.3 <b>Replaceable Value</b></td><td>Cost of an equivalent group of assets and liabilities in the open market</td><td>Better than book value; slightly <b>higher than NRV</b> (quick disposal not encouraged) → many treat it as the <b>maximum price</b> an acquirer would pay; cannot value staff loyalty.</td></tr>
+  </table>
+  <p class="small"><i>Note (app-written): the SM prints the 3.1.1 left-hand side as "Net Fixed Asset"; the result is the net asset (book) value of the shares.</i></p>
+  <div class="ex"><p><b>SM example (NRV):</b> Liabilities 20,000 (both bases). Non-current: PPE 50,000 → 40,000, Licences 10,000 → 30,000 (60,000 → 70,000). Current: Debtors 50,000 → 45,000, Cash 10,000 (60,000 → 55,000). Net assets book <b>1,00,000</b> vs NRV <b>1,05,000</b>; 5,000 shares → <b>₹ 21</b> per share.</p></div>
+  <ul>
+    <li><b>Conclusion:</b> depicts net worth fairly using 'going concern'; major drawback — ignores ability to generate <b>future revenues</b> and market dynamics.</li>
+  </ul>
+
+  <h3>3.2 Income Based Approach (3.2.1–3.2.2)</h3>
+  <ul>
+    <li>Uses <b>earning potential</b>; suits an acquirer who will <b>continue</b> the target's business. Additional earnings due to acquisition (synergy) are included. Two versions: <b>PE ratio / earning yield</b> and <b>capitalisation rate</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM use</th></tr>
+    <tr><td>3.2.1 Price per share = <b>EPS × PE Ratio</b></td><td>For listed cos (PE available); takes in expected growth and market expectations. Unlisted → PE of equivalent quoted co / industry. Gives the <b>minimum acceptable price</b> to target's shareholders.</td><td>TYK P2, P12</td></tr>
+    <tr><td>Required earning yield = EPS ÷ Share price = 1 ÷ PE</td><td>Approximates the capitalisation rate.</td><td>—</td></tr>
+    <tr><td>3.2.2 Capitalised Earning Value = Expected Annual Maintainable Profit ÷ Capitalisation rate</td><td>Maintainable profit = <b>weighted average</b> of past profits adjusted for synergy / economies of scale.</td><td>TYK P2, P4; Illus 2</td></tr>
+  </table>
+  <ul>
+    <li>PE method steps: (i) choose PE of <b>equivalent quoted company</b>; (ii) adjust it <b>downward</b> for non-listing risk; (iii) find <b>future maintainable EPS</b>; (iv) EPS × adjusted PE.</li>
+    <li>Capitalisation: <b>forward looking</b> (advantage); estimating future profit and treatment of <b>extraordinary / exceptional</b> items (disadvantages).</li>
+  </ul>
+  <div class="ex"><p><b>TYK P2 (Eagle Ltd):</b> PAT 77 ÷ (1 − 0.30) = 110 − extraordinary income 8 + extraordinary loss 10 = 112; new product 70 − 20 − 12 − 10 = 28 → 140; tax 42 → maintainable PAT <b>98</b>; ÷ 0.14 → value of business <b>₹ 700 lakhs</b>. Pref. dividend 13% × ₹ 1 cr = 13 → equity earnings ₹ 85,00,000 ÷ 50,00,000 = EPS <b>₹ 1.70</b> × PE 10 = <b>₹ 17</b>.</p>
+  <p><b>TYK P4 (H Ltd / B Ltd):</b> NAV: H (1,300 − contingent liability 300) ÷ 3.50 cr = <b>₹ 285.71</b>; B 31.50 ÷ 0.65 = <b>₹ 48.46</b>. Earnings capitalisation at 8%: H 300/0.08 ÷ 3.50 = <b>₹ 1,071.43</b>; B 10/0.08 ÷ 0.65 = <b>₹ 192.31</b>. Fair value (weights 1 : 3): H <b>₹ 875</b>, B <b>₹ 156.3475</b> → exchange ratio <b>0.1787</b> H share per B share (contingent liability assumed to materialise in full).</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 13 Business Valuation (contd.)</span><span class="tag">SM Ch 13</span></div>
+  <h3>3.3 Cash Flow Based Approach (DCF)</h3>
+  <ul>
+    <li>Takes the <b>free cash</b> available in future periods and discounts it at a rate matching the flow's risk; overcomes over-reliance on <b>historical data</b>. PV &gt; current cost of investment → valuation attractive.</li>
+    <li>Five steps: (a) arrive at <b>Free Cash Flows</b>; (b) <b>forecast</b> future cash flows; (c) <b>discount rate</b> from cost of capital; (d) <b>Terminal Value</b>; (e) PV of FCFs and TV, and interpret.</li>
+    <li>Limitation: result <b>gravitates heavily on WACC and TV</b>; TV is often a significant portion → growth rate and assumptions must be validated.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM use</th></tr>
+    <tr><td>FCF = EAT − one-time incomes + one-time expenses + depreciation</td><td>One-time events eliminated; depreciation is a book entry.</td><td>SM example</td></tr>
+    <tr><td>Adjusted FCF = FCF − change in working capital − investment in fixed assets</td><td>Reinvestment needed to earn the flow.</td><td>SM example</td></tr>
+    <tr><td>Free Cash Flow (FCF) = EAT − (Capital Expenditure − Depreciation) − ∆ Working Capital</td><td>EAT = EBIT after tax (no interest in FCFF); net capex and extra working capital are cash out.</td><td>TYK P3, P7, P8</td></tr>
+    <tr><td>Terminal Value = FCF of terminal year ÷ (Cost of capital − growth rate); PV = TV × PVF of last explicit year</td><td>App-written generalisation of the TYK P7/P8 working: e.g. 375.32/(0.12 − 0.10); cost of capital of the stable phase.</td><td>TYK P7, P8</td></tr>
+    <tr><td>V<sub>0</sub> = FCFF<sub>1</sub> ÷ (K<sub>c</sub> − g<sub>n</sub>)</td><td>FCFF<sub>1</sub> = next year's FCFF; K<sub>c</sub> = cost of capital; g<sub>n</sub> = growth forever.</td><td>TYK P6</td></tr>
+  </table>
+  <div class="ex"><p><b>SM example (₹ '000):</b> EAT 600 − 200 + 100 + 100 = FCF <b>600</b>; growing 5%: 600, 630, 661.50; less ∆WC (50, 30, −10) and FA (50, 50, 20) → adjusted FCF <b>500, 550, 651.50</b>; WACC 8%, PVF 0.926, 0.857, 0.794 → PV <b>463.00, 471.35, 517.29</b>; TV at 3%: (517.29 × 1.03)/(0.08 − 0.03) = <b>10,656.17</b>; total DCF = <b>12,107.81</b> (≈ 12,108 thousand).</p></div>
+  <p class="small"><i>Note (app-written): the SM's TV is built on the already discounted year-3 flow (517.29), so 10,656.17 is already a present value (= 651.50 × 1.03 ÷ 0.05 × 0.794); that is why it is added without further discounting.</i></p>
+  <div class="ex"><p><b>TYK P1 (ABC / XYZ):</b> market value 400 × 1.5 cr = <b>₹ 600 cr</b>; DCF 250 × 0.893 + 300 × 0.797 + 400 × 0.712 = <b>₹ 747.15 cr</b> (₹ 498.10/share) → range: minimum ₹ 400 (600 cr), maximum <b>₹ 498.10</b> (747.15 cr).</p>
+  <p><b>TYK P3 (ABC Co, new strategy):</b> sales +20% for 3 yrs: 24,000 / 28,800 / 34,560 / 34,560; FA 40%, CA 20% of sales; PAT 1,680 / 2,016 / 2,419.20 / 2,419.20; dep 10% of opening FA 800 / 960 / 1,152 / 1,382 → FCFF <b>(720), (864), (1,036.80), 2,419.20</b>; PV at 15% = <b>−1,961.79</b>; residual 2,419.20/0.15 = 16,128 ÷ 1.521 = <b>10,603.55</b>; value 8,641.76 − pre-strategy 1,400/0.15 = 9,333.33 → <b>−691.57</b> → not viable.</p>
+  <p><b>TYK P5 (AB / XY Ltd):</b> AB price (570 + 430)/2 = <b>₹ 500</b>. DCF at 8%: 105 × 0.93 + 120 × 0.86 + 125 × 0.79 + 120 × 0.74 + (100 + TV 200) × 0.68 = <b>₹ 592.40 lakhs</b>; NAV (150 + 200 − loans 100) = <b>250</b>; average <b>421.20</b> → 4,21,20,000/500 = <b>84,240</b> shares; fully-paid equivalent 20 + 5 = 25 lakh → fully paid 84,240 × 20/25 = <b>67,392</b>, partly paid <b>16,848</b>.</p>
+  <p><b>TYK P6 (Hansel):</b> 1,800 = 54/(K<sub>c</sub> − 0.09) → K<sub>c</sub> 12%; 20%(1 − X) + 10%X = 12% → book debt weight 80%. Market: equity 20 × 3 = 60, debt 80 × 0.9 = 72 → K<sub>c</sub> = 20%(60/132) + 10%(72/132) = <b>14.5455%</b>; value = 54/(0.1454 − 0.09) = <b>₹ 974.73 lakhs</b>.</p>
+  <p><b>TYK P7 (XYZ Ltd, two-stage):</b> high growth ke 10% + 1.15 × 6% = 16.9%, kd 13%(0.7) = 9.1% → WACC <b>13%</b>; stable ke 9% + 1 × 5% = 14%, kd 9% → 0.6 × 14 + 0.4 × 9 = <b>12%</b>. FCF = EAT − (capex − dep, growing 20% from 80) − ∆WC (25% of revenue increase): <b>56.00, 67.20, 80.64, 96.77</b>; terminal year 479.00 − 103.68 = <b>375.32</b>. PV @13% = <b>217.38</b>; TV 375.32/(0.12 − 0.10) = <b>18,766</b> × 0.613 = <b>11,503.56</b> → firm <b>₹ 11,720.94 cr</b>.</p>
+  <p><b>TYK P8 (WXY Ltd):</b> revenue 9,000 / 10,800 / 12,960 / terminal 13,996.80; EBIT 2,700 / 3,240 / 3,888 / 4,199.04; EAT 1,890 / 2,268 / 2,721.60 / 2,939.33; capex − dep (150 × 1.15<sup>n</sup>) 172.50 / 198.38 / 228.13 / nil; ∆WC 375 / 450 / 540 / 259.20 → FCFF <b>1,342.50, 1,619.62, 1,953.47</b>, terminal <b>2,680.13</b>. PV @15% = <b>3,676.44</b>; TV 2,680.13/(0.15 − 0.08) = 38,287.57 × 0.6575 = <b>25,174.08</b> → firm <b>₹ 28,850.52 cr</b>.</p></div>
+  <p class="small"><i>Note (app-written): TYK P5 prints "(120x0.74)x(300x0.68)"; the last "x" should be "+" (592.40 is the sum; 300 = year-5 earnings 100 + TV 200), SM p.58. TYK P6: ICAI rounds K<sub>c</sub> to 0.1454 in the denominator; with 14.5455% unrounded the value is ≈ ₹ 973.77 lakhs (ICAI's ₹ 974.73 kept), SM p.60.</i></p>
+
+  <h3>4. Measuring Cost of Equity — 4.1 CAPM, 4.2 APT <span class="pyq">Asked: Sep 2025 Q1(a) 6m</span></h3>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM use</th></tr>
+    <tr><td>4.1 R = rf + β (rm − rf)</td><td>R = expected rate of return (cost of equity); rf = risk free rate of return; β = Beta value of the stock; rm = market rate of return. Returns are a reward for assuming risk; two buckets: risk-free + market-relative risk.</td><td>Illus 1, 2; TYK P7, P10, P16</td></tr>
+    <tr><td>4.2 Rf + β1(RP1) + β2(RP2) + ….βj(RPn)</td><td>Each macro-economic factor (e.g. interest rate, sector growth) has its own beta; RP = risk premium of the factor. E(R) = <b>linear function</b> of factors.</td><td>—</td></tr>
+  </table>
+  <ul>
+    <li>CAPM's weakness: <b>oversimplification of risk</b>. APT (Stephen Ross, 1970s) uses <b>multiple factors</b>; APT itself does not name the factors — analysts must develop them for their economy.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 13 Business Valuation (contd.)</span><span class="tag">SM Ch 13</span></div>
+  <h3>4.3 Estimating Beta and Valuation of Unlisted Companies</h3>
+  <ul>
+    <li>Biggest challenge for a private firm: <b>cost of capital → beta</b>. Listed peers are leveraged; private firms have nil/insignificant debt → use <b>unlevered beta</b>.</li>
+    <li>Same problem for a listed company entering a <b>new line of business</b>: do not use own WACC; use <b>asset (ungeared) beta</b> re-geared to own gearing. Asset beta = only <b>business (systematic) risk</b>, no financial risk.</li>
+    <li>Equity beta is always &gt; asset beta; debt-free → equal. Debt beta assumed <b>zero</b> (bond returns not linked to market volatility).</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th></tr>
+    <tr><td>β<sub>a</sub> = β<sub>e</sub> × E/[E + D(1 − t)] + β<sub>d</sub> × D(1 − t)/[E + D(1 − t)]</td><td>β<sub>a</sub> asset (ungeared) beta; β<sub>e</sub> equity (geared) beta; β<sub>d</sub> debt beta; E equity; D debt; t tax rate. Weighted like WACC.</td></tr>
+    <tr><td>β<sub>d</sub> = 0: β<sub>a</sub> = β<sub>e</sub> × E/[E + D(1 − t)]</td><td>De-gear a proxy's beta.</td></tr>
+    <tr><td>Re-gear: β<sub>e</sub> = β<sub>a</sub> × [E + D(1 − t)]/E</td><td>Uses the <b>appraising company's</b> own capital structure. App-written simplification: = β<sub>a</sub>[1 + (1 − t)D/E], the form used in Illus 1.</td></tr>
+  </table>
+  <ul>
+    <li>Steps: (1) identify <b>pure-play / proxy</b> firms and their equity betas; (2) <b>de-gear</b> to asset beta; (3) one proxy → use it; more → <b>average</b> (or the most appropriate); (4) <b>re-gear</b> at own D/E; (5) put β<sub>e</sub> in <b>CAPM</b> → required return / value.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 1 (X Pvt Ltd):</b> levered β = 1.8[1 + (1 − 0.3) × 40/60] = <b>2.64</b>. Adjusted EBITDA 90 − extraordinary gain 10 − pending write-off 20 = <b>60</b> × 5 = EV <b>300</b>. ke = 5% + 2.64(11% − 5%) = <b>20.84%</b>; WACC = 20.84 × 60/100 + 12 × (1 − 0.3) × 40/100 = <b>15.864%</b>. FCF 100, 120, 150 × DF 0.863, 0.745, 0.643 = 86.30 + 89.40 + 96.45 → value of the firm <b>272.15</b>.</p></div>
+
+  <h3>5. Relative Valuation <span class="pyq">Asked: Sep 2025 Q1(a) 6m</span></h3>
+  <ul>
+    <li>Asset, earnings and cash-flow approaches give <b>intrinsic value</b>. Relative valuation gives a <b>'relative' value</b> by <b>comparative analysis with peers</b> (similar asset and risk dispositions); increasingly used <b>with</b> the intrinsic approaches to validate them. Also called <b>'valuation by multiples'</b>. (TYK T2 → this para.)</li>
+    <li>Steps: (1) find the <b>drivers</b> for the multiple; (2) determine results through <b>financial ratios</b>; (3) find <b>comparable firms</b> and compare; (4) <b>iterate</b> to smoothen deviations.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Multiple</th><th>Best suited (SM)</th></tr>
+    <tr><td>EV/EBITDA</td><td>Popular; gives critical inputs.</td></tr>
+    <tr><td>EV/Invested Capital</td><td><b>Capital-intensive</b> enterprises; misfit for asset-light firms or those with significant investment properties.</td></tr>
+    <tr><td>EV/Sales</td><td><b>Cash-rich</b>, huge order book, organic growth through own capital.</td></tr>
+    <tr><td>P/E (equity based)</td><td>"Celebrated status"; may not reflect forex risk of an exporter (Brexit example).</td></tr>
+    <tr><td>PEG = PE Ratio ÷ Growth Rate</td><td><b>High growth or sunrise</b> industries.</td></tr>
+  </table>
+  <ul>
+    <li><b>Step 2 (ratio):</b> a factor-based approach helps choose the right ratio. <b>Step 3 (comparables)</b> — most challenging: same size, capital structure, head count can still differ in revenue model (X: <b>FTE pricing</b> vs Y: <b>Unit Transfer Pricing</b>) → "take benchmarks with a pinch of salt". Niche market → look at similar companies in other industries; or take closely relevant firms and run a <b>regression</b> (last resort).</li>
+    <li><b>Assumptions:</b> (i) market is <b>efficient</b>; (ii) function between fundamentals and multiples is <b>linear</b>; (iii) comparables similar in <b>structure, risk and growth</b>.</li>
+    <li>EV two ways: (a) take entity value and <b>adjust for debt</b>; (b) <b>balance sheet</b> approach.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM figures</th></tr>
+    <tr><td>EV = EBITDA × EBITDA multiple</td><td>Value of the whole business (debt + equity holders).</td><td>Illus 1, 2</td></tr>
+    <tr><td>Equity value = EV − Debt + Surplus funds (cash)</td><td>Debt belongs to lenders; surplus cash belongs to shareholders.</td><td>Illus 2: 3,000 − 300 + 500 = 3,200</td></tr>
+    <tr><td>EV = Market capitalisation + Debt − Cash &amp; cash equivalents</td><td>Market cap = shares × CMP (balance sheet approach).</td><td>Illus 3: 8,40,000 + 2,00,000 − 5,00,000</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 2 (A Ltd):</b> ke = 4.5% + 0.9(12% − 4.5%) = <b>11.25%</b> (capitalisation rate). EBITDA = GP 1,000 − indirect exp. 400 = <b>600</b> (₹ '000); earning value 600/0.1125 = 5,333.33 ÷ 1,00,000 shares = <b>₹ 53.33</b> per share. (b) 600 × 5 = 3,000 − debt 300 + surplus 500 = equity value <b>₹ 3,200 thousand</b>.</p>
+  <p><b>Illus 3 (H K Ltd):</b> 70,000 shares × CMP ₹ 12 = market cap ₹ 8,40,000 + long-term debt ₹ 2,00,000 − cash ₹ 5,00,000 = EV <b>₹ 5,40,000</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 13 Business Valuation (contd.)</span><span class="tag">SM Ch 13</span></div>
+  <h3>6. Other Approaches — 6.1 Contemporary Approaches to Valuation</h3>
+  <ul>
+    <li>Technology-driven / conglomerate businesses → new terms: <b>PEs, Exit Multiples, LBOs, Brand Value</b>; some methods born of industry peculiarities.</li>
+    <li>Internet company (near-zero fixed assets, high brand recall) → <b>Price per Page visited</b>; online play store → <b>Price per Subscriber</b>. The discerning still check cash to sales and apply DCF.</li>
+    <li><b>Goodwill-based:</b> asset-based value first, then goodwill separately via a multiple of annual sales or footfall (retail giant buying a mom-pop store).</li>
+    <li><b>PER</b> = Price ÷ EPS (market prices the stock on fundamentals). EPS ₹ 40, avg price ₹ 50 → <b>1.25</b>. PER is relative; compare within the sector for a median PER.</li>
+    <li><b>LBO:</b> Private Equity firms buy enterprises "in the rough" with debt and equity (typically <b>70 : 30</b> debt to equity), sell in 3–5 years (spin-off control or outright sale). Prime casualty: future can't be predicted — a cyclical slowdown leaves the buyer with huge loan and interest.</li>
+  </ul>
+  <div class="ex"><p><b>SM example (LBO, ₹ lacs):</b> EBITDA 100; consideration 250 (100% premium over BV + goodwill 50); bank 200, VC 50. EBIDTA Y0–Y3 100, 120, 144, 178; interest 36, 30, 24, 18 (debt repaid linearly over 6 yrs); tax 30% → EBDAT 44.80, 63, 84, <b>112</b>. Exit 7 × 112 = <b>784</b> − debt 100 = equity value <b>684</b>.</p></div>
+  <p class="small"><i>Note (app-written): Y3 EBIDTA is printed 178.00 though 20% growth on 144 gives 172.80; the rest of the column (EBDTA 160, tax 48, EBDAT 112) follows 178 (SM p.21). ICAI's figures kept.</i></p>
+
+  <h3>6.2 Chop-Shop Method (Break-up value)</h3>
+  <ul>
+    <li>Identifies <b>multi-industry</b> companies that are <b>undervalued</b> and worth more separated; buy assets <b>below replacement value</b>.</li>
+    <li>Steps: (1) identify segments and <b>average capitalisation ratios</b> of firms in those industries; (2) compute a <b>"theoretical" market value</b> from each ratio; (3) <b>average</b> them = chop-shop value.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 4 (Cornett GMBH, market €4 million):</b> Cap/Sales: 0.75 × 1.5 mn + 1.10 × 0.8 mn + 1.00 × 2.0 mn = <b>€4,005,000</b>. Cap/Assets: 0.60 × 750,000 + 0.90 × 700,000 + 0.60 × 3,000,000 = <b>€2,880,000</b>. Cap/Operating income: 10 × 100,000 + 7 × 150,000 + 6 × 600,000 = <b>€5,650,000</b>. Average = 4,178,333.33 → <b>€4,178,000</b>.</p></div>
+  <p class="small"><i>Note (app-written): the 2nd and 3rd solution tables are headed "Capital-to-Sales / Segment Sales" but use capitalisation/assets with segment assets and capitalisation/operating income with segment income (SM p.22).</i></p>
+
+  <h3>6.3 Economic Value Added (EVA) <span class="pyq">Asked: Jan 2026 Q4(b) 4m</span></h3>
+  <ul>
+    <li>Holistic measure of financial performance and economic contribution. A company creates value only if <b>returns exceed its cost of capital</b>. EVA <b>separates operations from financing</b>. Negative EVA → not generating value; positive → producing value.</li>
+    <li><b>Why EVA:</b> ROI, ROCE, asset/earnings/FCF methods are "number-crunching"; EVA makes <b>management accountable</b> for decisions (e.g. choosing only the earlier break-even project although both had positive IRR) and shows whether returns <b>cover the cost of capital</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM use</th></tr>
+    <tr><td><b>EVA = NOPAT − (Invested Capital × WACC)</b> = NOPAT − Capital Charge</td><td>Excess of returns over the weighted average cost of invested capital.</td><td>All EVA items</td></tr>
+    <tr><td>NOPAT = EBIT − tax (= EBIT(1 − t)) + non-cash expenses</td><td>Operating cash return after tax; depreciation left untouched (operating expense); add back book entries such as <b>provision for bad and doubtful debts</b>.</td><td>Illus 5</td></tr>
+    <tr><td>Invested Capital = Total assets − non-interest-bearing current liabilities (creditors, billing in advance) + non-cash adjustments</td><td>Also = <b>equity + long-term debt</b>, generally at the <b>start of the year</b>. Adjust non-cash items in both NOPAT and capital.</td><td>Illus 5, TYK P14</td></tr>
+    <tr><td>Capital charge = Invested Capital × WACC; WACC (ko) = ke × E/(E+D) + kd × D/(E+D), kd post-tax = rate × (1 − t)</td><td>Hurdle the operations must clear.</td><td>TYK P9–P16</td></tr>
+    <tr><td>Taxable income = Net income ÷ (1 − t); EBIT = Taxable income + Interest</td><td>Back out operating income from PAT (used in TYK answers).</td><td>TYK P10, P11, P13</td></tr>
+    <tr><td>Financial leverage = PBIT ÷ PBT = PBIT ÷ (PBIT − Interest)</td><td>Gives PBIT when only leverage and interest are known.</td><td>TYK P9</td></tr>
+    <tr><td>EVA dividend per share = EVA ÷ No. of shares</td><td>Maximum DPS before the value of the entity starts declining.</td><td>TYK P11, P13</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 5 (A Ltd, ₹ lac):</b> NOPAT = EBIT 410 − tax 123 + bad-debt provision 20 = <b>307</b>. Invested capital = 1,300 − 400 = 900 + 20 = <b>920</b> (current liabilities include 100 tax liability). WACC = 800/900 × 8.45% + 100/900 × 12%(1 − 0.30) = <b>8.44%</b>. Capital charge 920 × 8.44% = <b>77.65</b> → EVA = 307 − 77.65 = <b>229.35</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 13 Business Valuation (contd.)</span><span class="tag">SM Ch 13</span></div>
+  <div class="ex"><p><b>TYK P9 (Jatayu):</b> interest 10% × 400 = 40; 1.5 = PBIT/(PBIT − 40) → PBIT <b>₹ 120 lakhs</b>; NOPAT 120 × 0.7 = <b>84</b>; WACC = 14% × 300/700 + 7% × 400/700 = <b>10%</b>; EVA = 84 − 0.10 × 700 = <b>₹ 14 lakhs</b>.</p>
+  <p><b>TYK P10 (RST):</b> ke = 8.5% + 1.36 × 9% = <b>20.74%</b>; kd = 11% × 0.7 = 7.70%; WACC = 20.74 × 125/165 + 7.70 × 40/165 = 15.71 + 1.87 = <b>17.58%</b>. Taxable 25,00,000/0.7 = 35,71,429 + interest 4,40,000 = EBIT <b>40,11,429</b>; EVA = 28,08,000 − 29,00,700 = <b>−₹ 92,700</b>.</p>
+  <p><b>TYK P11 (Tender):</b> 15 lac/0.7 = 21,42,857 + interest 10,00,000 = operating income <b>₹ 31,42,857</b>; EVA = 22,00,000 − 13% × 95,00,000 (12,35,000) = <b>₹ 9,65,000</b>; ÷ 6,00,000 shares = <b>₹ 1.6083</b> per share.</p>
+  <p><b>TYK P12 (Orange / Grape / Apple):</b> kd post-tax 10.40% / 8.45% / 9.75%; WACC <b>13.52% / 15.225% / 17.95%</b>; EVA = 25,000 × 0.65 − WACC × 1,00,000 = <b>2,730 / 1,025 / −1,700</b> → <b>Orange</b> best (highest EVA, lowest WACC). Interest 12,800 / 6,500 / 3,000 → NI 7,930 / 12,025 / 14,300 → EPS 1.30 / 1.45 / 1.43 × PE 11 = <b>₹ 14.30 / 15.95 / 15.73</b>; market cap <b>87,230 / 1,32,385 / 1,57,300</b>. PE should be adjusted for different financial risk.</p>
+  <p><b>TYK P13 (Delta):</b> 15,00,000/0.6 = 25,00,000 + interest 15,00,000 = EBIT <b>₹ 40,00,000</b>; EVA = 24,00,000 − 0.126 × 1,00,00,000 = <b>₹ 11,40,000</b>; ÷ 2,50,000 = <b>₹ 4.56</b>/share. No dividend → value expected to <b>increase</b> (higher growth, higher EBIT).</p>
+  <p><b>TYK P14 (XYZ Inc, $ mn):</b> NOPAT 180 − 63 = 117 − 12% × capital employed 605 (100 + 325 + 180) = 72.60 → EVA <b>44.40</b>. MVA = market value of equity 10 mn × $50 = 500 − equity fund 425 = <b>75</b>.</p>
+  <p><b>TYK P15 (Herbal Gyan):</b> investment = WC 20 + PPE 80 + patent (offer value) 40 = 140; EVA = 12 − 0.15 × 140 = <b>−₹ 9 lakh</b>.</p>
+  <p><b>TYK P16 (Constant Engineering):</b> β = 1 (moves with market) → ke = 10% + 1(12% − 10%) = 12%; investment = NW 200 + LTD 400 + patent 100 = 700; WACC = 12 × 300/700 + 10 × 400/700 = 5.14% + 5.71% = <b>10.85%</b>; EVA = 84 − 10.85% × 700 = <b>₹ 8.05 crore</b>.</p></div>
+  <p class="small"><i>Note (app-written): TYK P15–P16 include the unrecorded patent at market/offer value in invested capital. In TYK P16 ICAI takes cost of debt = 10% (the government bond rate) with no tax adjustment, as no debt rate or tax rate is given (SM p.67).</i></p>
+
+  <h3>6.4 Market Value Added (MVA)</h3>
+  <ul>
+    <li><b>MVA = Current Market Value of the firm − Invested Capital.</b> SM: MV 1,000 − invested capital 920 (Illus 5) = <b>80</b>. TYK P14 applies it on equity: market cap − equity funds.</li>
+    <li>Resolves some EVA issues (ignoring <b>value drivers, book value</b>). Gives <b>no basis of share valuation</b>, but gauges performance efficiency from a <b>market capitalisation</b> view — market discounts management's efforts fairly.</li>
+    <li>Higher MVA → "darlings of the share market" → stock becomes 'pricey'; EVA may then have a slightly <b>negative correlation</b> with MVA — a <b>short-term</b> phenomenon (gap closed by investors), e.g. a stock going <b>ex-dividend</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Point (TYK T1)</th><th>EVA</th><th>MVA</th></tr>
+    <tr><td>Formula</td><td>NOPAT − (Invested Capital × WACC)</td><td>Current market value of firm − Invested Capital</td></tr>
+    <tr><td>Nature of value added</td><td><b>Derived</b> value added, for the more discerning investor</td><td><b>True value added perceived by the market</b></td></tr>
+    <tr><td>Main objective / view</td><td><b>Management efficiency</b> in generating returns above the hurdle rate of invested capital</td><td>Performance efficiency from a <b>market capitalisation</b> point of view; market's view of <b>future value generation</b></td></tr>
+    <tr><td>Basis</td><td>Book-based NOPAT and invested capital (historical)</td><td>Market value; attempts to resolve EVA's ignoring of value drivers and book value</td></tr>
+    <tr><td>Share valuation</td><td>Used as a valuation and performance technique</td><td>Does <b>not</b> itself give a basis of share valuation</td></tr>
+    <tr><td>Correlation</td><td colspan="2">May be slightly negative in the short term (high-MVA stocks become pricey; ex-dividend); gap closes over time.</td></tr>
+  </table>
+
+  <h3>6.5 Shareholder Value Analysis (SVA)</h3>
+  <ul>
+    <li>Why: NOPAT is <b>historical</b>, ignores future earnings, cash flows and <b>future investment opportunities</b>. SVA adds <b>value drivers</b>: earnings potential (sales), investment opportunities, cost of incremental capital.</li>
+    <li>Steps: (a) FCFs from <b>value drivers</b>; (b) discount at <b>WACC</b>; (c) add <b>terminal value</b>; (d) add current market value of <b>non-core assets / marketable investments</b>; (e) deduct <b>debt</b> → value of equity.</li>
+  </ul>
+  <div class="ex"><p><b>SM case ($ mn):</b> EBIT +5%: 100, 105, 110.25, 115.76; interest 5, 6, 7, 8; tax 33% → EAT 63.65, 66.33, 69.18, 72.20; + dep 5, 5, 6, 7 + write-off 1 → OCF <b>69.65, 71.33, 75.18, 79.20</b>; − capex (—, 12, 6, 9) − ∆NWC (5, 5, 6, 7) → FCF <b>64.65, 54.33, 63.18, 63.20</b>; PVF 12%: 0.89, 0.80, 0.71, 0.64 → PV 57.54, 43.46, 44.86, 40.45; TV = 40.45 × 8.33 (1 ÷ 0.12) = <b>336.95</b>; total <b>482.81</b> + investment property 35 − debt 19 = equity <b>498.81</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 13 Business Valuation (contd.)</span><span class="tag">SM Ch 13</span></div>
+  <h3>7. Arriving at Fair Value</h3>
+  <ul>
+    <li>Acquirer wants the <b>fair price — no less no more</b>. CA: <b>arm's length</b>; financial analyst: <b>PV in cash terms</b>; speculator: <b>arbitrage</b> among similar entities with dissimilar values. In booms (dot com) valuations defy fair value.</li>
+    <li>No single correct method → determine a <b>range</b>: <b>minimum acceptable by seller</b> to <b>maximum payable by buyer</b>; final deal by negotiation (TYK P1 range).</li>
+    <li>Exam approach: (i) unless specified, value by <b>as many methods</b> as data allow; (ii) <b>comment</b> on each; (iii) supplement the conclusion with any additional information.</li>
+  </ul>
+
+  <h3>8. Going Concern and Non-Going Concern Valuation</h3>
+  <ul>
+    <li>Going concern: no intention or need to liquidate or curtail operations materially; otherwise a different basis, disclosed. Asset valuation depends on it (historical cost).</li>
+    <li><b>Non-going concern = Liquidation Valuation</b>: net value after disposing all assets and discharging all liabilities. <b>Going concern value = Total Value</b> (adds value of continuing profits).</li>
+    <li>Going-concern value generally <b>&gt;</b> liquidation value: includes <b>future profitability, intangibles, goodwill</b> (premium); liquidation means <b>laying off employees</b> and <b>bad reputation</b> among investors. Use non-going-concern only when the firm has no value as a going concern.</li>
+  </ul>
+
+  <h3>9. Valuation of Distressed Companies</h3>
+  <ul>
+    <li>Distress: unable / difficulty paying financial obligations — high fixed costs, illiquid assets, revenues sensitive to downturns (too much debt, or inability to meet operating expenses). Defaulting does not make the company <b>worthless</b>.</li>
+    <li>Conventional methods fail: (1) DCF terminal value assumes <b>infinite life, ever-growing cash flows</b> — not valid with negative cash flows; (2) <b>negative, declining revenues</b>, high bankruptcy risk; DCF values a going concern — projections needed until cash flows turn positive, else negative equity value; (3) <b>discount rates</b> reflect sound companies — must be adjusted for probability of failure.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Method</th><th>Formula / logic</th></tr>
+    <tr><td>9.1 Modified DCF</td><td>Probability distributions of cash flows (adjust for default); ke from <b>updated D/E and unlevered beta</b>; kd from updated default risk. If distribution can't be estimated: <b>Expected cash flow<sub>t</sub> = Cash flow<sub>t</sub> × (1 − Probability of distress<sub>t</sub>)</b></td></tr>
+    <tr><td>9.2 DCF + Distress value</td><td>Steps: (i) going-concern value on the path back to health; (ii) probability of distress over DCF life; (iii) distress sale value as % of book value or of DCF value. <b>Value of Equity = DCF value of equity (1 − Probability of distress) + Distress sale value of equity (Probability of distress)</b>. Plain DCF <b>understates</b> value when the firm may fail and sell assets below PV.</td></tr>
+    <tr><td>9.3 Adjusted Present Value</td><td>Separates investment from financing. <b>Firm Value = Unlevered Firm Value + (Tax Benefits of Debt − Expected Bankruptcy Cost)</b>; unlevered value = FCFF at <b>unlevered cost of equity</b>; tax benefit = PV of expected tax savings. <b>Expected Bankruptcy Cost = (Unlevered firm value − Distress sale value) × Probability of distress</b></td></tr>
+    <tr><td>9.4 Relative Valuation</td><td><b>Revenue and EBITDA multiples</b> (P/E, P/BV often unusable); adjust industry multiple subjectively: telecom avg 2× revenue → <b>1.25×</b> for a distressed telecom firm.</td></tr>
+  </table>
+
+  <h3>10. Valuation of Start-ups</h3>
+  <ul>
+    <li>Three common methods: (i) <b>Earning / cash flow</b> (discount foreseeable cash flows); (ii) <b>Asset</b> (not going concern — liquidation, untimely losses; current realisable values); (iii) <b>Market</b> (comparable companies, adjusted). All presuppose an <b>established</b>, cash-generating business.</li>
+    <li>Start-up: <b>no historical data</b>; value rests on <b>future growth potential</b> (often an untested idea) and the founders' competence and drive. Valuation helps investors navigate "using facts, rather than fairy tales".</li>
+  </ul>
+  <h3>10.1 Why traditional methods cannot be applied</h3>
+  <table class="tight">
+    <tr><th>Method</th><th>Why it fails for new-age start-ups</th></tr>
+    <tr><td>Income</td><td>No / minimal <b>positive cash flows</b> in the foreseeable future (model accepted by investors).</td></tr>
+    <tr><td>Asset</td><td>(i) Negligible assets — mostly <b>IP and intangibles</b>, hard to value and agree; (ii) operate as <b>going concern</b>, so value shouldn't be limited to realisable value today.</td></tr>
+    <tr><td>Market</td><td>Disruptors without <b>established competitors</b> → numbers skewed, not comparable; some market-approach elements used in <b>advanced funding rounds</b>.</td></tr>
+  </table>
+  <h3>10.2 Value Drivers for start-ups</h3>
+  <ul>
+    <li><b>Product</b> — uniqueness, readiness (functional product/prototype &gt; idea); market testing and customer response.</li>
+    <li><b>Management</b> — credentials and balance of team (engineers + finance + MBA better than only engineers); &gt; half of Indian unicorns have IIT/IIM founders.</li>
+    <li><b>Traction</b> — quantifiable evidence of demand. <b>Revenue</b> — more streams, more value. <b>Industry attractiveness</b> — logistics, distribution, customer base (tourism start-up less valuable if lockdowns expected).</li>
+    <li><b>Demand–supply</b> — attractive industry → more investor demand. <b>Competitiveness</b> — fewer competitors, more value; first-mover advantage (Ola after Uber: easier to convince, but must differentiate).</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 13 Business Valuation (contd.)</span><span class="tag">SM Ch 13</span></div>
+  <h3>10.3 Methods for valuing start-ups (10.3.1–10.3.6)</h3>
+  <table class="tight">
+    <tr><th>Method</th><th>How (SM)</th></tr>
+    <tr><td>10.3.1 <b>Berkus</b> (Dave Berkus)</td><td>Five key success factors: (1) basic value, (2) technology, (3) execution, (4) strategic relationships in core market, (5) production and sales. Caps <b>pre-revenue at $2 mn</b>, <b>post-revenue at $2.5 mn</b>; ignores other market factors; uncomplicated tool.</td></tr>
+    <tr><td>10.3.2 <b>Cost-to-Duplicate</b></td><td>All costs of the start-up and product development incl. physical assets → fair market value. Criticised: ignores <b>future revenue projections</b> and assets.</td></tr>
+    <tr><td>10.3.3 <b>Comparable Transactions</b></td><td>"How much were similar start-ups valued at?" XYZ (logistics) acquired ₹ 560 cr with 24 cr users ≈ <b>₹ 23/user</b> → ABC with 1.75 cr users ≈ <b>₹ 40 cr</b>. Adjust multiplier for proprietary tech, intangibles, penetration, location.</td></tr>
+    <tr><td>10.3.4 <b>Scorecard</b></td><td>Pre-revenue. Average pre-money valuation of comparables × sum of (weight × comparison %). Weights: team 0–30%, opportunity size 0–25%, product/service 0–15%, competitive environment 0–10%, marketing/sales channels/partnerships 0–10%, need for additional investment 0–5%, others 0–5%. On par 100%, below &lt;100%, above &gt;100%; e.g. marketing 10% × 150% = <b>0.15</b>.</td></tr>
+    <tr><td>10.3.5 <b>First Chicago</b></td><td>DCF + market approach; value <b>worst, normal, best case</b> × probabilities → weighted average value.</td></tr>
+    <tr><td>10.3.6 <b>Venture Capital</b></td><td>Investor seeks a <b>multiple</b> of investment (10x, 20x, 30x at exit) or a target IRR for perceived risk; <b>post-money value</b> = future value discounted at investor's required return over the relevant time frame.</td></tr>
+  </table>
+
+  <h3>11. Valuation of Digital Platforms</h3>
+  <ul>
+    <li>Software-based online infrastructure for <b>many-to-many</b> interactions. Types: <b>Marketplace</b> (Booking.com, Uber, Amazon), <b>Search engine</b> (Google, Bing, Baidu), <b>Repository</b> (Spotify, YouTube, GitHub), <b>Digital communication</b> (WhatsApp, Teams, Telegram, Slack), <b>Digital community</b> (Facebook, LinkedIn), <b>Payments</b> (Paytm, GPay).</li>
+  </ul>
+  <h3>11.1 Income Approach (11.1.1 Discounting rate, 11.1.2 Specific considerations)</h3>
+  <ul>
+    <li><b>Top-Down:</b> backward working from <b>TAM</b> (Total Addressable Market) → <b>SAM</b> (Serviceable Addressable) → <b>SOM</b> (Serviceable Obtainable) and time to reach it → business plan. Ambitious for a nascent company. <b>Bottom-Up:</b> earnings from limited resources (high-margin sales, cost cutting) — like capital budgeting.</li>
+    <li>Revenue model differs (streaming: subscribers; payments: transactions). Early <b>cash burn</b> / low margins to gain share; cash need falls as margins stabilise. Value depends on <b>quality of forecasts</b> and promoters' execution.</li>
+    <li>11.1.1: <b>FCFF at WACC</b>, <b>FCFE at Cost of Equity Capital (Ke)</b>; Ke by CAPM R = rf + β (rm − rf).</li>
+    <li>11.1.2: (a) beta hard to estimate — unique platforms, scarce listed comparables → use diversified sector, revenue-driving industry or international comparables; (b) survival depends on management quality and adaptability → add a <b>Company Specific Risk Premium (CSRP) / Alpha</b> to ke; CSRP <b>higher for nascent</b> than mature platforms.</li>
+  </ul>
+  <h3>11.2 Market Approach · 11.3 Cost Approach</h3>
+  <ul>
+    <li>Multiples: P/E, EV/EBITDA, P/BV, Price/Sales; comparables selected by market cap, revenue, margins, capital structure. Difficult because: listed comparables <b>scarce/absent</b>; profit and EBITDA may be <b>negative</b>; <b>capital-lite</b> → very low book value. So emphasis on <b>revenue drivers</b>:</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Platform</th><th>Drivers of revenue</th></tr>
+    <tr><td>Market place</td><td>No. of bookings, registered users, volume of transactions</td></tr>
+    <tr><td>Payment</td><td>Active subscribers, merchants registered, compatibility and speed of OS, security, ease of use</td></tr>
+    <tr><td>Community</td><td>Number of users, subscription fees, platform for professionals</td></tr>
+    <tr><td>Communication</td><td>Number of users, sponsored links, advertising revenue</td></tr>
+    <tr><td>Repository</td><td>Readers and contributors, authenticity, duration of use, quality and variety of data</td></tr>
+    <tr><td>Search</td><td>Number of users, relevant results, time per search (more relevant results in shorter time → premium)</td></tr>
+  </table>
+  <ul>
+    <li>Repository: compare users, average views per user, average revenue per user. Example: search platform valued <b>100.00 Cr</b> with 50 mn users and 100,00 hours of content used as base for a similar platform with fewer users.</li>
+    <li><b>11.3 Cost Approach:</b> cost to build the same/similar platform — mainly <b>developer hours spent writing code</b>; not most appropriate — ignores <b>revenue-generating capacity</b>. Fundamentals remain: business understanding, revenue model, management quality, risk-reward.</li>
+  </ul>
+
+  <h3>12. Valuation of Professional / Consultancy Firms</h3>
+  <ul>
+    <li>Firms giving <b>customised, knowledge-based services</b> (CAs, advocates, management consultants); vary widely by service.</li>
+    <li>Compare <b>historical data</b> with industry <b>KPIs and benchmarks</b> and with competitors; sources: <b>audited statements, income tax returns</b>.</li>
+    <li>Income approach: projected growth (TV) matters, but future earnings may not materialise → <b>factor in the risk</b>.</li>
+    <li><b>Normalisation</b> of net income and cash flows (add back non-cash and firm-specific items) → compare on equal footing; choose KPIs aligned with acquirer's goals.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 13 Business Valuation (contd.)</span><span class="tag">SM Ch 13</span></div>
+  <h3>13. Impact of ESG on Valuation</h3>
+  <ul>
+    <li>ESG = framework embedded in strategy to generate value for <b>all stakeholders</b>.</li>
+    <li><b>E:</b> climate change, water, waste generation, emissions, biodiversity. <b>S:</b> employee development, diversity &amp; inclusion, community development, health &amp; safety, customer. <b>G:</b> board independence, board diversity, anti-corruption &amp; bribery, tax transparency, ethical conduct.</li>
+    <li>Developments: ESG funds tapped <b>&gt; $50 bn</b> in 2020, ESG assets <b>&gt; $35 trn</b>; green bonds crossed <b>$1 trn</b> (2020); sustainability <b>taxonomy</b> (EU); <b>IFRS</b> single global ESG standard; <b>SEBI</b> proposed ESG disclosure framework (Feb 2023).</li>
+    <li>High ESG focus → <b>lower cost of debt</b>, access to Green / Social / Sustainability-linked bonds; ESG moved from 'good to have' to <b>'must-to-have'</b>.</li>
+    <li>Incorporate in DCF via <b>discount rate</b> (risk premium — practical but less explicit) or <b>cash flows</b> (more explicit): <b>E</b> — 2-degree scenario analysis, carbon points; <b>S</b> — cost of social measures (labour conditions, CSR, welfare) on revenue; <b>G</b> — impact of poor governance (penalty, fines, taxes).</li>
+  </ul>
+
+  <h3>Case Studies</h3>
+  <ul>
+    <li><b>Case 1 — Vodafone / Idea Cellular:</b> methods: (a) <b>market value</b> (NSE price), (b) <b>comparable companies' market multiple</b> (BSE/NSE), (c) <b>NAV</b> as of 31 Dec 2016; <b>DCF not used</b> (no projected cash flows provided) → share exchange. Idea slumped 9.6% (fell up to 14.57%, reversing 14.25% gains) → <b>'perceived value'</b> is not quantifiable.</li>
+    <li><b>Case 2 — Facebook / WhatsApp:</b> USD 21.8 bn; 450 mn users at $1/year fee, 70% active, +1 mn users/day (≈ 1 bn in a year); gross per-user value ≈ <b>USD 55</b> incl. 4 bn retention sweetener; payback by monetising international messaging.</li>
+  </ul>
+
+  <div class="sticky"><b>Exam steps — Relative valuation / EV (Sep 2025 type):</b> ke = rf + β (rm − rf) → adjust EBITDA for extraordinary / pending items → EV = EBITDA × multiple → Equity value = EV − debt + surplus cash (÷ shares) → or EV = shares × CMP + debt − cash.</div>
+  <div class="sticky"><b>Exam steps — EVA (Jan 2026 type):</b> PAT ÷ (1 − t) = PBT → + interest = EBIT → NOPAT = EBIT(1 − t) (+ non-cash items) → invested capital (equity + debt, or assets − non-interest CL, + unrecorded patents) → WACC (ke by CAPM, kd(1 − t), weights) → capital charge → EVA → EVA ÷ shares = max DPS. MVA = market value − invested capital.</div>
+  <div class="sticky"><b>Exam steps — DCF / FCFF:</b> high-growth WACC and stable WACC (CAPM + kd(1 − t)) → FCFF = EBIT(1 − t) − (capex − dep) − ∆WC each year → PV at high-growth WACC → TV = terminal-year FCF ÷ (stable cost of capital − growth rate) → discount TV by PVF of the last explicit year → firm value (− debt + non-core assets = equity, as in SVA).</div>
+  <div class="sticky"><b>Exam steps — Unlisted firm / new project:</b> proxy β<sub>e</sub> → de-gear β<sub>a</sub> = β<sub>e</sub> × E/[E + D(1 − t)] → average → re-gear at own D/E → CAPM ke → WACC → discount FCFs.</div>
+  <div class="sticky"><b>Exam steps — Several methods / exchange ratio:</b> NAV per share (deduct contingent liability if it will materialise) → earnings capitalisation (maintainable PAT ÷ rate) → PE × EPS → DCF → weighted / average fair value → range (seller's minimum to buyer's maximum) → exchange ratio = target value ÷ acquirer value; allocate shares on fully-paid equivalents.</div>
+  <div class="sticky"><b>Exam steps — Chop-shop / distressed:</b> segment data × pure-play ratios (sales, assets, operating income) → average = break-up value vs market. Distressed: DCF value of equity (1 − Probability of distress) + Distress sale value of equity (Probability of distress); APV = Unlevered Firm Value + Tax Benefits of Debt − (Unlevered firm value − Distress Sale Value) × Probability of Distress.</div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

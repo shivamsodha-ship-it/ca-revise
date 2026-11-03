@@ -1,0 +1,306 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 8 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 08 Mutual Funds</span><span class="tag">SM Ch 08</span></div>
+  <h2 class="brk"><span class="n">08</span>Ch 08 — Mutual Funds</h2>
+  <div class="sub">Asked in last 3 papers: 7 items, all numerical — NAV and NAV per unit (Sep 25 MCQ, Jan 26 Q6a), holding-period return payout vs reinvestment (Sep 25 Q3b, Q5b with loads, tax, inflation), dividend vs bonus plans (Jan 26 Q1a, May 26 Q3b), closed-ended fund at premium/discount (May 26 Q4b).</div>
+
+  <h3>1, 1.1–1.5 Introduction, mutual benefits, what is a MF, who can invest, how it works, stocks or MF</h3>
+  <ul>
+    <li>MF = a <b>trust</b> that pools savings of investors with a common financial goal, through issue of <b>units</b>; investor becomes <b>part owner</b> of the fund's assets.</li>
+    <li>Managed by <b>professional money managers</b> as per the scheme's stated investment objective: shares, debentures, bonds and money-market instruments (CP, CD, T-Bills).</li>
+    <li>Net income + capital appreciation shared among unit holders <b>in proportion to units</b> held. Fund house charges fees based on the <b>value of assets</b>.</li>
+    <li>Anybody with an investible surplus of a <b>few thousand rupees</b> can invest.</li>
+    <li><b>Stocks or MF?</b> Diversification needs 15–20 stocks (₹ 5,000 can't be spread); brokerage eats returns on small lots; SIP (e.g. ₹ 1,000 a month) gives discipline; stock picking needs time, inclination and skill; churning costs capital gains tax (MFs do not pay capital gains tax when they sell a stock). Risk-averse investors → MF.</li>
+  </ul>
+  <div class="box">
+    <p><b>Establishment / structure of a MF (TYK T1 — ICAI answer):</b></p>
+    <ul>
+      <li><b>SEBI registration</b> before collecting funds; all MFs under the same regulations, SEBI monitoring and inspection.</li>
+      <li><b>Sponsor</b> (like a promoter: gives initial capital, appoints trustees) — body corporate in financial services for <b>not less than 5 years</b>, financially sound, fit party.</li>
+      <li><b>Trust</b> (or trustee company) under the Indian Trusts Act; trust deed executed by sponsor in favour of trustees, registered under the <b>Indian Registration Act, 1908</b>, with Third Schedule clauses. Trustee holds MF property in trust for unit holders. At least <b>two-thirds</b> of trustee directors independent of sponsor.</li>
+      <li><b>AMC</b> — SEBI-approved, limited liability company, <b>minimum net worth ₹ 100 crore</b>; sponsor contributes <b>at least 40%</b> of AMC net worth; <b>50%</b> of AMC directors independent. AMC can be terminated by <b>majority of trustees</b> or <b>75% of unit holders</b> of the scheme. Charges investment management and advisory fees within ceiling + gets operating expenses reimbursed.</li>
+      <li><b>Custodian</b> — SEBI-registered, independent of sponsor and AMC, holds securities (Depository Participant for demat).</li>
+    </ul>
+  </div>
+
+  <h3>2, 2.1 Classification; Functional classification <span class="pyq">Asked: May 2026 Q4(b) 4m (closed-ended)</span></h3>
+  <p>Three classifications: <b>Functional</b>, <b>Portfolio</b>, <b>Ownership</b>.</p>
+  <table class="tight">
+    <tr><th>Point</th><th>Open-ended</th><th>Close-ended</th><th>Interval</th></tr>
+    <tr><td>Entry/exit</td><td>Any time</td><td>Invest at NFO or buy on stock exchange after listing; exit by selling on exchange, at expiry, or in repurchase period</td><td>Purchase and redemption only in pre-specified intervals (monthly, quarterly, annually) at NAV-based prices</td></tr>
+    <tr><td>Capital / life</td><td>Unlimited capital, indefinite redemption period</td><td>Limited life; corpus liquidated at end</td><td>Maturity not defined</td></tr>
+    <tr><td>Listing</td><td>—</td><td>Listed</td><td>Not required (in-built redemption window)</td></tr>
+    <tr><td>Fresh units</td><td>Continuously</td><td>Only at NFO</td><td>During interval period at NAV-based prices</td></tr>
+  </table>
+  <ul>
+    <li>Interval = combination of open and close-ended; differs from close-ended on: <b>not listed</b>, <b>fresh issue</b> in interval, <b>maturity not defined</b>.</li>
+    <li>A close-ended fund trades through the day at prices that may be <b>more or less than its NAV</b> (SM 3.9).</li>
+  </ul>
+  <p class="small"><i>Note (app-written): for May 2026 Q4(b) type — market price of a close-ended unit = NAV × (1 + premium %) or NAV × (1 − discount %); investor's return is on market price paid/received, the fund's growth is on NAV.</i></p>
+
+  <h3>2.2, 2.2.1, 2.2.2 Portfolio classification — Equity and Debt funds</h3>
+  <p>Equity, Debt and Special funds. Equity holder profits via price rise or dividends and bonus; can lose the whole value but is not liable for company debts.</p>
+  <table class="tight">
+    <tr><th>Fund</th><th>Invests in / aim</th><th>Suits</th></tr>
+    <tr><td><b>Growth</b></td><td>Long-term capital appreciation</td><td>Long-term investors</td></tr>
+    <tr><td><b>Aggressive</b></td><td>Super-normal returns: start-ups, IPOs, speculative shares</td><td>Risk takers</td></tr>
+    <tr><td><b>Income</b></td><td>Safe high-dividend stocks, high-yield money market instruments</td><td>Current income seekers</td></tr>
+    <tr><td><b>Bond</b> (debt)</td><td>G-bonds, corporate/convertible debentures, money market; less volatile than equity, regular income; used to diversify</td><td>Tax-free/steady income</td></tr>
+    <tr><td><b>Gilt</b> (debt)</td><td>T-Bills and dated securities of State and Central Govts</td><td>—</td></tr>
+  </table>
+  <p><b>Risks of bond funds:</b></p>
+  <ul>
+    <li><b>Interest rate risk</b> — bond value moves inversely to interest rate (YTM).</li>
+    <li><b>Credit risk</b> — issuer defaults on interest/principal; higher for lower credit rating.</li>
+    <li><b>Prepayment risk</b> — issuer calls callable bonds early when rates fall and refinances at lower rate.</li>
+    <li><b>Reinvestment risk</b> — maturity proceeds reinvested at lower rate in falling-rate scenario (favourable when rates rise).</li>
+  </ul>
+
+  <h3>2.2.3 Special funds</h3>
+  <ul>
+    <li><b>Index</b> — invest in index stocks in the same weightage; passive, low cost; deliver approx. the index return (e.g. NIFTY 50 Index Fund).</li>
+    <li><b>International</b> — raises money in India, invests globally. <b>Offshore</b> — located outside India, raises money globally to invest in India.</li>
+    <li><b>Sector</b> — entire fund in one sector (infrastructure, IT, pharma).</li>
+    <li><b>Money market</b> — debt-oriented; preservation of capital, liquidity, moderate income; CP, CD, T-Bills, G-Secs; park surplus for short periods; less interest-rate sensitive, lower volatility than long-dated bond funds.</li>
+    <li><b>Fund of Funds</b> — invest in units of other MF schemes (same or other fund house), e.g. Indian MFs investing in international MF schemes.</li>
+    <li><b>Capital protection oriented</b> — protection comes from <b>portfolio structure</b>, not bank guarantee/insurance; SEBI: <b>close-ended, listed</b>, portfolio structure <b>mandatorily rated</b>; major part in highly rated debt, rest in equity. Not the same as "capital guaranteed".</li>
+    <li><b>Gold</b> — track gold; generally ETFs, listed; bullion exposure without physical delivery.</li>
+    <li><b>Quant</b> — data-driven, rule/model-based selection and timing via automated programme; manager checks robustness and monitors models. Differs from index fund manager (who fully hands off to the index). <b>Pros:</b> removes human bias, consistent strategy, lower expense ratio (passive). <b>Con:</b> models tested on historical data — past trends can't be used blindly.</li>
+  </ul>
+  <p class="small"><i>Note (app-written): SM text says "Special Funds are of four types" but lists nine, (a) to (i) (SM p. 8.6–8.9). List all nine.</i></p>
+
+  <h3>2.3–2.4 Ownership classification; Direct plans</h3>
+  <ul>
+    <li><b>Public sector</b> MF — sponsored by a public sector company/bank. <b>Private sector</b> — by a private company. <b>Foreign</b> — by a foreign company operating from India, raising and investing funds in India.</li>
+    <li><b>Direct plans</b> (SEBI, <b>1 January 2013</b>): AMC charges <b>no distribution expenses, trail fees, transaction charges</b> → NAV generally <b>higher</b> than regular plan; have performed better to the extent of lower fees. Before this, direct investments went into the regular plan with a single NAV.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 08 Mutual Funds (contd.)</span><span class="tag">SM Ch 08</span></div>
+  <h3>3, 3.1–3.2 Types of schemes: Balanced; Diversified equity; income options</h3>
+  <ul>
+    <li><b>Balanced</b> — strategic allocation to debt (stability) and equity (growth); limited equity exposure; moderate returns.</li>
+    <li><b>Diversified equity</b> — wide array of stocks, low concentration risk:
+      <ul>
+        <li><b>Flexicap</b> — any proportion across market caps, no restriction; true diversification, flexibility.</li>
+        <li><b>Multicap</b> — at least <b>25% each</b> in large, mid and small cap; remaining 25% at manager's discretion.</li>
+        <li><b>Contra</b> — out-of-favour, under-valued companies; blends growth and value; aggressive risk appetite.</li>
+        <li><b>Index</b> — same securities and proportion as benchmark (Sensex, Nifty); earns market return.</li>
+        <li><b>Dividend yield</b> — high dividend yield (DPS ÷ market price) stocks, above index yield; less volatile than growth stocks; medium risk; not always resilient in short-term corrections.</li>
+      </ul>
+    </li>
+  </ul>
+  <table class="tight">
+    <tr><th>Option</th><th>What the investor gets</th></tr>
+    <tr><td><b>Growth / cumulative</b></td><td>No intermittent income; return accumulates, paid on withdrawal as <b>capital gain</b>.</td></tr>
+    <tr><td><b>Dividend payout</b></td><td>Dividend paid out; <b>NAV falls</b> to the extent of dividend and statutory levies.</td></tr>
+    <tr><td><b>Dividend re-investment</b></td><td>Dividend reinvested at <b>ex-dividend NAV</b> → additional units.</td></tr>
+  </table>
+
+  <h3>3.3–3.8 ELSS, Sector, Thematic, Arbitrage, Hedge, Cash funds</h3>
+  <ul>
+    <li><b>ELSS</b> — tax saving under <b>Sec 80C</b>; <b>lock-in 3 years</b>; better return potential than traditional tax-saving instruments; via SIP avoids year-end lump sum and gives averaging.</li>
+    <li><b>Sector</b> — ride industry cycles; good returns if timing is right; more vulnerable on downside than diversified funds; only a limited portion of portfolio; not for first-time investors. E.g. <b>Real Estate MFs</b> — properties (rent + appreciation) and real-estate company securities; must be <b>close-ended and listed</b>.</li>
+    <li><b>Thematic</b> — trends/themes (multi-sector, international, commodity); broader than sector; market may take long to recognise the theme.</li>
+    <li><b>Arbitrage</b> — open-ended equity scheme; mix of cash equities, equity derivatives, debt; captures spot–futures price differential; better than debt, less volatile than equity.</li>
+    <li><b>Hedge fund</b> — lightly regulated private vehicle for selected clients; reveals nothing publicly; charges a <b>performance fee</b> (cut of profits above benchmark; losses borne by investors); leveraged, long, short, derivative positions; aim is to <b>maximise return</b> (not to hedge).</li>
+    <li><b>Cash fund</b> — open-ended liquid scheme; very short-dated debt and money market; growth and dividend options.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P22 (ANP Plan, hedge fund ₹ 20 crore; fee 0.10% of assets + 2% incentive on value above the maximum value since inception ₹ 21 crore):</b> fixed fee 0.10% × 20 cr = ₹ 2,00,000 in all cases. (a) 29%: 1.29 × 20 = 25.80 cr; excess over 21 cr = 4.80 cr × 2% = 9,60,000 → total <b>₹ 11,60,000</b>. (b) 4.5%: 20.90 cr &lt; 21 cr → no incentive → <b>₹ 2,00,000</b>. (c) −1.8%: <b>₹ 2,00,000</b>.</p></div>
+
+  <h3>3.9 Exchange Traded Funds</h3>
+  <ul>
+    <li>Hybrid of <b>listed stock + index fund</b>; listed, price linked to underlying index; <b>authorised participants</b> act as market makers.</li>
+    <li>Bought/sold <b>any time in market hours</b> at real-time prices close to NAV (open-ended schemes deal at end-of-day NAV); no paperwork, order through broker; low cost, tax efficient, stock-like.</li>
+    <li>Combines MF valuation feature (end-of-day NAV) with close-ended fund tradability (intra-day, at more or less than NAV).</li>
+    <li>Types: <b>Index ETFs</b> (replicate index); <b>Commodity ETFs</b> (precious metals, futures); <b>Bond ETFs</b> (thrive in recessions — money moves from stocks to bonds; indicate economic conditions); <b>Currency ETFs</b> (total return: FX spot change, local institutional interest rates, collateral yield).</li>
+  </ul>
+
+  <h3>3.10 Fixed Maturity Plans</h3>
+  <ul>
+    <li><b>Close-ended</b>, invest at NFO; CDs, CPs, money market, NCDs, sometimes bank FDs, over a fixed period; listed but thinly traded → <b>not liquid</b>.</li>
+    <li><b>Free from interest rate risk</b> (instruments mature with the fund) but carry <b>credit risk</b> (downgrade cuts return).</li>
+    <li>Mostly 3-year tenure for <b>indexation</b> benefit; to earn more, part goes into <b>AA and below</b> rated debt (higher coupon).</li>
+  </ul>
+
+  <h3>4 Advantages of Mutual Fund (also TYK T2)</h3>
+  <ul>
+    <li><b>Professional management</b> — skilled managers + research analysts.</li>
+    <li><b>Diversification</b> — reduces concentration risk.</li>
+    <li><b>Convenient administration</b> — demat, no share-transfer risk, no delay.</li>
+    <li><b>Higher returns</b> over medium to long term (judge by long-run average, not boom-phase returns).</li>
+    <li><b>Low cost of management</b> — SEBI cap <b>2.50%</b> for equity MFs; excess borne by AMC.</li>
+    <li><b>Liquidity</b> — open-ended: sale/repurchase by MF; close-ended: listing.</li>
+    <li><b>Transparency</b> — portfolio disclosed at least <b>half-yearly</b> (many quarterly/monthly); NAV daily for open-ended, published through AMFI.</li>
+    <li><b>Other benefits</b> — SWP, SIP, switching (except tax saving fund: no switch-out for 3 years).</li>
+    <li><b>Highly regulated</b> — SEBI registration, MF Regulations.</li>
+    <li><b>Economies of scale</b> — pooled money is cheaper; retail access to capital market.</li>
+    <li><b>Flexibility</b> — SIP, SWP, wide range of schemes. <b>Convenience</b> — easy via digital portals.</li>
+  </ul>
+
+  <h3>5 Drawbacks of Mutual Fund</h3>
+  <ul>
+    <li><b>No guarantee of return</b> — (i) some schemes underperform benchmark; (ii) fund gain ≠ every investor's gain (different entry/exit points); (iii) massive fall can erode principal short-term (2008 crisis, Covid 2020); remote over long term.</li>
+    <li><b>Diversification</b> — minimises risk but does not maximise return; one stock doubling doesn't double the fund; neither exceptionally good nor poor.</li>
+    <li><b>Selection of proper fund</b> — harder than picking a share; past performance can't predict future.</li>
+    <li><b>Cost factor</b> — fund management fees in annual recurring expenses; <b>exit load</b> if withdrawn before a stipulated period; AMC fee not related to performance.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 08 Mutual Funds (contd.)</span><span class="tag">SM Ch 08</span></div>
+  <h3>6, 6.1 Terms — Net Asset Value (NAV) <span class="pyq">Asked: Sep 2025 MCQ CS-II 4–6 6m</span> <span class="pyq">Asked: Jan 2026 Q6(a) 6m</span></h3>
+  <ul>
+    <li>NAV = value per unit of portfolio holding = what a unit holder would get per unit if the fund were redeemed. Returns depend on <b>NAV</b> and <b>costs</b>.</li>
+    <li>Three aspects: (i) <b>net</b> value — market value of assets less liabilities; (ii) <b>changes daily</b>; (iii) <b>per unit</b> — ÷ outstanding units.</li>
+    <li>Investors' subscription = <b>unit capital</b> (liability side); investments = assets.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM figures</th></tr>
+    <tr><td>NAV per unit = Net assets of the scheme ÷ Number of units outstanding</td><td>Per-unit claim of a holder.</td><td rowspan="2">TYK P7 (Cinderella, Scheme Rudolf): shares 4,20,20,000 − accrued exp 2,50,000 − other liab 2,00,000 = 4,15,70,000 ÷ 10,00,000 = <b>₹ 41.57</b></td></tr>
+    <tr><td>Net assets = MV of investments + Receivables + Other accrued income + Other assets − Accrued expenses − Other payables − Other liabilities</td><td>Everything at <b>market value</b>; accrued (unpaid) items count.</td></tr>
+    <tr><td>New units issued = Amount invested ÷ NAV at that time</td><td>New money enters at current NAV, so existing NAV is undisturbed; cash not invested stays as a bank asset.</td><td>TYK P8, P9</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P8 (L, M, N, P Ltd; 6,00,000 units):</b> (i) 4,00,000 + 93,72,000 + 72,24,000 + 3,03,06,000 = 4,73,02,000 ÷ 6,00,000 = ₹ 78.8366 → <b>₹ 78.84</b>. (ii) Mr. A ₹ 30,00,000; 8,000 M Ltd bought (M now 38,000 = 1,18,71,200); cash 5,00,800; total 5,03,02,000; units = 6,00,000 + 30,00,000 ÷ 78.8366 = <b>6,38,053</b>. (iii) 2 Feb: 4,10,000 + 1,36,80,000 + 76,62,000 + 3,02,34,000 + 5,00,800 = 5,24,86,800 ÷ 6,38,053 = <b>₹ 82.26</b>.</p>
+  <p><b>TYK P9 (Fair Return MF; 8,00,000 units):</b> (a) 9,52,38,000 ÷ 8,00,000 = ₹ 119.0475 → <b>₹ 119.05</b>. (b) Mr. X ₹ 50,00,000; 18,000 C Ltd bought (C now 28,000 = 74,03,200); cash 2,40,800; total 10,02,38,000; units = 8,00,000 + 50,00,000 ÷ 119.0475 = <b>8,42,000</b>. (c) 2 April: 10,27,87,200 ÷ 8,42,000 = <b>₹ 122.075</b>.</p></div>
+  <div class="ex"><p><b>TYK P18 (fund flow → NAV; 10,00,000 units of ₹ 10, investments 98,00,000):</b> opening cash 100 − 98 lakh = 2,00,000 + dividend 12,00,000 + interest 56,000 (7% G-sec) + 45,000 (9% deb) + 50,000 (10% deb) = 15,51,000 − opex 5,00,000 = cash <b>10,51,000</b>. Assets: cash 10,51,000 + G-sec 8,00,000 (par) + 50,000 shares @ 175 = 87,50,000 + 9% unlisted deb 5,00,000 (cost) + 10% deb @ 90% = 4,50,000 = 1,15,51,000 → NAV <b>₹ 11.55</b>. If ₹ 0.80/unit dividend paid: 1,15,51,000 − 8,00,000 = 1,07,51,000 → <b>₹ 10.75</b>.</p>
+  <p><b>TYK P19 (regular income scheme; 20 lakh units):</b> listed shares 20 × 2,300 ÷ 1,000 = 46.00; cash 1.23; unlisted bonds 1 × 80% = 0.80; listed bonds at NAV-date value 8.00; dividend accrued 0.80; other fixed-interest at cost 4.50 → assets 61.33 cr − (payable on shares 6.32 + exp accrued 0.75 = 7.07) = 54.26 cr ÷ 20,00,000 = <b>₹ 271.30</b>.</p>
+  <p><b>TYK P15 (ABC MF, 20 lakh units @ ₹ 10, initial exp 12 lakh, portfolio 185 lakh):</b> opening bank 200 − 185 − 12 = 3.00 + sale 63 + dividend 2 = 68 − purchases 56 − expenses paid 90% × 8 = 7.20 − capital gain distributed 80% × (63 − 60) = 2.40 − dividend distributed 80% × 2 = 1.60 → closing bank 0.80. Net assets 198 + 0.80 − arrears 0.80 = 198 → NAV <b>₹ 9.90</b>. Per unit: income received (2.40 + 1.60) ÷ 20 = 0.20, less fall in value (200 − 198) ÷ 20 = 0.10 → 0.10 on ₹ 10 = <b>1% monthly, 12% annual</b>.</p></div>
+
+  <h3>6.1 (contd.) Return on MF units — formulas used in ICAI answers <span class="pyq">Asked: Sep 2025 Q3(b) 4m</span> <span class="pyq">Asked: Sep 2025 Q5(b) 7m</span> <span class="pyq">Asked: Jan 2026 Q1(a) 6m</span> <span class="pyq">Asked: May 2026 Q3(b) 4m</span></h3>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM figures</th></tr>
+    <tr><td>Return = [(NAV<sub>1</sub> − NAV<sub>0</sub>) + D<sub>1</sub> + CG<sub>1</sub>] ÷ NAV<sub>0</sub> × 100</td><td>Distributions taken in <b>cash</b>: change in NAV + dividend (income) + capital gain distribution, per unit, over opening NAV.</td><td>TYK P4: (13 − 12.25) + 1.25 + 1.00 = 3.00 ÷ 12.25 = <b>24.49%</b>. P5: 0.60 + 0.90 + 0.75 = 2.25 ÷ 8.50 = <b>26.47%</b>. P14: 0.70 + 0.75 + 0.60 = 2.05 ÷ 8.75 = <b>23.43%</b>.</td></tr>
+    <tr><td>r = [(NAV<sub>t</sub> − NAV<sub>t−1</sub>) + I<sub>t</sub> + G<sub>t</sub>] ÷ NAV<sub>t−1</sub></td><td>Same, for one period (month); I<sub>t</sub> income, G<sub>t</sub> capital gain distribution. Annual = monthly × 12.</td><td>TYK P3: (0.06 + 0.0375 + 0.03) ÷ 20 = 0.1275 ÷ 20 = <b>0.6375% p.m. = 7.65% p.a.</b> TYK P6: 15% p.a. → 1.25% p.m.; 0.0125 = (NAV<sub>t</sub> − 65.78 + 0.50 + 0.32) ÷ 65.78 → NAV<sub>t</sub> = <b>₹ 65.78</b> (no change).</td></tr>
+    <tr><td>Additional units = Total amount reinvested ÷ reinvestment price; Return = (Value of all units at year end − Price paid for original units) ÷ Price paid for original units</td><td>Distributions <b>reinvested</b>: compare closing value of all units with original cost. <i>(app-written general form of ICAI's working)</i></td><td>P4: 2.25 × 300 = 675 ÷ 12.50 = 54; 354 units × 13 = 4,602 vs 3,675 → <b>25.22%</b>. P5: 1.65 × 200 = 330 ÷ 8.75 = 37.71; 237.71 units = 2,163.16 vs 1,700 → <b>27.24%</b>. P14: 1.35 × 300 = 405 ÷ 8.65 = 46.82; 346.82 × 9.45 = 3,277.45 vs 2,625 → <b>24.85%</b> → reinvestment preferable.</td></tr>
+    <tr><td>Effective yield p.a. = h ÷ a × 365 ÷ i × 100</td><td>ICAI table: a = investment; c = units (a ÷ b, b = opening NAV); e = total NAV at end (c × d); f = e − a; g = dividend received; h = total yield (f + g); i = number of days. Units = investment ÷ entry NAV. Days counted including entry date (1.12 to 31.3 = 121).</td><td>TYK P10 (Mr. Sinha): X 47,619.05 units × 10.40 = 4,95,238.12; yield (−4,761.88 + 9,500) = 4,738.12 over 121 days → <b>2.859%</b>; Y 2,500 over 90 days → <b>10.139%</b>; Z −1,000 over 31 days → <b>(−) 23.55%</b>.</td></tr>
+    <tr><td>Period of holding (days) = Yield (%) × 365 ÷ Effective yield p.a. (%)</td><td>Reverse of the above (ICAI working, TYK P11).</td><td>TYK P11 (Mr. Y): units 19,417.48 / 39,603.96 / 20,000; total NAV 7,99,068.77; yields 5,029.17 / −3,960.40 / 9,000; total yield 10,068.77 ÷ 8,00,000 = 1.2586%; yield % 2.5146 / −0.9901 / 4.5 → <b>95 / 31 / 68 days</b> → invested <b>27.12.17 / 01.03.18 / 23.01.18</b> (alternative 26.12.17 / 28.02.18 / 22.01.18).</td></tr>
+  </table>
+  <ul>
+    <li><b>Dividend reinvestment plan:</b> dividend = units held × <b>face value ₹ 10</b> × dividend %; new units = dividend ÷ NAV on that date (ex-dividend). Keep a running unit balance.</li>
+    <li><b>Bonus plan:</b> ratio a : b → a bonus units for every b held (5 : 4 on 10,000 = 12,500). No cash; value = final units × final NAV.</li>
+    <li><b>Annual (average) return</b> = Net gain ÷ Investment × 12 ÷ months held × 100 (simple). Alternative <b>IRR</b> = LR + [NPV at LR ÷ (NPV at LR − NPV at HR)] × (HR − LR).</li>
+    <li>Annualised yield → yield for the period = annualised yield × months ÷ 12 (ICAI: 153.33 × 9 ÷ 12 = 115%; used to back-solve NAVs).</li>
+  </ul>
+  <div class="ex"><p><b>TYK P17 (Mr. K, ₹ 2,00,000 each, 1.4.2005 to 31.3.2010 = 5 years):</b> <b>Plan D</b>: 2,00,000 ÷ 38.20 = 5,235.60 units; dividends reinvested: 10% → 5,235.60 ÷ 39.10 = 133.90 (5,369.50); 15% → 8,054.25 ÷ 44.20 = 182.22 (5,551.72); 13% → 7,217.24 ÷ 45.05 = 160.20 (5,711.92); 16% → 9,139.07 ÷ 44.80 = 204 (5,915.92); maturity 40.40 × 5,915.92 = 2,39,003.17; gain 39,003.17 ÷ 2,00,000 ÷ 5 = <b>3.90%</b> (IRR: NPV 4% −3,557, 2% 16,473 → <b>3.645%</b>). <b>Plan B</b>: 2,00,000 ÷ 35.60 = 5,617.98; 1:5 → 1,123.60 (6,741.58); 1:8 → 842.70 (7,584.28); 1:10 → 758.43 (8,342.71); × 39.70 = 3,31,205.59; gain 1,31,205.59 → <b>13.12%</b> (IRR: NPV 13% −20,235, 8% 25,413 → <b>10.78%</b>).</p></div>
+  <div class="ex"><p><b>TYK P16 (Chanakya Opportunity Fund; ₹ 1,00,000 each at ₹ 10 on 1.4.1999; redeemed 31.07.2009 = 124 months; STT 0.2% on redemption; STCG 10% on units held under a year, LTCG exempt):</b></p>
+  <ul>
+    <li><b>Mrs. Charu, Plan A (reinvestment):</b> 10,000 → 20% 20,000 ÷ 30.70 = 651.47 (10,651.47) → 70% 74,560.29 ÷ 58.42 = 1,276.28 (11,927.75) → 40% 47,711.00 ÷ 42.18 = 1,131.13 (13,058.88) → 25% 32,647.20 ÷ 46.45 = 702.85 (13,761.73) → 40% 55,046.92 ÷ 48.10 = 1,144.43 (<b>14,906.16</b>). × 53.75 = 8,01,206.10 − STT 1,602.41 = 7,99,603.69 − STCG 10% on 1,144.43 × (53.64 − 48.10) = 6,340 → 634 → 7,98,969.69; gain 6,98,969.69 × 12 ÷ 124 → <b>67.64%</b>.</li>
+    <li><b>Mr. Anand, Plan B (bonus):</b> 10,000 + 12,500 (5:4) = 22,500 + 7,500 (1:3) = 30,000 + 7,500 (1:4) = <b>37,500</b> × 22.98 = 8,61,750 − STT 1,723.50 = 8,60,026.50 − STCG 10% on 7,500 × (22.93 − 19.95) = 22,350 → 2,235 → 8,57,791.50; gain 7,57,791.50 → <b>73.33%</b>.</li>
+    <li><b>Mr. Bacchan, Plan C (growth):</b> 10,000 × 82.07 = 8,20,700 − STT 1,641.40 = 8,19,058.60; no STCG; gain 7,19,058.60 → <b>69.59%</b>.</li>
+  </ul>
+  <p class="small">ICAI: 53.64 and 22.93 are NAV net of 0.2% STT; alternatively take NAV without STT (Proviso 5 to s. 48: STT not deductible in computing capital gain); the cost of the last bonus units "can also be taken as zero".</p>
+  <p class="small"><i>Note (app-written): ICAI's answer dates the 40% dividend "30.10.2007"; the question table says 31.10.2007 (SM p. 8.30 vs 8.46). Figures unaffected.</i></p></div>
+  <div class="ex"><p><b>TYK P12 (Mr. X, 10,000 units of ₹ 10 on 1.7.2007, dividends reinvested):</b> 9-month yield = 153.33 × 9 ÷ 12 = 115% → value 31.3.2008 = 1,00,000 + 1,15,000 = 2,15,000; NAV = (2,15,000 − dividend 10,000) ÷ 10,000 = <b>₹ 20.50</b>; units = 10,000 + 10,000 ÷ 20.50 (487.80) = 10,487.80. Dividend 2009 = 10,487.80 × 10 × 20% = 20,975.60; 11,296.11 = 20,975.60 ÷ X + 10,487.80 → NAV 31.3.2009 = <b>₹ 25.95</b>. NAV 31.3.2010 = 1,00,000 (1 + 0.7352 × 33 ÷ 12) ÷ 11,296.11 = <b>₹ 26.75</b>.</p>
+  <p><b>TYK P13 (same data as HPR):</b> HPR 115% → NAV 31.3.2013 <b>₹ 20.50</b>; NAV 31.3.2014 <b>₹ 25.95</b>; NAV 31.3.2015 = 1,00,000 (1 + 2.0217) ÷ 11,296.11 = <b>₹ 26.75</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 08 Mutual Funds (contd.)</span><span class="tag">SM Ch 08</span></div>
+  <h3>6.2 Entry and Exit Load <span class="pyq">Asked: Sep 2025 Q5(b) 7m</span> <span class="pyq">Asked: May 2026 Q3(b) 4m</span></h3>
+  <ul>
+    <li>Loads = sales charges to compensate <b>distribution costs</b>; funds without them = <b>no-load funds</b>.</li>
+    <li><b>Entry load</b> — at purchase; % <b>added to NAV</b> → fewer units allotted. At present no scheme has an entry load.</li>
+    <li><b>Exit load</b> — at redemption or switch; % <b>deducted from NAV</b>; goes to the <b>scheme's pool</b>, not the AMC. Most schemes have none after a stipulated holding period.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM figures</th></tr>
+    <tr><td>r<sub>2</sub> = r<sub>1</sub> ÷ (1 − initial exp) + recurring exp.</td><td>(TYK P1 answer writes the same as R<sub>2</sub> = R<sub>1</sub> ÷ (1 − Initial expenses %) + Recurring expenses %.) r<sub>1</sub> = return investor earns on his own; r<sub>2</sub> = return the fund must earn; initial expenses reduce the amount actually invested, so the fund must earn r<sub>1</sub> on the smaller base, plus cover annual recurring expenses.</td><td>SM Example (Mr. X): 0.10 ÷ (1 − 0.06) + 0.02 = <b>12.64%</b>. TYK P1 (Mr. A): 16% ÷ (1 − 0.055) + 1.5% = <b>18.43%</b>.</td></tr>
+    <tr><td>Public Offer Price = NAV ÷ (1 – Front end Load); Redemption Price = NAV ÷ (1 + Back End Load)</td><td>ICAI's main method.</td><td rowspan="2">TYK P2 (ELSS NAV ₹ 10, POP ₹ 10.204, redemption ₹ 9.80): main — front-end 0.0199 say <b>2%</b>, back-end <b>2.04%</b>; alternative — front-end (10.204 − 10) ÷ 10 = <b>2.04%</b>, exit (10 − 9.80) ÷ 10 = <b>2.00%</b>.</td></tr>
+    <tr><td>Alternative: Front End Load = (Public Offer Price − NAV) ÷ NAV; Exit Load = (NAV − Redemption Price) ÷ NAV</td><td>Load as % of NAV <i>(app-written general form of ICAI's alternative working)</i>.</td></tr>
+    <tr><td>Issue price = Opening NAV + Entry Load + Dividend Equalization; Repurchase price = Opening NAV − Exit Load + Dividend Equalization</td><td><i>(app-written general form of ICAI's TYK P20 working.)</i> Equalisation = income per unit accumulated up to that date, collected from new holders / paid to leavers so income per unit for others is unchanged.</td><td>TYK P20 below.</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P20 (open-ended, 300 lakh units, NAV ₹ 18.75):</b> income per unit April 22.95 ÷ 300 = 0.0765; equalisation on 6 lakh issued 0.4590 → 23.4090 on 306; May 0.1125 (34.425) → 0.1890 / 57.8340; equalisation paid on 3 lakh repurchased (0.5670) → 57.2670 on 303; June 0.1500 (45.45) → <b>(i) available 102.7170 lakh = ₹ 0.3390/unit</b>; 70% paid 0.2373 = 71.9019; retained 30.8151. <b>(ii) Issue price</b> 18.750 + 0.375 + 0.0765 = <b>₹ 19.2015</b>. <b>(iii) Repurchase</b> 18.750 − 0.375 + 0.1890 = <b>₹ 18.564</b>. <b>(iv)</b> 5,625 + appreciation 425.47 + issue 6 × 19.2015 = 115.209 + income 102.825 = 6,268.504 − repurchase 3 × 18.564 = 55.692 − distributed 71.9019 = 6,140.9101 ÷ 303 lakh = <b>₹ 20.2670</b>.</p>
+  <p class="small"><i>Note (app-written): ICAI's repurchase working labels the 0.1890 line "Add: Dividend Equalization paid on Issue Price"; it is the equalisation on repurchase (SM p. 8.51). Figures unaffected.</i></p></div>
+
+  <h3>6.3–6.4 Trail commission; Expense ratio</h3>
+  <ul>
+    <li><b>Trail commission</b> — paid by investor to advisor <b>each year</b> as incentive to review holdings; usually <b>0.30–0.75%</b> of investment value; on <b>daily average AUM</b> of the distributor, paid <b>monthly</b>; separate from upfront commission paid by the fund company out of its own pocket.</li>
+    <li><b>Expense ratio</b> (MER / TER) — % of assets spent to run the fund: management and advisory fees, travel, audit, custodian, registrar, consultancy fees. <b>Excludes brokerage</b> on portfolio trading. Can be 2–3% — can seriously undermine performance.</li>
+  </ul>
+
+  <h3>6.5 Side Pocketing</h3>
+  <ul>
+    <li>Separation of <b>risky/doubtful (stressed, illiquid) assets</b> from other investments and cash; money linked to stressed assets is locked until recovered; avoids <b>distress selling</b>.</li>
+    <li>When rating falls, illiquid assets moved to a side pocket → NAV reflects actual value of <b>liquid assets</b>; benefits current long-term holders; liquidity not a problem despite frequent allotments/redemptions.</li>
+    <li>Common internationally, but also misused to deprive investors of genuine returns. India: <b>IL&amp;FS</b> default — MFs wrote off exposure, low to negative returns.</li>
+  </ul>
+
+  <h3>6.6 Tracking Error</h3>
+  <ul>
+    <li>Divergence of a fund's return from its <b>benchmark</b> return — passive managers often can't replicate exactly. Computed on benchmark return vs quarterly or monthly average NAVs.</li>
+    <li><b>Higher TE → higher risk profile</b>; shows benchmark not followed properly. Ideal ≈ <b>zero</b>.</li>
+    <li>Reasons: <b>transaction cost, AMC fees, fund expenses, cash holdings, sampling biasness</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th></tr>
+    <tr><td>TE = √[ Σ(d − d̄)<sup>2</sup> ÷ (n − 1) ]</td><td>SM: d = differential return; d̄ = average differential return; n = no. of observations. <i>(app-written: d is fund return − benchmark return each period; TE is the standard deviation of these differences.)</i></td></tr>
+  </table>
+
+  <h3>7, 7.1 Evaluation of Mutual Funds; Quantitative parameters</h3>
+  <ul>
+    <li>Purpose: fund keeps generating maximum profit with minimum risk; decide hold or replace; past performance doesn't guarantee future. Not daily; give equity funds <b>3–5 years</b>; review at least every <b>6/12 months</b>.</li>
+    <li><b>Risk-adjusted returns</b> — return relative to risk; same return → choose lower risk.</li>
+    <li><b>Benchmark returns</b> — excess over benchmark = <b>alpha</b> (index 11%, fund 13% → outperformed; 8% → underperformed).</li>
+    <li><b>Comparison to peers</b> — same category ("apples with apples"); should consistently beat peers.</li>
+    <li><b>Returns across economic and market cycles</b> — not just 6/12-month windows.</li>
+    <li><b>Financial measures</b>: <b>expense ratio</b>; <b>Sharpe</b> = [E(R) − R<sub>f</sub>] ÷ σ (total risk); <b>Treynor</b> = [E(R) − R<sub>f</sub>] ÷ β (systematic risk; fund beta = volatility vs its benchmark); <b>Sortino</b> — Sharpe with <b>downside deviation</b> instead of total SD.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P21 (D MF NAV ₹ 70.71, 99% equity; K MF ₹ 62.50, 96% equity; market −5% in a month; cost ₹ 3 p.a. per unit):</b> equity/cash D 70 / 0.71, K 60 / 2.50. D: E(R) − R<sub>f</sub> = 2 × 11.25 = 22.50, β<sub>D</sub> = 22.50 ÷ 15 = <b>1.50</b>; K: 3.3 × 5 = 16.50, β<sub>K</sub> = 16.50 ÷ 15 = <b>1.10</b>. Equity falls 7.50% / 5.50%; cash less 3 ÷ 12 = 0.25 → 0.46 / 2.25. NAV: D 64.75 + 0.46 = <b>₹ 65.21</b>; K 56.70 + 2.25 = <b>₹ 58.95</b>.</p>
+  <p><b>TYK P23 (Ms. Sunidhi, Constant Ratio Plan — formula plan from the Portfolio Management chapter: keep equity fund : bonds at the starting ratio, here 1 : 1, and rebalance when the trigger is hit):</b> ₹ 2 lakh → 1,00,000 bonds + 2,500 units @ 40. NAV 25: total 1,62,500 → 81,250 each, <b>buy 750</b> (3,250 units). NAV 36: 1,98,250 → <b>sell 496.53</b> (2,753.47). NAV 38: 2,03,756.86 → <b>sell 72.46</b> (2,681.01). NAV 50: 2,35,928.93 → <b>sell 321.72</b> (2,359.29). NAV 52: ending value <b>₹ 2,40,647.55</b> vs buy and hold <b>₹ 2,60,000</b>.</p>
+  <p class="small"><i>Note (app-written): ICAI rebalances when NAV moves 15% or more from the previous month's NAV (25→36, 32→38, 43→50). ICAI's buy-and-hold ₹ 2,60,000 = the whole ₹ 2 lakh in the fund (5,000 units × 52); a 50 : 50 buy and hold would be 1,00,000 + 2,500 × 52 = ₹ 2,30,000 (SM p. 8.54).</i></p></div>
+
+  <h3>7.2 Qualitative parameters</h3>
+  <ul>
+    <li><b>Quality of portfolio</b> — equity: blue-chip/large companies, diversification, style (growth, value, blend); debt: credit quality, average maturity, modified duration; investments as per fund objective; <b>lower portfolio turnover</b> ratio is better.</li>
+    <li><b>Track record and competence of fund manager</b> — knowledge, ability, past performance.</li>
+    <li><b>Credibility of fund house team</b> — redemptions, crediting dividends, information.</li>
+  </ul>
+
+  <h3>8, 8.1–8.2 Role of Fund Managers — Active and Passive funds</h3>
+  <ul>
+    <li><b>Actively managed</b> — research, judgement, due diligence to <b>outperform the market</b> and generate <b>positive alpha</b> (stock picking).</li>
+    <li><b>Passively managed</b> — match the index return with <b>minimum tracking error</b>.</li>
+    <li>Other roles: <b>Compliances</b> (SEBI, AMFI guidelines; reporting expense ratio, redemptions; investor awareness; documents on time); <b>constant monitoring</b> of performance (entry/exit decisions; growth above inflation and interest rate); <b>creation and protection of wealth</b> (no reckless risk; fundamental and technical analysis); <b>control over outsourced work</b> to third parties.</li>
+  </ul>
+
+  <h3>9 Role of FIIs in Mutual Funds</h3>
+  <ul>
+    <li>FIIs = large foreign groups with substantial investible funds, registered abroad; strong research teams; fuel bullish markets for short periods → strong forex inflow. Buy units of domestic MFs <b>directly from the issuer</b> or <b>through a registered broker</b> on a recognised exchange, within <b>SEBI limits</b>.</li>
+    <li>Importance: <b>enhanced corporate governance</b> (due diligence), <b>improved competition</b> in market, <b>improved capital inflow</b> (employment, forex position).</li>
+  </ul>
+
+  <div class="sticky"><p><b>Exam steps — NAV:</b> 1 each holding × market price (index-adjust shares bought at old index; impair unlisted) → 2 + cash (opening cash + income − expenses paid − distributions) + accrued income → 3 − accrued expenses and payables → 4 ÷ units (new money: units = amount ÷ NAV at that time).</p></div>
+  <div class="sticky"><p><b>Exam steps — HPR payout vs reinvestment:</b> 1 cash: [(NAV<sub>1</sub> − NAV<sub>0</sub>) + D<sub>1</sub> + CG<sub>1</sub>] ÷ NAV<sub>0</sub> → 2 reinvest: (D<sub>1</sub> + CG<sub>1</sub>) × units ÷ reinvestment NAV = additional units → 3 (value of all units at NAV<sub>1</sub> − price paid) ÷ price paid → 4 pick higher %. With loads: buy at NAV + entry load, sell at NAV − exit load; then tax, then real return.</p></div>
+  <div class="sticky"><p><b>Exam steps — Dividend vs Bonus plan:</b> 1 units = investment ÷ entry NAV → 2 dividend plan: units × ₹ 10 × % ÷ that day's NAV, running total → 3 bonus plan: units × ratio, running total → 4 final units × final NAV (− STT, − STCG on units under a year) → 5 gain ÷ investment × 12 ÷ months (or IRR).</p></div>
+  <div class="sticky"><p><b>Exam steps — back-solve NAV (TYK P12/13):</b> 1 period HPR (annual × months ÷ 12) → 2 value = investment × (1 + HPR) → 3 NAV = (value − dividend) ÷ units → 4 dividend ÷ NAV = new units → 5 next NAV = dividend ÷ (final units − previous units).</p></div>
+  <div class="sticky"><p><b>Exam steps — issue/repurchase with equalisation (TYK P20):</b> 1 income per unit month by month on units then outstanding → 2 issue = NAV + load + accumulated income/unit; repurchase = NAV − load + accumulated income/unit → 3 closing net assets = opening + appreciation + issue proceeds + income − repurchases − distribution → 4 ÷ closing units.</p></div>
+  <div class="sticky"><p><b>Exam steps — expected NAV (TYK P21):</b> 1 split NAV into equity and cash → 2 E(R) − R<sub>f</sub> = Sharpe × σ, then β = [E(R) − R<sub>f</sub>] ÷ Treynor → 3 equity × (1 − β × market fall) → 4 cash − monthly cost → 5 add.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

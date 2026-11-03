@@ -1,0 +1,428 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 5 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 05 Security Valuation</span><span class="tag">SM Ch 05</span></div>
+  <h2 class="brk"><span class="n">05</span>Ch 05 — Security Valuation</h2>
+  <div class="sub">Asked in last 3 papers: CAPM + constant growth (Sep 25, 6m) · bond refunding NPV (Sep 25, 6m) · FCFF/FCFE (Sep 25, 7m) · repo legs MCQs (Jan 26, 6m) · H-model (May 26, 4m) · two-stage FCFE + implied growth (May 26, 5m).</div>
+
+  <h3>1. Overview of Valuation</h3>
+  <ul>
+    <li><b>Investment</b> = commitment of funds to earn a return that pays for (i) <b>time</b> funds are locked, (ii) expected <b>inflation</b>, (iii) <b>risk</b>.</li>
+    <li>Estimate <b>intrinsic value</b> and compare with market price. Returns may be earnings, cash flows, dividends, interest, interest on interest, capital gains.</li>
+    <li>Same <b>core principles</b> for all assets (real or financial); only details and uncertainty differ.</li>
+  </ul>
+
+  <h3>2.1–2.2 Required Rate of Return; Discount Rate</h3>
+  <ul>
+    <li><b>Required return</b> = minimum return expected over a period = <b>opportunity cost / cost of capital</b> (highest return forgone on similar-risk investment). Often used interchangeably with expected return.</li>
+    <li><b>Discount rate</b> = rate to find PV of future cash flows = risk-free rate + risk premium. Each cash flow can have its own rate (inflation, maturity, default) — <b>term structure</b>: upward slope = longer maturity, more inflation/liquidity/default risk.</li>
+    <li>Many rates can be replaced by <b>one equivalent single rate</b> giving the same PV.</li>
+  </ul>
+  <div class="ex"><p><b>SM Example (2.2):</b> CF ₹100, 200, 300, 400, 500 at 2.0%, 3.2%, 3.6%, 4.8%, 5.0% → PV <b>₹1,278.99</b>; single equivalent rate <b>4.4861%</b>.</p></div>
+
+  <h3>2.3 Internal Rate of Return</h3>
+  <ul>
+    <li><b>IRR</b> = rate equating PV of future cash flows to <b>market price</b>. = average annual return, <b>assuming reinvestment at the IRR</b>.</li>
+    <li>Reinvest below IRR → realised return &lt; IRR. Realised return = (Total cash at end ÷ Investment)<sup>1/n</sup> − 1 <i>(app-written general form of the SM working)</i>.</li>
+  </ul>
+  <div class="ex"><p><b>SM Example (2.3):</b> −20,000; +3,000 (Y1); +23,000 (Y2) → IRR <b>15%</b>. Reinvest 3,000 at 10% → total 26,300 → (26300/20000)<sup>1/2</sup> − 1 = <b>14.67%</b>. Reinvest at 15% → 26,450 → exactly <b>15%</b>.</p></div>
+
+  <h3>3–3.1 Equity Risk Premium; Explanation</h3>
+  <ul>
+    <li><b>ERP</b> = excess return of equity over a <b>risk-free</b> rate (e.g. tax-free government bonds) — compensation for higher risk; based on <b>risk-reward trade-off</b>.</li>
+    <li>Changes with portfolio risk and over time; <b>theoretical</b> — only estimated from past stock and bond market data; varies with time frame and method.</li>
+  </ul>
+  <div class="ex"><p><b>SM Example (3.1):</b> Govt bond 7%, stock 15% → ERP <b>8%</b>.</p></div>
+
+  <h3>3.2 Calculating the Equity Risk Premium</h3>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th></tr>
+    <tr><td>R<sub>x</sub> = R<sub>f</sub> + β<sub>x</sub>(R<sub>m</sub> − R<sub>f</sub>)</td><td>CAPM. R<sub>x</sub> expected return on x; R<sub>f</sub> risk-free; β<sub>x</sub> systematic risk of x; R<sub>m</sub> market return.</td></tr>
+    <tr><td>Market risk premium = R<sub>m</sub> − R<sub>f</sub></td><td>Premium of the market (β = 1).</td></tr>
+    <tr><td>ERP = R<sub>x</sub> − R<sub>f</sub> = β<sub>x</sub>(R<sub>m</sub> − R<sub>f</sub>)</td><td>Premium of that stock; if x = market, ERP = market premium.</td></tr>
+  </table>
+
+  <h3>4. Required Return on Equity <span class="pyq">Asked: Sep 2025 Q2(a) 6m</span></h3>
+  <ul>
+    <li>Investors judge an asset by its contribution to <b>systematic risk</b> (not diversifiable). CAPM = relatively <b>objective</b> estimate; widely used.</li>
+    <li>Return on share A = R<sub>f</sub> + β × Market risk premium.</li>
+    <li>β from data (used in TYK P17): <b>β = Cov(security, market) ÷ Variance of market</b>.</li>
+  </ul>
+  <div class="ex"><p><b>SM Example (4):</b> R<sub>f</sub> 5%, β 1.5, MRP 4.5% → 0.05 + 1.5(0.045) = <b>11.75%</b>.</p></div>
+
+  <h3>5–5.1 Discount Rate Selection; Nominal vs Real Cash Flow</h3>
+  <ul>
+    <li>Cash flows to <b>equity</b> (after debt claims and taxes) → discount at <b>required return on equity</b>. Cash flows to <b>all stakeholders</b> → <b>cost of capital</b>.</li>
+    <li><b>Nominal</b> cash flow: no inflation adjustment. <b>Real</b> cash flow: adjusted for inflation. Low inflation/short term → almost same; high inflation → nominal &gt; real.</li>
+  </ul>
+
+  <h3>5.2 Discount rate selection in Equity Valuation</h3>
+  <ul>
+    <li>Nominal CF ↔ nominal rate; real CF ↔ real rate.</li>
+    <li>Equity valuation uses only <b>nominal</b> cash flows and nominal rate — tax on corporate earnings is stated in nominal terms, so it reflects taxes accurately.</li>
+    <li>CF to equity → nominal cost of equity; CF to all capital providers → <b>nominal after-tax WACC</b>.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 05 Security Valuation (contd.)</span><span class="tag">SM Ch 05</span></div>
+  <h3>6–6.1 Valuation of Equity Shares; Dividend Based Models <span class="pyq">Asked: Sep 2025 Q2(a) 6m</span> <span class="pyq">Asked: May 2026 Q1(b) 4m</span></h3>
+  <ul>
+    <li>Three approaches: (1) <b>Dividend</b> based, (2) <b>Earning</b> based, (3) <b>Cash flow</b> based.</li>
+    <li>Dividend model assumptions: (a) dividend paid <b>annually</b>; (b) first dividend at <b>end of year 1</b>; (c) sale at end of a year at <b>ex-dividend</b> price.</li>
+    <li>Value = PV of expected dividend stream at <b>K<sub>e</sub></b> (required return / opportunity cost).</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:34%">Formula</th><th>Terms / logic</th><th style="width:28%">SM figures</th></tr>
+    <tr><td>One-year: P<sub>0</sub> = (D<sub>1</sub> + P<sub>1</sub>) ÷ (1 + K<sub>e</sub>)</td><td>Dividend and sale price both received at end of year 1.</td><td>D<sub>1</sub> 6, P<sub>1</sub> 36, K<sub>e</sub> 20% → <b>₹35</b></td></tr>
+    <tr><td>Zero growth: P<sub>0</sub> = D ÷ K<sub>e</sub></td><td>Same dividend forever = perpetuity.</td><td>—</td></tr>
+    <tr><td>Constant growth (Gordon): P<sub>0</sub> = D<sub>1</sub> ÷ (K<sub>e</sub> − g) = D<sub>0</sub>(1+g) ÷ (K<sub>e</sub> − g)</td><td>D<sub>0</sub> just paid, D<sub>1</sub> next; g forever; needs K<sub>e</sub> &gt; g. Rearranged (as in TYK P6 answer): <b>K<sub>e</sub> = D<sub>1</sub>/P<sub>0</sub> + g</b>.</td><td>TYK P8, P9, P13, P15</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P8:</b> K<sub>e</sub> = 8 + 1.5(12 − 8) = <b>14%</b>; P<sub>0</sub> = 3(1.10)/(0.14 − 0.10) = 3.30/0.04 = <b>₹82.50</b>. <b>TYK P9:</b> K<sub>e</sub> 9 + 1.5(13 − 9) = 15% → 2.00/0.08 = <b>₹25.00</b> (alt. 2.00(1.07)/0.08 = ₹26.75); β 1.75 → K<sub>e</sub> 16% → <b>₹22.22</b> (alt. ₹23.78). <b>TYK P13:</b> k = 9 + 0.75(15 − 9) = 13.5%; P = 2.5 × 1.1/0.035 = <b>₹78.57</b>. <b>TYK P15:</b> K<sub>e</sub> 13.8% → 2.14/0.068 = <b>₹31.47</b>; all changes together: 9.18% + 1.3(13% − 9.18%) = 14.146%, g 10% → 2.20/0.04146 = <b>₹53.06</b>, alt. 11% + 1.3(15% − 11%) = 16.20% → <b>₹35.48</b>; separately: inflation +2% → R<sub>x</sub> 15.80% → <b>₹24.32</b>; g 10% → <b>₹57.89</b>; β 1.3 → 14.2% → <b>₹29.72</b>.</p></div>
+  <p class="small"><i>Note (app-written): TYK P9 main answer divides D<sub>0</sub> (2.00) by K<sub>e</sub> − g; the "alternative" with D<sub>1</sub> = 2.00(1.07) follows the SM formula. TYK P15(ii) "all together" gives two ICAI versions (₹53.06 and ₹35.48); the second (R<sub>f</sub> and R<sub>m</sub> both +2%) matches the separate inflation working (R<sub>x</sub> 15.80%).</i></p>
+  <div class="ex"><p><b>TYK P5 (holding period):</b> D<sub>0</sub> 14, g 9%: D<sub>1</sub> 15.26, D<sub>2</sub> 16.63, D<sub>3</sub> 18.13, P<sub>3</sub> 360, K<sub>e</sub> 13% → 13.50 + 13.02 + 12.56 + 249.48 = <b>₹288.56</b>; (ii) 9% forever → 15.26/0.04 = <b>₹381.50</b>; (iii) P<sub>3</sub> = 18.13 × 1.09/0.04 = 19.76/0.04 = <b>₹494</b>. <b>TYK P14 (bonus 1:5 in yr 4, 5% costs):</b> dividends 20 × 3 yrs, then 24; sale 900 × 1.2 × 0.95 = 1,026 → PV <b>₹563.68</b> vs cost 500 × 1.05 = 525 → gain ₹38.68, buy; max price 563.68 × 100/105 = <b>₹536.84</b>.</p></div>
+  <p><b>Variable growth</b> — many growth rates allowed, but <b>one rate must be for infinity</b>. Company stages: growth, transition, maturity.</p>
+  <table class="tight">
+    <tr><th style="width:40%">Formula</th><th>Terms / logic</th></tr>
+    <tr><td><b>Two-stage:</b> P<sub>0</sub> = Σ<sub>t=1..n</sub> D<sub>0</sub>(1+g<sub>1</sub>)<sup>t</sup> ÷ (1+K<sub>e</sub>)<sup>t</sup> + P<sub>n</sub> ÷ (1+K<sub>e</sub>)<sup>n</sup></td><td>PV of super-growth dividends + PV of price at end of super growth.</td></tr>
+    <tr><td>P<sub>n</sub> = D<sub>0</sub>(1+g<sub>1</sub>)<sup>n</sup>(1+g<sub>2</sub>) ÷ (K<sub>e</sub> − g<sub>2</sub>)</td><td>Gordon at end of year n using D<sub>n+1</sub>. g<sub>1</sub> finite/super growth; g<sub>2</sub> normal growth; P<sub>n</sub> = price at beginning of normal growth. Discount P<sub>n</sub> by n years (not n+1).</td></tr>
+    <tr><td><b>Three-stage:</b> PV(high-growth dividends) + PV(transition dividends) + PV(price at start of stable growth)</td><td>High growth → advantage depleted by competition → gradual decline (transition) → stable growth.</td></tr>
+    <tr><td><b>H-Model:</b> P<sub>0</sub> = D<sub>0</sub>(1+g<sub>n</sub>) ÷ (r − g<sub>n</sub>) + D<sub>0</sub> × H × (g<sub>c</sub> − g<sub>n</sub>) ÷ (r − g<sub>n</sub>)</td><td>Value at normal growth + <b>premium for abnormal growth</b>. g<sub>n</sub> long-run normal growth; g<sub>c</sub> current (initial short-term) growth; <b>H = half of the transition period</b>; growth declines <b>linearly</b> over 2H. Also usable for FCFE.</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P3:</b> D<sub>0</sub> 4; D<sub>1</sub> 4.80, D<sub>2</sub> 5.76, D<sub>3</sub> 6.336; TV = 6.336/(0.15 − 0.10) = 126.72 at end of yr 2 → 4.80 × 0.8696 + 5.76 × 0.7561 + 126.72 × 0.7561 = <b>₹104.34</b>. <b>TYK P17:</b> β = 30%/24% = 1.25; K<sub>e</sub> = 11 + 1.25(18 − 11) = <b>19.75%</b>; dividends 2.80, 3.92, 5.49, 7.68, 10.76 → PV 16.36; TV PV = 10.76(1.15)/(0.1975 − 0.15) × 0.406 = 105.77 → <b>₹122.13</b>. <b>TYK P6 (K<sub>e</sub> from price):</b> (i) 1.12/20 + 12% = <b>17.6%</b>; (ii) 20% for 5 yrs then 10%: at 18% PV ₹20.23, at 19% ₹17.89 → 18% + (0.23/2.34) × 1% = <b>18.10%</b>. <b>TYK P16:</b> now 2(1.06)/0.02 = <b>₹106</b>; with project (no dividend 3 yrs, D<sub>4</sub> 2.50, g 7%) 2.50/0.01 × 1/(1.08)<sup>3</sup> = <b>₹198.46</b>; prices ₹214.33 (yr 1), ₹231.48 (yr 2), ₹250 (yr 3); sell 10, 9, 8 shares → ₹2,143.30, ₹2,083.32, ₹2,000; 973 shares left → yr 4 income <b>₹2,432.50</b>.</p></div>
+  <p class="small"><i>Note (app-written): TYK P16 gives ₹198.46 and then ₹198.45 for the same figure (rounding).</i></p>
+
+  <h3>6.2 Earning Based Models</h3>
+  <ul>
+    <li>Investor may forgo cash dividend for higher earnings on retained earnings → higher future dividend growth → value on <b>earnings</b>.</li>
+    <li><b>Gordon's assumptions:</b> (i) return on retained earnings constant; (ii) retention ratio constant.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:36%">Formula</th><th>Terms / logic</th><th style="width:28%">SM figures</th></tr>
+    <tr><td><b>Gordon:</b> Value = EPS<sub>1</sub>(1 − b) ÷ (K<sub>e</sub> − br)</td><td>b retention ratio; r return on equity; EPS<sub>1</sub>(1 − b) = dividend; growth = b × r (TYK P1: g = 0.6 × 0.15).</td><td>TYK P1</td></tr>
+    <tr><td><b>Walter:</b> Value = [D + (E − D) r/K<sub>e</sub>] ÷ K<sub>e</sub> (TYK P1 answer prints it as V<sub>c</sub> = [D + (R<sub>a</sub>/R<sub>c</sub>)(E − D)] ÷ R<sub>c</sub>)</td><td>D dividend; E EPS; r (= R<sub>a</sub>) return on retained earnings; K<sub>e</sub> (= R<sub>c</sub>) capitalisation rate. Retained (E − D) earns r, capitalised at K<sub>e</sub>.</td><td>TYK P1</td></tr>
+    <tr><td><b>PE multiplier:</b> Value = EPS × PE ratio</td><td>PE from similar company/industry, adjusted for company features.</td><td>TYK P4, P11</td></tr>
+    <tr><td>EPS = (PAT − Preference dividend) ÷ No. of equity shares</td><td>EPS is for <b>equity</b> only.</td><td>TYK P18</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P1:</b> EPS = 137.8 × 0.15 = 20.67; D = 0.40 × 20.67 = 8.27; g = 0.6 × 0.15 = 0.09 → Gordon 8.27/(0.18 − 0.09) = <b>₹91.89</b>; Walter [8.27 + (0.15/0.18)(20.67 − 8.27)]/0.18 = 18.60/0.18 = <b>₹103.35</b>. <b>TYK P4:</b> (i) 2.50(1.02)/(0.105 − 0.02) = <b>₹30</b>; (ii) PE = 1/ROE = 1/9% = 11.11 → 2.25 × 11.11 = <b>₹25.00</b>; earnings growth 2.25 × 1.02/0.07 = <b>₹32.79</b>; both &lt; ₹35 → <b>overvalued</b>. <b>TYK P11:</b> EPS = 5/0.45 = 11.11, D 6.11, price 11.11 × 8 = 88.88 → K<sub>e</sub> = 6.11/88.88 + 15% = <b>21.87%</b>; g 16% → 6.11/(21.87 − 16)% = <b>₹104.08</b>; K<sub>e</sub> 20%, g 19% → <b>₹611.00</b>.</p></div>
+  <div class="ex"><p><b>TYK P12 (DDM from ratios):</b> Sales 600 × 1.1 = 660; op. cost 594; EBIT 66; interest 175 × 8% = 14; EBT 52; tax 20.80; EAT <b>31.20</b>; dividend 5.20; retained 26.00 (₹ lakh). ROE = 31.2/400 = 7.8%; SGR = 0.078 × 0.8333 = <b>6.5%</b> (or 0.078 × 0.8333/(1 − 0.078 × 0.8333) = 6.95%). DPS 0.52 → P<sub>0</sub> = 0.52(1.065)/0.085 = <b>₹6.51</b> (or ₹6.91) &lt; CMP ₹14 → overvalued, do not invest.</p></div>
+  <div class="ex"><p><b>TYK P7 (yield-based value, Sun Ltd):</b> PAT 15,80,800; pref div 3,20,000; equity div 6,40,000; retained 6,20,800. Coverage = (15,80,800 + 7,68,000)/(7,68,000 + 3,20,000) = <b>2.16 times</b> (or 1.91 with interest net of tax). Gearing = (40 + 64)/(80 + 32) = <b>0.93</b>. Yield = 50% × 6,40,000 + 5% × 6,20,800 = 3,51,040 → 4.39%. Expected yield = 9.60 + 0.84 (coverage: 3.00 − 2.16) + 0.36 (gearing 0.18 × 2%) = <b>10.80%</b>. Value = 4.39/10.80 × 100 = <b>₹40.65</b>.</p></div>
+  <p class="small"><i>Note (app-written): SM p. 55 prints the gearing premium as (0.75 − 0.93)(2%) = 0.18 (2%); the difference is 0.93 − 0.75 = 0.18. The 0.36% used is correct.</i></p>
+  <div class="ex"><p><b>TYK P18 (buyback):</b> 1.1P(10 lakh − 27 lakh/P) = 210 lakh → 11P − 29.7 = 210 → P = <b>₹21.79</b>; shares bought 27/21.79 = 1.24 lakh (123910); EPS 3 × 10/8.76 = <b>₹3.43</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 05 Security Valuation (contd.)</span><span class="tag">SM Ch 05</span></div>
+  <h3>6.3–6.3.1 Cash Flow Based Models; FCFF <span class="pyq">Asked: Sep 2025 Q6(a) 7m</span></h3>
+  <ul>
+    <li>DDM ignores cash needed for <b>long-term capex</b> and <b>short-term working capital</b> → not the true free cash flow. Free cash flow models discount cash left after meeting these.</li>
+    <li><b>FCFF</b> discounted at <b>cost of capital (K<sub>o</sub>)</b> → value of the <b>firm</b>. <b>FCFE</b> discounted at <b>K<sub>e</sub></b> → value of <b>equity</b> (like DDM).</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:24%">FCFF from</th><th>Formula</th></tr>
+    <tr><td>(a) Net income</td><td>NI + Interest(1 − t) + Depreciation ∓ Capex ∓ ΔNon-cash NWC</td></tr>
+    <tr><td>(b) EBIT</td><td>EBIT(1 − t) + Depreciation ∓ Capex ∓ ΔNon-cash NWC</td></tr>
+    <tr><td>(c) EBITDA</td><td>EBITDA(1 − t) + Depreciation × t ∓ Capex ∓ ΔNon-cash NWC (Dep × t = tax shield on depreciation)</td></tr>
+    <tr><td>(d) FCFE</td><td>FCFE + Interest(1 − t) + Principal repaid − New debt issued + Preferred dividend (add back what went to/came from non-equity providers)</td></tr>
+    <tr><td>(e) Cash flows</td><td>CFO + Interest(1 − t) ∓ Capex (US GAAP; if interest already adjusted in CFO, do not add again)</td></tr>
+  </table>
+  <ul>
+    <li><b>Capex</b> (one year) = Purchase of fixed assets − Sale of fixed assets (investing activities).</li>
+    <li><b>ΔNon-cash WC:</b> (1) WC = CA − CL; (2) Non-cash NWC = CA − Cash &amp; bank − CL; (3) same for previous year; (4) change = current − previous; (5) <b>increase</b> = more WC needed → <b>deduct</b> from FCFF.</li>
+    <li>Value of firm: <b>one-stage</b> = PV of stable-period FCFF; <b>two-stage</b> = PV explicit (or transition) period FCFF + PV stable period FCFF; <b>three-stage</b> = PV explicit + PV transition + PV stable.</li>
+  </ul>
+
+  <h3>6.3.2 Free Cash Flow to Equity (FCFE) <span class="pyq">Asked: Sep 2025 Q6(a) 7m</span> <span class="pyq">Asked: May 2026 Q5(a) 5m</span></h3>
+  <ul>
+    <li>Cash for equity holders after operating expenses, interest, <b>net debt</b> obligations and reinvestment (WC, capex).</li>
+    <li>FCFE = Net income ∓ Capex + Depreciation ∓ ΔNon-cash NWC + New debt issued − Debt repayments + Net issue of preference shares − Preference dividends.</li>
+    <li>Or FCFE = Net profit + Dep − ΔNWC − Capex + New debt − Debt repayment + Net pref issue − Pref dividend (Capex = addition to fixed assets to sustain the base).</li>
+    <li>FCFE can be valued by <b>multistage growth</b> (two-stage, three-stage, H-model) exactly like dividends.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P10:</b> shares 1,300/40 = 32.5 cr; EPS 290/32.5 = <b>₹8.923</b>; FCFE = 8.923 − [(1 − 0.27)(47 − 39) + (1 − 0.27)(3.45)] = 8.923 − [5.84 + 2.5185] = <b>₹0.5645</b>; K<sub>e</sub> = 8.7 + 0.1(10.3 − 8.7) = 8.86%; P<sub>0</sub> = 0.5645(1.08)/(0.0886 − 0.08) = 0.60966/0.0086 = <b>₹70.89</b>.</p></div>
+  <p class="small">TYK P10 formula (ICAI answer): FCFE = Net income − [(1 − b)(capex − dep) + (1 − b)(ΔWC)], where b here = debt ratio (27%). Logic (app-written): only the equity-funded part (1 − b) of net capex and ΔWC reduces FCFE; the debt-funded part comes from new borrowing.</p>
+
+  <h3>6.4 Dividend Discount Model versus FCFE Model</h3>
+  <table class="tight">
+    <tr><th style="width:20%">Point</th><th>DDM</th><th>FCFE</th></tr>
+    <tr><td>Cash flow valued</td><td>Expected <b>dividends</b> (cash paid to shareholders)</td><td>Cash <b>available for distribution</b> after capex and incremental WC</td></tr>
+    <tr><td>Assumption</td><td>Consistent payout, may be less than cash available</td><td>All reinvestment needs met first</td></tr>
+    <tr><td>Fair value</td><td>May not be fair: healthy cash with low payout → <b>undervaluation</b></td><td><b>Better measure</b> of value</td></tr>
+  </table>
+
+  <h3>6.5–6.5.2 Enterprise Value; EV/Sales; EV/EBITDA</h3>
+  <ul>
+    <li><b>EV</b> = Market capitalisation + Long-term debt + Minority interest − Cash &amp; cash equivalents (also minus equity investments in affiliates/other companies and long-term investments). = true economic value.</li>
+    <li><b>Total EV</b> = Market cap + interest-bearing debt + minority interest − cash. <b>Operating EV</b> = Total EV − market value of non-operating assets (investments, shares in associates). <b>Core EV</b> = Operating EV − non-core assets.</li>
+    <li>EV considers debt and equity, <b>least affected by capital structure</b>; EV multiples more reliable than equity multiples (which see only equity claim). Denominator must represent claims of <b>all</b> claimholders.</li>
+    <li><b>EV/Sales:</b> for firms with negative cash flows/earnings (cyclical), technology firms; sales least manipulable, least affected by accounting policy.</li>
+    <li><b>EV/EBITDA:</b> EBITDA = proxy of cash flow to debt + equity; for <b>capital-intensive</b> firms (high D&amp;A), acquisitions; unaffected by depreciation policy and capital structure. <b>Inverse</b> = cash return on total investment.</li>
+  </ul>
+
+  <h3>6.6 Valuation of Rights</h3>
+  <table class="tight">
+    <tr><th style="width:36%">Formula</th><th>Terms / logic</th><th style="width:30%">SM figures</th></tr>
+    <tr><td>TERP = (nP<sub>0</sub> + S) ÷ (n + n<sub>1</sub>)</td><td>n existing shares; P<sub>0</sub> pre-rights price; S amount raised; n<sub>1</sub> new shares. Weighted average of old value and cash brought in.</td><td rowspan="2">TYK P2</td></tr>
+    <tr><td>Theoretical value of a right = Ex-Right Price − Subscription Price; Value per shareholding = (Ex-Right Price − Subscription Price) ÷ Existing Number of Shares (per right share)</td><td>What a new share is worth over its cost, spread over the old shares that carry it.</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P2:</b> (i) 1 for 2: 5,00,000 shares at ₹4; ex-right (1,30,00,000 + 20,00,000)/15,00,000 = <b>₹10</b>; right ₹6; per share (10 − 4)/2 = <b>₹3</b>. (ii) 1 for 4: ₹8; ex-right 1,50,00,000/12,50,000 = <b>₹12</b>; right ₹4; per share (12 − 8)/4 = <b>₹1</b>. (iii) 100 shares: 150 × 10 − 200 = 1,300 = 125 × 12 − 200 = before-issue <b>₹1,300</b> → no change in wealth.</p></div>
+
+  <h3>7. Valuation of Preference Shares</h3>
+  <table class="tight">
+    <tr><th style="width:42%">Formula</th><th>Terms / logic</th></tr>
+    <tr><td>Redeemable: Σ Dividend/(1+r)<sup>t</sup> + Maturity value/(1+r)<sup>n</sup></td><td>Fixed dividend like a bond; r = required return on preference shares.</td></tr>
+    <tr><td>Irredeemable: Dividend ÷ Required return</td><td>Perpetuity, like a perpetual bond.</td></tr>
+  </table>
+  <div class="ex"><p><b>SM Example (7):</b> FV ₹10,000, 10%, 3 years, r 12% → 892.86 + 797.19 + 7,829.58 = <b>₹9,519.63</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 05 Security Valuation (contd.)</span><span class="tag">SM Ch 05</span></div>
+  <h3>8.1–8.3 Bond Basics; Bond Valuation Model; Bond Value Theorems</h3>
+  <ul>
+    <li><b>Par value</b> (face, at maturity); <b>coupon rate</b> and frequency (monthly/quarterly/half-yearly/annual); <b>maturity period</b>; <b>redemption</b> — bullet (one shot) at par or premium.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:42%">Formula</th><th>Terms / logic</th></tr>
+    <tr><td>V = Σ<sub>t=1..n</sub> I/(1+k<sub>d</sub>)<sup>t</sup> + F/(1+k<sub>d</sub>)<sup>n</sup> = I × PVIFA<sub>kd,n</sub> + F × PVIF<sub>kd,n</sub></td><td>I annual interest; F principal (redemption) at maturity; n years; k<sub>d</sub> = YTM / required return on similar bonds.</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th>Cause</th><th>Effect</th></tr>
+    <tr><td>YTM = coupon</td><td>Sells at <b>par</b></td></tr>
+    <tr><td>YTM &gt; coupon</td><td>Sells at <b>discount</b></td></tr>
+    <tr><td>YTM &lt; coupon</td><td>Sells at <b>premium</b></td></tr>
+    <tr><td>Longer maturity</td><td><b>Greater price change</b> for a given change in yield</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P19:</b> 10% coupon, FV 100, redeemable ₹110 after 5 yrs: at 5% → 43.30 + 86.24 = <b>₹129.54</b>; 5.1% → <b>₹128.97</b>; 10% → 37.91 + 68.31 = <b>₹106.22</b>; 10.1% → <b>₹105.79</b>.</p></div>
+
+  <h3>8.4–8.5 Yield to Maturity; Semi-annual Interest</h3>
+  <ul>
+    <li><b>YTM</b> = discount rate at which PV of bond cash flows = <b>market price</b> (the bond's IRR). Find by trial and interpolation.</li>
+    <li>Semi-annual: V = Σ<sub>t=1..2n</sub> (I/2)/(1 + k<sub>d</sub>/2)<sup>t</sup> + F/(1 + k<sub>d</sub>/2)<sup>2n</sup> = I/2 × PVIFA<sub>kd/2, 2n</sub> + F × PVIF<sub>kd/2, 2n</sub> — halve coupon and rate, double periods.</li>
+    <li>Approximate YTM as in TYK P20 answer: [11 + (100 − 97.60)/3] ÷ [(100 + 97.60)/2]; general form <i>(app-written)</i>: [I + (F − V)/n] ÷ [(F + V)/2].</li>
+  </ul>
+  <div class="ex"><p><b>TYK P20:</b> (i) 11 × 2.361 + 100 × 0.693 = <b>₹95.27</b> at 13%; (ii) at 12% value ₹97.62 ≈ ₹97.60 → YTM <b>12%</b>; approx. [11 + 2.40/3]/[(100 + 97.60)/2] = <b>11.94%</b>. <b>TYK P21(ii):</b> 7.5%, ₹10,000, 2 yrs, yield 6%, half-yearly → PV interest ₹1,394 + PV principal ₹8,885 = <b>₹10,279</b>.</p></div>
+
+  <h3>8.6–8.7 Price Yield Relationship; Bond Price and Time</h3>
+  <ul>
+    <li>Price varies <b>inversely</b> with yield (higher yield → lower PV).</li>
+    <li>At maturity price = par (no default). Premium bond price <b>falls</b> over time; discount bond price <b>rises</b> over time.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P21(i):</b> current yield = coupon ÷ price = 10/110 = 9.09%; up 1% to 10.09% → price = 10/10.09% = <b>₹99.11</b>.</p></div>
+
+  <h3>8.8 Duration of Bond</h3>
+  <ul>
+    <li><b>Duration</b> = weighted average time to get back promised principal and YTM. Coupon bond: duration <b>&lt; maturity</b> (TYK T1: coupons are received before maturity, so the weighted average time is shorter; ZCB duration = maturity).</li>
+    <li>Measures interest rate risk: higher duration = higher risk. Factors: (i) <b>time to maturity</b> — shorter → lower duration; (ii) <b>coupon</b> — higher → lower duration; (iii) <b>YTM</b> — higher → lower duration.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:40%">Formula</th><th>Terms / logic</th><th style="width:26%">SM figures</th></tr>
+    <tr><td><b>Macaulay Duration</b> = [Σ<sub>t=1..n</sub> t*c/(1+i)<sup>t</sup> + n*M/(1+i)<sup>n</sup>] ÷ P</td><td>Each year weighted by share of PV in price. c cash flow (coupon); i required yield; M maturity (par) value; P bond price; n time to maturity.</td><td>TYK P26, P27</td></tr>
+    <tr><td><b>Modified duration</b> = Macaulay ÷ (1 + YTM/n)</td><td>n = compounding periods per year. = % price change for 1% change in yield ("volatility").</td><td>TYK P26: 4.247/1.17 = 3.63</td></tr>
+    <tr><td>Short cut (TYK P26): D = (1+YTM)/YTM − [(1+YTM) + t(c − YTM)] ÷ [c((1+YTM)<sup>t</sup> − 1) + YTM]</td><td>YTM yield to maturity; c coupon rate; t years to maturity.</td><td>4.24 yrs</td></tr>
+    <tr><td>Change in price = Price × Δy × Volatility/100 <i>(app-written, from TYK P26: 960.26 × .75 (3.63/100))</i></td><td>∆y in % points (75 bp = .75); price falls when yield rises.</td><td>TYK P26</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P26:</b> 16% coupon, 6 yrs, YTM 17%: price 160 × 3.589 + 1,000 × 0.390 = <b>₹964.24</b>; duration <b>4.247 yrs</b> (Σ t × PV = 4,091.20/964.40 = 4.242); volatility 4.247/1.17 = <b>3.63</b>; +75 bp → 960.26 × 0.75 × 3.63/100 = 26.142 → <b>₹934.118</b> (alt. 964.40 − 26.26 = <b>₹938.14</b>).</p></div>
+  <p class="small"><i>Note (app-written): TYK P26(d) main answer starts from ₹960.26, a figure not computed in the answer (price is ₹964.24 by formula, ₹964.40 by the table); the alternative using ₹964.40 is consistent.</i></p>
+
+  <h3>8.9 Immunization</h3>
+  <ul>
+    <li>Rate rise → reinvestment income ↑ but bond value ↓ (and vice versa). Interest rate risk = <b>price risk</b> + <b>reinvestment risk</b>, moving in <b>opposite</b> directions.</li>
+    <li>Immunization: choose bonds so the two offset; portfolio value at end of holding period insensitive to rate changes. <b>Duration = holding period</b> → immunized.</li>
+    <li>Two bonds (TYK P27 answer): Required duration = x<sub>1</sub> × Duration of X + (1 − x<sub>1</sub>) × Duration of Y, x<sub>1</sub> = proportion in Bond X.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P27:</b> D<sub>X</sub> = <b>1 yr</b>; D<sub>Y</sub> = <b>3.563 yrs</b>; 2 = x + (1 − x)3.563 → x = <b>0.61</b> → 61% X, 39% Y; invest PV of ₹1,00,000 at 10% for 2 yrs (0.826): X ₹50,386 → <b>52 bonds</b>, Y ₹32,214 → <b>34 bonds</b>. Bond X is reinvested for one more year at the same return; modified duration may also be used.</p></div>
+  <p class="small"><i>Note (app-written): TYK P27 duration table shows PV of Bond X as ₹972.63 while the question gives price ₹972.73; the answer uses ₹972.63 for number of bonds.</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 05 Security Valuation (contd.)</span><span class="tag">SM Ch 05</span></div>
+  <h3>8.10 Yield Curve</h3>
+  <ul>
+    <li><b>Spot rate</b> = rate for a zero-coupon bond of a given maturity (time value of a single future payment). ZCB price = 10,000 ÷ (1.124) = 8,897 for year 1 (SM: 8,897 = 10,000/(1 + r<sub>1</sub>)).</li>
+    <li><b>Yield curve</b> (term structure) = YTM vs term to maturity; may slope up (long rates &gt; short), down, flat or humped (four patterns).</li>
+    <li><b>Forward rate</b> (f notation, to distinguish from spot r): f<sub>2</sub> = rate for the next one year after one year. Solve bond price with r<sub>1</sub>, f<sub>2</sub>, f<sub>3</sub>… or from the spot curve as in SM: f<sub>2</sub> = (1.1318)<sup>2</sup>/(1.124) − 1; f<sub>3</sub> = (1.1340)<sup>3</sup>/(1.1318)<sup>2</sup> − 1.</li>
+    <li>Equivalent ways to value riskless cash flows: discount at the YTM, PV[CF(t)] = CF(t)/(1 + R<sub>t</sub>)<sup>t</sup>; or by the product of spot plus forward rates, PV[CF(t)] = CF(t)/[(1 + r<sub>1</sub>)(1 + r<sub>2</sub>)…(1 + r<sub>t</sub>)] (as printed in SM). Future spot rates are not known.</li>
+  </ul>
+  <div class="ex"><p><b>SM Example (8.10):</b> spot 12.40%, 13.18%, 13.40%, 13.70%, 14.10% → ZCB (₹10,000) prices 8,897; 7,807; 6,857; 5,984; 5,170. Govt securities YTM 12.400, 13.128, 13.351, 13.599, 13.901 (prices 10,000; 9,937; 10,035; 9,971; 9,948). 2-yr bond: 9,937 = 1,275/1.124 + 11,275/[1.124(1 + f<sub>2</sub>)] → f<sub>2</sub> = 1,381/9,894 = <b>0.1396</b> (spot route 1.1318²/1.124 − 1 = 0.1397). f<sub>3</sub> = <b>0.13853</b> (spot 13.84%); f<sub>4</sub> ≈ <b>0.1461</b> (spot 14.60%). Forward curve: 12.40, 13.97, 13.84, 14.60, 15.71.</p></div>
+
+  <h3>8.11 Term Structure Theories</h3>
+  <ul>
+    <li><b>Expectation theory:</b> long-term rates are <b>unbiased estimators</b> of future short-term rates.</li>
+    <li><b>Liquidity preference theory:</b> investors risk-averse; long bonds carry more interest rate risk and sacrifice liquidity → need premium → normal curve <b>positively sloped</b>.</li>
+    <li><b>Preferred habitat (market segmentation) theory:</b> each investor has a preferred maturity; rates set by demand/supply in each segment; mismatch → higher rate needed to pull players out → curve may slope up, fall or be flat.</li>
+  </ul>
+
+  <h3>8.12 Convexity Adjustment</h3>
+  <ul>
+    <li>Duration assumes a <b>linear</b> price-yield relation — good only for small changes. Convexity improves the estimate.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:42%">Formula</th><th>Terms / logic</th></tr>
+    <tr><td>Convexity adjustment = C* × (Δy)<sup>2</sup> × 100</td><td>Added to the duration-based % price change.</td></tr>
+    <tr><td>C* = (V<sub>+</sub> + V<sub>−</sub> − 2V<sub>0</sub>) ÷ [2V<sub>0</sub>(Δy)<sup>2</sup>]</td><td>V<sub>0</sub> initial price; V<sub>+</sub> price if yield up by Δy; V<sub>−</sub> price if yield down by Δy; Δy change in yield.</td></tr>
+  </table>
+
+  <h3>8.13–8.14 Convertible Debentures; Valuation of Warrants</h3>
+  <ul>
+    <li><b>Conversion ratio</b> = equity shares per debenture; <b>conversion price</b> = price paid per share. <b>Conversion value</b> = Share price × shares per debenture.</li>
+    <li><b>Warrant</b> = right to subscribe shares in a period at a stated price; issued to <b>sweeten</b> debentures. Theoretical value = (MP − E) × n (MP share price; E exercise price; n shares per warrant).</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Warrant</th><th>Convertible debenture</th></tr>
+    <tr><td>Option <b>detachable</b> → traded separately</td><td>Not detachable</td></tr>
+    <tr><td>Exercised for <b>cash payment</b></td><td>No cash payment</td></tr>
+  </table>
+  <table class="tight">
+    <tr><th style="width:44%">Measure (used in TYK answers)</th><th>Formula</th></tr>
+    <tr><td>Premium over conversion value</td><td>(Market price of bond − Conversion value) ÷ Conversion value</td></tr>
+    <tr><td>Downside risk</td><td>(Market price − Straight value) ÷ Straight value (or ÷ Market price) — fall in bond price if the stock becomes worthless</td></tr>
+    <tr><td>Conversion parity price</td><td>Bond price ÷ No. of shares on conversion</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P22:</b> CV 14 × 80 = 1,120; premium (1,475 − 1,120)/1,120 = <b>31.7%</b>. <b>TYK P23:</b> straight value 12 × 3.993 + 100 × 0.681 = <b>₹116.02</b>; conversion 20 × ₹4/5/6 = 80/100/120 → convert only at <b>₹6</b>. <b>TYK P24:</b> stock value 12 × 20 = <b>₹240</b>; downside (265 − 235)/235 = <b>12.77%</b> or /265 = 11.32%; conversion premium (265 − 240)/240 = <b>10.42%</b>; parity 265/20 = <b>₹13.25</b> (1.25 = 10.42% of ₹12).</p></div>
+
+  <h3>8.15 Zero Coupon Bond</h3>
+  <ul>
+    <li><b>No coupon</b>; issued at a <b>discount</b> to face value; one lump sum (face) at maturity = investment + accrued interest.</li>
+    <li>Usually <b>long-term</b> → long-range planning. Issued by banks, government, private companies; corporate ZCBs riskier (issuer strength, long maturity) but higher return. (TYK T2.)</li>
+  </ul>
+
+  <h3>8.16 Refunding of Bonds <span class="pyq">Asked: Sep 2025 Q3(a) 6m</span></h3>
+  <ul>
+    <li>Issuer refunds before maturity when rates <b>fall</b>: new low-coupon bonds replace old high-coupon bonds; needs a <b>call feature</b>; cost = <b>call premium</b> (repay above face value).</li>
+    <li>Capital budgeting (<b>NPV</b>) decision: refund if PV of net cash savings &gt; PV of outflows (call premium, interest in transition period etc.). New bonds usually issued before old are refunded → <b>overlap interest</b> on both.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:30%">Step</th><th>Build-up</th></tr>
+    <tr><td>Initial outlay</td><td>(Face + Call premium) − (New issue − Issue cost) − Tax saving on (call premium + unamortised old issue cost written off)</td></tr>
+    <tr><td>Annual net saving</td><td>Interest saving − tax on [interest saving + (old amortisation lost − new amortisation)]</td></tr>
+    <tr><td>Discount rate</td><td>After-tax cost of new debt (TYK P25 uses PVIFA 7% = 10% × (1 − 0.30)) <i>(app-written explanation)</i></td></tr>
+    <tr><td>NPV</td><td>PV of annual net saving − Initial outlay; positive → refund</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P25:</b> cost of calling 300 + 12 = 312; net new proceeds 300 − 6 = 294; tax saving 0.30(12 + 9) = 6.3 → initial outlay <b>₹11.7 m</b>. Saving 300 × 2% = 6.00 less tax 0.30 × [6 + (9 − 6)/6] = 1.95 → <b>₹4.05 m</b> p.a.; × PVIFA(7%, 6) 4.766 = 19.30 → NPV <b>₹7.60 m</b> → refund.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 05 Security Valuation (contd.)</span><span class="tag">SM Ch 05</span></div>
+  <h3>8.17 Money Market Instruments</h3>
+  <ul>
+    <li>Short-term finance for industry, trade, government; outlet for banks' surplus funds.</li>
+    <li>Features: (a) <b>short duration</b>; (b) <b>large volume</b>; (c) <b>de-regulated</b> interest rates; (d) <b>highly liquid</b>; (e) <b>safe</b> (issuer strength).</li>
+    <li>Traditional: call and notice money, T-bills, commercial bills; new instruments give a wider choice to park funds even for a day.</li>
+  </ul>
+  <div class="ex"><p><b>TYK P29:</b> ₹20 lakh at 9%, expenses ₹50,000. (i) 5% pre-tax (₹1,00,000): 20,00,000 × 9% × P/12 − 50,000 = 1,00,000 → <b>P = 10 months</b>; (ii) break-even: = 0 → <b>3.33 months</b>.</p></div>
+
+  <h3>8.17.1–8.17.2 Call/Notice Money; Treasury Bills</h3>
+  <ul>
+    <li><b>Call money:</b> inter-bank, scheduled commercial banks lend/borrow <b>overnight (1 day)</b>; <b>notice money:</b> 2 to 14 days — for day-to-day surpluses/deficits.</li>
+    <li><b>T-Bills:</b> short-term promissory notes of GoI issued at a <b>discount</b>; interest = discount; assured yield, negligible default risk. At present RBI issues <b>91, 182, 364 days</b> (earlier 14, 28, 91, 364 days on auction).</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:36%">Formula</th><th>Terms / logic</th><th style="width:28%">SM figures</th></tr>
+    <tr><td>Y = (F − P)/P × 365/M × 100</td><td>F face value; P issue/purchase price; M actual days to maturity. Discount earned on money actually paid, annualised.</td><td>TYK P28</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P28:</b> 91-day, ₹100, yield 6%: (100 − x)/x × 365/91 × 100 = 6 → 0.01496x = 100 − x → x = 100/1.01496 = <b>₹98.53</b>.</p></div>
+
+  <h3>8.17.3–8.17.5 Commercial Bills; Certificate of Deposit; Commercial Paper</h3>
+  <ul>
+    <li><b>Commercial bill:</b> arises from a genuine <b>credit trade</b> transaction; seller draws on buyer, buyer accepts; <b>self-liquidating</b>, negotiable; 3–6 months. Advantages: self-liquidating, recourse to two parties, exact date known, transparency.</li>
+    <li><b>CD:</b> negotiable term deposit of commercial banks from bulk depositors at market rates; Demat or usance promissory note; front-ended, issued at discount, face value at maturity.</li>
+    <li><b>CP:</b> unsecured negotiable promissory note of <b>high-rated corporates</b> for working capital, directly from market; <b>7 days to 1 year</b>; at discount; yield market-determined; introduced Jan 1990 (Vaghul Committee); by-passes banks (securitisation); partly replaces bank WC limits — no net increase in borrowing.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:36%">Formula</th><th>Terms / logic</th><th style="width:30%">SM figures</th></tr>
+    <tr><td>Discount = 100 × 15/100 × 2/12 (SM working; general form app-written: FV × rate × months/12)</td><td>Discount charged up front on face value.</td><td>Bill ₹100, 15%, 2 m → ₹2.50, fetch ₹97.50; CD ₹100, 20%, 6 m → ₹10, issue ₹90</td></tr>
+    <tr><td>Effective rate / yield = (FV − SV)/SV × (Days or months in a year)/M × 100</td><td>SV sale value (amount received); M period. Higher than discount rate because discount is paid up front. Same form for bill (D), CD (E) and CP (Y).</td><td>Bill <b>15.385%</b>; CD <b>22.22%</b></td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P30:</b> CP ₹10 cr, 91 days, 12.04%: 12.04% × 91/365 = 3.002% → discount 10 cr × 3.002/103.002 = ₹29,14,507 → net <b>₹9.70849 cr</b> (alt. 10 cr ÷ (1 + 12.04% × 91/365) = <b>₹9.70855 cr</b>).</p></div>
+
+  <h3>8.17.6 Repo and Reverse Repo <span class="pyq">Asked: Jan 2026 MCQ CS-I 1-3 6m</span></h3>
+  <ul>
+    <li>Raise funds by <b>selling securities</b> and agreeing to <b>repurchase</b> later at a specified price (includes interest at agreed rate). Also called <b>Ready Forward Contract</b> (sell spot/ready, buy back forward).</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:18%">Point</th><th>Repo</th><th>Reverse Repo</th></tr>
+    <tr><td>RBI rate</td><td>Rate at which <b>RBI lends</b> to banks against G-Secs</td><td>Rate at which <b>banks lend</b> to RBI</td></tr>
+    <tr><td>Perspective</td><td><b>Seller of securities</b> (acquires funds)</td><td><b>Supplier of funds</b>; name depends on who initiated</td></tr>
+    <tr><td>Purpose</td><td>Meet <b>deficiency</b> of funds</td><td>Reduce <b>excess liquidity</b></td></tr>
+    <tr><td>Rate level</td><td>Comparatively <b>higher</b></td><td>Lower</td></tr>
+    <tr><td>Aim</td><td>Contain <b>inflation</b></td><td>Control <b>money supply</b></td></tr>
+  </table>
+  <table class="tight">
+    <tr><th style="width:42%">Formula (TYK P31)</th><th>Terms / logic</th></tr>
+    <tr><td>Dirty Price = Clean Price + Interest Accrued (= 10/100 × 100 × 262/360 in TYK P31)</td><td>Clean price excludes accrued interest; buyer pays both.</td></tr>
+    <tr><td>First leg (start proceed) = Nominal value × Dirty price/100 × (100 − Initial margin)/100</td><td>Cash lent against the bond, less margin (haircut).</td></tr>
+    <tr><td>Second leg (repayment) = Start proceed × (1 + Repo rate × days/360)</td><td>Repurchase amount = first leg + repo interest.</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK P31:</b> 10% GoI 2028, ₹8 cr, clean 99.42, 262 days accrued → dirty 99.42 + 10 × 262/360 = <b>106.70</b>; first leg 8,00,00,000 × 106.70/100 × 98/100 = <b>₹8,36,52,800</b>; second leg × (1 + 0.0565 × 14/360) = <b>₹8,38,36,604</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 05 Security Valuation (contd.)</span><span class="tag">SM Ch 05</span></div>
+  <h3>9.1 Role of Valuers</h3>
+  <ul>
+    <li><b>Mergers/acquisitions/de-mergers/takeovers:</b> Income Tax Act, 1961 (tax payable).</li>
+    <li><b>Slump sale/asset sale/IPR sale:</b> IBC, 2016 — liquidation, sale of corporate debtor's assets (fair/liquidation value).</li>
+    <li><b>Conversion of debt/security:</b> RBI — inbound/outbound foreign investment.</li>
+    <li><b>Capital reduction:</b> SEBI ICDR/LODR/preferential allotment — listed securities, periodically.</li>
+    <li><b>Strategic financial restructuring:</b> Companies Act 2013, SARFAESI 2002, Arbitration and Conciliation Act 1996; also Ind AS and court orders.</li>
+  </ul>
+
+  <h3>9.2 Responsibilities of Valuers</h3>
+  <p>Model Code of Conduct, Rule 12(e), Companies (Registered Valuers and Valuation) Rules, 2017 — 29 points under 8 heads:</p>
+  <ul>
+    <li><b>Integrity and fairness (1–4):</b> high integrity; honest, straightforward, forthright; true and adequate information, no misrepresentation; nothing bringing disrepute.</li>
+    <li><b>Professional competence and due care (5–9):</b> due diligence, independent judgment; follow technical/professional standards; keep knowledge up to date; do not disclaim liability (except facts supplied by the company); carry out client instructions consistent with integrity, objectivity, independence.</li>
+    <li><b>Independence and disclosure of interest (10–17):</b> objectivity, no bias/conflict/coercion; no assignment if he or relatives/associates not independent; independent of external influence; disclose conflicts; <b>no dealing in securities</b> of subject company once aware (SEBI PIT Regulations, 2015); no <b>mandate snatching</b> or <b>convenience valuations</b>, write to prior valuer; <b>no success fee</b>; declare past association in fairness opinions.</li>
+    <li><b>Confidentiality (18):</b> no divulging confidential information without authority or legal/professional duty.</li>
+    <li><b>Information management (19–22):</b> written contemporaneous records of decisions and reasons; co-operate with inspections; provide records to Registration Authority, Tribunal, Appellate Tribunal, RVO, regulators; keep working papers <b>3 years</b> (or till disposal of pending case).</li>
+    <li><b>Gifts and hospitality (23–24):</b> no gifts affecting independence; no gifts/advantage to public servants to obtain work.</li>
+    <li><b>Remuneration and costs (25–26):</b> transparent, reasonable fees; no undisclosed fees.</li>
+    <li><b>Occupation, employability and restrictions (27–29):</b> not too many assignments; no employment unless certificate temporarily surrendered; no business inconsistent with the profession's reputation.</li>
+  </ul>
+
+  <h3>10. Precautions before accepting a Valuation Assignment</h3>
+  <ul>
+    <li><b>Not a precise estimate:</b> many assumptions; quality ∝ time spent on data and understanding the firm.</li>
+    <li><b>More than financial statements:</b> emerging businesses valued on <b>narrative</b> factors — scalability, ease of replication, growth potential, cross-sell.</li>
+    <li><b>Middle ground</b> between numbers and story — focusing on only one misses opportunities.</li>
+    <li><b>Emotions</b> move stock prices; ignoring this is an obstacle to getting valuation right.</li>
+  </ul>
+  <div class="ex"><p><b>TYK T1:</b> duration &lt; maturity for coupon bonds — see 8.8. <b>TYK T2:</b> Zero Coupon Bonds — see 8.15.</p></div>
+
+  <div class="sticky"><b>Exam steps — dividend / CAPM valuation:</b> K<sub>e</sub> by CAPM (β = Cov/Var if needed) → identify D<sub>0</sub> vs D<sub>1</sub> → constant growth: D<sub>1</sub>/(K<sub>e</sub> − g) → compare with market price → under/over-valued → buy/hold/sell.</div>
+  <div class="sticky"><b>Exam steps — two-stage / three-stage:</b> grow D<sub>0</sub> year by year in high growth → terminal price at end of year n = D<sub>n+1</sub>/(K<sub>e</sub> − g<sub>2</sub>) → discount dividends and P<sub>n</sub> at K<sub>e</sub> (P<sub>n</sub> by n years) → sum. For implied K<sub>e</sub> or g: trial two rates, interpolate.</div>
+  <div class="sticky"><b>Exam steps — H-model:</b> g<sub>n</sub> (e.g. ROE × retention) → H = transition years ÷ 2 → P<sub>0</sub> = D<sub>0</sub>[(1 + g<sub>n</sub>) + H(g<sub>c</sub> − g<sub>n</sub>)] ÷ (r − g<sub>n</sub>) <i>(app-written: SM formula with D<sub>0</sub> taken common)</i> → % over/under-valuation vs market price.</div>
+  <div class="sticky"><b>Exam steps — FCFF / FCFE:</b> FCFF = EBIT(1 − t) + Dep − Capex − ΔNon-cash WC → discount at WACC (target weights) → firm value − debt = equity → ÷ shares vs price. FCFE = NI + Dep − Capex − ΔWC + net borrowing (or Net income − [(1 − b)(capex − dep) + (1 − b)(ΔWC)], b = debt ratio) → discount at K<sub>e</sub>; multistage like DDM.</div>
+  <div class="sticky"><b>Exam steps — bond value / YTM / duration:</b> V = I × PVIFA + F × PVIF (halve rate, double periods if half-yearly) → YTM by trial + interpolation (or approx. formula) → duration = Σ t × PV of CF ÷ P<sub>0</sub> → Volatility = Duration/(1 + yield) → change in price = price × ∆y × Volatility/100 → immunize: duration = holding period, solve weights.</div>
+  <div class="sticky"><b>Exam steps — bond refunding:</b> initial outlay = face + call premium − net new proceeds − tax on (call premium + unamortised old cost) → annual saving = interest saving − tax on [interest saving + old amortisation − new amortisation] → discount at after-tax cost of new debt → NPV &gt; 0 → refund.</div>
+  <div class="sticky"><b>Exam steps — money market / repo:</b> T-bill/CP/CD yield = (FV − P)/P × 365/days → price = FV ÷ (1 + interest rate × days/365) (TYK P30 alt.). Repo: borrower = repo, lender = reverse repo → dirty = clean + coupon × days/360 → first leg = nominal × dirty/100 × (1 − margin) → second leg = first leg × (1 + repo rate × days/360).</div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

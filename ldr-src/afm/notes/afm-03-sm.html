@@ -1,0 +1,376 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 3 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 03 Advanced Capital Budgeting Decisions</span><span class="tag">SM Ch 03</span></div>
+  <h2 class="brk"><span class="n">03</span>Ch 03 — Advanced Capital Budgeting Decisions</h2>
+  <div class="sub">Asked in last 3 papers: Sep 2025 MCQ CS-I (6m) sensitivity — % change in NPV for a 10% adverse change in cost, inflow, cost of capital · Jan 2026 MCQ CS-V (6m) expected value of profit from a probability distribution · May 2026 — nil.</div>
+
+  <h3>1. Current trends in capital budgeting</h3>
+  <ul>
+    <li>Intermediate level assumed <b>no risk, cash flows certain</b>. In practice projects are exposed to: <b>(i) inflation, (ii) change in technology, (iii) change in Government policies</b>.</li>
+  </ul>
+
+  <h3>1.1 Impact of inflation on capital budgeting decisions</h3>
+  <p>Inflation raises revenues and costs. Two distortions:</p>
+  <ul>
+    <li><b>(1) Depreciation is on historical cost</b> → tax shield on depreciation does not keep parity with inflation. Effect: inflation <b>reduces the actual (real) rate of return</b>.</li>
+    <li><b>(2) Cost of capital contains a premium for anticipated inflation</b> → if k is nominal, cash flows must also be inflated; if no inflation, discount at the real rate.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>CFAT = (R − C − D)(1 − T) + D = <b>(R − C)(1 − T) + DT</b></td><td>R revenue, C cash costs (excl. depreciation), D depreciation, T tax rate. (R − C)(1 − T) moves with inflation; <b>DT does not</b> (historical cost).</td><td>Example: outlay 80,000, 4 yrs, R 60,000, C 20,000, T 50%, D 20,000 → CFAT 30,000 p.a. With 10% inflation: 32,000 / 34,200 / 36,620 / 39,282; deflated (real) 29,091 / 28,264 / 27,513 / 26,830 — <b>less than 30,000</b>.</td></tr>
+    <tr><td>R<sub>N</sub> = R<sub>R</sub> + P</td><td>R<sub>N</sub> nominal required return; R<sub>R</sub> real required return; P anticipated inflation. Investors want real return plus inflation.</td><td>—</td></tr>
+    <tr><td>Nominal Cash Flow = (1 + Inflation Rate) Real Cash Flows</td><td>Apply once per year, i.e. (1 + Inflation Rate)<sup>t</sup> for year t. Discount nominal cash flows at the nominal rate.</td><td>Illus 1: 15,000 × 1.10 = 16,500; × 1.10<sup>2</sup> = 18,150; 19,965; 21,962.</td></tr>
+    <tr><td>Real Discount Rate = (1 + Nominal Discount Rate) ÷ (1 + Inflation Rate) − 1</td><td>Discount real CF at real rate. Both routes give the same NPV — never mix real CF with nominal k.</td><td>Illus 1: 1.12 ÷ 1.10 − 1 = 0.0182 i.e. 1.8%.</td></tr>
+    <tr><td>N.P.V. = <sup>n</sup>Σ<sub>t=1</sub> [{R<sub>t</sub>(1 + i<sub>r</sub>) − C<sub>t</sub> <sup>t</sup>Σ<sub>r=1</sub>(1 + i<sub>c</sub>)}(1 − T) + D<sub>t</sub>T] ÷ (1 + k)<sup>t</sup> − I<sub>0</sub></td><td>R<sub>t</sub>, C<sub>t</sub> revenues / costs for year t with no inflation; i<sub>r</sub>, i<sub>c</sub> annual inflation rate of revenues / costs for r<sup>th</sup> year; T tax rate; D<sub>t</sub> depreciation; I<sub>0</sub> initial outlay; k cost of capital (with inflation premium). In working, the yearly rates are compounded cumulatively (Illus 2: × 1.10 × 1.09 …); DT is not inflated.</td><td>Illus 2 (below).</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 1:</b> outlay 40,000, real CF 15,000 × 4 yrs, k 12% incl. 10% inflation. (i) Nominal CF at 12%: 14,732 + 14,469 + 14,211 + 13,957 − 40,000 = <b>₹ 17,369</b>. (ii) Real CF at 1.8%: 57,367 − 40,000 = <b>₹ 17,367</b> (approx.).</p>
+  <p><b>Illus 2 (XYZ Ltd):</b> outlay 8,00,000, D 2,00,000, T 60%, k 10%. Inflated revenue 6,60,000 / 8,39,300 / 10,35,936 / 11,08,452 (e.g. 7,00,000 × 1.10 × 1.09); costs 3,36,000 / 4,92,800 / 5,37,152 / 5,80,124. Tax shield 2,00,000 × 0.60 = 1,20,000. Cash inflow 2,49,600 / 2,58,600 / 3,19,514 / 3,31,331; PV 9,06,744 → NPV <b>₹ 1,06,744</b>.</p>
+  <p><b>TYK P17:</b> nominal CF (70), 30, 40, 30 lakhs; k 10% (taken as real), inflation 5%. Real CF = nominal × 1/1.05<sup>t</sup>: 28.56, 36.28, 25.92 → PV 75.40 − 70 = NPV <b>+5.40</b>. Alt: nominal rate 15.50% (PVF 0.866, 0.749, 0.649) → NPV 5.41. Viable.</p>
+  <p><b>TYK P18 (Shashi):</b> same flows, outlay 72. Adjusted PVF 0.909/1.05 = 0.866; 0.826/1.1025 = 0.749; 0.751/1.1576 = 0.649 → PV 75.41 − 72 = NPV <b>3.41 lakhs</b>. Alt: nominal k = (1.10)(1.05) − 1 = 15.50% → NPV +3.45 (PVF 0.750 used for year 2).</p>
+  <p><b>TYK P19 (KLM):</b> outlay 15,00,000, D 5,00,000, T 35%, nominal k 14%. Revenue 10,90,000 / 15,30,360 / 17,46,965; costs 5,50,000 / 7,19,400 / 8,33,905; PAT 3,51,000 / 5,27,124 / 5,93,489; + shield 1,75,000 → inflows 5,26,000 / 7,02,124 / 7,68,489; PV 15,19,965 → NPV <b>₹ 19,965</b>.</p></div>
+  <p><b>TYK T3 — Project appraisal under inflation:</b> costs rise on all heads (labour, material, fixed assets, remuneration); purchasing power and demand fall; lenders revise rates. Guidelines (used by Govt agencies, banks, FIs):</p>
+  <ul>
+    <li>(i) Provide for <b>cost escalation</b> on all heads, for the likely period of delay in implementation.</li>
+    <li>(ii) Scrutinise <b>sources of finance</b> for probable revision of interest rates → cost of funds goes up.</li>
+    <li>(iii) Adjust <b>profitability and cash-flow projections</b> for inflationary pressures.</li>
+    <li>(iv) Examine <b>financial viability at revised rates</b>; economic rate of return should accommodate the inflation rate.</li>
+    <li>(v) Prefer projects with <b>early payback</b> — long payback projects are riskier.</li>
+    <li>Two approaches: (a) adjust each year's cash flows to an <b>inflation index</b> (price and cost increases); or (b) adjust the <b>acceptance (cut-off) rate</b>, keeping cash flows at current prices. ICAI example: normal 15%, inflation 5% → "15.0 × 1.05 or 15.75%". Measuring inflation has no standard approach.</li>
+  </ul>
+  <p class="small"><i>Note (app-written): ICAI's TYK T3 example multiplies the rate (15 × 1.05 = 15.75%). On the SM's own Illus 1 logic the inflation-adjusted rate would be (1.15)(1.05) − 1 = 20.75% (or 15 + 5 = 20% by R<sub>N</sub> = R<sub>R</sub> + P). Keep ICAI's text for theory; for numericals use the Illus 1 / TYK P18 method.</i></p>
+
+  <h3>1.2 Impact of change in technology</h3>
+  <p>Why analyse (qualitative factor that affects future cash flows):</p>
+  <ul>
+    <li>Can significantly <b>alter the production process</b>.</li>
+    <li>Benefits: improved <b>quality, delivery time, flexibility</b>.</li>
+    <li>Can <b>reduce cost of capital</b>; can <b>improve cash inflows</b>.</li>
+    <li>May need <b>additional capital expenditure</b>.</li>
+    <li>Sales volume hit as <b>product life cycle shortens</b> (consumer preference).</li>
+  </ul>
+  <p>How to incorporate (review the project continuously):</p>
+  <ul>
+    <li>1. At decision time, consider technology risk by <b>sensitivity, scenario, simulation</b> analysis.</li>
+    <li>2. After launch, analyse positive/negative impact and <b>revise estimates</b> in money terms.</li>
+    <li>3. If unviable, evaluate the <b>abandonment option</b>.</li>
+    <li>4. Suitably <b>adjust the discount rate</b>.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 03 Advanced Capital Budgeting Decisions (contd.)</span><span class="tag">SM Ch 03</span></div>
+  <h3>1.3 Impact of change in Government policies</h3>
+  <ul>
+    <li>External factor; affects cash flows directly or through suppliers, buyers, customers, service providers. Impact can be +ve or −ve → revise estimates; if needed consider <b>abandonment</b>.</li>
+    <li>Some policies change over 5–10 years (e.g. <b>New Industrial Policy 1991</b>); others within a year:</li>
+    <li><b>Fiscal policy</b> — government spending, taxation and borrowing to influence economic activity, aggregate demand, output, employment.</li>
+    <li><b>Monetary policy</b> — central bank instruments to regulate availability, cost and use of money and credit (open market operations, reserve requirements, selective credit controls, currency supply, bank/repo rates). MPC meets at least <b>four times a year</b> → changes 2–3 times a year.</li>
+  </ul>
+  <h3>1.3.1 Domestic capital budgeting</h3>
+  <ul>
+    <li>(a) <b>Interest rates</b> (monetary policy) → cost of debt / YTM → cost of capital. Long-term projects less affected, but <b>working capital</b> (bank overdraft) is; small change ignored, a major change (about <b>100 basis points</b>) calls for revising cash flows.</li>
+    <li>(b) <b>Fiscal policy</b> → tax rate and depreciation rate → annual cash flows; drastic change → revise estimates.</li>
+  </ul>
+  <h3>1.3.2 International capital budgeting</h3>
+  <ul>
+    <li>(a) Bank rate and money supply changes move the <b>foreign exchange rate</b> → revise estimates.</li>
+    <li>(b) Change in <b>tax on foreign income</b> or <b>DTAA</b> provisions (fiscal policy) → revise estimates.</li>
+    <li>Conclusion: forecast policy changes and build a provision into expected cash flows.</li>
+  </ul>
+
+  <h3>2. Dealing with risk in investment decisions</h3>
+  <ul>
+    <li>(i) <b>Certainty</b> — cash flows certain.</li>
+    <li>(ii) <b>Risk</b> — cash flows risky and <b>probability can be assigned</b>.</li>
+    <li>(iii) <b>Uncertainty</b> — probability <b>cannot</b> be assigned.</li>
+  </ul>
+  <h3>2.1 Risk and uncertainty</h3>
+  <ul>
+    <li><b>Risk</b> = variability of actual returns vs estimated returns; measured mostly by <b>SD and coefficient of variation</b>. Risk: probability distribution known. Uncertainty: no information to form it. Terms used interchangeably.</li>
+  </ul>
+  <h3>2.2 Reasons for adjusting risk</h3>
+  <ul>
+    <li>1. <b>Opportunity cost</b> for the level of risk — are returns proportionate to risk, and better than other options?</li>
+    <li>2. To know the <b>real value of cash inflows</b> — higher risk → higher risk premium → higher expected return.</li>
+  </ul>
+
+  <h3>3. Internal and external factors affecting capital budgeting decisions</h3>
+  <table class="tight">
+    <tr><th>Factor</th><th>What (SM)</th><th>SM example</th></tr>
+    <tr><td colspan="3"><b>3.1 Internal</b></td></tr>
+    <tr><td>3.1.1 Project-specific</td><td>Completion in time, errors in estimating resources and allocation, cash flow estimation.</td><td>Nuclear vs hydel power project.</td></tr>
+    <tr><td>3.1.2 Company-specific</td><td>Credit rating downgrade, change in key managerial persons, IPR/law violation cases, disputes with workers — affect cash flows and access to funds.</td><td>Two banks, different default risk.</td></tr>
+    <tr><td colspan="3"><b>3.2 External</b></td></tr>
+    <tr><td>3.2.1 Industry-specific</td><td>Regulatory restrictions on industry, changes in technology.</td><td>Leather, breweries.</td></tr>
+    <tr><td>3.2.2 Market risk</td><td>Entry of substitutes, demand changes, availability and access to resources.</td><td>Thermal plant without coal supply.</td></tr>
+    <tr><td>3.2.3 Competition</td><td>Entry of rival, product dynamism, change in tastes and preferences.</td><td>—</td></tr>
+    <tr><td>3.2.4 Economic conditions</td><td>Monetary and fiscal policy (new taxes, cess), inflation, GDP, savings, disposable income.</td><td>—</td></tr>
+    <tr><td>3.2.5 International</td><td>Restrictions on free trade / market access, recessions, bilateral agreements, political and geographical conditions.</td><td>Restriction on outsourcing jobs overseas.</td></tr>
+  </table>
+
+  <h3>4. Methods of incorporating risk in capital budgeting</h3>
+  <table class="tight">
+    <tr><th>Statistical techniques (4.1)</th><th>Conventional techniques (4.2)</th><th>Other techniques (4.3)</th></tr>
+    <tr><td>Probability; Variance / SD; Coefficient of variation</td><td>Risk-adjusted discount rate; Certainty equivalent</td><td>Sensitivity; Scenario; Simulation; Decision tree</td></tr>
+  </table>
+
+  <h3>4.1 Statistical techniques — 4.1.1 Probability <span class="pyq">Asked: Jan 2026 MCQ CS-V 13-15 6m</span></h3>
+  <ul>
+    <li>Probability = chance an event occurs; certain event = <b>1</b>, impossible = <b>0</b>; probabilities of all outcomes add to 1.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>E(R)/ENCF = Σ<sub>i=1..n</sub> NCF<sub>i</sub> × P<sub>i</sub></td><td>NCF<sub>i</sub> net cash flows, P<sub>i</sub> probability. Expected (mean) cash flow: each possible cash flow × its probability, added.</td><td>Example: 3,00,000 × 0.3 + 2,00,000 × 0.6 + 1,20,000 × 0.1 = 90,000 + 1,20,000 + 12,000 = <b>2,22,000</b>.</td></tr>
+    <tr><td>ENPV = Σ<sub>t=1..n</sub> ENCF ÷ (1 + k)<sup>t</sup></td><td>t period, k discount rate. Find ENCF year by year, then discount at k. ENCF includes inflows and outflows.</td><td>Illus 3, 4 below.</td></tr>
+  </table>
+  <p class="small"><i>Note (app-written): the SM text after the first table says chances of "₹ 1,00,000" are 10%; the table and the working use ₹ 1,20,000 (SM p.13).</i></p>
+  <div class="ex"><p><b>Illus 3 (single period):</b> outlay 10,000, k 10%. ENCF A 12,000, B 16,000. NPV A = 0.909 × 12,000 − 10,000 = <b>₹ 908</b>; B = 0.909 × 16,000 − 10,000 = <b>₹ 4,544</b> → B.</p>
+  <p><b>Illus 4 (multi-period):</b> ENCF yr 1 6,000, yr 2 4,800, yr 3 4,200; PV = 6,000 × 0.909 + 4,800 × 0.826 + 4,200 × 0.751 = 12,573 − 10,000 = ENPV <b>₹ 2,573</b>.</p>
+  <p><b>TYK P21 (Jumble — expected utility):</b> same idea with utilities: Σ utility × probability. A = −10 − 12 + 16 + 6 + 2 = <b>2</b>; B = −6 − 0.45 + 16 + 5 + 3 = <b>17.55</b> → select <b>B</b> (higher expected utility).</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 03 Advanced Capital Budgeting Decisions (contd.)</span><span class="tag">SM Ch 03</span></div>
+  <h3>4.1.2 Variance · 4.1.3 Standard deviation · 4.1.4 Coefficient of variation</h3>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>Variance (σ<sup>2</sup>) = Σ<sub>j=1..n</sub> (NCF<sub>j</sub> − ENCF)<sup>2</sup> P<sub>j</sub></td><td>Variance: squared deviation of each outcome from the mean, weighted by probability. Zero = cash flows fixed (e.g. fixed-sum service contract); large = innovative project; small = established market.</td><td>Illus 5: A 48,00,000; B 1,76,00,000.</td></tr>
+    <tr><td>Standard Deviation (σ) = √Variance (σ<sup>2</sup>)</td><td>SD: risk in the estimated cash flows. Variance is a prerequisite for SD.</td><td>Illus 5: A <b>2,190.90</b>; B <b>4,195.23</b>.</td></tr>
+    <tr><td>Coefficient of variation = Standard Deviation ÷ Expected Return / Expected Cash Flow</td><td>Risk per unit (per rupee) of expected return. Use when projects have <b>different expected values</b>. Lower CV = better risk–return → select.</td><td>Illus 6: A 2,190.90 ÷ 14,000 = <b>0.1565</b>; B 4,195.23 ÷ 18,000 = <b>0.2331</b> → A.</td></tr>
+    <tr><td>Hillier's model: M = Σ<sub>i=0..n</sub> (1 + r)<sup>−i</sup> M<sub>i</sub>; &nbsp;σ<sup>2</sup> = Σ<sub>i=0..n</sub> (1 + r)<sup>−2i</sup> σ<sub>i</sub><sup>2</sup></td><td>M mean of PV, M<sub>i</sub> expected cash flow of year i, σ<sub>i</sub> SD of year i, r discount rate. Multi-year, <b>independent</b> cash flows: discount each year's variance by (1 + r)<sup>2i</sup>, add, take root. Used in ICAI TYK P1, P5.</td><td>TYK P1: √(85.4/1.06<sup>2</sup> + 98.61/1.06<sup>4</sup> + 74.29/1.06<sup>6</sup>) = 14.3696.</td></tr>
+  </table>
+  <ul>
+    <li><b>Importance:</b> both measure volatility of estimated cash flows; <b>variance</b> = range of variability; <b>SD</b> = risk of the proposal. Cash flows close to the mean → less risky.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 5:</b> ENCF A 12,000, B 16,000; σ<sup>2</sup> A = 16,00,000 + 8,00,000 + 0 + 8,00,000 + 16,00,000 = 48,00,000 → σ 2,190.90; B 1,76,00,000 → σ 4,195.23. <b>Illus 6:</b> ENCF A 14,000, B 18,000; same σ; CV A 0.1565 (risk ₹ 0.16 per rupee), B 0.2331 (₹ 0.23) → <b>A better</b>.</p>
+  <p><b>TYK P1 (Skylark, ₹ lakhs):</b> outlay 50, risk-free rate 6%. ENCF 27.0 / 29.3 / 27.9 → PV 25.461 + 26.077 + 23.436 = 74.974 → ENPV <b>24.974</b>. σ<sub>1</sub> = √85.4 = 9.241; σ<sub>2</sub> = √98.61 = 9.930; σ<sub>3</sub> = √74.29 = 8.619; σ of PV = <b>14.3696</b>. (iii) SD measures dispersion around the mean; identifies least risky of projects with similar mean; lower CV preferred if sizes differ; if distribution is approx. normal → probability of NPV above/below a value.</p>
+  <p><b>TYK P2 (Cyber):</b> ENCF both 4,00,000; PVAF 7%, 5 yrs 4.100 → NPV both <b>11,40,000</b>. σ A 1,54,919.33, B 77,459.66 → <b>B</b> (same NPV, lower SD).</p>
+  <p><b>TYK P3:</b> SD → X (90,000 &lt; 1,20,000). CV X = 90,000 ÷ 1,22,000 = <b>0.738</b>; Y = 1,20,000 ÷ 2,25,000 = <b>0.533</b> → Y. (iii) In conflict, <b>NPV method is best</b> — consistent with wealth maximisation.</p>
+  <p><b>TYK P4 (KLM):</b> K: ENCF 15, σ<sup>2</sup> 4.8, σ 2.19, CV <b>0.146</b>. S: ENCF 17, σ<sup>2</sup> 20.8, σ 4.56, CV <b>0.268</b> → S riskier.</p>
+  <p><b>TYK P5 (XY Co, ₹ lakhs, 10%):</b> X: ENCF 48.5 / 41.5 / 38.5 → PV 107.28 → NPV <b>37.28</b>. Y: 45.5 × 2.487 = 113.16 → NPV <b>33.16</b> → X on NPV. Hillier: X σ<sub>i</sub><sup>2</sup> 185.25, 95.25, 35.25 → σ = √238.06 = <b>15.43</b>; Y σ<sub>i</sub><sup>2</sup> 12.25 each → √25.4 = <b>5.03</b> → Y less risky.</p>
+  <p><b>TYK P6 (Shivam):</b> ENPV A = B = <b>9,000</b>. σ A √1,98,00,000 = ₹ 4,450; B √1,44,00,000 = ₹ 3,795. PI = (ENPV + cost) ÷ cost: A 45,000/36,000 = <b>1.25</b>; B 39,000/30,000 = <b>1.30</b> → <b>B</b> (same EV, less dispersion).</p></div>
+  <p class="small"><i>Note (app-written): TYK P6 (ii) labels Project B's SD as "Standard Deviation of Project A = ₹ 3,795" — it is Project B's (SM p.64).</i></p>
+
+  <h3>4.2 Conventional techniques — 4.2.1 Risk-adjusted discount rate (RADR)</h3>
+  <ul>
+    <li>Investors demand <b>higher returns from riskier projects</b>. Required return = compensation for delaying consumption + inflation (= risk-free rate) + compensation for risk. Riskier than a similar project → adjust discount rate <b>upward</b>.</li>
+    <li><b>Risk-free rate</b>: return on investments bearing no risk (e.g. Govt securities 6%). <b>Risk premium</b>: return over risk-free rate for bearing extra risk; depends on investor's risk perception and risk aversion.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>RADR = Risk-free rate + Risk premium</td><td>k used in the numerator-unchanged NPV.</td><td>Illus 7: 7% + 7% = 14%.</td></tr>
+    <tr><td>NPV = Σ NCF<sub>t</sub> ÷ (1 + k)<sup>t</sup> − I</td><td>NCF<sub>t</sub> net cash flow; k = RADR; I initial investment.</td><td>Illus 7: NPV at 7% 144.34; at 14% 99.79 lakhs.</td></tr>
+    <tr><td>Required Rate of Return = IR<sub>f</sub> + (k<sub>o</sub> − IR<sub>f</sub>) Risk Factor</td><td>ICAI TYK P16 (on the basis of CAPM): IR<sub>f</sub> risk-free rate, k<sub>o</sub> firm's minimum required rate of return, Risk Factor = project's risk index.</td><td>TYK P16: 10% + (15% − 10%) × 1.80 = 19%.</td></tr>
+  </table>
+  <ul>
+    <li><b>Advantages:</b> (1) <b>easy to understand</b>; (2) incorporates <b>risk premium in the discounting factor</b>.</li>
+    <li><b>Limitations:</b> (1) difficulty in finding <b>risk premium and RADR</b>; (2) NPV can be found but <b>not the SD</b> of the project.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 7:</b> outlay 100 lakhs; CF 25, 60, 75, 80, 65. At risk-free rate 7%: PV 244.34 → NPV <b>144.34</b>. At RADR 14%: PV 199.79 → NPV <b>99.79 lakhs</b>.</p>
+  <p><b>TYK P15:</b> RADR by CV (1.2 → 16%, 0.8 → 14%, 0.4 → 12%). X: 70,000 × 3.274 = 2,29,180 − 2,10,000 = <b>19,180</b>; Y: 42,000 × 3.433 = 1,44,186 − 1,20,000 = <b>24,186</b>; Z: 30,000 × 3.605 = 1,08,150 − 1,00,000 = <b>8,150</b>.</p>
+  <p><b>TYK P16 (New Projects):</b> RADR P-I 19%, P-II 15%, P-III 13%. NPV P-I 6,00,000 × 2.639 − 15,00,000 = <b>83,400</b>; P-II 12,67,800 − 11,00,000 = <b>1,67,800</b>; P-III 21,13,800 − 19,00,000 = <b>2,13,800</b> → <b>P-III</b>.</p></div>
+  <p class="small"><i>Note (app-written): TYK P16 gives a 40% tax rate; ICAI's answer does not use it (inflows discounted as given).</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 03 Advanced Capital Budgeting Decisions (contd.)</span><span class="tag">SM Ch 03</span></div>
+  <h3>4.2.2 Certainty equivalent (CE)</h3>
+  <ul>
+    <li><b>CIMA:</b> express risky future cash flows as the <b>certain cash flow</b> the decision maker considers equivalent — indifferent between the risky amount and the (lower) riskless amount. Guaranteed return management would accept instead of a higher uncertain one; incorporates the decision maker's <b>utility function</b>.</li>
+    <li>Coin example: win 10,000 on head, nil on tail → EV 5,000; indifferent at certain 3,000 → CE 3,000, coefficient 3,000 ÷ 10,000 = <b>0.3</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>α<sub>t</sub> = Certain cash flow ÷ Risky or expected cash flow</td><td>CE coefficient lies <b>between 0 and 1</b>; 1 = certain cash flow or management risk-neutral. Higher risk → lower α.</td><td>Illus 8: 0.90, 0.85, 0.82, 0.78.</td></tr>
+    <tr><td>NPV = Σ α<sub>t</sub> × NCF<sub>t</sub> ÷ (1 + k)<sup>t</sup> − I</td><td>α<sub>t</sub> risk-adjustment factor (CE coefficient); NCF<sub>t</sub> forecast net cash flow for year t without risk-adjustment; <b>k = risk-free rate</b> (constant); I initial investment. Risk already in numerator → using cost of capital = <b>double counting</b>.</td><td>Illus 8: NPV ₹ 5,34,570.</td></tr>
+  </table>
+  <ul>
+    <li><b>Steps:</b> 1. Multiply each risky CF by α<sub>t</sub>. 2. Discount at <b>risk-less rate</b>. 3. Apply normal method; under IRR, compare IRR with the <b>risk-free rate</b>, not the required return.</li>
+    <li><b>Advantages:</b> 1. <b>simple</b>, easy to understand and apply; 2. easily applied to <b>different risk levels for different cash flows</b> (a riskier year can be adjusted and NPV recalculated).</li>
+    <li><b>Disadvantages:</b> 1. <b>no objective/mathematical method</b> — CEs subjective; 2. decided on <b>management's</b> risk perception; shareholders' risk perception ignored → not used often.</li>
+    <li><b>RADR vs CE:</b> CE is <b>superior</b> — does not assume risk increases with time at a constant rate; each year's α reflects that year's risk. But RADR is <b>preferred in practice</b> — difficult to specify a series of α's, simple to adjust the discount rate.</li>
+    <li><b>TYK T1 (short note):</b> adjusts estimated cash flows, discounts at risk-free rate; converts expected flows to riskless amounts; greater the risk, smaller the CE for receipts and larger for payments; superior to RADR as it measures risk more accurately; adjusts cash flows not discount rates; explicitly recognises risk but the reduction procedure is implicit and may be inconsistent between investments.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 8:</b> cost 45,00,000, risk-free rate 5%: 10,00,000 × 0.90/1.05 + 15,00,000 × 0.85/1.05<sup>2</sup> + 20,00,000 × 0.82/1.05<sup>3</sup> + 25,00,000 × 0.78/1.05<sup>4</sup> − 45,00,000 = <b>₹ 5,34,570</b>.</p>
+  <p><b>TYK P14 (Textile):</b> risk-free rate 6%. M: CE flows 3,60,000 / 3,50,000 / 2,50,000 → PV 8,60,980 − 8,50,000 = <b>10,980</b>. N: 4,05,000 / 3,60,000 / 3,50,000 → PV 9,96,315 − 8,25,000 = <b>1,71,315</b> → accept <b>N</b>. (ii) Sum of CE coefficients M 2.0 &lt; N 2.4 → M riskier → under RADR, <b>M at a higher rate</b> (positive correlation between risk and discount rate).</p></div>
+
+  <h3>4.3 Other techniques — 4.3.1 Sensitivity analysis <span class="pyq">Asked: Sep 2025 MCQ CS-I 1-3 6m</span></h3>
+  <ul>
+    <li><b>CIMA:</b> modelling and risk-assessment procedure in which changes are made to significant variables to see the effect on the planned outcome; attention then on variables of special significance.</li>
+    <li>Change <b>only one variable at a time</b> (others constant). The more sensitive the NPV (or IRR), the <b>more critical</b> the variable.</li>
+    <li><b>Steps:</b> 1. find variables that influence NPV/IRR; 2. establish mathematical relationship among them; 3. analyse effect of change in each on NPV/IRR.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>Change in NPV = (NPV − NPV (Revised)) ÷ NPV</td><td>As ICAI TYK P10 working. Method 1: change one variable by a given % adversely (any %, e.g. 10%), recompute NPV. Highest % change = most sensitive.</td><td>TYK P10: inflow −10% → (22,605 − 8,345) ÷ 22,605 = 63.08%.</td></tr>
+    <tr><td>% change in a variable to make NPV = 0 = NPV ÷ PV of that variable's cash flows × 100</td><td><i>App-written summary of ICAI's TYK P9/P11 working.</i> Method 2 (break-even): how far the variable can move before NPV becomes zero. <b>Smallest %</b> = most sensitive.</td><td>TYK P11: savings 4,914 ÷ 22,792 = 21.56%; plant 4,914 ÷ 10,000 = 49.14%.</td></tr>
+    <tr><td>(IRR − X) ÷ X = cost of capital sensitivity</td><td>X = cost of capital; % rise in X before NPV = 0. ICAI TYK P12 writes it with figures; general form app-written.</td><td>(16 − X) ÷ X = 60% → X = 10%.</td></tr>
+  </table>
+  <ul>
+    <li><b>Advantages:</b> (1) <b>Critical issues</b> — identifies critical factors for success/failure; (2) <b>Simplicity</b>.</li>
+    <li><b>Disadvantages:</b> (1) <b>Assumption of independence</b> of variables — unlikely in real life; (2) <b>ignores probability</b> of changes.</li>
+    <li><b>TYK T2:</b> measures how sensitive estimated parameters (cash flows, discount rate, life) are to estimation errors; studies responsiveness of NPV/IRR to selling price, quantity, returns; answers "what if" (e.g. flows ₹ 50,000 instead of ₹ 80,000; life 3 years not 5). Not a method to remove risk — only to analyse and measure it. Cash flows may be worst (pessimistic), most likely, most optimistic. Three steps: identify variables; define quantitative relationship; analyse impact on NPV.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 9 (X Ltd):</b> cost 400 cr, 5 cr units, SP 100, VC 50, FC 50 cr, 6%, 3 yrs (PVAF 2.673). Net inflow 200 cr → NPV <b>134.60</b>. 2.5% adverse: cost 410 → 124.60 (−7.43%); SP 97.5 → 101.19 (<b>−24.82%</b>); VC 51.25 → 117.89 (−12.41%); FC 51.25 → 131.26 (−2.48%); units 4.875 → 117.89 (−12.41%). <b>Selling price most sensitive.</b></p>
+  <p><b>TYK P10:</b> cost 1,20,000, inflow 45,000, 4 yrs, 10% (3.169; 11% 3.103). NPV <b>22,605</b>. Cost +10% → 10,605 (<b>53.08%</b>); inflow −10% → 8,345 (<b>63.08%</b>); k 11% → 19,635 (<b>13.14%</b>) → most sensitive to <b>annual cash inflow</b>.</p>
+  <p><b>TYK P9 (XYZ):</b> cost 10,00,000, margin 20, volumes 20,000/30,000/30,000, 10%. NPV 13,10,293 − 10,00,000 = <b>3,10,293</b>. Break-even: (a) SP: S − 40 = 10,00,000 ÷ 65,514 = 15.26 → S 55.26, fall <b>7.9%</b>; (b) unit cost 44.74, rise <b>11.85%</b>; (c) volume fall 3,10,293 ÷ 13,10,293 = <b>23.68%</b>; (d) outlay rise 3,10,293 ÷ 10,00,000 = <b>31.03%</b>; (e) life: 2 yrs NPV −1,40,800; yr 3 PV 4,50,600 ÷ 360 = 1,252 per day → 112 days → 2 years 112 days, fall <b>22.97%</b>. Alt (10% adverse): SP → NPV −82,796 (126.68%); cost → 48,234 (84.46%); volume → 1,79,263 (42.22%); outlay → 2,10,293 (32.22%).</p>
+  <p><b>TYK P11 (Red Ltd):</b> NPV 14,914 − 10,000 = <b>4,914</b>. NPV-zero: plant +<b>49.14%</b>; running cost PV 7,878 → +<b>62.38%</b>; savings PV 22,792 → −<b>21.56%</b> → <b>savings most sensitive</b>. Alt 10%: 20.35%, 16.04%, 46.38%.</p>
+  <p><b>TYK P12 (Easygoing):</b> (i) outlay = 3.274 × 57,500 = <b>1,88,255</b> (at IRR NPV = 0); (ii) k 10% → NPV 57,500 × 3.791 − 1,88,255 = <b>29,727.50</b>; (iii) 29,727.50 ÷ 3.791 = 7,841.60 = 7.8416% of FC → FC <b>1,00,000</b>; (iv) SP = 60 ÷ 30% = 200; sales = (57,500 + 1,00,000) ÷ 0.70 = 2,25,000 → <b>1,125 units</b>; (v) BEP = 1,00,000 ÷ 140 = <b>714.285 units</b>.</p>
+  <p><b>TYK P13 (Unnat):</b> NPV = [2,00,000 × 13.50 − 10,00,000] × 3.605 − 50,00,000 = <b>11,28,500</b>. Break-even: SP 28.43 (<b>5.23%</b>); volume 1,76,812 (<b>11.59%</b>); VC 18.07 (<b>9.51%</b>). (d) Expected volume 1,95,000 → ENPV <b>8,85,163</b>; worst (1,75,000) −88,188; best 23,45,188. 30% chance of negative NPV &gt; acceptable 20% → <b>reject</b>.</p></div>
+  <p class="small"><i>Note (app-written): TYK P13(c) says variable cost 18.07 "represents a fall of 9.51%" — it is a rise from 16.50 (SM p.74).</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 03 Advanced Capital Budgeting Decisions (contd.)</span><span class="tag">SM Ch 03</span></div>
+  <h3>4.3.2 Scenario analysis</h3>
+  <ul>
+    <li>Extends sensitivity: brings in <b>probabilities</b> of changes in key variables and changes <b>more than one variable at a time</b>.</li>
+    <li>Start with <b>base case</b> (most likely); then <b>worst case</b> (low sales, low price, high VC) and <b>best case</b>; or mix some +ve and some −ve changes. Examines impact of alternative combinations of variables on NPV/IRR.</li>
+    <li><b>Worst-case probability</b> (ICAI TYK P7, P8): cash flows <b>perfectly dependent</b> (positively correlated) over time → = probability of the low flow in year 1 (TYK P7: 0.3); <b>independent</b> → that probability raised to the number of years (TYK P7: (0.3)<sup>5</sup>) <i>(general rule app-written from ICAI's figures)</i>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Sensitivity analysis</th><th>Scenario analysis</th></tr>
+    <tr><td>Impact of change in a <b>single input</b> on NPV/IRR; others constant.</td><td>Based on a <b>scenario</b> (recession, boom, normal) — <b>all inputs change simultaneously</b>.</td></tr>
+    <tr><td>Identifies the single <b>critical variable</b> and range of outcomes.</td><td>Variability of outcome across scenarios shows project risk — higher deviation = higher risk.</td></tr>
+    <tr><td>Simple.</td><td><b>Far more complex</b>.</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 10 (XYZ, ₹ '000):</b> outlay 1,400, 9%. NPV worst <b>−110.15</b>, most likely <b>100.85</b>, best <b>311.85</b>. Most likely yrs 1–2, worst yr 3: −14,00,000 + 5,04,587 + 3,78,756 + 5,40,528 = <b>₹ 23,871</b>.</p>
+  <p><b>TYK P7 (X Ltd):</b> outlay 4,00,000, 10%. (i) Expected inflow 1,09,000 × 3.170 + 1,52,000 (incl. expected salvage 43,000) × 0.621 → ENPV <b>39,922</b>. (ii) Worst −8,580; best <b>92,060</b>. (iii) Worst-case probability: dependent <b>0.3</b>; independent (0.3)<sup>5</sup> = <b>0.00243</b>. (iv) Base case 47,950; ENPV 0.3(−8,580) + 0.5(47,950) + 0.2(92,060) = 39,813; σ <b>35,800</b>; CV = 35,800 ÷ 39,813 = <b>0.90</b>. (v) CV below 0.95–1.0 → less risky → k 10% − 1% = 9% → ENPV 3,53,160 + 98,800 − 4,00,000 = <b>51,960</b> → accept.</p>
+  <p><b>TYK P8 (XY Ltd):</b> outlay 1,00,000, 20%, 5 yrs. Expected inflow 31,000 p.a., terminal 20,000 → NPV <b>₹ 746.52</b>. Worst (20,000, nil terminal) <b>−40,187.76</b>; best (40,000 + 30,000) <b>31,680.81</b>. Perfectly correlated → worst-case probability <b>10%</b>.</p></div>
+  <p class="small"><i>Note (app-written): TYK P7 shows ENPV 39,922 in (i) and 39,813 in (iv); the difference is ICAI's factors (3.170 + 0.621 for years 1–4 and 5 in (i) vs 3.790 for 1–5 in (ii)/(iv)) (SM p.65).</i></p>
+
+  <h3>4.3.3 Simulation analysis (Monte Carlo)</h3>
+  <ul>
+    <li>Simulation = exact replica of the actual situation via a <b>model</b>; very many calculations give possible outcomes and their probabilities.</li>
+    <li>Monte Carlo ties together <b>sensitivities and probability distributions</b>; came out of the first nuclear bomb work; named after casino mathematics. Gives a <b>probability distribution of NPVs</b>, not a single point estimate.</li>
+    <li>Identify key factors and their inter-relationships; model cash receipts and payments; specify a range/probability distribution for each assumption.</li>
+  </ul>
+  <p><b>4.3.3.1 Steps</b> (TYK T4):</p>
+  <ol>
+    <li><b>Model the project</b> — NPV as a function of <b>parameters</b> (set by decision maker, constant over all runs) and <b>exogenous variables</b> (stochastic, outside decision maker's control).</li>
+    <li>Specify <b>values of parameters</b> and <b>probability distributions</b> of exogenous variables.</li>
+    <li>Select a value <b>at random</b> from each exogenous variable's distribution.</li>
+    <li>Determine <b>NPV</b> for the random values and pre-specified parameters.</li>
+    <li><b>Repeat</b> steps 3 and 4 a large number of times.</li>
+    <li>Plot the <b>distribution of NPVs</b>; compute <b>mean and SD</b> to gauge risk.</li>
+  </ol>
+  <ul>
+    <li><b>Random-number mapping:</b> cumulative probability → two-digit ranges (e.g. CF 10,000 p 0.02 → 00–01; 15,000 p 0.03 → 02–04; 20,000 → 05–19 …; life 3 yrs p 0.05 → 00–04; 4 yrs → 05–14; 5 yrs → 15–44 …).</li>
+  </ul>
+  <div class="ex"><p><b>SM example:</b> NPV = Σ CF<sub>t</sub>/(1 + i)<sup>t</sup> − I; i 10%, I 1,30,000 are parameters; annual CF and life are exogenous. Ten runs; run 1: RN 53 → CF 30,000, RN 97 → 9 yrs, PVAF 5.759 → NPV <b>42,770</b>. Other runs: 85,075; (8,300); (66,600); (21,125); 40,380; 16,040; 16,040; 21,640; 650.</p></div>
+  <p class="small"><i>Note (app-written): the SM text says RN 53 gives "₹ 3,000"; the table maps 53 to ₹ 30,000 and the run uses 30,000 (SM p.32).</i></p>
+  <ul>
+    <li><b>4.3.3.2 Advantages</b> (strength lies in variability): (1) can <b>predict bad market situations</b> beforehand; (2) handles (a) <b>numerous exogenous variables</b> with any distribution, (b) <b>complex inter-relationships</b> among parameters, exogenous and endogenous variables that defy analytical methods, (c) <b>compels</b> the decision maker to consider inter-dependencies and uncertainties.</li>
+    <li><b>4.3.3.3 Shortcomings:</b> (1) <b>difficult to model</b> and specify distributions; (2) <b>inherently imprecise</b> — rough approximation; misleading when a tail is critical; (3) complex model built by <b>management experts</b>, not the decision maker, who may not use it; (4) NPV in each run uses the <b>risk-free rate</b> (to avoid pre-judging risk) → NPV takes a different meaning, <b>hard to interpret</b>.</li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 03 Advanced Capital Budgeting Decisions (contd.)</span><span class="tag">SM Ch 03</span></div>
+  <h3>4.3.4 Decision tree analysis</h3>
+  <ul>
+    <li>For <b>sequential decisions</b> — present investment affects future decisions and events. Decision tree = <b>graphic display</b> of relationship between a present decision, future events, future decisions and consequences.</li>
+    <li>Two situations: <b>Decision</b> — manager has control; <b>Event</b> — no control → assign <b>probabilities</b> to outcomes. Manager acts rationally (most profitable in business; lowest cost in non-profit).</li>
+  </ul>
+  <p><b>Steps:</b></p>
+  <ol>
+    <li><b>Define investment</b> — e.g. launch new product (local/national/international); extend factory or outsource; dig for oil and to what depth.</li>
+    <li><b>Identify decision alternatives</b> clearly.</li>
+    <li><b>Draw the tree</b> — cash flows, probabilities, expected PV on the branches. <b>Decision point = square</b> (action available); <b>event/chance point = circle</b> (with probabilities and values); drawn <b>left to right</b>.</li>
+    <li><b>Evaluate</b> — from the <b>last decision (extreme right) back to the first (left)</b>: at each final decision point pick highest NPV, truncate others, assign that NPV to the point; compute expected NPV at chance points; continue to the first decision point.</li>
+  </ol>
+  <ul>
+    <li><b>Drawing rules:</b> 1. begins with a <b>decision node (rectangle)</b>; chance node = circle; 2. alternatives shown as <b>straight lines</b> from the decision node; 3. drawn left to right, rectangles and circles <b>numbered sequentially</b>; 4. add values and probabilities for each branch.</li>
+    <li><b>Evaluation (right to left):</b> (a) <b>EMV at a chance node</b> = Σ (value × probability) of its branches; (b) value at a <b>decision node</b> = <b>highest</b> of its branches' expected values.</li>
+    <li><b>Joint probability</b> of a path = product of probabilities along it (app-written from ICAI TYK P20 figures, e.g. 0.4 × 0.2 = 0.08); expected NPV = Σ path NPV × joint probability.</li>
+  </ul>
+  <div class="ex"><p><b>Illus 11 (L&amp;R, ₹ lacs, 10%):</b> pilot 2.40; success 50%. Decision C (success): invest 20 for perpetual 4 → 4/0.10 − 20 = <b>+20</b> → invest. Decision D (failure): invest 12 for perpetual 1 → 10 − 12 = <b>−2</b> → don't invest. Outcome B: EMV = 20 × 0.5 + 0 × 0.5 = <b>10</b>. At A: spend 2,40,000 to test for EMV 10 lacs → <b>undertake the test</b>.</p>
+  <p><b>TYK P20:</b> outlay 80,000, 10%. Path NPVs: −14,726; −8,118; 1,794; 7,580; 15,840; 24,100; joint probabilities 0.08, 0.12, 0.20, 0.24, 0.30, 0.06 (e.g. 0.4 × 0.2). Expected NPV <b>₹ 6,223.76</b>. Worst: −14,726 at 8% (path 1); best: 24,100 at 6% (path 6). Positive ENPV → <b>accept</b>.</p></div>
+  <p class="small"><i>Note (app-written): Illus 11's diagram numbers nodes 1, 2, 3 and X, Y, Z, but the evaluation text refers to points A, B, C, D (SM p.36–37).</i></p>
+
+  <h3>5. Replacement decision</h3>
+  <ul>
+    <li>One of the most important classes of capital budgeting; funds are limited, so investment in long-term assets must be budgeted. Two types: 5.1 replacement of existing machine; 5.2 optimum replacement cycle.</li>
+  </ul>
+  <h3>5.1 Replacement of existing machine</h3>
+  <ul>
+    <li>Replace with newer version or different machine of the same function — usually to <b>maintain existing operations</b>; profitability may change via expenses.</li>
+    <li>Use <b>incremental</b> cash flows: cash flows of the old asset disappear (e.g. new sales 1,00,000 vs old 75,000 → incremental 25,000); sale value of old asset reduces the effective price of the new (old sold for 3,50,000 → new costs 3,50,000 less).</li>
+    <li>Include <b>depreciation</b> (affects taxes) and <b>taxes</b> — both change.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Step</th><th>Formula / rule</th><th>Illus 12 (Roby's cube)</th></tr>
+    <tr><td>I(a) Tax on sale of old</td><td>(Book value of old − Market value of old) × Tax rate = tax payable / saving</td><td>[(25,000 − 5 × 2,500) − 5,000] × 0.30 = <b>2,250</b> saving</td></tr>
+    <tr><td>I(b) Net cash outflow</td><td>Cost of new − [tax saving (or − tax payable) + market value of old]</td><td>50,000 − [2,250 + 5,000] = <b>42,750</b></td></tr>
+    <tr><td>II Change in annual CF</td><td>[(Δ Sales ± Δ Operating costs) − Δ Depreciation](1 − t) + Δ Depreciation</td><td>[1,00,000 × 0.1 + 5,000 − (49,000/5 − 25,000/10)](0.70) + (9,800 − 2,500) = <b>12,690</b></td></tr>
+    <tr><td>III PV of benefits</td><td>PV of yearly CF + PV of salvage of new</td><td>12,690 × PVIFA(10%, 5) + 1,000 × PVIF(10%, 5) = <b>48,723</b></td></tr>
+    <tr><td>IV NPV · V Rule</td><td>PV benefits − PV costs; accept if PV benefits &gt; PV costs</td><td>48,723 − 42,750 = <b>5,973</b> → replace</td></tr>
+  </table>
+  <p class="small"><i>Note (app-written): Illus 12 says sales rise 10% on ₹ 10,00,000 (i.e. ₹ 1,00,000), but ICAI's working takes ₹ 1,00,000 × 0.1 = ₹ 10,000 as the change in sales; ₹ 12,690 and NPV ₹ 5,973 rest on ₹ 10,000 (SM p.39).</i></p>
+  <div class="ex"><p><b>TYK P23 (upgrade vs new):</b> old BV nil, sells 50,000 → net of 40% tax 30,000. Upgrade outlay 10,00,000 (dep 2,00,000); new 20,50,000 − 30,000 = 20,20,000 (dep 4,10,000). CFAT = EAT + dep; incremental over old (old EAT = CFAT): upgrade 2,50,000 / 2,50,000 / 2,30,000 / 2,30,000 / 2,40,000 → PV 8,08,680 → NPV <b>−1,91,320</b>; new 5,10,000 / 5,10,000 / 5,20,000 / 5,30,000 / 5,50,000 → PV 17,47,930 → NPV <b>−2,72,070</b> → <b>continue with old machine</b>.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 03 Advanced Capital Budgeting Decisions (contd.)</span><span class="tag">SM Ch 03</span></div>
+  <h3>5.2 Optimum replacement cycle</h3>
+  <ul>
+    <li>When the asset is replaced in a <b>continuous cycle</b>, simple NPV must be modified: NPVs of different periods are <b>not comparable</b> → use <b>Equivalent Annual Cost (EAC)</b>. Choose the cycle with the <b>lowest EAC</b>.</li>
+    <li>Assumption: as the asset ages, <b>efficiency falls</b> → operating cost rises and resale value falls.</li>
+  </ul>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>EAC = PV of Cash Outflow ÷ PVAF</td><td>PV outflow for keeping the asset n years = cost + PV of running costs − PV of resale at n. Divide by annuity factor for the same n → cost per year.</td><td>Illus 13: 3,09,100 ÷ 0.909 = 3,40,044; 5,47,100 ÷ 1.735 = 3,15,331; 7,89,650 ÷ 2.486 = 3,17,639.</td></tr>
+  </table>
+  <div class="ex"><p><b>Illus 13 (taxi):</b> cost 4,00,000, 10%. Keep 1 yr: −4,00,000 − 1,80,000(0.909) + 2,80,000(0.909) = −3,09,100. 2 yrs: −4,00,000 − 1,80,000 × 0.909 + 20,000 × 0.826 = −5,47,100 (yr 2: resale 2,30,000 − cost 2,10,000). 3 yrs: −4,00,000 − 1,80,000 × 0.909 − 2,10,000 × 0.826 − 70,000 × 0.751 = −7,89,650. Lowest EAC <b>3,15,331 → replace every 2 years</b>.</p>
+  <p><b>TYK P26 (machine, 15%):</b> net cash flows include maintenance + repair (16,000; 22,000; 28,000; 36,000) less scrap. PV of costs: 1 yr −46,086; 2 yrs −72,402; 3 yrs −98,438; 4 yrs −1,24,968. EAC: 46,086 ÷ 0.8696 = 52,997; 72,402 ÷ 1.6257 = 44,536; 98,438 ÷ 2.2832 = <b>43,114</b>; 1,24,968 ÷ 2.855 = 43,772 → <b>3-year cycle</b>.</p>
+  <p><b>TYK P27 (bikes, 10%):</b> price 55,000. Net outflow after PV of resale: 1 yr (1,818); 2 yrs 44,039; 3 yrs 89,172. EAC: 53,182 ÷ 0.909 = 58,506; 99,039 ÷ 1.735 = <b>57,083</b>; 1,44,172 ÷ 2.486 = 57,993 → <b>replace every 2 years</b>.</p>
+  <p><b>TYK P24 (machine A vs B, real cash flows, 10%):</b> A: 1,50,000 + 40,000 × 2.486 = 2,49,440 ÷ 2.486 = <b>1,00,338</b>; B: 1,00,000 + 60,000 × 1.735 = 2,04,100 ÷ 1.735 = <b>1,17,637</b> → buy <b>A</b> (lower equivalent annual outflow).</p>
+  <p><b>TYK P22 (A &amp; Co., replace vs overhaul, 15%, no tax):</b> EAC of new = [90,000 + 10,000 × 4.4873 − 20,000 × 0.3269] ÷ 4.4873 = 1,28,335 ÷ 4.4873 = <b>28,600</b>. PV of cost of replacing: immediately 11,400 (net inflow: salvage 40,000 − EAC 28,600); in 1 yr (11,832); 2 yrs (34,102); 3 yrs (55,799); 4 yrs (82,799) → <b>replace immediately</b>. Alternative table: 41,652 / 43,739 / 47,633 / 53,321 / 66,414 → same answer.</p>
+  <p><b>TYK P25 (replace now or after a year, 10%):</b> NPV of new = 80,000 × 2.486 − 1,50,000 = 48,880. Now: 80,000 + 48,880 = <b>1,28,880</b>. After 1 yr: (40,000 + 70,000 + 48,880) ÷ 1.1 = 1,58,880 ÷ 1.1 = <b>1,44,436</b> → <b>replace after 1 year</b>.</p></div>
+
+  <h3>6. Adjusted present value (APV)</h3>
+  <ul>
+    <li>Instead of adjusting the discount rate (WACC) for risk, APV <b>separates the investment decision from the financing decision</b>.</li>
+    <li><b>APV = Base case NPV + PV of tax benefit on interest</b>.</li>
+    <li><b>Base case NPV</b> — discount at <b>unlevered cost of equity</b> (all-equity firm); computing it is covered in the Business Valuation chapter.</li>
+    <li><b>PV of tax benefit on interest</b> — adjusts for how the project is financed → broader view including the benefit of using more debt.</li>
+  </ul>
+
+  <div class="sticky"><p><b>Exam steps — inflation NPV:</b> check if k is nominal or real and if CFs are nominal or real → match them (Nominal Cash Flow = (1 + Inflation Rate)<sup>t</sup> × Real Cash Flow, or Real Discount Rate = (1 + Nominal Discount Rate)/(1 + Inflation Rate) − 1) → if revenue and cost inflation differ, compound each separately → (R − C)(1 − T) + DT (shield not inflated) → discount → NPV.</p></div>
+  <div class="sticky"><p><b>Exam steps — ENPV, SD, CV:</b> ENCF = Σ NCF<sub>i</sub> × P<sub>i</sub> (each year) → discount → ENPV → σ<sup>2</sup> = Σ (NCF<sub>j</sub> − ENCF)<sup>2</sup> P<sub>j</sub> → σ (multi-year: Hillier σ<sup>2</sup> = Σ (1 + r)<sup>−2i</sup> σ<sub>i</sub><sup>2</sup>) → CV = σ ÷ mean → same mean: lower σ; different mean: lower CV.</p></div>
+  <div class="sticky"><p><b>Exam steps — RADR / CE:</b> RADR = Risk free rate + Risk premium (or IR<sub>f</sub> + (k<sub>o</sub> − IR<sub>f</sub>) Risk Factor; or table by CV) → discount unadjusted CF. CE: NCF<sub>t</sub> × α<sub>t</sub> → discount at <b>risk-free rate</b> only → NPV; lower Σα = riskier = higher RADR.</p></div>
+  <div class="sticky"><p><b>Exam steps — sensitivity:</b> base NPV → change one variable (given % adverse) → revised NPV → % change = (base − revised) ÷ base → highest % = most sensitive. Or NPV-zero method: % = NPV ÷ PV of that variable → lowest % = most sensitive. k: (IRR − X) ÷ X.</p></div>
+  <div class="sticky"><p><b>Exam steps — scenario / best-worst:</b> NPV for worst, most likely, best → expected NPV with probabilities → σ, CV → worst-case probability: dependent = year-1 probability, independent = that probability<sup>n</sup> → compare with acceptable risk level.</p></div>
+  <div class="sticky"><p><b>Exam steps — decision tree:</b> draw left to right (□ decision, ○ chance) → path NPVs → joint probability = product along path → roll back right to left: chance node = Σ value × p; decision node = highest → decide at first node.</p></div>
+  <div class="sticky"><p><b>Exam steps — replacement:</b> tax on sale of old = (BV − MV) × t → net outflow = cost of new − (MV + tax saving) → Δ CF = [(ΔS ± ΔC) − ΔD](1 − t) + ΔD → PV of Δ CF + PV of new salvage → NPV → accept if &gt; 0.</p></div>
+  <div class="sticky"><p><b>Exam steps — optimum replacement cycle:</b> for each life n: PV of cost + running costs − PV resale at n → EAC = PV ÷ PVAF(k, n) → lowest EAC = optimum cycle. Replace now vs later: compare PV of each timing with new asset's NPV included.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

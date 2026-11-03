@@ -1,0 +1,223 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 7 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 07 Securitization</span><span class="tag">SM Ch 07</span></div>
+  <h2 class="brk"><span class="n">07</span>Ch 07 — Securitization</h2>
+  <div class="sub">Asked in last 3 papers: Sep 2025 Q3(c) 4m blockchain risks; Jan 2026 Q6(c) 4m instruments (PTC / PTS / strips); May 2026 Q3(c) 4m securitization of NPAs. Theory-only chapter.</div>
+
+  <h3>1. Introduction</h3>
+  <ul>
+    <li>Firms with large <b>credit sales</b> carry huge receivables yet may face a <b>liquidity crunch</b>.</li>
+    <li>Borrowing changes the <b>debt-equity ratio</b>: may be unacceptable to stakeholders, adds financial risk, hurts future borrowing capacity. Securitization addresses this.</li>
+  </ul>
+
+  <h3>2. Concept and Definition</h3>
+  <ul>
+    <li>Creation of a <b>pool of assets</b> from illiquid financial assets (receivables, loans) = <b>repackaging / rebundling of illiquid assets into marketable securities</b>. E.g. auto loans, credit card receivables, residential mortgages, other future receivables.</li>
+    <li><b>RBI:</b> transactions where <b>credit risks</b> in assets are <b>redistributed</b> by repackaging them into tradable securities.</li>
+  </ul>
+  <p><b>Features</b> (6):</p>
+  <ul>
+    <li><b>Creation of financial instruments</b> — additional financial product in the market, backed by collaterals.</li>
+    <li><b>Bundling and unbundling</b> — combining assets in one pool = bundling; breaking into instruments of fixed denomination = unbundling.</li>
+    <li><b>Tool of risk management</b> — on <b>non-recourse</b> basis, default risk shifts from originator to investor.</li>
+    <li><b>Structured finance</b> — instruments tailor-structured to the investor's risk-return profile.</li>
+    <li><b>Trenching</b> — portfolio split into parts (<b>tranches</b>) by risk and return; each tranche has a different risk/return.</li>
+    <li><b>Homogeneity</b> — securities within a tranche are homogenous; small denominations suit small investors.</li>
+  </ul>
+
+  <h3>3. Benefits of Securitization</h3>
+  <p><b>3.1 Originator</b> (entity selling assets collectively to the SPV):</p>
+  <ul>
+    <li><b>Off-balance sheet financing</b> — releases capital tied up in assets → improved liquidity → business expansion.</li>
+    <li><b>More specialisation in main business</b> — loan servicing moves to SPV; under non-recourse even default burden shifts.</li>
+    <li><b>Improves financial ratios</b> — esp. banks/FIs: manage <b>Capital-to-Weighted Asset Ratio</b>.</li>
+    <li><b>Reduced borrowing cost</b> — papers are rated due to <b>credit enhancement</b>, issued at lower interest; originator earns a spread.</li>
+  </ul>
+  <p><b>3.2 Investor:</b></p>
+  <ul>
+    <li><b>Diversification of risk</b> — securities backed by different asset types.</li>
+    <li><b>Regulatory requirement</b> — asset-backed securities of a particular industry (e.g. micro) help banks meet <b>Priority Sector Lending</b> norms of RBI.</li>
+    <li><b>Protection against default</b> — under <b>recourse</b>, originator makes good the loss; insurance may also compensate.</li>
+  </ul>
+
+  <h3>4. Participants in Securitization</h3>
+  <table class="tight">
+    <tr><th style="width:22%">Participant</th><th>Role (SM)</th></tr>
+    <tr><th colspan="2">4.1 Primary participants (main parties)</th></tr>
+    <tr><td><b>Originator</b></td><td>Initiator / securitizer; sells assets in its books and receives the funds; transfers <b>both legal and beneficial interest</b> to the SPV.</td></tr>
+    <tr><td><b>Special Purpose Vehicle (SPV)</b></td><td>Created only to execute the deal; holds <b>legal title</b> of assets; form: company, firm, society or trust. Main objective: <b>remove and ring-fence</b> the assets from originator's balance sheet. Makes <b>upfront payment</b> to originator (key position); issues securities — <b>ABS</b> or <b>MBS</b> — to investors.</td></tr>
+    <tr><td><b>Investors</b></td><td>Buyers of securitized papers: individuals, MFs, PFs, insurance companies, FIs. Get money back as <b>interest and principal</b> per agreed terms.</td></tr>
+    <tr><th colspan="2">4.2 Secondary participants</th></tr>
+    <tr><td><b>Obligors</b></td><td>Main root of the process; owe money to the firm (assets of originator); dues transferred to SPV; their <b>credit standing</b> is of paramount importance.</td></tr>
+    <tr><td><b>Rating agency</b></td><td>Rating is based on the pool, not the originator. Assesses: <b>strength of cash flow</b>; mechanism for timely interest and principal; <b>credit quality of obligors</b>; <b>liquidity support</b>; <b>strength of legal framework</b>. Secondary but vital.</td></tr>
+    <tr><td><b>Receiving &amp; Paying Agent (RPA)</b></td><td>Also Servicer / Administrator: collects from obligors, passes to SPV, follows up defaulters, initiates legal action. Generally the originator or its affiliates.</td></tr>
+    <tr><td><b>Agent or Trustee</b></td><td>Oversees that all parties perform per agreement; looks after <b>investors' interest</b>.</td></tr>
+    <tr><td><b>Credit enhancer</b></td><td>Investors have limited/no recourse, so seek extra comfort (also aids rating and marketability). <b>Originator</b> → over-collateralisation or cash collateral; <b>third party</b> (e.g. bank) → letter of credit or surety bonds.</td></tr>
+    <tr><td><b>Structurer</b></td><td>Investment banker / <b>arranger</b>; brings parties together; ensures legal, regulatory, accounting and tax compliance.</td></tr>
+  </table>
+
+  <h3>5. Mechanism of Securitization (steps)</h3>
+  <ol>
+    <li><b>5.1 Creation of pool of assets</b> — segregate assets backed by similar mortgages (for MBS) by interest rate, risk, maturity, concentration units.</li>
+    <li><b>5.2 Transfer to SPV</b> — pooled assets transferred to the SPV created for this purpose.</li>
+    <li><b>5.3 Sale of securitized papers</b> — SPV designs instruments by nature of interest, risk, tenure, pool; e.g. pass through / pay through.</li>
+    <li><b>5.4 Administration of assets</b> — sub-contracted back to <b>originator</b>; collects principal and interest, transfers to SPV; acts as servicer/conduit for an agreed fee.</li>
+    <li><b>5.5 Recourse to originator</b> — unless specified otherwise, on debtor default receivables go back to originator from SPV.</li>
+    <li><b>5.6 Repayment of funds</b> — SPV pays investors interest and principal from the pool.</li>
+    <li><b>5.7 Credit rating to instruments</b> — sometimes done before sale to assess risk.</li>
+  </ol>
+  <p class="small"><i>Note (app-written): SM 5.3 writes "Pass Through Security or Pay Through Certificates (PTC)", whereas SM 7.1–7.2 use PTC = Pass Through Certificates and PTS = Pay Through Security. Use the section 7 naming in answers.</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 07 Securitization (contd.)</span><span class="tag">SM Ch 07</span></div>
+
+  <h3>6. Problems in Securitization (esp. India)</h3>
+  <ul>
+    <li><b>6.1 Stamp duty</b> — on mortgage debt under Transfer of Property Act, 1882, up to <b>12%</b> in some states. PTCs do not evidence debt (only receivables) → <b>exempt</b>. Some states have reduced duty on securitized instruments.</li>
+    <li><b>6.2 Taxation</b> — no specific Income Tax provision; views differ: SPV taxed as trustee in <b>representative capacity</b> vs. investors taxed on their share. Capital gains on pass-on payments unclear.</li>
+    <li><b>6.3 Accounting</b> — reporting in originator's books; receivables removed from balance sheet; problem esp. when transfer is <b>without recourse</b>.</li>
+    <li><b>6.4 Lack of standardisation</b> — each originator uses its own documentation/administration format.</li>
+    <li><b>6.5 Inadequate debt market</b> — no well-developed debt market → weak secondary market for ABS.</li>
+    <li><b>6.6 Ineffective foreclosure laws</b> — lenders find it hard to transfer property on default → MBS less attractive.</li>
+  </ul>
+  <div class="ex"><p><b>TYK T2:</b> Main problems in securitisation in Indian context → ICAI: refer para 6 (the six points above).</p></div>
+
+  <h3>7. Securitization Instruments <span class="pyq">Asked: Jan 2026 Q6(c) 4m</span></h3>
+  <p>Divided by <b>maturity characteristics</b> into three:</p>
+  <p><b>7.1 Pass Through Certificates (PTCs)</b></p>
+  <ul>
+    <li>Originator transfers the <b>entire cash receipt</b> (interest + principal) from assets sold → <b>direct claim</b> of investors on all securitized assets via SPV.</li>
+    <li>Investors hold <b>proportional beneficial interest</b> in assets held in trust by SPV.</li>
+    <li><b>Prepayment</b> of principal distributed proportionately to all holders.</li>
+    <li>On final payment, <b>all securities terminate simultaneously</b> (single maturity).</li>
+    <li><b>Skewness of cash flows</b> in early stage if principal repaid before schedule.</li>
+  </ul>
+  <p><b>7.2 Pay Through Security (PTS)</b> — overcomes PTC's limitation of all cash flows being passed on and of <b>single maturity</b>.</p>
+  <ul>
+    <li>SPV issues <b>debt securities backed by the assets</b> → can restructure <b>tranches</b> from varying maturities of receivables.</li>
+    <li>Permits <b>desynchronisation</b> of servicing of securities from asset cash flows.</li>
+    <li>SPV may <b>reinvest surplus</b> funds short term (e.g. on early retirement of receivables, for short-term yield).</li>
+    <li>Freedom to issue several debt tranches with <b>varying maturities</b>.</li>
+  </ul>
+  <table class="tight">
+    <tr><th style="width:24%">Point</th><th>PTC (Pass Through)</th><th>PTS (Pay Through)</th></tr>
+    <tr><td>Cash flows</td><td>All passed on immediately to investors</td><td>Desynchronised from asset cash flows</td></tr>
+    <tr><td>Investor's claim</td><td>Direct, proportional beneficial interest in assets</td><td>SPV's debt securities backed by the assets</td></tr>
+    <tr><td>Maturity</td><td>Single maturity; all terminate together</td><td>Several tranches with varying maturities</td></tr>
+    <tr><td>Prepayment / surplus</td><td>Prepayment passed proportionately; early-stage skewness</td><td>Surplus can be reinvested short term</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK T1:</b> Differentiate between PTS and PTC → ICAI: refer para 7 (table above).</p></div>
+  <p><b>7.3 Stripped Securities</b> — cash flows of underlying securities divided into two or more new securities:</p>
+  <ul>
+    <li><b>Interest Only (IO)</b> — holder gets only interest. <b>Principal Only (PO)</b> — holder gets only principal.</li>
+    <li><b>Highly volatile</b> → less preferred by investors.</li>
+    <li><b>Rates rise</b> → PO price falls (borrowers postpone paying cheaper loans); IO value rises (more interest calculated).</li>
+    <li><b>Rates fall</b> → borrowers prepay to borrow fresh at lower rates; IO tends to fall due to prepayments of principal.</li>
+    <li>Prices of IOs and POs mainly determined by <b>perception of investors</b>.</li>
+  </ul>
+  <p class="small"><i>Note (app-written): SM p.10 sentence "However, when interest rate due to prepayments of principals, IO's tends to fall" is incomplete; read as: when interest rates fall, prepayments of principal rise and IO value falls (this matches the SM's own prepayment logic on p.9).</i></p>
+
+  <h3>8. Pricing of Securitized Instruments</h3>
+  <p>Price must be acceptable to both originator and investor.</p>
+  <ul>
+    <li><b>8.1 Originator's angle</b> — priced at a rate (outflow) the originator can <b>amortise over time</b> by investing the amount raised.</li>
+    <li><b>8.2 Investor's angle</b> — price = <b>expected future cash flows discounted</b> at the YTM of a <b>comparable security</b> (credit quality, average life). Yield can be read off the <b>yield curve</b>, adjusted by <b>spread points</b> for credit quality.</li>
+  </ul>
+
+  <h3>9. Risks in Securitization</h3>
+  <ul>
+    <li><b>9.1 Credit / counterparty risk</b> — prime risk: bankruptcy and non-performance of the <b>servicer</b>.</li>
+    <li><b>9.2 Legal risk</b> — new in India; no conclusive judicial precedent or explicit statute → dispute on legal ownership → uncertain investor pay-outs.</li>
+    <li><b>9.3 Market risks</b> (external to the transaction):
+      <ul>
+        <li><b>(a) Macroeconomic</b> — industry downturn / adverse asset price moves; e.g. fall in industrial production cuts CV use → CV loan repayments hit; fall in CV prices → wilful default and repossession.</li>
+        <li><b>(b) Prepayment</b> — lower rates → more retail loan prepayment → <b>reinvestment risk</b> (money received early, cannot reinvest at same yield).</li>
+        <li><b>(c) Interest rate</b> — floating-rate pool vs fixed pay-outs (or vice versa) → mismatch; even at <b>100% collection efficiency</b> inflow may fall short. Hedge partly with <b>interest rate swaps</b>.</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 07 Securitization (contd.)</span><span class="tag">SM Ch 07</span></div>
+
+  <h3>10. Tokenization — Blockchain first</h3>
+  <ul>
+    <li><b>Blockchain / Distributed Ledger Technology (DLT)</b>: shared, peer-to-peer, decentralised open ledger, <b>no trusted third party</b>.</li>
+    <li><b>Append-only</b> — entries permanent; transactions <b>irreversible</b>; any change recorded as a new transaction.</li>
+    <li>Decentralised = not controlled by any bank, corporation or government; chain of blocks, each block = digital information in a public database.</li>
+    <li>Analogy: a shared <b>Google Doc</b> — distributed, not copied; everyone has access at once; changes recorded in real time, fully transparent.</li>
+  </ul>
+  <p><b>Working of a blockchain transaction:</b> transaction initiated (e.g. sending money) → broadcast via network → network <b>validates using cryptography</b> → represented online as a block → block added to existing chain → transaction complete.</p>
+
+  <h3>10.1 Applications of Blockchain</h3>
+  <ul>
+    <li><b>Financial services</b> — automated trade lifecycle / transaction log of any asset transfer, physical or digital (laptops, smartphones, automobiles, real estate).</li>
+    <li><b>Healthcare</b> — secure data sharing; privacy, security, interoperability; no third party, lower overheads.</li>
+    <li><b>Government</b> — land registration, vehicle registration, e-voting; transparency, better monitoring and audit.</li>
+    <li><b>Travel industry</b> — money transactions; storing passports/IDs, reservations; travel insurance, loyalty and rewards.</li>
+    <li><b>Economic forecasts</b> — decentralised prediction markets, decentralised voting, stock trading.</li>
+  </ul>
+
+  <h3>10.2 Risks associated with Blockchain <span class="pyq">Asked: Sep 2025 Q3(c) 4m</span></h3>
+  <ul>
+    <li><b>Wider risk perspective</b> — members have different <b>risk appetites</b> → conflict in designing monitoring controls; who manages risk if no one is in charge; <b>accountability</b>.</li>
+    <li><b>Reliability depends on technology</b> — if the <b>consensus mechanism</b> is tampered with, ledger information becomes inaccurate and unreliable.</li>
+    <li><b>No central authority</b> to administer/enforce protocol amendments → difficult process control; users of public blockchains struggle to understand <b>general IT controls</b> and their effectiveness.</li>
+    <li><b>Information overload</b> — huge, frequently updated data challenges monitoring; hard to find <b>competent people</b> for monitoring controls.</li>
+  </ul>
+
+  <h3>10.3 Meaning of Tokenization</h3>
+  <ul>
+    <li>Converting <b>tangible and intangible assets into blockchain tokens</b>; effective in conventional industries like real estate, artwork.</li>
+  </ul>
+
+  <h3>10.4 Tokenization and Securitization — similarities</h3>
+  <p>Both convert illiquid assets into liquid, tradable products.</p>
+  <ul>
+    <li><b>Liquidity</b> — inject liquidity for otherwise illiquid assets.</li>
+    <li><b>Diversification</b> — help investors diversify, manage risk, optimise returns.</li>
+    <li><b>Trading</b> — both tradable → generate wealth.</li>
+    <li><b>New opportunities</b> — fee income for financial institutions and agencies.</li>
+  </ul>
+
+  <h3>11. Securitization in India <span class="pyq">Asked: May 2026 Q3(c) 4m (NPAs)</span></h3>
+  <ul>
+    <li><b>Citi Bank</b> pioneered it in India by bundling <b>auto loans</b>; later sales tax deferrals, aircraft receivables etc.</li>
+    <li><b>SARFAESI Act, 2002</b> (Securitization and Reconstruction of Financial Assets and Enforcement of Security Interest) — to tackle <b>NPAs without approaching the Court</b>.</li>
+    <li>Now an important funding source for <b>micro finance companies and NBFCs</b>; <b>commercial MBS</b> emerging.</li>
+    <li>Market <b>dominated by a few players</b> — ICICI Bank, HDFC Bank, NHB.</li>
+    <li><b>CRISIL</b>: volumes may reach near pre-pandemic highs of <b>₹ 1.9 trillion</b> (FY19 &amp; FY20) once macro-situation and rates stabilise; key funding for non-banks, investment avenue for banks growing retail assets.</li>
+    <li><b>SEBI</b> allows <b>FPIs</b> to invest in securitized debt of <b>unlisted companies</b> up to a limit.</li>
+  </ul>
+  <p class="small"><i>Note (app-written): the SM has no separate section on securitizing NPAs. For a May 2026-type question, build the answer from SM points only: balance-sheet benefit → 3.1 (off-balance sheet financing, capital release, Capital-to-Weighted Asset Ratio); challenges → 6.2 taxation, 6.3 accounting (esp. without recourse), 6.6 foreclosure laws, 9.2 legal risk, 8.2 pricing (discounting best estimate of expected cash flows); India context → SARFAESI Act, 2002.</i></p>
+
+  <div class="sticky"><p><b>Exam steps (4m theory):</b> 1 define (repackaging illiquid assets into marketable securities / RBI definition) → 2 list the SM points with the bold key term → 3 one line each in SM wording → 4 for "differentiate", use the PTC vs PTS table.</p></div>
+  <div class="sticky"><p><b>Lists to know cold:</b> features 6 · originator benefits 4 · investor benefits 3 · primary 3 + secondary 6 participants · mechanism 7 steps · problems 6 · instruments 3 · risks 3 (+3 market) · blockchain applications 5 · blockchain risks 4 · tokenization similarities 4.</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

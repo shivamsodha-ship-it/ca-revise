@@ -1,0 +1,222 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AFM Ch 2 notes</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> span.pyq{display:inline-block;font-size:11px;font-weight:600;color:#fff;background:#c0392b;border-radius:5px;padding:0 6px;margin-left:6px;vertical-align:middle} </style></head>
+<body><section class="page">
+  <div class="head"><span>AFM · Ch 02 Risk Management</span><span class="tag">SM Ch 02</span></div>
+  <h2 class="brk"><span class="n">02</span>Ch 02 — Risk Management</h2>
+  <div class="sub">Asked in last 3 papers: Sep 2025 currency-risk parameters (4m theory, OR), Jan 2026 political risk signals + mitigation (4m theory), May 2026 two-stock portfolio VaR (MCQs, 6m).</div>
+
+  <h3>1. Identification of types of risk faced by an organization</h3>
+  <ul>
+    <li><b>Strategic</b> · <b>Compliance</b> · <b>Operational</b> · <b>Financial</b> (counter-party, political, interest rate, currency, liquidity).</li>
+  </ul>
+
+  <h3>1.1 Strategic Risk</h3>
+  <ul>
+    <li>Company's <b>strategy becomes less effective</b> and it struggles to achieve its goal; even the best-laid plan becomes outdated if it cannot keep pace with latest trends.</li>
+    <li>Causes: <b>technological changes</b>, <b>new competitor</b>, <b>shift in customer demand</b>, <b>rise in raw material costs</b>, other large-scale changes.</li>
+    <li>SM examples: <b>Kodak</b> (developed digital camera by 1975, treated it as a threat, left behind); <b>Nokia</b> (late to touch screen, Samsung became leader). Positive: <b>Xerox</b> moved from photocopiers to laser printing and survived.</li>
+  </ul>
+
+  <h3>1.2 Compliance Risk</h3>
+  <ul>
+    <li>Every business must comply with rules (e.g. <b>Companies Act, 2013</b>, SEBI guidelines); <b>non-compliance → fine and imprisonment</b>.</li>
+    <li>Real problem: venturing into a <b>new business line or new geographical area</b> (e.g. cement company entering sugar in another state, with different laws). Failure to comply with the new area's laws threatens survival.</li>
+  </ul>
+
+  <h3>1.3 Operational Risk</h3>
+  <ul>
+    <li><b>Internal risk</b>; failure to cope with <b>day-to-day operational problems</b>; relates to <b>people</b> as well as <b>process</b>.</li>
+    <li>Example: employee pays out ₹ 1,00,000 instead of ₹ 10,000. Control: <b>another person to check</b> the work, or an <b>electronic system to flag unusual amounts</b>.</li>
+  </ul>
+
+  <h3>1.4 Financial Risk</h3>
+  <ul>
+    <li><b>Unexpected changes in financial conditions</b>: prices, exchange rate, credit rating, interest rate etc.</li>
+    <li>Political risk is not a financial risk in the direct sense, but included: an unexpected political change abroad → <b>country risk</b> → financial loss.</li>
+  </ul>
+
+  <h3>1.4.1 Counter Party Risk</h3>
+  <ul>
+    <li><b>Non-honouring of obligations by the counter party</b>: failure to deliver goods for payment already made (or vice-versa), or non-repayment of borrowings and interest.</li>
+    <li>Also covers <b>credit risk</b>, i.e. default by the counter party.</li>
+  </ul>
+
+  <h3>1.4.2 Political Risk</h3>
+  <p>Faced mainly by <b>overseas investors</b>: adverse action by the <b>host-country government</b>. Forms:</p>
+  <ul>
+    <li><b>Confiscation or destruction</b> of overseas properties.</li>
+    <li><b>Rationing of remittance</b> to home country.</li>
+    <li><b>Restriction on conversion</b> of local currency into foreign currency.</li>
+    <li><b>Restriction as to borrowings</b>.</li>
+    <li><b>Invalidation of patents</b>.</li>
+    <li><b>Price control</b> of products.</li>
+  </ul>
+
+  <h3>1.4.3 Interest Rate Risk</h3>
+  <ul>
+    <li><b>Change in interest rate → change in assets and liabilities</b>.</li>
+    <li>More important for <b>banking companies</b>: balance sheet items are interest sensitive and earnings are the <b>spread between borrowing and lending rates</b>.</li>
+    <li>Risk is inherent in both <b>fixed and floating</b> rates: floating-rate borrower's liability rises when floating rate rises, while a fixed-rate liability stays the same; when floating rate falls, the fixed-rate borrower's interest is comparatively higher.</li>
+  </ul>
+
+  <h3>1.4.4 Currency Risk</h3>
+  <ul>
+    <li>Affects organisations dealing in <b>foreign exchange</b>: cash flows change with exchange rate movement, <b>adversely or favourably</b>.</li>
+    <li>Rupee depreciates vs US$ → <b>exporter's receivables gain</b> (Infosys); <b>importer</b> paying in US$ loses (Indian Oil Corporation Ltd.).</li>
+  </ul>
+
+  <h3>1.4.5 Liquidity Risk</h3>
+  <ul>
+    <li><b>Inability to meet liabilities when they become due</b>.</li>
+    <li>Arises when the organisation is <b>unable to generate adequate cash</b>, or there is a <b>mismatch in period of cash flow generation</b>.</li>
+    <li>More prevalent in <b>banking</b>: mismatch in maturities and pattern of receiving fresh deposits.</li>
+  </ul>
+
+  <h3>2. Evaluation of Financial Risk</h3>
+  <table class="tight">
+    <tr><th>Point of view</th><th>How financial risk is viewed</th></tr>
+    <tr><td><b>Stakeholders</b></td><td>Equity shareholders view <b>financial gearing</b> (debt in capital structure) as risk, since on winding up they are <b>least prioritised</b>. For a <b>lender</b> too, existing gearing is a risk: high gearing → more risk of default in interest and principal.</td></tr>
+    <tr><td><b>Company</b></td><td>If it <b>borrows excessively</b> or <b>lends to someone who defaults</b>, it can be forced into <b>liquidation</b>.</td></tr>
+    <tr><td><b>Government</b></td><td><b>Failure of any bank</b> (like Lehman Brothers) or <b>downgrading of a financial institution</b> → distrust in society at large; also includes <b>wilful defaulters</b>; extends to <b>sovereign debt crisis</b>.</td></tr>
+  </table>
+  <div class="ex"><p><b>TYK T2</b> ("Financial risk can be viewed from different perspectives. Explain"): ICAI answer = para 2 (the three points of view above).</p></div>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><span>AFM · Ch 02 Risk Management (contd.)</span><span class="tag">SM Ch 02</span></div>
+
+  <h3>3. Value-at-Risk (VAR)</h3>
+  <ul>
+    <li>A <b>measure of risk of investment</b>: given <b>normal market conditions</b> over a set period (say one day), estimates <b>how much an investment might lose</b>. Investment can be a portfolio, capital investment, foreign exchange etc.</li>
+    <li>Answers two questions: (i) <b>What is the worst case scenario?</b> (ii) <b>What will be the loss?</b></li>
+    <li>First applied in <b>1922</b> in New York Stock Exchange; entered the financial world in <b>1990s</b>; now the world's most widely used measure of financial risk.</li>
+  </ul>
+
+  <h3>3.1 Features of VAR</h3>
+  <ul>
+    <li><b>Components of calculation</b>: (a) <b>time period</b>, (b) <b>confidence level</b> — generally 95% and 99%, (c) <b>loss in percentage or amount</b>.</li>
+    <li><b>Statistical method</b>: statistical tool based on <b>standard deviation</b>.</li>
+    <li><b>Time horizon</b>: one day, one week, one month and so on.</li>
+    <li><b>Probability</b>: assuming values are normally distributed, probability of maximum loss can be predicted.</li>
+    <li><b>Risk control</b>: by setting <b>limits for maximum loss</b>.</li>
+    <li><b>Z score</b>: how many standard deviations a value is away from the mean; <b>Z × SD = VAR</b>.</li>
+  </ul>
+
+  <h3>3.2 Application of VAR</h3>
+  <ul>
+    <li>To <b>measure the maximum possible loss</b> on any portfolio or trading position.</li>
+    <li>As a <b>benchmark for performance measurement</b> of any operation or trading.</li>
+    <li>To <b>fix limits for individuals</b> dealing in the <b>front office of a treasury</b> department.</li>
+    <li>To enable management to <b>decide trading strategies</b>.</li>
+    <li>As a tool for <b>Asset and Liability Management</b>, especially in banks.</li>
+  </ul>
+  <div class="ex"><p><b>TYK T1</b> ("Explain the significance of VAR"): ICAI answer = para 3.2 (the five applications above).</p></div>
+
+  <h3>3.3 Example (VAR computation) <span class="pyq">Asked: May 2026 MCQ CS-IV 10–12 6m</span></h3>
+  <table class="tight">
+    <tr><th>Formula</th><th>Terms / logic</th><th>SM example figures</th></tr>
+    <tr><td>σ in ₹ = σ% × Value of holding</td><td>Daily SD of price converted to rupee volatility.</td><td>2% × ₹ 2 crore = ₹ 4 lakh</td></tr>
+    <tr><td>1-day VAR = Z × σ<sub>₹</sub></td><td>Z = number of SDs for the confidence level (normal table, cumulative area). 99% → <b>Z = 2.33</b>.</td><td>₹ 4 lakh × 2.33 = <b>₹ 9.32 lakh</b></td></tr>
+    <tr><td>n-day VAR = 1-day VAR × √n</td><td>SD scales with square root of time (n trading days).</td><td>√10 × ₹ 9.32 lakh = <b>₹ 29.47 lakh</b></td></tr>
+    <tr><td>Portfolio variance (₹): V = σ<sub>A</sub><sup>2</sup> + σ<sub>B</sub><sup>2</sup> + 2 × r × σ<sub>A</sub> × σ<sub>B</sub></td><td>σ<sub>A</sub>, σ<sub>B</sub> = rupee daily SD of each holding; r = correlation. Portfolio σ = √V.</td><td>TYK P1: 2<sup>2</sup> + 2<sup>2</sup> + 2 × 0.3 × 2 × 2 = 10.4 → σ = ₹ 3.22 lakh</td></tr>
+    <tr><td>Alternative (%): σ<sub>p</sub><sup>2</sup> = σ<sub>A</sub><sup>2</sup>w<sub>A</sub><sup>2</sup> + σ<sub>B</sub><sup>2</sup>w<sub>B</sub><sup>2</sup> + 2σ<sub>A</sub>σ<sub>B</sub>r w<sub>A</sub>w<sub>B</sub></td><td>w = weight of each holding in portfolio value; then σ<sub>₹</sub> = σ<sub>p</sub>% × total value.</td><td>0.25 + 0.25 + 0.15 = 0.65 → σ<sub>p</sub> = 0.80623%; ₹ 400 lakh × 0.80623% = ₹ 3.22 lakh</td></tr>
+  </table>
+  <div class="ex"><p><b>SM Example 3.3 (X Ltd):</b> holding ₹ 2 crore, daily SD 2%, 252 trading days, 99% → Z 2.33; σ ₹ 4 lakh; 1-day max loss <b>₹ 9.32 lakh</b>; 10-day <b>₹ 29.47 lakh</b>.</p></div>
+  <div class="ex"><p><b>TYK P1 (XYZ + ABC):</b> ₹ 200,00,000 in each, daily SD 1% each, r 0.3, 10-day 99% VAR. Daily SD of each ₹ 2 lakh; V = 10.4; σ = <b>₹ 3.22 lakh</b> (alt.: 0.65 → 0.80623% × ₹ 400 lakh); 10-day σ = ₹ 3.22 lakh × √10 = <b>₹ 10.18 lakh</b>; Z for 1% = 2.33 (1% of a normal distribution lies more than 2.33 SDs below the mean); 10-day 99% VAR = 2.33 × ₹ 10.18 lakh = <b>₹ 23.72 lakh</b>.</p></div>
+  <p class="small"><i>Note (app-written): ICAI's alternative working prints the variance as "0.65%"; in % units it is 0.65 (%<sup>2</sup>), whose root is 0.80623%. The answer ₹ 3.22 lakh is unaffected.</i></p>
+
+  <h3>4. Appropriate methods for identification and management of financial risk</h3>
+  <p>SM takes each financial risk category separately (identification → management).</p>
+  <p class="small"><i>Note (app-written): SM para 4 says financial risk was classified "in 4 categories" and covers four (counter-party, political, interest rate, currency), though para 1.4 lists five (incl. liquidity).</i></p>
+
+  <h3>4.1 Counter Party Risk</h3>
+  <table class="tight">
+    <tr><th>Hints (identification)</th><th>Techniques to manage</th></tr>
+    <tr><td><ul>
+      <li>Failure to <b>obtain necessary resources</b> to complete the project/transaction.</li>
+      <li>Any <b>regulatory restrictions</b> from the Government.</li>
+      <li><b>Hostile action of foreign government</b>.</li>
+      <li><b>Let down by third party</b>.</li>
+      <li>Have become <b>insolvent</b>.</li>
+    </ul></td><td><ul>
+      <li><b>Due diligence</b> before dealing with any third party.</li>
+      <li><b>Do not over commit</b> to a single entity / group / connected entities.</li>
+      <li><b>Know your exposure limits</b>.</li>
+      <li><b>Review limits and credit-approval procedure</b> regularly.</li>
+      <li><b>Rapid action</b> on any likelihood of default.</li>
+      <li>Use of <b>performance guarantee, insurance</b> or other instruments.</li>
+    </ul></td></tr>
+  </table>
+
+  <h3>4.2 Political Risk <span class="pyq">Asked: Jan 2026 Q3(c) 4m</span></h3>
+  <table class="tight">
+    <tr><th>Identified from host-govt actions</th><th>Assess country risk</th><th>Mitigation techniques</th></tr>
+    <tr><td><ul>
+      <li>Insistence on <b>resident investors or labour</b>.</li>
+      <li><b>Restriction on conversion</b> of currency.</li>
+      <li><b>Expropriation</b> of foreign assets by local govt.</li>
+      <li><b>Price fixation</b> of products.</li>
+    </ul></td><td><ul>
+      <li><b>Political ranking</b> published by business magazines.</li>
+      <li>Evaluating country's <b>macro-economic conditions</b>.</li>
+      <li>Analysing <b>popularity of current government</b> and its stability.</li>
+      <li><b>Advice from embassies</b> of home country in host country.</li>
+    </ul></td><td><ul>
+      <li><b>Local sourcing</b> of raw materials and labour.</li>
+      <li><b>Joint ventures</b>.</li>
+      <li><b>Local financing</b>.</li>
+      <li><b>Prior negotiations</b>.</li>
+    </ul></td></tr>
+  </table>
+
+  <h3>4.3 Interest Rate Risk</h3>
+  <p>Identified mainly from:</p>
+  <ul>
+    <li><b>Monetary policy</b> of the Government.</li>
+    <li>Any <b>Government action</b> such as demonetization.</li>
+    <li><b>Economic growth</b>.</li>
+    <li><b>Release of industrial data</b>.</li>
+    <li><b>Investment by foreign investors</b>.</li>
+    <li><b>Stock market changes</b>.</li>
+  </ul>
+  <p class="small">Management: covered in the later interest-rate risk chapter.</p>
+
+  <h3>4.4 Currency Risk <span class="pyq">Asked: Sep 2025 Q4(c) [or] 4m</span></h3>
+  <p>Depends on Government action and economic development. Parameters to identify:</p>
+  <ul>
+    <li><b>Government action</b>: visual impact on currency (e.g. <b>Brexit</b> took the pound to its lowest since the 1980s).</li>
+    <li><b>Nominal interest rate</b>: per <b>interest rate parity (IRP)</b>, exchange rate depends on the country's nominal interest rate.</li>
+    <li><b>Inflation rate</b>: <b>purchasing power parity</b> theory — inflation impacts currency value.</li>
+    <li><b>Natural calamities</b>: negative impact.</li>
+    <li><b>War, coup, rebellion</b> etc.: far-reaching impact on exchange rates.</li>
+    <li><b>Change of government</b> and its attitude towards foreign investment.</li>
+  </ul>
+  <p class="small">Management: covered in the later foreign exchange risk chapter.</p>
+
+  <div class="sticky"><b>Exam steps (single-asset VAR):</b> σ<sub>₹</sub> = σ% × value → 1-day VAR = Z × σ<sub>₹</sub> (99% → 2.33) → n-day VAR = 1-day VAR × √n.</div>
+  <div class="sticky"><b>Exam steps (two-asset portfolio VAR):</b> rupee σ of each holding → V = σ<sub>A</sub><sup>2</sup> + σ<sub>B</sub><sup>2</sup> + 2rσ<sub>A</sub>σ<sub>B</sub> → σ<sub>p</sub> = √V → × √n for n days → × Z. Diversification benefit = sum of individual VARs − portfolio VAR; lower r → lower portfolio VAR.</div>
+  <p class="small"><i>Note (app-written): the diversification-benefit line in the sticky above follows from the SM formula; the SM itself does not define the term (it was tested in May 2026).</i></p>
+  <div class="foot"><span></span><span>AFM LDR — Ss</span></div>
+</section>
+</body></html>

@@ -100,3 +100,18 @@ Not verified line by line: the question-to-chapter mapping and concept labels in
 - SM Ch 9 §6.6.3 (p 9.21): put buyer's gain printed "(Spot Price – Exercise Price – Premium)"; it should be (Exercise Price − Spot Price − Premium), which gives ICAI's own break-even of ₹ 35.
 - SM Ch 9 Illus 3(iii) (p 9.31): PV of exercise price shown as 395.06 and 395.03, giving two put values (25.58 / 25.55); "Current Market Value ₹ 415" is listed though the put uses 380.
 - SM Ch 9 Illus 6 (p 9.47, timing option): expected pay-off includes a negative down-state NPV (−1.3 crore), against the SM's rule that an option's value cannot be negative. ICAI's ₹ 19.96 / 18.48 lakh kept.
+
+## AAA SM inconsistencies found while building the AAA exam pack, 4 Nov 2026 (ICAI text kept; app-written notes in the pack)
+- Ch 6 p.6 (SA 570 chart): "Use of Going Concern Basis of Accounting is appropriate – the auditor shall express an adverse opinion"; should read inappropriate (Ch 6 TYK 4, Ch 7 pp.9–10).
+- Ch 7 p.77 Example 3: qualified opinion uses "subject to", although Ch 7 p.46 says "except for" should be used.
+- Ch 7 p.11 Illustration 1: refers to Note 10 and Note 11 for the same matter.
+- Ch 7 p.52 SA 710 chart vs pp.51–52 text on unaudited prior-period FS.
+- Ch 7 p.104 TQ 9 answer: adverse opinion (basis inappropriate) but Basis paragraph uses material-uncertainty wording.
+- Jan 2026 MCQ CS-I Q4 key (EOM) where management refuses disclosure; SA 706 in the SM requires appropriate disclosure for EOM.
+- Ch 1 p.13 vs p.19: EQCR completion "before the report is issued" (SQC 1) vs "on or before the date of the auditor's report" (SA 220).
+- Ch 2 p.49 TYK Q1 names (A and B vs A and C); Ch 2 pp.60–61 TYK 10 answer differs from main text pp.36–37 on joint-audit allocation communication.
+- Ch 5 p.5.39 TYK 5 answer swaps the names of the auditor and the audit partner.
+- Ch 11 p.11.4: SAEs said to give "moderate" assurance, while SAE 3402/3420 are reasonable-assurance engagements (pp.11.15, 11.22–11.29).
+- Ch 8 p.8.39 TYK 6 answer refers to para 4.2; content is in 4.6/4.6.1.
+- Ch 12 p.12.19: phishing e-mail to the CEO labelled "spear phishing" although the SM's whaling definition covers C-level targets.
+- Ch 18 p.18.10 vs p.18.32: "Social Capital" vs "Social and Relationship Capital".

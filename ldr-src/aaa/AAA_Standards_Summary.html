@@ -1,0 +1,137 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AAA standards summary</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> table.tight td, table.tight th{font-size:11.2px;line-height:14.5px;padding:1px 5px} h3{margin:6px 0 3px} ul li{font-size:12px;line-height:16px} </style></head>
+<body><section class="page">
+<div class="head"><span>AAA · Standards in one place</span><span class="tag">What each standard is about</span></div>
+<h2 class="brk"><span class="n">S</span>AAA standards — what each is about + points to write</h2>
+<div class="sub">SA = Standard on Auditing · SRE = Standard on Review Engagements · SAE = Standard on Assurance Engagements · SRS = Standard on Related Services · SQC = Standard on Quality Control · TCWG = those charged with governance · FS = financial statements.</div>
+
+<h3>Quality and general principles</h3>
+<table class="tight">
+<tr><th style="width:14%">Standard</th><th style="width:26%">What it is about</th><th>Points to write</th></tr>
+<tr><td><b>SQC 1</b></td><td>Quality control at <b>firm</b> level, all engagements</td><td>6 elements: leadership · ethical requirements · acceptance &amp; continuance · human resources · engagement performance · monitoring. File assembly ≤ 60 days; retention ≥ 7 years; listed partner rotation ≤ 7 years; EQCR for listed audits.</td></tr>
+<tr><td><b>SA 220</b></td><td>Quality control for <b>one audit</b>, by engagement partner</td><td>Partner responsible for overall quality: leadership, ethics/independence, acceptance, team competence, direction-supervision-review, consultation, EQCR before report date.</td></tr>
+<tr><td><b>SA 200</b></td><td>Overall objectives of the auditor</td><td>Reasonable assurance FS free from material misstatement (fraud or error); professional skepticism and judgment; inherent limitations — greater for fraud and laws.</td></tr>
+<tr><td><b>SA 210</b></td><td>Terms of engagement</td><td>Preconditions: acceptable framework + management accepts responsibilities; engagement letter; change in terms needs reasonable justification.</td></tr>
+<tr><td><b>SA 230</b></td><td>Audit documentation</td><td>Enough for an experienced auditor to understand work, evidence, conclusions; assembled within 60 days; no deletion after assembly (additions dated, with reasons).</td></tr>
+<tr><td><b>SA 240</b></td><td>Auditor's responsibility for <b>fraud</b></td><td>Two types: fraudulent financial reporting, misappropriation of assets. Revenue recognition presumed fraud risk (rebuttable, document). Management override always a risk → test journals, estimates, unusual transactions. Report to management/TCWG; withdraw if needed.</td></tr>
+<tr><td><b>SA 250</b></td><td><b>Laws and regulations</b></td><td>Two categories: (a) direct effect on FS (tax, pension) → obtain evidence; (b) other laws (licence, environment) → inquiry + inspect correspondence. Non-compliance → TCWG; consider report and regulator.</td></tr>
+<tr><td><b>SA 260</b></td><td>Communication with <b>TCWG</b></td><td>Auditor's responsibilities; planned scope and timing (incl. significant risks); significant findings (accounting practices, difficulties, written representations); independence (listed). Timely; written for significant findings.</td></tr>
+<tr><td><b>SA 265</b></td><td>Communicating <b>internal control deficiencies</b></td><td>Significant deficiencies → in writing to TCWG and management; other deficiencies → management.</td></tr>
+<tr><td><b>SA 299</b></td><td><b>Joint audit</b></td><td>Division of work in writing (communicated to TCWG); each auditor responsible for own area; <b>jointly and severally</b> for common areas (decisions on reporting, non-compliance, presentation). Disagreement → separate report possible.</td></tr>
+<tr><td><b>SA 402</b></td><td>Entity uses a <b>service organisation</b></td><td>Understand services; Type 1 report = design at a date; <b>Type 2</b> = design + operating effectiveness over a period (needed to rely on controls). Can't refer to service auditor in report unless law requires.</td></tr>
+</table>
+
+<h3>Planning, risk, materiality</h3>
+<table class="tight">
+<tr><th style="width:14%">Standard</th><th style="width:26%">What it is about</th><th>Points to write</th></tr>
+<tr><td><b>SA 300</b></td><td>Planning</td><td>Overall audit <b>strategy</b> (scope, timing, direction) vs audit <b>plan</b> (nature, timing, extent of procedures). Update as needed.</td></tr>
+<tr><td><b>SA 315</b></td><td>Understanding entity and <b>risk assessment</b></td><td>Risk assessment procedures: inquiry, analytical procedures, observation and inspection. Internal control components: control environment, risk assessment process, information system, control activities, monitoring. Identify significant risks.</td></tr>
+<tr><td><b>SA 320</b></td><td><b>Materiality</b> in planning</td><td>Overall materiality + performance materiality (lower, to cover aggregation); revise if new information.</td></tr>
+<tr><td><b>SA 330</b></td><td>Responses to assessed risks</td><td>Overall responses + further procedures (tests of controls, substantive); substantive procedures for every material class regardless of risk.</td></tr>
+<tr><td><b>SA 450</b></td><td><b>Evaluating misstatements</b></td><td>Accumulate (except clearly trivial): factual, judgmental, projected; ask management to correct; uncorrected → assess against materiality; communicate; written representation on uncorrected.</td></tr>
+<tr><td><b>SA 540</b></td><td>Accounting <b>estimates</b></td><td>Understand method, data, assumptions; test management's process / develop own range / use subsequent events; management bias indicators.</td></tr>
+<tr><td><b>SA 600</b></td><td>Using work of <b>another auditor</b></td><td>Principal auditor assesses other auditor's competence, gives instructions, reviews; reference in report only via Other Matter.</td></tr>
+<tr><td><b>SA 610</b></td><td>Using <b>internal auditors</b></td><td>Evaluate objectivity, competence, systematic and disciplined approach. Two ways: use their work, or <b>direct assistance</b> (not on significant judgments, high risk). Auditor alone responsible for opinion.</td></tr>
+<tr><td><b>SA 620</b></td><td>Using <b>auditor's expert</b></td><td>Evaluate competence, capabilities and objectivity; agree scope in writing; evaluate adequacy of findings. Don't refer in unmodified report. (Management's expert → SA 500.)</td></tr>
+</table>
+<div class="foot"><span></span><span>AAA LDR — Ss</span></div>
+</section>
+
+<section class="page">
+<div class="head"><span>AAA · Standards in one place (contd.)</span><span class="tag">Evidence · completion · reporting</span></div>
+<h3>Evidence and completion</h3>
+<table class="tight">
+<tr><th style="width:14%">Standard</th><th style="width:26%">What it is about</th><th>Points to write</th></tr>
+<tr><td><b>SA 500</b></td><td>Audit <b>evidence</b></td><td>Sufficient (quantity) and appropriate (relevance + reliability). External, original, documentary, direct evidence is more reliable. Evaluate management's expert (competence, objectivity, work).</td></tr>
+<tr><td><b>SA 501</b></td><td>Specific items: <b>inventory, litigation, segment</b></td><td>Attend physical count (if material) — unforeseen: alternate date; impracticable: alternative procedures, else modify. Litigation: inquiry, minutes, legal expenses, letter to entity's lawyer.</td></tr>
+<tr><td><b>SA 505</b></td><td><b>External confirmations</b></td><td>Auditor controls requests. <b>Positive</b> (reply always) vs <b>negative</b> (reply only if disagree — only when low risk, many small homogeneous balances). Management refuses → reasons; unreasonable → TCWG, possible modification.</td></tr>
+<tr><td><b>SA 510</b></td><td><b>Opening balances</b> (initial audit)</td><td>Read predecessor's working papers / audit current-year procedures; can't obtain evidence → qualified or disclaimer.</td></tr>
+<tr><td><b>SA 520</b></td><td><b>Analytical procedures</b></td><td>Substantive analytics and near end of audit; investigate unexpected differences.</td></tr>
+<tr><td><b>SA 530</b></td><td><b>Audit sampling</b></td><td>Statistical / non-statistical; sampling risk; project misstatements to population.</td></tr>
+<tr><td><b>SA 550</b></td><td><b>Related parties</b></td><td>Identify relationships; transactions outside normal course = significant risk; check approval, arm's-length claims.</td></tr>
+<tr><td><b>SA 560</b></td><td><b>Subsequent events</b></td><td>Three periods: to report date (procedures) · after report, before issue (amend, new report) · after issue (new report, prevent reliance).</td></tr>
+<tr><td><b>SA 570</b></td><td><b>Going concern</b></td><td>Evaluate management's assessment (12 months from FS date). Outcomes: inappropriate basis → adverse; uncertainty disclosed → "Material Uncertainty" section; not disclosed → qualified/adverse.</td></tr>
+<tr><td><b>SA 580</b></td><td><b>Written representations</b></td><td>On responsibilities and completeness; dated near to but not after report date; refusal / doubt → disclaimer may be needed.</td></tr>
+</table>
+
+<h3>Reporting</h3>
+<table class="tight">
+<tr><th style="width:14%">Standard</th><th style="width:26%">What it is about</th><th>Points to write</th></tr>
+<tr><td><b>SA 700</b></td><td>Forming opinion and <b>report</b></td><td>Order: Opinion → Basis for Opinion → (Going concern / KAM) → Other information → management and TCWG responsibilities → auditor's responsibilities → other legal and regulatory. Signed with membership no., firm reg. no., <b>UDIN</b>, place, date.</td></tr>
+<tr><td><b>SA 701</b></td><td><b>Key audit matters</b></td><td>Listed entities (or when chosen/required). From TCWG matters → significant attention → most significance. Not a substitute for modified opinion.</td></tr>
+<tr><td><b>SA 705</b></td><td><b>Modified opinion</b></td><td>Material not pervasive → qualified; material and pervasive misstatement → adverse; can't get evidence, possible effects material and pervasive → disclaimer.</td></tr>
+<tr><td><b>SA 706</b></td><td><b>Emphasis of Matter / Other Matter</b></td><td>EOM = disclosed in FS, fundamental; OMP = not in FS, relevant to audit/report. Neither modifies opinion; not a KAM.</td></tr>
+<tr><td><b>SA 710</b></td><td><b>Comparative information</b></td><td>Corresponding figures (opinion on current only) vs comparative FS (opinion on each year). Prior year unaudited → Other Matter; prior qualification unresolved → modify.</td></tr>
+<tr><td><b>SA 720</b></td><td><b>Other information</b> (annual report)</td><td>Read and consider for material inconsistency with FS / auditor's knowledge; report section; obtain before report date where possible.</td></tr>
+<tr><td><b>SA 800</b></td><td><b>Special purpose framework</b> FS</td><td>Describe the framework; alert that FS may not suit another purpose (and restriction on use if needed).</td></tr>
+<tr><td><b>SA 805</b></td><td><b>Single statement / element</b></td><td>Materiality for that element; if adverse/disclaimer on complete FS, no unmodified opinion on an element that is a major part.</td></tr>
+<tr><td><b>SA 810</b></td><td><b>Summary FS</b></td><td>Only if auditor audited the complete FS; opinion: consistent with / fair summary of audited FS; refers to the audited report.</td></tr>
+</table>
+
+<h3>Review, assurance and related services</h3>
+<table class="tight">
+<tr><th style="width:14%">Standard</th><th style="width:26%">What it is about</th><th>Points to write</th></tr>
+<tr><td><b>SRE 2400</b></td><td>Review of FS by a practitioner <b>not the auditor</b></td><td>Limited assurance; inquiry and analytical procedures; conclusion in negative form ("nothing has come to our attention").</td></tr>
+<tr><td><b>SRE 2410</b></td><td>Review of <b>interim</b> FS by the <b>entity's own auditor</b></td><td>Limited assurance; uses knowledge from annual audit; negative-form conclusion; modify for departures/scope limits.</td></tr>
+<tr><td><b>SAE 3400</b></td><td>Examination of <b>prospective financial information</b></td><td>Forecast (best-estimate assumptions) vs projection (hypothetical assumptions). Moderate assurance on assumptions (negative form); opinion on preparation and presentation; caveat that results may differ.</td></tr>
+<tr><td><b>SAE 3402</b></td><td>Assurance report on <b>service organisation controls</b></td><td>Service auditor's Type 1 / Type 2 report used by user auditors (SA 402).</td></tr>
+<tr><td><b>SAE 3420</b></td><td><b>Pro forma</b> financial information in a prospectus</td><td>Reasonable assurance that compilation is properly done on the stated basis.</td></tr>
+<tr><td><b>SRS 4400</b></td><td><b>Agreed-upon procedures</b></td><td>No assurance; report of factual findings; restricted to parties who agreed the procedures; independence not required (state if not independent).</td></tr>
+<tr><td><b>SRS 4410</b></td><td><b>Compilation</b> engagement</td><td>No assurance; uses accounting expertise to compile; management responsible; report states it is not an audit/review.</td></tr>
+</table>
+<div class="foot"><span></span><span>AAA LDR — Ss</span></div>
+</section>
+
+<section class="page">
+<div class="head"><span>AAA · Small theory chapters</span><span class="tag">Points to write</span></div>
+<h3>Assurance level at a glance</h3>
+<table class="tight">
+<tr><th>Engagement</th><th>Assurance</th><th>Report wording</th><th>Independence</th></tr>
+<tr><td>Audit (SA 700)</td><td>Reasonable</td><td>Positive opinion ("true and fair")</td><td>Required</td></tr>
+<tr><td>Review (SRE 2400/2410)</td><td>Limited</td><td>Negative ("nothing has come to our attention")</td><td>Required</td></tr>
+<tr><td>Agreed-upon procedures (SRS 4400)</td><td>None</td><td>Factual findings</td><td>Not required (disclose)</td></tr>
+<tr><td>Compilation (SRS 4410)</td><td>None</td><td>Compilation report</td><td>Not required</td></tr>
+</table>
+
+<h3>Due diligence, investigation, forensic (Ch 17)</h3>
+<ul>
+<li><b>Due diligence</b>: independent appraisal before acquisition/merger/loan — financial (quality of earnings, working capital, contingent liabilities), tax, legal, commercial, HR, IT. Review 5 years' results; projections on optimistic/pessimistic/likely bases.</li>
+<li><b>Investigation</b>: fact-finding for a specific purpose (fraud, share valuation, incoming partner, loan); scope set by appointing authority; no fixed periodicity; may need 100% check; no futuristic opinion.</li>
+<li><b>Forensic accounting</b>: gather and present evidence for legal proceedings; fraud examination (s.447 Companies Act, SA 240).</li>
+</ul>
+
+<h3>Digital audit (Ch 12) and ESG (Ch 18)</h3>
+<ul>
+<li><b>IT general controls</b> (access, change management, operations/backup, development) vs <b>application (automated) controls</b> (input, processing, output). CAATs = computer-assisted audit techniques (data analytics on complete populations). Cyber risks: phishing, whaling (senior executives), ransomware, DoS.</li>
+<li><b>ESG</b> = environmental, social, governance reporting. <b>BRSR</b> (Business Responsibility and Sustainability Report) — 9 principles; assurance under SSAE 3000 / SAE 3410 as per SM; statutory auditor reads it as other information (SA 720).</li>
+</ul>
+
+<h3>PSU (Ch 15) and internal audit (Ch 16) — one line each</h3>
+<ul>
+<li><b>Propriety audit</b> = whether spending was wise/necessary even if within rules. <b>Performance audit</b> = economy, efficiency, effectiveness against objectives. <b>Comprehensive audit</b> of PSUs covers both.</li>
+<li><b>Internal audit</b>: s.138 thresholds (see last-day sheet); internal auditor may be CA/CMA/other professional, employee or not; SIAs (Standards on Internal Audit) guide planning, reporting, follow-up (Action Taken Report to Audit Committee).</li>
+</ul>
+<div class="sticky"><b>4-mark theory tip:</b> name the standard + its purpose in one line → 4–5 points from the table → one-line conclusion on what the auditor does.</div>
+<div class="foot"><span></span><span>AAA LDR — Ss</span></div>
+</section>
+</body></html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AAA last-day sheet</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  body { font-size: 13px; }
+  .f { font-family: 'Patrick'; font-size: 13.5px; background: var(--hl-b); border-radius: 6px; padding: 0 8px; display: inline-block; line-height: 22px; }
+  .fl { display: block; margin: 0 0 4px; }
+  table { font-size: 12.5px; line-height: 17px; }
+  table.tight td, table.tight th { padding: 1px 6px; }
+  .num td:last-child, .num th:last-child { text-align: right; white-space: nowrap; }
+  .pb td:nth-child(3), .pb td:nth-child(4) { text-align: right; white-space: nowrap; }
+  .def { border-left: 4px solid var(--ink); padding: 0 10px; margin: 0 0 6px; background: rgba(191,227,255,.35); }
+  .def b.t { color: var(--red); }
+  .ex { font-size: 12.3px; border: 1.5px dotted var(--ink); border-radius: 8px; padding: 1px 9px; margin: 0 0 8px; background: rgba(255,255,255,.6); }
+  .ex::before { content: 'ICAI · '; font-family: 'Caveat'; font-weight: 700; font-size: 17px; color: var(--green); }
+  .ex.app::before { content: 'Worked example (app-written) · '; color: var(--ink); }
+  ol li { margin: 0; }
+  td.C, td.NC { white-space: normal; }
+  .sticky { font-family: 'Kalam', cursive; font-size: 15px; line-height: 23px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style><style> .r{color:#c0392b} td.r{color:#c0392b} table.tight td, table.tight th{font-size:11.2px;line-height:14.5px;padding:1px 5px} h3{margin:6px 0 3px} ul li{font-size:12px;line-height:16px} </style></head>
+<body><section class="page">
+<div class="head"><span>AAA · Last-day sheet</span><span class="tag">Limits · sections · confusions</span></div>
+<h2 class="brk"><span class="n">!</span>AAA last-day sheet — banks, NBFCs and the rest (Ethics left out)</h2>
+<div class="sub">Every figure is from ICAI's study material (May 2026 edition) and the Nov 2026 RTP. <b class="r">Red = changed by the Nov 2026 RTP.</b></div>
+
+<h3>1. Bank audit — numbers to remember</h3>
+<table class="tight">
+<tr><th style="width:34%">Point</th><th>Rule</th></tr>
+<tr><td>NPA (non-performing asset) — bank</td><td>Interest / instalment overdue <b>more than 90 days</b>. Dating: due date D unpaid → overdue from D; <b>SMA-1 at D+30, SMA-2 at D+60, NPA at D+90</b> (SMA = special mention account).</td></tr>
+<tr><td>Classification basis</td><td><b>Borrower-wise</b>, not facility-wise — one facility NPA → all NPA. On past-due record, not just the 31 March balance.</td></tr>
+<tr><td>Limit not reviewed / renewed</td><td>Not reviewed within <b>180 days</b> of due date → NPA. Renewal letter issued after 31 March but before audit report = adjusting event (AS 4) → standard.</td></tr>
+<tr><td>Drawing power (DP)</td><td>Stock statement used for DP not older than <b>3 months</b>. Temporary extra limit up to <b>20%</b> of limit for max <b>90 days</b>. Temporary DP shortfall alone ≠ NPA.</td></tr>
+<tr><td>Central vs State Government guarantee</td><td><b>Central</b>-guaranteed loan becomes NPA only when guarantee <b>invoked and repudiated</b>; <b>State</b>-guaranteed → NPA after 90 days like any loan. Income on NPA only when realised.</td></tr>
+<tr><td>Restructuring</td><td>Standard → becomes <b>sub-standard</b> on restructuring; NPA stays in same category; no retrospective restructuring.</td></tr>
+<tr><td>Sale of NPA</td><td>Seller: only NPAs <b>at least 2 years</b> old in its books; without recourse; cash, full price upfront; price below net book value → loss to P&amp;L; above → excess provision not reversed. Buyer: recoveries first against cost; <b>100% risk weight</b>.</td></tr>
+<tr><td>Capital (CRAR = capital to risk-weighted assets ratio)</td><td>Banks: minimum <b>9%</b> ongoing. Illustration risk weights: housing loan up to ₹75 lakh 50%, above ₹75 lakh 75%, commercial real estate 100%.</td></tr>
+<tr><td>CRR / SLR / DTL</td><td><b>CRR</b> (cash reserve ratio) = minimum % of deposits kept as cash/deposit with RBI (BR Act for banking companies, RBI Act for scheduled banks). <b>SLR</b> (statutory liquidity ratio) = liquid assets (cash, gold, approved securities) before lending — <b>s.24 BR Act</b>. Central auditors verify on <b>odd dates in different months, not Fridays</b>; Form A return (CRR), Form VIII (SLR); report to top management and RBI. <b>DTL</b> (demand and time liabilities): <i>exclude</i> capital, reserves, RBI loans, refinance (EXIM/NHB/NABARD/SIDBI), part-recoveries on bad debts, margins on funded facilities; <i>include</i> interest accrued on deposits (booked or not), net credit balance in branch adjustment, adverse Nostro mirror balance.</td></tr>
+<tr><td>Other bank limits</td><td>Inward clearing cheque <b>₹5 lakh+</b> → branch calls customer. Bulk deposit = <b>₹2 crore+</b>. Dormant account = no transaction <b>over 2 years</b>. <b>s.9 BR Act</b>: non-banking immovable property not held over <b>7 years</b> unless own use. <b>s.15 BR Act</b>: no dividend until adequate bad-debt provision. Investments: HTM / HFT / AFS at acquisition; <b>AFS → HTM needs Board approval</b>; non-performing investment = due over 90 days. RBI balance: entries unresponded <b>over 15 days</b>.</td></tr>
+<tr><td>Appointment</td><td>Banking company → shareholders at AGM; nationalised bank → its Board; <b>prior RBI approval</b> both. Central statutory auditors = 4+ firms jointly; private banks: no mandatory branch audit. Plus <b>LFAR</b> (long form audit report).</td></tr>
+</table>
+<p class="small">Bank provisioning % rates are not in the Final SM (it refers to Intermediate). Don't mix with NBFC rates below.</p>
+
+<h3>2. NBFC audit — numbers to remember</h3>
+<table class="tight">
+<tr><th style="width:34%">Point</th><th>Rule</th></tr>
+<tr><td>Registration and NOF (net owned fund)</td><td>s.45-IA RBI Act: certificate of registration (CoR) + NOF. New NBFCs NOF <b>₹10 crore</b>. Glide path to ₹10 crore by 31 March 2027 for ICC, MFI, Factor (ICC ₹2 → ₹5 cr by Mar 2025 → ₹10 cr by Mar 2027). <b class="r">From 1 July 2026: no public funds + no customer interface + assets below ₹1,000 cr → exempt (Type I – Exempt, may deregister by 31 Dec 2026); above ₹1,000 cr → Type I registered; public funds or customer interface → Type II registered.</b></td></tr>
+<tr><td>Layers</td><td><b>Base</b>: non-deposit, assets below ₹1,000 cr (and always P2P, AA). <b>Middle</b>: all deposit-taking (any size), non-deposit ₹1,000 cr+, HFCs, CICs, IFCs. <b>Upper</b>: identified by RBI; top 10 by size. <b>Top</b>: ideally empty.</td></tr>
+<tr><td>NPA — NBFC</td><td>Glide path: <b>over 90 days from 31 March 2026</b> (150 days 2024, 120 days 2025). Sub-standard: NPA up to <b>18 months (Base) / 12 months (Middle+)</b>; then doubtful.</td></tr>
+<tr><td>Provisions</td><td>Sub-standard <b>10%</b>. Doubtful: unsecured part <b>100%</b> + secured part <b>20% (≤1 yr), 30% (1–3 yrs), 50% (&gt;3 yrs)</b>. Loss <b>100%</b>. Standard: Base <b>0.25%</b>; <b class="r">Middle 0.40% (incl. microfinance); Upper: housing/SME 0.25%, teaser 2%, CRE-RH 0.75%, CRE 1%, others 0.40%; extra 5% on each restructuring.</b></td></tr>
+<tr><td>Capital</td><td class="r"><b>Gold-loan NBFC (≥50% gold loans): Tier 1 12%, CRAR 15%. Middle and above: Tier 1 10%, CRAR 15%. Upper: + CET1 9%. Base: no CRAR — leverage (outside liabilities ÷ owned fund) ≤ 7.</b></td></tr>
+<tr><td>Risk weights</td><td>Cash, Govt securities, staff loans 0%; PSB bonds 20%; shares, ICDs, secured loans 100%; consumer credit, credit cards <b>125%</b>. <b class="r">High-quality infra loans: 75% (≥2% repaid) / 50% (≥5% repaid); ROU assets 100%.</b></td></tr>
+<tr><td>Reports by NBFC auditor</td><td>Additional report to the <b>Board</b> (Parts A–D: CoR, NOF, deposits, CRAR, prudential norms, NBS-7). <b>Exception report</b> to RBI (Department of Non-Banking Supervision) — only contraventions. <b>Statutory Auditor's Certificate</b>: within <b>5 working days of signing the audit report, not later than 31 December</b>. CARO 3(xvi) (RBI registration), 3(iii) (loans overdue over 90 days).</td></tr>
+<tr><td>Deposits / fraud</td><td>Rating downgraded below investment grade → stop new deposits, report to RBI within <b>15 working days</b>. Fraud reporting even without intent: cash shortage <b>over ₹10,000</b>, or over ₹5,000 not reported.</td></tr>
+<tr><td>NBFC-MFI</td><td class="r"><b>≥60% of assets in microfinance loans; fails 4 consecutive quarters → remediation plan to RBI.</b></td></tr>
+</table>
+<div class="foot"><span></span><span>AAA LDR — Ss</span></div>
+</section>
+
+<section class="page">
+<div class="head"><span>AAA · Last-day sheet (contd.)</span><span class="tag">Confusions · other chapters</span></div>
+<h3>3. Bank vs NBFC — look the same, answer differs</h3>
+<table class="tight">
+<tr><th style="width:24%">Point</th><th>Bank</th><th>NBFC</th></tr>
+<tr><td>NPA days</td><td>90 days</td><td>90 days from 31 Mar 2026 (glide path 150 → 120 → 90)</td></tr>
+<tr><td>Sub-standard → doubtful</td><td>Rates/periods not in Final SM (Inter)</td><td>18 months (Base) / 12 months (Middle+)</td></tr>
+<tr><td>Standard asset provision</td><td>Sector-wise per RBI (not in SM)</td><td>Base 0.25%; Middle 0.40%; Upper category-wise</td></tr>
+<tr><td>Minimum capital</td><td>CRAR 9%</td><td>CRAR 15% (Middle+), Tier 1 10% / gold 12%; Base: leverage ≤ 7</td></tr>
+<tr><td>Consumer credit risk weight</td><td>—</td><td>125%</td></tr>
+<tr><td>Purchased NPA risk weight</td><td>100%</td><td>—</td></tr>
+<tr><td>Regulator reporting</td><td>LFAR; CRR/SLR certificates</td><td>Board report Parts A–D; exception report to RBI; SAC</td></tr>
+<tr><td>Deposits</td><td>Demand + term; DICGC insured</td><td>No demand deposits, no cheques, no DICGC</td></tr>
+</table>
+
+<h3>4. Reporting (Ch 7) and completion (Ch 6)</h3>
+<table class="tight">
+<tr><th style="width:24%">If the case says…</th><th>Use</th></tr>
+<tr><td>Matter of most significance, listed company</td><td><b>KAM</b> — SA 701 (determine from TCWG matters → significant attention → most significance)</td></tr>
+<tr><td>Already disclosed, fundamental to users' understanding</td><td><b>Emphasis of Matter</b> — SA 706 (must be appropriately disclosed; not a KAM)</td></tr>
+<tr><td>Not in FS, relevant to understanding the audit/report</td><td><b>Other Matter</b> — SA 706 (e.g. branches audited by others)</td></tr>
+<tr><td>Material, not pervasive / pervasive / can't get evidence</td><td>SA 705: <b>Qualified ("except for")</b> / <b>Adverse</b> / <b>Disclaimer</b> (possible effects material + pervasive)</td></tr>
+<tr><td>Going concern</td><td>SA 570: basis inappropriate → <b>adverse</b>; uncertainty adequately disclosed → <b>"Material Uncertainty Related to Going Concern"</b> section; not disclosed → qualified/adverse</td></tr>
+<tr><td>Event after year end</td><td>SA 560: up to report date → obtain evidence; after report, before issue → discuss, amend; after issue → new report / prevent reliance</td></tr>
+<tr><td>Written representations</td><td>SA 580: dated as near as practicable to, but <b>not after</b>, report date</td></tr>
+</table>
+<ul>
+<li><b>s.143(12) fraud</b>: <b>₹1 crore or more</b> → to Board/Audit Committee within <b>2 days</b>, reply in <b>45 days</b>, to Central Government within <b>15 days</b>; below ₹1 crore → Audit Committee/Board within 2 days. Penalty: ₹5 lakh listed / ₹1 lakh others.</li>
+<li><b>IFC (internal financial controls) reporting</b> not for private company with turnover <b>&lt; ₹50 crore</b> and borrowings <b>&lt; ₹25 crore</b>, or OPC / small company.</li>
+<li><b>CARO 2020</b> exempt: banks, insurance, section 8, OPC, small companies, and private companies (not holding/subsidiary of public) meeting all three limits (capital+reserves ≤ ₹1 crore, borrowings ≤ ₹1 crore, revenue ≤ ₹10 crore). Key clauses: 3(ii)(b) working capital &gt; ₹5 crore — quarterly returns; 3(vii) undisputed dues &gt; 6 months; 3(xi) fraud; 3(xvi) RBI registration; 3(xix) liabilities within one year; 3(xx) CSR unspent to Schedule VII fund within 6 months; 3(xxi) only clause for consolidated FS.</li>
+<li><b>SEBI resignation (listed)</b>: resign within 45 days of quarter end → issue report for that quarter.</li>
+</ul>
+
+<h3>5. Quality control (Ch 1)</h3>
+<ul>
+<li><b>SQC 1</b> = firm level, all engagements, 6 elements: leadership; ethical requirements; acceptance and continuance; human resources; engagement performance; monitoring. <b>SA 220</b> = one audit, engagement partner.</li>
+<li><b>File assembly</b> within <b>60 days</b> of audit report · <b>retention</b> at least <b>7 years</b> · listed audit partner <b>rotation</b> normally within <b>7 years</b> · independence confirmation <b>at least annually</b> · EQCR (engagement quality control review) completed before report is issued.</li>
+</ul>
+
+<h3>6. PSU, internal audit, due diligence, group audit</h3>
+<table class="tight">
+<tr><th style="width:22%">Topic</th><th>Must-write</th></tr>
+<tr><td>PSU (Ch 15)</td><td>Government company = <b>51%+</b> held by Central/State Government(s) (s.2(45)); C&amp;AG appoints auditors, directs manner of audit (<b>s.143(5)</b>), comments, supplementary audit, test audit. C&amp;AG term <b>6 years or age 65</b>. <b>Propriety audit</b> = wasteful/avoidable expenditure even if within rules; <b>performance audit</b> = economy, efficiency, effectiveness.</td></tr>
+<tr><td>Internal audit (Ch 16)</td><td><b>s.138 / Rule 13</b>: listed companies; unlisted public with paid-up capital ₹50 cr+ or turnover ₹200 cr+ or borrowings over ₹100 cr or deposits ₹25 cr+; private with turnover ₹200 cr+ or borrowings over ₹100 cr (preceding year). Comply within <b>6 months</b>. Use of internal audit by statutory auditor: SA 610.</td></tr>
+<tr><td>Due diligence vs investigation vs audit (Ch 17)</td><td>Audit = opinion on FS, periodic. Investigation = specific purpose, fact-finding, no fixed period, may need 100% check. Due diligence = before a deal (acquisition, loan): financial, tax, legal, commercial checks; projections for 5 years. Forensic = evidence for court (fraud).</td></tr>
+<tr><td>Group audit (Ch 13)</td><td>s.129(3) consolidated FS + Form AOC-1. Subsidiary year-end difference max <b>6 months (AS) / 3 months (Ind AS)</b>. Other auditors' work → Other Matter paragraph. CARO: only 3(xxi).</td></tr>
+</table>
+<div class="sticky"><b>Answer frame:</b> Provision (SA / section / clause) → facts → analysis → one-line conclusion. Write the RTP figure where red.</div>
+<div class="foot"><span></span><span>AAA LDR — Ss</span></div>
+</section>
+</body></html>
